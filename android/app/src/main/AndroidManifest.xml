@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:label="ET Fuzz Client"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Each EXECUTOR runs in its OWN process (android:process) so a native ExecuTorch crash
+             kills only that executor — the coordinator (main process) keeps its broker connection
+             and respawns the executor. Executors hold no broker connection; the coordinator drives
+             them over a bound Messenger. -->
+        <service android:name=".Executor0" android:process=":e0" android:exported="false" />
+        <service android:name=".Executor1" android:process=":e1" android:exported="false" />
+        <service android:name=".Executor2" android:process=":e2" android:exported="false" />
+        <service android:name=".Executor3" android:process=":e3" android:exported="false" />
+        <service android:name=".Executor4" android:process=":e4" android:exported="false" />
+        <service android:name=".Executor5" android:process=":e5" android:exported="false" />
+        <service android:name=".Executor6" android:process=":e6" android:exported="false" />
+        <service android:name=".Executor7" android:process=":e7" android:exported="false" />
+        <service android:name=".Executor8" android:process=":e8" android:exported="false" />
+        <service android:name=".Executor9" android:process=":e9" android:exported="false" />
+        <service android:name=".Executor10" android:process=":e10" android:exported="false" />
+        <service android:name=".Executor11" android:process=":e11" android:exported="false" />
+        <service android:name=".Executor12" android:process=":e12" android:exported="false" />
+        <service android:name=".Executor13" android:process=":e13" android:exported="false" />
+        <service android:name=".Executor14" android:process=":e14" android:exported="false" />
+        <service android:name=".Executor15" android:process=":e15" android:exported="false" />
+    </application>
+</manifest>

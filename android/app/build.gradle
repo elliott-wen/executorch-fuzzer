@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.fuzzer.etclient'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.fuzzer.etclient'
+        minSdk 23
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+        // arm64 is the real phone target; x86_64 lets it run in an emulator.
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions { jvmTarget = '17' }
+    buildTypes {
+        release { minifyEnabled false }
+    }
+    // 16 KB page support: store .so uncompressed + page-aligned in the APK (AGP 8.5.1+ uses
+    // 16 KB zipalign). NOTE: this fixes the APK *packaging* only — the .so must ALSO be linked
+    // with -Wl,-z,max-page-size=16384 (ELF segment alignment). The prebuilt executorch 0.6.0
+    // AAR is 4 KB-aligned, so a fully 16 KB-compatible APK needs the AAR built from source with
+    // NDK r27+ (see mobile/android/README_16KB.md).
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
+}
+
+dependencies {
+    // ExecuTorch Android runtime — LOCALLY BUILT from source (extension/android) with the
+    // jni_layer.cpp fix: Module.execute throws a catchable ExecutorchRuntimeException instead of
+    // fbjni-aborting on an untranslatable C++ exception. A flatDir AAR has no POM, so its
+    // transitive deps (fbjni, soloader nativeloader, core-ktx) are declared explicitly below.
+    implementation(name: 'executorch', ext: 'aar')
+    implementation 'com.facebook.fbjni:fbjni:0.7.0'
+    implementation 'com.facebook.soloader:nativeloader:0.10.5'
+    implementation 'androidx.core:core-ktx:1.13.1'
+    // Pure-Java ZeroMQ — speaks the broker's REQ/SUB wire format, no native zmq build.
+    implementation 'org.zeromq:jeromq:0.6.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+}

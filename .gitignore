@@ -1,0 +1,23 @@
+# Python bytecode caches
+__pycache__/
+*.py[cod]
+
+# Generation output + scratch: corpus dirs, crash samples, logs, broker samples,
+# skip-reason TSVs, measurement TSVs/logs. The fuzzer writes all transient data here.
+tmp/
+corpus*/
+
+# ExecuTorch programs / serialized artifacts emitted during lowering
+*.pte
+
+# Android build artifacts (the AAR is built from source; rebuild rather than commit)
+android/.gradle/
+android/**/build/
+android/app/libs/*.aar
+android/local.properties
+android/captures/
+*.apk
+
+# NOT ignored (tracked on purpose): approved_constraints/ (vendored constraint data),
+# gen/backends/, run_pregen.sh, *.md docs, and all package source.
+pytorch_ref/

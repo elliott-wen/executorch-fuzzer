@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{print $2}')",
+      "Bash(python -c \"import torch, executorch, zmq, z3; print\\('torch', torch.__version__\\); print\\('zmq', zmq.__version__\\); print\\('z3 ok'\\)\")"
+    ]
+  }
+}
