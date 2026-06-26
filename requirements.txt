@@ -1,0 +1,33 @@
+# mobile fuzzer — Python dependencies
+#
+# Target: Python 3.12 (the gold env at /data/jwen929/pytorch/venv is 3.12.13).
+# Install into a CPU-only venv (see README / setup notes):
+#
+#     python3.12 -m venv .venv
+#     .venv/bin/python -m pip install -U pip
+#     .venv/bin/python -m pip install -r requirements.txt
+#
+# IMPORTANT — CUDA is intentionally NOT used here.
+#   * The fuzzer is CPU-only by design (CUDA_VISIBLE_DEVICES="" everywhere; portable
+#     CPU kernels are the faithful mobile stand-in — see docs/overview.md).
+#   * The CUDA environment on this host is unreliable for our purposes: the system
+#     python3.9 ships torch 2.8.0+cu128 (a CUDA build), nvcc/CUDA toolkit is absent,
+#     and the GPUs are shared/contended. We therefore pin the +cpu torch build pulled
+#     from the PyTorch CPU index below. Do NOT install a +cuXXX torch here.
+#
+# The +cpu wheels (torch, torchao, executorch) live on the PyTorch CPU index, not PyPI:
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# --- Core: graph lowering + runtime -----------------------------------------
+# executorch pulls torch==2.12.0+cpu, torchao, coremltools, numpy, sympy,
+# flatbuffers, etc. as dependencies. torch is pinned explicitly to lock the CPU build.
+executorch==1.3.1
+torch==2.12.0+cpu
+
+# --- Constraint solver (graph generation) -----------------------------------
+z3-solver==4.16.0.0
+
+# --- Transport (broker / feed / client) -------------------------------------
+# NOTE: not present in the gold venv (the networking side was never run from it),
+# but net/{broker,feed,client,protocol}.py import `zmq`. Required to run the fleet.
+pyzmq==27.1.0

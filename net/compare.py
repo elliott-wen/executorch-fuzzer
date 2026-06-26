@@ -25,6 +25,13 @@ import torch
 # round differently from eager's per-op rounding, so anything tighter just reports
 # precision noise. Integer/bool stay EXACT (tol 0): an integer divergence is a real bug
 # (e.g. sum/prod cast-order off-by-one, bitwise) and a relative tolerance would hide it.
+#
+# QUANTIZED backends: pregen stores a QUANTIZED reference (the PT2E-converted graph run on
+# CPU — see gen/backends/base.quantized_reference), NOT the fp32 eager oracle. So this
+# tolerance is applied to device-vs-quantized-reference (same quantization space): the
+# residual is cross-implementation int rounding, not raw int8-vs-fp32 error. For a CPU
+# delegate (xnnpack) that residual is ~0; for an NPU (Ethos-U on the FVP) it may need a
+# looser, per-backend tolerance once real device deltas are observed.
 _FLOAT_RTOL, _FLOAT_ATOL = 1e-2, 1e-3
 
 

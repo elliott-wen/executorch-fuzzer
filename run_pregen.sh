@@ -17,13 +17,16 @@
 #   NODES=4 mobile/run_pregen.sh qualcomm 16 100000
 set -euo pipefail
 
-REPO=/data/jwen929/pytorch
-ENV_SH=/data/jwen929/android-dev/android-env.sh
+# Derive everything from this script's location so it survives being moved.
+MOBILE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"   # the mobile/ package dir
+REPO="$(dirname "$MOBILE")"                               # parent — makes `mobile` importable
+VENV="$MOBILE/.venv"                                      # co-located virtualenv
+ENV_SH="$MOBILE/android-dev/android-env.sh"               # device toolchain env (QNN/Vulkan/Android)
 
 BACKEND="${1:-qualcomm}"
 WORKERS="${2:-16}"
 TOTAL="${3:-100000}"
-OUT="${4:-$REPO/tmp/corpus_${BACKEND}}"
+OUT="${4:-$MOBILE/tmp/corpus_${BACKEND}}"
 NODES="${NODES:-16}"
 
 # 1) environment
@@ -33,8 +36,8 @@ source "$ENV_SH"
 export PYTHONPATH="$REPO" CUDA_VISIBLE_DEVICES=""
 # venv/bin must be on PATH: executorch's QNN lowering shells out to `flatc` (FlatBuffers
 # compiler) which lives in the venv. Without it EVERY lowering fails → only a _crashes folder.
-export PATH="$REPO/venv/bin:$PATH"
-command -v flatc >/dev/null || { echo "FATAL: flatc not on PATH (expected $REPO/venv/bin/flatc)"; exit 1; }
+export PATH="$VENV/bin:$PATH"
+command -v flatc >/dev/null || { echo "FATAL: flatc not on PATH (expected $VENV/bin/flatc)"; exit 1; }
 cd "$REPO"
 echo ">> backend=$BACKEND workers=$WORKERS total=$TOTAL nodes=$NODES out=$OUT"
 echo ">> QNN_SDK_ROOT=${QNN_SDK_ROOT:-<unset>}"
@@ -42,7 +45,7 @@ echo ">> QNN_SDK_ROOT=${QNN_SDK_ROOT:-<unset>}"
 # 2) preflight — backend available AND a trivial graph really lowers (READY). This fails
 #    fast with a clear message instead of producing a fleet of crashing workers.
 echo ">> preflight: checking '$BACKEND' lowers a tiny graph ..."
-"$REPO/venv/bin/python" - "$BACKEND" <<'PY'
+"$VENV/bin/python" - "$BACKEND" <<'PY'
 import sys
 backend = sys.argv[1]
 from mobile.gen.export_et import build_job, available_backends
@@ -76,5 +79,5 @@ mkdir -p "$OUT"
 # 5) launch (foreground; the fleet prints a heartbeat with the live job count).
 #    Jobs land in $OUT/w<i>/w<i>_<idx>.job — count with:  find $OUT -name '*.job' | wc -l
 echo ">> launching fleet (Ctrl-C to stop) ..."
-exec "$REPO/venv/bin/python" mobile/pregen_fleet.py \
+exec "$VENV/bin/python" mobile/pregen_fleet.py \
     --workers "$WORKERS" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"

@@ -2,7 +2,34 @@
   "permissions": {
     "allow": [
       "Bash(awk '{print $2}')",
-      "Bash(python -c \"import torch, executorch, zmq, z3; print\\('torch', torch.__version__\\); print\\('zmq', zmq.__version__\\); print\\('z3 ok'\\)\")"
+      "Bash(python -c \"import torch, executorch, zmq, z3; print\\('torch', torch.__version__\\); print\\('zmq', zmq.__version__\\); print\\('z3 ok'\\)\")",
+      "Bash(nvidia-smi)",
+      "Bash(nvcc --version)",
+      "Bash(env)",
+      "Bash(python -c \"import torch; print\\(torch.__version__\\); print\\('cuda avail', torch.cuda.is_available\\(\\)\\); print\\('cuda ver', torch.version.cuda\\)\")",
+      "Bash(python3.12 -m venv --help)",
+      "Bash(python3.12 -c \"import ensurepip; print\\('ensurepip OK'\\)\")",
+      "Bash(timeout 40 pip index versions executorch)",
+      "Bash(timeout 40 python3.12 -m pip download --no-deps --dest /tmp/_etmeta executorch)",
+      "Bash(/data/jwen929/pytorch/venv/bin/python --version)",
+      "Bash(/data/jwen929/pytorch/venv/bin/python -m pip freeze)",
+      "Bash(/data/jwen929/pytorch/venv/bin/python -c 'import zmq; print\\('\\\\''zmq'\\\\'', zmq.__version__\\)')",
+      "Bash(python3.12 -m venv .venv)",
+      "Bash(.venv/bin/python --version)",
+      "Bash(.venv/bin/python -m pip install -q --upgrade pip)",
+      "Bash(.venv/bin/python -m pip install --dry-run --extra-index-url https://download.pytorch.org/whl/cpu executorch==1.3.1 torch==2.12.0+cpu)",
+      "Bash(export CUDA_VISIBLE_DEVICES=\"\")",
+      "Bash(.venv/bin/python -c ' *)",
+      "Read(//data/jwen929/**)",
+      "Bash(export PYTHONPATH=/data/jwen929 CUDA_VISIBLE_DEVICES=\"\")",
+      "Bash(/data/jwen929/mobile/.venv/bin/python -m mobile)",
+      "Bash(echo \"=== exit: $? ===\")",
+      "Bash(echo \"=== mobile/.venv ===\"; ls -ld /data/jwen929/mobile/.venv 2>&1; ls -ld /data/jwen929/mobile/.venv/bin/python 2>&1; echo \"=== find any .venv under mobile ===\"; find /data/jwen929/mobile -maxdepth 2 -name \".venv\" -o -maxdepth 2 -name \"venv\" 2>/dev/null | head)",
+      "Read(//usr/bin/**)",
+      "Bash(.venv/bin/python -c \"import torch, executorch, zmq, z3; print\\('ok', torch.__version__, torch.cuda.is_available\\(\\)\\)\")",
+      "Bash(.venv/bin/python -c \"import torch, executorch, zmq, z3; print\\('ok', torch.__version__, 'cuda:', torch.cuda.is_available\\(\\)\\)\")",
+      "Bash(timeout 90 .venv/bin/python pregen_fleet.py --workers 1 --total 3 --out corpus/_cwdtest --backend portable --logdir tmp/_cwdtest_logs)",
+      "Bash(.venv/bin/python -m py_compile pregen_fleet.py local_fleet.py prune_constraints.py __main__.py)"
     ]
   }
 }

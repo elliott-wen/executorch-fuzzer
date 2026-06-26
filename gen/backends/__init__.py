@@ -18,20 +18,22 @@ from .base import Backend
 from .portable import PortableBackend
 from .xnnpack import XnnpackBackend
 from .vulkan import VulkanBackend
-from .arm import ArmBackend
+from .ethosu import EthosUBackend
 from .qualcomm import QualcommBackend
 from .coreml import CoreMLBackend
 from .mps import MpsBackend
+from .openvino import OpenVINOBackend
 
 # Every known backend; the registry keeps only those whose deps import here.
 _ALL = [
     PortableBackend(),
     XnnpackBackend(),
     VulkanBackend(),
-    ArmBackend(),
+    EthosUBackend(),
     QualcommBackend(),
     CoreMLBackend(),
     MpsBackend(),
+    OpenVINOBackend(),
 ]
 _REGISTRY: dict[str, Backend] = {b.name: b for b in _ALL if b.is_available()}
 

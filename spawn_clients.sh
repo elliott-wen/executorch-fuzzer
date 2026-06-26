@@ -3,11 +3,16 @@
 # spawn_clients.sh — launch N mobile ExecuTorch executor clients against a broker.
 #
 # Usage:
-#   ./mobile/spawn_clients.sh [N]                 # N clients (default 128)
-#   N=64 HOST=10.0.0.5 ./mobile/spawn_clients.sh  # override via env
+#   ./mobile/spawn_clients.sh [N]                          # N xnnpack clients (default 128)
+#   BACKEND=xnnpack ./mobile/spawn_clients.sh 64           # 64 xnnpack clients
+#   N=64 HOST=10.0.0.5 ./mobile/spawn_clients.sh           # override via env
+#
+# Each backend has its OWN self-contained client folder (xnnpack_client/, ...);
+# BACKEND selects which one to launch.
 #
 # Env knobs (all optional):
 #   N            number of clients            (default 128)
+#   BACKEND      xnnpack | ...                (default xnnpack)
 #   HOST         broker host                  (default 127.0.0.1)
 #   CLIENT_PORT  broker --client-port         (default 15555)
 #   CTRL_PORT    broker --ctrl-port           (default 15556)
@@ -24,6 +29,7 @@
 set -uo pipefail
 
 N="${1:-${N:-128}}"
+BACKEND="${BACKEND:-xnnpack}"
 HOST="${HOST:-127.0.0.1}"
 CLIENT_PORT="${CLIENT_PORT:-15555}"
 CTRL_PORT="${CTRL_PORT:-15556}"
@@ -31,10 +37,15 @@ JOB_TIMEOUT="${JOB_TIMEOUT:-30}"
 STAGGER="${STAGGER:-0.1}"
 LOGDIR="${LOGDIR:-tmp/client_logs}"
 
-REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PY="$REPO/venv/bin/python"
+MOBILE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"   # the mobile/ package dir
+REPO="$(dirname "$MOBILE")"                               # parent — makes `mobile` importable
+PY="$MOBILE/.venv/bin/python"                             # co-located virtualenv
 export PYTHONPATH="$REPO"
 export CUDA_VISIBLE_DEVICES=""
+export PATH="$MOBILE/.venv/bin:$PATH"
+
+CLIENT="$MOBILE/${BACKEND}_client/${BACKEND}_client.py"  # per-backend self-contained executor
+[[ -f "$CLIENT" ]] || { echo "no client for BACKEND=$BACKEND (expected $CLIENT)" >&2; exit 1; }
 
 mkdir -p "$LOGDIR"
 pids=()
@@ -48,11 +59,11 @@ cleanup() {
 }
 trap cleanup INT TERM
 
-echo "spawning $N clients → broker $HOST (client-port $CLIENT_PORT, ctrl-port $CTRL_PORT)"
+echo "spawning $N $BACKEND clients → broker $HOST (client-port $CLIENT_PORT, ctrl-port $CTRL_PORT)"
 echo "per-client logs: $LOGDIR/client-<i>.log   (tail -f $LOGDIR/client-0.log)"
 
 for i in $(seq 0 $((N - 1))); do
-  "$PY" -m mobile client \
+  "$PY" "$CLIENT" \
       --host "$HOST" --client-port "$CLIENT_PORT" --ctrl-port "$CTRL_PORT" \
       --label "c$i" --job-timeout "$JOB_TIMEOUT" \
       > "$LOGDIR/client-$i.log" 2>&1 &

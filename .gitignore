@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# Local virtual environment (recreate from requirements.txt — see docs/environment-setup.md)
+.venv/
+
 # Generation output + scratch: corpus dirs, crash samples, logs, broker samples,
 # skip-reason TSVs, measurement TSVs/logs. The fuzzer writes all transient data here.
 tmp/
@@ -21,3 +24,5 @@ android/captures/
 # NOT ignored (tracked on purpose): approved_constraints/ (vendored constraint data),
 # gen/backends/, run_pregen.sh, *.md docs, and all package source.
 pytorch_ref/
+android-dev
+

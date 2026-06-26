@@ -10,6 +10,7 @@ the subsystem you need.
 
 | # | Doc | What it covers |
 |---|-----|----------------|
+| 0 | [environment-setup.md](environment-setup.md) | Python 3.12 venv, `requirements.txt`, the CPU-only / no-CUDA discipline, the device/Android toolchain |
 | 1 | [overview.md](overview.md) | What the tool is, the differential-testing idea, verdicts, core design principles |
 | 2 | [architecture.md](architecture.md) | End-to-end data flow, the ZeroMQ broker topology, crash isolation |
 | 3 | [graph-generation.md](graph-generation.md) | How a graph is built: the Z3 op model, the seed schedule, growth & anchoring, the adapter ladder, `out=` aliasing |

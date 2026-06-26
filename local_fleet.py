@@ -22,12 +22,19 @@ import argparse
 import os
 import signal
 import subprocess
+import sys
 import time
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
-PY = str(REPO / "venv" / "bin" / "python")
-ENV = {**os.environ, "PYTHONPATH": str(REPO), "CUDA_VISIBLE_DEVICES": ""}
+# The ONLY thing the parent dir is used for: putting it on PYTHONPATH so child
+# processes can `import mobile`. Nothing is ever written here.
+IMPORT_ROOT = Path(__file__).resolve().parent.parent
+# Use the same interpreter that launched this fleet (the co-located .venv), so it
+# survives the venv being moved. Its bin dir goes on PATH for `flatc` (FlatBuffers).
+PY = sys.executable
+_BIN = str(Path(PY).resolve().parent)
+ENV = {**os.environ, "PYTHONPATH": str(IMPORT_ROOT), "CUDA_VISIBLE_DEVICES": "",
+       "PATH": _BIN + os.pathsep + os.environ.get("PATH", "")}
 
 
 class Worker:
@@ -56,8 +63,10 @@ class Worker:
                  f"(restart #{self.restarts}) =====\n")
         fh.flush()
         self._fh = fh
+        # Inherit the launch cwd so relative --corpus / output paths resolve where the
+        # user ran the command. Imports work via PYTHONPATH=IMPORT_ROOT in ENV.
         self.proc = subprocess.Popen(self.cmd, stdout=fh, stderr=subprocess.STDOUT,
-                                     env=ENV, cwd=str(REPO))
+                                     env=ENV)
         self.started = time.monotonic()
         self.respawn_at = 0.0
 
@@ -97,8 +106,11 @@ def build_workers(a) -> list[Worker]:
                "--corpus", a.corpus]
         # one-shot: feeds the corpus once, then exits — never respawned.
         workers.append(Worker("feeder", cmd, logdir / "feeder.log", restart=False, **common))
+    client = IMPORT_ROOT / "mobile" / f"{a.backend}_client" / f"{a.backend}_client.py"
+    if not client.exists():
+        sys.exit(f"no client for --backend {a.backend} (expected {client})")
     for i in range(a.clients):
-        cmd = [PY, "-m", "mobile", "client", "--host", a.host,
+        cmd = [PY, str(client), "--host", a.host,
                "--client-port", str(a.client_port), "--ctrl-port", str(a.ctrl_port),
                "--label", f"c{i}", "--job-timeout", str(a.job_timeout)]
         workers.append(Worker(f"client-{i}", cmd, logdir / f"client-{i}.log", **common))
@@ -108,6 +120,8 @@ def build_workers(a) -> list[Worker]:
 def main() -> int:
     ap = argparse.ArgumentParser(description="supervise the mobile feeder + client fleet")
     ap.add_argument("--clients", type=int, default=128)
+    ap.add_argument("--backend", default="xnnpack",
+                    help="which self-contained executor to spawn (xnnpack, ...)")
     ap.add_argument("--corpus", default="", help="if set, run a one-shot feeder of this corpus (feeds once, exits)")
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--job-port", type=int, default=15554)

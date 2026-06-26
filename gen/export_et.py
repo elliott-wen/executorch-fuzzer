@@ -118,5 +118,15 @@ def build_job(src: str, backend: str = "portable", quantize: bool = False) -> Ex
     except Exception as e:
         return ExportResult("SKIP", f"to_executorch {type(e).__name__}: {str(e)[:160]}")
 
+    # For a QUANTIZED job, the fp32 eager oracle is the wrong reference — an int8 backend
+    # diverges from it by quantization error alone. Replace it with the quantized reference
+    # (the PT2E-converted graph run on CPU, same quantization space as the device), so a
+    # surviving diff is a real backend/compiler bug. See backends/base.quantized_reference.
+    if backend_obj.quantizes(quantize):
+        try:
+            eager = backend_obj.quantized_reference(ep, tuple(t.clone() for t in leaves))
+        except Exception as e:
+            return ExportResult("SKIP", f"quant-ref {type(e).__name__}: {str(e)[:160]}")
+
     return ExportResult("READY", "", pte=bytes(pte), inputs=leaves, eager=eager,
                         user_pos=user_pos)

@@ -25,13 +25,21 @@ import os
 import re
 import signal
 import subprocess
+import sys
 import threading
 import time
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
-PY = str(REPO / "venv" / "bin" / "python")
-ENV = {**os.environ, "PYTHONPATH": str(REPO), "CUDA_VISIBLE_DEVICES": ""}
+# The ONLY thing the parent dir is used for: putting it on PYTHONPATH so child workers
+# can `import mobile`. Nothing is ever written here — outputs go to the launch cwd.
+IMPORT_ROOT = Path(__file__).resolve().parent.parent
+# Spawn workers with the same interpreter that launched this fleet (the co-located
+# .venv), so it survives the venv being moved. Its bin dir goes on PATH because
+# executorch lowering shells out to `flatc` (FlatBuffers compiler), which lives there.
+PY = sys.executable
+_BIN = str(Path(PY).resolve().parent)
+ENV = {**os.environ, "PYTHONPATH": str(IMPORT_ROOT), "CUDA_VISIBLE_DEVICES": "",
+       "PATH": _BIN + os.pathsep + os.environ.get("PATH", "")}
 RESPAWN_CAP = 200   # safety net: each respawn skips one crash, so this only trips if a
                     # worker keeps crashing on different graphs (or OOMs) endlessly
 
@@ -104,8 +112,10 @@ def main() -> int:
 
     def launch(i: int) -> None:
         fh = open(logdir / f"w{i}.log", "ab")
+        # Inherit the fleet's launch cwd so a relative --out resolves where the user ran
+        # the command. Imports already work via PYTHONPATH=IMPORT_ROOT in ENV.
         p = subprocess.Popen(cmd(i), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                             env=ENV, cwd=str(REPO))
+                             env=ENV)
         last_beat[i] = time.monotonic()           # grace window starts at launch
         t = threading.Thread(target=reader, args=(i, p, fh), daemon=True)
         t.start()

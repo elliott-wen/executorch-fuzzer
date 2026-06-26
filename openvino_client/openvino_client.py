@@ -1,33 +1,59 @@
-"""client.py — EXECUTOR worker: pull .pte jobs from the broker, run them on ExecuTorch.
+"""openvino_client.py — OpenVINO EXECUTOR worker (a host-runtime client like xnnpack_client).
 
-One client = one worker = one ZeroMQ connection (REQ, LRU work-pull). Thin by design
-(ExecuTorch runtime + tensor I/O only — no z3, no export, no generation). This mirrors the
-phone worker, and it is crash-isolated the SAME way the phone is: a stable COORDINATOR (this
-process, holds the broker connection) drives a disposable warm EXECUTOR child (a forked process
-that holds the runtime). A native abort kills only the child → the coordinator reports CRASH and
-respawns it; a hung kernel is killed at the deadline → TIMEOUT + respawn. So the worker ALWAYS
-returns a verdict (RAN/SKIP/CRASH/TIMEOUT) — nothing relies on the broker detecting a disconnect.
-The broker just routes the result back to the feeder, which does the diff.
+Same role as the on-device Android client, the FVP/QNN clients, and the portable/xnnpack
+clients: pull `.pte` jobs from the broker, run them, and return the RAW output tensors over
+the language-neutral binary protocol. The feeder still owns the eager reference and does the
+diff — this process is a thin executor.
 
-Protocol (zmq REQ ↔ broker ROUTER backend):
-    send READY → recv JOB(pte+inputs) → run → send RESULT(raw outputs) → recv JOB → ...
-    (a SUB channel delivers STOP for clean fleet shutdown).
+What's special here: the `.pte` was lowered to the **OpenVINO** delegate (Intel CPU/GPU/NPU;
+see gen/backends/openvino.py OPENVINO_DEVICE), and it runs *in-process* on the ExecuTorch
+**host runtime** (`executorch.runtime`), which loads the OpenVINO backend the delegate's
+blobs call into. There is no external simulator to shell out to (unlike fvp_client/
+qnn_client); the runtime IS the device seam. Mechanically the run path is IDENTICAL to the
+xnnpack/portable clients — the difference is purely which backend the program was compiled
+for — so this stays a separate folder only to keep one self-contained client per backend.
+
+This requires the ExecuTorch runtime to be built with the OpenVINO backend registered
+(libopenvino_backend) and the openvino runtime importable; with the CPU device the .pte runs
+on this x86 host. GPU/NPU devices need Intel hardware + drivers.
+
+Because a hard kernel failure in the ExecuTorch runtime is a NATIVE abort that takes the
+whole process down, the run is crash-isolated the SAME way the phone is: a stable
+COORDINATOR (this process, holds the broker connection) drives a disposable warm EXECUTOR
+child (a forked process that holds the runtime). A native abort kills only the child →
+the coordinator reports CRASH and respawns it; a hung kernel is killed at the deadline →
+TIMEOUT + respawn. So the worker ALWAYS returns a verdict (RAN/SKIP/CRASH/TIMEOUT) —
+nothing relies on the broker detecting a disconnect.
+
+    JOB(pte+inputs) ─► warm fork runs forward(*inputs) on the ET runtime (OpenVINO delegate)
+                    ─► RESULT(raw outputs) ─► broker ─► feeder diffs vs eager
+
+Usage:
+    python openvino_client/openvino_client.py --host <broker-ip> [--job-timeout 30]
 """
 
 from __future__ import annotations
 
 import os
-# CPU-only (cu* torch build must not touch CUDA). Set before torch is imported.
-os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")     # CPU-only; set before torch is imported
 
+import argparse
 import multiprocessing as mp
 import queue as _queue
+import sys
 import tempfile
 import time
+from pathlib import Path
 
 import zmq
 
-from mobile.net import protocol as P
+HERE = Path(__file__).resolve().parent
+IMPORT_ROOT = HERE.parent.parent                      # dir on sys.path so `import mobile` resolves
+sys.path.insert(0, str(IMPORT_ROOT))
+
+from mobile.net import protocol as P                  # noqa: E402
+
+BACKEND = "openvino"
 
 # Known-NOISE substrings: ARM cpuinfo probing on x86 + a torch deprecation warning. Unconditional
 # startup chatter, never part of an actual failure — dropped, but EVERYTHING else is preserved.
@@ -53,7 +79,7 @@ def _executor_main(job_q, res_q):
     from mobile.net.et_runner import run_pte
     try:
         from executorch.runtime import Runtime
-        Runtime.get()                                  # warm the kernel registry once
+        Runtime.get()                                  # warm the kernel registry (incl. OpenVINO) once
     except Exception:
         pass
     while True:
@@ -126,7 +152,7 @@ class Executor:
             self.proc.terminate()
 
 
-def run_client(host: str, client_port: int, ctrl_port: int, label: str = "local",
+def run_client(host: str, client_port: int, ctrl_port: int, label: str = BACKEND,
                job_timeout: float = 30.0) -> int:
     """Pull jobs from the broker (REQ, LRU), run each in a crash-isolated warm child, return the
     raw outputs. Exits cleanly on the broker's STOP broadcast; zmq auto-reconnects if it restarts."""
@@ -145,7 +171,8 @@ def run_client(host: str, client_port: int, ctrl_port: int, label: str = "local"
     poller.register(req, zmq.POLLIN)
     poller.register(sub, zmq.POLLIN)
 
-    print(f"  client[{label}] → broker tcp://{host}:{client_port} (warm executor child)", flush=True)
+    print(f"  {BACKEND}_client[{label}] → broker tcp://{host}:{client_port} (warm executor child)",
+          flush=True)
     req.send_multipart([b"READY"])
     ran = 0
     try:
@@ -164,10 +191,26 @@ def run_client(host: str, client_port: int, ctrl_port: int, label: str = "local"
             req.send_multipart([b"RESULT", *result])
             ran += 1
             if ran % 100 == 0:
-                print(f"  client[{label}] ran {ran} jobs", flush=True)
+                print(f"  {BACKEND}_client[{label}] ran {ran} jobs", flush=True)
     finally:
         executor.close()
         req.close(linger=0)
         sub.close(linger=0)
-    print(f"  client[{label}] done — ran {ran} jobs", flush=True)
+    print(f"  {BACKEND}_client[{label}] done — ran {ran} jobs", flush=True)
     return 0
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="OpenVINO ExecuTorch executor client")
+    ap.add_argument("--host", default="127.0.0.1", help="broker host")
+    ap.add_argument("--client-port", type=int, default=15555)
+    ap.add_argument("--ctrl-port", type=int, default=15556)
+    ap.add_argument("--label", default=BACKEND)
+    ap.add_argument("--job-timeout", type=float, default=30.0,
+                    help="kill + TIMEOUT a job whose ExecuTorch run exceeds this")
+    a = ap.parse_args()
+    return run_client(a.host, a.client_port, a.ctrl_port, a.label, a.job_timeout)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

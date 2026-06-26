@@ -15,7 +15,7 @@ Two ways to point it at work — same pipeline, same compare:
 
 Single-graph / --from-tsv runs print one JSON object per job (job_id, status, detail, op_chain,
 per-output {dtype, shape, max_abs_delta, eager, et}) — the debug observation. Where it RAN is just
-which worker is connected: a local `mobile client` (host, x86) or the phone (device, ARM).
+which worker is connected: a local host executor (xnnpack_client, x86) or the phone (device, ARM).
 
 Transport: DEALER ↔ broker frontend ROUTER. A bounded in-flight WINDOW gives end-to-end
 backpressure. A job with no result within the timeout is recorded TIMEOUT (a dead/hung worker).

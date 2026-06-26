@@ -13,8 +13,10 @@ broker streams that corpus over ZeroMQ to executor clients (local now, phones la
   # FEED (one): stream the corpus to the broker (PUSH) once, then exit.
   python -m mobile feed --corpus tmp/corpus
 
-  # CLIENT (one or more / per device): pull jobs, run .pte on the ExecuTorch runtime.
-  python -m mobile client --host <broker-ip> [--job-timeout 30]
+  # CLIENT (one or more / per device): pull jobs, run .pte. Each backend has its OWN
+  # self-contained executor folder (the host analog of the Android/FVP/QNN clients);
+  # the in-process ExecuTorch runtime runs both xnnpack- and portable-lowered programs:
+  #   python xnnpack_client/xnnpack_client.py --host <broker-ip> [--job-timeout 30]
 
 Start the broker first, then feed + any number of clients (locally or on more
 machines/phones). mobile/local_fleet.py manages the feeder + client fleet with respawn.
@@ -81,14 +83,6 @@ def main() -> int:
                     help="seconds between feed status lines")
     fd.add_argument("-v", "--verbose", action="store_true")
 
-    cl = sub.add_parser("client", help="executor: run .pte's on the ExecuTorch runtime")
-    cl.add_argument("--host", default="127.0.0.1", help="broker host")
-    cl.add_argument("--client-port", type=int, default=15555)
-    cl.add_argument("--ctrl-port", type=int, default=15556)
-    cl.add_argument("--label", default="local")
-    cl.add_argument("--job-timeout", type=float, default=30.0,
-                    help="kill + TIMEOUT a job whose ExecuTorch run exceeds this")
-
     opts = ap.parse_args()
 
     if opts.cmd == "broker":
@@ -106,10 +100,7 @@ def main() -> int:
                           opts.jobs, opts.from_tsv, opts.status, opts.graphs,
                           opts.timeout, opts.skip_log, opts.window,
                           opts.heartbeat, opts.verbose)
-    # client
-    from mobile.net.client import run_client
-    return run_client(opts.host, opts.client_port, opts.ctrl_port, opts.label,
-                      opts.job_timeout)
+    raise SystemExit(f"unknown command: {opts.cmd}")  # argparse(required=True) makes this unreachable
 
 
 if __name__ == "__main__":

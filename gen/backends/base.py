@@ -53,19 +53,46 @@ class Backend:
         """Float lowering — subclass implements (portable / partitioner / ...)."""
         raise NotImplementedError
 
+    def quantizes(self, quantize: bool) -> bool:
+        """Does a job with this (backend, quantize flag) actually run quantized? Drives
+        whether pregen stores a QUANTIZED reference instead of the fp32 eager oracle.
+        Always-quantized backends (Ethos-U) override this to True regardless of the flag."""
+        return bool(quantize and self.supports_quantization)
 
-def _quantize_pt2e(ep, example_inputs, quantizer):
-    """Shared PT2E quantization: prepare → calibrate (one sample) → convert → re-export.
-    Backends supply only the quantizer; the flow is identical across them."""
+    def quantized_reference(self, ep, example_inputs) -> list:
+        """Reference outputs in this backend's QUANTIZED numeric space: the PT2E-converted
+        graph run on CPU — 'what a faithful int implementation should produce'. This is the
+        correct oracle for a quantized backend, because int8 device output diverges from the
+        fp32 eager oracle by quantization error alone; comparing device-vs-this leaves only a
+        genuine backend/compiler divergence. Returns a flat list of output tensors."""
+        converted = _convert_pt2e_module(ep, example_inputs, self.quantizer())
+        with torch.no_grad():
+            out = converted(*[t.clone() for t in example_inputs])
+        return list(out) if isinstance(out, (tuple, list)) else [out]
+
+
+def _convert_pt2e_module(ep, example_inputs, quantizer):
+    """Shared PT2E front half: prepare → calibrate (one sample) → convert → the converted
+    CPU-runnable GraphModule. Used both by lowering (which re-exports it) and by the
+    quantized-reference path (which runs it). Quantization is deterministic, so the module
+    produced here carries the SAME scales/zero-points the lowered .pte was built with."""
     from torchao.quantization.pt2e.quantize_pt2e import prepare_pt2e, convert_pt2e
-    from torch.export import export
 
-    module = ep.module()
+    # check_guards=False: torch>=2.12 export() injects a no-op `_guards_fn` call_module
+    # node; it survives the post-quant re-export and crashes backends whose lowering runs
+    # ExportPass interpreters that reject call_module (e.g. Arm/Ethos-U DecomposeSelectScatter).
+    # The Ethos-U tutorial extracts the module the same way.
+    module = ep.module(check_guards=False)
     prepared = prepare_pt2e(module, quantizer)
     with torch.no_grad():
         prepared(*example_inputs)                  # calibrate on the example inputs
-    converted = convert_pt2e(prepared)
-    return export(converted, example_inputs)
+    return convert_pt2e(prepared)
+
+
+def _quantize_pt2e(ep, example_inputs, quantizer):
+    """Shared PT2E quantization: convert (above) → re-export to an ExportedProgram."""
+    from torch.export import export
+    return export(_convert_pt2e_module(ep, example_inputs, quantizer), example_inputs)
 
 
 def lower_portable(ep):
