@@ -15,13 +15,20 @@
 #     and the GPUs are shared/contended. We therefore pin the +cpu torch build pulled
 #     from the PyTorch CPU index below. Do NOT install a +cuXXX torch here.
 #
-# The +cpu wheels (torch, torchao, executorch) live on the PyTorch CPU index, not PyPI:
+# The +cpu wheels (torch, torchao, executorch) live on the PyTorch CPU indexes, not PyPI.
+# executorch is the 1.4.0 NIGHTLY (matches the pytorch_ref/executorch source tree, 1.4.0a0)
+# so a bare-metal Arm runner BUILT from that source matches the .pte the wheel serializes —
+# the 1.3.1 stable wheel skewed against the 1.4.0a0 source and broke the FVP runner path.
+--pre
+--extra-index-url https://download.pytorch.org/whl/nightly/cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 # --- Core: graph lowering + runtime -----------------------------------------
-# executorch pulls torch==2.12.0+cpu, torchao, coremltools, numpy, sympy,
-# flatbuffers, etc. as dependencies. torch is pinned explicitly to lock the CPU build.
-executorch==1.3.1
+# executorch pulls torchao, coremltools, numpy, sympy, flatbuffers, etc. torch is pinned
+# explicitly to lock the CPU build (the 1.4.0 executorch nightly is satisfied by 2.12.0+cpu).
+# NOTE: nightly wheels are garbage-collected; if this exact dev build is gone, bump to the
+# current 1.4.0.devYYYYMMDD+cpu (keep it matched to the pytorch_ref/executorch source tree).
+executorch==1.4.0.dev20260625+cpu
 torch==2.12.0+cpu
 
 # --- Constraint solver (graph generation) -----------------------------------
@@ -31,3 +38,9 @@ z3-solver==4.16.0.0
 # NOTE: not present in the gold venv (the networking side was never run from it),
 # but net/{broker,feed,client,protocol}.py import `zmq`. Required to run the fleet.
 pyzmq==27.1.0
+
+# --- Qualcomm (QNN) backend -------------------------------------------------
+# executorch.backends.qualcomm.__init__ hard-requires cpuinfo; without it the import
+# raises and the backend silently drops out of available_backends() ("env not sourced
+# / SDK missing?"). Needed for the qualcomm/QNN pregen corpus.
+py-cpuinfo==9.0.0

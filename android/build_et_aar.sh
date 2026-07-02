@@ -10,14 +10,20 @@
 # Result → mobile/android/app/libs/executorch.aar  (point the app at it; see notes at the bottom).
 set -ex
 
-ET=/data/jwen929/pytorch/pytorch/executorch
-export ANDROID_NDK=${ANDROID_NDK:-/data/jwen929/android-dev/sdk/ndk/28.0.13004108}
-export ANDROID_HOME=${ANDROID_HOME:-/data/jwen929/android-dev/sdk}
-export JAVA_HOME=${JAVA_HOME:-/data/jwen929/android-dev/jdk17}
+# Repo-relative paths (this script lives at <mobile>/android/). Survives the tree moving;
+# every value stays overridable via the environment. Sourcing android-env.sh sets the
+# toolchain (NDK/JDK/SDK/QNN/glslc) from mobile/android-dev/.
+MOBILE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+[ -f "$MOBILE/android-dev/android-env.sh" ] && source "$MOBILE/android-dev/android-env.sh"
+
+ET=${ET:-$MOBILE/pytorch_ref/executorch}
+export ANDROID_NDK=${ANDROID_NDK:-$MOBILE/android-dev/sdk/ndk/28.0.13004108}
+export ANDROID_HOME=${ANDROID_HOME:-$MOBILE/android-dev/sdk}
+export JAVA_HOME=${JAVA_HOME:-$MOBILE/android-dev/jdk17}
 export PATH="$JAVA_HOME/bin:$PATH"
 export PYTHON_EXECUTABLE=${PYTHON_EXECUTABLE:-/data/jwen929/pytorch/venv/bin/python}
 ABIS=${ANDROID_ABIS:-arm64-v8a x86_64}          # phone (arm64-v8a) + emulator (x86_64)
-OUT_AAR=/data/jwen929/pytorch/mobile/android/app/libs/executorch.aar
+OUT_AAR=${OUT_AAR:-$MOBILE/android/app/libs/executorch.aar}
 
 # Backends beyond XNNPACK — BOTH OFF by default (a plain run builds XNNPACK-only):
 #   VULKAN (GPU delegate): enable with WITH_VULKAN=ON. Its compute shaders compile to SPIR-V via a
@@ -26,8 +32,8 @@ OUT_AAR=/data/jwen929/pytorch/mobile/android/app/libs/executorch.aar
 #     and fall back to the NDK's. The device supplies libvulkan at runtime.
 #   QNN (Qualcomm Hexagon NPU): enable by exporting QNN_SDK_ROOT=<licensed Qualcomm QNN/QAIRT SDK>
 #     (arm64-v8a only).
-WITH_VULKAN=${WITH_VULKAN:-OFF}
-GLSLC_DIR=${GLSLC_DIR:-/data/jwen929/android-dev/shaderc-src/build/glslc}
+WITH_VULKAN=${WITH_VULKAN:-ON}
+GLSLC_DIR=${GLSLC_DIR:-$MOBILE/android-dev/shaderc-src/build/glslc}
 export PATH="$GLSLC_DIR:$(echo "$ANDROID_NDK"/shader-tools/* 2>/dev/null | tr ' ' ':'):$PATH"  # glslc for SPIR-V
 if [ -n "${QNN_SDK_ROOT:-}" ]; then
   echo ">>> QNN: ENABLED (QNN_SDK_ROOT=$QNN_SDK_ROOT, arm64-v8a only)"

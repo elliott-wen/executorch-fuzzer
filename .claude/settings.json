@@ -29,7 +29,9 @@
       "Bash(.venv/bin/python -c \"import torch, executorch, zmq, z3; print\\('ok', torch.__version__, torch.cuda.is_available\\(\\)\\)\")",
       "Bash(.venv/bin/python -c \"import torch, executorch, zmq, z3; print\\('ok', torch.__version__, 'cuda:', torch.cuda.is_available\\(\\)\\)\")",
       "Bash(timeout 90 .venv/bin/python pregen_fleet.py --workers 1 --total 3 --out corpus/_cwdtest --backend portable --logdir tmp/_cwdtest_logs)",
-      "Bash(.venv/bin/python -m py_compile pregen_fleet.py local_fleet.py prune_constraints.py __main__.py)"
+      "Bash(.venv/bin/python -m py_compile pregen_fleet.py local_fleet.py prune_constraints.py __main__.py)",
+      "WebFetch(domain:docs.pytorch.org)",
+      "WebSearch"
     ]
   }
 }

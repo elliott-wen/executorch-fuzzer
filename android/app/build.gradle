@@ -24,14 +24,17 @@ android {
     buildTypes {
         release { minifyEnabled false }
     }
-    // 16 KB page support: store .so uncompressed + page-aligned in the APK (AGP 8.5.1+ uses
-    // 16 KB zipalign). NOTE: this fixes the APK *packaging* only — the .so must ALSO be linked
-    // with -Wl,-z,max-page-size=16384 (ELF segment alignment). The prebuilt executorch 0.6.0
-    // AAR is 4 KB-aligned, so a fully 16 KB-compatible APK needs the AAR built from source with
-    // NDK r27+ (see mobile/android/README_16KB.md).
+    // QNN/HTP requires the Hexagon skel (libQnnHtpV*Skel.so) to exist as a REAL FILE in a path
+    // the DSP's fastRPC loader can read — the APK native lib dir (/data/app/.../lib/arm64,
+    // SELinux apk_data_file). useLegacyPackaging=true makes the installer EXTRACT the .so there;
+    // with =false they are only mmap'd from the .apk (no on-disk file) and the skel fails to load
+    // ("Failed to create transport for device / load skel, error: 4000"). Extracting to the app's
+    // private files dir does NOT work — fastRPC can't read app_data_file. See ExecutorService.kt.
+    // Trade-off: this drops the 16 KB-aligned APK packaging (fine for 4 KB-page test devices like
+    // the ROG Phone 6 / SM8475; revisit for 16 KB-page hardware — see README_16KB.md).
     packaging {
         jniLibs {
-            useLegacyPackaging = false
+            useLegacyPackaging = true
         }
     }
 }

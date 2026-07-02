@@ -32,9 +32,9 @@ fleet of executors that can live on other machines/phones).
 
 A `pregen` worker, for each index in its slice:
 
-1. builds a valid graph (`gen/graph_build.build_graph`),
-2. emits it as standalone source (`gen/graph_ir.GenGraph.emit`),
-3. runs the eager reference and lowers to `.pte` (`gen/export_et.build_job`),
+1. builds a valid graph (`gen/graph/build.build_graph`),
+2. emits it as standalone source (`gen/graph/ir.GenGraph.emit`),
+3. runs the eager reference and lowers to `.pte` (`gen/export/job.build_job`),
 4. writes a `.job` (the wire payload) + a `.py` (the human-readable repro) to the corpus.
 
 Generation is parallelized by `pregen_fleet.py` across N workers writing **disjoint**

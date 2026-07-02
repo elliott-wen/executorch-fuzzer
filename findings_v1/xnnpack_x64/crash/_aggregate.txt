@@ -1,0 +1,39 @@
+# Crash localizer aggregate over 5157 CRASH jobs
+
+## Verdict (did the stored .pte reproduce the abort?)
+  SIGABRT        4980  96.6%
+  SIGFPE          170   3.3%
+  SIGSEGV           7   0.1%
+
+## Firing kernel file (where the fatal assert lives)  [5157 reproduced aborts]
+    4979  tensor_impl.h
+     166  ?
+      11  reduce_util.cpp
+       1  op_embedding.cpp
+
+## Normalized abort signatures (the deduplicated crash REASONS)
+    3539  [tensor_impl.h:#] In function size(), assert failed (dim < dim_ && dim >= #): Dimension out of range (expected to be in range of [#, #], but got -#
+    1430  [tensor_impl.h:#] In function size(), assert failed (dim < dim_ && dim >= #): Dimension out of range (expected to be in range of [#, -#], but got #
+     166  
+      10  [reduce_util.cpp:#] dtype is #
+       6  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Half, Long} | [tensor_impl.h:#] In function size(), 
+       1  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Float, Long} | [tensor_impl.h:#] In function size(),
+       1  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Float, Long} | [tensor_impl.h:#] In function size(),
+       1  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Bool, Long} | [tensor_impl.h:#] In function size(), 
+       1  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Half, Float} | [tensor_impl.h:#] In function size(),
+       1  [op_embedding.cpp:#] In function embedding_out(), assert failed (ix_type == ScalarType::Long || ix_type == ScalarType::Int): Expected indices tensor t
+       1  [reduce_util.cpp:#] dtype is # | [reduce_util.cpp:#] dtype is # | [reduce_util.cpp:#] dtype is #
+
+## Attribution of the tensor_impl.h size() aborts (4979)
+  by range sub-pattern:
+      3548  range[0,N] got -1 -> negative dim (narrow/select)
+      1431  range[0,-1] got 0  -> 0-D input (unfold/dim-on-scalar)
+  by highest-priority suspect op present in the graph:
+      3722  narrow_copy
+      1257  unfold_copy
+
+## Non-tensor_impl aborts (178) — other / potentially new crash reasons
+    166  [?] 
+     10  [reduce_util.cpp] [reduce_util.cpp:#] dtype is #
+      1  [op_embedding.cpp] [op_embedding.cpp:#] In function embedding_out(), assert failed (ix_type == ScalarType::Long || ix_type == ScalarType::Int): Expec
+      1  [reduce_util.cpp] [reduce_util.cpp:#] dtype is # | [reduce_util.cpp:#] dtype is # | [reduce_util.cpp:#] dtype is #

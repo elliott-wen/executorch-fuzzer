@@ -1,0 +1,107 @@
+# Localizer aggregate over 10988 mismatch jobs
+
+## Coverage
+  ok                   9731  88.6%
+  no_reproduce         1149  10.5%
+  err:RuntimeError      107   1.0%
+  err:AssertionError      1   0.0%
+  (localized OK = 9731; these are attributed to a born-here root op)
+
+## Born-here ROOT op (first-divergence) — the deduplicated bug signatures
+root_op                           total  kind breakdown
+bitwise_left_shift                 1766  delta:1642 nonfinite:90 shape:32 dtype:2
+select_scatter                     1177  dtype:1169 shape:6 delta:2
+remainder                           933  delta:898 nonfinite:21 shape:8 dtype:6
+sum                                 628  delta:626 shape:1 dtype:1
+sqrt                                471  nonfinite:464 dtype:4 delta:2 shape:1
+prod                                457  delta:446 shape:8 nonfinite:3
+exp                                 438  nonfinite:435 dtype:2 shape:1
+sign                                424  nonfinite:415 delta:7 shape:2
+broadcast_to                        275  shape:275
+minimum                             253  nonfinite:251 shape:2
+relu                                247  nonfinite:244 delta:2 shape:1
+hardtanh                            225  nonfinite:215 shape:4 delta:4 dtype:2
+_native_batch_norm_legit            219  nonfinite:183 delta:34 dtype:1 shape:1
+maximum                             192  nonfinite:185 shape:3 delta:2 dtype:2
+pow                                 107  delta:69 nonfinite:24 shape:10 dtype:4
+_to_copy                             89  delta:78 nonfinite:6 dtype:3 shape:2
+bitwise_right_shift                  89  delta:73 shape:12 dtype:4
+_cdist_forward                       83  nonfinite:80 shape:2 delta:1
+native_group_norm                    69  nonfinite:65 shape:2 dtype:1 delta:1
+fmod                                 55  delta:40 nonfinite:8 shape:4 dtype:3
+_log_softmax                         43  nonfinite:41 shape:1 dtype:1
+floor_divide                         39  nonfinite:20 delta:16 shape:3
+logit                                38  nonfinite:17 delta:11 shape:6 dtype:4
+lt                                   35  delta:31 shape:4
+_pdist_forward                       34  nonfinite:34
+native_layer_norm                    33  nonfinite:20 delta:11 shape:2
+gt                                   32  delta:28 shape:4
+atan2                                29  delta:15 nonfinite:11 shape:2 dtype:1
+cos                                  28  delta:15 nonfinite:7 dtype:4 shape:2
+div                                  25  nonfinite:14 delta:5 shape:3 dtype:3
+slice_copy                           25  delta:11 shape:8 nonfinite:6
+clamp                                24  nonfinite:14 shape:5 delta:4 dtype:1
+le                                   23  delta:16 shape:7
+asin                                 23  nonfinite:14 dtype:7 shape:2
+atan                                 22  nonfinite:15 delta:3 dtype:3 shape:1
+reciprocal                           21  nonfinite:13 delta:4 shape:4
+tan                                  21  delta:12 nonfinite:5 shape:4
+ceil                                 20  delta:15 nonfinite:4 shape:1
+min                                  20  delta:8 nonfinite:5 shape:5 dtype:2
+rsqrt                                19  nonfinite:10 dtype:6 delta:2 shape:1
+
+## Inherited vs born (flagged output op  →  true root op)
+  flagged op IS the root (born at the flagged op): 4462  (45.9%)
+  flagged op INHERITED from a different root op  : 5269  (54.1%)
+
+  For each frequently-FLAGGED op: true root distribution (top 3)
+   select_scatter               n=  908 self=  89%  ->  select_scatter:810, sum:11, remainder:9
+   bitwise_left_shift           n=  828 self=  86%  ->  bitwise_left_shift:713, remainder:14, prod:9
+   remainder                    n=  602 self=  78%  ->  remainder:472, bitwise_left_shift:19, prod:6
+   sum                          n=  361 self=  83%  ->  sum:298, select_scatter:9, bitwise_left_shift:8
+   exp                          n=  336 self=  78%  ->  exp:262, sqrt:6, sum:6
+   sign                         n=  334 self=  75%  ->  sign:252, bitwise_left_shift:14, select_scatter:7
+   prod                         n=  302 self=  76%  ->  prod:231, bitwise_left_shift:11, select_scatter:7
+   sqrt                         n=  251 self=  80%  ->  sqrt:202, relu:3, remainder:3
+   minimum                      n=  214 self=  74%  ->  minimum:158, bitwise_left_shift:13, sum:7
+   hardtanh                     n=  190 self=  75%  ->  hardtanh:142, bitwise_left_shift:6, sqrt:5
+   topk                         n=  184 self=   0%  ->  broadcast_to:84, narrow_copy:6, bitwise_left_shift:4
+   maximum                      n=  175 self=  65%  ->  maximum:114, bitwise_left_shift:9, remainder:8
+   relu                         n=  175 self=  85%  ->  relu:148, exp:6, sum:3
+   pow                          n=  161 self=  35%  ->  pow:56, bitwise_left_shift:22, prod:9
+   min                          n=  160 self=   4%  ->  broadcast_to:52, bitwise_left_shift:10, sum:9
+   floor_divide                 n=  157 self=  13%  ->  floor_divide:20, bitwise_left_shift:14, remainder:11
+   max                          n=  144 self=   2%  ->  broadcast_to:30, bitwise_left_shift:25, sum:10
+   _native_batch_norm_legit     n=  117 self=  85%  ->  _native_batch_norm_legit:100, sqrt:5, linear:2
+
+## Distinct (root_op, kind) signatures ranked — the agent worklist
+    1642  bitwise_left_shift  [delta]
+    1169  select_scatter  [dtype]
+     898  remainder  [delta]
+     626  sum  [delta]
+     464  sqrt  [nonfinite]
+     446  prod  [delta]
+     435  exp  [nonfinite]
+     415  sign  [nonfinite]
+     275  broadcast_to  [shape]
+     251  minimum  [nonfinite]
+     244  relu  [nonfinite]
+     215  hardtanh  [nonfinite]
+     185  maximum  [nonfinite]
+     183  _native_batch_norm_legit  [nonfinite]
+      90  bitwise_left_shift  [nonfinite]
+      80  _cdist_forward  [nonfinite]
+      78  _to_copy  [delta]
+      73  bitwise_right_shift  [delta]
+      69  pow  [delta]
+      65  native_group_norm  [nonfinite]
+      41  _log_softmax  [nonfinite]
+      40  fmod  [delta]
+      34  _pdist_forward  [nonfinite]
+      34  _native_batch_norm_legit  [delta]
+      32  bitwise_left_shift  [shape]
+      31  lt  [delta]
+      28  gt  [delta]
+      24  pow  [nonfinite]
+      21  remainder  [nonfinite]
+      20  native_layer_norm  [nonfinite]

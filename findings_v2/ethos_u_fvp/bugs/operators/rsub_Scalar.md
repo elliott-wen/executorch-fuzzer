@@ -1,0 +1,26 @@
+# Ethos-U operator bug — `rsub.Scalar`
+
+> ⚠️ **INTERMITTENT — 1/5 reproductions.** Non-deterministic (wrong on some runs, correct on others) — report as intermittent, not a stable bug. See `../../REVERIFICATION.md`.
+
+
+**Failure mode:** mismatch · **Category:** wrong value · **Verdict:** GENUINE (single-op isolation)
+**Device:** Arm Corstone-300 FVP (Ethos-U55, int8/Vela) — device-verified against the PT2E-quantized CPU reference
+
+## What it is
+Rebuilt as a **one-op graph fed the op's exact runtime (quantized) inputs**, lowered to Ethos-U, run on the FVP, and diffed against the PT2E CPU reference. The op **diverges as the sole output with finite inputs** → genuine kernel/compiler bug (not an upstream or graph-context artifact).
+
+## Device-verified evidence
+- **Divergence:** out[0] max|delta|=1.003e+01 (rtol=0.01 atol=0.001)
+- **Input dtype(s):** torch.float32
+- **eager (reference):** [7.94203, 7.94203, 5.46506, 5.46506, 8.25657, 10.02583]
+- **device (Ethos-U):** [7.94203, 0.11795, 0.31454, 0.31454, 0.55044, 0.0]
+- **worst element:** eager `10.02583` vs device `0.0`
+- **Source rep:** `w21:726` out[3]
+
+## Reproduce
+```
+source tmp/ethos_env.sh   # FVP + toolchain on PATH; broker on 127.0.0.1:15574
+BISECT_BACKEND=ethos-u BISECT_CORPUS=corpus_v2/ethos-u BISECT_QUANTIZE=1 BROKER_PORT=15574 \
+  ISO_DEV_TIMEOUT=200 python tmp/isolate_op.py w21:726 3
+```
+Prints a JSON verdict; a stable `GENUINE`/`NONFINITE_OUT` with the divergence above confirms the bug.

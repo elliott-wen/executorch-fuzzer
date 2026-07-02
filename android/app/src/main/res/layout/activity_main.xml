@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:hint="e.g. 10.0.0.5"
         android:inputType="text"
-        android:text="10.0.2.2" />
+        android:text="130.216.217.169" />
 
     <TextView
         android:layout_width="match_parent"

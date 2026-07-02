@@ -6,7 +6,7 @@ the language-neutral binary protocol. The feeder still owns the eager reference 
 diff — this process is a thin executor.
 
 What's special here: the `.pte` was lowered to the **OpenVINO** delegate (Intel CPU/GPU/NPU;
-see gen/backends/openvino.py OPENVINO_DEVICE), and it runs *in-process* on the ExecuTorch
+see gen/export/backends/openvino.py OPENVINO_DEVICE), and it runs *in-process* on the ExecuTorch
 **host runtime** (`executorch.runtime`), which loads the OpenVINO backend the delegate's
 blobs call into. There is no external simulator to shell out to (unlike fvp_client/
 qnn_client); the runtime IS the device seam. Mechanically the run path is IDENTICAL to the

@@ -71,6 +71,6 @@ Three disciplines guarantee that:
 ## Self-contained
 
 The `mobile/` package owns its entire pipeline — a vendored Z3 constraint solver
-(`engine/`), graph generation (`gen/`), and transport (`net/`). Its only external
+(`gen/z3engine/`), graph generation (`gen/`), and transport (`net/`). Its only external
 dependencies are the `z3`, `torch`, and `executorch` libraries plus the
 `approved_constraints/` data that encodes each op's preconditions.

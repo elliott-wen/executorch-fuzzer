@@ -1,0 +1,397 @@
+corpus_v1/qnn/w0/w0_735.py	RESULT	nonfinite	logit	n14	14
+corpus_v1/qnn/w10/w10_1531.py	RESULT	nonfinite	abs	n1	1
+corpus_v1/qnn/w1/w1_2142.py	RESULT	nonfinite	log	n2	2
+corpus_v1/qnn/w1/w1_124.py	RESULT	nonfinite	logit	n5	5
+corpus_v1/qnn/w0/w0_1407.py	RESULT	delta	slice_copy	n3	3
+corpus_v1/qnn/w1/w1_2423.py	RESULT	nonfinite	floor_divide	n4	4
+corpus_v1/qnn/w11/w11_217.py	RESULT	nonfinite	mul	n8	8
+corpus_v1/qnn/w1/w1_793.py	RESULT	delta	log10	n7	7
+corpus_v1/qnn/w10/w10_2622.py	RESULT	delta	maximum	n22	22
+corpus_v1/qnn/w0/w0_1032.py	RESULT	delta	_to_copy	n7	7
+corpus_v1/qnn/w11/w11_469.py	RESULT	delta	rsub	n4	4
+corpus_v1/qnn/w11/w11_1006.py	RESULT	delta	remainder	n6	6
+corpus_v1/qnn/w1/w1_1673.py	RESULT	nonfinite	logit	n1	1
+corpus_v1/qnn/w11/w11_1329.py	RESULT	nonfinite	rsqrt	n3	3
+corpus_v1/qnn/w11/w11_1586.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w10/w10_1822.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w10/w10_220.py	RESULT	delta	remainder	n1	1
+corpus_v1/qnn/w0/w0_2159.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w11/w11_1879.py	RESULT	delta	ne	n7	7
+corpus_v1/qnn/w10/w10_1284.py	RESULT	delta	isnan	n2	2
+corpus_v1/qnn/w0/w0_1864.py	RESULT	delta	prod	n3	3
+corpus_v1/qnn/w10/w10_445.py	RESULT	shape	where	n0	0
+corpus_v1/qnn/w1/w1_368.py	RESULT	delta	rsub	n0	0
+corpus_v1/qnn/w0/w0_35.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w11/w11_83.py	RESULT	delta	mm	n0	0
+corpus_v1/qnn/w12/w12_1198.py	RESULT	delta	tril	n2	2
+corpus_v1/qnn/w12/w12_2477.py	RESULT	delta	var	n7	7
+corpus_v1/qnn/w12/w12_1740.py	RESULT	nonfinite	floor_divide	n7	7
+corpus_v1/qnn/w12/w12_2085.py	RESULT	nonfinite	transpose_copy	n2	2
+corpus_v1/qnn/w12/w12_507.py	RESULT	delta	remainder	n19	19
+corpus_v1/qnn/w13/w13_1145.py	RESULT	nonfinite	logit	n2	2
+corpus_v1/qnn/w14/w14_1262.py	RESULT	delta	sign	n0	0
+corpus_v1/qnn/w14/w14_2585.py	RESULT	delta	lt	n3	3
+corpus_v1/qnn/w12/w12_778.py	RESULT	delta	lt	n9	9
+corpus_v1/qnn/w13/w13_809.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w14/w14_1877.py	RESULT	nonfinite	pow	n5	5
+corpus_v1/qnn/w13/w13_427.py	RESULT	delta	tril	n4	4
+corpus_v1/qnn/w14/w14_219.py	RESULT	shape	_native_batch_norm_legit	n0	0
+corpus_v1/qnn/w14/w14_359.py	RESULT	delta	rsub	n8	8
+corpus_v1/qnn/w13/w13_1833.py	RESULT	nonfinite	logit	n11	11
+corpus_v1/qnn/w13/w13_2652.py	RESULT	delta	select_scatter	n1	1
+corpus_v1/qnn/w13/w13_1499.py	RESULT	delta	isnan	n2	2
+corpus_v1/qnn/w15/w15_1480.py	RESULT	nonfinite	log2	n18	18
+corpus_v1/qnn/w15/w15_1759.py	RESULT	delta	select_scatter	n3	3
+corpus_v1/qnn/w13/w13_2270.py	RESULT	delta	hardtanh	n2	2
+corpus_v1/qnn/w15/w15_1282.py	RESULT	nonfinite	div	n7	7
+corpus_v1/qnn/w15/w15_100.py	RESULT	delta	_to_copy	n11	11
+corpus_v1/qnn/w14/w14_732.py	RESULT	delta	div	n2	2
+corpus_v1/qnn/w15/w15_50.py	RESULT	delta	fill	n8	8
+corpus_v1/qnn/w16/w16_1624.py	RESULT	nonfinite	min	n3	3
+corpus_v1/qnn/w16/w16_1991.py	RESULT	delta	sub	n5	5
+corpus_v1/qnn/w16/w16_2267.py	RESULT	delta	sub	n10	10
+corpus_v1/qnn/w16/w16_1263.py	RESULT	delta	slice_copy	n6	6
+corpus_v1/qnn/w15/w15_872.py	RESULT	delta	hardtanh	n0	0
+corpus_v1/qnn/w15/w15_2027.py	RESULT	delta	cos	n8	8
+corpus_v1/qnn/w18/w18_1866.py	RESULT	nonfinite	remainder	n12	12
+corpus_v1/qnn/w19/w19_1629.py	RESULT	delta	_to_copy	n11	11
+corpus_v1/qnn/w18/w18_310.py	RESULT	delta	_to_copy	n11	11
+corpus_v1/qnn/w16/w16_339.py	RESULT	delta	ne	n5	5
+corpus_v1/qnn/w18/w18_1480.py	RESULT	nonfinite	linear	n1	1
+corpus_v1/qnn/w17/w17_726.py	OK	no_divergence
+corpus_v1/qnn/w18/w18_684.py	RESULT	delta	ones	n0	0
+corpus_v1/qnn/w19/w19_1961.py	RESULT	delta	sub	n5	5
+corpus_v1/qnn/w16/w16_796.py	RESULT	nonfinite	logit	n1	1
+corpus_v1/qnn/w17/w17_1905.py	RESULT	nonfinite	abs	n2	2
+corpus_v1/qnn/w17/w17_370.py	RESULT	nonfinite	logit	n3	3
+corpus_v1/qnn/w19/w19_1078.py	RESULT	delta	logical_and	n10	10
+corpus_v1/qnn/w18/w18_2187.py	RESULT	nonfinite	linear	n3	3
+corpus_v1/qnn/w17/w17_1208.py	RESULT	delta	linear	n0	0
+corpus_v1/qnn/w18/w18_1103.py	RESULT	delta	flip	n0	0
+corpus_v1/qnn/w19/w19_2365.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w17/w17_160.py	RESULT	delta	logical_and	n21	21
+corpus_v1/qnn/w19/w19_452.py	RESULT	nonfinite	div	n9	9
+corpus_v1/qnn/w2/w2_1378.py	RESULT	nonfinite	log	n7	7
+corpus_v1/qnn/w19/w19_86.py	RESULT	nonfinite	sqrt	n6	6
+corpus_v1/qnn/w2/w2_1655.py	RESULT	delta	acos	n4	4
+corpus_v1/qnn/w2/w2_1980.py	OK	no_divergence
+corpus_v1/qnn/w2/w2_2402.py	RESULT	nonfinite	log	n5	5
+corpus_v1/qnn/w2/w2_413.py	RESULT	delta	roll	n1	1
+corpus_v1/qnn/w2/w2_930.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w20/w20_126.py	OK	no_divergence
+corpus_v1/qnn/w21/w21_122.py	RESULT	delta	remainder	n9	9
+corpus_v1/qnn/w20/w20_791.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w20/w20_1897.py	RESULT	shape	sin	n0	0
+corpus_v1/qnn/w20/w20_215.py	RESULT	delta	_to_copy	n9	9
+corpus_v1/qnn/w20/w20_1616.py	RESULT	delta	_to_copy	n10	10
+corpus_v1/qnn/w22/w22_1337.py	RESULT	delta	rsub	n15	15
+corpus_v1/qnn/w20/w20_321.py	RESULT	nonfinite	max	n3	3
+corpus_v1/qnn/w21/w21_932.py	RESULT	delta	elu	n11	11
+corpus_v1/qnn/w21/w21_1774.py	RESULT	nonfinite	log	n1	1
+corpus_v1/qnn/w21/w21_1461.py	RESULT	nonfinite	pow	n2	2
+corpus_v1/qnn/w21/w21_1995.py	RESULT	delta	asinh	n3	3
+corpus_v1/qnn/w22/w22_1962.py	RESULT	delta	glu	n3	3
+corpus_v1/qnn/w21/w21_572.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w22/w22_1663.py	RESULT	delta	fill	n23	23
+corpus_v1/qnn/w21/w21_239.py	RESULT	delta	ge	n3	3
+corpus_v1/qnn/w22/w22_2447.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w22/w22_914.py	RESULT	nonfinite	rsqrt	n9	9
+corpus_v1/qnn/w23/w23_1316.py	RESULT	nonfinite	logit	n3	3
+corpus_v1/qnn/w22/w22_593.py	RESULT	nonfinite	maximum	n2	2
+corpus_v1/qnn/w23/w23_2388.py	RESULT	delta	logical_or	n6	6
+corpus_v1/qnn/w23/w23_1982.py	RESULT	nonfinite	max	n4	4
+corpus_v1/qnn/w25/w25_1270.py	RESULT	delta	logical_not	n18	18
+corpus_v1/qnn/w23/w23_1624.py	RESULT	delta	atan2	n1	1
+corpus_v1/qnn/w23/w23_548.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w25/w25_546.py	RESULT	delta	eq	n7	7
+corpus_v1/qnn/w24/w24_1339.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w23/w23_915.py	RESULT	dtype	select_scatter	n15	15
+corpus_v1/qnn/w24/w24_894.py	RESULT	delta	gelu	n10	10
+corpus_v1/qnn/w24/w24_2522.py	RESULT	delta	rsub	n12	12
+corpus_v1/qnn/w25/w25_2406.py	RESULT	delta	masked_fill	n18	18
+corpus_v1/qnn/w24/w24_492.py	RESULT	delta	_to_copy	n4	4
+corpus_v1/qnn/w24/w24_2092.py	RESULT	delta	transpose_copy	n1	1
+corpus_v1/qnn/w24/w24_1786.py	RESULT	nonfinite	rsqrt	n8	8
+corpus_v1/qnn/w25/w25_2669.py	RESULT	nonfinite	max	n11	11
+corpus_v1/qnn/w25/w25_1592.py	RESULT	delta	rsub	n1	1
+corpus_v1/qnn/w26/w26_1294.py	RESULT	nonfinite	bitwise_left_shift	n0	0
+corpus_v1/qnn/w26/w26_1717.py	RESULT	nonfinite	logit	n4	4
+corpus_v1/qnn/w25/w25_919.py	RESULT	delta	rsub	n13	13
+corpus_v1/qnn/w25/w25_1981.py	RESULT	dtype	select_scatter	n3	3
+corpus_v1/qnn/w26/w26_2055.py	RESULT	dtype	_to_copy	n1	1
+corpus_v1/qnn/w26/w26_244.py	RESULT	delta	fill	n5	5
+corpus_v1/qnn/w26/w26_589.py	RESULT	dtype	select_scatter	n5	5
+corpus_v1/qnn/w27/w27_1315.py	RESULT	dtype	maximum	n0	0
+corpus_v1/qnn/w27/w27_1555.py	RESULT	delta	elu	n0	0
+corpus_v1/qnn/w27/w27_104.py	RESULT	nonfinite	logit	n11	11
+corpus_v1/qnn/w27/w27_1796.py	RESULT	delta	erf	n5	5
+corpus_v1/qnn/w27/w27_2001.py	RESULT	delta	fmod	n4	4
+corpus_v1/qnn/w28/w28_913.py	RESULT	delta	bitwise_left_shift	n4	4
+corpus_v1/qnn/w27/w27_24.py	RESULT	nonfinite	log10	n8	8
+corpus_v1/qnn/w27/w27_439.py	RESULT	delta	logical_or	n3	3
+corpus_v1/qnn/w28/w28_2414.py	RESULT	nonfinite	logit	n9	9
+corpus_v1/qnn/w29/w29_678.py	RESULT	delta	tan	n4	4
+corpus_v1/qnn/w28/w28_2042.py	RESULT	delta	sub	n3	3
+corpus_v1/qnn/w29/w29_1908.py	RESULT	delta	clamp	n1	1
+corpus_v1/qnn/w3/w3_1095.py	RESULT	nonfinite	fmod	n1	1
+corpus_v1/qnn/w28/w28_528.py	RESULT	nonfinite	abs	n6	6
+corpus_v1/qnn/w29/w29_1625.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w27/w27_866.py	RESULT	delta	_to_copy	n7	7
+corpus_v1/qnn/w28/w28_1331.py	RESULT	delta	sigmoid	n7	7
+corpus_v1/qnn/w29/w29_2267.py	OK	no_divergence
+corpus_v1/qnn/w28/w28_17.py	RESULT	nonfinite	logit	n2	2
+corpus_v1/qnn/w29/w29_31.py	RESULT	delta	rsub	n10	10
+corpus_v1/qnn/w29/w29_1271.py	RESULT	delta	_to_copy	n4	4
+corpus_v1/qnn/w3/w3_1547.py	RESULT	delta	gelu	n3	3
+corpus_v1/qnn/w3/w3_1884.py	RESULT	nonfinite	log10	n5	5
+corpus_v1/qnn/w3/w3_2388.py	RESULT	nonfinite	logit	n1	1
+corpus_v1/qnn/w30/w30_104.py	RESULT	delta	_to_copy	n2	2
+corpus_v1/qnn/w30/w30_34.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w3/w3_563.py	RESULT	nonfinite	fmod	n3	3
+corpus_v1/qnn/w30/w30_1435.py	RESULT	delta	_to_copy	n7	7
+corpus_v1/qnn/w30/w30_1829.py	RESULT	nonfinite	fmod	n6	6
+corpus_v1/qnn/w30/w30_754.py	RESULT	nonfinite	pow	n1	1
+corpus_v1/qnn/w31/w31_48.py	RESULT	delta	acos	n6	6
+corpus_v1/qnn/w30/w30_2232.py	RESULT	delta	_native_batch_norm_legit	n3	3
+corpus_v1/qnn/w31/w31_1479.py	OK	no_divergence
+corpus_v1/qnn/w31/w31_851.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w32/w32_1171.py	RESULT	nonfinite	neg	n4	4
+corpus_v1/qnn/w31/w31_1863.py	RESULT	delta	elu	n0	0
+corpus_v1/qnn/w31/w31_2337.py	RESULT	nonfinite	max	n3	3
+corpus_v1/qnn/w33/w33_1063.py	RESULT	delta	eq	n3	3
+corpus_v1/qnn/w32/w32_704.py	RESULT	delta	elu	n12	12
+corpus_v1/qnn/w31/w31_1022.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w33/w33_1470.py	RESULT	nonfinite	_to_copy	n3	3
+corpus_v1/qnn/w32/w32_1651.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w32/w32_1929.py	RESULT	delta	index_select	n13	13
+corpus_v1/qnn/w32/w32_421.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_2194.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w33/w33_2181.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w33/w33_1826.py	RESULT	delta	prod	n4	4
+corpus_v1/qnn/w33/w33_2516.py	RESULT	delta	sub	n12	12
+corpus_v1/qnn/w33/w33_492.py	RESULT	nonfinite	logit	n6	6
+corpus_v1/qnn/w33/w33_813.py	RESULT	delta	remainder	n8	8
+corpus_v1/qnn/w34/w34_1222.py	RESULT	shape	isinf	n0	0
+corpus_v1/qnn/w35/w35_1234.py	RESULT	nonfinite	min	n1	1
+corpus_v1/qnn/w35/w35_57.py	RESULT	delta	_to_copy	n14	14
+corpus_v1/qnn/w35/w35_2072.py	RESULT	delta	rsub	n7	7
+corpus_v1/qnn/w34/w34_2033.py	RESULT	delta	gt	n3	3
+corpus_v1/qnn/w35/w35_1749.py	RESULT	delta	_to_copy	n7	7
+corpus_v1/qnn/w34/w34_2489.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w34/w34_873.py	RESULT	delta	linear	n4	4
+corpus_v1/qnn/w35/w35_889.py	RESULT	delta	asin	n5	5
+corpus_v1/qnn/w35/w35_2786.py	RESULT	nonfinite	log	n12	12
+corpus_v1/qnn/w34/w34_515.py	RESULT	delta	roll	n3	3
+corpus_v1/qnn/w35/w35_2434.py	RESULT	nonfinite	logit	n3	3
+corpus_v1/qnn/w34/w34_1702.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_1641.py	RESULT	nonfinite	log	n10	10
+corpus_v1/qnn/w36/w36_1351.py	RESULT	nonfinite	maximum	n18	18
+corpus_v1/qnn/w36/w36_2025.py	RESULT	delta	rsub	n9	9
+corpus_v1/qnn/w36/w36_55.py	RESULT	delta	sub	n6	6
+corpus_v1/qnn/w36/w36_942.py	RESULT	nonfinite	cos	n14	14
+corpus_v1/qnn/w36/w36_2349.py	RESULT	nonfinite	div	n12	12
+corpus_v1/qnn/w37/w37_1862.py	RESULT	dtype	log2	n1	1
+corpus_v1/qnn/w37/w37_1492.py	RESULT	nonfinite	hardtanh	n14	14
+corpus_v1/qnn/w38/w38_1903.py	RESULT	shape	masked_scatter	n0	0
+corpus_v1/qnn/w37/w37_2384.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w38/w38_2278.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w37/w37_725.py	RESULT	delta	sub	n10	10
+corpus_v1/qnn/w38/w38_1454.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w37/w37_297.py	RESULT	delta	logical_xor	n6	6
+corpus_v1/qnn/w38/w38_113.py	RESULT	nonfinite	logit	n17	17
+corpus_v1/qnn/w4/w4_51.py	RESULT	nonfinite	glu	n7	7
+corpus_v1/qnn/w38/w38_638.py	RESULT	delta	roll	n15	15
+corpus_v1/qnn/w4/w4_771.py	RESULT	nonfinite	logit	n0	0
+corpus_v1/qnn/w39/w39_2469.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w38/w38_285.py	RESULT	delta	sub	n14	14
+corpus_v1/qnn/w39/w39_2036.py	RESULT	delta	ge	n12	12
+corpus_v1/qnn/w4/w4_1826.py	OK	no_divergence
+corpus_v1/qnn/w4/w4_2145.py	RESULT	nonfinite	log10	n2	2
+corpus_v1/qnn/w39/w39_839.py	RESULT	delta	_to_copy	n4	4
+corpus_v1/qnn/w4/w4_1553.py	RESULT	nonfinite	logit	n7	7
+corpus_v1/qnn/w4/w4_1175.py	RESULT	delta	bitwise_left_shift	n1	1
+corpus_v1/qnn/w38/w38_989.py	RESULT	nonfinite	pow	n5	5
+corpus_v1/qnn/w39/w39_1359.py	RESULT	delta	rsub	n0	0
+corpus_v1/qnn/w39/w39_403.py	RESULT	nonfinite	logit	n7	7
+corpus_v1/qnn/w39/w39_169.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_1147.py	RESULT	delta	mean	n14	14
+corpus_v1/qnn/w40/w40_1488.py	RESULT	delta	elu	n0	0
+corpus_v1/qnn/w40/w40_788.py	RESULT	shape	maximum	n0	0
+corpus_v1/qnn/w40/w40_1832.py	RESULT	delta	fill	n2	2
+corpus_v1/qnn/w40/w40_2232.py	RESULT	nonfinite	log	n1	1
+corpus_v1/qnn/w40/w40_384.py	RESULT	delta	lt	n16	16
+corpus_v1/qnn/w41/w41_2086.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w41/w41_2427.py	RESULT	delta	bitwise_left_shift	n16	16
+corpus_v1/qnn/w41/w41_1230.py	RESULT	nonfinite	acosh	n0	0
+corpus_v1/qnn/w41/w41_1765.py	RESULT	nonfinite	logit	n2	2
+corpus_v1/qnn/w41/w41_457.py	RESULT	nonfinite	sigmoid	n13	13
+corpus_v1/qnn/w42/w42_1022.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w42/w42_656.py	RESULT	nonfinite	cos	n5	5
+corpus_v1/qnn/w43/w43_2377.py	RESULT	delta	fill	n12	12
+corpus_v1/qnn/w43/w43_504.py	RESULT	delta	hardtanh	n6	6
+corpus_v1/qnn/w43/w43_1728.py	RESULT	nonfinite	sin	n9	9
+corpus_v1/qnn/w43/w43_1012.py	OK	no_divergence
+corpus_v1/qnn/w42/w42_1869.py	RESULT	delta	bitwise_left_shift	n10	10
+corpus_v1/qnn/w42/w42_259.py	RESULT	delta	fill	n3	3
+corpus_v1/qnn/w43/w43_1396.py	RESULT	dtype	atan	n1	1
+corpus_v1/qnn/w42/w42_2193.py	RESULT	delta	logical_and	n6	6
+corpus_v1/qnn/w43/w43_2080.py	RESULT	delta	reciprocal	n2	2
+corpus_v1/qnn/w42/w42_1411.py	RESULT	nonfinite	pow	n14	14
+corpus_v1/qnn/w44/w44_1143.py	RESULT	nonfinite	log	n0	0
+corpus_v1/qnn/w43/w43_835.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w44/w44_159.py	RESULT	delta	bitwise_xor	n1	1
+corpus_v1/qnn/w44/w44_2288.py	RESULT	delta	_native_batch_norm_legit	n0	0
+corpus_v1/qnn/w44/w44_948.py	RESULT	shape	_cdist_forward	n0	0
+corpus_v1/qnn/w44/w44_2558.py	RESULT	delta	elu	n9	9
+corpus_v1/qnn/w44/w44_622.py	RESULT	nonfinite	logit	n4	4
+corpus_v1/qnn/w44/w44_1946.py	RESULT	nonfinite	max	n8	8
+corpus_v1/qnn/w45/w45_2189.py	RESULT	delta	rsub	n8	8
+corpus_v1/qnn/w45/w45_1794.py	RESULT	delta	sub	n5	5
+corpus_v1/qnn/w45/w45_1318.py	OK	no_divergence
+corpus_v1/qnn/w45/w45_310.py	RESULT	delta	ge	n3	3
+corpus_v1/qnn/w46/w46_1511.py	RESULT	nonfinite	logit	n9	9
+corpus_v1/qnn/w46/w46_2308.py	RESULT	delta	_to_copy	n8	8
+corpus_v1/qnn/w47/w47_1943.py	ERROR	IndexError	tuple index out of range
+corpus_v1/qnn/w46/w46_698.py	RESULT	nonfinite	div	n4	4
+corpus_v1/qnn/w47/w47_1363.py	RESULT	nonfinite	amin	n14	14
+corpus_v1/qnn/w47/w47_1652.py	RESULT	nonfinite	logit	n4	4
+corpus_v1/qnn/w46/w46_1969.py	RESULT	delta	ge	n7	7
+corpus_v1/qnn/w47/w47_2507.py	RESULT	delta	_to_copy	n7	7
+corpus_v1/qnn/w47/w47_2258.py	RESULT	nonfinite	gelu	n6	6
+corpus_v1/qnn/w47/w47_507.py	RESULT	nonfinite	linear	n2	2
+corpus_v1/qnn/w46/w46_32.py	RESULT	delta	fmod	n12	12
+corpus_v1/qnn/w45/w45_731.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w46/w46_1134.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_1090.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_733.py	RESULT	delta	_to_copy	n12	12
+corpus_v1/qnn/w47/w47_966.py	RESULT	delta	bitwise_not	n3	3
+corpus_v1/qnn/w48/w48_2231.py	RESULT	nonfinite	glu	n0	0
+corpus_v1/qnn/w48/w48_2595.py	RESULT	delta	_to_copy	n4	4
+corpus_v1/qnn/w48/w48_1837.py	RESULT	dtype	select_scatter	n8	8
+corpus_v1/qnn/w48/w48_580.py	RESULT	nonfinite	logit	n0	0
+corpus_v1/qnn/w49/w49_1233.py	RESULT	delta	rsqrt	n9	9
+corpus_v1/qnn/w48/w48_13.py	RESULT	delta	rsub	n7	7
+corpus_v1/qnn/w48/w48_952.py	RESULT	delta	elu	n15	15
+corpus_v1/qnn/w49/w49_1667.py	RESULT	delta	tril	n7	7
+corpus_v1/qnn/w49/w49_56.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w5/w5_1326.py	RESULT	nonfinite	min	n17	17
+corpus_v1/qnn/w49/w49_897.py	RESULT	delta	repeat	n5	5
+corpus_v1/qnn/w49/w49_2118.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w5/w5_651.py	RESULT	nonfinite	fmod	n6	6
+corpus_v1/qnn/w49/w49_2507.py	RESULT	delta	elu	n2	2
+corpus_v1/qnn/w50/w50_1361.py	RESULT	nonfinite	pow	n8	8
+corpus_v1/qnn/w5/w5_2198.py	RESULT	nonfinite	log	n14	14
+corpus_v1/qnn/w5/w5_1658.py	RESULT	delta	index	n1	1
+corpus_v1/qnn/w5/w5_2606.py	RESULT	dtype	select_scatter	n5	5
+corpus_v1/qnn/w50/w50_1085.py	RESULT	delta	sub	n4	4
+corpus_v1/qnn/w50/w50_2083.py	RESULT	delta	ne	n2	2
+corpus_v1/qnn/w50/w50_2421.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w50/w50_1774.py	RESULT	delta	_native_batch_norm_legit	n0	0
+corpus_v1/qnn/w50/w50_479.py	RESULT	nonfinite	logit	n9	9
+corpus_v1/qnn/w51/w51_2021.py	RESULT	delta	sign	n2	2
+corpus_v1/qnn/w51/w51_1755.py	RESULT	nonfinite	logit	n1	1
+corpus_v1/qnn/w51/w51_1428.py	RESULT	delta	_log_softmax	n5	5
+corpus_v1/qnn/w50/w50_790.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w51/w51_924.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w51/w51_1064.py	RESULT	nonfinite	acos	n0	0
+corpus_v1/qnn/w51/w51_583.py	RESULT	delta	_to_copy	n4	4
+corpus_v1/qnn/w51/w51_2366.py	RESULT	nonfinite	rsqrt	n11	11
+corpus_v1/qnn/w52/w52_1335.py	RESULT	delta	flip	n14	14
+corpus_v1/qnn/w52/w52_2548.py	RESULT	delta	var_mean	n4	4
+corpus_v1/qnn/w52/w52_173.py	RESULT	nonfinite	logit	n14	14
+corpus_v1/qnn/w53/w53_1293.py	RESULT	delta	_to_copy	n12	12
+corpus_v1/qnn/w52/w52_566.py	RESULT	delta	unsqueeze_copy	n0	0
+corpus_v1/qnn/w53/w53_1761.py	RESULT	delta	elu	n10	10
+corpus_v1/qnn/w53/w53_2398.py	RESULT	nonfinite	rsub	n1	1
+corpus_v1/qnn/w53/w53_497.py	RESULT	delta	clamp	n10	10
+corpus_v1/qnn/w52/w52_953.py	OK	no_divergence
+corpus_v1/qnn/w52/w52_2130.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w54/w54_2117.py	RESULT	delta	tan	n2	2
+corpus_v1/qnn/w53/w53_973.py	RESULT	delta	elu	n1	1
+corpus_v1/qnn/w53/w53_2096.py	RESULT	delta	remainder	n0	0
+corpus_v1/qnn/w54/w54_1373.py	RESULT	nonfinite	bitwise_left_shift	n0	0
+corpus_v1/qnn/w54/w54_1821.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w54/w54_26.py	RESULT	delta	fill	n12	12
+corpus_v1/qnn/w55/w55_1423.py	RESULT	delta	fill	n1	1
+corpus_v1/qnn/w54/w54_746.py	RESULT	nonfinite	floor_divide	n5	5
+corpus_v1/qnn/w55/w55_2341.py	RESULT	nonfinite	div	n15	15
+corpus_v1/qnn/w55/w55_434.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w55/w55_2057.py	RESULT	delta	reciprocal	n1	1
+corpus_v1/qnn/w55/w55_1176.py	RESULT	delta	sub	n0	0
+corpus_v1/qnn/w55/w55_1774.py	RESULT	delta	prod	n1	1
+corpus_v1/qnn/w55/w55_714.py	RESULT	delta	bitwise_left_shift	n2	2
+corpus_v1/qnn/w55/w55_974.py	RESULT	nonfinite	logit	n0	0
+corpus_v1/qnn/w56/w56_1943.py	RESULT	delta	logical_or	n11	11
+corpus_v1/qnn/w57/w57_1661.py	OK	no_divergence
+corpus_v1/qnn/w57/w57_477.py	RESULT	delta	prod	n11	11
+corpus_v1/qnn/w56/w56_2226.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w56/w56_1631.py	RESULT	delta	native_layer_norm	n1	1
+corpus_v1/qnn/w57/w57_2376.py	RESULT	delta	logical_and	n8	8
+corpus_v1/qnn/w56/w56_416.py	RESULT	nonfinite	logit	n20	20
+corpus_v1/qnn/w58/w58_121.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w57/w57_808.py	RESULT	nonfinite	rsqrt	n0	0
+corpus_v1/qnn/w58/w58_1602.py	RESULT	nonfinite	floor_divide	n12	12
+corpus_v1/qnn/w57/w57_1345.py	RESULT	delta	_to_copy	n4	4
+corpus_v1/qnn/w57/w57_1995.py	RESULT	delta	constant_pad_nd	n0	0
+corpus_v1/qnn/w56/w56_1275.py	RESULT	nonfinite	tanh	n7	7
+corpus_v1/qnn/w56/w56_856.py	RESULT	delta	gt	n11	11
+corpus_v1/qnn/w58/w58_2084.py	RESULT	delta	elu	n5	5
+corpus_v1/qnn/w58/w58_2409.py	RESULT	delta	sub	n7	7
+corpus_v1/qnn/w58/w58_97.py	RESULT	delta	cosh	n13	13
+corpus_v1/qnn/w58/w58_531.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w59/w59_1973.py	RESULT	delta	pow	n4	4
+corpus_v1/qnn/w59/w59_1637.py	RESULT	delta	rsub	n6	6
+corpus_v1/qnn/w59/w59_1235.py	RESULT	nonfinite	logit	n14	14
+corpus_v1/qnn/w59/w59_2233.py	RESULT	delta	floor_divide	n1	1
+corpus_v1/qnn/w59/w59_258.py	RESULT	delta	elu	n2	2
+corpus_v1/qnn/w59/w59_494.py	RESULT	nonfinite	logit	n3	3
+corpus_v1/qnn/w59/w59_904.py	RESULT	delta	fill	n9	9
+corpus_v1/qnn/w6/w6_1269.py	RESULT	delta	ge	n2	2
+corpus_v1/qnn/w6/w6_2047.py	RESULT	delta	exp	n0	0
+corpus_v1/qnn/w60/w60_2052.py	RESULT	delta	rsub	n4	4
+corpus_v1/qnn/w6/w6_164.py	RESULT	nonfinite	logit	n16	16
+corpus_v1/qnn/w61/w61_1149.py	RESULT	delta	bitwise_left_shift	n1	1
+corpus_v1/qnn/w60/w60_1750.py	RESULT	nonfinite	div	n7	7
+corpus_v1/qnn/w6/w6_815.py	RESULT	delta	where	n4	4
+corpus_v1/qnn/w60/w60_1431.py	RESULT	delta	lift_fresh_copy	n4	4
+corpus_v1/qnn/w60/w60_2465.py	RESULT	delta	_native_batch_norm_legit	n0	0
+corpus_v1/qnn/w60/w60_83.py	RESULT	delta	_log_softmax	n3	3
+corpus_v1/qnn/w6/w6_390.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_1167.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_553.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w61/w61_1867.py	OK	no_divergence
+corpus_v1/qnn/w61/w61_1495.py	RESULT	nonfinite	div	n7	7
+corpus_v1/qnn/w61/w61_2417.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w61/w61_889.py	RESULT	shape	clamp	n0	0
+corpus_v1/qnn/w62/w62_1650.py	RESULT	delta	sub	n0	0
+corpus_v1/qnn/w62/w62_2269.py	RESULT	nonfinite	div	n4	4
+corpus_v1/qnn/w62/w62_1319.py	RESULT	nonfinite	ge	n4	4
+corpus_v1/qnn/w61/w61_565.py	RESULT	delta	prod	n2	2
+corpus_v1/qnn/w62/w62_1940.py	OK	no_divergence
+corpus_v1/qnn/w62/w62_38.py	RESULT	delta	bitwise_left_shift	n5	5
+corpus_v1/qnn/w62/w62_843.py	RESULT	delta	div	n2	2
+corpus_v1/qnn/w7/w7_1139.py	RESULT	delta	sub	n3	3
+corpus_v1/qnn/w63/w63_1997.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w63/w63_675.py	RESULT	nonfinite	logit	n7	7
+corpus_v1/qnn/w63/w63_2464.py	RESULT	delta	select_scatter	n3	3
+corpus_v1/qnn/w63/w63_1265.py	RESULT	delta	rsub	n7	7
+corpus_v1/qnn/w63/w63_37.py	RESULT	nonfinite	pow	n12	12
+corpus_v1/qnn/w7/w7_340.py	RESULT	delta	amax	n1	1
+corpus_v1/qnn/w7/w7_686.py	RESULT	nonfinite	ceil	n10	10
+corpus_v1/qnn/w7/w7_1648.py	RESULT	delta	fmod	n6	6
+corpus_v1/qnn/w8/w8_1531.py	RESULT	delta	slice_copy	n5	5
+corpus_v1/qnn/w7/w7_1959.py	RESULT	delta	trunc	n1	1
+corpus_v1/qnn/w8/w8_1125.py	RESULT	nonfinite	logit	n6	6
+corpus_v1/qnn/w63/w63_164.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w9/w9_1656.py	RESULT	delta	bitwise_left_shift	n8	8
+corpus_v1/qnn/w9/w9_2045.py	RESULT	delta	ne	n5	5
+corpus_v1/qnn/w9/w9_241.py	RESULT	nonfinite	min	n4	4
+corpus_v1/qnn/w8/w8_1904.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w8/w8_2122.py	OK	no_divergence
+corpus_v1/qnn/w8/w8_362.py	RESULT	nonfinite	ceil	n2	2
+corpus_v1/qnn/w8/w8_68.py	RESULT	nonfinite	floor_divide	n7	7
+corpus_v1/qnn/w9/w9_1082.py	RESULT	delta	ge	n20	20
+corpus_v1/qnn/w8/w8_2402.py	RESULT	nonfinite	atanh	n6	6
+corpus_v1/qnn/w9/w9_1364.py	RESULT	nonfinite	logit	n0	0
+corpus_v1/qnn/w9/w9_78.py	RESULT	shape	logical_and	n0	0
+corpus_v1/qnn/w9/w9_521.py	RESULT	nonfinite	pow	n8	8

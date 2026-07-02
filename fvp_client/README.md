@@ -1,11 +1,22 @@
-# fvp_client — Ethos-U executor (the FVP analog of the Android client)
+# fvp_client — Arm FVP executor (the FVP analog of the Android client)
 
 This is a **worker** in the same sense as the Android app and `mobile client`: it pulls
 `.pte` jobs from the broker, runs them, and returns the **raw output tensors** over the
 language-neutral binary protocol. The **feeder still owns the eager reference and does
 the diff** — this process is a thin executor. The only thing special here is *where* the
 `.pte` runs: on the **Corstone FVP simulator** (a Cortex-M55 + Ethos-U55), because there
-is no ExecuTorch *host* runtime for an Ethos-U command stream.
+is no ExecuTorch *host* runtime for these Arm targets.
+
+**Serves both Arm backends** (`--backend`), since both run on the same Corstone FVP:
+- **`ethos-u`** — the NPU delegate (Ethos-U command stream via Vela).
+- **`cortex-m`** — the int8 CMSIS-NN **operator library** on the Cortex-M55 core (no NPU).
+
+`fvp_client.py` is backend-agnostic — it just ships the `.pte` + inputs and parses
+outputs. Only the **runner build** differs (handled in `fvp_runner.sh`): Ethos-U links the
+NPU driver + Vela system config; Cortex-M force-disables delegation and links the cortex_m
+kernels (`EXECUTORCH_BUILD_CORTEX_M=ON`, via `backends/cortex_m/test/build_test_runner.sh`).
+Both backends are int8 (`quant=ALWAYS`), so the **quantized-reference** comparison applies
+identically (pregen stores a quantized reference; see the numerics section below).
 
 ```
 feeder ──pushjob──► broker ──JOB(pte+inputs)──► fvp_client.py
@@ -50,7 +61,9 @@ crash).
 .venv/bin/python -m mobile broker -v
 
 # 2) FVP client(s) — the executor
-.venv/bin/python fvp_client/fvp_client.py --host 127.0.0.1 --target ethos-u55-128
+.venv/bin/python fvp_client/fvp_client.py --host 127.0.0.1 --backend ethos-u  --target ethos-u55-128
+# or, for the Cortex-M operator-library backend:
+.venv/bin/python fvp_client/fvp_client.py --host 127.0.0.1 --backend cortex-m --target cortex-m55
 
 # 3) feed the corpus (the feeder diffs returned outputs vs its reference)
 .venv/bin/python -m mobile feed --corpus corpus/ethos-u --host 127.0.0.1
@@ -94,11 +107,29 @@ separately. Alternatively, ExecuTorch's **BundleIO** can bundle that quantized r
 into the `.bpte` and compare **on-device** (the runner supports `ET_BUNDLE_IO` + `ET_ATOL`);
 that trades the host-side diff for a device-side PASS/FAIL.
 
-## Seams to confirm against your install
-`fvp_runner.sh` encodes two things that are version/runner specific — verify them once
-against your built runner:
-- the **semihosting build flags** (the `cmake -S .../executor_runner/standalone` configure line), and
-- the **`ET_DUMP_OUTPUTS` print format** the output parser greps for (`OUT[i] <dtype> <dims> <base64>`).
+## The runner build (feed-side, both backends)
+`fvp_runner.sh` builds the runner via executorch's own `backends/arm/scripts/build_executor_runner.sh`
+— **one builder, target-driven** (ethos-u* links the NPU driver + system config; cortex-m*
+links the cortex_m CMSIS-NN kernels and auto-disables delegation). It is built for our
+architecture, i.e. **feed-side compare**:
+- `--pte=semihosting` — load `model.pte` + inputs from the host at runtime (no per-graph relink),
+- `--etdump` + `-DET_DUMP_OUTPUTS=ON` — print outputs as base64 over the UART,
+- **no `--bundleio`** — we return raw outputs to the feeder; we do **not** compare on-device.
 
-Both are isolated in `fvp_runner.sh` so the Python client and the protocol contract
-(`out_<i>.bin` + `outmeta.json`) don't change when you adjust them.
+(executorch's stock cortex-m smoke test *does* use `--bundleio` for an on-device PASS/FAIL —
+that's the opposite of what we want; we keep the diff in the feeder.)
+
+### Kernel selection — auto, link everything
+The bare-metal runner has no dynamic kernel registry; with semihosting (no model to scan at
+build time) it must **statically link** the `.out` kernels by name. We run on an **emulator**,
+so binary size is a non-issue — `fvp_runner.sh` just links the **whole corpus op universe =
+our allowlist (~228 kernels)**, auto-derived from `gen/executorch_allowlist.EXECUTORCH_OPS`.
+No list to maintain; nothing to under-specify. Override with `SELECT_OPS=...` only if you ever
+want a smaller runner.
+
+## Seams to confirm against your install
+Version/runner-specific bits, isolated in `fvp_runner.sh` so the Python client and the
+protocol contract (`out_<i>.bin` + `outmeta.json`) never change when you adjust them:
+- the **`ET_DUMP_OUTPUTS` print format** the parser greps for (`OUT[i] <dtype> <dims> <base64>`) —
+  confirm against your runner's actual base64 dump, and
+- the **produced ELF path** (`fvp_runner.sh` locates `arm_executor_runner` under the build dir).

@@ -27,7 +27,7 @@ import torch
 # (e.g. sum/prod cast-order off-by-one, bitwise) and a relative tolerance would hide it.
 #
 # QUANTIZED backends: pregen stores a QUANTIZED reference (the PT2E-converted graph run on
-# CPU — see gen/backends/base.quantized_reference), NOT the fp32 eager oracle. So this
+# CPU — see gen/export/backends/base.quantized_reference), NOT the fp32 eager oracle. So this
 # tolerance is applied to device-vs-quantized-reference (same quantization space): the
 # residual is cross-implementation int rounding, not raw int8-vs-fp32 error. For a CPU
 # delegate (xnnpack) that residual is ~0; for an NPU (Ethos-U on the FVP) it may need a

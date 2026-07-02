@@ -1,12 +1,12 @@
 # 3. Graph generation
 
 This is the heart of the fuzzer: how a random, **valid**, multi-op DAG is built.
-Code: `gen/graph_build.py` (construction), `gen/opnode.py` (per-op model),
-`gen/adapter.py` (port wiring), `gen/graph_ir.py` (the graph + emitter).
+Code: `gen/graph/build.py` (construction), `gen/ops/opnode.py` (per-op model),
+`gen/graph/adapter.py` (port wiring), `gen/graph/ir.py` (the graph + emitter).
 
 ## The unit: an OpNode (Z3 model of one op)
 
-Each op is an `OpNode` (`gen/opnode.py`) wrapping its `approved_constraints/<symbol>/`
+Each op is an `OpNode` (`gen/ops/opnode.py`) wrapping its `approved_constraints/<symbol>/`
 folder. It exposes:
 
 - **`named_params`** — the op's full parameter list (name, type), in order.
@@ -23,11 +23,11 @@ folder. It exposes:
 The op's real preconditions live as Z3 axioms (`Not(And(*bad_clause))` over the
 solver). So `generate` never yields inputs that would raise in eager — that is what
 makes a downstream MISMATCH a genuine bug. The Z3 model itself is described in
-[../engine] (`engine/model.py`): bounded ndim, Z3 Array theory for sizes/strides.
+[../gen/z3engine] (`gen/z3engine/model.py`): bounded ndim, Z3 Array theory for sizes/strides.
 
 ## The graph: GenGraph
 
-`gen/graph_ir.GenGraph` is a functional DAG. Each node is `(op, slots)` where every
+`gen/graph/ir.GenGraph` is a functional DAG. Each node is `(op, slots)` where every
 slot is one of:
 
 - `('leaf', i)` — a fresh input tensor (index into `graph.leaves`),

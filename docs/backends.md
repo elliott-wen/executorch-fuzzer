@@ -1,12 +1,12 @@
 # 4. Backends
 
 A *backend* is a lowering target: the partitioner + `to_executorch` configuration that
-turns an exported graph into a `.pte`. Code: `gen/backends/`, surfaced through
-`gen/export_et.py`.
+turns an exported graph into a `.pte`. Code: `gen/export/backends/`, surfaced through
+`gen/export/job.py`.
 
 ## The registry
 
-`gen/backends/__init__.py` declares every known backend and keeps only those whose
+`gen/export/backends/__init__.py` declares every known backend and keeps only those whose
 dependencies import in this install. Each backend is its own module (lowering +
 quantizer), because different accelerators quantize differently and that logic is
 deliberately not merged.
@@ -32,13 +32,15 @@ Select one with `--backend <name>` on `pregen` / `pregen_fleet.py`.
 | `qualcomm` | `qualcomm.py` | ❌ | ✅ | QNN (Hexagon/HTP) |
 | `coreml` | `coreml.py` | ✅* | ✅ | Apple CoreML — *host-execute means a **Mac**, see below |
 | `mps` | `mps.py` | ✅* | — | Apple Metal Performance Shaders — **deprecated** in ExecuTorch; CoreML is the successor |
+| `mediatek` | `mediatek.py` | ❌ | ✅ | NeuroPilot APU (Dimensity 9300/9400) — needs the NeuroPilot Express SDK |
+| `samsung` | `samsung.py` | ❌ | ✅ | Exynos NPU via ENN (Exynos 2500/E9955, E9965) — needs the Samsung ENN SDK |
 
 `runs_on_host` = can the produced `.pte` execute on *this* (x86 Linux) box. `❌` means
 the `.pte` lowers here but must run on the target device.
 
 ## `build_job`: oracle + lowering
 
-`gen/export_et.build_job(src, backend, quantize)` is the single lowering entry point:
+`gen/export/job.build_job(src, backend, quantize)` is the single lowering entry point:
 
 1. `exec` the emitted source → `(g, leaves)`.
 2. Run **eager** `g(*leaves)` — the oracle. A clean raise here means the graph had

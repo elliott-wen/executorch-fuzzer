@@ -1,0 +1,92 @@
+=== MISMATCH attribution (op producing the diverging out[N]) ===
+  (9710 of the mismatches are non-finite-position diffs — usually propagation, filter first)
+    791  logit
+    719  logit.out
+    627  select_scatter
+    565  rsub.Scalar
+    527  sub.out
+    520  fill.Scalar
+    458  log.out
+    416  div.out
+    398  rsqrt.out
+    394  elu.out
+    282  pow.Tensor_Tensor_out
+    266  reciprocal.out
+    260  log2.out
+    260  roll
+    256  floor_divide.out
+    226  div.out_mode
+    219  atanh.out
+    218  log10.out
+    212  sum.IntList_out
+    193  any.dims_out
+    192  remainder.Tensor_out
+    186  copy
+    177  floor_divide
+    163  mul.out
+    159  cos.out
+    159  maximum.out
+    153  sqrt.out
+    152  fmod.Tensor_out
+    152  remainder.Scalar_out
+    147  pow.Scalar_out
+    147  minimum.out
+    145  atan2.out
+    140  sin.out
+    133  fmod.Scalar_out
+    130  slice_scatter
+    127  sign.out
+    126  exp.out
+    123  min.unary_out
+    121  tanh.out
+    120  prod.int_out
+
+=== SKIP coverage gaps (device rejection signature) ===
+  19981  qnn_runner rc=2: 
+
+=== CRASH op co-occurrence (WEAK — over-blames; bisect to confirm) ===
+    316  to
+    249  bcast
+    115  slice
+    108  replication_pad3d.out
+    100  stack
+     89  replication_pad2d.out
+     87  unfold_copy
+     86  split_with_sizes_copy
+     83  select_scatter
+     82  any.dims_out
+     78  fill.Scalar
+     77  narrow_copy
+     65  rshp
+     61  tril.out
+     56  clampr
+     56  constant_pad_nd
+     54  max.unary_out
+     54  mean
+     53  copy
+     51  logit.out
+     51  native_layer_norm
+     51  view_copy
+     50  pixel_shuffle
+     47  reflection_pad2d.out
+     47  min
+
+=== representative MISMATCH jobs per top op (bisection targets) ===
+  logit                        w0:414#out0, w0:737#out2, w1:217#out3
+  logit.out                    w0:309#out4, w0:370#out1, w0:374#out1
+  select_scatter               w0:147#out0, w0:215#out0, w0:307#out1
+  rsub.Scalar                  w0:349#out0, w0:60#out3, w0:645#out0
+  sub.out                      w0:283#out1, w0:364#out0, w0:418#out0
+  fill.Scalar                  w0:30#out2, w0:439#out1, w0:765#out0
+  log.out                      w0:11#out2, w0:312#out2, w0:432#out3
+  div.out                      w0:400#out0, w0:428#out1, w0:544#out1
+  rsqrt.out                    w0:22#out1, w1:718#out1, w10:163#out3
+  elu.out                      w0:162#out0, w0:260#out0, w0:518#out0
+  pow.Tensor_Tensor_out        w0:16#out1, w1:331#out0, w1:335#out3
+  reciprocal.out               w0:196#out1, w0:85#out2, w1:671#out0
+  log2.out                     w0:577#out0, w0:660#out1, w1:102#out3
+  roll                         w10:534#out0, w10:549#out1, w10:552#out0
+  floor_divide.out             w0:164#out2, w0:597#out0, w0:751#out1
+  div.out_mode                 w0:449#out2, w0:563#out0, w1:284#out2
+  atanh.out                    w0:296#out2, w0:727#out0, w1:14#out2
+  log10.out                    w1:322#out1, w10:197#out1, w10:326#out2

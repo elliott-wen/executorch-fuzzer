@@ -1,0 +1,4057 @@
+w0:1023	1	LOWERFAIL	5		dev=TIMEOUT
+w0:1039	0	GRAPHOPT	5	n4,n6	needs siblings ['n4', 'n6']
+w0:151	4	GRAPHOPT	8	n3,n4,n5,n6	needs siblings ['n3', 'n4', 'n5', 'n6']
+w0:154	0	LOWERFAIL	3		dev=TIMEOUT
+w0:232	3	LOWERFAIL	7		dev=TIMEOUT
+w0:245	0	LOWERFAIL	6		dev=TIMEOUT
+w0:252	1	OPERATOR	3		diverges alone (cone 3)
+w0:254	1	LOWERFAIL	3		dev=TIMEOUT
+w0:270	2	OPERATOR	5		diverges alone (cone 5)
+w0:311	0	LOWERFAIL	3		dev=TIMEOUT
+w0:313	2	GRAPHOPT	5	n4,n7	needs siblings ['n4', 'n7']
+w0:325	2	LOWERFAIL	5		dev=TIMEOUT
+w0:340	1	OPERATOR	4		diverges alone (cone 4)
+w0:346	2	LOWERFAIL	4		dev=TIMEOUT
+w0:35	1	LOWERFAIL	5		dev=TIMEOUT
+w0:355	1	LOWERFAIL	5		dev=TIMEOUT
+w0:357	2	LOWERFAIL	6		dev=TIMEOUT
+w0:400	0	LOWERFAIL	2		dev=TIMEOUT
+w0:402	1	LOWERFAIL	5		dev=TIMEOUT
+w0:418	3	LOWERFAIL	3		dev=TIMEOUT
+w0:451	2	LOWERFAIL	3		dev=TIMEOUT
+w0:470	1	LOWERFAIL	6		dev=TIMEOUT
+w0:56	1	GRAPHOPT	7	n13	needs siblings ['n13']
+w0:585	1	LOWERFAIL	5		dev=TIMEOUT
+w0:597	0	LOWERFAIL	2		dev=TIMEOUT
+w0:60	0	LOWERFAIL	3		dev=TIMEOUT
+w0:62	3	LOWERFAIL	3		dev=TIMEOUT
+w0:67	3	OPERATOR	4		diverges alone (cone 4)
+w0:680	1	LOWERFAIL	4		dev=TIMEOUT
+w0:683	0	OPERATOR	2		diverges alone (cone 2)
+w0:70	1	LOWERFAIL	4		dev=TIMEOUT
+w0:74	2	LOWERFAIL	6		dev=TIMEOUT
+w0:748	0	LOWERFAIL	2		dev=TIMEOUT
+w0:763	1	LOWERFAIL	4		dev=TIMEOUT
+w0:809	2	GRAPHOPT	8	n2,n4,n7	needs siblings ['n2', 'n4', 'n7']
+w0:824	1	GRAPHOPT	8	n3,n8	needs siblings ['n3', 'n8']
+w0:861	3	LOWERFAIL	5		dev=TIMEOUT
+w0:874	2	LOWERFAIL	5		dev=TIMEOUT
+w0:887	1	LOWERFAIL	2		dev=TIMEOUT
+w0:891	2	LOWERFAIL	5		dev=TIMEOUT
+w0:897	4	LOWERFAIL	5		dev=TIMEOUT
+w0:91	2	LOWERFAIL	3		dev=TIMEOUT
+w0:929	2	LOWERFAIL	8		dev=TIMEOUT
+w0:945	4	OPERATOR	5		diverges alone (cone 5)
+w0:989	1	LOWERFAIL	6		dev=TIMEOUT
+w0:998	0	OPERATOR	3		diverges alone (cone 3)
+w10:1028	3	OPERATOR	2		diverges alone (cone 2)
+w10:151	0	NOREPRO	2		full graph diverges=False
+w10:208	2	OPERATOR	3		diverges alone (cone 3)
+w10:238	3	LOWERFAIL	3		dev=TIMEOUT
+w10:253	0	GRAPHOPT	16	n14,n15	needs siblings ['n14', 'n15']
+w10:34	0	LOWERFAIL	6		dev=TIMEOUT
+w10:345	3	LOWERFAIL	4		dev=TIMEOUT
+w10:363	1	OPERATOR	5		diverges alone (cone 5)
+w10:376	1	LOWERFAIL	3		dev=TIMEOUT
+w10:391	3	LOWERFAIL	3		dev=TIMEOUT
+w10:436	0	LOWERFAIL	3		dev=TIMEOUT
+w10:481	0	GRAPHOPT	4	n6	needs siblings ['n6']
+w10:49	0	LOWERFAIL	3		dev=TIMEOUT
+w10:493	1	LOWERFAIL	4		dev=TIMEOUT
+w10:533	3	LOWERFAIL	5		dev=TIMEOUT
+w10:549	3	LOWERFAIL	8		dev=TIMEOUT
+w10:567	2	LOWERFAIL	6		dev=TIMEOUT
+w10:59	4	OPERATOR	4		diverges alone (cone 4)
+w10:616	0	LOWERFAIL	4		dev=TIMEOUT
+w10:633	0	LOWERFAIL	4		dev=TIMEOUT
+w10:672	2	LOWERFAIL	6		dev=TIMEOUT
+w10:679	0	LOWERFAIL	4		dev=TIMEOUT
+w10:7	0	OPERATOR	3		diverges alone (cone 3)
+w10:709	1	OPERATOR	7		diverges alone (cone 7)
+w10:725	2	OPERATOR	6		diverges alone (cone 6)
+w10:743	1	GRAPHOPT	8	n1,n5,n6,n7	needs siblings ['n1', 'n5', 'n6', 'n7']
+w10:783	0	LOWERFAIL	3		dev=TIMEOUT
+w10:788	0	LOWERFAIL	2		dev=TIMEOUT
+w10:807	0	LOWERFAIL	12		dev=TIMEOUT
+w10:818	3	OPERATOR	4		diverges alone (cone 4)
+w10:850	1	OPERATOR	2		diverges alone (cone 2)
+w10:86	3	LOWERFAIL	4		dev=TIMEOUT
+w10:866	2	LOWERFAIL	5		dev=TIMEOUT
+w10:872	2	LOWERFAIL	5		dev=TIMEOUT
+w10:892	0	LOWERFAIL	3		dev=TIMEOUT
+w10:956	2	LOWERFAIL	2		dev=TIMEOUT
+w1:1033	1	OPERATOR	6		diverges alone (cone 6)
+w11:1019	1	LOWERFAIL	6		dev=TIMEOUT
+w11:112	1	LOWERFAIL	3		dev=TIMEOUT
+w11:167	1	OPERATOR	4		diverges alone (cone 4)
+w11:185	2	GRAPHOPT	10	n1,n5,n8,n9	needs siblings ['n1', 'n5', 'n8', 'n9']
+w11:275	0	OPERATOR	2		diverges alone (cone 2)
+w11:300	0	NOREPRO	6		full graph diverges=False
+w11:322	2	OPERATOR	4		diverges alone (cone 4)
+w11:335	0	LOWERFAIL	7		dev=TIMEOUT
+w11:336	0	LOWERFAIL	4		dev=TIMEOUT
+w11:354	1	LOWERFAIL	4		dev=TIMEOUT
+w11:383	1	LOWERFAIL	10		dev=TIMEOUT
+w11:386	0	OPERATOR	3		diverges alone (cone 3)
+w11:39	2	LOWERFAIL	3		dev=TIMEOUT
+w11:410	0	LOWERFAIL	2		dev=TIMEOUT
+w11:450	1	LOWERFAIL	6		dev=TIMEOUT
+w11:454	0	LOWERFAIL	2		dev=TIMEOUT
+w11:459	3	LOWERFAIL	5		dev=TIMEOUT
+w11:47	0	LOWERFAIL	4		dev=TIMEOUT
+w11:480	0	GRAPHOPT	8	n6,n7	needs siblings ['n6', 'n7']
+w1:149	0	OPERATOR	3		diverges alone (cone 3)
+w1:151	0	LOWERFAIL	3		dev=TIMEOUT
+w11:558	3	LOWERFAIL	4		dev=TIMEOUT
+w11:571	3	LOWERFAIL	4		dev=TIMEOUT
+w11:576	1	OPERATOR	3		diverges alone (cone 3)
+w1:159	2	LOWERFAIL	4		align(et=2,eager=4)
+w11:612	0	LOWERFAIL	3		dev=TIMEOUT
+w11:620	0	LOWERFAIL	2		dev=TIMEOUT
+w1:162	2	LOWERFAIL	5		dev=TIMEOUT
+w11:626	2	LOWERFAIL	3		dev=TIMEOUT
+w11:638	1	LOWERFAIL	4		dev=TIMEOUT
+w11:689	3	OPERATOR	5		diverges alone (cone 5)
+w1:169	1	LOWERFAIL	3		dev=TIMEOUT
+w11:705	2	GRAPHOPT	7	n6	needs siblings ['n6']
+w11:713	1	OPERATOR	4		diverges alone (cone 4)
+w11:718	1	LOWERFAIL	6		dev=TIMEOUT
+w11:722	0	LOWERFAIL	2		dev=TIMEOUT
+w11:81	3	LOWERFAIL	3		dev=TIMEOUT
+w11:847	2	LOWERFAIL	3		dev=TIMEOUT
+w11:86	2	OPERATOR	5		diverges alone (cone 5)
+w11:884	1	OPERATOR	3		diverges alone (cone 3)
+w11:911	0	LOWERFAIL	3		dev=TIMEOUT
+w11:969	4	LOWERFAIL	4		dev=TIMEOUT
+w1:20	1	LOWERFAIL	3		dev=TIMEOUT
+w1:204	1	LOWERFAIL	6		dev=TIMEOUT
+w12:1005	2	LOWERFAIL	3		dev=TIMEOUT
+w12:1010	2	LOWERFAIL	3		dev=TIMEOUT
+w12:101	1	LOWERFAIL	5		dev=TIMEOUT
+w12:1034	0	LOWERFAIL	3		dev=TIMEOUT
+w12:110	0	LOWERFAIL	7		dev=TIMEOUT
+w12:156	2	OPERATOR	3		diverges alone (cone 3)
+w12:2	0	LOWERFAIL	5		dev=TIMEOUT
+w12:269	1	OPERATOR	8		diverges alone (cone 8)
+w12:270	2	OPERATOR	2		diverges alone (cone 2)
+w12:283	0	OPERATOR	2		diverges alone (cone 2)
+w12:310	2	LOWERFAIL	4		dev=TIMEOUT
+w12:335	1	LOWERFAIL	3		dev=TIMEOUT
+w12:340	3	LOWERFAIL	4		dev=TIMEOUT
+w12:341	2	LOWERFAIL	3		dev=TIMEOUT
+w12:41	2	GRAPHOPT	7	n4	needs siblings ['n4']
+w12:432	3	LOWERFAIL	4		dev=TIMEOUT
+w12:438	3	LOWERFAIL	4		dev=TIMEOUT
+w12:462	0	OPERATOR	6		diverges alone (cone 6)
+w12:483	0	LOWERFAIL	5		dev=TIMEOUT
+w12:492	2	LOWERFAIL	2		dev=TIMEOUT
+w12:508	4	LOWERFAIL	6		dev=TIMEOUT
+w12:551	1	LOWERFAIL	5		dev=TIMEOUT
+w12:564	0	LOWERFAIL	2		dev=TIMEOUT
+w12:6	0	LOWERFAIL	3		dev=TIMEOUT
+w12:629	1	OPERATOR	4		diverges alone (cone 4)
+w12:643	2	LOWERFAIL	3		dev=TIMEOUT
+w12:656	3	LOWERFAIL	4		dev=TIMEOUT
+w12:686	0	LOWERFAIL	7		dev=TIMEOUT
+w12:687	1	LOWERFAIL	4		dev=TIMEOUT
+w12:748	0	OPERATOR	6		diverges alone (cone 6)
+w12:777	3	OPERATOR	6		diverges alone (cone 6)
+w12:786	2	OPERATOR	7		diverges alone (cone 7)
+w12:823	0	LOWERFAIL	3		dev=TIMEOUT
+w12:83	0	LOWERFAIL	2		dev=TIMEOUT
+w12:835	0	OPERATOR	3		diverges alone (cone 3)
+w12:852	1	LOWERFAIL	7		dev=TIMEOUT
+w12:880	1	OPERATOR	5		diverges alone (cone 5)
+w12:914	0	OPERATOR	4		diverges alone (cone 4)
+w12:983	0	LOWERFAIL	4		dev=TIMEOUT
+w12:997	0	LOWERFAIL	3		dev=TIMEOUT
+w13:1014	0	LOWERFAIL	6		dev=TIMEOUT
+w13:1021	0	LOWERFAIL	5		dev=TIMEOUT
+w13:1034	2	LOWERFAIL	7		dev=TIMEOUT
+w13:148	3	LOWERFAIL	3		dev=TIMEOUT
+w13:158	0	LOWERFAIL	2		dev=TIMEOUT
+w13:188	0	OPERATOR	5		diverges alone (cone 5)
+w1:321	0	LOWERFAIL	6		dev=TIMEOUT
+w13:220	2	OPERATOR	3		diverges alone (cone 3)
+w13:225	3	LOWERFAIL	4		dev=TIMEOUT
+w13:23	0	OPERATOR	2		diverges alone (cone 2)
+w13:269	0	NOREPRO	4		full graph diverges=False
+w13:300	0	LOWERFAIL	4		dev=TIMEOUT
+w13:324	3	LOWERFAIL	2		dev=TIMEOUT
+w13:33	1	LOWERFAIL	3		dev=TIMEOUT
+w13:359	3	LOWERFAIL	4		dev=TIMEOUT
+w13:367	3	OPERATOR	2		diverges alone (cone 2)
+w13:375	2	GRAPHOPT	8	n5,n6	needs siblings ['n5', 'n6']
+w13:386	0	LOWERFAIL	7		dev=TIMEOUT
+w13:421	1	OPERATOR	6		diverges alone (cone 6)
+w13:427	0	LOWERFAIL	3		dev=TIMEOUT
+w13:431	0	LOWERFAIL	3		dev=TIMEOUT
+w13:456	2	LOWERFAIL	2		dev=TIMEOUT
+w13:47	0	LOWERFAIL	4		dev=TIMEOUT
+w13:470	3	LOWERFAIL	2		dev=TIMEOUT
+w13:489	0	LOWERFAIL	4		dev=TIMEOUT
+w1:349	0	LOWERFAIL	4		dev=TIMEOUT
+w13:521	0	OPERATOR	3		diverges alone (cone 3)
+w13:528	2	LOWERFAIL	4		dev=TIMEOUT
+w13:57	2	LOWERFAIL	4		dev=TIMEOUT
+w13:635	2	LOWERFAIL	3		dev=TIMEOUT
+w13:642	3	LOWERFAIL	4		dev=TIMEOUT
+w13:656	2	OPERATOR	3		diverges alone (cone 3)
+w13:697	0	OPERATOR	3		diverges alone (cone 3)
+w13:705	3	OPERATOR	3		diverges alone (cone 3)
+w13:711	1	LOWERFAIL	4		dev=TIMEOUT
+w13:716	1	LOWERFAIL	2		dev=TIMEOUT
+w13:762	5	LOWERFAIL	3		align(et=2,eager=6)
+w1:377	1	GRAPHOPT	6	n1,n6	needs siblings ['n1', 'n6']
+w13:787	1	LOWERFAIL	7		dev=TIMEOUT
+w1:379	0	LOWERFAIL	2		dev=TIMEOUT
+w13:799	1	OPERATOR	3		diverges alone (cone 3)
+w13:804	0	OPERATOR	3		diverges alone (cone 3)
+w13:812	3	LOWERFAIL	3		dev=TIMEOUT
+w13:8	2	OPERATOR	3		diverges alone (cone 3)
+w13:836	3	LOWERFAIL	4		dev=TIMEOUT
+w13:839	2	LOWERFAIL	5		dev=TIMEOUT
+w13:844	1	LOWERFAIL	4		dev=TIMEOUT
+w13:877	1	LOWERFAIL	10		dev=TIMEOUT
+w13:935	2	LOWERFAIL	4		dev=TIMEOUT
+w13:996	2	OPERATOR	5		diverges alone (cone 5)
+w14:1014	1	OPERATOR	4		diverges alone (cone 4)
+w14:10	3	LOWERFAIL	4		dev=TIMEOUT
+w14:133	3	GRAPHOPT	5	n3	needs siblings ['n3']
+w14:139	1	LOWERFAIL	2		dev=TIMEOUT
+w14:141	0	OPERATOR	2		diverges alone (cone 2)
+w14:144	2	LOWERFAIL	5		dev=TIMEOUT
+w14:147	3	LOWERFAIL	4		dev=TIMEOUT
+w14:173	0	OPERATOR	2		diverges alone (cone 2)
+w14:174	1	LOWERFAIL	7		dev=TIMEOUT
+w14:19	2	LOWERFAIL	3		dev=TIMEOUT
+w14:192	1	OPERATOR	3		diverges alone (cone 3)
+w14:22	1	OPERATOR	3		diverges alone (cone 3)
+w14:221	3	LOWERFAIL	3		dev=TIMEOUT
+w14:240	3	LOWERFAIL	3		dev=TIMEOUT
+w14:255	1	LOWERFAIL	5		dev=TIMEOUT
+w14:269	2	GRAPHOPT	11	n10	needs siblings ['n10']
+w14:280	1	OPERATOR	7		diverges alone (cone 7)
+w1:430	3	LOWERFAIL	4		dev=TIMEOUT
+w14:3	4	LOWERFAIL	2		dev=TIMEOUT
+w14:348	1	NOREPRO	6		full graph diverges=False
+w14:374	0	LOWERFAIL	3		dev=TIMEOUT
+w14:401	0	LOWERFAIL	6		dev=TIMEOUT
+w14:429	0	LOWERFAIL	2		dev=TIMEOUT
+w14:509	0	LOWERFAIL	3		dev=TIMEOUT
+w14:552	0	OPERATOR	6		diverges alone (cone 6)
+w14:564	0	LOWERFAIL	4		dev=TIMEOUT
+w14:578	0	OPERATOR	2		diverges alone (cone 2)
+w14:583	2	LOWERFAIL	4		dev=TIMEOUT
+w14:597	0	LOWERFAIL	4		dev=TIMEOUT
+w14:627	3	LOWERFAIL	5		align(et=1,eager=4)
+w14:657	0	LOWERFAIL	5		dev=TIMEOUT
+w14:708	2	OPERATOR	5		diverges alone (cone 5)
+w14:717	0	GRAPHOPT	8	n4,n6,n7,n8	needs siblings ['n4', 'n6', 'n7', 'n8']
+w14:732	1	LOWERFAIL	6		dev=TIMEOUT
+w14:748	2	LOWERFAIL	4		dev=TIMEOUT
+w1:476	4	LOWERFAIL	2		dev=TIMEOUT
+w14:849	2	LOWERFAIL	4		dev=TIMEOUT
+w14:876	0	LOWERFAIL	4		dev=TIMEOUT
+w14:884	3	LOWERFAIL	3		dev=TIMEOUT
+w1:491	3	LOWERFAIL	6		dev=TIMEOUT
+w14:94	1	LOWERFAIL	2		dev=TIMEOUT
+w14:951	0	LOWERFAIL	5		dev=TIMEOUT
+w14:960	2	OPERATOR	2		diverges alone (cone 2)
+w15:10	0	LOWERFAIL	3		dev=TIMEOUT
+w15:1001	1	OPERATOR	3		diverges alone (cone 3)
+w15:1015	2	OPERATOR	4		diverges alone (cone 4)
+w15:1035	3	OPERATOR	4		diverges alone (cone 4)
+w15:1040	2	LOWERFAIL	3		dev=TIMEOUT
+w1:51	1	LOWERFAIL	5		dev=TIMEOUT
+w15:121	2	LOWERFAIL	8		dev=TIMEOUT
+w15:16	0	LOWERFAIL	2		dev=TIMEOUT
+w15:168	0	LOWERFAIL	3		dev=TIMEOUT
+w15:19	0	OPERATOR	3		diverges alone (cone 3)
+w15:191	3	LOWERFAIL	5		dev=TIMEOUT
+w15:194	1	OPERATOR	4		diverges alone (cone 4)
+w15:257	2	NOREPRO	3		full graph diverges=False
+w15:26	2	LOWERFAIL	11		dev=TIMEOUT
+w15:278	4	OPERATOR	2		diverges alone (cone 2)
+w15:282	1	LOWERFAIL	6		dev=TIMEOUT
+w15:298	2	OPERATOR	4		diverges alone (cone 4)
+w15:312	3	NOREPRO	6		full graph diverges=False
+w15:35	2	OPERATOR	5		diverges alone (cone 5)
+w15:361	1	OPERATOR	4		diverges alone (cone 4)
+w15:379	0	LOWERFAIL	3		dev=TIMEOUT
+w15:381	0	LOWERFAIL	3		dev=TIMEOUT
+w15:427	0	LOWERFAIL	4		dev=TIMEOUT
+w15:44	4	LOWERFAIL	3		dev=TIMEOUT
+w15:450	1	OPERATOR	9		diverges alone (cone 9)
+w15:459	2	OPERATOR	3		diverges alone (cone 3)
+w15:51	2	OPERATOR	6		diverges alone (cone 6)
+w15:55	1	LOWERFAIL	6		dev=TIMEOUT
+w15:594	2	LOWERFAIL	6		dev=TIMEOUT
+w15:607	2	LOWERFAIL	5		align(et=2,eager=4)
+w15:614	3	LOWERFAIL	3		dev=TIMEOUT
+w15:642	0	OPERATOR	3		diverges alone (cone 3)
+w15:645	2	OPERATOR	3		diverges alone (cone 3)
+w15:651	1	LOWERFAIL	3		dev=TIMEOUT
+w15:664	3	LOWERFAIL	5		dev=TIMEOUT
+w15:692	0	LOWERFAIL	4		dev=TIMEOUT
+w15:734	2	OPERATOR	4		diverges alone (cone 4)
+w15:739	4	LOWERFAIL	4		dev=TIMEOUT
+w15:772	4	LOWERFAIL	6		dev=TIMEOUT
+w15:773	3	LOWERFAIL	2		dev=TIMEOUT
+w15:792	1	GRAPHOPT	8	n8	needs siblings ['n8']
+w15:811	1	OPERATOR	5		diverges alone (cone 5)
+w15:817	2	LOWERFAIL	5		dev=TIMEOUT
+w15:834	4	NOREPRO	6		full graph diverges=False
+w15:89	0	OPERATOR	3		diverges alone (cone 3)
+w1:59	2	OPERATOR	4		diverges alone (cone 4)
+w15:965	3	GRAPHOPT	10	n6,n7,n8	needs siblings ['n6', 'n7', 'n8']
+w15:971	1	LOWERFAIL	9		dev=TIMEOUT
+w1:598	0	LOWERFAIL	2		dev=TIMEOUT
+w15:995	1	LOWERFAIL	4		dev=TIMEOUT
+w1:60	0	LOWERFAIL	6		dev=TIMEOUT
+w1:600	2	LOWERFAIL	4		dev=TIMEOUT
+w1:607	1	LOWERFAIL	3		dev=TIMEOUT
+w16:1010	1	LOWERFAIL	3		dev=TIMEOUT
+w16:131	2	LOWERFAIL	4		dev=TIMEOUT
+w16:132	1	OPERATOR	7		diverges alone (cone 7)
+w16:149	0	OPERATOR	4		diverges alone (cone 4)
+w16:16	1	GRAPHOPT	4	n7	needs siblings ['n7']
+w16:188	3	LOWERFAIL	3		dev=TIMEOUT
+w16:190	2	OPERATOR	6		diverges alone (cone 6)
+w16:191	1	GRAPHOPT	8	n5,n7	needs siblings ['n5', 'n7']
+w16:208	1	OPERATOR	4		diverges alone (cone 4)
+w16:219	0	NOREPRO	5		full graph diverges=False
+w16:225	3	OPERATOR	3		diverges alone (cone 3)
+w16:227	1	OPERATOR	4		diverges alone (cone 4)
+w16:243	3	LOWERFAIL	8		dev=TIMEOUT
+w16:253	0	LOWERFAIL	3		dev=TIMEOUT
+w1:63	1	OPERATOR	4		diverges alone (cone 4)
+w16:313	3	LOWERFAIL	4		dev=TIMEOUT
+w16:329	0	LOWERFAIL	2		dev=TIMEOUT
+w1:634	0	NOREPRO	3		full graph diverges=False
+w16:349	2	OPERATOR	5		diverges alone (cone 5)
+w16:366	0	OPERATOR	4		diverges alone (cone 4)
+w16:418	0	LOWERFAIL	4		dev=TIMEOUT
+w16:4	4	OPERATOR	5		diverges alone (cone 5)
+w16:447	2	LOWERFAIL	3		dev=TIMEOUT
+w16:490	3	OPERATOR	4		diverges alone (cone 4)
+w16:500	1	LOWERFAIL	2		dev=TIMEOUT
+w16:509	1	OPERATOR	8		diverges alone (cone 8)
+w16:518	0	OPERATOR	4		diverges alone (cone 4)
+w16:531	2	LOWERFAIL	5		dev=TIMEOUT
+w16:537	1	LOWERFAIL	5		dev=TIMEOUT
+w16:551	1	LOWERFAIL	6		dev=TIMEOUT
+w16:58	2	OPERATOR	4		diverges alone (cone 4)
+w16:605	0	LOWERFAIL	4		dev=TIMEOUT
+w16:639	0	LOWERFAIL	4		dev=TIMEOUT
+w16:672	0	OPERATOR	2		diverges alone (cone 2)
+w16:675	0	OPERATOR	2		diverges alone (cone 2)
+w16:681	1	LOWERFAIL	5		dev=TIMEOUT
+w16:701	0	OPERATOR	3		diverges alone (cone 3)
+w16:728	0	OPERATOR	3		diverges alone (cone 3)
+w16:743	1	OPERATOR	3		diverges alone (cone 3)
+w16:755	0	LOWERFAIL	2		dev=TIMEOUT
+w16:787	0	LOWERFAIL	4		dev=TIMEOUT
+w16:870	0	LOWERFAIL	7		dev=TIMEOUT
+w16:873	2	LOWERFAIL	4		dev=TIMEOUT
+w16:923	3	NOREPRO	4		full graph diverges=False
+w16:930	2	LOWERFAIL	4		dev=TIMEOUT
+w16:937	0	OPERATOR	3		diverges alone (cone 3)
+w16:956	0	OPERATOR	3		diverges alone (cone 3)
+w16:965	0	LOWERFAIL	3		dev=TIMEOUT
+w16:995	2	OPERATOR	4		diverges alone (cone 4)
+w17:1016	0	OPERATOR	7		diverges alone (cone 7)
+w17:104	0	NOREPRO	3		full graph diverges=False
+w17:107	2	GRAPHOPT	3	n4	needs siblings ['n4']
+w17:134	2	LOWERFAIL	4		dev=TIMEOUT
+w17:136	1	OPERATOR	5		diverges alone (cone 5)
+w17:139	3	LOWERFAIL	5		dev=TIMEOUT
+w17:146	3	LOWERFAIL	7		dev=TIMEOUT
+w17:179	1	LOWERFAIL	5		dev=TIMEOUT
+w17:228	0	LOWERFAIL	6		dev=TIMEOUT
+w17:239	0	OPERATOR	5		diverges alone (cone 5)
+w17:266	0	OPERATOR	4		diverges alone (cone 4)
+w17:29	2	OPERATOR	6		diverges alone (cone 6)
+w17:317	0	OPERATOR	3		diverges alone (cone 3)
+w17:332	0	LOWERFAIL	3		dev=TIMEOUT
+w17:350	4	OPERATOR	6		diverges alone (cone 6)
+w17:366	0	OPERATOR	3		diverges alone (cone 3)
+w17:375	3	OPERATOR	3		diverges alone (cone 3)
+w17:387	0	LOWERFAIL	3		dev=TIMEOUT
+w17:39	3	NOREPRO	5		full graph diverges=False
+w17:393	2	LOWERFAIL	5		dev=TIMEOUT
+w17:40	1	LOWERFAIL	4		dev=TIMEOUT
+w17:405	1	OPERATOR	3		diverges alone (cone 3)
+w17:406	1	LOWERFAIL	2		dev=TIMEOUT
+w17:414	4	LOWERFAIL	4		dev=TIMEOUT
+w1:743	0	LOWERFAIL	2		dev=TIMEOUT
+w1:744	2	LOWERFAIL	7		dev=TIMEOUT
+w17:450	1	OPERATOR	2		diverges alone (cone 2)
+w1:745	1	LOWERFAIL	4		dev=TIMEOUT
+w17:454	0	NOREPRO	5		full graph diverges=False
+w17:458	3	LOWERFAIL	3		dev=TIMEOUT
+w17:467	1	OPERATOR	3		diverges alone (cone 3)
+w17:490	2	LOWERFAIL	10		dev=TIMEOUT
+w17:49	1	OPERATOR	3		diverges alone (cone 3)
+w17:496	0	OPERATOR	4		diverges alone (cone 4)
+w17:611	1	LOWERFAIL	3		dev=TIMEOUT
+w17:612	1	LOWERFAIL	3		dev=TIMEOUT
+w17:613	0	LOWERFAIL	4		dev=TIMEOUT
+w17:620	0	OPERATOR	4		diverges alone (cone 4)
+w17:627	1	OPERATOR	3		diverges alone (cone 3)
+w17:633	0	LOWERFAIL	2		dev=TIMEOUT
+w1:767	0	LOWERFAIL	7		dev=TIMEOUT
+w17:680	0	OPERATOR	2		diverges alone (cone 2)
+w17:697	3	LOWERFAIL	3		align(et=2,eager=4)
+w17:701	3	OPERATOR	2		diverges alone (cone 2)
+w17:71	2	OPERATOR	8		diverges alone (cone 8)
+w17:723	2	NOREPRO	4		full graph diverges=False
+w1:77	3	LOWERFAIL	5		dev=TIMEOUT
+w17:755	0	OPERATOR	3		diverges alone (cone 3)
+w1:777	0	OPERATOR	3		diverges alone (cone 3)
+w17:778	1	LOWERFAIL	3		dev=TIMEOUT
+w17:782	0	OPERATOR	2		diverges alone (cone 2)
+w17:800	3	LOWERFAIL	4		dev=TIMEOUT
+w17:812	2	LOWERFAIL	4		dev=TIMEOUT
+w17:823	1	LOWERFAIL	3		dev=TIMEOUT
+w17:836	0	OPERATOR	5		diverges alone (cone 5)
+w17:837	0	GRAPHOPT	8	n4,n5,n6,n7	needs siblings ['n4', 'n5', 'n6', 'n7']
+w17:884	0	NOREPRO	5		full graph diverges=False
+w17:899	0	OPERATOR	3		diverges alone (cone 3)
+w17:904	0	OPERATOR	10		diverges alone (cone 10)
+w17:913	1	LOWERFAIL	6		dev=TIMEOUT
+w17:914	0	OPERATOR	2		diverges alone (cone 2)
+w17:921	4	GRAPHOPT	5	n1	needs siblings ['n1']
+w17:923	1	OPERATOR	4		diverges alone (cone 4)
+w17:946	2	GRAPHOPT	6	n6	needs siblings ['n6']
+w17:955	2	LOWERFAIL	5		dev=TIMEOUT
+w1:796	4	LOWERFAIL	2		align(et=2,eager=5)
+w17:992	0	LOWERFAIL	5		dev=TIMEOUT
+w18:116	0	OPERATOR	3		diverges alone (cone 3)
+w18:14	0	OPERATOR	2		diverges alone (cone 2)
+w18:164	0	LOWERFAIL	5		dev=TIMEOUT
+w1:822	3	LOWERFAIL	4		dev=TIMEOUT
+w18:234	0	LOWERFAIL	5		dev=TIMEOUT
+w18:237	2	OPERATOR	7		diverges alone (cone 7)
+w18:242	1	OPERATOR	3		diverges alone (cone 3)
+w18:25	2	GRAPHOPT	5	n4	needs siblings ['n4']
+w18:270	4	OPERATOR	4		diverges alone (cone 4)
+w1:827	1	LOWERFAIL	5		dev=TIMEOUT
+w18:292	1	OPERATOR	7		diverges alone (cone 7)
+w18:293	2	OPERATOR	5		diverges alone (cone 5)
+w1:833	2	LOWERFAIL	3		dev=TIMEOUT
+w18:353	2	LOWERFAIL	6		dev=TIMEOUT
+w18:376	0	LOWERFAIL	2		dev=TIMEOUT
+w18:408	2	LOWERFAIL	3		dev=TIMEOUT
+w18:441	3	LOWERFAIL	5		align(et=3,eager=5)
+w18:448	3	OPERATOR	5		diverges alone (cone 5)
+w18:449	0	OPERATOR	6		diverges alone (cone 6)
+w18:500	0	OPERATOR	5		diverges alone (cone 5)
+w18:507	0	OPERATOR	5		diverges alone (cone 5)
+w1:853	0	LOWERFAIL	2		dev=TIMEOUT
+w18:555	1	OPERATOR	3		diverges alone (cone 3)
+w18:56	2	OPERATOR	5		diverges alone (cone 5)
+w18:576	3	OPERATOR	5		diverges alone (cone 5)
+w18:596	1	OPERATOR	4		diverges alone (cone 4)
+w18:607	2	OPERATOR	4		diverges alone (cone 4)
+w18:610	3	LOWERFAIL	4		dev=TIMEOUT
+w18:620	1	OPERATOR	4		diverges alone (cone 4)
+w18:645	3	LOWERFAIL	4		dev=TIMEOUT
+w18:683	0	LOWERFAIL	3		dev=TIMEOUT
+w18:691	0	LOWERFAIL	5		dev=TIMEOUT
+w18:696	0	OPERATOR	3		diverges alone (cone 3)
+w18:698	0	OPERATOR	3		diverges alone (cone 3)
+w18:727	1	NOREPRO	3		full graph diverges=False
+w18:728	1	OPERATOR	7		diverges alone (cone 7)
+w18:778	0	OPERATOR	2		diverges alone (cone 2)
+w18:805	3	LOWERFAIL	5		dev=TIMEOUT
+w18:824	1	OPERATOR	4		diverges alone (cone 4)
+w18:84	0	OPERATOR	5		diverges alone (cone 5)
+w18:847	3	OPERATOR	3		diverges alone (cone 3)
+w18:866	0	LOWERFAIL	3		dev=TIMEOUT
+w18:870	4	OPERATOR	2		diverges alone (cone 2)
+w18:898	1	OPERATOR	2		diverges alone (cone 2)
+w18:92	2	OPERATOR	5		diverges alone (cone 5)
+w18:926	0	OPERATOR	6		diverges alone (cone 6)
+w18:937	3	LOWERFAIL	4		align(et=3,eager=4)
+w18:948	1	LOWERFAIL	4		dev=TIMEOUT
+w18:961	1	OPERATOR	4		diverges alone (cone 4)
+w18:970	3	OPERATOR	4		diverges alone (cone 4)
+w1:898	0	LOWERFAIL	3		dev=TIMEOUT
+w19:1027	2	OPERATOR	4		diverges alone (cone 4)
+w19:115	3	OPERATOR	5		diverges alone (cone 5)
+w19:13	0	OPERATOR	3		diverges alone (cone 3)
+w19:174	2	OPERATOR	3		diverges alone (cone 3)
+w19:201	4	OPERATOR	3		diverges alone (cone 3)
+w19:215	3	LOWERFAIL	3		dev=TIMEOUT
+w19:284	0	LOWERFAIL	2		dev=TIMEOUT
+w19:29	1	OPERATOR	3		diverges alone (cone 3)
+w19:311	0	OPERATOR	3		diverges alone (cone 3)
+w19:386	2	GRAPHOPT	10	n4,n8	needs siblings ['n4', 'n8']
+w1:940	2	LOWERFAIL	4		dev=TIMEOUT
+w19:410	0	NOREPRO	4		full graph diverges=False
+w1:943	2	LOWERFAIL	3		dev=TIMEOUT
+w19:497	0	LOWERFAIL	7		dev=TIMEOUT
+w19:547	1	OPERATOR	3		diverges alone (cone 3)
+w19:549	2	OPERATOR	3		diverges alone (cone 3)
+w19:575	1	OPERATOR	3		diverges alone (cone 3)
+w19:576	2	OPERATOR	7		diverges alone (cone 7)
+w19:585	0	NOREPRO	6		full graph diverges=False
+w19:587	2	LOWERFAIL	6		dev=TIMEOUT
+w1:96	0	OPERATOR	6		diverges alone (cone 6)
+w19:611	3	OPERATOR	6		diverges alone (cone 6)
+w19:632	0	OPERATOR	3		diverges alone (cone 3)
+w19:646	1	OPERATOR	2		diverges alone (cone 2)
+w19:649	3	LOWERFAIL	3		dev=TIMEOUT
+w19:665	2	OPERATOR	6		diverges alone (cone 6)
+w19:668	1	OPERATOR	3		diverges alone (cone 3)
+w19:677	0	OPERATOR	6		diverges alone (cone 6)
+w1:971	0	LOWERFAIL	3		dev=TIMEOUT
+w19:724	2	OPERATOR	4		diverges alone (cone 4)
+w19:740	0	OPERATOR	5		diverges alone (cone 5)
+w19:75	1	LOWERFAIL	4		dev=TIMEOUT
+w19:776	2	OPERATOR	6		diverges alone (cone 6)
+w19:785	0	OPERATOR	5		diverges alone (cone 5)
+w19:786	3	OPERATOR	8		diverges alone (cone 8)
+w19:79	1	OPERATOR	3		diverges alone (cone 3)
+w19:8	1	LOWERFAIL	9		dev=TIMEOUT
+w19:825	3	LOWERFAIL	5		align(et=3,eager=4)
+w19:844	2	OPERATOR	3		diverges alone (cone 3)
+w19:858	0	OPERATOR	6		diverges alone (cone 6)
+w19:895	1	OPERATOR	3		diverges alone (cone 3)
+w19:918	0	LOWERFAIL	6		dev=TIMEOUT
+w20:1016	0	OPERATOR	4		diverges alone (cone 4)
+w20:113	1	OPERATOR	6		diverges alone (cone 6)
+w20:134	1	LOWERFAIL	2		dev=TIMEOUT
+w20:137	0	OPERATOR	4		diverges alone (cone 4)
+w20:138	1	OPERATOR	7		diverges alone (cone 7)
+w20:152	3	NOREPRO	3		full graph diverges=False
+w20:171	2	OPERATOR	7		diverges alone (cone 7)
+w20:177	0	OPERATOR	4		diverges alone (cone 4)
+w20:184	1	LOWERFAIL	3		dev=TIMEOUT
+w20:211	3	OPERATOR	4		diverges alone (cone 4)
+w20:265	0	OPERATOR	7		diverges alone (cone 7)
+w20:283	0	NOREPRO	4		full graph diverges=False
+w20:307	2	OPERATOR	2		diverges alone (cone 2)
+w20:311	0	OPERATOR	7		diverges alone (cone 7)
+w20:343	2	OPERATOR	3		diverges alone (cone 3)
+w20:372	3	OPERATOR	6		diverges alone (cone 6)
+w20:418	1	LOWERFAIL	3		dev=TIMEOUT
+w20:458	1	OPERATOR	3		diverges alone (cone 3)
+w20:467	0	OPERATOR	4		diverges alone (cone 4)
+w20:541	3	GRAPHOPT	5	n3	needs siblings ['n3']
+w20:561	0	OPERATOR	5		diverges alone (cone 5)
+w20:572	2	OPERATOR	4		diverges alone (cone 4)
+w20:59	0	NOREPRO	3		full graph diverges=False
+w20:600	2	NOREPRO	5		full graph diverges=False
+w20:633	0	OPERATOR	2		diverges alone (cone 2)
+w20:640	0	OPERATOR	7		diverges alone (cone 7)
+w20:659	0	OPERATOR	5		diverges alone (cone 5)
+w20:667	2	OPERATOR	2		diverges alone (cone 2)
+w20:668	4	OPERATOR	3		diverges alone (cone 3)
+w20:695	0	NOREPRO	2		full graph diverges=False
+w20:704	0	NOREPRO	2		full graph diverges=False
+w20:707	1	LOWERFAIL	4		dev=TIMEOUT
+w20:724	2	OPERATOR	8		diverges alone (cone 8)
+w20:741	0	OPERATOR	6		diverges alone (cone 6)
+w20:776	1	OPERATOR	4		diverges alone (cone 4)
+w20:788	0	OPERATOR	2		diverges alone (cone 2)
+w20:789	0	OPERATOR	3		diverges alone (cone 3)
+w20:802	2	OPERATOR	5		diverges alone (cone 5)
+w20:806	4	OPERATOR	3		diverges alone (cone 3)
+w20:83	1	OPERATOR	3		diverges alone (cone 3)
+w20:860	0	OPERATOR	6		diverges alone (cone 6)
+w20:926	4	OPERATOR	4		diverges alone (cone 4)
+w20:935	2	OPERATOR	4		diverges alone (cone 4)
+w20:953	0	OPERATOR	3		diverges alone (cone 3)
+w2:1038	2	OPERATOR	3		diverges alone (cone 3)
+w21:0	4	LOWERFAIL	2		align(et=4,eager=6)
+w21:1025	0	OPERATOR	2		diverges alone (cone 2)
+w21:136	2	LOWERFAIL	3		dev=TIMEOUT
+w21:138	2	OPERATOR	3		diverges alone (cone 3)
+w21:143	3	OPERATOR	4		diverges alone (cone 4)
+w21:162	2	OPERATOR	4		diverges alone (cone 4)
+w21:167	2	OPERATOR	3		diverges alone (cone 3)
+w21:191	2	LOWERFAIL	4		dev=TIMEOUT
+w21:225	2	OPERATOR	10		diverges alone (cone 10)
+w21:234	2	OPERATOR	5		diverges alone (cone 5)
+w21:240	2	NOREPRO	4		full graph diverges=False
+w21:24	1	OPERATOR	6		diverges alone (cone 6)
+w21:27	1	LOWERFAIL	4		dev=TIMEOUT
+w21:296	3	OPERATOR	2		diverges alone (cone 2)
+w21:340	3	OPERATOR	3		diverges alone (cone 3)
+w21:354	1	NOREPRO	3		full graph diverges=False
+w2:139	1	GRAPHOPT	8	n1	needs siblings ['n1']
+w21:405	1	OPERATOR	3		diverges alone (cone 3)
+w21:427	1	GRAPHOPT	14	n4,n13	needs siblings ['n4', 'n13']
+w21:433	0	OPERATOR	3		diverges alone (cone 3)
+w21:436	0	OPERATOR	12		diverges alone (cone 12)
+w21:456	1	OPERATOR	5		diverges alone (cone 5)
+w21:479	1	OPERATOR	2		diverges alone (cone 2)
+w21:481	1	OPERATOR	3		diverges alone (cone 3)
+w21:495	1	OPERATOR	10		diverges alone (cone 10)
+w2:15	0	OPERATOR	3		diverges alone (cone 3)
+w21:549	2	OPERATOR	8		diverges alone (cone 8)
+w21:648	3	OPERATOR	5		diverges alone (cone 5)
+w21:655	0	OPERATOR	2		diverges alone (cone 2)
+w2:169	1	OPERATOR	8		diverges alone (cone 8)
+w21:693	2	OPERATOR	4		diverges alone (cone 4)
+w21:697	1	LOWERFAIL	4		dev=TIMEOUT
+w21:715	2	OPERATOR	3		diverges alone (cone 3)
+w21:717	0	OPERATOR	3		diverges alone (cone 3)
+w21:726	3	OPERATOR	3		diverges alone (cone 3)
+w21:745	1	OPERATOR	3		diverges alone (cone 3)
+w21:746	1	OPERATOR	5		diverges alone (cone 5)
+w21:766	3	OPERATOR	3		diverges alone (cone 3)
+w2:177	4	OPERATOR	4		diverges alone (cone 4)
+w21:818	1	OPERATOR	3		diverges alone (cone 3)
+w21:850	2	OPERATOR	4		diverges alone (cone 4)
+w21:853	3	OPERATOR	2		diverges alone (cone 2)
+w21:858	2	OPERATOR	4		diverges alone (cone 4)
+w21:873	2	GRAPHOPT	7	n6	needs siblings ['n6']
+w21:883	1	LOWERFAIL	3		align(et=1,eager=3)
+w2:193	0	OPERATOR	3		diverges alone (cone 3)
+w21:945	0	OPERATOR	14		diverges alone (cone 14)
+w21:948	1	OPERATOR	3		diverges alone (cone 3)
+w2:196	1	OPERATOR	6		diverges alone (cone 6)
+w21:977	0	OPERATOR	6		diverges alone (cone 6)
+w21:980	3	LOWERFAIL	3		dev=TIMEOUT
+w22:1011	0	OPERATOR	2		diverges alone (cone 2)
+w22:1014	0	LOWERFAIL	3		dev=TIMEOUT
+w22:117	1	LOWERFAIL	5		dev=TIMEOUT
+w22:126	2	OPERATOR	5		diverges alone (cone 5)
+w22:140	1	OPERATOR	8		diverges alone (cone 8)
+w2:214	2	LOWERFAIL	4		dev=TIMEOUT
+w22:179	1	OPERATOR	10		diverges alone (cone 10)
+w22:210	0	NOREPRO	2		full graph diverges=False
+w22:220	4	LOWERFAIL	6		dev=TIMEOUT
+w22:247	1	OPERATOR	4		diverges alone (cone 4)
+w22:262	1	NOREPRO	4		full graph diverges=False
+w22:265	0	OPERATOR	4		diverges alone (cone 4)
+w22:29	1	OPERATOR	6		diverges alone (cone 6)
+w22:298	1	OPERATOR	5		diverges alone (cone 5)
+w22:367	3	OPERATOR	6		diverges alone (cone 6)
+w22:388	2	OPERATOR	5		diverges alone (cone 5)
+w22:445	1	GRAPHOPT	4	n7	needs siblings ['n7']
+w22:474	2	OPERATOR	3		diverges alone (cone 3)
+w22:493	1	OPERATOR	3		diverges alone (cone 3)
+w22:494	1	OPERATOR	3		diverges alone (cone 3)
+w22:555	1	OPERATOR	2		diverges alone (cone 2)
+w22:56	3	OPERATOR	4		diverges alone (cone 4)
+w22:585	1	OPERATOR	8		diverges alone (cone 8)
+w22:590	0	LOWERFAIL	6		dev=TIMEOUT
+w22:593	2	OPERATOR	12		diverges alone (cone 12)
+w22:599	0	OPERATOR	4		diverges alone (cone 4)
+w22:633	0	OPERATOR	3		diverges alone (cone 3)
+w2:264	1	LOWERFAIL	4		dev=TIMEOUT
+w22:654	3	OPERATOR	4		diverges alone (cone 4)
+w22:657	0	OPERATOR	5		diverges alone (cone 5)
+w22:664	1	OPERATOR	3		diverges alone (cone 3)
+w2:268	1	OPERATOR	6		diverges alone (cone 6)
+w2:269	1	OPERATOR	2		diverges alone (cone 2)
+w22:691	3	OPERATOR	4		diverges alone (cone 4)
+w22:707	4	OPERATOR	5		diverges alone (cone 5)
+w22:728	0	OPERATOR	3		diverges alone (cone 3)
+w22:748	3	OPERATOR	3		diverges alone (cone 3)
+w22:809	3	OPERATOR	3		diverges alone (cone 3)
+w22:811	0	OPERATOR	4		diverges alone (cone 4)
+w22:814	2	OPERATOR	5		diverges alone (cone 5)
+w22:828	0	OPERATOR	3		diverges alone (cone 3)
+w2:289	1	LOWERFAIL	10		dev=TIMEOUT
+w22:918	1	GRAPHOPT	7	n7	needs siblings ['n7']
+w2:300	1	OPERATOR	7		diverges alone (cone 7)
+w23:1006	1	OPERATOR	2		diverges alone (cone 2)
+w23:1025	0	OPERATOR	2		diverges alone (cone 2)
+w23:1038	0	NOREPRO	3		full graph diverges=False
+w23:105	2	GRAPHOPT	5	n4	needs siblings ['n4']
+w23:132	1	OPERATOR	3		diverges alone (cone 3)
+w23:142	0	OPERATOR	4		diverges alone (cone 4)
+w2:317	2	LOWERFAIL	3		dev=TIMEOUT
+w23:186	4	OPERATOR	4		diverges alone (cone 4)
+w23:188	0	OPERATOR	3		diverges alone (cone 3)
+w23:199	0	OPERATOR	5		diverges alone (cone 5)
+w23:244	1	LOWERFAIL	3		dev=TIMEOUT
+w23:294	0	OPERATOR	2		diverges alone (cone 2)
+w23:311	1	OPERATOR	9		diverges alone (cone 9)
+w23:331	3	NOREPRO	3		full graph diverges=False
+w23:397	3	OPERATOR	7		diverges alone (cone 7)
+w23:476	0	OPERATOR	5		diverges alone (cone 5)
+w23:489	0	OPERATOR	4		diverges alone (cone 4)
+w23:528	1	OPERATOR	4		diverges alone (cone 4)
+w23:531	0	OPERATOR	3		diverges alone (cone 3)
+w23:537	1	OPERATOR	4		diverges alone (cone 4)
+w23:570	2	OPERATOR	10		diverges alone (cone 10)
+w23:572	2	GRAPHOPT	7	n8	needs siblings ['n8']
+w23:576	1	OPERATOR	5		diverges alone (cone 5)
+w23:583	1	OPERATOR	3		diverges alone (cone 3)
+w23:664	1	OPERATOR	2		diverges alone (cone 2)
+w23:700	0	LOWERFAIL	3		dev=TIMEOUT
+w23:71	3	OPERATOR	4		diverges alone (cone 4)
+w23:717	0	OPERATOR	3		diverges alone (cone 3)
+w23:738	1	OPERATOR	3		diverges alone (cone 3)
+w2:376	0	OPERATOR	6		diverges alone (cone 6)
+w23:81	2	OPERATOR	3		diverges alone (cone 3)
+w23:820	1	OPERATOR	4		diverges alone (cone 4)
+w23:945	2	OPERATOR	3		diverges alone (cone 3)
+w23:956	3	GRAPHOPT	4	n8	needs siblings ['n8']
+w24:1004	0	OPERATOR	3		diverges alone (cone 3)
+w24:1027	0	OPERATOR	9		diverges alone (cone 9)
+w24:1032	1	OPERATOR	6		diverges alone (cone 6)
+w24:113	0	OPERATOR	2		diverges alone (cone 2)
+w24:128	1	OPERATOR	3		diverges alone (cone 3)
+w24:148	0	OPERATOR	3		diverges alone (cone 3)
+w2:418	5	LOWERFAIL	3		dev=TIMEOUT
+w24:200	1	OPERATOR	3		diverges alone (cone 3)
+w24:217	2	LOWERFAIL	8		dev=TIMEOUT
+w24:22	3	NOREPRO	4		full graph diverges=False
+w24:260	1	NOREPRO	4		full graph diverges=False
+w24:276	1	OPERATOR	2		diverges alone (cone 2)
+w24:278	3	OPERATOR	3		diverges alone (cone 3)
+w24:285	2	OPERATOR	3		diverges alone (cone 3)
+w24:291	0	OPERATOR	2		diverges alone (cone 2)
+w24:314	2	OPERATOR	9		diverges alone (cone 9)
+w24:341	4	OPERATOR	10		diverges alone (cone 10)
+w2:437	0	OPERATOR	2		diverges alone (cone 2)
+w24:390	2	OPERATOR	5		diverges alone (cone 5)
+w24:415	1	LOWERFAIL	5		dev=TIMEOUT
+w24:420	0	OPERATOR	11		diverges alone (cone 11)
+w24:423	0	OPERATOR	2		diverges alone (cone 2)
+w24:428	0	OPERATOR	5		diverges alone (cone 5)
+w24:495	0	GRAPHOPT	4	n6	needs siblings ['n6']
+w2:450	0	OPERATOR	4		diverges alone (cone 4)
+w24:531	0	OPERATOR	2		diverges alone (cone 2)
+w24:541	1	OPERATOR	4		diverges alone (cone 4)
+w24:547	1	OPERATOR	4		diverges alone (cone 4)
+w24:549	0	OPERATOR	2		diverges alone (cone 2)
+w24:572	1	OPERATOR	2		diverges alone (cone 2)
+w24:605	3	OPERATOR	6		diverges alone (cone 6)
+w24:608	2	LOWERFAIL	9		align(et=1,eager=3)
+w24:642	0	OPERATOR	6		diverges alone (cone 6)
+w24:648	2	OPERATOR	4		diverges alone (cone 4)
+w24:666	0	OPERATOR	3		diverges alone (cone 3)
+w24:667	3	OPERATOR	5		diverges alone (cone 5)
+w24:75	1	OPERATOR	3		diverges alone (cone 3)
+w2:478	1	OPERATOR	2		diverges alone (cone 2)
+w24:787	0	OPERATOR	3		diverges alone (cone 3)
+w24:800	2	NOREPRO	3		full graph diverges=False
+w24:818	3	OPERATOR	5		diverges alone (cone 5)
+w24:824	1	OPERATOR	2		diverges alone (cone 2)
+w24:845	0	OPERATOR	5		diverges alone (cone 5)
+w24:873	2	OPERATOR	3		diverges alone (cone 3)
+w24:894	1	OPERATOR	2		diverges alone (cone 2)
+w24:901	0	OPERATOR	2		diverges alone (cone 2)
+w24:942	0	OPERATOR	5		diverges alone (cone 5)
+w25:1040	0	OPERATOR	4		diverges alone (cone 4)
+w25:111	2	OPERATOR	3		diverges alone (cone 3)
+w25:128	0	OPERATOR	4		diverges alone (cone 4)
+w25:157	2	OPERATOR	8		diverges alone (cone 8)
+w25:163	3	LOWERFAIL	4		dev=TIMEOUT
+w25:171	2	OPERATOR	4		diverges alone (cone 4)
+w25:176	0	OPERATOR	2		diverges alone (cone 2)
+w25:189	1	OPERATOR	3		diverges alone (cone 3)
+w2:519	2	LOWERFAIL	5		dev=TIMEOUT
+w25:26	2	GRAPHOPT	6	n1	needs siblings ['n1']
+w25:291	1	OPERATOR	4		diverges alone (cone 4)
+w25:294	1	OPERATOR	2		diverges alone (cone 2)
+w25:353	2	OPERATOR	4		diverges alone (cone 4)
+w25:356	1	OPERATOR	4		diverges alone (cone 4)
+w25:359	3	OPERATOR	2		diverges alone (cone 2)
+w25:365	2	LOWERFAIL	3		dev=TIMEOUT
+w25:404	0	OPERATOR	5		diverges alone (cone 5)
+w25:44	2	OPERATOR	5		diverges alone (cone 5)
+w25:462	0	OPERATOR	4		diverges alone (cone 4)
+w2:547	0	OPERATOR	2		diverges alone (cone 2)
+w25:486	0	LOWERFAIL	2		dev=TIMEOUT
+w25:493	1	OPERATOR	3		diverges alone (cone 3)
+w25:509	0	OPERATOR	2		diverges alone (cone 2)
+w25:522	0	OPERATOR	3		diverges alone (cone 3)
+w25:536	1	OPERATOR	3		diverges alone (cone 3)
+w25:565	0	NOREPRO	4		full graph diverges=False
+w25:602	1	OPERATOR	3		diverges alone (cone 3)
+w25:619	0	OPERATOR	3		diverges alone (cone 3)
+w2:562	1	GRAPHOPT	10	n6,n8,n9	needs siblings ['n6', 'n8', 'n9']
+w25:625	0	OPERATOR	7		diverges alone (cone 7)
+w25:705	1	GRAPHOPT	8	n4	needs siblings ['n4']
+w25:716	0	OPERATOR	3		diverges alone (cone 3)
+w25:728	3	OPERATOR	3		diverges alone (cone 3)
+w25:750	0	OPERATOR	2		diverges alone (cone 2)
+w25:79	0	OPERATOR	6		diverges alone (cone 6)
+w25:860	0	OPERATOR	2		diverges alone (cone 2)
+w25:890	2	OPERATOR	5		diverges alone (cone 5)
+w25:914	3	OPERATOR	5		diverges alone (cone 5)
+w25:933	2	GRAPHOPT	6	n5	needs siblings ['n5']
+w26:144	0	OPERATOR	2		diverges alone (cone 2)
+w26:150	3	LOWERFAIL	4		dev=TIMEOUT
+w26:151	0	OPERATOR	2		diverges alone (cone 2)
+w26:153	3	OPERATOR	6		diverges alone (cone 6)
+w26:158	2	LOWERFAIL	5		align(et=2,eager=4)
+w26:180	3	OPERATOR	5		diverges alone (cone 5)
+w26:197	0	OPERATOR	3		diverges alone (cone 3)
+w26:208	2	OPERATOR	4		diverges alone (cone 4)
+w26:209	0	OPERATOR	8		diverges alone (cone 8)
+w2:622	2	OPERATOR	4		diverges alone (cone 4)
+w26:232	2	OPERATOR	7		diverges alone (cone 7)
+w26:234	0	OPERATOR	5		diverges alone (cone 5)
+w26:239	2	OPERATOR	4		diverges alone (cone 4)
+w26:26	0	OPERATOR	2		diverges alone (cone 2)
+w26:267	1	OPERATOR	3		diverges alone (cone 3)
+w26:278	3	OPERATOR	6		diverges alone (cone 6)
+w26:351	0	OPERATOR	3		diverges alone (cone 3)
+w26:366	1	OPERATOR	7		diverges alone (cone 7)
+w26:388	3	OPERATOR	4		diverges alone (cone 4)
+w26:434	0	GRAPHOPT	8	n5,n6,n7	needs siblings ['n5', 'n6', 'n7']
+w26:436	1	OPERATOR	6		diverges alone (cone 6)
+w26:452	2	OPERATOR	8		diverges alone (cone 8)
+w26:469	2	OPERATOR	4		diverges alone (cone 4)
+w2:647	3	OPERATOR	3		diverges alone (cone 3)
+w26:504	0	LOWERFAIL	6		dev=TIMEOUT
+w26:515	0	OPERATOR	2		diverges alone (cone 2)
+w2:655	1	OPERATOR	5		diverges alone (cone 5)
+w26:581	0	OPERATOR	5		diverges alone (cone 5)
+w26:590	4	OPERATOR	4		diverges alone (cone 4)
+w26:603	2	OPERATOR	8		diverges alone (cone 8)
+w26:607	1	OPERATOR	8		diverges alone (cone 8)
+w26:627	3	OPERATOR	3		diverges alone (cone 3)
+w26:65	0	OPERATOR	2		diverges alone (cone 2)
+w26:740	1	OPERATOR	3		diverges alone (cone 3)
+w26:755	0	OPERATOR	2		diverges alone (cone 2)
+w26:76	2	OPERATOR	2		diverges alone (cone 2)
+w26:79	1	NOREPRO	4		full graph diverges=False
+w26:792	4	OPERATOR	3		diverges alone (cone 3)
+w26:810	1	OPERATOR	3		diverges alone (cone 3)
+w2:681	2	OPERATOR	7		diverges alone (cone 7)
+w26:87	0	OPERATOR	2		diverges alone (cone 2)
+w26:885	1	OPERATOR	4		diverges alone (cone 4)
+w2:694	2	NOREPRO	8		full graph diverges=False
+w26:965	2	OPERATOR	5		diverges alone (cone 5)
+w26:989	4	LOWERFAIL	4		align(et=3,eager=5)
+w26:993	2	OPERATOR	3		diverges alone (cone 3)
+w26:997	2	OPERATOR	3		diverges alone (cone 3)
+w2:700	0	OPERATOR	8		diverges alone (cone 8)
+w2:708	2	OPERATOR	10		diverges alone (cone 10)
+w27:102	2	NOREPRO	6		full graph diverges=False
+w27:105	0	OPERATOR	2		diverges alone (cone 2)
+w27:114	0	OPERATOR	3		diverges alone (cone 3)
+w27:117	0	OPERATOR	4		diverges alone (cone 4)
+w27:119	2	OPERATOR	3		diverges alone (cone 3)
+w27:146	2	OPERATOR	7		diverges alone (cone 7)
+w27:230	3	GRAPHOPT	16	n1	needs siblings ['n1']
+w27:23	1	OPERATOR	5		diverges alone (cone 5)
+w27:249	1	OPERATOR	6		diverges alone (cone 6)
+w27:253	3	GRAPHOPT	6	n6	needs siblings ['n6']
+w27:262	0	OPERATOR	2		diverges alone (cone 2)
+w2:727	0	OPERATOR	2		diverges alone (cone 2)
+w2:73	0	OPERATOR	3		diverges alone (cone 3)
+w27:304	2	OPERATOR	2		diverges alone (cone 2)
+w27:307	2	OPERATOR	3		diverges alone (cone 3)
+w27:324	1	OPERATOR	3		diverges alone (cone 3)
+w27:335	1	OPERATOR	5		diverges alone (cone 5)
+w27:358	1	OPERATOR	7		diverges alone (cone 7)
+w27:364	3	OPERATOR	3		diverges alone (cone 3)
+w27:372	3	OPERATOR	4		diverges alone (cone 4)
+w27:384	1	OPERATOR	4		diverges alone (cone 4)
+w27:404	1	OPERATOR	6		diverges alone (cone 6)
+w27:41	3	OPERATOR	2		diverges alone (cone 2)
+w27:449	2	OPERATOR	3		diverges alone (cone 3)
+w27:461	0	OPERATOR	3		diverges alone (cone 3)
+w2:747	2	OPERATOR	4		diverges alone (cone 4)
+w2:75	2	OPERATOR	4		diverges alone (cone 4)
+w27:523	1	OPERATOR	9		diverges alone (cone 9)
+w27:557	4	OPERATOR	6		diverges alone (cone 6)
+w27:575	1	OPERATOR	6		diverges alone (cone 6)
+w27:581	3	OPERATOR	6		diverges alone (cone 6)
+w27:604	3	OPERATOR	4		diverges alone (cone 4)
+w27:608	2	OPERATOR	6		diverges alone (cone 6)
+w2:762	0	OPERATOR	5		diverges alone (cone 5)
+w27:632	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w27:664	0	OPERATOR	6		diverges alone (cone 6)
+w27:669	2	NOREPRO	4		full graph diverges=False
+w27:67	1	OPERATOR	3		diverges alone (cone 3)
+w27:680	0	OPERATOR	7		diverges alone (cone 7)
+w27:692	2	OPERATOR	2		diverges alone (cone 2)
+w27:712	2	GRAPHOPT	5	n5	needs siblings ['n5']
+w27:757	1	OPERATOR	4		diverges alone (cone 4)
+w27:771	0	OPERATOR	2		diverges alone (cone 2)
+w2:785	1	LOWERFAIL	3		dev=TIMEOUT
+w27:873	0	OPERATOR	2		diverges alone (cone 2)
+w27:96	0	OPERATOR	4		diverges alone (cone 4)
+w27:983	2	LOWERFAIL	10		align(et=2,eager=3)
+w27:984	4	OPERATOR	4		diverges alone (cone 4)
+w28:1020	1	GRAPHOPT	4	n7	needs siblings ['n7']
+w28:1028	2	OPERATOR	2		diverges alone (cone 2)
+w28:123	3	LOWERFAIL	4		align(et=1,eager=4)
+w28:125	0	NOREPRO	3		full graph diverges=False
+w28:139	1	GRAPHOPT	5	n1	needs siblings ['n1']
+w28:147	3	OPERATOR	12		diverges alone (cone 12)
+w28:149	1	OPERATOR	11		diverges alone (cone 11)
+w2:819	3	OPERATOR	3		diverges alone (cone 3)
+w2:820	0	OPERATOR	2		diverges alone (cone 2)
+w28:206	0	OPERATOR	2		diverges alone (cone 2)
+w28:227	4	OPERATOR	3		diverges alone (cone 3)
+w28:229	2	NOREPRO	4		full graph diverges=False
+w2:824	1	GRAPHOPT	10	n2,n9	needs siblings ['n2', 'n9']
+w28:283	1	OPERATOR	6		diverges alone (cone 6)
+w28:369	2	OPERATOR	7		diverges alone (cone 7)
+w28:375	0	OPERATOR	6		diverges alone (cone 6)
+w28:4	0	OPERATOR	4		diverges alone (cone 4)
+w28:400	1	OPERATOR	3		diverges alone (cone 3)
+w28:409	0	OPERATOR	2		diverges alone (cone 2)
+w28:428	0	OPERATOR	3		diverges alone (cone 3)
+w28:437	3	OPERATOR	2		diverges alone (cone 2)
+w2:844	0	OPERATOR	5		diverges alone (cone 5)
+w28:445	1	OPERATOR	3		diverges alone (cone 3)
+w28:446	0	OPERATOR	3		diverges alone (cone 3)
+w28:454	0	OPERATOR	3		diverges alone (cone 3)
+w28:478	0	NOREPRO	4		full graph diverges=False
+w2:848	2	OPERATOR	4		diverges alone (cone 4)
+w28:495	1	OPERATOR	4		diverges alone (cone 4)
+w28:519	1	OPERATOR	4		diverges alone (cone 4)
+w28:535	0	OPERATOR	3		diverges alone (cone 3)
+w28:567	0	OPERATOR	3		diverges alone (cone 3)
+w28:581	0	OPERATOR	7		diverges alone (cone 7)
+w28:628	2	OPERATOR	4		diverges alone (cone 4)
+w28:656	0	OPERATOR	2		diverges alone (cone 2)
+w28:657	2	OPERATOR	3		diverges alone (cone 3)
+w28:695	3	GRAPHOPT	5	n4	needs siblings ['n4']
+w28:697	1	OPERATOR	7		diverges alone (cone 7)
+w28:708	0	OPERATOR	6		diverges alone (cone 6)
+w28:725	3	OPERATOR	5		diverges alone (cone 5)
+w28:75	0	OPERATOR	3		diverges alone (cone 3)
+w28:750	3	OPERATOR	2		diverges alone (cone 2)
+w28:772	1	OPERATOR	5		diverges alone (cone 5)
+w28:776	1	OPERATOR	2		diverges alone (cone 2)
+w28:806	2	LOWERFAIL	3		align(et=2,eager=4)
+w28:812	0	NOREPRO	6		full graph diverges=False
+w28:826	3	LOWERFAIL	3		align(et=2,eager=4)
+w28:83	0	OPERATOR	3		diverges alone (cone 3)
+w28:831	0	OPERATOR	3		diverges alone (cone 3)
+w28:86	1	OPERATOR	2		diverges alone (cone 2)
+w28:878	1	OPERATOR	5		diverges alone (cone 5)
+w28:881	1	OPERATOR	4		diverges alone (cone 4)
+w28:893	0	GRAPHOPT	6	n6	needs siblings ['n6']
+w28:925	1	OPERATOR	4		diverges alone (cone 4)
+w28:932	4	OPERATOR	3		diverges alone (cone 3)
+w28:935	1	OPERATOR	4		diverges alone (cone 4)
+w28:941	2	OPERATOR	4		diverges alone (cone 4)
+w28:943	1	OPERATOR	4		diverges alone (cone 4)
+w29:1040	3	OPERATOR	3		diverges alone (cone 3)
+w29:104	2	GRAPHOPT	7	n5	needs siblings ['n5']
+w29:125	1	OPERATOR	4		diverges alone (cone 4)
+w29:132	2	LOWERFAIL	4		dev=TIMEOUT
+w29:133	0	LOWERFAIL	13		dev=TIMEOUT
+w29:166	2	OPERATOR	5		diverges alone (cone 5)
+w29:167	0	OPERATOR	2		diverges alone (cone 2)
+w29:195	0	OPERATOR	4		diverges alone (cone 4)
+w29:208	2	OPERATOR	3		diverges alone (cone 3)
+w29:251	2	OPERATOR	6		diverges alone (cone 6)
+w29:264	3	OPERATOR	5		diverges alone (cone 5)
+w2:927	1	OPERATOR	3		diverges alone (cone 3)
+w29:292	0	OPERATOR	6		diverges alone (cone 6)
+w29:30	3	OPERATOR	3		diverges alone (cone 3)
+w29:312	2	OPERATOR	6		diverges alone (cone 6)
+w2:934	2	OPERATOR	3		diverges alone (cone 3)
+w29:356	0	OPERATOR	9		diverges alone (cone 9)
+w29:36	0	OPERATOR	4		diverges alone (cone 4)
+w29:362	2	OPERATOR	3		diverges alone (cone 3)
+w29:367	2	OPERATOR	3		diverges alone (cone 3)
+w29:399	1	OPERATOR	4		diverges alone (cone 4)
+w29:403	1	OPERATOR	4		diverges alone (cone 4)
+w29:516	0	OPERATOR	3		diverges alone (cone 3)
+w29:557	2	OPERATOR	3		diverges alone (cone 3)
+w29:589	1	OPERATOR	5		diverges alone (cone 5)
+w29:634	1	OPERATOR	2		diverges alone (cone 2)
+w29:642	1	NOREPRO	2		full graph diverges=False
+w29:688	1	GRAPHOPT	6	n4,n7	needs siblings ['n4', 'n7']
+w29:705	2	OPERATOR	4		diverges alone (cone 4)
+w29:72	2	OPERATOR	7		diverges alone (cone 7)
+w29:73	2	NOREPRO	4		full graph diverges=False
+w2:973	3	OPERATOR	4		diverges alone (cone 4)
+w29:762	1	OPERATOR	3		diverges alone (cone 3)
+w29:764	0	OPERATOR	5		diverges alone (cone 5)
+w29:789	0	OPERATOR	4		diverges alone (cone 4)
+w29:806	0	OPERATOR	5		diverges alone (cone 5)
+w29:807	3	LOWERFAIL	4		align(et=1,eager=4)
+w29:809	1	OPERATOR	3		diverges alone (cone 3)
+w29:815	1	OPERATOR	3		diverges alone (cone 3)
+w29:817	0	OPERATOR	3		diverges alone (cone 3)
+w29:85	1	GRAPHOPT	8	n9	needs siblings ['n9']
+w29:852	1	OPERATOR	4		diverges alone (cone 4)
+w29:860	1	OPERATOR	3		diverges alone (cone 3)
+w29:897	1	NOREPRO	4		full graph diverges=False
+w29:914	1	OPERATOR	3		diverges alone (cone 3)
+w29:959	2	OPERATOR	4		diverges alone (cone 4)
+w30:1003	1	LOWERFAIL	4		dev=TIMEOUT
+w30:101	3	OPERATOR	2		diverges alone (cone 2)
+w30:1022	0	LOWERFAIL	2		dev=TIMEOUT
+w30:1040	4	NOREPRO	7		full graph diverges=False
+w30:127	0	OPERATOR	3		diverges alone (cone 3)
+w30:131	1	OPERATOR	2		diverges alone (cone 2)
+w30:154	1	OPERATOR	6		diverges alone (cone 6)
+w30:202	2	OPERATOR	5		diverges alone (cone 5)
+w30:226	0	OPERATOR	2		diverges alone (cone 2)
+w30:242	0	OPERATOR	3		diverges alone (cone 3)
+w30:27	1	NOREPRO	4		full graph diverges=False
+w30:313	1	OPERATOR	6		diverges alone (cone 6)
+w30:333	0	OPERATOR	5		diverges alone (cone 5)
+w30:338	0	OPERATOR	3		diverges alone (cone 3)
+w30:341	1	OPERATOR	2		diverges alone (cone 2)
+w30:349	2	OPERATOR	5		diverges alone (cone 5)
+w30:377	4	OPERATOR	4		diverges alone (cone 4)
+w30:422	0	OPERATOR	6		diverges alone (cone 6)
+w30:463	0	OPERATOR	4		diverges alone (cone 4)
+w30:464	1	OPERATOR	7		diverges alone (cone 7)
+w30:470	2	GRAPHOPT	7	n5	needs siblings ['n5']
+w30:473	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w30:49	0	OPERATOR	3		diverges alone (cone 3)
+w30:496	0	OPERATOR	4		diverges alone (cone 4)
+w30:503	2	OPERATOR	3		diverges alone (cone 3)
+w30:504	0	OPERATOR	2		diverges alone (cone 2)
+w30:575	0	OPERATOR	3		diverges alone (cone 3)
+w30:633	3	OPERATOR	2		diverges alone (cone 2)
+w30:637	1	OPERATOR	4		diverges alone (cone 4)
+w30:650	1	OPERATOR	7		diverges alone (cone 7)
+w30:662	3	OPERATOR	5		diverges alone (cone 5)
+w30:677	0	OPERATOR	4		diverges alone (cone 4)
+w30:683	2	OPERATOR	2		diverges alone (cone 2)
+w30:696	1	OPERATOR	3		diverges alone (cone 3)
+w30:732	0	OPERATOR	2		diverges alone (cone 2)
+w30:756	1	OPERATOR	3		diverges alone (cone 3)
+w30:764	1	OPERATOR	2		diverges alone (cone 2)
+w30:785	0	OPERATOR	6		diverges alone (cone 6)
+w30:793	2	OPERATOR	4		diverges alone (cone 4)
+w30:820	0	GRAPHOPT	8	n9	needs siblings ['n9']
+w30:822	2	LOWERFAIL	3		dev=TIMEOUT
+w30:875	1	OPERATOR	5		diverges alone (cone 5)
+w30:878	0	OPERATOR	3		diverges alone (cone 3)
+w30:887	1	OPERATOR	4		diverges alone (cone 4)
+w30:895	1	OPERATOR	7		diverges alone (cone 7)
+w30:924	0	OPERATOR	2		diverges alone (cone 2)
+w3:1008	1	OPERATOR	8		diverges alone (cone 8)
+w3:1009	5	LOWERFAIL	2		dev=TIMEOUT
+w3:1024	1	OPERATOR	7		diverges alone (cone 7)
+w3:106	1	OPERATOR	9		diverges alone (cone 9)
+w31:146	0	OPERATOR	3		diverges alone (cone 3)
+w3:115	2	OPERATOR	4		diverges alone (cone 4)
+w31:175	2	OPERATOR	4		diverges alone (cone 4)
+w31:185	1	OPERATOR	2		diverges alone (cone 2)
+w31:191	1	OPERATOR	5		diverges alone (cone 5)
+w31:226	0	OPERATOR	3		diverges alone (cone 3)
+w31:256	1	OPERATOR	7		diverges alone (cone 7)
+w31:271	2	OPERATOR	5		diverges alone (cone 5)
+w31:286	0	OPERATOR	7		diverges alone (cone 7)
+w31:292	2	OPERATOR	5		diverges alone (cone 5)
+w31:329	0	OPERATOR	3		diverges alone (cone 3)
+w3:134	1	OPERATOR	7		diverges alone (cone 7)
+w31:362	1	OPERATOR	10		diverges alone (cone 10)
+w31:363	3	NOREPRO	5		full graph diverges=False
+w31:366	3	OPERATOR	6		diverges alone (cone 6)
+w31:374	0	OPERATOR	4		diverges alone (cone 4)
+w31:415	1	OPERATOR	5		diverges alone (cone 5)
+w31:427	0	OPERATOR	2		diverges alone (cone 2)
+w31:445	1	OPERATOR	2		diverges alone (cone 2)
+w31:464	4	OPERATOR	6		diverges alone (cone 6)
+w31:469	1	OPERATOR	3		diverges alone (cone 3)
+w31:501	2	OPERATOR	3		diverges alone (cone 3)
+w31:506	2	OPERATOR	7		diverges alone (cone 7)
+w31:507	2	OPERATOR	5		diverges alone (cone 5)
+w31:563	0	OPERATOR	3		diverges alone (cone 3)
+w31:599	1	GRAPHOPT	5	n7	needs siblings ['n7']
+w31:638	2	OPERATOR	7		diverges alone (cone 7)
+w31:645	1	OPERATOR	5		diverges alone (cone 5)
+w31:664	0	OPERATOR	3		diverges alone (cone 3)
+w31:681	1	OPERATOR	8		diverges alone (cone 8)
+w31:699	1	OPERATOR	3		diverges alone (cone 3)
+w31:709	0	GRAPHOPT	5	n5	needs siblings ['n5']
+w31:714	0	OPERATOR	3		diverges alone (cone 3)
+w31:734	0	OPERATOR	2		diverges alone (cone 2)
+w31:789	1	OPERATOR	6		diverges alone (cone 6)
+w31:8	0	OPERATOR	8		diverges alone (cone 8)
+w31:808	2	OPERATOR	5		diverges alone (cone 5)
+w31:890	0	OPERATOR	3		diverges alone (cone 3)
+w31:892	2	OPERATOR	3		diverges alone (cone 3)
+w31:9	2	OPERATOR	4		diverges alone (cone 4)
+w31:979	0	OPERATOR	2		diverges alone (cone 2)
+w31:985	1	OPERATOR	3		diverges alone (cone 3)
+w32:100	1	OPERATOR	6		diverges alone (cone 6)
+w32:102	1	OPERATOR	2		diverges alone (cone 2)
+w32:119	2	OPERATOR	3		diverges alone (cone 3)
+w3:214	1	OPERATOR	4		diverges alone (cone 4)
+w32:16	2	OPERATOR	4		diverges alone (cone 4)
+w32:17	0	OPERATOR	5		diverges alone (cone 5)
+w32:217	0	OPERATOR	3		diverges alone (cone 3)
+w32:220	0	OPERATOR	4		diverges alone (cone 4)
+w32:245	0	OPERATOR	3		diverges alone (cone 3)
+w32:367	2	OPERATOR	6		diverges alone (cone 6)
+w32:379	2	OPERATOR	7		diverges alone (cone 7)
+w32:38	1	OPERATOR	5		diverges alone (cone 5)
+w32:394	0	OPERATOR	2		diverges alone (cone 2)
+w32:41	0	OPERATOR	3		diverges alone (cone 3)
+w32:418	2	LOWERFAIL	2		align(et=2,eager=4)
+w32:435	0	OPERATOR	5		diverges alone (cone 5)
+w32:45	0	OPERATOR	2		diverges alone (cone 2)
+w32:491	2	OPERATOR	5		diverges alone (cone 5)
+w32:493	1	OPERATOR	5		diverges alone (cone 5)
+w32:550	2	GRAPHOPT	6	n6	needs siblings ['n6']
+w32:588	2	OPERATOR	3		diverges alone (cone 3)
+w32:603	0	OPERATOR	2		diverges alone (cone 2)
+w32:619	1	OPERATOR	5		diverges alone (cone 5)
+w32:621	0	GRAPHOPT	9	n9	needs siblings ['n9']
+w32:622	3	OPERATOR	4		diverges alone (cone 4)
+w32:63	2	OPERATOR	4		diverges alone (cone 4)
+w32:640	0	LOWERFAIL	5		dev=TIMEOUT
+w32:647	4	OPERATOR	3		diverges alone (cone 3)
+w32:65	3	OPERATOR	3		diverges alone (cone 3)
+w32:659	2	OPERATOR	3		diverges alone (cone 3)
+w32:720	0	OPERATOR	5		diverges alone (cone 5)
+w32:759	4	GRAPHOPT	4	n3	needs siblings ['n3']
+w32:779	0	OPERATOR	3		diverges alone (cone 3)
+w3:280	0	OPERATOR	3		diverges alone (cone 3)
+w32:809	1	OPERATOR	3		diverges alone (cone 3)
+w3:281	0	OPERATOR	3		diverges alone (cone 3)
+w32:836	2	OPERATOR	7		diverges alone (cone 7)
+w32:843	2	OPERATOR	12		diverges alone (cone 12)
+w3:287	0	OPERATOR	2		diverges alone (cone 2)
+w32:872	0	OPERATOR	3		diverges alone (cone 3)
+w3:288	1	OPERATOR	4		diverges alone (cone 4)
+w32:892	1	GRAPHOPT	7	n11	needs siblings ['n11']
+w32:939	2	OPERATOR	6		diverges alone (cone 6)
+w32:949	2	OPERATOR	4		diverges alone (cone 4)
+w32:95	1	OPERATOR	4		diverges alone (cone 4)
+w32:977	1	NOREPRO	7		full graph diverges=False
+w32:979	2	OPERATOR	6		diverges alone (cone 6)
+w33:101	2	OPERATOR	3		diverges alone (cone 3)
+w33:135	3	NOREPRO	5		full graph diverges=False
+w33:14	2	OPERATOR	3		diverges alone (cone 3)
+w33:154	2	OPERATOR	3		diverges alone (cone 3)
+w33:164	0	OPERATOR	3		diverges alone (cone 3)
+w3:321	1	OPERATOR	4		diverges alone (cone 4)
+w33:241	0	OPERATOR	3		diverges alone (cone 3)
+w33:244	0	OPERATOR	2		diverges alone (cone 2)
+w33:25	2	OPERATOR	2		diverges alone (cone 2)
+w33:277	1	LOWERFAIL	3		align(et=1,eager=4)
+w33:279	0	OPERATOR	2		diverges alone (cone 2)
+w33:37	4	OPERATOR	3		diverges alone (cone 3)
+w33:397	0	OPERATOR	3		diverges alone (cone 3)
+w33:421	1	OPERATOR	4		diverges alone (cone 4)
+w33:436	3	OPERATOR	3		diverges alone (cone 3)
+w33:447	2	OPERATOR	5		diverges alone (cone 5)
+w33:467	1	OPERATOR	6		diverges alone (cone 6)
+w33:47	0	OPERATOR	5		diverges alone (cone 5)
+w33:472	0	OPERATOR	2		diverges alone (cone 2)
+w33:480	2	OPERATOR	6		diverges alone (cone 6)
+w33:502	2	OPERATOR	7		diverges alone (cone 7)
+w33:532	1	OPERATOR	5		diverges alone (cone 5)
+w3:354	1	NOREPRO	5		full graph diverges=False
+w33:565	0	OPERATOR	3		diverges alone (cone 3)
+w3:358	2	GRAPHOPT	4	n7	needs siblings ['n7']
+w33:612	2	OPERATOR	4		diverges alone (cone 4)
+w33:663	2	OPERATOR	3		diverges alone (cone 3)
+w33:687	3	OPERATOR	3		diverges alone (cone 3)
+w33:697	2	OPERATOR	7		diverges alone (cone 7)
+w33:698	2	OPERATOR	4		diverges alone (cone 4)
+w33:7	0	OPERATOR	3		diverges alone (cone 3)
+w33:732	4	OPERATOR	3		diverges alone (cone 3)
+w33:744	1	OPERATOR	4		diverges alone (cone 4)
+w33:772	3	OPERATOR	2		diverges alone (cone 2)
+w33:775	0	OPERATOR	7		diverges alone (cone 7)
+w33:86	0	OPERATOR	3		diverges alone (cone 3)
+w33:866	0	OPERATOR	2		diverges alone (cone 2)
+w33:87	3	OPERATOR	2		diverges alone (cone 2)
+w3:392	0	OPERATOR	4		diverges alone (cone 4)
+w33:928	0	NOREPRO	4		full graph diverges=False
+w33:958	1	OPERATOR	3		diverges alone (cone 3)
+w33:960	3	OPERATOR	6		diverges alone (cone 6)
+w33:963	2	LOWERFAIL	3		align(et=1,eager=4)
+w34:12	0	OPERATOR	2		diverges alone (cone 2)
+w34:1	3	OPERATOR	6		diverges alone (cone 6)
+w34:131	1	OPERATOR	5		diverges alone (cone 5)
+w34:134	1	OPERATOR	3		diverges alone (cone 3)
+w34:14	1	NOREPRO	4		full graph diverges=False
+w34:166	0	OPERATOR	3		diverges alone (cone 3)
+w34:194	2	OPERATOR	3		diverges alone (cone 3)
+w34:201	1	NOREPRO	3		full graph diverges=False
+w34:203	2	OPERATOR	7		diverges alone (cone 7)
+w34:217	3	NOREPRO	3		full graph diverges=False
+w34:252	0	LOWERFAIL	2		dev=TIMEOUT
+w34:263	1	OPERATOR	8		diverges alone (cone 8)
+w3:427	0	OPERATOR	4		diverges alone (cone 4)
+w34:275	1	OPERATOR	3		diverges alone (cone 3)
+w34:304	3	NOREPRO	4		full graph diverges=False
+w34:325	0	OPERATOR	3		diverges alone (cone 3)
+w34:345	1	OPERATOR	9		diverges alone (cone 9)
+w34:350	0	OPERATOR	7		diverges alone (cone 7)
+w34:396	3	NOREPRO	4		full graph diverges=False
+w34:475	2	LOWERFAIL	8		dev=TIMEOUT
+w34:484	0	OPERATOR	3		diverges alone (cone 3)
+w34:492	3	OPERATOR	3		diverges alone (cone 3)
+w34:578	2	OPERATOR	8		diverges alone (cone 8)
+w34:615	0	OPERATOR	2		diverges alone (cone 2)
+w34:618	0	OPERATOR	4		diverges alone (cone 4)
+w34:622	1	OPERATOR	4		diverges alone (cone 4)
+w34:678	1	OPERATOR	3		diverges alone (cone 3)
+w34:687	2	OPERATOR	5		diverges alone (cone 5)
+w34:690	1	OPERATOR	6		diverges alone (cone 6)
+w34:698	2	OPERATOR	2		diverges alone (cone 2)
+w34:699	0	OPERATOR	4		diverges alone (cone 4)
+w34:706	2	OPERATOR	3		diverges alone (cone 3)
+w34:708	0	OPERATOR	4		diverges alone (cone 4)
+w34:713	1	OPERATOR	4		diverges alone (cone 4)
+w34:748	3	OPERATOR	4		diverges alone (cone 4)
+w34:751	0	OPERATOR	3		diverges alone (cone 3)
+w34:788	0	OPERATOR	7		diverges alone (cone 7)
+w34:818	1	OPERATOR	3		diverges alone (cone 3)
+w34:850	2	OPERATOR	6		diverges alone (cone 6)
+w34:85	4	OPERATOR	2		diverges alone (cone 2)
+w34:887	2	OPERATOR	3		diverges alone (cone 3)
+w34:900	1	OPERATOR	6		diverges alone (cone 6)
+w34:918	2	OPERATOR	4		diverges alone (cone 4)
+w34:936	0	OPERATOR	2		diverges alone (cone 2)
+w34:98	1	OPERATOR	4		diverges alone (cone 4)
+w3:502	3	OPERATOR	7		diverges alone (cone 7)
+w35:1001	3	OPERATOR	3		diverges alone (cone 3)
+w35:1012	2	OPERATOR	3		diverges alone (cone 3)
+w3:515	3	OPERATOR	2		diverges alone (cone 2)
+w35:183	1	LOWERFAIL	4		align(et=1,eager=4)
+w35:184	3	OPERATOR	4		diverges alone (cone 4)
+w35:209	2	OPERATOR	5		diverges alone (cone 5)
+w3:52	1	NOREPRO	4		full graph diverges=False
+w35:211	2	OPERATOR	4		diverges alone (cone 4)
+w35:218	2	OPERATOR	4		diverges alone (cone 4)
+w35:222	0	OPERATOR	2		diverges alone (cone 2)
+w35:228	2	OPERATOR	4		diverges alone (cone 4)
+w35:237	2	OPERATOR	5		diverges alone (cone 5)
+w35:239	0	OPERATOR	5		diverges alone (cone 5)
+w35:270	1	LOWERFAIL	3		dev=TIMEOUT
+w35:285	3	OPERATOR	3		diverges alone (cone 3)
+w35:312	0	OPERATOR	2		diverges alone (cone 2)
+w35:348	1	NOREPRO	2		full graph diverges=False
+w35:363	1	OPERATOR	7		diverges alone (cone 7)
+w35:428	1	NOREPRO	3		full graph diverges=False
+w35:474	0	NOREPRO	3		full graph diverges=False
+w35:509	1	OPERATOR	2		diverges alone (cone 2)
+w35:51	0	OPERATOR	9		diverges alone (cone 9)
+w35:564	2	OPERATOR	6		diverges alone (cone 6)
+w35:586	2	OPERATOR	4		diverges alone (cone 4)
+w35:599	0	OPERATOR	5		diverges alone (cone 5)
+w35:631	0	OPERATOR	3		diverges alone (cone 3)
+w35:637	2	OPERATOR	3		diverges alone (cone 3)
+w35:711	1	OPERATOR	4		diverges alone (cone 4)
+w35:722	3	OPERATOR	5		diverges alone (cone 5)
+w35:741	0	OPERATOR	4		diverges alone (cone 4)
+w3:577	0	OPERATOR	3		diverges alone (cone 3)
+w35:810	1	OPERATOR	7		diverges alone (cone 7)
+w3:582	3	OPERATOR	3		diverges alone (cone 3)
+w3:583	2	OPERATOR	6		diverges alone (cone 6)
+w35:857	0	OPERATOR	5		diverges alone (cone 5)
+w35:858	1	OPERATOR	3		diverges alone (cone 3)
+w3:586	1	OPERATOR	2		diverges alone (cone 2)
+w35:896	2	OPERATOR	4		diverges alone (cone 4)
+w35:906	2	OPERATOR	6		diverges alone (cone 6)
+w35:919	1	OPERATOR	10		diverges alone (cone 10)
+w35:9	2	OPERATOR	3		diverges alone (cone 3)
+w35:942	2	OPERATOR	4		diverges alone (cone 4)
+w35:993	3	OPERATOR	3		diverges alone (cone 3)
+w3:608	1	OPERATOR	4		diverges alone (cone 4)
+w36:1011	4	OPERATOR	2		diverges alone (cone 2)
+w36:107	0	OPERATOR	3		diverges alone (cone 3)
+w36:1	2	GRAPHOPT	5	n2	needs siblings ['n2']
+w36:137	1	OPERATOR	9		diverges alone (cone 9)
+w3:616	0	OPERATOR	3		diverges alone (cone 3)
+w36:168	2	OPERATOR	7		diverges alone (cone 7)
+w36:212	0	OPERATOR	4		diverges alone (cone 4)
+w3:621	4	LOWERFAIL	4		align(et=1,eager=5)
+w3:622	2	OPERATOR	5		diverges alone (cone 5)
+w36:240	3	NOREPRO	2		full graph diverges=False
+w36:264	0	OPERATOR	10		diverges alone (cone 10)
+w36:274	1	OPERATOR	2		diverges alone (cone 2)
+w36:294	1	OPERATOR	6		diverges alone (cone 6)
+w36:3	1	NOREPRO	3		full graph diverges=False
+w36:324	0	NOREPRO	4		full graph diverges=False
+w36:325	2	OPERATOR	4		diverges alone (cone 4)
+w36:329	2	OPERATOR	9		diverges alone (cone 9)
+w36:33	1	NOREPRO	4		full graph diverges=False
+w36:358	1	OPERATOR	6		diverges alone (cone 6)
+w36:400	4	GRAPHOPT	4	n5	needs siblings ['n5']
+w36:421	2	OPERATOR	5		diverges alone (cone 5)
+w36:423	3	NOREPRO	3		full graph diverges=False
+w36:432	5	LOWERFAIL	4		align(et=3,eager=6)
+w36:446	1	OPERATOR	7		diverges alone (cone 7)
+w36:459	0	OPERATOR	3		diverges alone (cone 3)
+w36:46	0	OPERATOR	3		diverges alone (cone 3)
+w36:472	3	OPERATOR	3		diverges alone (cone 3)
+w3:649	0	OPERATOR	4		diverges alone (cone 4)
+w36:515	1	OPERATOR	3		diverges alone (cone 3)
+w36:542	0	OPERATOR	3		diverges alone (cone 3)
+w3:656	2	NOREPRO	5		full graph diverges=False
+w36:586	1	GRAPHOPT	4	n4	needs siblings ['n4']
+w36:619	1	OPERATOR	4		diverges alone (cone 4)
+w36:620	0	OPERATOR	4		diverges alone (cone 4)
+w36:684	2	NOREPRO	3		full graph diverges=False
+w36:687	0	OPERATOR	6		diverges alone (cone 6)
+w36:696	0	OPERATOR	5		diverges alone (cone 5)
+w36:706	2	OPERATOR	4		diverges alone (cone 4)
+w36:780	2	OPERATOR	7		diverges alone (cone 7)
+w36:785	2	OPERATOR	5		diverges alone (cone 5)
+w36:81	2	OPERATOR	5		diverges alone (cone 5)
+w36:840	4	GRAPHOPT	6	n3,n6	needs siblings ['n3', 'n6']
+w36:861	2	OPERATOR	3		diverges alone (cone 3)
+w36:880	0	OPERATOR	2		diverges alone (cone 2)
+w36:910	0	OPERATOR	3		diverges alone (cone 3)
+w36:921	2	OPERATOR	9		diverges alone (cone 9)
+w36:932	1	OPERATOR	3		diverges alone (cone 3)
+w36:955	0	OPERATOR	5		diverges alone (cone 5)
+w36:958	0	OPERATOR	3		diverges alone (cone 3)
+w3:696	2	OPERATOR	3		diverges alone (cone 3)
+w36:96	2	OPERATOR	5		diverges alone (cone 5)
+w37:1002	1	OPERATOR	4		diverges alone (cone 4)
+w37:1013	3	OPERATOR	2		diverges alone (cone 2)
+w37:1022	1	GRAPHOPT	8	n8	needs siblings ['n8']
+w37:116	0	OPERATOR	3		diverges alone (cone 3)
+w37:14	0	OPERATOR	2		diverges alone (cone 2)
+w37:143	1	GRAPHOPT	10	n3,n9	needs siblings ['n3', 'n9']
+w37:153	0	GRAPHOPT	5	n5	needs siblings ['n5']
+w37:171	0	OPERATOR	3		diverges alone (cone 3)
+w37:224	0	OPERATOR	3		diverges alone (cone 3)
+w37:233	1	OPERATOR	2		diverges alone (cone 2)
+w3:724	0	OPERATOR	3		diverges alone (cone 3)
+w37:240	1	OPERATOR	4		diverges alone (cone 4)
+w37:250	1	OPERATOR	8		diverges alone (cone 8)
+w37:260	3	OPERATOR	2		diverges alone (cone 2)
+w37:275	1	OPERATOR	4		diverges alone (cone 4)
+w37:303	2	NOREPRO	4		full graph diverges=False
+w37:338	0	LOWERFAIL	2		dev=TIMEOUT
+w37:396	3	OPERATOR	5		diverges alone (cone 5)
+w37:399	2	OPERATOR	5		diverges alone (cone 5)
+w37:452	0	OPERATOR	4		diverges alone (cone 4)
+w37:509	2	OPERATOR	5		diverges alone (cone 5)
+w37:519	2	GRAPHOPT	7	n4	needs siblings ['n4']
+w37:554	1	OPERATOR	2		diverges alone (cone 2)
+w37:562	2	GRAPHOPT	6	n7	needs siblings ['n7']
+w37:590	3	GRAPHOPT	5	n7	needs siblings ['n7']
+w37:593	2	OPERATOR	4		diverges alone (cone 4)
+w37:603	0	OPERATOR	6		diverges alone (cone 6)
+w37:627	2	OPERATOR	2		diverges alone (cone 2)
+w37:628	2	OPERATOR	3		diverges alone (cone 3)
+w37:670	0	OPERATOR	4		diverges alone (cone 4)
+w37:689	1	OPERATOR	2		diverges alone (cone 2)
+w37:700	0	GRAPHOPT	6	n7	needs siblings ['n7']
+w3:771	1	OPERATOR	3		diverges alone (cone 3)
+w37:7	2	OPERATOR	3		diverges alone (cone 3)
+w37:724	0	OPERATOR	4		diverges alone (cone 4)
+w3:776	2	LOWERFAIL	2		align(et=1,eager=5)
+w37:815	1	OPERATOR	4		diverges alone (cone 4)
+w37:830	1	OPERATOR	3		diverges alone (cone 3)
+w37:860	2	OPERATOR	8		diverges alone (cone 8)
+w37:915	2	OPERATOR	3		diverges alone (cone 3)
+w37:948	0	OPERATOR	3		diverges alone (cone 3)
+w3:805	1	OPERATOR	3		diverges alone (cone 3)
+w38:1021	2	OPERATOR	3		diverges alone (cone 3)
+w38:118	0	OPERATOR	4		diverges alone (cone 4)
+w38:140	1	OPERATOR	4		diverges alone (cone 4)
+w38:191	0	OPERATOR	4		diverges alone (cone 4)
+w38:20	2	OPERATOR	7		diverges alone (cone 7)
+w38:256	0	NOREPRO	6		full graph diverges=False
+w38:28	0	OPERATOR	3		diverges alone (cone 3)
+w38:285	2	OPERATOR	7		diverges alone (cone 7)
+w38:309	3	NOREPRO	3		full graph diverges=False
+w38:365	2	OPERATOR	7		diverges alone (cone 7)
+w38:388	0	OPERATOR	6		diverges alone (cone 6)
+w38:389	3	OPERATOR	3		diverges alone (cone 3)
+w38:40	0	OPERATOR	4		diverges alone (cone 4)
+w38:409	1	OPERATOR	6		diverges alone (cone 6)
+w38:410	1	OPERATOR	4		diverges alone (cone 4)
+w38:425	0	OPERATOR	4		diverges alone (cone 4)
+w3:843	0	OPERATOR	2		diverges alone (cone 2)
+w38:501	2	NOREPRO	5		full graph diverges=False
+w38:505	3	NOREPRO	4		full graph diverges=False
+w38:525	0	OPERATOR	4		diverges alone (cone 4)
+w38:537	0	OPERATOR	3		diverges alone (cone 3)
+w38:542	2	OPERATOR	3		diverges alone (cone 3)
+w38:644	2	OPERATOR	3		diverges alone (cone 3)
+w38:672	3	NOREPRO	3		full graph diverges=False
+w38:677	3	NOREPRO	5		full graph diverges=False
+w38:684	2	OPERATOR	6		diverges alone (cone 6)
+w38:741	2	OPERATOR	2		diverges alone (cone 2)
+w38:742	1	LOWERFAIL	4		dev=TIMEOUT
+w38:750	0	OPERATOR	2		diverges alone (cone 2)
+w38:751	1	OPERATOR	6		diverges alone (cone 6)
+w38:757	1	OPERATOR	5		diverges alone (cone 5)
+w3:876	1	OPERATOR	3		diverges alone (cone 3)
+w38:802	0	GRAPHOPT	4	n7	needs siblings ['n7']
+w38:838	1	OPERATOR	4		diverges alone (cone 4)
+w3:885	0	OPERATOR	4		diverges alone (cone 4)
+w38:864	0	OPERATOR	3		diverges alone (cone 3)
+w38:891	0	OPERATOR	3		diverges alone (cone 3)
+w38:938	2	OPERATOR	5		diverges alone (cone 5)
+w3:896	1	OPERATOR	8		diverges alone (cone 8)
+w39:100	2	OPERATOR	4		diverges alone (cone 4)
+w39:1013	2	OPERATOR	5		diverges alone (cone 5)
+w39:155	3	OPERATOR	4		diverges alone (cone 4)
+w39:167	0	OPERATOR	3		diverges alone (cone 3)
+w39:178	0	OPERATOR	3		diverges alone (cone 3)
+w3:9	2	OPERATOR	3		diverges alone (cone 3)
+w39:20	2	OPERATOR	2		diverges alone (cone 2)
+w39:203	0	OPERATOR	3		diverges alone (cone 3)
+w39:211	1	GRAPHOPT	6	n6	needs siblings ['n6']
+w39:253	2	OPERATOR	3		diverges alone (cone 3)
+w39:270	4	GRAPHOPT	6	n9	needs siblings ['n9']
+w39:280	0	OPERATOR	2		diverges alone (cone 2)
+w39:294	1	NOREPRO	7		full graph diverges=False
+w39:310	1	OPERATOR	3		diverges alone (cone 3)
+w39:315	0	OPERATOR	2		diverges alone (cone 2)
+w39:332	0	OPERATOR	6		diverges alone (cone 6)
+w39:350	3	OPERATOR	3		diverges alone (cone 3)
+w3:935	1	OPERATOR	5		diverges alone (cone 5)
+w39:378	1	OPERATOR	5		diverges alone (cone 5)
+w39:388	0	OPERATOR	4		diverges alone (cone 4)
+w39:396	3	NOREPRO	4		full graph diverges=False
+w39:423	4	GRAPHOPT	4	n6	needs siblings ['n6']
+w39:43	1	OPERATOR	4		diverges alone (cone 4)
+w39:439	1	NOREPRO	6		full graph diverges=False
+w39:485	0	OPERATOR	4		diverges alone (cone 4)
+w39:499	2	NOREPRO	2		full graph diverges=False
+w39:516	3	OPERATOR	5		diverges alone (cone 5)
+w39:520	1	OPERATOR	3		diverges alone (cone 3)
+w39:579	2	OPERATOR	7		diverges alone (cone 7)
+w39:641	1	OPERATOR	3		diverges alone (cone 3)
+w39:650	3	OPERATOR	5		diverges alone (cone 5)
+w39:74	1	OPERATOR	4		diverges alone (cone 4)
+w39:741	2	OPERATOR	11		diverges alone (cone 11)
+w39:79	3	LOWERFAIL	4		align(et=1,eager=4)
+w39:944	2	OPERATOR	3		diverges alone (cone 3)
+w39:986	0	OPERATOR	2		diverges alone (cone 2)
+w40:1031	3	NOREPRO	4		full graph diverges=False
+w40:134	3	OPERATOR	2		diverges alone (cone 2)
+w40:143	3	OPERATOR	7		diverges alone (cone 7)
+w40:151	2	OPERATOR	4		diverges alone (cone 4)
+w40:184	2	OPERATOR	6		diverges alone (cone 6)
+w40:198	3	LOWERFAIL	4		dev=TIMEOUT
+w40:225	2	OPERATOR	4		diverges alone (cone 4)
+w40:23	2	OPERATOR	4		diverges alone (cone 4)
+w40:232	0	NOREPRO	4		full graph diverges=False
+w40:248	0	OPERATOR	2		diverges alone (cone 2)
+w40:258	1	OPERATOR	5		diverges alone (cone 5)
+w40:277	3	OPERATOR	7		diverges alone (cone 7)
+w40:293	2	OPERATOR	4		diverges alone (cone 4)
+w40:350	1	NOREPRO	3		full graph diverges=False
+w40:373	0	OPERATOR	4		diverges alone (cone 4)
+w40:38	1	OPERATOR	4		diverges alone (cone 4)
+w40:413	0	OPERATOR	6		diverges alone (cone 6)
+w40:421	1	OPERATOR	3		diverges alone (cone 3)
+w40:489	1	OPERATOR	2		diverges alone (cone 2)
+w40:536	0	OPERATOR	7		diverges alone (cone 7)
+w40:573	1	OPERATOR	4		diverges alone (cone 4)
+w40:584	0	OPERATOR	3		diverges alone (cone 3)
+w40:619	0	OPERATOR	8		diverges alone (cone 8)
+w40:655	2	OPERATOR	6		diverges alone (cone 6)
+w40:706	1	NOREPRO	6		full graph diverges=False
+w40:720	3	OPERATOR	3		diverges alone (cone 3)
+w40:731	0	OPERATOR	2		diverges alone (cone 2)
+w40:764	2	OPERATOR	4		diverges alone (cone 4)
+w40:767	0	OPERATOR	3		diverges alone (cone 3)
+w40:808	0	LOWERFAIL	3		dev=TIMEOUT
+w40:810	1	OPERATOR	4		diverges alone (cone 4)
+w40:82	0	OPERATOR	4		diverges alone (cone 4)
+w40:877	0	OPERATOR	2		diverges alone (cone 2)
+w40:926	2	OPERATOR	9		diverges alone (cone 9)
+w40:941	2	OPERATOR	3		diverges alone (cone 3)
+w40:94	2	OPERATOR	5		diverges alone (cone 5)
+w40:967	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w40:968	0	OPERATOR	5		diverges alone (cone 5)
+w40:99	0	OPERATOR	6		diverges alone (cone 6)
+w40:995	1	OPERATOR	4		diverges alone (cone 4)
+w4:1006	0	OPERATOR	2		diverges alone (cone 2)
+w4:1041	1	LOWERFAIL	5		dev=TIMEOUT
+w41:1000	2	OPERATOR	7		diverges alone (cone 7)
+w41:159	2	OPERATOR	4		diverges alone (cone 4)
+w4:116	0	OPERATOR	5		diverges alone (cone 5)
+w41:181	2	OPERATOR	3		diverges alone (cone 3)
+w41:197	0	OPERATOR	4		diverges alone (cone 4)
+w41:200	2	OPERATOR	3		diverges alone (cone 3)
+w41:209	4	OPERATOR	3		diverges alone (cone 3)
+w41:215	2	OPERATOR	2		diverges alone (cone 2)
+w41:216	0	OPERATOR	3		diverges alone (cone 3)
+w41:247	1	OPERATOR	4		diverges alone (cone 4)
+w41:255	1	OPERATOR	5		diverges alone (cone 5)
+w41:265	3	LOWERFAIL	4		align(et=1,eager=5)
+w41:289	2	OPERATOR	9		diverges alone (cone 9)
+w41:349	0	OPERATOR	4		diverges alone (cone 4)
+w41:388	2	OPERATOR	5		diverges alone (cone 5)
+w41:397	1	OPERATOR	7		diverges alone (cone 7)
+w4:141	0	OPERATOR	4		diverges alone (cone 4)
+w41:413	0	OPERATOR	7		diverges alone (cone 7)
+w4:142	1	OPERATOR	4		diverges alone (cone 4)
+w41:455	4	OPERATOR	2		diverges alone (cone 2)
+w41:468	1	LOWERFAIL	6		dev=TIMEOUT
+w41:504	0	OPERATOR	3		diverges alone (cone 3)
+w41:528	0	OPERATOR	6		diverges alone (cone 6)
+w41:551	1	OPERATOR	2		diverges alone (cone 2)
+w4:159	4	OPERATOR	4		diverges alone (cone 4)
+w41:627	0	OPERATOR	3		diverges alone (cone 3)
+w41:645	0	NOREPRO	4		full graph diverges=False
+w41:663	3	OPERATOR	3		diverges alone (cone 3)
+w41:686	1	OPERATOR	3		diverges alone (cone 3)
+w41:756	0	NOREPRO	2		full graph diverges=False
+w41:761	1	OPERATOR	7		diverges alone (cone 7)
+w41:780	0	OPERATOR	4		diverges alone (cone 4)
+w41:818	2	OPERATOR	4		diverges alone (cone 4)
+w41:819	1	OPERATOR	4		diverges alone (cone 4)
+w41:834	1	OPERATOR	6		diverges alone (cone 6)
+w41:835	4	GRAPHOPT	8	n3,n4,n5,n6	needs siblings ['n3', 'n4', 'n5', 'n6']
+w41:84	2	OPERATOR	4		diverges alone (cone 4)
+w41:894	3	OPERATOR	4		diverges alone (cone 4)
+w41:939	0	OPERATOR	2		diverges alone (cone 2)
+w41:971	2	OPERATOR	3		diverges alone (cone 3)
+w42:117	0	OPERATOR	4		diverges alone (cone 4)
+w42:121	0	OPERATOR	3		diverges alone (cone 3)
+w4:212	2	OPERATOR	5		diverges alone (cone 5)
+w42:139	0	OPERATOR	2		diverges alone (cone 2)
+w42:173	0	OPERATOR	5		diverges alone (cone 5)
+w42:182	0	OPERATOR	4		diverges alone (cone 4)
+w42:186	0	OPERATOR	2		diverges alone (cone 2)
+w42:192	0	OPERATOR	4		diverges alone (cone 4)
+w42:2	0	OPERATOR	6		diverges alone (cone 6)
+w42:201	0	OPERATOR	5		diverges alone (cone 5)
+w42:210	3	OPERATOR	3		diverges alone (cone 3)
+w4:221	3	OPERATOR	3		diverges alone (cone 3)
+w42:219	0	OPERATOR	7		diverges alone (cone 7)
+w42:249	3	GRAPHOPT	10	n9	needs siblings ['n9']
+w42:259	1	OPERATOR	3		diverges alone (cone 3)
+w42:268	3	NOREPRO	5		full graph diverges=False
+w42:307	3	OPERATOR	3		diverges alone (cone 3)
+w42:31	0	OPERATOR	5		diverges alone (cone 5)
+w42:335	0	OPERATOR	5		diverges alone (cone 5)
+w42:342	2	OPERATOR	4		diverges alone (cone 4)
+w42:357	3	OPERATOR	5		diverges alone (cone 5)
+w42:381	3	OPERATOR	8		diverges alone (cone 8)
+w4:241	2	OPERATOR	6		diverges alone (cone 6)
+w42:461	0	OPERATOR	5		diverges alone (cone 5)
+w4:246	3	OPERATOR	4		diverges alone (cone 4)
+w42:487	1	OPERATOR	5		diverges alone (cone 5)
+w42:510	0	NOREPRO	4		full graph diverges=False
+w42:540	0	NOREPRO	3		full graph diverges=False
+w42:541	2	OPERATOR	4		diverges alone (cone 4)
+w4:258	1	OPERATOR	3		diverges alone (cone 3)
+w4:265	0	OPERATOR	9		diverges alone (cone 9)
+w42:66	1	OPERATOR	2		diverges alone (cone 2)
+w42:695	3	OPERATOR	5		diverges alone (cone 5)
+w42:744	0	OPERATOR	3		diverges alone (cone 3)
+w42:823	0	OPERATOR	2		diverges alone (cone 2)
+w42:837	2	OPERATOR	3		diverges alone (cone 3)
+w42:873	1	NOREPRO	4		full graph diverges=False
+w42:885	0	OPERATOR	3		diverges alone (cone 3)
+w42:898	0	OPERATOR	2		diverges alone (cone 2)
+w42:94	3	OPERATOR	3		diverges alone (cone 3)
+w42:983	1	OPERATOR	13		diverges alone (cone 13)
+w42:996	0	NOREPRO	2		full graph diverges=False
+w43:1032	1	LOWERFAIL	4		align(et=1,eager=4)
+w43:111	0	OPERATOR	4		diverges alone (cone 4)
+w43:116	3	OPERATOR	3		diverges alone (cone 3)
+w43:137	2	OPERATOR	3		diverges alone (cone 3)
+w43:154	2	OPERATOR	3		diverges alone (cone 3)
+w43:179	0	OPERATOR	3		diverges alone (cone 3)
+w4:319	2	OPERATOR	6		diverges alone (cone 6)
+w43:215	1	GRAPHOPT	7	n11	needs siblings ['n11']
+w43:219	2	OPERATOR	4		diverges alone (cone 4)
+w43:228	0	OPERATOR	3		diverges alone (cone 3)
+w43:233	2	OPERATOR	4		diverges alone (cone 4)
+w43:237	0	OPERATOR	7		diverges alone (cone 7)
+w43:241	0	GRAPHOPT	5	n6	needs siblings ['n6']
+w43:282	2	NOREPRO	4		full graph diverges=False
+w43:288	3	OPERATOR	5		diverges alone (cone 5)
+w43:293	0	LOWERFAIL	2		dev=TIMEOUT
+w43:310	1	OPERATOR	9		diverges alone (cone 9)
+w4:331	2	OPERATOR	4		diverges alone (cone 4)
+w43:31	3	OPERATOR	3		diverges alone (cone 3)
+w43:3	2	OPERATOR	3		diverges alone (cone 3)
+w43:338	1	GRAPHOPT	5	n6	needs siblings ['n6']
+w43:363	0	OPERATOR	3		diverges alone (cone 3)
+w43:384	2	OPERATOR	3		diverges alone (cone 3)
+w4:339	4	OPERATOR	4		diverges alone (cone 4)
+w43:407	3	OPERATOR	7		diverges alone (cone 7)
+w43:421	1	OPERATOR	5		diverges alone (cone 5)
+w43:433	1	OPERATOR	3		diverges alone (cone 3)
+w43:458	3	NOREPRO	6		full graph diverges=False
+w43:467	1	OPERATOR	11		diverges alone (cone 11)
+w43:488	1	NOREPRO	9		full graph diverges=False
+w43:512	3	OPERATOR	3		diverges alone (cone 3)
+w43:535	0	OPERATOR	4		diverges alone (cone 4)
+w43:590	3	OPERATOR	4		diverges alone (cone 4)
+w4:362	0	GRAPHOPT	3	n2	needs siblings ['n2']
+w43:633	0	OPERATOR	2		diverges alone (cone 2)
+w4:367	0	OPERATOR	10		diverges alone (cone 10)
+w43:674	2	OPERATOR	5		diverges alone (cone 5)
+w43:703	0	OPERATOR	3		diverges alone (cone 3)
+w43:714	0	OPERATOR	2		diverges alone (cone 2)
+w4:378	3	LOWERFAIL	6		align(et=1,eager=5)
+w43:799	0	OPERATOR	3		diverges alone (cone 3)
+w4:381	4	OPERATOR	3		diverges alone (cone 3)
+w43:826	0	OPERATOR	3		diverges alone (cone 3)
+w43:831	2	GRAPHOPT	6	n5	needs siblings ['n5']
+w43:837	0	OPERATOR	5		diverges alone (cone 5)
+w43:854	2	OPERATOR	5		diverges alone (cone 5)
+w43:857	2	OPERATOR	4		diverges alone (cone 4)
+w43:867	0	OPERATOR	3		diverges alone (cone 3)
+w43:882	2	OPERATOR	3		diverges alone (cone 3)
+w43:887	1	NOREPRO	9		full graph diverges=False
+w4:406	1	OPERATOR	3		diverges alone (cone 3)
+w44:1016	0	OPERATOR	3		diverges alone (cone 3)
+w44:114	1	LOWERFAIL	5		align(et=1,eager=3)
+w44:130	2	OPERATOR	4		diverges alone (cone 4)
+w44:13	3	OPERATOR	3		diverges alone (cone 3)
+w44:179	2	LOWERFAIL	3		align(et=2,eager=6)
+w44:184	0	OPERATOR	2		diverges alone (cone 2)
+w44:202	3	OPERATOR	3		diverges alone (cone 3)
+w44:222	1	OPERATOR	3		diverges alone (cone 3)
+w4:427	2	OPERATOR	5		diverges alone (cone 5)
+w44:277	1	OPERATOR	3		diverges alone (cone 3)
+w44:278	3	OPERATOR	4		diverges alone (cone 4)
+w44:28	0	OPERATOR	4		diverges alone (cone 4)
+w44:282	2	OPERATOR	2		diverges alone (cone 2)
+w44:295	1	NOREPRO	3		full graph diverges=False
+w4:435	1	OPERATOR	4		diverges alone (cone 4)
+w44:361	2	OPERATOR	4		diverges alone (cone 4)
+w44:391	2	OPERATOR	2		diverges alone (cone 2)
+w4:440	0	OPERATOR	7		diverges alone (cone 7)
+w44:425	0	OPERATOR	5		diverges alone (cone 5)
+w44:442	3	OPERATOR	3		diverges alone (cone 3)
+w44:463	1	OPERATOR	3		diverges alone (cone 3)
+w44:53	1	OPERATOR	5		diverges alone (cone 5)
+w44:531	1	OPERATOR	4		diverges alone (cone 4)
+w44:536	1	OPERATOR	5		diverges alone (cone 5)
+w4:454	0	OPERATOR	5		diverges alone (cone 5)
+w44:568	0	OPERATOR	3		diverges alone (cone 3)
+w44:62	0	OPERATOR	3		diverges alone (cone 3)
+w4:46	3	OPERATOR	2		diverges alone (cone 2)
+w44:666	0	OPERATOR	5		diverges alone (cone 5)
+w44:700	0	OPERATOR	7		diverges alone (cone 7)
+w44:734	3	OPERATOR	2		diverges alone (cone 2)
+w44:737	3	OPERATOR	5		diverges alone (cone 5)
+w4:478	1	OPERATOR	4		diverges alone (cone 4)
+w44:793	2	OPERATOR	5		diverges alone (cone 5)
+w44:795	2	OPERATOR	8		diverges alone (cone 8)
+w44:863	1	OPERATOR	5		diverges alone (cone 5)
+w44:870	2	OPERATOR	3		diverges alone (cone 3)
+w44:875	1	OPERATOR	6		diverges alone (cone 6)
+w44:880	2	OPERATOR	5		diverges alone (cone 5)
+w44:89	1	OPERATOR	5		diverges alone (cone 5)
+w44:900	0	OPERATOR	4		diverges alone (cone 4)
+w44:903	2	OPERATOR	3		diverges alone (cone 3)
+w4:491	1	OPERATOR	2		diverges alone (cone 2)
+w44:933	2	OPERATOR	4		diverges alone (cone 4)
+w44:939	3	OPERATOR	4		diverges alone (cone 4)
+w44:963	2	OPERATOR	5		diverges alone (cone 5)
+w44:971	2	OPERATOR	8		diverges alone (cone 8)
+w4:508	1	OPERATOR	3		diverges alone (cone 3)
+w45:1022	2	OPERATOR	3		diverges alone (cone 3)
+w45:122	1	OPERATOR	7		diverges alone (cone 7)
+w45:136	0	OPERATOR	2		diverges alone (cone 2)
+w45:143	1	GRAPHOPT	8	n4,n7	needs siblings ['n4', 'n7']
+w45:15	1	LOWERFAIL	7		align(et=1,eager=4)
+w45:160	2	OPERATOR	9		diverges alone (cone 9)
+w45:18	1	OPERATOR	4		diverges alone (cone 4)
+w45:198	0	OPERATOR	2		diverges alone (cone 2)
+w45:204	2	GRAPHOPT	6	n6	needs siblings ['n6']
+w45:219	0	LOWERFAIL	5		dev=TIMEOUT
+w45:236	3	OPERATOR	5		diverges alone (cone 5)
+w45:242	2	OPERATOR	4		diverges alone (cone 4)
+w45:296	0	OPERATOR	3		diverges alone (cone 3)
+w45:301	0	NOREPRO	4		full graph diverges=False
+w45:332	1	OPERATOR	4		diverges alone (cone 4)
+w45:347	3	GRAPHOPT	6	n3,n7	needs siblings ['n3', 'n7']
+w45:364	2	NOREPRO	9		full graph diverges=False
+w45:417	0	OPERATOR	3		diverges alone (cone 3)
+w45:418	1	OPERATOR	5		diverges alone (cone 5)
+w45:456	3	LOWERFAIL	3		dev=TIMEOUT
+w45:459	1	OPERATOR	3		diverges alone (cone 3)
+w45:467	0	OPERATOR	7		diverges alone (cone 7)
+w4:547	0	OPERATOR	6		diverges alone (cone 6)
+w45:476	0	OPERATOR	4		diverges alone (cone 4)
+w45:5	2	OPERATOR	7		diverges alone (cone 7)
+w45:538	0	OPERATOR	6		diverges alone (cone 6)
+w45:63	0	OPERATOR	2		diverges alone (cone 2)
+w45:64	1	OPERATOR	3		diverges alone (cone 3)
+w45:681	1	OPERATOR	2		diverges alone (cone 2)
+w45:75	4	OPERATOR	2		diverges alone (cone 2)
+w45:849	1	OPERATOR	2		diverges alone (cone 2)
+w45:858	2	OPERATOR	3		diverges alone (cone 3)
+w45:860	2	OPERATOR	5		diverges alone (cone 5)
+w45:861	1	OPERATOR	4		diverges alone (cone 4)
+w45:867	0	OPERATOR	2		diverges alone (cone 2)
+w45:940	1	OPERATOR	6		diverges alone (cone 6)
+w45:942	0	OPERATOR	4		diverges alone (cone 4)
+w45:948	1	LOWERFAIL	4		dev=TIMEOUT
+w4:607	4	OPERATOR	6		diverges alone (cone 6)
+w46:104	2	LOWERFAIL	3		align(et=1,eager=3)
+w46:117	0	OPERATOR	3		diverges alone (cone 3)
+w46:133	3	OPERATOR	4		diverges alone (cone 4)
+w46:134	2	OPERATOR	4		diverges alone (cone 4)
+w46:18	1	OPERATOR	4		diverges alone (cone 4)
+w46:196	0	OPERATOR	4		diverges alone (cone 4)
+w46:203	2	OPERATOR	3		diverges alone (cone 3)
+w46:227	2	OPERATOR	7		diverges alone (cone 7)
+w46:231	0	OPERATOR	4		diverges alone (cone 4)
+w46:236	0	OPERATOR	3		diverges alone (cone 3)
+w46:240	1	NOREPRO	5		full graph diverges=False
+w46:289	0	OPERATOR	2		diverges alone (cone 2)
+w46:306	2	LOWERFAIL	3		align(et=1,eager=3)
+w4:632	1	OPERATOR	5		diverges alone (cone 5)
+w46:328	3	OPERATOR	5		diverges alone (cone 5)
+w46:345	2	OPERATOR	8		diverges alone (cone 8)
+w46:35	1	OPERATOR	5		diverges alone (cone 5)
+w46:355	1	OPERATOR	4		diverges alone (cone 4)
+w46:362	0	OPERATOR	2		diverges alone (cone 2)
+w46:364	1	OPERATOR	4		diverges alone (cone 4)
+w46:380	2	OPERATOR	5		diverges alone (cone 5)
+w46:385	0	OPERATOR	3		diverges alone (cone 3)
+w46:389	1	OPERATOR	4		diverges alone (cone 4)
+w4:639	4	OPERATOR	2		diverges alone (cone 2)
+w46:396	3	OPERATOR	3		diverges alone (cone 3)
+w46:445	1	OPERATOR	5		diverges alone (cone 5)
+w46:451	0	OPERATOR	3		diverges alone (cone 3)
+w46:474	0	OPERATOR	5		diverges alone (cone 5)
+w46:476	3	OPERATOR	4		diverges alone (cone 4)
+w46:520	0	OPERATOR	3		diverges alone (cone 3)
+w4:655	2	OPERATOR	3		diverges alone (cone 3)
+w46:556	1	NOREPRO	4		full graph diverges=False
+w46:61	1	NOREPRO	3		full graph diverges=False
+w46:643	0	OPERATOR	2		diverges alone (cone 2)
+w46:652	2	OPERATOR	2		diverges alone (cone 2)
+w46:659	3	OPERATOR	2		diverges alone (cone 2)
+w46:661	1	OPERATOR	5		diverges alone (cone 5)
+w46:664	2	OPERATOR	3		diverges alone (cone 3)
+w4:668	0	OPERATOR	4		diverges alone (cone 4)
+w46:687	2	OPERATOR	3		diverges alone (cone 3)
+w46:70	3	OPERATOR	7		diverges alone (cone 7)
+w46:745	0	OPERATOR	4		diverges alone (cone 4)
+w46:776	2	OPERATOR	3		diverges alone (cone 3)
+w46:779	1	OPERATOR	10		diverges alone (cone 10)
+w46:782	1	OPERATOR	2		diverges alone (cone 2)
+w46:79	0	OPERATOR	3		diverges alone (cone 3)
+w46:80	3	OPERATOR	4		diverges alone (cone 4)
+w46:856	0	OPERATOR	3		diverges alone (cone 3)
+w46:884	1	OPERATOR	3		diverges alone (cone 3)
+w46:886	1	OPERATOR	4		diverges alone (cone 4)
+w46:915	0	OPERATOR	4		diverges alone (cone 4)
+w46:919	0	GRAPHOPT	6	n5,n7	needs siblings ['n5', 'n7']
+w46:924	4	OPERATOR	4		diverges alone (cone 4)
+w4:69	3	OPERATOR	3		diverges alone (cone 3)
+w4:693	0	GRAPHOPT	7	n4,n7	needs siblings ['n4', 'n7']
+w46:978	0	OPERATOR	5		diverges alone (cone 5)
+w46:997	2	OPERATOR	6		diverges alone (cone 6)
+w47:1022	0	OPERATOR	2		diverges alone (cone 2)
+w47:141	0	NOREPRO	2		full graph diverges=False
+w47:154	1	OPERATOR	2		diverges alone (cone 2)
+w47:172	1	OPERATOR	8		diverges alone (cone 8)
+w47:174	0	OPERATOR	2		diverges alone (cone 2)
+w47:196	1	OPERATOR	4		diverges alone (cone 4)
+w4:72	0	OPERATOR	8		diverges alone (cone 8)
+w47:230	1	NOREPRO	4		full graph diverges=False
+w47:248	1	OPERATOR	4		diverges alone (cone 4)
+w4:727	0	OPERATOR	4		diverges alone (cone 4)
+w47:30	1	OPERATOR	2		diverges alone (cone 2)
+w47:327	2	OPERATOR	4		diverges alone (cone 4)
+w47:33	2	OPERATOR	4		diverges alone (cone 4)
+w47:422	1	OPERATOR	4		diverges alone (cone 4)
+w47:424	0	OPERATOR	4		diverges alone (cone 4)
+w47:451	3	LOWERFAIL	3		align(et=1,eager=5)
+w47:477	0	OPERATOR	2		diverges alone (cone 2)
+w47:481	0	OPERATOR	5		diverges alone (cone 5)
+w47:503	3	GRAPHOPT	4	n7	needs siblings ['n7']
+w47:512	0	OPERATOR	5		diverges alone (cone 5)
+w47:540	0	OPERATOR	4		diverges alone (cone 4)
+w47:579	2	LOWERFAIL	3		align(et=1,eager=3)
+w47:588	0	GRAPHOPT	6	n6	needs siblings ['n6']
+w47:60	1	OPERATOR	3		diverges alone (cone 3)
+w4:764	2	OPERATOR	4		diverges alone (cone 4)
+w47:647	1	OPERATOR	3		diverges alone (cone 3)
+w47:652	0	OPERATOR	4		diverges alone (cone 4)
+w47:653	2	NOREPRO	3		full graph diverges=False
+w47:656	2	GRAPHOPT	6	n5	needs siblings ['n5']
+w47:69	0	OPERATOR	2		diverges alone (cone 2)
+w47:698	1	OPERATOR	9		diverges alone (cone 9)
+w47:704	1	OPERATOR	4		diverges alone (cone 4)
+w47:744	3	LOWERFAIL	5		dev=TIMEOUT
+w47:754	0	NOREPRO	3		full graph diverges=False
+w47:783	0	OPERATOR	3		diverges alone (cone 3)
+w47:88	1	OPERATOR	4		diverges alone (cone 4)
+w47:887	0	OPERATOR	4		diverges alone (cone 4)
+w47:9	1	OPERATOR	5		diverges alone (cone 5)
+w47:970	1	OPERATOR	3		diverges alone (cone 3)
+w48:1021	0	OPERATOR	9		diverges alone (cone 9)
+w48:113	3	OPERATOR	5		diverges alone (cone 5)
+w4:81	2	OPERATOR	2		diverges alone (cone 2)
+w48:175	0	OPERATOR	3		diverges alone (cone 3)
+w48:193	2	OPERATOR	6		diverges alone (cone 6)
+w48:203	1	OPERATOR	3		diverges alone (cone 3)
+w48:210	1	OPERATOR	6		diverges alone (cone 6)
+w48:215	1	GRAPHOPT	5	n8	needs siblings ['n8']
+w48:244	1	OPERATOR	7		diverges alone (cone 7)
+w48:248	2	GRAPHOPT	6	n7	needs siblings ['n7']
+w48:273	2	OPERATOR	3		diverges alone (cone 3)
+w48:279	0	OPERATOR	4		diverges alone (cone 4)
+w48:298	0	OPERATOR	4		diverges alone (cone 4)
+w48:300	1	OPERATOR	4		diverges alone (cone 4)
+w48:329	2	OPERATOR	3		diverges alone (cone 3)
+w4:833	2	OPERATOR	5		diverges alone (cone 5)
+w48:33	3	OPERATOR	3		diverges alone (cone 3)
+w48:338	3	OPERATOR	4		diverges alone (cone 4)
+w48:341	0	OPERATOR	2		diverges alone (cone 2)
+w48:349	3	OPERATOR	4		diverges alone (cone 4)
+w48:358	0	OPERATOR	4		diverges alone (cone 4)
+w48:400	2	OPERATOR	3		diverges alone (cone 3)
+w4:841	2	LOWERFAIL	4		dev=TIMEOUT
+w48:472	1	OPERATOR	4		diverges alone (cone 4)
+w48:480	1	LOWERFAIL	4		align(et=1,eager=5)
+w48:520	1	OPERATOR	4		diverges alone (cone 4)
+w48:528	0	OPERATOR	3		diverges alone (cone 3)
+w48:53	2	LOWERFAIL	4		align(et=2,eager=4)
+w48:537	0	NOREPRO	4		full graph diverges=False
+w48:54	2	OPERATOR	2		diverges alone (cone 2)
+w48:542	4	OPERATOR	2		diverges alone (cone 2)
+w48:552	0	NOREPRO	2		full graph diverges=False
+w48:564	0	NOREPRO	3		full graph diverges=False
+w48:659	3	OPERATOR	8		diverges alone (cone 8)
+w48:663	4	OPERATOR	2		diverges alone (cone 2)
+w48:682	1	OPERATOR	8		diverges alone (cone 8)
+w48:699	1	LOWERFAIL	3		dev=TIMEOUT
+w48:735	0	OPERATOR	4		diverges alone (cone 4)
+w48:736	2	OPERATOR	6		diverges alone (cone 6)
+w48:769	2	OPERATOR	5		diverges alone (cone 5)
+w48:782	1	NOREPRO	2		full graph diverges=False
+w48:798	3	OPERATOR	5		diverges alone (cone 5)
+w48:811	1	OPERATOR	6		diverges alone (cone 6)
+w48:83	2	OPERATOR	2		diverges alone (cone 2)
+w48:910	2	OPERATOR	3		diverges alone (cone 3)
+w48:956	0	OPERATOR	6		diverges alone (cone 6)
+w48:958	3	OPERATOR	5		diverges alone (cone 5)
+w48:966	0	OPERATOR	2		diverges alone (cone 2)
+w48:995	0	OPERATOR	2		diverges alone (cone 2)
+w4:902	3	OPERATOR	3		diverges alone (cone 3)
+w4:910	3	OPERATOR	4		diverges alone (cone 4)
+w49:108	1	OPERATOR	6		diverges alone (cone 6)
+w49:119	2	LOWERFAIL	4		align(et=2,eager=3)
+w49:13	3	OPERATOR	2		diverges alone (cone 2)
+w49:152	1	OPERATOR	4		diverges alone (cone 4)
+w49:189	1	OPERATOR	2		diverges alone (cone 2)
+w49:198	1	OPERATOR	3		diverges alone (cone 3)
+w49:200	0	OPERATOR	3		diverges alone (cone 3)
+w49:237	4	LOWERFAIL	4		align(et=3,eager=5)
+w49:301	1	OPERATOR	3		diverges alone (cone 3)
+w49:315	0	OPERATOR	3		diverges alone (cone 3)
+w49:32	2	NOREPRO	3		full graph diverges=False
+w49:357	1	OPERATOR	2		diverges alone (cone 2)
+w49:359	2	OPERATOR	5		diverges alone (cone 5)
+w49:372	2	NOREPRO	7		full graph diverges=False
+w4:939	0	GRAPHOPT	8	n4,n7	needs siblings ['n4', 'n7']
+w49:405	4	GRAPHOPT	5	n2	needs siblings ['n2']
+w49:408	2	NOREPRO	8		full graph diverges=False
+w4:941	2	OPERATOR	5		diverges alone (cone 5)
+w49:434	1	OPERATOR	8		diverges alone (cone 8)
+w49:437	1	OPERATOR	2		diverges alone (cone 2)
+w49:446	1	OPERATOR	4		diverges alone (cone 4)
+w4:947	4	OPERATOR	3		diverges alone (cone 3)
+w4:95	2	OPERATOR	3		diverges alone (cone 3)
+w49:548	1	OPERATOR	6		diverges alone (cone 6)
+w4:956	4	OPERATOR	3		diverges alone (cone 3)
+w4:958	0	OPERATOR	2		diverges alone (cone 2)
+w49:587	0	OPERATOR	7		diverges alone (cone 7)
+w49:591	3	NOREPRO	3		full graph diverges=False
+w49:598	0	OPERATOR	4		diverges alone (cone 4)
+w49:603	1	OPERATOR	2		diverges alone (cone 2)
+w49:604	2	OPERATOR	4		diverges alone (cone 4)
+w49:652	2	GRAPHOPT	5	n5	needs siblings ['n5']
+w49:678	3	LOWERFAIL	5		align(et=2,eager=4)
+w49:746	3	OPERATOR	7		diverges alone (cone 7)
+w4:975	0	OPERATOR	5		diverges alone (cone 5)
+w49:773	1	OPERATOR	5		diverges alone (cone 5)
+w49:823	2	OPERATOR	6		diverges alone (cone 6)
+w49:83	0	OPERATOR	3		diverges alone (cone 3)
+w49:831	2	OPERATOR	5		diverges alone (cone 5)
+w49:842	1	NOREPRO	4		full graph diverges=False
+w49:874	4	OPERATOR	5		diverges alone (cone 5)
+w49:893	0	OPERATOR	2		diverges alone (cone 2)
+w49:914	1	OPERATOR	7		diverges alone (cone 7)
+w49:928	3	OPERATOR	10		diverges alone (cone 10)
+w4:993	0	LOWERFAIL	2		dev=TIMEOUT
+w49:953	4	OPERATOR	3		diverges alone (cone 3)
+w50:1037	1	OPERATOR	3		diverges alone (cone 3)
+w50:107	0	OPERATOR	4		diverges alone (cone 4)
+w50:142	0	OPERATOR	3		diverges alone (cone 3)
+w50:144	2	OPERATOR	4		diverges alone (cone 4)
+w50:181	1	LOWERFAIL	5		align(et=1,eager=3)
+w50:182	2	OPERATOR	5		diverges alone (cone 5)
+w50:20	2	NOREPRO	2		full graph diverges=False
+w50:206	2	LOWERFAIL	4		dev=TIMEOUT
+w50:212	0	OPERATOR	13		diverges alone (cone 13)
+w50:213	2	OPERATOR	4		diverges alone (cone 4)
+w50:215	2	OPERATOR	6		diverges alone (cone 6)
+w50:239	3	OPERATOR	5		diverges alone (cone 5)
+w50:241	3	OPERATOR	3		diverges alone (cone 3)
+w50:246	0	OPERATOR	4		diverges alone (cone 4)
+w50:317	1	OPERATOR	4		diverges alone (cone 4)
+w50:344	0	OPERATOR	10		diverges alone (cone 10)
+w50:357	1	OPERATOR	7		diverges alone (cone 7)
+w50:367	0	OPERATOR	2		diverges alone (cone 2)
+w50:37	2	LOWERFAIL	4		dev=TIMEOUT
+w50:377	4	OPERATOR	5		diverges alone (cone 5)
+w50:393	0	LOWERFAIL	3		dev=TIMEOUT
+w50:4	1	OPERATOR	3		diverges alone (cone 3)
+w50:432	0	OPERATOR	3		diverges alone (cone 3)
+w50:441	2	LOWERFAIL	3		align(et=1,eager=4)
+w50:484	1	OPERATOR	5		diverges alone (cone 5)
+w50:488	3	LOWERFAIL	5		align(et=2,eager=4)
+w50:538	0	OPERATOR	3		diverges alone (cone 3)
+w50:541	0	OPERATOR	2		diverges alone (cone 2)
+w50:566	2	OPERATOR	5		diverges alone (cone 5)
+w50:580	2	OPERATOR	2		diverges alone (cone 2)
+w50:598	0	GRAPHOPT	13	n13,n15	needs siblings ['n13', 'n15']
+w50:60	0	OPERATOR	4		diverges alone (cone 4)
+w50:607	2	OPERATOR	2		diverges alone (cone 2)
+w50:651	4	LOWERFAIL	3		align(et=1,eager=5)
+w50:669	2	OPERATOR	3		diverges alone (cone 3)
+w50:701	1	GRAPHOPT	6	n4	needs siblings ['n4']
+w50:74	2	OPERATOR	5		diverges alone (cone 5)
+w50:758	2	OPERATOR	4		diverges alone (cone 4)
+w50:765	1	OPERATOR	3		diverges alone (cone 3)
+w50:860	2	LOWERFAIL	4		dev=TIMEOUT
+w50:865	2	OPERATOR	4		diverges alone (cone 4)
+w50:867	2	OPERATOR	3		diverges alone (cone 3)
+w50:875	2	OPERATOR	2		diverges alone (cone 2)
+w50:879	0	OPERATOR	3		diverges alone (cone 3)
+w50:888	1	OPERATOR	3		diverges alone (cone 3)
+w50:895	2	NOREPRO	3		full graph diverges=False
+w50:94	0	OPERATOR	4		diverges alone (cone 4)
+w5:1	0	OPERATOR	2		diverges alone (cone 2)
+w5:1001	2	OPERATOR	2		diverges alone (cone 2)
+w5:1030	2	OPERATOR	4		diverges alone (cone 4)
+w51:1012	1	OPERATOR	3		diverges alone (cone 3)
+w51:1016	2	OPERATOR	4		diverges alone (cone 4)
+w51:158	3	OPERATOR	4		diverges alone (cone 4)
+w51:187	2	OPERATOR	3		diverges alone (cone 3)
+w51:204	0	OPERATOR	3		diverges alone (cone 3)
+w51:241	1	OPERATOR	5		diverges alone (cone 5)
+w51:274	2	OPERATOR	3		diverges alone (cone 3)
+w51:283	1	OPERATOR	6		diverges alone (cone 6)
+w51:287	0	OPERATOR	2		diverges alone (cone 2)
+w51:309	2	OPERATOR	7		diverges alone (cone 7)
+w51:333	1	OPERATOR	7		diverges alone (cone 7)
+w51:337	2	OPERATOR	3		diverges alone (cone 3)
+w51:351	0	NOREPRO	2		full graph diverges=False
+w51:373	4	OPERATOR	4		diverges alone (cone 4)
+w51:412	1	OPERATOR	3		diverges alone (cone 3)
+w51:414	3	OPERATOR	3		diverges alone (cone 3)
+w51:439	2	OPERATOR	4		diverges alone (cone 4)
+w51:446	2	OPERATOR	2		diverges alone (cone 2)
+w51:450	2	OPERATOR	6		diverges alone (cone 6)
+w51:46	0	OPERATOR	4		diverges alone (cone 4)
+w51:468	4	OPERATOR	3		diverges alone (cone 3)
+w51:469	1	OPERATOR	3		diverges alone (cone 3)
+w51:500	0	OPERATOR	3		diverges alone (cone 3)
+w51:530	0	OPERATOR	4		diverges alone (cone 4)
+w51:533	1	OPERATOR	4		diverges alone (cone 4)
+w51:542	0	OPERATOR	3		diverges alone (cone 3)
+w51:557	1	OPERATOR	9		diverges alone (cone 9)
+w51:559	2	NOREPRO	4		full graph diverges=False
+w51:560	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w51:565	0	OPERATOR	3		diverges alone (cone 3)
+w51:578	1	OPERATOR	2		diverges alone (cone 2)
+w51:579	0	NOREPRO	2		full graph diverges=False
+w51:581	0	LOWERFAIL	4		dev=TIMEOUT
+w51:58	2	OPERATOR	5		diverges alone (cone 5)
+w51:636	3	OPERATOR	7		diverges alone (cone 7)
+w51:655	0	OPERATOR	7		diverges alone (cone 7)
+w51:688	1	OPERATOR	3		diverges alone (cone 3)
+w51:703	4	LOWERFAIL	4		align(et=2,eager=5)
+w51:739	2	OPERATOR	2		diverges alone (cone 2)
+w51:749	3	OPERATOR	5		diverges alone (cone 5)
+w51:755	0	OPERATOR	3		diverges alone (cone 3)
+w51:758	0	OPERATOR	2		diverges alone (cone 2)
+w51:806	0	OPERATOR	2		diverges alone (cone 2)
+w51:827	4	OPERATOR	5		diverges alone (cone 5)
+w51:83	4	OPERATOR	2		diverges alone (cone 2)
+w51:886	2	OPERATOR	4		diverges alone (cone 4)
+w51:891	0	GRAPHOPT	4	n5	needs siblings ['n5']
+w5:190	0	OPERATOR	7		diverges alone (cone 7)
+w51:927	3	OPERATOR	5		diverges alone (cone 5)
+w51:988	2	LOWERFAIL	5		align(et=2,eager=4)
+w51:990	4	OPERATOR	3		diverges alone (cone 3)
+w52:1005	0	OPERATOR	3		diverges alone (cone 3)
+w52:1006	0	OPERATOR	5		diverges alone (cone 5)
+w52:1019	3	OPERATOR	5		diverges alone (cone 5)
+w52:117	4	LOWERFAIL	2		align(et=1,eager=5)
+w52:144	0	OPERATOR	4		diverges alone (cone 4)
+w52:160	2	GRAPHOPT	6	n5	needs siblings ['n5']
+w52:163	0	OPERATOR	10		diverges alone (cone 10)
+w52:190	1	OPERATOR	3		diverges alone (cone 3)
+w5:220	0	OPERATOR	2		diverges alone (cone 2)
+w52:202	0	GRAPHOPT	11	n5,n10	needs siblings ['n5', 'n10']
+w52:210	1	OPERATOR	7		diverges alone (cone 7)
+w52:216	3	OPERATOR	5		diverges alone (cone 5)
+w52:220	1	OPERATOR	3		diverges alone (cone 3)
+w52:233	1	NOREPRO	6		full graph diverges=False
+w52:243	2	OPERATOR	5		diverges alone (cone 5)
+w52:252	0	OPERATOR	4		diverges alone (cone 4)
+w52:338	0	OPERATOR	3		diverges alone (cone 3)
+w52:347	1	OPERATOR	4		diverges alone (cone 4)
+w52:354	1	OPERATOR	7		diverges alone (cone 7)
+w52:370	1	LOWERFAIL	2		dev=TIMEOUT
+w52:37	1	NOREPRO	3		full graph diverges=False
+w52:383	2	OPERATOR	4		diverges alone (cone 4)
+w52:385	0	OPERATOR	2		diverges alone (cone 2)
+w52:400	2	LOWERFAIL	3		dev=TIMEOUT
+w52:408	1	OPERATOR	2		diverges alone (cone 2)
+w52:448	0	OPERATOR	3		diverges alone (cone 3)
+w52:454	1	OPERATOR	3		diverges alone (cone 3)
+w52:467	0	OPERATOR	4		diverges alone (cone 4)
+w52:474	0	LOWERFAIL	5		dev=TIMEOUT
+w52:511	0	NOREPRO	3		full graph diverges=False
+w52:539	0	OPERATOR	5		diverges alone (cone 5)
+w5:255	3	OPERATOR	4		diverges alone (cone 4)
+w52:554	1	OPERATOR	7		diverges alone (cone 7)
+w52:56	4	LOWERFAIL	4		align(et=1,eager=5)
+w52:600	0	OPERATOR	4		diverges alone (cone 4)
+w52:604	2	OPERATOR	2		diverges alone (cone 2)
+w52:633	3	GRAPHOPT	8	n8	needs siblings ['n8']
+w52:635	2	OPERATOR	8		diverges alone (cone 8)
+w52:637	3	NOREPRO	3		full graph diverges=False
+w52:657	2	OPERATOR	4		diverges alone (cone 4)
+w52:672	3	LOWERFAIL	7		align(et=1,eager=4)
+w5:268	0	NOREPRO	4		full graph diverges=False
+w52:697	2	OPERATOR	5		diverges alone (cone 5)
+w5:27	0	OPERATOR	5		diverges alone (cone 5)
+w52:709	1	OPERATOR	3		diverges alone (cone 3)
+w5:272	0	OPERATOR	3		diverges alone (cone 3)
+w52:739	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w52:741	0	OPERATOR	6		diverges alone (cone 6)
+w52:752	3	GRAPHOPT	5	n4	needs siblings ['n4']
+w52:787	3	OPERATOR	9		diverges alone (cone 9)
+w52:799	0	OPERATOR	4		diverges alone (cone 4)
+w52:819	2	LOWERFAIL	4		align(et=2,eager=4)
+w52:839	1	OPERATOR	3		diverges alone (cone 3)
+w5:288	0	OPERATOR	5		diverges alone (cone 5)
+w5:289	1	OPERATOR	2		diverges alone (cone 2)
+w52:900	3	OPERATOR	4		diverges alone (cone 4)
+w5:292	3	LOWERFAIL	4		align(et=3,eager=4)
+w52:975	1	OPERATOR	6		diverges alone (cone 6)
+w53:10	1	OPERATOR	7		diverges alone (cone 7)
+w53:120	3	OPERATOR	5		diverges alone (cone 5)
+w53:128	0	OPERATOR	3		diverges alone (cone 3)
+w53:161	2	OPERATOR	5		diverges alone (cone 5)
+w53:180	3	OPERATOR	4		diverges alone (cone 4)
+w53:183	1	LOWERFAIL	3		dev=TIMEOUT
+w53:188	1	OPERATOR	3		diverges alone (cone 3)
+w53:197	3	OPERATOR	4		diverges alone (cone 4)
+w53:228	1	OPERATOR	4		diverges alone (cone 4)
+w53:229	1	OPERATOR	3		diverges alone (cone 3)
+w53:24	0	OPERATOR	2		diverges alone (cone 2)
+w53:258	0	OPERATOR	4		diverges alone (cone 4)
+w53:268	1	OPERATOR	4		diverges alone (cone 4)
+w53:355	1	OPERATOR	3		diverges alone (cone 3)
+w53:382	3	OPERATOR	2		diverges alone (cone 2)
+w53:396	2	OPERATOR	5		diverges alone (cone 5)
+w53:413	0	OPERATOR	4		diverges alone (cone 4)
+w53:468	2	LOWERFAIL	4		align(et=2,eager=4)
+w53:510	4	OPERATOR	3		diverges alone (cone 3)
+w53:512	2	OPERATOR	6		diverges alone (cone 6)
+w53:529	0	NOREPRO	3		full graph diverges=False
+w53:571	1	OPERATOR	4		diverges alone (cone 4)
+w53:572	2	OPERATOR	4		diverges alone (cone 4)
+w53:645	2	OPERATOR	4		diverges alone (cone 4)
+w53:648	2	NOREPRO	6		full graph diverges=False
+w53:68	2	NOREPRO	3		full graph diverges=False
+w53:695	3	OPERATOR	3		diverges alone (cone 3)
+w53:711	3	OPERATOR	2		diverges alone (cone 2)
+w53:712	1	GRAPHOPT	6	n10	needs siblings ['n10']
+w53:720	1	OPERATOR	8		diverges alone (cone 8)
+w53:741	3	OPERATOR	5		diverges alone (cone 5)
+w53:79	0	GRAPHOPT	12	n9,n10,n11	needs siblings ['n9', 'n10', 'n11']
+w53:81	0	OPERATOR	4		diverges alone (cone 4)
+w53:812	0	LOWERFAIL	2		dev=TIMEOUT
+w5:386	2	OPERATOR	2		diverges alone (cone 2)
+w53:875	0	OPERATOR	5		diverges alone (cone 5)
+w53:958	0	OPERATOR	7		diverges alone (cone 7)
+w53:967	0	OPERATOR	2		diverges alone (cone 2)
+w53:976	0	OPERATOR	14		diverges alone (cone 14)
+w53:979	1	OPERATOR	4		diverges alone (cone 4)
+w53:981	2	OPERATOR	8		diverges alone (cone 8)
+w53:991	0	OPERATOR	4		diverges alone (cone 4)
+w53:997	2	OPERATOR	3		diverges alone (cone 3)
+w5:400	4	LOWERFAIL	3		align(et=4,eager=5)
+w54:1006	0	OPERATOR	4		diverges alone (cone 4)
+w54:10	1	GRAPHOPT	3	n7	needs siblings ['n7']
+w54:1018	2	OPERATOR	6		diverges alone (cone 6)
+w54:119	2	GRAPHOPT	6	n4,n7	needs siblings ['n4', 'n7']
+w54:134	3	OPERATOR	6		diverges alone (cone 6)
+w54:139	1	OPERATOR	3		diverges alone (cone 3)
+w54:170	1	OPERATOR	4		diverges alone (cone 4)
+w54:172	1	OPERATOR	6		diverges alone (cone 6)
+w54:178	0	NOREPRO	2		full graph diverges=False
+w54:194	2	OPERATOR	4		diverges alone (cone 4)
+w54:202	2	OPERATOR	2		diverges alone (cone 2)
+w54:24	3	LOWERFAIL	5		align(et=1,eager=6)
+w54:289	1	OPERATOR	5		diverges alone (cone 5)
+w5:430	2	OPERATOR	2		diverges alone (cone 2)
+w54:361	0	OPERATOR	2		diverges alone (cone 2)
+w54:363	1	LOWERFAIL	7		align(et=1,eager=4)
+w54:37	2	OPERATOR	5		diverges alone (cone 5)
+w54:373	0	OPERATOR	3		diverges alone (cone 3)
+w54:385	0	OPERATOR	2		diverges alone (cone 2)
+w54:387	1	LOWERFAIL	15		dev=TIMEOUT
+w5:439	0	OPERATOR	2		diverges alone (cone 2)
+w54:421	1	OPERATOR	5		diverges alone (cone 5)
+w54:441	1	NOREPRO	3		full graph diverges=False
+w54:446	0	OPERATOR	8		diverges alone (cone 8)
+w54:453	2	OPERATOR	3		diverges alone (cone 3)
+w54:461	2	NOREPRO	8		full graph diverges=False
+w54:50	2	OPERATOR	6		diverges alone (cone 6)
+w54:5	1	OPERATOR	2		diverges alone (cone 2)
+w54:513	0	LOWERFAIL	3		dev=TIMEOUT
+w54:518	1	NOREPRO	4		full graph diverges=False
+w54:529	3	LOWERFAIL	2		align(et=3,eager=4)
+w54:597	3	OPERATOR	3		diverges alone (cone 3)
+w54:622	2	OPERATOR	7		diverges alone (cone 7)
+w54:638	3	OPERATOR	4		diverges alone (cone 4)
+w54:65	2	OPERATOR	4		diverges alone (cone 4)
+w54:70	0	OPERATOR	2		diverges alone (cone 2)
+w54:749	0	OPERATOR	5		diverges alone (cone 5)
+w54:753	2	OPERATOR	2		diverges alone (cone 2)
+w54:759	3	GRAPHOPT	4	n2	needs siblings ['n2']
+w5:477	4	OPERATOR	3		diverges alone (cone 3)
+w5:478	2	OPERATOR	2		diverges alone (cone 2)
+w54:800	1	OPERATOR	4		diverges alone (cone 4)
+w54:82	2	OPERATOR	3		diverges alone (cone 3)
+w54:827	2	OPERATOR	5		diverges alone (cone 5)
+w54:849	0	OPERATOR	4		diverges alone (cone 4)
+w54:85	1	OPERATOR	6		diverges alone (cone 6)
+w54:862	0	OPERATOR	3		diverges alone (cone 3)
+w54:878	3	LOWERFAIL	11		dev=TIMEOUT
+w54:879	1	NOREPRO	5		full graph diverges=False
+w54:880	2	OPERATOR	3		diverges alone (cone 3)
+w54:892	3	OPERATOR	3		diverges alone (cone 3)
+w54:91	3	OPERATOR	7		diverges alone (cone 7)
+w54:917	2	NOREPRO	5		full graph diverges=False
+w54:968	2	LOWERFAIL	3		align(et=1,eager=4)
+w54:978	2	OPERATOR	3		diverges alone (cone 3)
+w54:984	2	OPERATOR	6		diverges alone (cone 6)
+w5:509	1	OPERATOR	2		diverges alone (cone 2)
+w55:1015	0	OPERATOR	3		diverges alone (cone 3)
+w55:104	2	OPERATOR	11		diverges alone (cone 11)
+w55:121	1	LOWERFAIL	3		dev=TIMEOUT
+w5:515	4	LOWERFAIL	3		align(et=4,eager=5)
+w55:191	3	OPERATOR	6		diverges alone (cone 6)
+w55:211	0	OPERATOR	5		diverges alone (cone 5)
+w55:228	0	NOREPRO	2		full graph diverges=False
+w55:23	3	OPERATOR	9		diverges alone (cone 9)
+w55:248	1	OPERATOR	8		diverges alone (cone 8)
+w55:271	1	OPERATOR	9		diverges alone (cone 9)
+w55:363	0	OPERATOR	2		diverges alone (cone 2)
+w55:379	1	OPERATOR	3		diverges alone (cone 3)
+w55:389	1	OPERATOR	6		diverges alone (cone 6)
+w55:41	2	OPERATOR	8		diverges alone (cone 8)
+w55:435	0	OPERATOR	3		diverges alone (cone 3)
+w55:438	0	LOWERFAIL	2		dev=TIMEOUT
+w55:447	0	OPERATOR	6		diverges alone (cone 6)
+w55:453	4	LOWERFAIL	4		dev=TIMEOUT
+w55:480	0	LOWERFAIL	7		dev=TIMEOUT
+w55:481	1	OPERATOR	4		diverges alone (cone 4)
+w55:491	2	NOREPRO	2		full graph diverges=False
+w55:492	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w55:504	4	OPERATOR	3		diverges alone (cone 3)
+w5:551	3	OPERATOR	6		diverges alone (cone 6)
+w55:540	0	OPERATOR	3		diverges alone (cone 3)
+w55:564	2	OPERATOR	3		diverges alone (cone 3)
+w55:565	1	GRAPHOPT	5	n7	needs siblings ['n7']
+w55:576	1	OPERATOR	3		diverges alone (cone 3)
+w55:641	1	OPERATOR	4		diverges alone (cone 4)
+w55:645	0	OPERATOR	5		diverges alone (cone 5)
+w55:648	2	NOREPRO	5		full graph diverges=False
+w55:665	4	OPERATOR	3		diverges alone (cone 3)
+w55:71	0	OPERATOR	3		diverges alone (cone 3)
+w55:746	2	OPERATOR	3		diverges alone (cone 3)
+w55:76	2	OPERATOR	5		diverges alone (cone 5)
+w55:832	1	OPERATOR	3		diverges alone (cone 3)
+w55:833	3	OPERATOR	2		diverges alone (cone 2)
+w55:850	3	GRAPHOPT	8	n7	needs siblings ['n7']
+w55:882	0	OPERATOR	2		diverges alone (cone 2)
+w55:891	2	NOREPRO	4		full graph diverges=False
+w55:894	0	OPERATOR	2		diverges alone (cone 2)
+w55:935	2	LOWERFAIL	4		align(et=1,eager=4)
+w55:938	3	OPERATOR	4		diverges alone (cone 4)
+w55:942	1	OPERATOR	5		diverges alone (cone 5)
+w5:595	2	OPERATOR	2		diverges alone (cone 2)
+w55:957	0	OPERATOR	9		diverges alone (cone 9)
+w5:596	0	OPERATOR	6		diverges alone (cone 6)
+w55:966	4	OPERATOR	4		diverges alone (cone 4)
+w56:0	2	OPERATOR	7		diverges alone (cone 7)
+w56:110	1	OPERATOR	2		diverges alone (cone 2)
+w5:614	1	OPERATOR	3		diverges alone (cone 3)
+w56:147	1	LOWERFAIL	5		align(et=1,eager=4)
+w56:173	1	OPERATOR	5		diverges alone (cone 5)
+w56:221	1	OPERATOR	4		diverges alone (cone 4)
+w56:225	2	OPERATOR	3		diverges alone (cone 3)
+w56:237	2	OPERATOR	6		diverges alone (cone 6)
+w56:284	1	NOREPRO	7		full graph diverges=False
+w56:289	0	OPERATOR	2		diverges alone (cone 2)
+w56:291	1	OPERATOR	7		diverges alone (cone 7)
+w56:294	0	GRAPHOPT	9	n4,n5,n6,n7,n8	needs siblings ['n4', 'n5', 'n6', 'n7', 'n8']
+w56:310	0	OPERATOR	4		diverges alone (cone 4)
+w56:349	0	GRAPHOPT	6	n7	needs siblings ['n7']
+w56:352	2	OPERATOR	7		diverges alone (cone 7)
+w56:417	1	OPERATOR	3		diverges alone (cone 3)
+w56:431	3	GRAPHOPT	8	n8	needs siblings ['n8']
+w56:449	1	OPERATOR	4		diverges alone (cone 4)
+w56:453	1	OPERATOR	7		diverges alone (cone 7)
+w56:456	3	OPERATOR	3		diverges alone (cone 3)
+w56:46	4	OPERATOR	6		diverges alone (cone 6)
+w56:481	1	OPERATOR	4		diverges alone (cone 4)
+w56:508	1	OPERATOR	3		diverges alone (cone 3)
+w56:516	0	OPERATOR	4		diverges alone (cone 4)
+w56:527	1	OPERATOR	6		diverges alone (cone 6)
+w56:540	0	OPERATOR	3		diverges alone (cone 3)
+w56:541	0	OPERATOR	5		diverges alone (cone 5)
+w56:569	2	GRAPHOPT	5	n4	needs siblings ['n4']
+w5:660	2	OPERATOR	3		diverges alone (cone 3)
+w56:637	0	GRAPHOPT	9	n11	needs siblings ['n11']
+w56:648	1	OPERATOR	2		diverges alone (cone 2)
+w56:677	0	OPERATOR	2		diverges alone (cone 2)
+w56:688	1	OPERATOR	4		diverges alone (cone 4)
+w56:71	2	NOREPRO	6		full graph diverges=False
+w56:727	3	OPERATOR	3		diverges alone (cone 3)
+w56:734	1	GRAPHOPT	6	n5	needs siblings ['n5']
+w56:749	1	OPERATOR	6		diverges alone (cone 6)
+w5:676	1	OPERATOR	6		diverges alone (cone 6)
+w56:781	1	OPERATOR	3		diverges alone (cone 3)
+w56:785	2	OPERATOR	4		diverges alone (cone 4)
+w56:805	1	OPERATOR	8		diverges alone (cone 8)
+w56:806	1	OPERATOR	9		diverges alone (cone 9)
+w56:808	1	OPERATOR	3		diverges alone (cone 3)
+w56:818	3	OPERATOR	5		diverges alone (cone 5)
+w56:831	1	LOWERFAIL	6		dev=TIMEOUT
+w56:83	4	OPERATOR	3		diverges alone (cone 3)
+w56:867	0	OPERATOR	3		diverges alone (cone 3)
+w56:874	2	NOREPRO	4		full graph diverges=False
+w56:893	0	GRAPHOPT	3	n6	needs siblings ['n6']
+w56:959	0	OPERATOR	5		diverges alone (cone 5)
+w56:985	2	OPERATOR	6		diverges alone (cone 6)
+w56:986	3	OPERATOR	3		diverges alone (cone 3)
+w5:706	1	OPERATOR	10		diverges alone (cone 10)
+w57:1023	2	GRAPHOPT	9	n7	needs siblings ['n7']
+w57:104	2	OPERATOR	3		diverges alone (cone 3)
+w57:128	2	OPERATOR	3		diverges alone (cone 3)
+w57:146	0	GRAPHOPT	6	n10	needs siblings ['n10']
+w57:148	1	OPERATOR	5		diverges alone (cone 5)
+w57:177	1	OPERATOR	4		diverges alone (cone 4)
+w57:192	2	OPERATOR	8		diverges alone (cone 8)
+w57:236	0	OPERATOR	6		diverges alone (cone 6)
+w57:254	4	OPERATOR	5		diverges alone (cone 5)
+w57:27	0	OPERATOR	5		diverges alone (cone 5)
+w57:274	0	NOREPRO	4		full graph diverges=False
+w57:318	1	OPERATOR	9		diverges alone (cone 9)
+w57:327	3	OPERATOR	6		diverges alone (cone 6)
+w57:332	0	OPERATOR	3		diverges alone (cone 3)
+w57:389	0	NOREPRO	4		full graph diverges=False
+w57:401	0	OPERATOR	3		diverges alone (cone 3)
+w57:460	1	OPERATOR	3		diverges alone (cone 3)
+w57:466	1	OPERATOR	3		diverges alone (cone 3)
+w57:47	1	LOWERFAIL	2		dev=TIMEOUT
+w57:475	0	OPERATOR	3		diverges alone (cone 3)
+w57:48	1	OPERATOR	5		diverges alone (cone 5)
+w57:494	2	NOREPRO	4		full graph diverges=False
+w57:502	1	OPERATOR	4		diverges alone (cone 4)
+w57:523	2	OPERATOR	2		diverges alone (cone 2)
+w57:535	2	OPERATOR	11		diverges alone (cone 11)
+w57:587	2	OPERATOR	4		diverges alone (cone 4)
+w57:612	4	LOWERFAIL	3		dev=TIMEOUT
+w5:763	1	OPERATOR	8		diverges alone (cone 8)
+w57:686	2	OPERATOR	3		diverges alone (cone 3)
+w5:769	1	LOWERFAIL	3		align(et=1,eager=5)
+w57:694	1	OPERATOR	3		diverges alone (cone 3)
+w5:770	2	OPERATOR	3		diverges alone (cone 3)
+w57:712	1	OPERATOR	7		diverges alone (cone 7)
+w57:765	1	OPERATOR	6		diverges alone (cone 6)
+w57:878	3	OPERATOR	2		diverges alone (cone 2)
+w57:883	2	OPERATOR	4		diverges alone (cone 4)
+w57:943	3	LOWERFAIL	7		align(et=3,eager=4)
+w57:952	0	OPERATOR	2		diverges alone (cone 2)
+w57:996	0	OPERATOR	2		diverges alone (cone 2)
+w5:807	1	OPERATOR	5		diverges alone (cone 5)
+w58:1019	1	OPERATOR	8		diverges alone (cone 8)
+w58:103	1	NOREPRO	3		full graph diverges=False
+w58:112	3	OPERATOR	4		diverges alone (cone 4)
+w58:120	0	OPERATOR	2		diverges alone (cone 2)
+w58:125	2	OPERATOR	4		diverges alone (cone 4)
+w58:134	0	OPERATOR	2		diverges alone (cone 2)
+w58:142	0	OPERATOR	5		diverges alone (cone 5)
+w58:187	0	OPERATOR	5		diverges alone (cone 5)
+w58:252	1	OPERATOR	5		diverges alone (cone 5)
+w58:29	0	OPERATOR	3		diverges alone (cone 3)
+w5:831	0	OPERATOR	4		diverges alone (cone 4)
+w58:313	1	OPERATOR	7		diverges alone (cone 7)
+w58:330	1	OPERATOR	3		diverges alone (cone 3)
+w58:344	1	GRAPHOPT	7	n7	needs siblings ['n7']
+w58:349	2	OPERATOR	2		diverges alone (cone 2)
+w58:350	1	OPERATOR	3		diverges alone (cone 3)
+w58:352	0	GRAPHOPT	8	n9	needs siblings ['n9']
+w58:357	1	OPERATOR	3		diverges alone (cone 3)
+w58:420	2	OPERATOR	4		diverges alone (cone 4)
+w58:445	0	OPERATOR	7		diverges alone (cone 7)
+w58:450	2	OPERATOR	5		diverges alone (cone 5)
+w58:475	1	NOREPRO	3		full graph diverges=False
+w58:476	1	OPERATOR	5		diverges alone (cone 5)
+w58:485	2	LOWERFAIL	7		align(et=2,eager=4)
+w58:489	1	OPERATOR	3		diverges alone (cone 3)
+w58:497	1	OPERATOR	8		diverges alone (cone 8)
+w58:541	0	OPERATOR	6		diverges alone (cone 6)
+w58:553	1	OPERATOR	7		diverges alone (cone 7)
+w58:602	1	OPERATOR	9		diverges alone (cone 9)
+w58:653	0	OPERATOR	2		diverges alone (cone 2)
+w58:716	0	OPERATOR	2		diverges alone (cone 2)
+w58:720	1	LOWERFAIL	2		dev=TIMEOUT
+w58:78	0	OPERATOR	3		diverges alone (cone 3)
+w58:783	2	OPERATOR	3		diverges alone (cone 3)
+w58:822	0	OPERATOR	2		diverges alone (cone 2)
+w58:830	1	OPERATOR	5		diverges alone (cone 5)
+w58:85	1	OPERATOR	10		diverges alone (cone 10)
+w58:861	3	OPERATOR	6		diverges alone (cone 6)
+w58:874	3	LOWERFAIL	3		align(et=2,eager=5)
+w58:884	0	OPERATOR	6		diverges alone (cone 6)
+w58:912	2	OPERATOR	3		diverges alone (cone 3)
+w58:913	0	OPERATOR	2		diverges alone (cone 2)
+w58:915	4	OPERATOR	5		diverges alone (cone 5)
+w58:952	0	OPERATOR	5		diverges alone (cone 5)
+w5:903	3	OPERATOR	5		diverges alone (cone 5)
+w59:122	0	OPERATOR	3		diverges alone (cone 3)
+w59:151	0	OPERATOR	3		diverges alone (cone 3)
+w5:916	4	OPERATOR	3		diverges alone (cone 3)
+w59:165	2	OPERATOR	7		diverges alone (cone 7)
+w59:171	1	OPERATOR	3		diverges alone (cone 3)
+w59:206	0	OPERATOR	2		diverges alone (cone 2)
+w59:250	4	OPERATOR	5		diverges alone (cone 5)
+w59:276	0	OPERATOR	2		diverges alone (cone 2)
+w59:293	3	OPERATOR	4		diverges alone (cone 4)
+w59:304	3	OPERATOR	4		diverges alone (cone 4)
+w59:307	3	LOWERFAIL	3		align(et=3,eager=5)
+w59:32	1	OPERATOR	2		diverges alone (cone 2)
+w59:360	0	OPERATOR	3		diverges alone (cone 3)
+w59:371	3	OPERATOR	4		diverges alone (cone 4)
+w5:942	3	OPERATOR	3		diverges alone (cone 3)
+w59:442	0	OPERATOR	3		diverges alone (cone 3)
+w59:468	1	OPERATOR	3		diverges alone (cone 3)
+w59:525	4	OPERATOR	3		diverges alone (cone 3)
+w59:532	3	OPERATOR	3		diverges alone (cone 3)
+w59:535	0	OPERATOR	2		diverges alone (cone 2)
+w59:554	2	OPERATOR	5		diverges alone (cone 5)
+w59:562	3	GRAPHOPT	6	n3,n9	needs siblings ['n3', 'n9']
+w59:579	1	OPERATOR	2		diverges alone (cone 2)
+w59:584	1	OPERATOR	3		diverges alone (cone 3)
+w59:589	0	OPERATOR	4		diverges alone (cone 4)
+w59:608	0	OPERATOR	5		diverges alone (cone 5)
+w59:621	4	OPERATOR	3		diverges alone (cone 3)
+w59:631	2	GRAPHOPT	3	n3	needs siblings ['n3']
+w59:646	0	OPERATOR	2		diverges alone (cone 2)
+w59:681	2	OPERATOR	6		diverges alone (cone 6)
+w59:723	2	OPERATOR	3		diverges alone (cone 3)
+w59:732	0	OPERATOR	2		diverges alone (cone 2)
+w59:741	4	OPERATOR	5		diverges alone (cone 5)
+w59:774	2	OPERATOR	6		diverges alone (cone 6)
+w59:780	1	OPERATOR	6		diverges alone (cone 6)
+w59:794	0	OPERATOR	2		diverges alone (cone 2)
+w59:807	1	OPERATOR	7		diverges alone (cone 7)
+w5:983	2	OPERATOR	5		diverges alone (cone 5)
+w59:842	1	OPERATOR	3		diverges alone (cone 3)
+w59:85	2	OPERATOR	5		diverges alone (cone 5)
+w59:873	1	OPERATOR	7		diverges alone (cone 7)
+w59:934	2	OPERATOR	3		diverges alone (cone 3)
+w59:960	0	OPERATOR	2		diverges alone (cone 2)
+w59:963	1	NOREPRO	5		full graph diverges=False
+w59:97	2	OPERATOR	5		diverges alone (cone 5)
+w59:977	2	OPERATOR	5		diverges alone (cone 5)
+w59:999	3	GRAPHOPT	6	n3,n7	needs siblings ['n3', 'n7']
+w60:1031	1	OPERATOR	3		diverges alone (cone 3)
+w60:1	2	OPERATOR	3		diverges alone (cone 3)
+w60:153	2	NOREPRO	5		full graph diverges=False
+w60:179	1	NOREPRO	4		full graph diverges=False
+w60:19	0	LOWERFAIL	4		dev=TIMEOUT
+w60:201	3	NOREPRO	3		full graph diverges=False
+w60:230	2	LOWERFAIL	7		align(et=2,eager=3)
+w60:259	1	OPERATOR	2		diverges alone (cone 2)
+w60:260	0	OPERATOR	3		diverges alone (cone 3)
+w60:325	2	OPERATOR	4		diverges alone (cone 4)
+w60:348	3	OPERATOR	2		diverges alone (cone 2)
+w60:363	0	OPERATOR	3		diverges alone (cone 3)
+w60:376	1	OPERATOR	3		diverges alone (cone 3)
+w60:456	1	OPERATOR	2		diverges alone (cone 2)
+w60:462	0	OPERATOR	4		diverges alone (cone 4)
+w60:474	2	NOREPRO	2		full graph diverges=False
+w60:484	2	OPERATOR	2		diverges alone (cone 2)
+w60:51	1	OPERATOR	3		diverges alone (cone 3)
+w60:524	4	OPERATOR	2		diverges alone (cone 2)
+w60:529	1	OPERATOR	2		diverges alone (cone 2)
+w60:571	1	OPERATOR	9		diverges alone (cone 9)
+w60:591	0	OPERATOR	3		diverges alone (cone 3)
+w60:620	1	OPERATOR	3		diverges alone (cone 3)
+w60:628	0	OPERATOR	2		diverges alone (cone 2)
+w60:640	0	OPERATOR	4		diverges alone (cone 4)
+w60:649	2	OPERATOR	7		diverges alone (cone 7)
+w60:717	0	OPERATOR	2		diverges alone (cone 2)
+w60:757	1	OPERATOR	4		diverges alone (cone 4)
+w60:819	0	OPERATOR	6		diverges alone (cone 6)
+w60:836	2	OPERATOR	3		diverges alone (cone 3)
+w60:840	2	OPERATOR	4		diverges alone (cone 4)
+w60:935	2	OPERATOR	7		diverges alone (cone 7)
+w60:952	1	NOREPRO	7		full graph diverges=False
+w60:990	0	OPERATOR	3		diverges alone (cone 3)
+w60:992	1	OPERATOR	8		diverges alone (cone 8)
+w61:1000	2	OPERATOR	3		diverges alone (cone 3)
+w61:1039	1	OPERATOR	3		diverges alone (cone 3)
+w61:110	1	LOWERFAIL	7		align(et=1,eager=3)
+w61:120	1	OPERATOR	4		diverges alone (cone 4)
+w61:133	2	OPERATOR	3		diverges alone (cone 3)
+w6:114	0	OPERATOR	5		diverges alone (cone 5)
+w61:162	3	OPERATOR	4		diverges alone (cone 4)
+w61:17	1	OPERATOR	2		diverges alone (cone 2)
+w61:197	4	OPERATOR	6		diverges alone (cone 6)
+w61:202	0	OPERATOR	3		diverges alone (cone 3)
+w6:120	3	OPERATOR	5		diverges alone (cone 5)
+w61:215	0	OPERATOR	3		diverges alone (cone 3)
+w61:26	1	OPERATOR	6		diverges alone (cone 6)
+w61:283	3	GRAPHOPT	4	n2	needs siblings ['n2']
+w61:284	0	GRAPHOPT	5	n7	needs siblings ['n7']
+w61:332	2	OPERATOR	4		diverges alone (cone 4)
+w61:374	1	OPERATOR	5		diverges alone (cone 5)
+w61:448	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w61:46	0	OPERATOR	3		diverges alone (cone 3)
+w6:147	1	GRAPHOPT	10	n3	needs siblings ['n3']
+w61:473	3	OPERATOR	4		diverges alone (cone 4)
+w61:482	0	NOREPRO	2		full graph diverges=False
+w6:152	0	OPERATOR	2		diverges alone (cone 2)
+w61:56	2	OPERATOR	4		diverges alone (cone 4)
+w61:571	3	OPERATOR	5		diverges alone (cone 5)
+w61:575	1	OPERATOR	4		diverges alone (cone 4)
+w61:576	0	OPERATOR	2		diverges alone (cone 2)
+w61:591	4	OPERATOR	3		diverges alone (cone 3)
+w61:623	1	OPERATOR	3		diverges alone (cone 3)
+w61:67	2	OPERATOR	3		diverges alone (cone 3)
+w61:672	2	OPERATOR	2		diverges alone (cone 2)
+w61:707	2	OPERATOR	3		diverges alone (cone 3)
+w61:710	2	OPERATOR	3		diverges alone (cone 3)
+w61:734	1	GRAPHOPT	6	n8	needs siblings ['n8']
+w61:77	0	GRAPHOPT	12	n4,n11,n12	needs siblings ['n4', 'n11', 'n12']
+w61:784	2	OPERATOR	4		diverges alone (cone 4)
+w6:179	0	OPERATOR	3		diverges alone (cone 3)
+w61:8	0	OPERATOR	2		diverges alone (cone 2)
+w61:853	3	NOREPRO	4		full graph diverges=False
+w61:860	0	OPERATOR	4		diverges alone (cone 4)
+w61:901	1	OPERATOR	4		diverges alone (cone 4)
+w61:919	1	OPERATOR	9		diverges alone (cone 9)
+w61:957	5	OPERATOR	3		diverges alone (cone 3)
+w61:99	1	OPERATOR	6		diverges alone (cone 6)
+w6:207	0	OPERATOR	3		diverges alone (cone 3)
+w62:101	1	OPERATOR	8		diverges alone (cone 8)
+w62:1013	0	OPERATOR	3		diverges alone (cone 3)
+w62:1029	3	OPERATOR	7		diverges alone (cone 7)
+w62:1033	1	LOWERFAIL	4		dev=TIMEOUT
+w62:135	0	OPERATOR	4		diverges alone (cone 4)
+w62:155	4	OPERATOR	3		diverges alone (cone 3)
+w62:156	3	OPERATOR	2		diverges alone (cone 2)
+w62:188	0	OPERATOR	4		diverges alone (cone 4)
+w62:205	0	OPERATOR	3		diverges alone (cone 3)
+w62:212	0	OPERATOR	7		diverges alone (cone 7)
+w62:22	2	OPERATOR	6		diverges alone (cone 6)
+w6:223	0	OPERATOR	3		diverges alone (cone 3)
+w62:261	1	OPERATOR	2		diverges alone (cone 2)
+w62:296	1	OPERATOR	6		diverges alone (cone 6)
+w6:232	2	OPERATOR	3		diverges alone (cone 3)
+w62:354	0	OPERATOR	4		diverges alone (cone 4)
+w62:371	0	OPERATOR	3		diverges alone (cone 3)
+w62:408	2	OPERATOR	2		diverges alone (cone 2)
+w62:426	3	OPERATOR	5		diverges alone (cone 5)
+w62:448	3	OPERATOR	4		diverges alone (cone 4)
+w62:450	1	OPERATOR	6		diverges alone (cone 6)
+w6:248	0	OPERATOR	2		diverges alone (cone 2)
+w62:488	2	OPERATOR	3		diverges alone (cone 3)
+w62:489	1	OPERATOR	2		diverges alone (cone 2)
+w6:250	3	OPERATOR	3		diverges alone (cone 3)
+w62:503	1	OPERATOR	4		diverges alone (cone 4)
+w62:509	0	OPERATOR	4		diverges alone (cone 4)
+w62:551	0	OPERATOR	3		diverges alone (cone 3)
+w62:593	1	OPERATOR	6		diverges alone (cone 6)
+w62:595	2	OPERATOR	3		diverges alone (cone 3)
+w62:60	0	OPERATOR	2		diverges alone (cone 2)
+w62:629	3	NOREPRO	3		full graph diverges=False
+w62:633	2	OPERATOR	2		diverges alone (cone 2)
+w62:635	0	OPERATOR	3		diverges alone (cone 3)
+w62:66	0	OPERATOR	6		diverges alone (cone 6)
+w62:662	1	NOREPRO	5		full graph diverges=False
+w6:268	2	OPERATOR	5		diverges alone (cone 5)
+w62:692	3	OPERATOR	4		diverges alone (cone 4)
+w62:731	2	OPERATOR	7		diverges alone (cone 7)
+w62:740	0	OPERATOR	4		diverges alone (cone 4)
+w62:792	2	OPERATOR	4		diverges alone (cone 4)
+w62:807	2	LOWERFAIL	5		align(et=2,eager=5)
+w62:828	1	OPERATOR	8		diverges alone (cone 8)
+w6:286	3	OPERATOR	6		diverges alone (cone 6)
+w62:875	2	OPERATOR	5		diverges alone (cone 5)
+w62:878	1	OPERATOR	5		diverges alone (cone 5)
+w62:881	1	OPERATOR	10		diverges alone (cone 10)
+w62:889	2	OPERATOR	7		diverges alone (cone 7)
+w62:909	0	OPERATOR	3		diverges alone (cone 3)
+w62:95	0	OPERATOR	2		diverges alone (cone 2)
+w62:952	0	OPERATOR	2		diverges alone (cone 2)
+w62:979	1	OPERATOR	2		diverges alone (cone 2)
+w62:998	0	OPERATOR	4		diverges alone (cone 4)
+w6:303	0	OPERATOR	8		diverges alone (cone 8)
+w63:1023	2	OPERATOR	7		diverges alone (cone 7)
+w63:135	3	NOREPRO	8		full graph diverges=False
+w63:173	1	OPERATOR	3		diverges alone (cone 3)
+w63:191	1	OPERATOR	3		diverges alone (cone 3)
+w63:201	0	OPERATOR	4		diverges alone (cone 4)
+w63:206	3	OPERATOR	4		diverges alone (cone 4)
+w63:207	0	GRAPHOPT	3	n3	needs siblings ['n3']
+w63:211	0	GRAPHOPT	5	n5,n6	needs siblings ['n5', 'n6']
+w63:232	0	GRAPHOPT	4	n5	needs siblings ['n5']
+w63:265	2	OPERATOR	5		diverges alone (cone 5)
+w6:330	2	GRAPHOPT	5	n5	needs siblings ['n5']
+w63:308	0	OPERATOR	2		diverges alone (cone 2)
+w6:332	2	OPERATOR	5		diverges alone (cone 5)
+w63:35	3	NOREPRO	4		full graph diverges=False
+w63:386	1	OPERATOR	5		diverges alone (cone 5)
+w6:342	0	OPERATOR	2		diverges alone (cone 2)
+w63:42	1	OPERATOR	4		diverges alone (cone 4)
+w63:432	0	OPERATOR	3		diverges alone (cone 3)
+w6:345	3	OPERATOR	4		diverges alone (cone 4)
+w63:482	3	OPERATOR	4		diverges alone (cone 4)
+w63:50	2	OPERATOR	4		diverges alone (cone 4)
+w63:502	4	OPERATOR	4		diverges alone (cone 4)
+w63:521	1	LOWERFAIL	3		align(et=1,eager=5)
+w63:539	2	OPERATOR	4		diverges alone (cone 4)
+w63:555	1	OPERATOR	3		diverges alone (cone 3)
+w63:613	4	OPERATOR	3		diverges alone (cone 3)
+w63:651	0	OPERATOR	4		diverges alone (cone 4)
+w63:663	3	OPERATOR	3		diverges alone (cone 3)
+w63:697	1	OPERATOR	3		diverges alone (cone 3)
+w63:703	2	NOREPRO	3		full graph diverges=False
+w63:730	0	OPERATOR	3		diverges alone (cone 3)
+w63:737	1	LOWERFAIL	4		dev=TIMEOUT
+w63:756	0	OPERATOR	4		diverges alone (cone 4)
+w63:80	1	LOWERFAIL	3		align(et=1,eager=3)
+w63:804	1	OPERATOR	4		diverges alone (cone 4)
+w6:384	2	OPERATOR	3		diverges alone (cone 3)
+w63:848	1	OPERATOR	4		diverges alone (cone 4)
+w63:856	3	OPERATOR	4		diverges alone (cone 4)
+w63:859	0	OPERATOR	3		diverges alone (cone 3)
+w63:891	1	OPERATOR	4		diverges alone (cone 4)
+w6:390	1	OPERATOR	8		diverges alone (cone 8)
+w63:901	0	OPERATOR	4		diverges alone (cone 4)
+w6:392	2	OPERATOR	2		diverges alone (cone 2)
+w6:39	3	GRAPHOPT	4	n3	needs siblings ['n3']
+w63:987	0	OPERATOR	7		diverges alone (cone 7)
+w64:110	0	NOREPRO	2		full graph diverges=False
+w64:119	0	OPERATOR	9		diverges alone (cone 9)
+w64:129	0	NOREPRO	4		full graph diverges=False
+w64:142	1	OPERATOR	4		diverges alone (cone 4)
+w64:16	2	OPERATOR	4		diverges alone (cone 4)
+w64:17	4	OPERATOR	3		diverges alone (cone 3)
+w6:423	2	OPERATOR	4		diverges alone (cone 4)
+w64:243	1	OPERATOR	2		diverges alone (cone 2)
+w64:245	3	OPERATOR	4		diverges alone (cone 4)
+w64:247	2	NOREPRO	3		full graph diverges=False
+w64:263	1	OPERATOR	2		diverges alone (cone 2)
+w64:283	0	OPERATOR	5		diverges alone (cone 5)
+w64:317	1	OPERATOR	5		diverges alone (cone 5)
+w64:329	1	OPERATOR	3		diverges alone (cone 3)
+w64:373	0	OPERATOR	4		diverges alone (cone 4)
+w64:380	2	OPERATOR	5		diverges alone (cone 5)
+w64:401	1	OPERATOR	4		diverges alone (cone 4)
+w64:41	3	OPERATOR	5		diverges alone (cone 5)
+w64:431	0	NOREPRO	2		full graph diverges=False
+w64:449	3	OPERATOR	2		diverges alone (cone 2)
+w64:504	3	OPERATOR	2		diverges alone (cone 2)
+w64:529	3	OPERATOR	3		diverges alone (cone 3)
+w64:566	0	OPERATOR	2		diverges alone (cone 2)
+w64:57	0	OPERATOR	2		diverges alone (cone 2)
+w64:634	0	OPERATOR	8		diverges alone (cone 8)
+w64:637	2	OPERATOR	4		diverges alone (cone 4)
+w64:720	0	OPERATOR	5		diverges alone (cone 5)
+w64:731	2	OPERATOR	5		diverges alone (cone 5)
+w64:732	0	OPERATOR	3		diverges alone (cone 3)
+w64:785	4	OPERATOR	2		diverges alone (cone 2)
+w64:800	2	OPERATOR	4		diverges alone (cone 4)
+w64:829	2	OPERATOR	4		diverges alone (cone 4)
+w64:869	0	OPERATOR	4		diverges alone (cone 4)
+w6:490	3	OPERATOR	5		diverges alone (cone 5)
+w64:924	1	LOWERFAIL	3		dev=TIMEOUT
+w6:5	0	OPERATOR	6		diverges alone (cone 6)
+w6:511	1	OPERATOR	5		diverges alone (cone 5)
+w65:143	1	OPERATOR	2		diverges alone (cone 2)
+w65:170	2	OPERATOR	6		diverges alone (cone 6)
+w65:205	3	OPERATOR	2		diverges alone (cone 2)
+w65:217	0	OPERATOR	4		diverges alone (cone 4)
+w65:236	2	OPERATOR	2		diverges alone (cone 2)
+w65:261	3	OPERATOR	6		diverges alone (cone 6)
+w65:282	1	OPERATOR	4		diverges alone (cone 4)
+w65:284	2	OPERATOR	8		diverges alone (cone 8)
+w65:286	0	OPERATOR	3		diverges alone (cone 3)
+w65:31	0	OPERATOR	4		diverges alone (cone 4)
+w65:317	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w65:32	1	OPERATOR	5		diverges alone (cone 5)
+w65:333	2	NOREPRO	4		full graph diverges=False
+w65:338	0	OPERATOR	10		diverges alone (cone 10)
+w65:343	1	NOREPRO	4		full graph diverges=False
+w65:35	0	OPERATOR	3		diverges alone (cone 3)
+w65:356	3	OPERATOR	4		diverges alone (cone 4)
+w65:386	2	OPERATOR	3		diverges alone (cone 3)
+w65:398	0	OPERATOR	3		diverges alone (cone 3)
+w65:432	0	OPERATOR	3		diverges alone (cone 3)
+w65:436	2	OPERATOR	4		diverges alone (cone 4)
+w65:45	1	OPERATOR	3		diverges alone (cone 3)
+w65:451	1	OPERATOR	6		diverges alone (cone 6)
+w65:510	3	OPERATOR	3		diverges alone (cone 3)
+w65:52	0	OPERATOR	2		diverges alone (cone 2)
+w65:529	1	OPERATOR	6		diverges alone (cone 6)
+w6:553	0	OPERATOR	4		diverges alone (cone 4)
+w65:53	0	NOREPRO	5		full graph diverges=False
+w65:540	1	OPERATOR	3		diverges alone (cone 3)
+w65:555	3	OPERATOR	3		diverges alone (cone 3)
+w65:557	0	OPERATOR	3		diverges alone (cone 3)
+w65:558	2	OPERATOR	3		diverges alone (cone 3)
+w65:563	0	OPERATOR	5		diverges alone (cone 5)
+w65:572	2	OPERATOR	5		diverges alone (cone 5)
+w65:610	2	LOWERFAIL	3		align(et=2,eager=4)
+w65:626	0	OPERATOR	3		diverges alone (cone 3)
+w65:633	0	OPERATOR	5		diverges alone (cone 5)
+w65:697	3	LOWERFAIL	3		align(et=2,eager=4)
+w65:721	0	OPERATOR	6		diverges alone (cone 6)
+w65:723	3	OPERATOR	2		diverges alone (cone 2)
+w65:754	1	OPERATOR	3		diverges alone (cone 3)
+w65:870	1	GRAPHOPT	3	n5	needs siblings ['n5']
+w65:887	0	OPERATOR	6		diverges alone (cone 6)
+w65:888	0	OPERATOR	10		diverges alone (cone 10)
+w65:934	1	OPERATOR	2		diverges alone (cone 2)
+w65:948	0	OPERATOR	2		diverges alone (cone 2)
+w65:960	3	OPERATOR	2		diverges alone (cone 2)
+w65:964	0	OPERATOR	2		diverges alone (cone 2)
+w65:967	0	OPERATOR	4		diverges alone (cone 4)
+w65:98	3	GRAPHOPT	7	n2	needs siblings ['n2']
+w6:600	0	OPERATOR	4		diverges alone (cone 4)
+w66:1036	1	OPERATOR	3		diverges alone (cone 3)
+w66:138	2	OPERATOR	6		diverges alone (cone 6)
+w66:220	1	GRAPHOPT	4	n2	needs siblings ['n2']
+w66:234	0	OPERATOR	3		diverges alone (cone 3)
+w66:267	1	LOWERFAIL	7		dev=TIMEOUT
+w66:27	0	OPERATOR	3		diverges alone (cone 3)
+w66:352	0	OPERATOR	2		diverges alone (cone 2)
+w66:385	1	OPERATOR	2		diverges alone (cone 2)
+w66:418	2	OPERATOR	6		diverges alone (cone 6)
+w66:425	3	OPERATOR	5		diverges alone (cone 5)
+w66:441	0	OPERATOR	3		diverges alone (cone 3)
+w66:443	3	OPERATOR	4		diverges alone (cone 4)
+w66:446	1	OPERATOR	9		diverges alone (cone 9)
+w66:499	4	OPERATOR	9		diverges alone (cone 9)
+w6:650	1	OPERATOR	3		diverges alone (cone 3)
+w66:585	2	OPERATOR	4		diverges alone (cone 4)
+w66:667	0	OPERATOR	3		diverges alone (cone 3)
+w66:690	1	OPERATOR	3		diverges alone (cone 3)
+w66:7	1	OPERATOR	4		diverges alone (cone 4)
+w66:722	1	OPERATOR	3		diverges alone (cone 3)
+w66:735	0	OPERATOR	2		diverges alone (cone 2)
+w66:792	1	OPERATOR	4		diverges alone (cone 4)
+w66:803	3	OPERATOR	3		diverges alone (cone 3)
+w66:808	0	OPERATOR	2		diverges alone (cone 2)
+w66:845	1	GRAPHOPT	4	n1	needs siblings ['n1']
+w66:870	0	OPERATOR	2		diverges alone (cone 2)
+w66:903	2	OPERATOR	5		diverges alone (cone 5)
+w66:905	2	OPERATOR	4		diverges alone (cone 4)
+w66:915	0	OPERATOR	7		diverges alone (cone 7)
+w66:928	3	GRAPHOPT	8	n6	needs siblings ['n6']
+w66:93	1	OPERATOR	5		diverges alone (cone 5)
+w6:696	3	OPERATOR	10		diverges alone (cone 10)
+w66:999	2	OPERATOR	5		diverges alone (cone 5)
+w67:100	1	GRAPHOPT	5	n6	needs siblings ['n6']
+w67:1001	3	OPERATOR	2		diverges alone (cone 2)
+w67:1009	2	OPERATOR	4		diverges alone (cone 4)
+w67:1037	0	OPERATOR	3		diverges alone (cone 3)
+w67:109	3	NOREPRO	3		full graph diverges=False
+w67:12	1	OPERATOR	11		diverges alone (cone 11)
+w67:158	0	OPERATOR	6		diverges alone (cone 6)
+w67:194	0	OPERATOR	3		diverges alone (cone 3)
+w67:205	2	GRAPHOPT	8	n7	needs siblings ['n7']
+w67:237	1	OPERATOR	3		diverges alone (cone 3)
+w67:24	2	OPERATOR	3		diverges alone (cone 3)
+w67:266	0	OPERATOR	5		diverges alone (cone 5)
+w6:728	1	OPERATOR	3		diverges alone (cone 3)
+w67:301	0	OPERATOR	3		diverges alone (cone 3)
+w67:303	3	GRAPHOPT	8	n8	needs siblings ['n8']
+w67:304	1	OPERATOR	3		diverges alone (cone 3)
+w67:305	2	OPERATOR	3		diverges alone (cone 3)
+w67:313	0	OPERATOR	4		diverges alone (cone 4)
+w67:358	0	OPERATOR	3		diverges alone (cone 3)
+w6:736	0	OPERATOR	3		diverges alone (cone 3)
+w67:462	1	OPERATOR	7		diverges alone (cone 7)
+w67:531	1	OPERATOR	6		diverges alone (cone 6)
+w67:579	3	OPERATOR	3		diverges alone (cone 3)
+w67:58	1	OPERATOR	6		diverges alone (cone 6)
+w67:63	3	OPERATOR	3		diverges alone (cone 3)
+w67:634	2	OPERATOR	2		diverges alone (cone 2)
+w67:680	2	LOWERFAIL	4		dev=TIMEOUT
+w67:730	0	NOREPRO	3		full graph diverges=False
+w6:773	1	OPERATOR	5		diverges alone (cone 5)
+w67:748	0	OPERATOR	3		diverges alone (cone 3)
+w67:775	1	OPERATOR	8		diverges alone (cone 8)
+w67:784	0	OPERATOR	3		diverges alone (cone 3)
+w67:793	1	OPERATOR	4		diverges alone (cone 4)
+w67:795	2	OPERATOR	6		diverges alone (cone 6)
+w67:8	0	OPERATOR	6		diverges alone (cone 6)
+w67:837	0	OPERATOR	3		diverges alone (cone 3)
+w67:879	0	OPERATOR	2		diverges alone (cone 2)
+w67:896	2	OPERATOR	7		diverges alone (cone 7)
+w67:928	3	OPERATOR	7		diverges alone (cone 7)
+w67:934	3	OPERATOR	4		diverges alone (cone 4)
+w67:950	0	OPERATOR	2		diverges alone (cone 2)
+w6:798	1	OPERATOR	3		diverges alone (cone 3)
+w67:99	0	OPERATOR	10		diverges alone (cone 10)
+w68:1000	2	OPERATOR	8		diverges alone (cone 8)
+w68:1034	2	OPERATOR	2		diverges alone (cone 2)
+w68:1037	3	OPERATOR	3		diverges alone (cone 3)
+w68:114	3	OPERATOR	4		diverges alone (cone 4)
+w68:179	0	GRAPHOPT	5	n5	needs siblings ['n5']
+w68:207	1	OPERATOR	3		diverges alone (cone 3)
+w6:821	1	OPERATOR	3		diverges alone (cone 3)
+w68:236	4	OPERATOR	4		diverges alone (cone 4)
+w68:24	2	OPERATOR	6		diverges alone (cone 6)
+w68:254	0	OPERATOR	5		diverges alone (cone 5)
+w6:826	3	NOREPRO	5		full graph diverges=False
+w68:285	2	OPERATOR	2		diverges alone (cone 2)
+w68:33	1	NOREPRO	5		full graph diverges=False
+w68:362	1	OPERATOR	3		diverges alone (cone 3)
+w68:368	0	OPERATOR	2		diverges alone (cone 2)
+w68:377	0	OPERATOR	2		diverges alone (cone 2)
+w6:838	0	OPERATOR	4		diverges alone (cone 4)
+w68:385	1	OPERATOR	4		diverges alone (cone 4)
+w6:84	0	OPERATOR	4		diverges alone (cone 4)
+w68:416	4	LOWERFAIL	2		align(et=1,eager=5)
+w68:421	0	OPERATOR	4		diverges alone (cone 4)
+w68:44	1	OPERATOR	5		diverges alone (cone 5)
+w68:48	2	OPERATOR	4		diverges alone (cone 4)
+w6:85	3	OPERATOR	3		diverges alone (cone 3)
+w68:545	2	LOWERFAIL	3		align(et=2,eager=4)
+w68:588	1	OPERATOR	6		diverges alone (cone 6)
+w68:592	2	OPERATOR	5		diverges alone (cone 5)
+w68:595	3	OPERATOR	4		diverges alone (cone 4)
+w68:626	0	OPERATOR	3		diverges alone (cone 3)
+w68:637	1	OPERATOR	5		diverges alone (cone 5)
+w68:65	1	OPERATOR	6		diverges alone (cone 6)
+w68:653	1	OPERATOR	2		diverges alone (cone 2)
+w68:677	2	OPERATOR	6		diverges alone (cone 6)
+w68:728	2	GRAPHOPT	5	n4	needs siblings ['n4']
+w68:791	0	OPERATOR	4		diverges alone (cone 4)
+w68:805	3	OPERATOR	3		diverges alone (cone 3)
+w68:824	0	OPERATOR	2		diverges alone (cone 2)
+w68:850	0	OPERATOR	3		diverges alone (cone 3)
+w68:862	3	OPERATOR	7		diverges alone (cone 7)
+w68:863	1	OPERATOR	2		diverges alone (cone 2)
+w68:881	0	OPERATOR	3		diverges alone (cone 3)
+w68:88	2	OPERATOR	18		diverges alone (cone 18)
+w68:899	3	OPERATOR	4		diverges alone (cone 4)
+w68:926	2	OPERATOR	7		diverges alone (cone 7)
+w68:960	1	OPERATOR	7		diverges alone (cone 7)
+w68:970	2	OPERATOR	5		diverges alone (cone 5)
+w68:992	0	OPERATOR	5		diverges alone (cone 5)
+w68:997	1	OPERATOR	8		diverges alone (cone 8)
+w6:908	0	OPERATOR	3		diverges alone (cone 3)
+w69:1011	2	OPERATOR	7		diverges alone (cone 7)
+w69:1025	1	GRAPHOPT	5	n8	needs siblings ['n8']
+w69:137	2	NOREPRO	8		full graph diverges=False
+w69:14	0	OPERATOR	3		diverges alone (cone 3)
+w69:142	2	OPERATOR	4		diverges alone (cone 4)
+w6:915	2	OPERATOR	3		diverges alone (cone 3)
+w69:213	0	OPERATOR	4		diverges alone (cone 4)
+w69:234	3	OPERATOR	5		diverges alone (cone 5)
+w69:249	1	OPERATOR	4		diverges alone (cone 4)
+w69:273	0	OPERATOR	2		diverges alone (cone 2)
+w69:280	3	OPERATOR	3		diverges alone (cone 3)
+w69:297	0	OPERATOR	2		diverges alone (cone 2)
+w69:310	1	LOWERFAIL	4		align(et=1,eager=3)
+w69:324	1	OPERATOR	7		diverges alone (cone 7)
+w69:333	0	OPERATOR	3		diverges alone (cone 3)
+w6:935	3	OPERATOR	4		diverges alone (cone 4)
+w69:379	0	NOREPRO	3		full graph diverges=False
+w69:416	2	OPERATOR	2		diverges alone (cone 2)
+w69:440	3	OPERATOR	3		diverges alone (cone 3)
+w69:45	0	OPERATOR	2		diverges alone (cone 2)
+w69:465	2	OPERATOR	6		diverges alone (cone 6)
+w69:475	1	GRAPHOPT	6	n1	needs siblings ['n1']
+w69:481	1	OPERATOR	3		diverges alone (cone 3)
+w69:538	1	OPERATOR	8		diverges alone (cone 8)
+w69:554	1	OPERATOR	3		diverges alone (cone 3)
+w6:958	1	OPERATOR	6		diverges alone (cone 6)
+w69:693	1	OPERATOR	3		diverges alone (cone 3)
+w69:695	1	OPERATOR	3		diverges alone (cone 3)
+w69:736	1	OPERATOR	4		diverges alone (cone 4)
+w69:749	1	OPERATOR	6		diverges alone (cone 6)
+w69:763	0	OPERATOR	3		diverges alone (cone 3)
+w69:778	2	OPERATOR	3		diverges alone (cone 3)
+w69:791	0	GRAPHOPT	7	n7	needs siblings ['n7']
+w69:817	0	NOREPRO	3		full graph diverges=False
+w69:82	1	GRAPHOPT	7	n2	needs siblings ['n2']
+w6:982	2	NOREPRO	3		full graph diverges=False
+w69:826	3	OPERATOR	4		diverges alone (cone 4)
+w69:833	0	OPERATOR	3		diverges alone (cone 3)
+w6:988	1	OPERATOR	3		diverges alone (cone 3)
+w6:99	2	OPERATOR	5		diverges alone (cone 5)
+w69:951	2	OPERATOR	7		diverges alone (cone 7)
+w69:964	2	OPERATOR	6		diverges alone (cone 6)
+w69:98	1	NOREPRO	5		full graph diverges=False
+w69:983	1	OPERATOR	3		diverges alone (cone 3)
+w69:996	2	OPERATOR	4		diverges alone (cone 4)
+w70:1012	2	OPERATOR	6		diverges alone (cone 6)
+w70:106	0	OPERATOR	4		diverges alone (cone 4)
+w70:118	0	OPERATOR	3		diverges alone (cone 3)
+w70:157	3	NOREPRO	7		full graph diverges=False
+w70:16	1	OPERATOR	8		diverges alone (cone 8)
+w70:185	1	OPERATOR	4		diverges alone (cone 4)
+w70:191	1	OPERATOR	3		diverges alone (cone 3)
+w70:203	0	OPERATOR	5		diverges alone (cone 5)
+w70:22	2	OPERATOR	2		diverges alone (cone 2)
+w70:327	1	OPERATOR	6		diverges alone (cone 6)
+w70:34	2	OPERATOR	6		diverges alone (cone 6)
+w70:348	1	OPERATOR	5		diverges alone (cone 5)
+w70:419	0	OPERATOR	9		diverges alone (cone 9)
+w70:441	2	OPERATOR	4		diverges alone (cone 4)
+w70:477	3	OPERATOR	7		diverges alone (cone 7)
+w70:519	0	OPERATOR	2		diverges alone (cone 2)
+w70:529	1	GRAPHOPT	4	n7	needs siblings ['n7']
+w70:570	0	OPERATOR	4		diverges alone (cone 4)
+w70:59	4	OPERATOR	7		diverges alone (cone 7)
+w70:605	1	OPERATOR	3		diverges alone (cone 3)
+w70:61	0	OPERATOR	4		diverges alone (cone 4)
+w70:647	0	OPERATOR	4		diverges alone (cone 4)
+w70:664	1	NOREPRO	3		full graph diverges=False
+w70:703	1	OPERATOR	3		diverges alone (cone 3)
+w70:742	1	OPERATOR	4		diverges alone (cone 4)
+w70:804	0	OPERATOR	2		diverges alone (cone 2)
+w70:857	2	NOREPRO	3		full graph diverges=False
+w70:909	1	OPERATOR	2		diverges alone (cone 2)
+w70:937	0	OPERATOR	5		diverges alone (cone 5)
+w70:976	3	OPERATOR	6		diverges alone (cone 6)
+w70:995	1	OPERATOR	5		diverges alone (cone 5)
+w7:1000	0	OPERATOR	2		diverges alone (cone 2)
+w7:1001	3	OPERATOR	4		diverges alone (cone 4)
+w7:1024	1	GRAPHOPT	4	n7	needs siblings ['n7']
+w7:106	3	OPERATOR	4		diverges alone (cone 4)
+w71:101	1	NOREPRO	9		full graph diverges=False
+w71:1016	1	OPERATOR	3		diverges alone (cone 3)
+w71:1035	3	OPERATOR	3		diverges alone (cone 3)
+w71:111	1	OPERATOR	2		diverges alone (cone 2)
+w71:121	3	OPERATOR	3		diverges alone (cone 3)
+w71:131	2	OPERATOR	7		diverges alone (cone 7)
+w71:140	0	OPERATOR	2		diverges alone (cone 2)
+w71:178	0	LOWERFAIL	4		dev=TIMEOUT
+w71:181	2	OPERATOR	6		diverges alone (cone 6)
+w71:185	0	OPERATOR	4		diverges alone (cone 4)
+w71:218	0	OPERATOR	4		diverges alone (cone 4)
+w71:237	3	OPERATOR	4		diverges alone (cone 4)
+w71:274	2	OPERATOR	5		diverges alone (cone 5)
+w71:280	1	OPERATOR	8		diverges alone (cone 8)
+w71:299	0	OPERATOR	7		diverges alone (cone 7)
+w71:344	3	OPERATOR	4		diverges alone (cone 4)
+w71:357	2	OPERATOR	7		diverges alone (cone 7)
+w71:363	0	OPERATOR	2		diverges alone (cone 2)
+w71:365	1	NOREPRO	4		full graph diverges=False
+w71:368	0	OPERATOR	3		diverges alone (cone 3)
+w71:370	1	OPERATOR	8		diverges alone (cone 8)
+w71:406	2	OPERATOR	3		diverges alone (cone 3)
+w71:466	0	NOREPRO	3		full graph diverges=False
+w71:504	1	OPERATOR	3		diverges alone (cone 3)
+w71:518	1	OPERATOR	4		diverges alone (cone 4)
+w71:554	1	OPERATOR	2		diverges alone (cone 2)
+w71:574	0	OPERATOR	3		diverges alone (cone 3)
+w7:158	2	OPERATOR	4		diverges alone (cone 4)
+w71:584	1	OPERATOR	4		diverges alone (cone 4)
+w71:598	0	NOREPRO	4		full graph diverges=False
+w71:618	0	OPERATOR	3		diverges alone (cone 3)
+w71:631	1	OPERATOR	2		diverges alone (cone 2)
+w71:636	2	GRAPHOPT	5	n5	needs siblings ['n5']
+w71:637	1	OPERATOR	5		diverges alone (cone 5)
+w71:671	5	OPERATOR	2		diverges alone (cone 2)
+w71:674	3	OPERATOR	2		diverges alone (cone 2)
+w71:676	2	NOREPRO	4		full graph diverges=False
+w71:689	3	OPERATOR	6		diverges alone (cone 6)
+w7:174	3	NOREPRO	3		full graph diverges=False
+w7:176	0	GRAPHOPT	14	n13	needs siblings ['n13']
+w71:763	0	NOREPRO	2		full graph diverges=False
+w71:767	2	OPERATOR	3		diverges alone (cone 3)
+w71:78	0	OPERATOR	4		diverges alone (cone 4)
+w7:182	0	OPERATOR	3		diverges alone (cone 3)
+w7:185	0	OPERATOR	4		diverges alone (cone 4)
+w71:854	1	OPERATOR	5		diverges alone (cone 5)
+w71:878	2	OPERATOR	6		diverges alone (cone 6)
+w71:896	0	OPERATOR	9		diverges alone (cone 9)
+w71:9	0	OPERATOR	4		diverges alone (cone 4)
+w71:930	1	OPERATOR	2		diverges alone (cone 2)
+w71:990	0	OPERATOR	5		diverges alone (cone 5)
+w72:1005	0	OPERATOR	5		diverges alone (cone 5)
+w72:101	2	OPERATOR	3		diverges alone (cone 3)
+w72:1041	2	GRAPHOPT	9	n10	needs siblings ['n10']
+w72:1	1	OPERATOR	3		diverges alone (cone 3)
+w72:123	1	GRAPHOPT	5	n7	needs siblings ['n7']
+w72:137	0	OPERATOR	2		diverges alone (cone 2)
+w72:142	4	OPERATOR	3		diverges alone (cone 3)
+w72:167	0	OPERATOR	6		diverges alone (cone 6)
+w72:177	1	OPERATOR	10		diverges alone (cone 10)
+w72:182	0	OPERATOR	2		diverges alone (cone 2)
+w72:184	3	LOWERFAIL	4		align(et=2,eager=4)
+w72:242	0	NOREPRO	7		full graph diverges=False
+w72:266	1	OPERATOR	3		diverges alone (cone 3)
+w72:269	2	OPERATOR	3		diverges alone (cone 3)
+w72:27	1	OPERATOR	2		diverges alone (cone 2)
+w72:28	3	OPERATOR	3		diverges alone (cone 3)
+w7:23	3	OPERATOR	3		diverges alone (cone 3)
+w72:352	2	OPERATOR	3		diverges alone (cone 3)
+w72:363	0	GRAPHOPT	5	n10	needs siblings ['n10']
+w72:390	1	OPERATOR	5		diverges alone (cone 5)
+w7:243	2	OPERATOR	2		diverges alone (cone 2)
+w72:437	0	OPERATOR	3		diverges alone (cone 3)
+w7:244	2	GRAPHOPT	8	n8	needs siblings ['n8']
+w72:446	3	OPERATOR	5		diverges alone (cone 5)
+w72:530	1	OPERATOR	4		diverges alone (cone 4)
+w72:531	2	OPERATOR	13		diverges alone (cone 13)
+w72:567	0	OPERATOR	4		diverges alone (cone 4)
+w72:600	2	OPERATOR	4		diverges alone (cone 4)
+w72:63	1	NOREPRO	4		full graph diverges=False
+w7:263	2	OPERATOR	9		diverges alone (cone 9)
+w72:633	1	NOREPRO	5		full graph diverges=False
+w72:66	1	OPERATOR	6		diverges alone (cone 6)
+w72:670	1	OPERATOR	9		diverges alone (cone 9)
+w72:737	4	OPERATOR	4		diverges alone (cone 4)
+w72:740	3	LOWERFAIL	2		align(et=2,eager=5)
+w72:777	1	OPERATOR	6		diverges alone (cone 6)
+w72:786	0	OPERATOR	3		diverges alone (cone 3)
+w72:799	2	OPERATOR	5		diverges alone (cone 5)
+w7:280	0	GRAPHOPT	6	n8	needs siblings ['n8']
+w72:803	2	OPERATOR	6		diverges alone (cone 6)
+w7:281	1	OPERATOR	6		diverges alone (cone 6)
+w72:824	1	OPERATOR	3		diverges alone (cone 3)
+w72:834	2	OPERATOR	2		diverges alone (cone 2)
+w72:846	0	NOREPRO	4		full graph diverges=False
+w72:855	0	OPERATOR	6		diverges alone (cone 6)
+w72:861	0	OPERATOR	4		diverges alone (cone 4)
+w72:866	0	OPERATOR	6		diverges alone (cone 6)
+w72:879	1	NOREPRO	2		full graph diverges=False
+w72:887	0	OPERATOR	5		diverges alone (cone 5)
+w72:893	3	OPERATOR	5		diverges alone (cone 5)
+w72:894	2	OPERATOR	5		diverges alone (cone 5)
+w72:915	2	OPERATOR	5		diverges alone (cone 5)
+w72:927	1	OPERATOR	5		diverges alone (cone 5)
+w72:936	0	OPERATOR	3		diverges alone (cone 3)
+w72:944	2	OPERATOR	3		diverges alone (cone 3)
+w72:97	0	OPERATOR	5		diverges alone (cone 5)
+w72:976	1	OPERATOR	5		diverges alone (cone 5)
+w72:986	1	OPERATOR	8		diverges alone (cone 8)
+w72:987	2	OPERATOR	3		diverges alone (cone 3)
+w7:301	3	OPERATOR	5		diverges alone (cone 5)
+w7:307	0	OPERATOR	4		diverges alone (cone 4)
+w7:31	0	NOREPRO	9		full graph diverges=False
+w73:1011	3	OPERATOR	7		diverges alone (cone 7)
+w73:1015	0	OPERATOR	4		diverges alone (cone 4)
+w73:141	3	OPERATOR	4		diverges alone (cone 4)
+w73:182	0	OPERATOR	3		diverges alone (cone 3)
+w73:189	2	LOWERFAIL	3		align(et=2,eager=4)
+w73:204	0	OPERATOR	3		diverges alone (cone 3)
+w73:236	2	OPERATOR	7		diverges alone (cone 7)
+w73:244	3	OPERATOR	4		diverges alone (cone 4)
+w73:245	3	OPERATOR	4		diverges alone (cone 4)
+w73:273	3	OPERATOR	4		diverges alone (cone 4)
+w73:276	4	OPERATOR	3		diverges alone (cone 3)
+w73:279	1	OPERATOR	5		diverges alone (cone 5)
+w73:284	0	OPERATOR	2		diverges alone (cone 2)
+w73:298	2	OPERATOR	5		diverges alone (cone 5)
+w73:338	0	NOREPRO	3		full graph diverges=False
+w73:39	4	OPERATOR	5		diverges alone (cone 5)
+w73:404	2	OPERATOR	6		diverges alone (cone 6)
+w73:407	3	OPERATOR	8		diverges alone (cone 8)
+w73:4	2	OPERATOR	6		diverges alone (cone 6)
+w73:423	0	OPERATOR	5		diverges alone (cone 5)
+w73:424	3	OPERATOR	5		diverges alone (cone 5)
+w73:44	0	LOWERFAIL	5		dev=TIMEOUT
+w73:467	1	OPERATOR	6		diverges alone (cone 6)
+w73:482	1	NOREPRO	5		full graph diverges=False
+w73:528	1	OPERATOR	2		diverges alone (cone 2)
+w73:536	2	OPERATOR	6		diverges alone (cone 6)
+w73:549	2	OPERATOR	3		diverges alone (cone 3)
+w73:570	1	OPERATOR	3		diverges alone (cone 3)
+w73:577	1	OPERATOR	3		diverges alone (cone 3)
+w73:598	0	NOREPRO	3		full graph diverges=False
+w73:600	3	OPERATOR	5		diverges alone (cone 5)
+w73:61	2	OPERATOR	3		diverges alone (cone 3)
+w73:627	2	NOREPRO	4		full graph diverges=False
+w73:631	2	OPERATOR	4		diverges alone (cone 4)
+w73:63	2	LOWERFAIL	4		dev=TIMEOUT
+w73:636	1	OPERATOR	3		diverges alone (cone 3)
+w73:665	0	OPERATOR	6		diverges alone (cone 6)
+w7:367	1	OPERATOR	10		diverges alone (cone 10)
+w73:68	1	OPERATOR	3		diverges alone (cone 3)
+w73:692	1	NOREPRO	3		full graph diverges=False
+w73:718	0	OPERATOR	3		diverges alone (cone 3)
+w73:722	2	OPERATOR	6		diverges alone (cone 6)
+w73:730	0	OPERATOR	6		diverges alone (cone 6)
+w73:74	3	OPERATOR	6		diverges alone (cone 6)
+w73:790	2	OPERATOR	3		diverges alone (cone 3)
+w73:80	0	OPERATOR	9		diverges alone (cone 9)
+w73:812	1	LOWERFAIL	8		dev=TIMEOUT
+w73:818	2	OPERATOR	4		diverges alone (cone 4)
+w73:833	2	OPERATOR	5		diverges alone (cone 5)
+w73:86	0	OPERATOR	4		diverges alone (cone 4)
+w7:386	2	GRAPHOPT	4	n2	needs siblings ['n2']
+w73:879	1	OPERATOR	6		diverges alone (cone 6)
+w73:937	0	OPERATOR	2		diverges alone (cone 2)
+w73:991	0	NOREPRO	6		full graph diverges=False
+w7:402	0	NOREPRO	5		full graph diverges=False
+w7:405	3	OPERATOR	2		diverges alone (cone 2)
+w74:1016	1	OPERATOR	7		diverges alone (cone 7)
+w74:102	1	OPERATOR	3		diverges alone (cone 3)
+w74:1023	0	OPERATOR	3		diverges alone (cone 3)
+w74:109	2	OPERATOR	6		diverges alone (cone 6)
+w74:133	0	OPERATOR	4		diverges alone (cone 4)
+w74:222	1	OPERATOR	4		diverges alone (cone 4)
+w74:255	1	OPERATOR	2		diverges alone (cone 2)
+w74:261	1	OPERATOR	4		diverges alone (cone 4)
+w74:272	0	OPERATOR	4		diverges alone (cone 4)
+w74:308	3	LOWERFAIL	2		dev=TIMEOUT
+w74:311	0	OPERATOR	5		diverges alone (cone 5)
+w74:319	3	OPERATOR	5		diverges alone (cone 5)
+w74:335	0	OPERATOR	4		diverges alone (cone 4)
+w7:434	0	OPERATOR	5		diverges alone (cone 5)
+w74:353	3	OPERATOR	4		diverges alone (cone 4)
+w74:4	1	OPERATOR	3		diverges alone (cone 3)
+w74:418	0	OPERATOR	7		diverges alone (cone 7)
+w74:444	2	OPERATOR	6		diverges alone (cone 6)
+w74:455	1	OPERATOR	4		diverges alone (cone 4)
+w74:458	0	OPERATOR	2		diverges alone (cone 2)
+w74:474	1	OPERATOR	9		diverges alone (cone 9)
+w74:490	2	OPERATOR	2		diverges alone (cone 2)
+w74:526	1	GRAPHOPT	6	n7	needs siblings ['n7']
+w7:45	4	OPERATOR	3		diverges alone (cone 3)
+w74:548	0	OPERATOR	4		diverges alone (cone 4)
+w7:459	2	NOREPRO	6		full graph diverges=False
+w74:597	2	OPERATOR	4		diverges alone (cone 4)
+w74:599	1	OPERATOR	3		diverges alone (cone 3)
+w7:46	2	OPERATOR	7		diverges alone (cone 7)
+w74:65	1	OPERATOR	9		diverges alone (cone 9)
+w74:677	2	OPERATOR	6		diverges alone (cone 6)
+w74:678	0	OPERATOR	6		diverges alone (cone 6)
+w74:683	0	LOWERFAIL	2		dev=TIMEOUT
+w74:711	2	OPERATOR	4		diverges alone (cone 4)
+w74:712	2	OPERATOR	4		diverges alone (cone 4)
+w74:724	0	OPERATOR	7		diverges alone (cone 7)
+w74:780	3	OPERATOR	5		diverges alone (cone 5)
+w74:90	1	LOWERFAIL	3		dev=TIMEOUT
+w74:906	1	OPERATOR	2		diverges alone (cone 2)
+w74:911	0	OPERATOR	3		diverges alone (cone 3)
+w75:1005	0	OPERATOR	3		diverges alone (cone 3)
+w75:1008	0	OPERATOR	8		diverges alone (cone 8)
+w75:133	0	OPERATOR	3		diverges alone (cone 3)
+w75:189	1	OPERATOR	2		diverges alone (cone 2)
+w75:201	3	OPERATOR	3		diverges alone (cone 3)
+w75:219	0	OPERATOR	4		diverges alone (cone 4)
+w7:527	1	LOWERFAIL	6		align(et=1,eager=3)
+w75:27	1	OPERATOR	9		diverges alone (cone 9)
+w75:29	0	OPERATOR	7		diverges alone (cone 7)
+w75:32	2	OPERATOR	8		diverges alone (cone 8)
+w75:323	2	OPERATOR	3		diverges alone (cone 3)
+w75:341	2	OPERATOR	3		diverges alone (cone 3)
+w75:356	3	OPERATOR	3		diverges alone (cone 3)
+w75:374	0	OPERATOR	7		diverges alone (cone 7)
+w75:390	3	OPERATOR	2		diverges alone (cone 2)
+w75:40	0	OPERATOR	4		diverges alone (cone 4)
+w75:447	3	OPERATOR	3		diverges alone (cone 3)
+w75:456	0	OPERATOR	4		diverges alone (cone 4)
+w75:484	1	OPERATOR	4		diverges alone (cone 4)
+w75:497	0	OPERATOR	6		diverges alone (cone 6)
+w75:50	0	OPERATOR	5		diverges alone (cone 5)
+w75:517	2	OPERATOR	9		diverges alone (cone 9)
+w75:544	1	OPERATOR	4		diverges alone (cone 4)
+w75:550	3	NOREPRO	3		full graph diverges=False
+w75:566	0	OPERATOR	4		diverges alone (cone 4)
+w7:557	3	NOREPRO	4		full graph diverges=False
+w75:587	1	GRAPHOPT	6	n5,n7	needs siblings ['n5', 'n7']
+w75:589	0	OPERATOR	3		diverges alone (cone 3)
+w75:602	1	OPERATOR	2		diverges alone (cone 2)
+w75:611	3	OPERATOR	5		diverges alone (cone 5)
+w75:612	0	OPERATOR	6		diverges alone (cone 6)
+w75:656	2	OPERATOR	4		diverges alone (cone 4)
+w75:668	0	OPERATOR	5		diverges alone (cone 5)
+w75:737	0	OPERATOR	3		diverges alone (cone 3)
+w75:741	0	OPERATOR	7		diverges alone (cone 7)
+w75:797	3	OPERATOR	4		diverges alone (cone 4)
+w75:833	4	OPERATOR	4		diverges alone (cone 4)
+w75:886	0	NOREPRO	2		full graph diverges=False
+w75:903	2	OPERATOR	3		diverges alone (cone 3)
+w75:906	1	OPERATOR	4		diverges alone (cone 4)
+w7:594	1	OPERATOR	4		diverges alone (cone 4)
+w75:945	2	OPERATOR	4		diverges alone (cone 4)
+w75:984	2	OPERATOR	7		diverges alone (cone 7)
+w75:992	3	GRAPHOPT	5	n4	needs siblings ['n4']
+w76:1027	2	NOREPRO	4		full graph diverges=False
+w76:104	1	OPERATOR	3		diverges alone (cone 3)
+w76:118	2	NOREPRO	4		full graph diverges=False
+w76:139	0	OPERATOR	3		diverges alone (cone 3)
+w76:15	1	OPERATOR	3		diverges alone (cone 3)
+w76:162	1	NOREPRO	7		full graph diverges=False
+w76:176	2	NOREPRO	3		full graph diverges=False
+w76:181	1	OPERATOR	2		diverges alone (cone 2)
+w76:24	2	OPERATOR	6		diverges alone (cone 6)
+w76:262	0	OPERATOR	3		diverges alone (cone 3)
+w76:276	3	OPERATOR	3		diverges alone (cone 3)
+w76:277	2	OPERATOR	2		diverges alone (cone 2)
+w76:319	1	OPERATOR	7		diverges alone (cone 7)
+w76:32	1	OPERATOR	6		diverges alone (cone 6)
+w76:358	1	OPERATOR	7		diverges alone (cone 7)
+w7:640	0	OPERATOR	4		diverges alone (cone 4)
+w76:419	1	OPERATOR	6		diverges alone (cone 6)
+w76:446	0	OPERATOR	5		diverges alone (cone 5)
+w76:451	3	OPERATOR	5		diverges alone (cone 5)
+w76:453	1	OPERATOR	5		diverges alone (cone 5)
+w76:471	0	OPERATOR	5		diverges alone (cone 5)
+w76:496	2	OPERATOR	7		diverges alone (cone 7)
+w76:499	0	OPERATOR	3		diverges alone (cone 3)
+w76:506	1	NOREPRO	7		full graph diverges=False
+w76:510	1	OPERATOR	5		diverges alone (cone 5)
+w76:520	1	OPERATOR	3		diverges alone (cone 3)
+w76:566	0	NOREPRO	2		full graph diverges=False
+w76:593	1	OPERATOR	5		diverges alone (cone 5)
+w76:617	0	OPERATOR	4		diverges alone (cone 4)
+w7:662	0	OPERATOR	2		diverges alone (cone 2)
+w76:635	2	OPERATOR	5		diverges alone (cone 5)
+w76:644	2	OPERATOR	5		diverges alone (cone 5)
+w76:645	1	OPERATOR	6		diverges alone (cone 6)
+w76:665	1	OPERATOR	3		diverges alone (cone 3)
+w7:668	0	OPERATOR	3		diverges alone (cone 3)
+w76:716	0	OPERATOR	2		diverges alone (cone 2)
+w76:717	1	OPERATOR	6		diverges alone (cone 6)
+w76:744	1	OPERATOR	2		diverges alone (cone 2)
+w76:811	2	OPERATOR	7		diverges alone (cone 7)
+w76:891	1	OPERATOR	2		diverges alone (cone 2)
+w76:892	2	NOREPRO	3		full graph diverges=False
+w76:895	2	OPERATOR	5		diverges alone (cone 5)
+w76:934	0	OPERATOR	2		diverges alone (cone 2)
+w76:944	2	OPERATOR	5		diverges alone (cone 5)
+w76:955	1	OPERATOR	4		diverges alone (cone 4)
+w7:696	1	OPERATOR	2		diverges alone (cone 2)
+w76:981	0	OPERATOR	2		diverges alone (cone 2)
+w76:995	0	OPERATOR	4		diverges alone (cone 4)
+w77:1023	3	OPERATOR	4		diverges alone (cone 4)
+w77:236	0	OPERATOR	3		diverges alone (cone 3)
+w77:269	0	OPERATOR	2		diverges alone (cone 2)
+w77:279	0	OPERATOR	3		diverges alone (cone 3)
+w77:288	0	OPERATOR	3		diverges alone (cone 3)
+w77:297	0	OPERATOR	3		diverges alone (cone 3)
+w77:341	0	NOREPRO	2		full graph diverges=False
+w77:345	0	OPERATOR	3		diverges alone (cone 3)
+w77:346	0	OPERATOR	4		diverges alone (cone 4)
+w77:365	0	OPERATOR	8		diverges alone (cone 8)
+w77:371	1	OPERATOR	3		diverges alone (cone 3)
+w77:444	1	OPERATOR	3		diverges alone (cone 3)
+w77:451	0	OPERATOR	4		diverges alone (cone 4)
+w77:458	0	OPERATOR	6		diverges alone (cone 6)
+w77:463	0	OPERATOR	3		diverges alone (cone 3)
+w77:469	3	NOREPRO	7		full graph diverges=False
+w77:472	1	OPERATOR	4		diverges alone (cone 4)
+w77:503	0	OPERATOR	2		diverges alone (cone 2)
+w77:520	1	OPERATOR	4		diverges alone (cone 4)
+w7:755	1	OPERATOR	4		diverges alone (cone 4)
+w77:618	0	OPERATOR	4		diverges alone (cone 4)
+w77:642	4	OPERATOR	3		diverges alone (cone 3)
+w77:678	0	OPERATOR	3		diverges alone (cone 3)
+w77:693	2	OPERATOR	4		diverges alone (cone 4)
+w77:695	2	OPERATOR	9		diverges alone (cone 9)
+w77:7	0	OPERATOR	3		diverges alone (cone 3)
+w77:716	0	OPERATOR	3		diverges alone (cone 3)
+w77:741	1	OPERATOR	5		diverges alone (cone 5)
+w77:743	2	OPERATOR	3		diverges alone (cone 3)
+w77:753	0	OPERATOR	4		diverges alone (cone 4)
+w77:78	4	OPERATOR	4		diverges alone (cone 4)
+w77:786	2	LOWERFAIL	7		dev=TIMEOUT
+w77:795	1	OPERATOR	3		diverges alone (cone 3)
+w77:81	0	OPERATOR	4		diverges alone (cone 4)
+w77:849	3	OPERATOR	2		diverges alone (cone 2)
+w77:862	2	OPERATOR	4		diverges alone (cone 4)
+w77:876	0	OPERATOR	2		diverges alone (cone 2)
+w77:912	1	OPERATOR	2		diverges alone (cone 2)
+w77:924	1	OPERATOR	4		diverges alone (cone 4)
+w77:999	1	OPERATOR	2		diverges alone (cone 2)
+w78:1008	0	OPERATOR	4		diverges alone (cone 4)
+w78:1037	2	OPERATOR	6		diverges alone (cone 6)
+w78:139	1	OPERATOR	5		diverges alone (cone 5)
+w78:153	1	OPERATOR	4		diverges alone (cone 4)
+w78:174	1	OPERATOR	2		diverges alone (cone 2)
+w78:202	4	GRAPHOPT	5	n6	needs siblings ['n6']
+w78:206	1	OPERATOR	8		diverges alone (cone 8)
+w78:207	0	OPERATOR	2		diverges alone (cone 2)
+w78:225	2	OPERATOR	3		diverges alone (cone 3)
+w78:230	2	OPERATOR	2		diverges alone (cone 2)
+w7:831	1	OPERATOR	3		diverges alone (cone 3)
+w78:326	1	OPERATOR	4		diverges alone (cone 4)
+w7:833	1	OPERATOR	6		diverges alone (cone 6)
+w78:333	1	OPERATOR	4		diverges alone (cone 4)
+w78:337	3	OPERATOR	4		diverges alone (cone 4)
+w7:835	1	NOREPRO	3		full graph diverges=False
+w78:367	2	OPERATOR	3		diverges alone (cone 3)
+w78:448	2	NOREPRO	5		full graph diverges=False
+w78:454	1	OPERATOR	2		diverges alone (cone 2)
+w7:847	0	OPERATOR	3		diverges alone (cone 3)
+w7:850	4	OPERATOR	4		diverges alone (cone 4)
+w78:537	3	LOWERFAIL	2		dev=TIMEOUT
+w78:541	1	OPERATOR	10		diverges alone (cone 10)
+w78:549	3	OPERATOR	2		diverges alone (cone 2)
+w78:596	3	OPERATOR	7		diverges alone (cone 7)
+w78:600	0	OPERATOR	3		diverges alone (cone 3)
+w78:603	3	OPERATOR	5		diverges alone (cone 5)
+w78:604	2	OPERATOR	7		diverges alone (cone 7)
+w7:861	1	OPERATOR	7		diverges alone (cone 7)
+w78:612	1	NOREPRO	5		full graph diverges=False
+w78:651	0	OPERATOR	6		diverges alone (cone 6)
+w78:678	2	OPERATOR	5		diverges alone (cone 5)
+w78:718	1	OPERATOR	3		diverges alone (cone 3)
+w78:753	2	OPERATOR	7		diverges alone (cone 7)
+w78:754	0	NOREPRO	3		full graph diverges=False
+w78:771	0	OPERATOR	8		diverges alone (cone 8)
+w78:780	3	NOREPRO	4		full graph diverges=False
+w78:801	2	GRAPHOPT	6	n5	needs siblings ['n5']
+w78:828	3	OPERATOR	2		diverges alone (cone 2)
+w78:881	0	OPERATOR	5		diverges alone (cone 5)
+w78:884	1	OPERATOR	4		diverges alone (cone 4)
+w78:887	0	OPERATOR	3		diverges alone (cone 3)
+w78:89	0	OPERATOR	5		diverges alone (cone 5)
+w78:893	1	OPERATOR	3		diverges alone (cone 3)
+w78:912	1	NOREPRO	7		full graph diverges=False
+w78:939	1	OPERATOR	9		diverges alone (cone 9)
+w78:946	0	OPERATOR	4		diverges alone (cone 4)
+w78:952	2	OPERATOR	2		diverges alone (cone 2)
+w78:973	1	OPERATOR	3		diverges alone (cone 3)
+w79:1007	1	OPERATOR	2		diverges alone (cone 2)
+w79:102	3	OPERATOR	8		diverges alone (cone 8)
+w79:1024	2	GRAPHOPT	9	n8	needs siblings ['n8']
+w79:114	2	OPERATOR	3		diverges alone (cone 3)
+w79:124	2	OPERATOR	9		diverges alone (cone 9)
+w79:134	0	OPERATOR	6		diverges alone (cone 6)
+w79:14	4	NOREPRO	3		full graph diverges=False
+w79:161	2	OPERATOR	3		diverges alone (cone 3)
+w79:179	1	OPERATOR	3		diverges alone (cone 3)
+w79:216	1	OPERATOR	5		diverges alone (cone 5)
+w79:219	0	OPERATOR	3		diverges alone (cone 3)
+w79:240	1	OPERATOR	5		diverges alone (cone 5)
+w79:272	2	OPERATOR	6		diverges alone (cone 6)
+w79:293	0	OPERATOR	2		diverges alone (cone 2)
+w79:324	0	OPERATOR	3		diverges alone (cone 3)
+w79:337	1	OPERATOR	3		diverges alone (cone 3)
+w79:350	0	OPERATOR	3		diverges alone (cone 3)
+w79:365	1	OPERATOR	3		diverges alone (cone 3)
+w79:371	2	OPERATOR	4		diverges alone (cone 4)
+w79:387	0	OPERATOR	4		diverges alone (cone 4)
+w79:4	1	OPERATOR	9		diverges alone (cone 9)
+w79:468	0	OPERATOR	2		diverges alone (cone 2)
+w79:509	2	OPERATOR	11		diverges alone (cone 11)
+w79:515	0	OPERATOR	2		diverges alone (cone 2)
+w79:553	3	OPERATOR	4		diverges alone (cone 4)
+w79:564	1	OPERATOR	7		diverges alone (cone 7)
+w79:65	2	NOREPRO	7		full graph diverges=False
+w79:654	1	OPERATOR	8		diverges alone (cone 8)
+w79:69	0	OPERATOR	3		diverges alone (cone 3)
+w79:690	2	OPERATOR	6		diverges alone (cone 6)
+w79:725	0	OPERATOR	4		diverges alone (cone 4)
+w79:74	0	OPERATOR	2		diverges alone (cone 2)
+w79:764	0	OPERATOR	6		diverges alone (cone 6)
+w79:781	3	OPERATOR	4		diverges alone (cone 4)
+w79:788	1	NOREPRO	5		full graph diverges=False
+w79:790	0	OPERATOR	3		diverges alone (cone 3)
+w79:806	0	OPERATOR	2		diverges alone (cone 2)
+w79:810	3	OPERATOR	2		diverges alone (cone 2)
+w79:819	4	OPERATOR	3		diverges alone (cone 3)
+w79:839	1	OPERATOR	3		diverges alone (cone 3)
+w79:885	2	OPERATOR	5		diverges alone (cone 5)
+w79:896	2	OPERATOR	5		diverges alone (cone 5)
+w79:9	1	NOREPRO	4		full graph diverges=False
+w79:924	1	OPERATOR	3		diverges alone (cone 3)
+w79:933	3	LOWERFAIL	4		align(et=2,eager=4)
+w79:968	0	NOREPRO	2		full graph diverges=False
+w80:1025	0	OPERATOR	2		diverges alone (cone 2)
+w80:104	0	OPERATOR	7		diverges alone (cone 7)
+w80:124	1	OPERATOR	6		diverges alone (cone 6)
+w80:163	0	OPERATOR	6		diverges alone (cone 6)
+w80:164	3	OPERATOR	5		diverges alone (cone 5)
+w80:188	1	LOWERFAIL	4		dev=TIMEOUT
+w80:210	2	OPERATOR	3		diverges alone (cone 3)
+w80:236	3	OPERATOR	2		diverges alone (cone 2)
+w80:258	1	NOREPRO	4		full graph diverges=False
+w80:279	0	OPERATOR	2		diverges alone (cone 2)
+w80:288	3	OPERATOR	7		diverges alone (cone 7)
+w80:299	1	OPERATOR	3		diverges alone (cone 3)
+w80:304	0	OPERATOR	3		diverges alone (cone 3)
+w80:364	2	OPERATOR	2		diverges alone (cone 2)
+w80:434	1	GRAPHOPT	8	n8	needs siblings ['n8']
+w80:436	3	LOWERFAIL	6		dev=TIMEOUT
+w80:439	0	OPERATOR	3		diverges alone (cone 3)
+w80:447	1	OPERATOR	3		diverges alone (cone 3)
+w80:451	0	GRAPHOPT	10	n10	needs siblings ['n10']
+w80:51	0	OPERATOR	3		diverges alone (cone 3)
+w80:525	1	GRAPHOPT	7	n7	needs siblings ['n7']
+w80:569	1	OPERATOR	3		diverges alone (cone 3)
+w80:576	3	NOREPRO	5		full graph diverges=False
+w80:580	1	OPERATOR	5		diverges alone (cone 5)
+w80:582	3	OPERATOR	2		diverges alone (cone 2)
+w80:618	1	NOREPRO	3		full graph diverges=False
+w80:619	0	OPERATOR	6		diverges alone (cone 6)
+w80:625	0	OPERATOR	4		diverges alone (cone 4)
+w80:641	3	GRAPHOPT	5	n5	needs siblings ['n5']
+w80:649	0	GRAPHOPT	4	n3,n4	needs siblings ['n3', 'n4']
+w80:65	2	OPERATOR	5		diverges alone (cone 5)
+w80:667	4	OPERATOR	4		diverges alone (cone 4)
+w80:730	0	OPERATOR	3		diverges alone (cone 3)
+w80:735	1	OPERATOR	5		diverges alone (cone 5)
+w80:748	4	OPERATOR	4		diverges alone (cone 4)
+w80:780	2	OPERATOR	5		diverges alone (cone 5)
+w80:782	1	OPERATOR	5		diverges alone (cone 5)
+w80:788	3	OPERATOR	6		diverges alone (cone 6)
+w80:802	0	OPERATOR	2		diverges alone (cone 2)
+w80:803	2	OPERATOR	3		diverges alone (cone 3)
+w80:806	1	OPERATOR	5		diverges alone (cone 5)
+w80:824	3	OPERATOR	3		diverges alone (cone 3)
+w80:826	4	OPERATOR	3		diverges alone (cone 3)
+w80:836	4	OPERATOR	4		diverges alone (cone 4)
+w80:845	2	OPERATOR	3		diverges alone (cone 3)
+w80:848	3	LOWERFAIL	7		dev=TIMEOUT
+w80:85	1	OPERATOR	2		diverges alone (cone 2)
+w80:927	0	OPERATOR	2		diverges alone (cone 2)
+w80:930	0	NOREPRO	7		full graph diverges=False
+w80:937	1	OPERATOR	4		diverges alone (cone 4)
+w80:953	3	NOREPRO	4		full graph diverges=False
+w80:960	1	NOREPRO	6		full graph diverges=False
+w80:963	0	OPERATOR	5		diverges alone (cone 5)
+w80:966	2	NOREPRO	5		full graph diverges=False
+w8:1017	1	LOWERFAIL	4		align(et=1,eager=3)
+w8:1020	2	OPERATOR	3		diverges alone (cone 3)
+w8:111	0	OPERATOR	4		diverges alone (cone 4)
+w81:115	2	OPERATOR	8		diverges alone (cone 8)
+w81:12	2	OPERATOR	8		diverges alone (cone 8)
+w81:135	0	OPERATOR	2		diverges alone (cone 2)
+w81:20	3	GRAPHOPT	10	n2,n4,n6	needs siblings ['n2', 'n4', 'n6']
+w81:253	2	OPERATOR	3		diverges alone (cone 3)
+w81:280	3	OPERATOR	4		diverges alone (cone 4)
+w81:292	0	OPERATOR	3		diverges alone (cone 3)
+w81:303	5	OPERATOR	2		diverges alone (cone 2)
+w81:327	1	OPERATOR	5		diverges alone (cone 5)
+w8:135	4	OPERATOR	2		diverges alone (cone 2)
+w81:357	0	OPERATOR	3		diverges alone (cone 3)
+w81:359	2	OPERATOR	4		diverges alone (cone 4)
+w8:138	4	OPERATOR	5		diverges alone (cone 5)
+w81:422	0	OPERATOR	7		diverges alone (cone 7)
+w81:438	2	OPERATOR	6		diverges alone (cone 6)
+w8:148	1	OPERATOR	5		diverges alone (cone 5)
+w81:48	2	OPERATOR	4		diverges alone (cone 4)
+w81:488	3	OPERATOR	2		diverges alone (cone 2)
+w8:149	2	OPERATOR	3		diverges alone (cone 3)
+w81:495	3	OPERATOR	3		diverges alone (cone 3)
+w81:510	1	OPERATOR	4		diverges alone (cone 4)
+w81:511	1	OPERATOR	4		diverges alone (cone 4)
+w81:543	0	OPERATOR	2		diverges alone (cone 2)
+w81:570	1	OPERATOR	7		diverges alone (cone 7)
+w81:573	1	OPERATOR	2		diverges alone (cone 2)
+w81:618	2	OPERATOR	4		diverges alone (cone 4)
+w81:62	1	NOREPRO	3		full graph diverges=False
+w81:628	2	OPERATOR	2		diverges alone (cone 2)
+w81:634	1	OPERATOR	3		diverges alone (cone 3)
+w81:682	0	OPERATOR	3		diverges alone (cone 3)
+w81:695	0	OPERATOR	5		diverges alone (cone 5)
+w81:696	0	NOREPRO	3		full graph diverges=False
+w81:728	3	OPERATOR	8		diverges alone (cone 8)
+w81:735	1	OPERATOR	4		diverges alone (cone 4)
+w81:771	1	OPERATOR	3		diverges alone (cone 3)
+w81:778	3	LOWERFAIL	3		align(et=3,eager=4)
+w81:784	1	LOWERFAIL	3		dev=TIMEOUT
+w81:87	0	OPERATOR	3		diverges alone (cone 3)
+w81:883	3	OPERATOR	3		diverges alone (cone 3)
+w8:189	0	OPERATOR	5		diverges alone (cone 5)
+w81:909	1	NOREPRO	5		full graph diverges=False
+w81:944	3	OPERATOR	3		diverges alone (cone 3)
+w81:974	0	OPERATOR	4		diverges alone (cone 4)
+w81:988	1	OPERATOR	2		diverges alone (cone 2)
+w8:202	3	OPERATOR	3		diverges alone (cone 3)
+w82:1000	0	OPERATOR	4		diverges alone (cone 4)
+w82:1006	0	OPERATOR	4		diverges alone (cone 4)
+w82:1034	1	OPERATOR	5		diverges alone (cone 5)
+w82:131	1	OPERATOR	4		diverges alone (cone 4)
+w82:163	1	OPERATOR	3		diverges alone (cone 3)
+w82:168	2	OPERATOR	5		diverges alone (cone 5)
+w82:188	2	OPERATOR	2		diverges alone (cone 2)
+w82:204	1	OPERATOR	2		diverges alone (cone 2)
+w82:209	3	LOWERFAIL	9		align(et=2,eager=4)
+w82:231	0	OPERATOR	3		diverges alone (cone 3)
+w82:238	3	OPERATOR	4		diverges alone (cone 4)
+w82:240	0	OPERATOR	5		diverges alone (cone 5)
+w82:244	4	OPERATOR	3		diverges alone (cone 3)
+w82:255	0	OPERATOR	5		diverges alone (cone 5)
+w82:272	1	OPERATOR	3		diverges alone (cone 3)
+w8:228	0	OPERATOR	3		diverges alone (cone 3)
+w82:285	0	OPERATOR	3		diverges alone (cone 3)
+w82:3	0	NOREPRO	3		full graph diverges=False
+w82:305	1	NOREPRO	4		full graph diverges=False
+w82:385	2	GRAPHOPT	4	n4	needs siblings ['n4']
+w82:390	0	OPERATOR	4		diverges alone (cone 4)
+w82:404	0	OPERATOR	6		diverges alone (cone 6)
+w82:405	2	NOREPRO	3		full graph diverges=False
+w82:417	2	GRAPHOPT	5	n4	needs siblings ['n4']
+w82:419	1	OPERATOR	9		diverges alone (cone 9)
+w82:44	0	OPERATOR	2		diverges alone (cone 2)
+w82:459	1	OPERATOR	3		diverges alone (cone 3)
+w82:521	1	OPERATOR	3		diverges alone (cone 3)
+w8:253	1	OPERATOR	5		diverges alone (cone 5)
+w82:538	3	OPERATOR	4		diverges alone (cone 4)
+w82:550	2	NOREPRO	4		full graph diverges=False
+w82:581	0	OPERATOR	3		diverges alone (cone 3)
+w82:602	0	OPERATOR	2		diverges alone (cone 2)
+w82:606	2	OPERATOR	4		diverges alone (cone 4)
+w82:612	1	OPERATOR	8		diverges alone (cone 8)
+w82:614	0	OPERATOR	2		diverges alone (cone 2)
+w82:644	3	OPERATOR	7		diverges alone (cone 7)
+w82:65	0	OPERATOR	2		diverges alone (cone 2)
+w82:687	1	OPERATOR	4		diverges alone (cone 4)
+w8:272	0	OPERATOR	3		diverges alone (cone 3)
+w82:727	0	LOWERFAIL	2		dev=TIMEOUT
+w82:746	0	GRAPHOPT	5	n7	needs siblings ['n7']
+w82:748	2	OPERATOR	4		diverges alone (cone 4)
+w8:275	0	OPERATOR	2		diverges alone (cone 2)
+w82:758	1	NOREPRO	2		full graph diverges=False
+w82:784	2	OPERATOR	5		diverges alone (cone 5)
+w82:790	3	OPERATOR	7		diverges alone (cone 7)
+w82:8	0	OPERATOR	3		diverges alone (cone 3)
+w82:800	0	OPERATOR	4		diverges alone (cone 4)
+w82:829	3	OPERATOR	4		diverges alone (cone 4)
+w82:854	1	OPERATOR	6		diverges alone (cone 6)
+w82:860	1	OPERATOR	4		diverges alone (cone 4)
+w82:861	0	OPERATOR	10		diverges alone (cone 10)
+w8:290	1	GRAPHOPT	8	n9	needs siblings ['n9']
+w82:922	2	OPERATOR	6		diverges alone (cone 6)
+w82:942	0	OPERATOR	4		diverges alone (cone 4)
+w82:950	3	NOREPRO	2		full graph diverges=False
+w82:968	1	OPERATOR	2		diverges alone (cone 2)
+w82:972	1	OPERATOR	4		diverges alone (cone 4)
+w82:977	1	OPERATOR	3		diverges alone (cone 3)
+w82:999	1	OPERATOR	4		diverges alone (cone 4)
+w8:30	2	OPERATOR	4		diverges alone (cone 4)
+w8:308	2	OPERATOR	2		diverges alone (cone 2)
+w83:1001	4	OPERATOR	3		diverges alone (cone 3)
+w83:1014	0	OPERATOR	4		diverges alone (cone 4)
+w83:134	0	OPERATOR	4		diverges alone (cone 4)
+w83:136	0	OPERATOR	5		diverges alone (cone 5)
+w83:161	0	OPERATOR	2		diverges alone (cone 2)
+w83:189	1	OPERATOR	4		diverges alone (cone 4)
+w83:197	1	OPERATOR	11		diverges alone (cone 11)
+w83:224	1	NOREPRO	6		full graph diverges=False
+w83:230	1	OPERATOR	6		diverges alone (cone 6)
+w83:242	2	OPERATOR	2		diverges alone (cone 2)
+w83:26	0	OPERATOR	5		diverges alone (cone 5)
+w83:289	0	OPERATOR	2		diverges alone (cone 2)
+w83:303	2	NOREPRO	3		full graph diverges=False
+w83:317	2	OPERATOR	5		diverges alone (cone 5)
+w83:321	1	OPERATOR	2		diverges alone (cone 2)
+w8:333	0	OPERATOR	2		diverges alone (cone 2)
+w83:352	0	OPERATOR	3		diverges alone (cone 3)
+w83:399	1	NOREPRO	3		full graph diverges=False
+w83:459	3	OPERATOR	4		diverges alone (cone 4)
+w83:470	0	OPERATOR	2		diverges alone (cone 2)
+w8:351	0	OPERATOR	3		diverges alone (cone 3)
+w8:35	2	OPERATOR	3		diverges alone (cone 3)
+w83:585	1	OPERATOR	3		diverges alone (cone 3)
+w83:614	3	OPERATOR	6		diverges alone (cone 6)
+w83:623	1	OPERATOR	2		diverges alone (cone 2)
+w8:363	0	OPERATOR	2		diverges alone (cone 2)
+w83:646	2	OPERATOR	3		diverges alone (cone 3)
+w83:69	1	OPERATOR	6		diverges alone (cone 6)
+w83:696	1	OPERATOR	5		diverges alone (cone 5)
+w83:72	2	GRAPHOPT	5	n2	needs siblings ['n2']
+w83:726	2	OPERATOR	4		diverges alone (cone 4)
+w83:733	3	OPERATOR	6		diverges alone (cone 6)
+w83:745	0	OPERATOR	5		diverges alone (cone 5)
+w83:756	2	OPERATOR	4		diverges alone (cone 4)
+w83:765	2	OPERATOR	8		diverges alone (cone 8)
+w83:785	3	OPERATOR	3		diverges alone (cone 3)
+w83:79	1	OPERATOR	2		diverges alone (cone 2)
+w83:798	2	OPERATOR	4		diverges alone (cone 4)
+w8:383	1	OPERATOR	5		diverges alone (cone 5)
+w83:85	1	GRAPHOPT	3	n2	needs siblings ['n2']
+w83:861	1	OPERATOR	4		diverges alone (cone 4)
+w83:881	1	OPERATOR	3		diverges alone (cone 3)
+w83:895	2	OPERATOR	3		diverges alone (cone 3)
+w83:918	3	OPERATOR	4		diverges alone (cone 4)
+w83:928	1	OPERATOR	4		diverges alone (cone 4)
+w8:400	2	LOWERFAIL	3		align(et=2,eager=3)
+w84:0	2	OPERATOR	8		diverges alone (cone 8)
+w84:1027	1	OPERATOR	3		diverges alone (cone 3)
+w84:1037	2	OPERATOR	5		diverges alone (cone 5)
+w84:172	2	OPERATOR	8		diverges alone (cone 8)
+w84:195	1	OPERATOR	2		diverges alone (cone 2)
+w84:212	1	OPERATOR	2		diverges alone (cone 2)
+w84:272	1	OPERATOR	5		diverges alone (cone 5)
+w84:285	0	OPERATOR	4		diverges alone (cone 4)
+w8:43	0	OPERATOR	2		diverges alone (cone 2)
+w8:432	2	OPERATOR	3		diverges alone (cone 3)
+w84:341	0	OPERATOR	3		diverges alone (cone 3)
+w84:351	0	OPERATOR	5		diverges alone (cone 5)
+w84:360	0	NOREPRO	3		full graph diverges=False
+w84:391	2	OPERATOR	4		diverges alone (cone 4)
+w84:393	2	OPERATOR	5		diverges alone (cone 5)
+w84:435	2	OPERATOR	4		diverges alone (cone 4)
+w84:453	0	OPERATOR	2		diverges alone (cone 2)
+w8:454	0	OPERATOR	3		diverges alone (cone 3)
+w8:456	0	OPERATOR	3		diverges alone (cone 3)
+w84:588	1	OPERATOR	4		diverges alone (cone 4)
+w84:591	1	OPERATOR	4		diverges alone (cone 4)
+w84:614	3	OPERATOR	4		diverges alone (cone 4)
+w84:637	1	OPERATOR	6		diverges alone (cone 6)
+w84:668	1	OPERATOR	9		diverges alone (cone 9)
+w84:70	1	OPERATOR	4		diverges alone (cone 4)
+w84:701	2	OPERATOR	5		diverges alone (cone 5)
+w84:747	2	OPERATOR	2		diverges alone (cone 2)
+w84:751	2	LOWERFAIL	6		align(et=1,eager=3)
+w84:754	0	OPERATOR	4		diverges alone (cone 4)
+w84:755	0	OPERATOR	5		diverges alone (cone 5)
+w84:76	4	OPERATOR	3		diverges alone (cone 3)
+w84:791	1	OPERATOR	3		diverges alone (cone 3)
+w84:801	1	OPERATOR	3		diverges alone (cone 3)
+w84:839	1	OPERATOR	3		diverges alone (cone 3)
+w84:845	3	OPERATOR	6		diverges alone (cone 6)
+w84:846	1	OPERATOR	4		diverges alone (cone 4)
+w84:866	1	NOREPRO	6		full graph diverges=False
+w84:887	1	OPERATOR	4		diverges alone (cone 4)
+w84:909	0	OPERATOR	2		diverges alone (cone 2)
+w84:910	0	OPERATOR	9		diverges alone (cone 9)
+w84:914	2	OPERATOR	2		diverges alone (cone 2)
+w8:492	1	OPERATOR	6		diverges alone (cone 6)
+w84:977	3	OPERATOR	6		diverges alone (cone 6)
+w84:981	1	OPERATOR	4		diverges alone (cone 4)
+w8:502	2	OPERATOR	7		diverges alone (cone 7)
+w85:1002	0	OPERATOR	4		diverges alone (cone 4)
+w85:117	1	NOREPRO	6		full graph diverges=False
+w8:515	4	NOREPRO	6		full graph diverges=False
+w85:18	3	NOREPRO	3		full graph diverges=False
+w85:192	1	OPERATOR	3		diverges alone (cone 3)
+w85:209	2	OPERATOR	5		diverges alone (cone 5)
+w85:217	2	OPERATOR	3		diverges alone (cone 3)
+w85:222	1	OPERATOR	3		diverges alone (cone 3)
+w85:234	0	OPERATOR	2		diverges alone (cone 2)
+w85:236	1	NOREPRO	6		full graph diverges=False
+w85:243	1	NOREPRO	2		full graph diverges=False
+w85:246	0	OPERATOR	3		diverges alone (cone 3)
+w85:25	1	NOREPRO	4		full graph diverges=False
+w85:266	1	OPERATOR	6		diverges alone (cone 6)
+w85:271	2	OPERATOR	4		diverges alone (cone 4)
+w85:280	1	OPERATOR	3		diverges alone (cone 3)
+w85:282	0	GRAPHOPT	9	n10	needs siblings ['n10']
+w85:297	4	GRAPHOPT	5	n4	needs siblings ['n4']
+w85:309	4	OPERATOR	3		diverges alone (cone 3)
+w85:32	0	OPERATOR	4		diverges alone (cone 4)
+w8:534	2	OPERATOR	4		diverges alone (cone 4)
+w85:342	0	OPERATOR	4		diverges alone (cone 4)
+w8:536	0	OPERATOR	4		diverges alone (cone 4)
+w85:365	0	OPERATOR	6		diverges alone (cone 6)
+w85:370	2	GRAPHOPT	9	n4	needs siblings ['n4']
+w85:41	2	OPERATOR	4		diverges alone (cone 4)
+w85:433	0	OPERATOR	8		diverges alone (cone 8)
+w85:451	0	OPERATOR	2		diverges alone (cone 2)
+w85:483	1	OPERATOR	4		diverges alone (cone 4)
+w85:492	0	OPERATOR	3		diverges alone (cone 3)
+w85:512	1	OPERATOR	5		diverges alone (cone 5)
+w8:553	4	OPERATOR	3		diverges alone (cone 3)
+w85:565	0	OPERATOR	6		diverges alone (cone 6)
+w85:574	0	OPERATOR	5		diverges alone (cone 5)
+w85:594	1	OPERATOR	6		diverges alone (cone 6)
+w85:6	0	OPERATOR	2		diverges alone (cone 2)
+w85:606	1	OPERATOR	3		diverges alone (cone 3)
+w85:631	1	OPERATOR	5		diverges alone (cone 5)
+w85:634	1	LOWERFAIL	2		align(et=1,eager=5)
+w85:662	1	OPERATOR	3		diverges alone (cone 3)
+w85:693	0	OPERATOR	3		diverges alone (cone 3)
+w85:707	1	GRAPHOPT	12	n12	needs siblings ['n12']
+w85:730	0	GRAPHOPT	13	n4,n8,n12	needs siblings ['n4', 'n8', 'n12']
+w85:73	1	OPERATOR	5		diverges alone (cone 5)
+w85:735	2	NOREPRO	6		full graph diverges=False
+w85:748	4	OPERATOR	4		diverges alone (cone 4)
+w8:578	2	OPERATOR	5		diverges alone (cone 5)
+w85:801	3	OPERATOR	3		diverges alone (cone 3)
+w8:580	3	OPERATOR	2		diverges alone (cone 2)
+w85:825	1	OPERATOR	3		diverges alone (cone 3)
+w85:846	1	OPERATOR	2		diverges alone (cone 2)
+w85:86	1	OPERATOR	3		diverges alone (cone 3)
+w85:863	0	OPERATOR	5		diverges alone (cone 5)
+w85:865	2	OPERATOR	4		diverges alone (cone 4)
+w85:893	2	OPERATOR	5		diverges alone (cone 5)
+w85:906	1	OPERATOR	4		diverges alone (cone 4)
+w85:93	1	OPERATOR	5		diverges alone (cone 5)
+w85:939	0	OPERATOR	4		diverges alone (cone 4)
+w85:951	0	LOWERFAIL	2		dev=TIMEOUT
+w86:1006	0	OPERATOR	4		diverges alone (cone 4)
+w86:102	2	OPERATOR	2		diverges alone (cone 2)
+w86:113	2	NOREPRO	3		full graph diverges=False
+w86:132	0	OPERATOR	5		diverges alone (cone 5)
+w86:142	1	OPERATOR	2		diverges alone (cone 2)
+w86:158	3	OPERATOR	3		diverges alone (cone 3)
+w86:162	2	OPERATOR	8		diverges alone (cone 8)
+w86:218	2	NOREPRO	4		full graph diverges=False
+w86:234	1	OPERATOR	5		diverges alone (cone 5)
+w86:236	2	OPERATOR	2		diverges alone (cone 2)
+w86:237	1	OPERATOR	3		diverges alone (cone 3)
+w86:270	0	OPERATOR	5		diverges alone (cone 5)
+w86:287	3	OPERATOR	8		diverges alone (cone 8)
+w86:329	0	OPERATOR	3		diverges alone (cone 3)
+w86:334	1	OPERATOR	4		diverges alone (cone 4)
+w86:349	3	NOREPRO	5		full graph diverges=False
+w86:389	1	OPERATOR	5		diverges alone (cone 5)
+w86:40	4	OPERATOR	2		diverges alone (cone 2)
+w86:43	2	GRAPHOPT	5	n2	needs siblings ['n2']
+w86:437	1	OPERATOR	6		diverges alone (cone 6)
+w86:444	4	OPERATOR	4		diverges alone (cone 4)
+w86:458	1	OPERATOR	3		diverges alone (cone 3)
+w86:466	2	OPERATOR	7		diverges alone (cone 7)
+w86:508	3	OPERATOR	4		diverges alone (cone 4)
+w86:511	1	OPERATOR	2		diverges alone (cone 2)
+w86:520	0	OPERATOR	5		diverges alone (cone 5)
+w86:54	2	NOREPRO	3		full graph diverges=False
+w86:55	0	OPERATOR	8		diverges alone (cone 8)
+w86:581	1	OPERATOR	2		diverges alone (cone 2)
+w86:600	1	OPERATOR	3		diverges alone (cone 3)
+w86:64	0	OPERATOR	3		diverges alone (cone 3)
+w86:660	0	OPERATOR	5		diverges alone (cone 5)
+w86:669	0	OPERATOR	5		diverges alone (cone 5)
+w86:673	2	NOREPRO	3		full graph diverges=False
+w86:732	0	OPERATOR	5		diverges alone (cone 5)
+w86:739	0	OPERATOR	2		diverges alone (cone 2)
+w86:783	1	OPERATOR	3		diverges alone (cone 3)
+w86:787	2	OPERATOR	5		diverges alone (cone 5)
+w86:796	0	OPERATOR	4		diverges alone (cone 4)
+w86:81	2	OPERATOR	7		diverges alone (cone 7)
+w86:819	2	OPERATOR	3		diverges alone (cone 3)
+w86:9	1	OPERATOR	2		diverges alone (cone 2)
+w86:923	1	OPERATOR	3		diverges alone (cone 3)
+w86:976	3	OPERATOR	3		diverges alone (cone 3)
+w86:996	1	GRAPHOPT	7	n2	needs siblings ['n2']
+w87:1008	3	OPERATOR	3		diverges alone (cone 3)
+w87:1027	0	OPERATOR	2		diverges alone (cone 2)
+w87:1034	0	OPERATOR	5		diverges alone (cone 5)
+w87:107	0	OPERATOR	5		diverges alone (cone 5)
+w87:137	1	OPERATOR	4		diverges alone (cone 4)
+w87:148	2	OPERATOR	4		diverges alone (cone 4)
+w87:200	2	OPERATOR	5		diverges alone (cone 5)
+w87:204	4	OPERATOR	4		diverges alone (cone 4)
+w87:212	1	GRAPHOPT	4	n8	needs siblings ['n8']
+w87:228	3	GRAPHOPT	5	n2	needs siblings ['n2']
+w87:257	0	OPERATOR	3		diverges alone (cone 3)
+w87:260	0	OPERATOR	2		diverges alone (cone 2)
+w87:261	1	OPERATOR	4		diverges alone (cone 4)
+w87:268	2	GRAPHOPT	9	n7	needs siblings ['n7']
+w8:727	0	OPERATOR	3		diverges alone (cone 3)
+w87:279	3	OPERATOR	5		diverges alone (cone 5)
+w87:31	1	OPERATOR	5		diverges alone (cone 5)
+w87:312	2	OPERATOR	5		diverges alone (cone 5)
+w87:322	0	OPERATOR	2		diverges alone (cone 2)
+w87:36	1	OPERATOR	3		diverges alone (cone 3)
+w87:363	2	OPERATOR	6		diverges alone (cone 6)
+w87:364	2	OPERATOR	8		diverges alone (cone 8)
+w87:406	2	OPERATOR	3		diverges alone (cone 3)
+w87:415	2	OPERATOR	3		diverges alone (cone 3)
+w87:429	1	OPERATOR	4		diverges alone (cone 4)
+w87:467	0	OPERATOR	5		diverges alone (cone 5)
+w87:478	1	OPERATOR	5		diverges alone (cone 5)
+w87:489	2	NOREPRO	11		full graph diverges=False
+w87:524	1	OPERATOR	4		diverges alone (cone 4)
+w87:550	0	NOREPRO	2		full graph diverges=False
+w87:571	0	OPERATOR	3		diverges alone (cone 3)
+w87:593	1	OPERATOR	8		diverges alone (cone 8)
+w8:765	1	OPERATOR	4		diverges alone (cone 4)
+w87:656	2	OPERATOR	3		diverges alone (cone 3)
+w87:66	0	OPERATOR	4		diverges alone (cone 4)
+w87:663	2	OPERATOR	4		diverges alone (cone 4)
+w87:671	0	OPERATOR	3		diverges alone (cone 3)
+w87:694	2	NOREPRO	3		full graph diverges=False
+w87:703	2	GRAPHOPT	5	n5	needs siblings ['n5']
+w87:714	3	OPERATOR	4		diverges alone (cone 4)
+w8:774	2	GRAPHOPT	7	n8	needs siblings ['n8']
+w87:752	1	OPERATOR	4		diverges alone (cone 4)
+w87:759	0	OPERATOR	2		diverges alone (cone 2)
+w87:761	4	OPERATOR	4		diverges alone (cone 4)
+w87:769	0	OPERATOR	2		diverges alone (cone 2)
+w8:779	3	OPERATOR	3		diverges alone (cone 3)
+w8:781	1	OPERATOR	11		diverges alone (cone 11)
+w87:820	3	OPERATOR	4		diverges alone (cone 4)
+w87:885	2	OPERATOR	8		diverges alone (cone 8)
+w8:79	1	OPERATOR	4		diverges alone (cone 4)
+w8:791	0	OPERATOR	4		diverges alone (cone 4)
+w87:927	1	OPERATOR	3		diverges alone (cone 3)
+w87:933	0	NOREPRO	4		full graph diverges=False
+w87:94	0	OPERATOR	2		diverges alone (cone 2)
+w87:942	1	OPERATOR	11		diverges alone (cone 11)
+w87:944	0	OPERATOR	3		diverges alone (cone 3)
+w87:953	0	OPERATOR	3		diverges alone (cone 3)
+w88:100	1	OPERATOR	4		diverges alone (cone 4)
+w88:1032	1	OPERATOR	3		diverges alone (cone 3)
+w88:113	0	OPERATOR	2		diverges alone (cone 2)
+w88:115	3	OPERATOR	5		diverges alone (cone 5)
+w88:153	2	OPERATOR	4		diverges alone (cone 4)
+w88:203	2	OPERATOR	2		diverges alone (cone 2)
+w88:206	3	OPERATOR	2		diverges alone (cone 2)
+w88:219	1	NOREPRO	7		full graph diverges=False
+w88:223	3	OPERATOR	3		diverges alone (cone 3)
+w88:268	0	NOREPRO	2		full graph diverges=False
+w88:277	4	OPERATOR	5		diverges alone (cone 5)
+w88:281	0	OPERATOR	17		diverges alone (cone 17)
+w8:833	0	OPERATOR	4		diverges alone (cone 4)
+w8:8	4	OPERATOR	3		diverges alone (cone 3)
+w88:402	3	OPERATOR	3		diverges alone (cone 3)
+w88:41	1	NOREPRO	4		full graph diverges=False
+w88:447	0	OPERATOR	2		diverges alone (cone 2)
+w88:499	0	OPERATOR	8		diverges alone (cone 8)
+w88:505	1	OPERATOR	4		diverges alone (cone 4)
+w88:521	1	OPERATOR	3		diverges alone (cone 3)
+w88:561	2	GRAPHOPT	5	n6	needs siblings ['n6']
+w88:568	1	OPERATOR	3		diverges alone (cone 3)
+w88:631	1	OPERATOR	2		diverges alone (cone 2)
+w88:652	2	OPERATOR	3		diverges alone (cone 3)
+w8:872	2	OPERATOR	3		diverges alone (cone 3)
+w88:724	1	OPERATOR	2		diverges alone (cone 2)
+w8:876	0	OPERATOR	5		diverges alone (cone 5)
+w8:882	0	NOREPRO	3		full graph diverges=False
+w88:830	1	OPERATOR	5		diverges alone (cone 5)
+w88:839	3	OPERATOR	7		diverges alone (cone 7)
+w88:867	0	OPERATOR	7		diverges alone (cone 7)
+w88:895	2	OPERATOR	5		diverges alone (cone 5)
+w88:907	0	OPERATOR	3		diverges alone (cone 3)
+w88:910	4	OPERATOR	3		diverges alone (cone 3)
+w88:95	0	OPERATOR	4		diverges alone (cone 4)
+w8:895	1	NOREPRO	3		full graph diverges=False
+w88:971	1	OPERATOR	7		diverges alone (cone 7)
+w8:90	0	OPERATOR	3		diverges alone (cone 3)
+w89:0	1	OPERATOR	4		diverges alone (cone 4)
+w89:1013	3	GRAPHOPT	5	n4	needs siblings ['n4']
+w89:1026	0	OPERATOR	3		diverges alone (cone 3)
+w8:915	1	OPERATOR	2		diverges alone (cone 2)
+w89:15	3	LOWERFAIL	3		dev=TIMEOUT
+w89:179	1	NOREPRO	6		full graph diverges=False
+w89:209	1	OPERATOR	4		diverges alone (cone 4)
+w89:227	2	OPERATOR	8		diverges alone (cone 8)
+w89:228	0	OPERATOR	3		diverges alone (cone 3)
+w8:923	3	OPERATOR	4		diverges alone (cone 4)
+w89:308	2	GRAPHOPT	6	n1	needs siblings ['n1']
+w89:347	3	OPERATOR	5		diverges alone (cone 5)
+w89:377	3	OPERATOR	6		diverges alone (cone 6)
+w89:385	3	OPERATOR	3		diverges alone (cone 3)
+w89:397	1	OPERATOR	3		diverges alone (cone 3)
+w89:44	0	OPERATOR	4		diverges alone (cone 4)
+w89:453	2	OPERATOR	7		diverges alone (cone 7)
+w89:456	2	GRAPHOPT	6	n1	needs siblings ['n1']
+w89:459	3	OPERATOR	4		diverges alone (cone 4)
+w89:484	3	OPERATOR	3		diverges alone (cone 3)
+w89:495	1	OPERATOR	3		diverges alone (cone 3)
+w89:513	0	OPERATOR	7		diverges alone (cone 7)
+w89:545	4	OPERATOR	3		diverges alone (cone 3)
+w89:550	3	OPERATOR	4		diverges alone (cone 4)
+w8:955	2	OPERATOR	3		diverges alone (cone 3)
+w89:573	0	OPERATOR	3		diverges alone (cone 3)
+w89:622	3	OPERATOR	4		diverges alone (cone 4)
+w89:631	1	OPERATOR	3		diverges alone (cone 3)
+w89:634	0	OPERATOR	5		diverges alone (cone 5)
+w89:636	1	OPERATOR	4		diverges alone (cone 4)
+w89:656	1	OPERATOR	5		diverges alone (cone 5)
+w89:693	0	OPERATOR	7		diverges alone (cone 7)
+w89:789	0	OPERATOR	2		diverges alone (cone 2)
+w89:795	3	OPERATOR	4		diverges alone (cone 4)
+w89:823	2	OPERATOR	4		diverges alone (cone 4)
+w89:828	2	OPERATOR	3		diverges alone (cone 3)
+w89:90	1	GRAPHOPT	8	n9	needs siblings ['n9']
+w89:912	1	OPERATOR	3		diverges alone (cone 3)
+w89:924	0	OPERATOR	2		diverges alone (cone 2)
+w89:928	3	OPERATOR	2		diverges alone (cone 2)
+w89:959	1	OPERATOR	8		diverges alone (cone 8)
+w89:963	3	OPERATOR	5		diverges alone (cone 5)
+w89:972	3	OPERATOR	9		diverges alone (cone 9)
+w90:1004	0	OPERATOR	3		diverges alone (cone 3)
+w90:1033	1	OPERATOR	4		diverges alone (cone 4)
+w90:175	0	OPERATOR	2		diverges alone (cone 2)
+w90:176	2	OPERATOR	5		diverges alone (cone 5)
+w90:266	0	OPERATOR	4		diverges alone (cone 4)
+w90:290	1	NOREPRO	3		full graph diverges=False
+w90:300	2	OPERATOR	4		diverges alone (cone 4)
+w90:333	5	OPERATOR	2		diverges alone (cone 2)
+w90:350	0	OPERATOR	2		diverges alone (cone 2)
+w90:360	2	OPERATOR	4		diverges alone (cone 4)
+w90:417	1	OPERATOR	5		diverges alone (cone 5)
+w90:469	2	OPERATOR	4		diverges alone (cone 4)
+w90:473	4	NOREPRO	3		full graph diverges=False
+w90:484	3	OPERATOR	3		diverges alone (cone 3)
+w90:486	0	OPERATOR	3		diverges alone (cone 3)
+w90:490	0	OPERATOR	4		diverges alone (cone 4)
+w90:548	0	OPERATOR	6		diverges alone (cone 6)
+w90:552	2	OPERATOR	6		diverges alone (cone 6)
+w90:588	3	GRAPHOPT	5	n3	needs siblings ['n3']
+w90:592	0	NOREPRO	3		full graph diverges=False
+w90:606	0	OPERATOR	2		diverges alone (cone 2)
+w90:616	4	OPERATOR	4		diverges alone (cone 4)
+w90:617	1	OPERATOR	2		diverges alone (cone 2)
+w90:641	1	OPERATOR	4		diverges alone (cone 4)
+w90:697	2	OPERATOR	5		diverges alone (cone 5)
+w90:71	1	OPERATOR	4		diverges alone (cone 4)
+w90:757	2	OPERATOR	5		diverges alone (cone 5)
+w90:779	0	OPERATOR	3		diverges alone (cone 3)
+w90:809	2	LOWERFAIL	5		align(et=2,eager=3)
+w90:826	2	OPERATOR	3		diverges alone (cone 3)
+w90:83	2	OPERATOR	2		diverges alone (cone 2)
+w90:841	1	OPERATOR	3		diverges alone (cone 3)
+w90:856	4	OPERATOR	2		diverges alone (cone 2)
+w90:859	2	NOREPRO	2		full graph diverges=False
+w90:899	0	OPERATOR	4		diverges alone (cone 4)
+w90:914	0	OPERATOR	5		diverges alone (cone 5)
+w90:92	0	OPERATOR	2		diverges alone (cone 2)
+w90:951	0	NOREPRO	7		full graph diverges=False
+w90:98	0	OPERATOR	8		diverges alone (cone 8)
+w90:980	4	GRAPHOPT	6	n4,n6	needs siblings ['n4', 'n6']
+w90:994	3	OPERATOR	4		diverges alone (cone 4)
+w91:10	1	OPERATOR	3		diverges alone (cone 3)
+w91:1013	2	OPERATOR	9		diverges alone (cone 9)
+w91:123	2	OPERATOR	6		diverges alone (cone 6)
+w91:139	0	NOREPRO	2		full graph diverges=False
+w9:119	1	OPERATOR	8		diverges alone (cone 8)
+w91:253	1	OPERATOR	8		diverges alone (cone 8)
+w91:254	1	OPERATOR	3		diverges alone (cone 3)
+w91:264	1	NOREPRO	4		full graph diverges=False
+w91:275	1	GRAPHOPT	3	n1	needs siblings ['n1']
+w9:128	0	OPERATOR	5		diverges alone (cone 5)
+w91:282	0	OPERATOR	3		diverges alone (cone 3)
+w91:357	1	OPERATOR	3		diverges alone (cone 3)
+w91:377	0	NOREPRO	2		full graph diverges=False
+w91:386	0	OPERATOR	2		diverges alone (cone 2)
+w91:388	4	GRAPHOPT	6	n9	needs siblings ['n9']
+w9:140	0	OPERATOR	2		diverges alone (cone 2)
+w91:423	3	OPERATOR	5		diverges alone (cone 5)
+w91:425	4	OPERATOR	3		diverges alone (cone 3)
+w91:521	1	OPERATOR	2		diverges alone (cone 2)
+w91:536	3	OPERATOR	5		diverges alone (cone 5)
+w91:538	0	OPERATOR	3		diverges alone (cone 3)
+w91:576	0	OPERATOR	3		diverges alone (cone 3)
+w91:586	1	OPERATOR	2		diverges alone (cone 2)
+w91:594	1	OPERATOR	7		diverges alone (cone 7)
+w91:603	1	OPERATOR	3		diverges alone (cone 3)
+w91:608	2	OPERATOR	5		diverges alone (cone 5)
+w91:614	0	NOREPRO	2		full graph diverges=False
+w91:623	3	OPERATOR	2		diverges alone (cone 2)
+w9:164	1	OPERATOR	5		diverges alone (cone 5)
+w91:644	2	OPERATOR	3		diverges alone (cone 3)
+w91:66	2	OPERATOR	3		diverges alone (cone 3)
+w91:685	0	OPERATOR	3		diverges alone (cone 3)
+w91:698	3	OPERATOR	3		diverges alone (cone 3)
+w91:723	1	OPERATOR	7		diverges alone (cone 7)
+w91:735	0	OPERATOR	4		diverges alone (cone 4)
+w91:744	3	OPERATOR	2		diverges alone (cone 2)
+w91:758	2	OPERATOR	4		diverges alone (cone 4)
+w91:788	2	OPERATOR	7		diverges alone (cone 7)
+w9:18	0	OPERATOR	3		diverges alone (cone 3)
+w9:180	2	OPERATOR	3		diverges alone (cone 3)
+w91:818	2	NOREPRO	5		full graph diverges=False
+w91:851	1	OPERATOR	6		diverges alone (cone 6)
+w91:859	4	OPERATOR	4		diverges alone (cone 4)
+w91:89	0	OPERATOR	5		diverges alone (cone 5)
+w91:927	1	OPERATOR	6		diverges alone (cone 6)
+w91:974	1	OPERATOR	2		diverges alone (cone 2)
+w92:12	0	OPERATOR	9		diverges alone (cone 9)
+w92:14	0	OPERATOR	5		diverges alone (cone 5)
+w92:145	1	OPERATOR	5		diverges alone (cone 5)
+w92:146	1	OPERATOR	6		diverges alone (cone 6)
+w92:169	0	OPERATOR	5		diverges alone (cone 5)
+w92:217	0	GRAPHOPT	6	n5	needs siblings ['n5']
+w92:218	2	OPERATOR	4		diverges alone (cone 4)
+w92:242	0	OPERATOR	2		diverges alone (cone 2)
+w9:228	1	OPERATOR	2		diverges alone (cone 2)
+w9:2	3	OPERATOR	5		diverges alone (cone 5)
+w92:304	0	GRAPHOPT	8	n13	needs siblings ['n13']
+w9:232	2	NOREPRO	5		full graph diverges=False
+w92:364	1	OPERATOR	4		diverges alone (cone 4)
+w92:382	2	OPERATOR	4		diverges alone (cone 4)
+w92:457	0	OPERATOR	6		diverges alone (cone 6)
+w92:458	0	OPERATOR	4		diverges alone (cone 4)
+w92:464	1	OPERATOR	4		diverges alone (cone 4)
+w92:465	0	OPERATOR	6		diverges alone (cone 6)
+w92:470	0	OPERATOR	7		diverges alone (cone 7)
+w92:471	0	OPERATOR	3		diverges alone (cone 3)
+w92:476	1	OPERATOR	3		diverges alone (cone 3)
+w92:497	2	OPERATOR	6		diverges alone (cone 6)
+w92:522	1	OPERATOR	5		diverges alone (cone 5)
+w92:537	0	GRAPHOPT	5	n6	needs siblings ['n6']
+w92:61	0	OPERATOR	2		diverges alone (cone 2)
+w92:626	2	OPERATOR	2		diverges alone (cone 2)
+w92:677	3	NOREPRO	7		full graph diverges=False
+w9:269	1	OPERATOR	6		diverges alone (cone 6)
+w92:701	0	OPERATOR	2		diverges alone (cone 2)
+w9:271	3	NOREPRO	6		full graph diverges=False
+w92:721	1	OPERATOR	5		diverges alone (cone 5)
+w92:752	2	OPERATOR	5		diverges alone (cone 5)
+w92:760	2	OPERATOR	4		diverges alone (cone 4)
+w92:769	2	NOREPRO	3		full graph diverges=False
+w92:778	2	OPERATOR	4		diverges alone (cone 4)
+w92:804	0	OPERATOR	3		diverges alone (cone 3)
+w92:845	2	OPERATOR	4		diverges alone (cone 4)
+w9:285	1	NOREPRO	6		full graph diverges=False
+w92:872	2	OPERATOR	3		diverges alone (cone 3)
+w92:884	3	OPERATOR	3		diverges alone (cone 3)
+w92:896	1	GRAPHOPT	10	n4	needs siblings ['n4']
+w92:913	1	OPERATOR	6		diverges alone (cone 6)
+w92:916	1	GRAPHOPT	4	n2	needs siblings ['n2']
+w92:923	2	GRAPHOPT	6	n6	needs siblings ['n6']
+w92:926	1	OPERATOR	5		diverges alone (cone 5)
+w92:944	1	OPERATOR	7		diverges alone (cone 7)
+w92:953	1	OPERATOR	4		diverges alone (cone 4)
+w92:976	0	OPERATOR	8		diverges alone (cone 8)
+w92:995	0	OPERATOR	3		diverges alone (cone 3)
+w93:136	0	OPERATOR	3		diverges alone (cone 3)
+w93:146	1	OPERATOR	3		diverges alone (cone 3)
+w93:173	0	OPERATOR	2		diverges alone (cone 2)
+w9:318	0	OPERATOR	3		diverges alone (cone 3)
+w93:191	2	OPERATOR	6		diverges alone (cone 6)
+w93:214	0	OPERATOR	4		diverges alone (cone 4)
+w9:322	2	OPERATOR	9		diverges alone (cone 9)
+w93:250	1	OPERATOR	3		diverges alone (cone 3)
+w93:270	4	LOWERFAIL	5		align(et=2,eager=5)
+w93:285	2	OPERATOR	4		diverges alone (cone 4)
+w93:342	0	GRAPHOPT	5	n5	needs siblings ['n5']
+w93:352	1	OPERATOR	9		diverges alone (cone 9)
+w93:39	2	OPERATOR	3		diverges alone (cone 3)
+w93:401	0	NOREPRO	8		full graph diverges=False
+w93:410	0	OPERATOR	2		diverges alone (cone 2)
+w93:418	2	OPERATOR	6		diverges alone (cone 6)
+w93:430	0	OPERATOR	10		diverges alone (cone 10)
+w93:468	1	OPERATOR	7		diverges alone (cone 7)
+w9:347	2	OPERATOR	4		diverges alone (cone 4)
+w93:490	0	OPERATOR	2		diverges alone (cone 2)
+w9:350	0	OPERATOR	4		diverges alone (cone 4)
+w93:513	3	OPERATOR	5		diverges alone (cone 5)
+w93:538	1	OPERATOR	4		diverges alone (cone 4)
+w93:552	3	OPERATOR	2		diverges alone (cone 2)
+w93:573	0	OPERATOR	4		diverges alone (cone 4)
+w93:575	4	OPERATOR	4		diverges alone (cone 4)
+w93:612	2	OPERATOR	3		diverges alone (cone 3)
+w93:618	1	OPERATOR	6		diverges alone (cone 6)
+w93:6	2	OPERATOR	2		diverges alone (cone 2)
+w93:638	1	OPERATOR	3		diverges alone (cone 3)
+w93:669	0	OPERATOR	4		diverges alone (cone 4)
+w93:675	0	OPERATOR	3		diverges alone (cone 3)
+w93:687	3	OPERATOR	4		diverges alone (cone 4)
+w93:695	2	OPERATOR	7		diverges alone (cone 7)
+w93:731	0	OPERATOR	6		diverges alone (cone 6)
+w93:759	2	OPERATOR	4		diverges alone (cone 4)
+w93:768	1	OPERATOR	2		diverges alone (cone 2)
+w93:799	0	OPERATOR	4		diverges alone (cone 4)
+w93:82	0	OPERATOR	3		diverges alone (cone 3)
+w9:382	1	OPERATOR	4		diverges alone (cone 4)
+w93:831	4	OPERATOR	2		diverges alone (cone 2)
+w93:886	0	OPERATOR	3		diverges alone (cone 3)
+w93:895	0	OPERATOR	3		diverges alone (cone 3)
+w9:390	2	OPERATOR	5		diverges alone (cone 5)
+w9:399	1	OPERATOR	3		diverges alone (cone 3)
+w94:0	0	OPERATOR	2		diverges alone (cone 2)
+w94:1040	0	OPERATOR	5		diverges alone (cone 5)
+w94:105	1	OPERATOR	6		diverges alone (cone 6)
+w94:133	1	OPERATOR	4		diverges alone (cone 4)
+w9:415	0	OPERATOR	7		diverges alone (cone 7)
+w9:416	2	OPERATOR	3		diverges alone (cone 3)
+w94:167	2	GRAPHOPT	9	n5	needs siblings ['n5']
+w94:175	0	OPERATOR	2		diverges alone (cone 2)
+w94:18	0	LOWERFAIL	4		dev=TIMEOUT
+w94:184	0	OPERATOR	2		diverges alone (cone 2)
+w94:209	1	OPERATOR	3		diverges alone (cone 3)
+w94:210	1	NOREPRO	5		full graph diverges=False
+w94:212	3	OPERATOR	4		diverges alone (cone 4)
+w94:237	2	OPERATOR	4		diverges alone (cone 4)
+w94:255	2	GRAPHOPT	9	n8	needs siblings ['n8']
+w94:258	1	OPERATOR	6		diverges alone (cone 6)
+w94:266	0	LOWERFAIL	3		dev=TIMEOUT
+w94:267	0	OPERATOR	2		diverges alone (cone 2)
+w94:283	1	OPERATOR	6		diverges alone (cone 6)
+w94:317	1	GRAPHOPT	9	n11	needs siblings ['n11']
+w94:39	2	OPERATOR	3		diverges alone (cone 3)
+w9:440	0	OPERATOR	2		diverges alone (cone 2)
+w94:406	0	OPERATOR	6		diverges alone (cone 6)
+w94:411	2	OPERATOR	3		diverges alone (cone 3)
+w94:421	2	OPERATOR	4		diverges alone (cone 4)
+w94:435	2	OPERATOR	4		diverges alone (cone 4)
+w94:450	3	OPERATOR	2		diverges alone (cone 2)
+w94:470	2	OPERATOR	7		diverges alone (cone 7)
+w94:500	0	NOREPRO	4		full graph diverges=False
+w9:45	2	OPERATOR	4		diverges alone (cone 4)
+w94:562	2	NOREPRO	8		full graph diverges=False
+w94:582	3	OPERATOR	3		diverges alone (cone 3)
+w94:631	1	OPERATOR	4		diverges alone (cone 4)
+w94:667	0	OPERATOR	5		diverges alone (cone 5)
+w94:750	0	OPERATOR	3		diverges alone (cone 3)
+w9:476	2	OPERATOR	5		diverges alone (cone 5)
+w94:771	0	OPERATOR	3		diverges alone (cone 3)
+w94:784	2	OPERATOR	4		diverges alone (cone 4)
+w94:786	1	OPERATOR	2		diverges alone (cone 2)
+w94:803	3	OPERATOR	4		diverges alone (cone 4)
+w94:804	2	NOREPRO	2		full graph diverges=False
+w94:834	2	OPERATOR	9		diverges alone (cone 9)
+w94:850	2	GRAPHOPT	4	n2	needs siblings ['n2']
+w94:859	0	OPERATOR	4		diverges alone (cone 4)
+w94:889	1	GRAPHOPT	9	n9	needs siblings ['n9']
+w9:489	3	OPERATOR	6		diverges alone (cone 6)
+w94:894	0	OPERATOR	7		diverges alone (cone 7)
+w94:923	1	OPERATOR	2		diverges alone (cone 2)
+w95:113	1	OPERATOR	3		diverges alone (cone 3)
+w95:156	3	OPERATOR	5		diverges alone (cone 5)
+w95:175	0	OPERATOR	2		diverges alone (cone 2)
+w95:209	0	GRAPHOPT	3	n4	needs siblings ['n4']
+w95:22	2	OPERATOR	7		diverges alone (cone 7)
+w95:233	1	OPERATOR	4		diverges alone (cone 4)
+w95:244	1	OPERATOR	3		diverges alone (cone 3)
+w95:308	2	OPERATOR	4		diverges alone (cone 4)
+w95:338	1	OPERATOR	4		diverges alone (cone 4)
+w95:341	0	OPERATOR	3		diverges alone (cone 3)
+w95:378	0	OPERATOR	3		diverges alone (cone 3)
+w95:379	3	OPERATOR	4		diverges alone (cone 4)
+w95:40	1	OPERATOR	4		diverges alone (cone 4)
+w9:547	3	OPERATOR	4		diverges alone (cone 4)
+w9:548	3	GRAPHOPT	4	n1	needs siblings ['n1']
+w95:506	1	GRAPHOPT	7	n7	needs siblings ['n7']
+w95:533	3	LOWERFAIL	5		dev=TIMEOUT
+w9:556	3	OPERATOR	4		diverges alone (cone 4)
+w95:583	0	OPERATOR	4		diverges alone (cone 4)
+w9:560	2	OPERATOR	2		diverges alone (cone 2)
+w95:614	5	OPERATOR	3		diverges alone (cone 3)
+w95:622	2	OPERATOR	4		diverges alone (cone 4)
+w95:631	0	OPERATOR	2		diverges alone (cone 2)
+w95:65	4	OPERATOR	6		diverges alone (cone 6)
+w95:663	0	OPERATOR	3		diverges alone (cone 3)
+w9:567	3	GRAPHOPT	6	n5	needs siblings ['n5']
+w95:673	1	OPERATOR	3		diverges alone (cone 3)
+w95:688	0	OPERATOR	4		diverges alone (cone 4)
+w95:7	1	OPERATOR	5		diverges alone (cone 5)
+w95:737	0	NOREPRO	4		full graph diverges=False
+w95:787	1	OPERATOR	6		diverges alone (cone 6)
+w95:798	1	OPERATOR	10		diverges alone (cone 10)
+w9:58	0	OPERATOR	4		diverges alone (cone 4)
+w95:81	0	OPERATOR	6		diverges alone (cone 6)
+w9:584	0	OPERATOR	2		diverges alone (cone 2)
+w95:880	0	OPERATOR	2		diverges alone (cone 2)
+w95:939	2	OPERATOR	4		diverges alone (cone 4)
+w9:626	3	GRAPHOPT	6	n6,n9	needs siblings ['n6', 'n9']
+w9:640	2	OPERATOR	3		diverges alone (cone 3)
+w9:660	2	OPERATOR	4		diverges alone (cone 4)
+w9:684	3	OPERATOR	3		diverges alone (cone 3)
+w9:727	0	OPERATOR	3		diverges alone (cone 3)
+w9:728	1	OPERATOR	3		diverges alone (cone 3)
+w9:794	0	OPERATOR	3		diverges alone (cone 3)
+w9:809	3	OPERATOR	4		diverges alone (cone 4)
+w9:832	0	OPERATOR	2		diverges alone (cone 2)
+w9:836	0	GRAPHOPT	7	n9	needs siblings ['n9']
+w9:863	2	OPERATOR	3		diverges alone (cone 3)
+w9:914	2	OPERATOR	3		diverges alone (cone 3)
+w9:926	1	OPERATOR	4		diverges alone (cone 4)
+w9:936	1	OPERATOR	4		diverges alone (cone 4)
+w9:970	1	OPERATOR	7		diverges alone (cone 7)

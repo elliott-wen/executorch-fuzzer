@@ -24,7 +24,7 @@ Crash/timeout isolation mirrors net/client.py: the runner runs as a child proces
 non-zero exit → CRASH, exceeding the deadline → TIMEOUT. The worker ALWAYS returns a verdict.
 
 NUMERICS NOTE (same caveat as fvp_client): the QNN float path is fp16 HTP (see
-gen/backends/qualcomm.py USE_FP16), so outputs come back fp16 and carry quantization/precision
+gen/export/backends/qualcomm.py USE_FP16), so outputs come back fp16 and carry quantization/precision
 error vs an fp32 eager oracle. Choosing the right reference is a feeder/compare.py concern,
 not this client's — this client just returns what the emulator produced.
 
@@ -62,13 +62,13 @@ QNN_RUNNER = HERE / "qnn_runner.sh"
 def _output_metas(pte: bytes) -> list[dict]:
     """Recover [{dtype, dims}, ...] for the program's outputs from the .pte, in order.
 
-    Uses ExecuTorch's method_meta — a parse of the program's I/O specs that does NOT
-    load_method, so the QNN delegate is never initialized and no emulator is needed here.
-    `dtype` is the ScalarType int code, exactly the protocol's tensor dtype encoding."""
+    Reads the method's I/O specs via load_method("forward").metadata (the standalone
+    Program.method_meta was removed in newer ExecuTorch). `dtype` is the ScalarType int
+    code, exactly the protocol's tensor dtype encoding."""
     from executorch.runtime import Runtime
 
     prog = Runtime.get().load_program(pte)
-    mm = prog.method_meta("forward")
+    mm = prog.load_method("forward").metadata
     metas = []
     for i in range(mm.num_outputs()):
         ts = mm.output_tensor_meta(i)

@@ -33,6 +33,9 @@ from pathlib import Path
 # The ONLY thing the parent dir is used for: putting it on PYTHONPATH so child workers
 # can `import mobile`. Nothing is ever written here — outputs go to the launch cwd.
 IMPORT_ROOT = Path(__file__).resolve().parent.parent
+# Workers run the repo-root pregen.py launcher directly (it self-injects sys.path), so no
+# `-m mobile` is needed. Lives next to this file.
+PREGEN = str(Path(__file__).resolve().parent / "pregen.py")
 # Spawn workers with the same interpreter that launched this fleet (the co-located
 # .venv), so it survives the venv being moved. Its bin dir goes on PATH because
 # executorch lowering shells out to `flatc` (FlatBuffers compiler), which lives there.
@@ -51,7 +54,7 @@ def main() -> int:
     ap.add_argument("--total", type=int, default=0,
                     help="if set, split this many jobs across workers (overrides --per-worker)")
     ap.add_argument("--out", default="tmp/corpus")
-    ap.add_argument("--nodes", type=int, default=16)
+    ap.add_argument("--nodes", type=int, default=8)
     ap.add_argument("--leaf-prob", type=float, default=0.3)
     ap.add_argument("--out-alias-prob", type=float, default=0.1,
                     help="chance a grow node's out= buffer aliases a live producer "
@@ -71,12 +74,19 @@ def main() -> int:
     a = ap.parse_args()
 
     per_worker = (a.total + a.workers - 1) // a.workers if a.total else a.per_worker
+    # Resolve --out/--logdir to ABSOLUTE paths against the fleet's launch cwd before they
+    # reach the workers. Each worker is a subprocess whose cwd is not guaranteed to match
+    # ours (e.g. under `screen`, whose window can start in $HOME), so a relative --out
+    # would have the fleet and the workers write to / glob two different dirs — the corpus
+    # would only "show up" with an absolute path. Pin it here so everyone agrees.
+    a.out = str(Path(a.out).resolve())
+    a.logdir = str(Path(a.logdir).resolve())
     Path(a.out).mkdir(parents=True, exist_ok=True)
     logdir = Path(a.logdir)
     logdir.mkdir(parents=True, exist_ok=True)
 
     def cmd(i: int) -> list[str]:
-        return [PY, "-m", "mobile", "pregen", "--out", a.out, "--id", f"w{i}",
+        return [PY, PREGEN, "--out", a.out, "--id", f"w{i}",
                 "--count", str(per_worker), "--seed", str(a.seed),
                 "--nodes", str(a.nodes), "--leaf-prob", str(a.leaf_prob),
                 "--out-alias-prob", str(a.out_alias_prob),
@@ -112,8 +122,9 @@ def main() -> int:
 
     def launch(i: int) -> None:
         fh = open(logdir / f"w{i}.log", "ab")
-        # Inherit the fleet's launch cwd so a relative --out resolves where the user ran
-        # the command. Imports already work via PYTHONPATH=IMPORT_ROOT in ENV.
+        # --out/--logdir were made absolute in main(), so the worker's cwd is irrelevant to
+        # where the corpus lands (it need not match ours under `screen` et al.). Imports
+        # work via PYTHONPATH=IMPORT_ROOT in ENV.
         p = subprocess.Popen(cmd(i), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                              env=ENV)
         last_beat[i] = time.monotonic()           # grace window starts at launch

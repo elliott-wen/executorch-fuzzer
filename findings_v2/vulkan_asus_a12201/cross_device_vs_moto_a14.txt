@@ -1,0 +1,88 @@
+corpus jobs: 76801
+NEW  (tmp/vulkan_asus_a12201_skip.tsv): 45574 non-OK
+BASE (tmp/vulkan_moto_g54_a14_skip.tsv): 46748 non-OK
+
+== shared (same non-OK status both) ==
+  SKIP      33850
+  MISMATCH  7611
+  CRASH     3180
+  TOTAL shared non-OK: 44641
+
+== status CHANGED (non-OK both, differs) ==
+  MISMATCH->CRASH        4
+  CRASH->MISMATCH        3
+  CRASH->SKIP            3
+  SKIP->TIMEOUT          2
+  SKIP->MISMATCH         1
+  SKIP->CRASH            1
+  TOTAL changed: 14
+
+== NEW-unique (OK on baseline, non-OK on Android14) ==
+  MISMATCH  915
+  TIMEOUT   2
+  CRASH     2
+  TOTAL new-unique: 919
+
+== BASELINE-unique (OK on Android14, non-OK on baseline) ==
+  MISMATCH  2087
+  CRASH     5
+  SKIP      1
+  TOTAL baseline-unique: 2093
+
+-- sample NEW-unique (Android-14-only failures) --
+  MISMATCH  w73:568      out[5] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w124:473     out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w107:367     out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w17:61       out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w13:664      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w127:135     out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w104:292     out[2] max|delta|=2.043e+02 (rtol=0.01 atol=0.001)
+  MISMATCH  w50:359      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w17:462      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w42:206      out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w109:463     out[2] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w118:640     out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w31:312      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w65:758      out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w120:793     out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w40:650      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w122:444     out[2] max|delta|=4.595e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w11:394      out[3] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w33:688      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w103:7       out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w103:58      out[3] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w99:362      out[2] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w33:42       out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w1:85        out[0] max|delta|=7.653e+01 (rtol=0.01 atol=0.001)
+  MISMATCH  w6:131       out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w18:327      out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w60:626      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w108:173     out[2] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w101:477     out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w88:726      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w69:420      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w41:242      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w29:23       out[4] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w67:179      out[4] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w63:6        out[0] max|delta|=6.250e-02 (rtol=0.01 atol=0.001)
+  MISMATCH  w77:489      out[1] max|delta|=3.904e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w6:322       out[2] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w7:334       out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w111:534     out[3] max|delta|=1.117e+05 (rtol=0.01 atol=0.001)
+  MISMATCH  w63:67       out[1] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+
+-- sample status-CHANGED --
+  CRASH->MISMATCH  w49:336      out[3] dtype torch.bool vs torch.uint8
+  MISMATCH->CRASH     w18:714      executor process died (native abort)
+  SKIP->MISMATCH  w93:250      out[1] max|delta|=1.164e+00 (rtol=0.01 atol=0.001)
+  CRASH->SKIP      w65:87       executor ExecutorchInvalidArgumentException: [ExecuTorch Error 0x12] Invalid argument: Exe
+  SKIP->TIMEOUT   w0:121       no result within 60s
+  CRASH->SKIP      w2:471       executor ExecutorchInvalidArgumentException: [ExecuTorch Error 0x12] Invalid argument: Exe
+  MISMATCH->CRASH     w59:64       executor process died (native abort)
+  MISMATCH->CRASH     w117:625     executor process died (native abort)
+  CRASH->MISMATCH  w48:531      out[0] max|delta|=2.724e+00 (rtol=0.01 atol=0.001)
+  MISMATCH->CRASH     w54:557      executor process died (native abort)
+  CRASH->SKIP      w96:769      executor CppException: Exception raised from get_shader_info at /data/jwen929/mobile/pytor
+  CRASH->MISMATCH  w116:525     out[1] non-finite mismatch (nan/inf positions differ)
+  SKIP->TIMEOUT   w0:120       no result within 60s
+  SKIP->CRASH     w63:185      executor process died (native abort)

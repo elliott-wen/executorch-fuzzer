@@ -7,11 +7,13 @@ and tensor buffers). Tensors serialize as `{dtype, dims}` (in the header) plus a
 contiguous little-endian raw buffer (no numpy/pickle).
 
 Three message shapes:
-    pushjob   producer → broker   header{job_id, inputs[], eager[]} + pte + in-raws + eager-raws
-    job       broker   → client   header{job_id, inputs[]}          + pte + in-raws
-    result    client   → broker   header{job_id, status, detail, outputs[]} + out-raws
+    pushjob   producer → corpus → feeder   header{job_id, inputs[], eager[]} + pte + in/eager-raws
+    job       feeder → broker → worker     header{job_id, inputs[], out_metas[]} + pte + in-raws
+    result    worker → broker → feeder     header{job_id, status, detail, outputs[]} + out-raws
 
-`dtype` is the model's ScalarType integer code (see z3/concretize) so the phone, the
+The feeder owns the diff: it reads the pushjob from the corpus (keeping eager), ships the lean
+job through the broker (a pure router) to a worker, and compares the worker's raw outputs vs its
+kept eager. `dtype` is the model's ScalarType integer code (see z3/concretize) so the phone, the
 broker, and the z3 model all agree on dtype numbering.
 """
 
@@ -80,13 +82,13 @@ def _metas_raws(tensors: list) -> tuple[list, list]:
 
 
 # ── result (client → broker) ─────────────────────────────────────────────────────
-# The client runs the .pte and returns its RAW output tensors; the BROKER diffs them
-# against the eager reference it kept. This inversion means the comparison logic lives
-# in ONE place (compare.py, host-side) instead of being duplicated on every client/phone,
-# and the host can always inspect the actual tensors a device produced.
-#   status "RAN"  → outputs attached; the broker compares → OK/MISMATCH.
+# The client runs the .pte and returns its RAW output tensors; the broker routes the result
+# back to the FEEDER, which diffs them against the eager reference it kept. This keeps the
+# comparison logic in ONE place (compare.py, host-side) instead of duplicating it on every
+# client/phone, and the host can always inspect the actual tensors a device produced.
+#   status "RAN"  → outputs attached; the feeder compares → OK/MISMATCH.
 #   status else   → "SKIP"/"CRASH"/"TIMEOUT" reported by the client (detail set, no
-#                   outputs); the broker records it verbatim, no comparison.
+#                   outputs); the feeder records it verbatim, no comparison.
 
 def encode_result(job_id: str, status: str, detail: str = "", outputs: list | None = None) -> list[bytes]:
     out_metas, out_raws = [], []
@@ -108,51 +110,59 @@ def decode_result(frames: list[bytes]) -> tuple[str, str, str, list]:
 # ── pushjob (producer → broker) ────────────────────────────────────────────────
 
 def encode_pushjob(job_id: str, pte: bytes, inputs: list, eager: list,
-                   desc: str = "", user_pos: list | None = None) -> list[bytes]:
-    """producer → broker → client: pte + inputs + eager in one message, plus `desc` (the
-    op-chain) which the BROKER peeks to log a crash item. The graph SOURCE is not carried
-    here — it lives in the corpus (corpus/<job_id>.py), so the broker needn't hold it.
+                   desc: str = "", user_pos: list | None = None,
+                   delegated: dict | None = None) -> list[bytes]:
+    """The corpus record (written by the producer/pregen, later read by the FEEDER): pte +
+    inputs + eager in one message, plus `desc` (the op-chain) which the FEEDER peeks to name a
+    crash item. The graph SOURCE is not carried here — it lives in the corpus (corpus/<job_id>.py).
 
-    `user_pos` lists which .pte output indices are the REAL graph outputs (USER_OUTPUT);
-    the client keeps only those before diffing vs `eager`, dropping mutated-input aliases
+    `user_pos` lists which .pte output indices are the REAL graph outputs (USER_OUTPUT); the
+    FEEDER keeps only those before diffing vs `eager`, dropping mutated-input aliases
     (out=/indices= buffers wired to a leaf) that ExecuTorch also returns.
 
-    The heavy frames (pte + tensor blobs) are gzip-compressed; the header (frame 0) stays
-    clear JSON so the broker routes/peeks WITHOUT decompressing, and the CLIENT decompresses
-    them in decode_pushjob — so they travel compressed all the way to the phone.
+    The heavy frames (pte + tensor blobs) are gzip-compressed; the header (frame 0) stays clear
+    JSON. The feeder strips this to a lean JOB (job_frames_from_pushjob) and ships it through the
+    broker — which routes by peeking the header job_id WITHOUT decompressing — to a worker, which
+    decompresses it in decode_job. So payloads travel compressed all the way to the phone/FVP.
     """
     in_metas, in_raws = _metas_raws(inputs)
     eg_metas, eg_raws = _metas_raws(eager)
     payload = [gzip.compress(b) for b in (pte, *in_raws, *eg_raws)]
     header = {"job_id": job_id, "inputs": in_metas, "eager": eg_metas, "desc": desc or "",
               "user_pos": list(user_pos) if user_pos is not None else None}
+    if delegated is not None:
+        header["delegated"] = delegated   # {"ops": n, "non": m, "calls": k} — delegation breakdown
     return _pack(header, payload)
 
 
 def peek_jobinfo(frames: list[bytes]) -> tuple[str, str]:
-    """Broker side: read (job_id, desc) from the pushjob header — no tensors deserialized.
-    The broker holds desc for the in-flight window so a crash item names its op-chain; it
-    forwards the raw frames to a client untouched."""
+    """Feeder side: read (job_id, desc) from the pushjob header — no tensors deserialized.
+    The feeder holds desc for the in-flight window so a crash item names its op-chain; it
+    forwards the lean frames to a worker (via the broker) untouched."""
     h = json.loads(frames[0].decode("utf-8"))
     return h["job_id"], h.get("desc", "")
 
 
 def job_frames_from_pushjob(frames: list[bytes]) -> list[bytes]:
-    """Broker side: turn a pushjob into the lean JOB sent to a client — pte + inputs, NO
-    eager (and no user_pos). The broker keeps the eager + user_pos and does the diff itself
-    when the result returns. Operates on the still-compressed frames: it rewrites the header
-    to drop the eager metas and slices off the trailing eager payload frames — no tensor is
-    decompressed, so this stays cheap in the router loop."""
+    """Feeder side: turn a pushjob into the lean JOB sent to a worker — pte + inputs, NO eager
+    RAW data. The feeder keeps the eager values and does the diff itself when the result returns.
+    It DOES carry the eager metas (`out_metas`: dtype+dims only) and `user_pos` in the header: a
+    worker that can't load the .pte on its own host (e.g. an Arm FVP client whose host lacks the
+    device kernels) needs the output dtype/shape to rebuild the raw bytes its runtime produced.
+    This leaks only shapes, not reference values — the diff still lives in the feeder. Operates on
+    the still-compressed frames (drops the trailing eager payload, no tensor decompressed) so it
+    stays cheap; the broker then routes the lean job by peeking only its header job_id."""
     h = json.loads(frames[0].decode("utf-8"))
     n_in = len(h["inputs"])
-    job_header = {"job_id": h["job_id"], "inputs": h["inputs"]}
+    job_header = {"job_id": h["job_id"], "inputs": h["inputs"],
+                  "out_metas": h["eager"], "user_pos": h.get("user_pos")}
     payload = frames[1:2 + n_in]                         # [pte, in_raw_0 .. in_raw_{n_in-1}]
     return _pack(job_header, payload)
 
 
 def decode_job(frames: list[bytes]) -> tuple[str, bytes, list]:
     """Client side: decode a lean JOB → (job_id, pte, inputs). No eager — the client runs the
-    .pte and returns its RAW outputs; the broker does the diff."""
+    .pte and returns its RAW outputs; the feeder does the diff."""
     header = json.loads(frames[0].decode("utf-8"))
     payload = [gzip.decompress(b) for b in frames[1:]]
     n_in = len(header["inputs"])
@@ -162,12 +172,20 @@ def decode_job(frames: list[bytes]) -> tuple[str, bytes, list]:
     return header["job_id"], pte, inputs
 
 
+def job_output_info(frames: list[bytes]) -> tuple[list, list | None]:
+    """Client side: the lean JOB's USER-output metas (dtype+dims, in user order) + user_pos.
+    For a worker that can't introspect the .pte's output specs on its own host (the Arm FVP
+    client), this is how it learns the dtype/shape to rebuild each raw output buffer."""
+    header = json.loads(frames[0].decode("utf-8"))
+    return header.get("out_metas", []), header.get("user_pos")
+
+
 def eager_from_pushjob(frames: list[bytes]) -> tuple[list, list | None]:
-    """Broker side: decode just the eager reference (+ user_pos) from a retained pushjob, to
-    diff against the client's returned outputs. Skips the pte/inputs payload frames.
+    """Feeder side: decode just the eager reference (+ user_pos) from a retained pushjob, to
+    diff against the worker's returned outputs. Skips the pte/inputs payload frames.
 
     `user_pos` lists which .pte output indices are the REAL graph outputs (USER_OUTPUT); the
-    broker keeps only those before diffing, dropping mutated-input aliases ExecuTorch returns."""
+    feeder keeps only those before diffing, dropping mutated-input aliases ExecuTorch returns."""
     header = json.loads(frames[0].decode("utf-8"))
     n_in = len(header["inputs"])
     eg_raws = [gzip.decompress(b) for b in frames[2 + n_in:]]

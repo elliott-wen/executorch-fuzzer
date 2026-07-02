@@ -4,13 +4,18 @@
 # Run build_et_aar.sh once first (it does the configure + submodules); use THIS for iterations.
 set -ex
 
-ET=/data/jwen929/pytorch/pytorch/executorch
-export ANDROID_NDK=${ANDROID_NDK:-/data/jwen929/android-dev/sdk/ndk/28.0.13004108}
-export ANDROID_HOME=${ANDROID_HOME:-/data/jwen929/android-dev/sdk}
-export JAVA_HOME=${JAVA_HOME:-/data/jwen929/android-dev/jdk17}
+# Repo-relative paths (this script lives at <mobile>/android/). Survives the tree moving;
+# all overridable via env. android-env.sh sets the toolchain from mobile/android-dev/.
+MOBILE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+[ -f "$MOBILE/android-dev/android-env.sh" ] && source "$MOBILE/android-dev/android-env.sh"
+
+ET=${ET:-$MOBILE/pytorch_ref/executorch}
+export ANDROID_NDK=${ANDROID_NDK:-$MOBILE/android-dev/sdk/ndk/28.0.13004108}
+export ANDROID_HOME=${ANDROID_HOME:-$MOBILE/android-dev/sdk}
+export JAVA_HOME=${JAVA_HOME:-$MOBILE/android-dev/jdk17}
 export PATH="$JAVA_HOME/bin:$PATH"
 ABIS=${ANDROID_ABIS:-arm64-v8a x86_64}
-OUT_AAR=/data/jwen929/pytorch/mobile/android/app/libs/executorch.aar
+OUT_AAR=${OUT_AAR:-$MOBILE/android/app/libs/executorch.aar}
 
 cd "$ET"
 for ABI in $ABIS; do

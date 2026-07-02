@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        title = "ETClient $BUILD_TAG"
 
         val hostField = findViewById<EditText>(R.id.host)
         val portField = findViewById<EditText>(R.id.port)
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             logView.text = logLines.joinToString("\n")
             logScroll.post { logScroll.fullScroll(View.FOCUS_DOWN) }   // auto-scroll to the latest line
         }
+        log("=== $BUILD_TAG ===")   // confirm which build is running
 
         button.setOnClickListener {
             if (!running) {
@@ -94,5 +96,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val MAX_LOG_LINES = 500
+        // Bump this every rebuild so the running build is unmistakable in the title bar + log.
+        const val BUILD_TAG = "build-6 executor-recycle/25"
     }
 }

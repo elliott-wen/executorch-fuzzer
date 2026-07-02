@@ -1,0 +1,226 @@
+job	out	class	subkind	n_ok	n_mm	dev	op
+w11:480	0	INCONCL	TIMEOUT	0	0	-	remainder.Scalar
+w17:107	2	INCONCL	TIMEOUT	0	0	-	gelu.out
+w23:105	2	INCONCL	TIMEOUT	0	0	-	amax.out
+w37:590	3	INCONCL	TIMEOUT	0	0	-	logit.default
+w52:202	0	INCONCL	TIMEOUT	0	0	-	bitwise_or.Scalar_out
+w63:207	0	INCONCL	TIMEOUT	0	0	-	pixel_unshuffle.default
+w75:992	3	INCONCL	TIMEOUT	0	0	-	logit.default
+w89:90	1	INCONCL	BSKIP	0	0	-	logical_and.default
+w0:151	4	INCONCL	TIMEOUT	0	0	-	remainder.Scalar_out
+w13:375	2	INCONCL	TIMEOUT	0	0	-	reciprocal.out
+w17:946	2	INCONCL	TIMEOUT	0	0	-	round.out
+w48:248	2	INCONCL	TIMEOUT	0	0	-	_pdist_forward.default
+w7:176	0	INCONCL	TIMEOUT	0	0	-	log.out
+w87:212	1	INCONCL	TIMEOUT	0	0	-	floor_divide.out
+w10:481	0	INCONCL	TIMEOUT	0	0	-	logit.default
+w15:965	3	INCONCL	TIMEOUT	0	0	-	remainder.Scalar
+w21:873	2	INCONCL	TIMEOUT	0	0	-	amax.out
+w37:153	0	INCONCL	TIMEOUT	0	0	-	logit.default
+w51:560	0	INCONCL	TIMEOUT	0	0	-	atanh.out
+w7:386	2	INCONCL	TIMEOUT	0	0	-	pixel_unshuffle.default
+w89:1013	3	INCONCL	TIMEOUT	0	0	-	logical_or.out
+w0:313	2	INCONCL	TIMEOUT	0	0	-	prod.int_out
+w1:377	1	INCONCL	TIMEOUT	0	0	-	any.all_out
+w18:25	2	INCONCL	TIMEOUT	0	0	-	floor_divide.out
+w4:939	0	INCONCL	TIMEOUT	0	0	-	any.dims_out
+w59:631	2	INCONCL	TIMEOUT	0	0	-	div.Scalar
+w72:1041	2	INCONCL	TIMEOUT	0	0	-	ge.Tensor_out
+w87:228	3	CONFOUND	-	0	0	[1, 1]	var.correction
+w10:743	1	INCONCL	TIMEOUT	0	0	-	reciprocal.out
+w16:16	1	INCONCL	TIMEOUT	0	0	-	permute_copy.default
+w22:445	1	INCONCL	TIMEOUT	0	0	-	abs.default
+w27:253	3	INCONCL	BSKIP	0	0	-	remainder.Scalar
+w30:473	0	INCONCL	BSKIP	0	0	-	floor_divide.default
+w25:705	1	INCONCL	TIMEOUT	0	0	-	bitwise_right_shift.Tensor_out
+w37:519	2	INCONCL	TIMEOUT	0	0	-	logical_xor.out
+w51:891	0	INCONCL	TIMEOUT	0	0	-	logit.default
+w61:734	1	CONFOUND	-	0	0	[0, 0, -4, 0]	atanh.out
+w74:526	1	GRAPHOPT	DRIFT	1	1	[1.173828125, 1.029296875, 1.029296875, 1.029296875]	cosh.out
+w89:308	2	GRAPHOPT	DRIFT	1	1	[32759, 32767, 32692, 30619]	bitwise_or.Scalar
+w0:809	2	INCONCL	TIMEOUT	0	0	-	remainder.Scalar
+w14:269	2	INCONCL	TIMEOUT	0	0	-	unbind_copy.int
+w20:541	3	INCONCL	TIMEOUT	0	0	-	cumsum.out
+w36:840	4	INCONCL	TIMEOUT	0	0	-	any.dims_out
+w49:652	2	INCONCL	TIMEOUT	0	0	-	logit.default
+w61:283	3	INCONCL	TIMEOUT	0	0	-	div.Scalar
+w72:363	0	CONFOUND	-	0	0	[0]	cumsum.out
+w87:703	2	INCONCL	BSKIP	0	0	-	remainder.Tensor_out
+w11:705	2	INCONCL	TIMEOUT	0	0	-	squeeze_copy.dim
+w17:837	0	INCONCL	TIMEOUT	0	0	-	abs.out
+w23:572	2	INCONCL	BSKIP	0	0	-	select_scatter.default
+w28:1020	1	INCONCL	TIMEOUT	0	0	-	unfold_copy.default
+w27:230	3	INCONCL	TIMEOUT	0	0	-	atan2.out
+w52:633	3	INCONCL	TIMEOUT	0	0	-	bitwise_and.Scalar_out
+w63:211	0	INCONCL	TIMEOUT	0	0	-	rsub.Scalar
+w90:588	3	INCONCL	TIMEOUT	0	0	-	acos.out
+w10:253	0	INCONCL	TIMEOUT	0	0	-	constant_pad_nd.default
+w15:792	1	INCONCL	BSKIP	0	0	-	clone.default
+w21:427	1	INCONCL	TIMEOUT	0	0	-	log10.out
+w26:434	0	INCONCL	TIMEOUT	0	0	-	split_copy.Tensor
+w29:85	1	INCONCL	BSKIP	0	0	-	bitwise_and.Tensor_out
+w36:400	4	CONFOUND	-	0	0	[0.3161602318286896, 1.0861009359359741, 0.3161602318286896, 1.0861009359359741]	any.dims_out
+w25:26	2	INCONCL	TIMEOUT	0	0	-	cosh.out
+w37:143	1	CONFOUND	-	0	0	[1.0, 0.0]	pixel_unshuffle.default
+w50:701	1	GRAPHOPT	CLOBBER	2	1	[inf]	relu.default
+w61:448	0	CONFOUND	-	0	0	[-2.732421875, -2.48046875, -3.701171875, 3.701171875]	sinh.out
+w7:280	0	GRAPHOPT	CLOBBER	0	1	[2139062143, 2139062143, 2139062143]	constant_pad_nd.default
+w88:561	2	GRAPHOPT	DRIFT	3	1	[1.0, 1.0, 1.0, 1.0]	logit.default
+w0:824	1	INCONCL	TIMEOUT	0	0	-	hardtanh.out
+w14:717	0	CONFOUND	-	0	0	[-0.14290648698806763, -0.07259359955787659, 0.5013782978057861, 0.938052773475647]	floor_divide.out
+w2:139	1	GRAPHOPT	DRIFT	1	1	[-1.1494755744934082, -1.1494755744934082]	masked_scatter.default
+w25:933	2	GRAPHOPT	DRIFT	2	1	[-1.6876602172851562, -0.9049772620201111, 0.6603887677192688, -0.12229421734809875]	pixel_unshuffle.default
+w29:688	1	CONFOUND	-	0	0	[inf, 1.0]	floor_divide.out
+w36:1	2	GRAPHOPT	DRIFT	3	1	[-6.0, 1.0, -6.0, -6.0]	logit.default
+w39:211	1	GRAPHOPT	DRIFT	3	1	[0, 0, 0, 0]	gt.Tensor_out
+w45:204	2	CONFOUND	-	0	0	[-170, 138, 3, 68]	flip.default
+w50:598	0	CONFOUND	-	0	0	[nan, nan]	log10.out
+w54:119	2	CONFOUND	-	0	0	[2.0060336589813232, 0.1327522248029709, 0.0, 0.0]	rsub.Scalar
+w57:1023	2	GRAPHOPT	CLOBBER	3	1	[9.223372036854776e+18]	min.unary_out
+w61:77	0	GRAPHOPT	DRIFT	3	1	[0.0, 0.0, 0.0, 0.0]	view_copy.default
+w67:100	1	CONFOUND	-	0	0	[1.0, 1.0]	logical_not.out
+w24:495	0	INCONCL	TIMEOUT	0	0	-	clamp.Tensor_out
+w61:284	0	INCONCL	TIMEOUT	0	0	-	floor_divide.out
+w7:244	2	INCONCL	TIMEOUT	0	0	-	logical_and.default
+w8:774	2	INCONCL	TIMEOUT	0	0	-	sum.IntList_out
+w11:185	2	INCONCL	TIMEOUT	0	0	-	fill.Scalar
+w16:191	1	INCONCL	TIMEOUT	0	0	-	floor_divide.default
+w22:918	1	CONFOUND	-	0	0	[inf]	max.unary_out
+w27:632	0	CONFOUND	-	0	0	[0.0, 1.71875, 1.71875, 1.71875]	expm1.out
+w30:820	0	CONFOUND	-	0	0	[0.0, -1.0]	slice_scatter.default
+w37:1022	1	CONFOUND	-	0	0	[0.0, 0.0, 0.0]	remainder.Scalar
+w41:835	4	CONFOUND	-	0	0	[127]	bitwise_left_shift.Tensor_out
+w47:503	3	GRAPHOPT	DRIFT	2	2	[-0.10031302273273468, -0.11435684561729431, -0.002006260445341468, 0.08225667476654053]	mul.out
+w52:160	2	CONFOUND	-	0	0	[0.0]	acos.out
+w55:850	3	GRAPHOPT	DRIFT	3	1	[0.1390380859375, 0.1390380859375, 0.1390380859375, 0.1390380859375]	div.out_mode
+w59:562	3	CONFOUND	-	0	0	[nan]	sign.out
+w37:562	2	INCONCL	TIMEOUT	0	0	-	logit.default
+w75:587	1	INCONCL	TIMEOUT	0	0	-	relu.default
+w89:456	2	INCONCL	TIMEOUT	0	0	-	pow.Tensor_Tensor_out
+w0:56	1	CONFOUND	-	0	0	[-6]	floor_divide.out
+w14:133	3	GRAPHOPT	DRIFT	1	1	[-0.14248782396316528, -0.0701606422662735, 1.179740071296692, -0.14248782396316528]	gelu.out
+w19:386	2	CONFOUND	-	0	0	[0.0]	clone.default
+w2:562	1	CONFOUND	-	0	0	[inf, inf, inf, inf]	trunc.out
+w28:893	0	CONFOUND	-	0	0	[0.0, 0.0]	constant_pad_nd.default
+w32:892	1	CONFOUND	-	0	0	[0.0, 0.0, 0.45822665095329285, -1.705621361732483]	select_scatter.default
+w37:700	0	CONFOUND	-	0	0	[3]	mul.Scalar
+w43:831	2	INCONCL	BSKIP	0	0	-	remainder.Tensor_out
+w49:405	4	INCONCL	SKIP	0	0	-	any.all_out
+w53:79	0	CONFOUND	-	0	0	[inf, 0.0, 0.0, 0.0]	floor_divide.out
+w56:734	1	CONFOUND	-	0	0	[0.0, 0.0, 0.0, 0.0]	asin.out
+w6:147	1	CONFOUND	-	0	0	[0.0, 0.0, 1.0, 0.0]	pow.Tensor_Tensor_out
+w66:845	1	GRAPHOPT	CLOBBER	3	1	[-inf, nan, -inf, nan]	log1p.out
+w7:1024	1	GRAPHOPT	DRIFT	2	2	[-2.0, 0.0, -1.0, 0.0]	floor.out
+w78:202	4	GRAPHOPT	CLOBBER	3	1	[nan, nan, 0.73095703125, 0.73095703125]	sigmoid.out
+w8:290	1	INCONCL	BSKIP	0	0	-	any.all_out
+w87:268	2	GRAPHOPT	DRIFT	3	1	[1.0, 1.0]	logit.default
+w92:217	0	GRAPHOPT	DRIFT	1	1	[-4, -4]	bitwise_and.Tensor_out
+w95:209	0	GRAPHOPT	DRIFT	3	1	[-1.1619468927383423, -0.16088494658470154, 0.0, 0.0]	minimum.out
+w36:586	1	CONFOUND	-	0	0	[0.88134765625]	relu.default
+w59:999	3	GRAPHOPT	DRIFT	3	1	[1.0, 1.0, 1.0, 1.0]	ge.Scalar_out
+w72:123	1	INCONCL	TIMEOUT	0	0	-	hardtanh.default
+w0:1039	0	INCONCL	TIMEOUT	0	0	-	pow.Scalar_out
+w12:41	2	INCONCL	TIMEOUT	0	0	-	eq.Tensor_out
+w17:921	4	CONFOUND	-	0	0	[127.0]	permute_copy.default
+w23:956	3	GRAPHOPT	DRIFT	3	1	[0.0, 0.0, 0.0, 0.0]	logit.default
+w3:358	2	INCONCL	TIMEOUT	0	0	-	max.unary_out
+w48:215	1	INCONCL	TIMEOUT	0	0	-	repeat.default
+w58:352	0	INCONCL	TIMEOUT	0	0	-	logical_or.default
+w71:636	2	INCONCL	TIMEOUT	0	0	-	any.dims_out
+w86:996	1	CONFOUND	-	0	0	[-3, -3, -3, 4]	div.Scalar
+w9:836	0	CONFOUND	-	0	0	[1, 0, 1, 0]	logical_and.out
+w31:599	1	INCONCL	TIMEOUT	0	0	-	logit.default
+w45:347	3	INCONCL	TIMEOUT	0	0	-	abs.default
+w56:637	0	INCONCL	TIMEOUT	0	0	-	logical_and.default
+w69:1025	1	INCONCL	TIMEOUT	0	0	-	abs.default
+w85:282	0	INCONCL	TIMEOUT	0	0	-	logical_or.default
+w94:889	1	INCONCL	TIMEOUT	0	0	-	slice_scatter.default
+w32:621	0	INCONCL	TIMEOUT	0	0	-	asinh.out
+w69:82	1	INCONCL	TIMEOUT	0	0	-	sign.out
+w85:707	1	INCONCL	TIMEOUT	0	0	-	logical_or.out
+w95:506	1	INCONCL	TIMEOUT	0	0	-	logical_or.out
+w47:656	2	INCONCL	BSKIP	0	0	-	remainder.Tensor_out
+w58:344	1	INCONCL	TIMEOUT	0	0	-	logit.default
+w86:43	2	INCONCL	TIMEOUT	0	0	-	unsqueeze_copy.default
+w9:626	3	INCONCL	TIMEOUT	0	0	-	bitwise_right_shift.Tensor_Scalar
+w30:470	2	INCONCL	TIMEOUT	0	0	-	sign.out
+w56:349	0	INCONCL	TIMEOUT	0	0	-	gelu.out
+w67:303	3	INCONCL	TIMEOUT	0	0	-	logit.default
+w94:255	2	INCONCL	TIMEOUT	0	0	-	amin.out
+w52:752	3	INCONCL	TIMEOUT	0	0	-	logical_not.out
+w6:330	2	INCONCL	TIMEOUT	0	0	-	logit.default
+w79:1024	2	INCONCL	TIMEOUT	0	0	-	unsqueeze_copy.default
+w91:275	1	INCONCL	TIMEOUT	0	0	-	div.Scalar
+w32:550	2	INCONCL	TIMEOUT	0	0	-	rsub.Scalar
+w4:693	0	INCONCL	TIMEOUT	0	0	-	cos.out
+w56:893	0	INCONCL	TIMEOUT	0	0	-	abs.default
+w69:791	0	INCONCL	TIMEOUT	0	0	-	transpose_copy.int
+w85:370	2	INCONCL	TIMEOUT	0	0	-	floor_divide.out
+w9:548	3	CONFOUND	-	0	0	[-3, -3, -3, -3]	neg.out
+w28:695	3	INCONCL	TIMEOUT	0	0	-	any.dims_out
+w42:249	3	INCONCL	TIMEOUT	0	0	-	eq.Tensor_out
+w54:759	3	INCONCL	TIMEOUT	0	0	-	tril.out
+w66:220	1	INCONCL	TIMEOUT	0	0	-	pixel_shuffle.default
+w80:649	0	INCONCL	TIMEOUT	0	0	-	clamp.Tensor_out
+w92:896	1	INCONCL	TIMEOUT	0	0	-	tril.out
+w38:802	0	INCONCL	TIMEOUT	0	0	-	expand_copy.default
+w52:739	0	INCONCL	BSKIP	0	0	-	div.out
+w63:232	0	INCONCL	TIMEOUT	0	0	-	sub.out
+w78:801	2	INCONCL	BSKIP	0	0	-	bitwise_right_shift.Tensor_Scalar_out
+w90:980	4	INCONCL	TIMEOUT	0	0	-	permute_copy.default
+w28:139	1	INCONCL	TIMEOUT	0	0	-	view_copy.default
+w40:967	0	INCONCL	TIMEOUT	0	0	-	bitwise_right_shift.Tensor_Scalar
+w54:10	1	INCONCL	TIMEOUT	0	0	-	argmin.out
+w65:870	1	INCONCL	BSKIP	0	0	-	remainder.Tensor_out
+w80:525	1	INCONCL	TIMEOUT	0	0	-	copy.default
+w92:304	0	INCONCL	BSKIP	0	0	-	where.self
+w4:362	0	INCONCL	TIMEOUT	0	0	-	transpose_copy.int
+w56:294	0	INCONCL	TIMEOUT	0	0	-	reciprocal.out
+w67:205	2	INCONCL	TIMEOUT	0	0	-	expand_copy.default
+w82:746	0	INCONCL	TIMEOUT	0	0	-	bitwise_xor.Tensor_out
+w94:167	2	INCONCL	TIMEOUT	0	0	-	max_pool2d_with_indices_backward.grad_input
+w2:824	1	INCONCL	TIMEOUT	0	0	-	floor_divide.out
+w65:98	3	INCONCL	TIMEOUT	0	0	-	sum.IntList_out
+w80:641	3	INCONCL	TIMEOUT	0	0	-	split_with_sizes_copy.default
+w92:537	0	INCONCL	TIMEOUT	0	0	-	logit.default
+w43:338	1	INCONCL	TIMEOUT	0	0	-	abs.out
+w82:417	2	INCONCL	TIMEOUT	0	0	-	clamp.Tensor_out
+w93:342	0	INCONCL	TIMEOUT	0	0	-	div.out_mode
+w27:712	2	INCONCL	TIMEOUT	0	0	-	cumsum.out
+w39:270	4	INCONCL	TIMEOUT	0	0	-	logit.default
+w53:712	1	INCONCL	TIMEOUT	0	0	-	sum.IntList_out
+w6:39	3	INCONCL	TIMEOUT	0	0	-	gt.Scalar_out
+w80:434	1	INCONCL	TIMEOUT	0	0	-	logical_xor.default
+w91:388	4	INCONCL	BSKIP	0	0	-	remainder.Tensor_out
+w39:423	4	INCONCL	TIMEOUT	0	0	-	hardtanh.default
+w65:317	0	INCONCL	TIMEOUT	0	0	-	sign.out
+w80:451	0	INCONCL	BSKIP	0	0	-	linear.default
+w43:215	1	CONFOUND	-	0	0	[1.310546875, 1.0234375, 1.212890625, -0.62548828125]	_native_batch_norm_legit_no_training.default
+w55:492	0	GRAPHOPT	DRIFT	1	1	[0.54052734375]	cos.out
+w81:20	3	CONFOUND	-	0	0	[0.155029296875, 3.333984375, 0.0411376953125, 10.0]	div.out
+w92:916	1	GRAPHOPT	DRIFT	3	1	[7.847146987915039, 6.726126194000244, 7.847146987915039, 6.726126194000244]	unsqueeze_copy.default
+w31:709	0	INCONCL	TIMEOUT	0	0	-	acos.out
+w46:919	0	INCONCL	TIMEOUT	0	0	-	bitwise_right_shift.Tensor_Scalar
+w69:475	1	INCONCL	TIMEOUT	0	0	-	squeeze_copy.dim
+w85:297	4	INCONCL	TIMEOUT	0	0	-	bmm.out
+w45:143	1	INCONCL	TIMEOUT	0	0	-	exp.out
+w56:431	3	INCONCL	TIMEOUT	0	0	-	prod.int_out
+w68:179	0	INCONCL	TIMEOUT	0	0	-	tril.out
+w83:72	2	INCONCL	TIMEOUT	0	0	-	sum.IntList_out
+w94:317	1	INCONCL	TIMEOUT	0	0	-	bitwise_xor.Scalar
+w56:569	2	INCONCL	TIMEOUT	0	0	-	sub.Scalar
+w68:728	2	INCONCL	TIMEOUT	0	0	-	sin.out
+w83:85	1	INCONCL	TIMEOUT	0	0	-	pixel_shuffle.default
+w94:850	2	INCONCL	TIMEOUT	0	0	-	neg.out
+w32:759	4	INCONCL	TIMEOUT	0	0	-	_native_batch_norm_legit.no_stats
+w47:588	0	INCONCL	TIMEOUT	0	0	-	narrow_copy.default
+w57:146	0	INCONCL	TIMEOUT	0	0	-	sum.IntList_out
+w70:529	1	INCONCL	TIMEOUT	0	0	-	logit.default
+w85:730	0	INCONCL	TIMEOUT	0	0	-	gelu.out
+w9:567	3	INCONCL	TIMEOUT	0	0	-	amin.out
+w29:104	2	INCONCL	TIMEOUT	0	0	-	logit.default
+w43:241	0	INCONCL	TIMEOUT	0	0	-	var.correction
+w55:565	1	CONFOUND	-	0	0	[1, 1, 1, 1]	constant_pad_nd.default
+w66:928	3	INCONCL	BSKIP	0	0	-	logit.default
+w82:385	2	GRAPHOPT	DRIFT	3	1	[0.0]	mean.default
+w92:923	2	GRAPHOPT	DRIFT	1	1	[-6.0]	mul.Scalar

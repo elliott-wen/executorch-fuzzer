@@ -1,0 +1,77 @@
+# SKIP census — 37746 graceful refusals
+
+## By category
+    11141  unimplemented-arg
+    10992  shape-arg-guard
+    10483  dtype-coverage
+     2990  other-guard
+     2140  type-promotion-guard
+
+## By operator (top 25)
+    10023  aten::_conj_physical.out
+     4821  aten::expand_copy.out
+     4775  aten::copy.out
+     4461  aten::native_group_norm.out
+     3069  aten::_pdist_forward.out
+     2878  aten::_log_softmax.out
+     1695  aten::cumsum.out
+     1551  aten::_fft_r2c.out
+      933  aten::add.Scalar_out
+      785  aten::_adaptive_avg_pool2d.out
+      619  aten::_native_batch_norm_legit_no_training.out
+      602  aten::arange.start_out
+      593  aten::convolution.out
+      214  aten::scatter.value_out
+      114  aten::scatter.src_out
+      102  aten::scatter_add.out
+       58  aten::permute_copy.out
+       51  aten::div.out
+       39  aten::sub.out
+       27  aten::remainder.Scalar_out
+       26  aten::fmod.Scalar_out
+       24  aten::bitwise_or.Scalar_out
+       23  aten::pow.Tensor_Scalar_out
+       20  aten::bitwise_left_shift.Tensor_Scalar_out
+       20  aten::bitwise_right_shift.Tensor_Scalar_out
+
+## Clusters (category | operator | firing-file | guard)  — top 40
+   4821  [unimplemented-arg] aten::expand_copy.out  (op_expand_copy.cpp)  expand: implicit==true not implemented
+   4775  [unimplemented-arg] aten::copy.out  (op_copy.cpp)  copy: non_blocking==true not supported
+   3839  [shape-arg-guard] aten::native_group_norm.out  (op_native_group_norm.cpp)  Check failed (in.size(0) — == N):
+   3456  [dtype-coverage] aten::_conj_physical.out  (op__conj_physical.cpp)  Unhandled dtype Float
+   2887  [dtype-coverage] aten::_conj_physical.out  (op__conj_physical.cpp)  Unhandled dtype Long
+   2872  [other-guard] aten::_log_softmax.out  (op_log_softmax.cpp)  Check failed (false)
+   2779  [dtype-coverage] aten::_conj_physical.out  (op__conj_physical.cpp)  Unhandled dtype Half
+   1693  [shape-arg-guard] aten::cumsum.out  (op_cumsum.cpp)  Check failed (dim >= -upper_bound && dim < upper_bound)
+   1180  [shape-arg-guard] aten::_pdist_forward.out  (op_pdist_forward.cpp)  Check failed (static_cast<size_t>(t.dim() — ) == rank): Expected tensor.dim() to be 2, but got 1
+   1119  [unimplemented-arg] aten::_fft_r2c.out  (?)  Check failed (onesided) — onesided=False is not supported yet in _fft_r2c
+    930  [type-promotion-guard] aten::add.Scalar_out  (op_add.cpp)  Check failed ((common_type == a_type && check_alpha_type(utils::get_s) — common_type))):
+    901  [dtype-coverage] aten::_conj_physical.out  (op__conj_physical.cpp)  Unhandled dtype Bool
+    785  [shape-arg-guard] aten::_adaptive_avg_pool2d.out  (kernel_ops_util.cpp)  Check failed (output_size[0] > 0 && output_size[1] > 0) — output_size must be positive, but got (0, 0)
+    753  [shape-arg-guard] aten::_pdist_forward.out  (op_pdist_forward.cpp)  Check failed (static_cast<size_t>(t.dim() — ) == rank): Expected tensor.dim() to be 2, but got 5
+    613  [shape-arg-guard] aten::native_group_norm.out  (op_native_group_norm.cpp)  Check failed (in.size(1) — == C):
+    599  [type-promotion-guard] aten::_native_batch_norm_legit_no_training.out  (op_native_batch_norm.cpp)  Check failed (a.scalar_type() — == b.scalar_type()): Tensors do not match: dtype={Half, Float}
+    592  [shape-arg-guard] aten::convolution.out  (op_convolution.cpp)  Check failed (in.dim()
+    554  [shape-arg-guard] aten::arange.start_out  (op_arange.cpp)  Check failed (utils::extract_scalar(start, &d_start) — ):
+    532  [shape-arg-guard] aten::_pdist_forward.out  (op_pdist_forward.cpp)  Check failed (static_cast<size_t>(t.dim() — ) == rank): Expected tensor.dim() to be 2, but got 3
+    400  [shape-arg-guard] aten::_pdist_forward.out  (op_pdist_forward.cpp)  Check failed (static_cast<size_t>(t.dim() — ) == rank): Expected tensor.dim() to be 2, but got 4
+    375  [unimplemented-arg] aten::_fft_r2c.out  (tensor_util_portable.cpp)  Check failed (all_contiguous || all_channels_last) — 2 input tensors have different dim orders
+    214  [type-promotion-guard] aten::scatter.value_out  (op_scatter.cpp)  Check failed (index.scalar_type()
+    152  [dtype-coverage] aten::_pdist_forward.out  (op_pdist_forward.cpp)  Unhandled dtype Long
+    114  [type-promotion-guard] aten::scatter.src_out  (op_scatter.cpp)  Check failed (index.scalar_type()
+    101  [type-promotion-guard] aten::scatter_add.out  (op_scatter_add.cpp)  Check failed (index.scalar_type()
+     58  [dtype-coverage] aten::permute_copy.out  (op_permute_copy.cpp)  Unhandled dtype Float8_e4m3fn
+     51  [unimplemented-arg] aten::_fft_r2c.out  (reduce_util.cpp)  Check failed (onesided) — onesided=False is not supported yet in _fft_r2c
+     49  [dtype-coverage] aten::_pdist_forward.out  (op_pdist_forward.cpp)  Unhandled dtype Bool
+     38  [shape-arg-guard] aten::arange.start_out  (op_arange.cpp)  Check failed (utils::extract_scalar(end, &d_end) — ):
+     32  [other-guard] aten::div.out  (binary_ops.cpp)  Check failed (error == Error::Ok) — Failed to resize output tensor.
+     27  [type-promotion-guard] aten::remainder.Scalar_out  (op_remainder.cpp)  Check failed (!(executorch::runtime::isIntegralType(common_type, true)
+     26  [type-promotion-guard] aten::fmod.Scalar_out  (op_fmod.cpp)  Check failed (!(executorch::runtime::isIntegralType(common_type, true)
+     24  [dtype-coverage] aten::bitwise_or.Scalar_out  (bitwise_op.h)  Unhandled dtype Float
+     24  [other-guard] aten::sub.out  (binary_ops.cpp)  Check failed (error == Error::Ok) — Failed to resize output tensor.
+     23  [type-promotion-guard] aten::pow.Tensor_Scalar_out  (op_pow.cpp)  Check failed ((canCast(common_type, out.scalar_type() — ) && common_type != ScalarType::Bool)):
+     20  [dtype-coverage] aten::bitwise_left_shift.Tensor_Scalar_out  (bitwise_op.h)  Unhandled dtype Float
+     20  [dtype-coverage] aten::bitwise_right_shift.Tensor_Scalar_out  (bitwise_op.h)  Unhandled dtype Float
+     19  [other-guard] aten::div.out  (binary_ops.h)  Check failed (error == Error::Ok) — Failed to resize output tensor.
+     16  [dtype-coverage] aten::bitwise_and.Scalar_out  (bitwise_op.h)  Unhandled dtype Float
+     15  [other-guard] aten::sub.out  (binary_ops.h)  Check failed (error == Error::Ok) — Failed to resize output tensor.

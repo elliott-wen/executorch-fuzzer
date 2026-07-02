@@ -24,9 +24,9 @@ import signal
 import zlib
 from pathlib import Path
 
-from mobile.gen.graph_build import build_graph
-from mobile.gen.runnable_ops import load_runnable_opnodes
-from mobile.gen.export_et import build_job, available_backends
+from mobile.gen.graph import build_graph
+from mobile.gen.ops import load_runnable_opnodes
+from mobile.gen.export import build_job, available_backends
 from mobile.net import protocol as P
 from mobile.net import corpus as C
 
@@ -82,9 +82,9 @@ def run_pregen(out: str, count: int, nodes: int, leaf_prob: float, seed: int,
     signal.signal(signal.SIGINT, _graceful)
 
     idx = 0
-    while written < count:
-        cur = idx
-        idx += 1
+    while idx < count:                              # count = number of graph ATTEMPTS, not
+        cur = idx                                   # successes — crashes/fails consume a slot
+        idx += 1                                    # and we move on. lower-rate = jobs / count.
         if cur in skipped or cur in done_idx:
             continue                                # known crash / already written → skip
         rng = random.Random(seed * 1_000_003 + (base ^ cur) * 2_654_435_761 + 1)
@@ -119,9 +119,17 @@ def run_pregen(out: str, count: int, nodes: int, leaf_prob: float, seed: int,
             continue                                # catchable error → SKIP (marker reused)
         if job.status != "READY":
             continue                                # eager-raise / export-fail → skip
+        delegated = {"ops": job.delegated_ops, "non": job.non_delegated_ops,
+                     "calls": job.delegate_calls}
         frames = P.encode_pushjob(job_id, job.pte, job.inputs, job.eager,
-                                  desc=graph.describe(), user_pos=job.user_pos)
-        C.write_job(out, job_id, frames, src=src)   # src → corpus/<job_id>.py (not the wire)
+                                  desc=graph.describe(), user_pos=job.user_pos,
+                                  delegated=delegated)
+        # Annotate the inspectable source with the delegation breakdown (backend=how many
+        # ops the partitioner absorbed vs left on portable) so single-op corpus is greppable.
+        src_annotated = (f"# delegated: backend={backend} ops={job.delegated_ops} "
+                         f"non_delegated={job.non_delegated_ops} "
+                         f"delegate_calls={job.delegate_calls}\n{src}")
+        C.write_job(out, job_id, frames, src=src_annotated)
         written += 1
         if written % 100 == 0:
             print(f"[pregen {producer_id}] {written}/{count} → {out}", flush=True)

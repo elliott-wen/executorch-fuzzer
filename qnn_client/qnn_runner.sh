@@ -93,11 +93,11 @@ fi
 export LD_LIBRARY_PATH="${ET_BUILD:+$ET_BUILD/lib:}$QNN_X86_LIB:${LD_LIBRARY_PATH:-}"
 
 # ---- one inference line: space-separated input basenames, paths relative to OUTDIR -------
-for f in "${INPUTS[@]}"; do cp -f "$f" "$OUTDIR/$(basename "$f")"; done
+for f in "${INPUTS[@]}"; do [ "$f" -ef "$OUTDIR/$(basename "$f")" ] || cp -f "$f" "$OUTDIR/$(basename "$f")"; done
 LINE=""
 for f in "${INPUTS[@]}"; do LINE="$LINE $(basename "$f")"; done
 echo "${LINE# }" > "$OUTDIR/input_list.txt"
-cp -f "$PTE" "$OUTDIR/model.pte"
+[ "$PTE" -ef "$OUTDIR/model.pte" ] || cp -f "$PTE" "$OUTDIR/model.pte"
 
 RUN_LOG="$OUTDIR/run.log"
 # NOTE(seam): flags match examples/qualcomm/executor_runner/qnn_executor_runner.cpp. Outputs

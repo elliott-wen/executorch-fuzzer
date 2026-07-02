@@ -1,0 +1,191 @@
+op	verdict	job	out	detail	eager	device	in_dtypes
+_adaptive_avg_pool2d	CLEAN	w73:9	0	op reproduces eager alone	""	""	""
+_cdist_forward	CLEAN	w34:455	0	op reproduces eager alone	""	""	""
+_log_softmax.out	GENUINE	w109:68	2	out[0] shape (1,) vs ()	[0.0]	[10.86719]	["torch.float16"]
+_native_batch_norm_legit.no_stats	GENUINE	w119:221	1	out[0] max|delta|=4.886e+04 (rtol=0.01 atol=0.001)	[0.89967, 0.49512, -1.39479]	[21536.00195, 9120.00098, -48864.00391]	["torch.float32"]
+_native_batch_norm_legit_no_training	CLEAN	w75:512	0	op reproduces eager alone	""	""	""
+_pdist_forward	LOWERFAIL	w109:114	0	build=SKIP	""	""	""
+_softmax.out	GENUINE	w38:319	2	out[0] dtype torch.float16 vs torch.float32	[1.0, 0.0]	[5.0, 4.0]	["torch.float16"]
+_upsample_bilinear2d_aa.out	GENUINE	w14:86	2	out[0] dtype torch.uint8 vs torch.float32	[4.0, 4.0, 4.0, 3.0, 4.0]	[-1.187, -0.5935, 0.0, 0.70282, 0.35141]	["torch.uint8"]
+abs	CLEAN	w102:93	2	op reproduces eager alone	""	""	""
+abs.out	CLEAN	w0:728	1	op reproduces eager alone	""	""	""
+acos.out	CLEAN	w18:310	1	op reproduces eager alone	""	""	""
+acosh.out	CLEAN	w56:771	0	op reproduces eager alone	""	""	""
+add.Scalar	CLEAN	w102:410	1	op reproduces eager alone	""	""	""
+addmm.out	GENUINE	w104:367	0	out[0] dtype torch.uint8 vs torch.float16	[95.0, 80.0]	[0.99854, 0.0]	["torch.uint8", "torch.uint8", "torch.uint8"]
+alias_copy	GENUINE	w100:546	2	out[0] shape (3, 2, 2, 4, 4) vs (2, 1, 3)	[4.7897, -0.16985, -7.53095, -5.86872, -1.94111]	[-1.0, 3.0, 4.0, 6.0, 5.0]	["torch.float32"]
+amax.out	GENUINE	w110:718	0	out[0] dtype torch.bool vs torch.float16	[1.0]	[255.0]	["torch.bool"]
+amin.out	GENUINE	w0:334	3	out[0] dtype torch.float32 vs torch.int64	[3.0]	[0.0]	["torch.float32"]
+any.all_out	GENUINE	w106:237	0	out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)	[0.0]	[1.0]	["torch.float32"]
+any.dims_out	GENUINE	w104:11	3	out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)	[0.0]	[1.0]	["torch.float16"]
+argmax.out	CLEAN	w11:41	0	op reproduces eager alone	""	""	""
+argmin.out	CLEAN	w103:590	3	op reproduces eager alone	""	""	""
+asin.out	GENUINE	w36:690	0	out[0] shape (2,) vs (3, 1, 1, 1)	[0.0, 0.95215]	[-0.44873, 0.83789]	["torch.float32"]
+asinh.out	CLEAN	w102:576	1	op reproduces eager alone	""	""	""
+atan.out	CLEAN	w100:493	0	op reproduces eager alone	""	""	""
+atan2.out	CLEAN	w0:70	0	op reproduces eager alone	""	""	""
+atanh.out	CLEAN	w100:20	2	op reproduces eager alone	""	""	""
+avg_pool2d.out	CLEAN	w41:295	0	op reproduces eager alone	""	""	""
+bitwise_and.Scalar	CLEAN	w103:491	0	op reproduces eager alone	""	""	""
+bitwise_and.Scalar_out	GENUINE	w10:501	1	out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)	[4.0]	[1.0]	["torch.uint8"]
+bitwise_and.Tensor_out	CLEAN	w100:421	1	op reproduces eager alone	""	""	""
+bitwise_left_shift.Tensor_Scalar	GENUINE	w0:480	0	out[0] max|delta|=1.441e+17 (rtol=0.0 atol=0.0)	[0.0, 0.0]	[1.4411518807585587e+17, 1.4411518807585587e+17]	["torch.bool"]
+bitwise_left_shift.Tensor_Scalar_out	GENUINE	w0:709	2	out[0] max|delta|=1.153e+18 (rtol=0.01 atol=0.001)	[0.0, 0.0, 0.0, 0.0, 0.0]	[1.152921504606847e+18, 1.152921504606847e+18, 1.152921504606847e+18, 1.152921504606847e+18, 1.152921504606847e+18]	["torch.bool"]
+bitwise_left_shift.Tensor_out	GENUINE	w0:732	0	out[0] max|delta|=9.223e+18 (rtol=0.0 atol=0.0)	[0.0, 0.0]	[-9.223372036854776e+18, -3.458764513820541e+18]	["torch.int64", "torch.int64"]
+bitwise_not.out	CLEAN	w110:313	2	op reproduces eager alone	""	""	""
+bitwise_or.Scalar	CLEAN	w112:46	1	op reproduces eager alone	""	""	""
+bitwise_or.Scalar_out	GENUINE	w100:364	3	out[0] max|delta|=2.540e+02 (rtol=0.01 atol=0.001)	[255.0, 255.0]	[1.0, 1.0]	["torch.uint8"]
+bitwise_or.Tensor_out	CLEAN	w107:500	0	op reproduces eager alone	""	""	""
+bitwise_right_shift.Tensor_Scalar	CLEAN	w113:369	0	op reproduces eager alone	""	""	""
+bitwise_right_shift.Tensor_Scalar_out	GENUINE	w122:142	2	out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)	[255.0, 255.0, 255.0, 1.0, 255.0]	[0.0, 0.0, 0.0, 1.0, 0.0]	["torch.int32"]
+bitwise_right_shift.Tensor_out	GENUINE	w126:284	0	out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)	[255.0, 255.0, 255.0, 255.0, 255.0]	[0.0, 0.0, 0.0, 0.0, 0.0]	["torch.int64", "torch.int8"]
+bitwise_xor.Scalar	CLEAN	w101:608	0	op reproduces eager alone	""	""	""
+bitwise_xor.Scalar_out	GENUINE	w0:462	0	out[0] max|delta|=2.510e+02 (rtol=0.01 atol=0.001)	[251.0, 252.0]	[1.0, 1.0]	["torch.uint8"]
+bitwise_xor.Tensor_out	GENUINE	w11:254	3	out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)	[1.0, 1.0, 1.0, 0.0, 0.0, 4.0]	[1.0, 1.0, 1.0, 0.0, 0.0, 1.0]	["torch.uint8", "torch.bool"]
+bmm.out	CLEAN	w19:215	1	op reproduces eager alone	""	""	""
+ceil.out	CLEAN	w104:282	1	op reproduces eager alone	""	""	""
+clamp.Tensor_out	CLEAN	w102:240	1	op reproduces eager alone	""	""	""
+clamp.out	CLEAN	w106:36	1	op reproduces eager alone	""	""	""
+clone	CLEAN	w101:318	0	op reproduces eager alone	""	""	""
+constant_pad_nd	CLEAN	w0:516	0	op reproduces eager alone	""	""	""
+convolution	CLEAN	w114:6	2	op reproduces eager alone	""	""	""
+copy	GENUINE	w115:489	2	out[0] max|delta|=1.977e-01 (rtol=0.01 atol=0.001)	[0.19774, 0.19774, 0.19774, 0.19774, 0.19774]	[0.0, 0.0, 0.0, 0.0, 0.0]	["torch.float32", "torch.float32"]
+cos.out	GENUINE	w102:398	0	out[0] max|delta|=2.351e-01 (rtol=0.01 atol=0.001)	[1.0, -0.03979]	[1.0, 0.19531]	["torch.float32"]
+cosh.out	CLEAN	w118:229	4	op reproduces eager alone	""	""	""
+cumsum.out	CLEAN	w106:467	1	op reproduces eager alone	""	""	""
+detach_copy	CLEAN	w101:323	0	op reproduces eager alone	""	""	""
+diagonal_copy	CLEAN	w106:171	0	op reproduces eager alone	""	""	""
+div.Scalar	GENUINE	w108:379	1	out[0] shape (1,) vs (2,)	[2.0]	[0.08001]	["torch.int32"]
+div.out	GENUINE	w10:698	0	out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)	[-1.33333]	[-0.33325]	["torch.uint8", "torch.int64"]
+div.out_mode	GENUINE	w109:685	2	out[0] max|delta|=7.500e-01 (rtol=0.01 atol=0.001)	[0.25, 0.25, 0.25, 0.25]	[1.0, 1.0, 1.0, 1.0]	["torch.bool", "torch.uint8"]
+elu.out	GENUINE	w0:260	0	out[0] max|delta|=1.464e+01 (rtol=0.01 atol=0.001)	[12.20352]	[-2.44141]	["torch.float32"]
+embedding	CLEAN	w27:673	0	op reproduces eager alone	""	""	""
+eq.Scalar_out	CLEAN	w120:134	1	op reproduces eager alone	""	""	""
+eq.Tensor_out	CLEAN	w103:166	0	op reproduces eager alone	""	""	""
+erf.out	CLEAN	w109:741	1	op reproduces eager alone	""	""	""
+exp.out	GENUINE	w103:526	1	out[0] max|delta|=3.114e+05 (rtol=0.01 atol=0.001)	[403.4288, 8103.08398, 442413.40625, 148.41316, 2.71828]	[403.50003, 8104.00049, 131008.00781, 148.37502, 2.71875]	["torch.float32"]
+expand_copy	CLEAN	w101:662	0	op reproduces eager alone	""	""	""
+expm1.out	GENUINE	w111:460	0	out[0] dtype torch.float16 vs torch.uint8	[53.59375, 19.07812]	[0.0, 1.0]	["torch.float32"]
+flip	GENUINE	w12:206	1	out[0] dtype torch.float32 vs torch.float16	[0.0, 0.0]	[1.54297, 1.54297]	["torch.float32"]
+floor.out	GENUINE	w106:9	0	out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)	[-2.0, 0.0]	[-1.0, 1.0]	["torch.float32"]
+floor_divide	GENUINE	w100:382	2	out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)	[1.0, 1.0, 1.0, 1.0]	[0.0, 0.0, 0.0, 0.0]	["torch.float32", "torch.uint8"]
+fmod.Scalar	GENUINE	w0:51	1	out[0] max|delta|=2.520e+02 (rtol=0.0 atol=0.0)	[240.0, 176.0, 16.0, 240.0, 8.0, 252.0]	[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]	["torch.uint8"]
+fmod.Scalar_out	GENUINE	w100:694	0	out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)	[4.0, 3.0, 1.0, 4.0, 0.0]	[1.0, 1.0, 1.0, 1.0, 0.0]	["torch.uint8"]
+fmod.Tensor_out	CLEAN	w100:630	2	op reproduces eager alone	""	""	""
+gather.out	CLEAN	w8:573	0	op reproduces eager alone	""	""	""
+ge.Scalar_out	CLEAN	w104:600	1	op reproduces eager alone	""	""	""
+ge.Tensor_out	CLEAN	w0:277	0	op reproduces eager alone	""	""	""
+gelu.out	GENUINE	w115:120	0	out[0] max|delta|=3.175e+04 (rtol=0.01 atol=0.001)	[1e-05, 0.00046, 6e-05, 7.38906, 148.41316, 162754.79688]	[1e-05, 0.00046, 6e-05, 7.39844, 148.50002, 131008.00781]	["torch.float32"]
+glu.out	CLEAN	w112:295	1	op reproduces eager alone	""	""	""
+gt.Scalar_out	CLEAN	w106:520	0	op reproduces eager alone	""	""	""
+gt.Tensor_out	CLEAN	w103:132	1	op reproduces eager alone	""	""	""
+hardtanh	CLEAN	w108:689	2	op reproduces eager alone	""	""	""
+hardtanh.out	CLEAN	w113:397	2	op reproduces eager alone	""	""	""
+index.Tensor_out	CLEAN	w105:506	0	op reproduces eager alone	""	""	""
+index_put	CLEAN	w100:84	2	op reproduces eager alone	""	""	""
+index_select	GENUINE	w125:561	1	out[0] max|delta|=2.000e+00 (rtol=0.01 atol=0.001)	[-2.0, -2.0, -2.0, -2.0, -2.0, -2.0]	[-2.0, -2.0, -2.0, -2.0, -2.0, 0.0]	["torch.float32", "torch.int32"]
+index_select.out	GENUINE	w9:206	1	out[0] max|delta|=4.000e+00 (rtol=0.01 atol=0.001)	[0.0, 4.0, 4.0, 4.0, 0.0, 0.0]	[0.0, 4.0, 4.0, 4.0, 0.0, 4.0]	["torch.float32", "torch.int64"]
+isinf	LOWERFAIL	w112:485	1	build=SKIP	""	""	""
+isnan	LOWERFAIL	w0:618	0	build=SKIP	""	""	""
+le.Scalar_out	CLEAN	w121:700	0	op reproduces eager alone	""	""	""
+le.Tensor_out	CLEAN	w100:518	1	op reproduces eager alone	""	""	""
+leaky_relu.out	CLEAN	w114:636	1	op reproduces eager alone	""	""	""
+lift_fresh_copy	CLEAN	w112:444	0	op reproduces eager alone	""	""	""
+linear	GENUINE	w18:692	2	out[0] max|delta|=2.470e+02 (rtol=0.0 atol=0.0)	[8.0, 8.0]	[255.0, 255.0]	["torch.uint8", "torch.uint8"]
+linear.out	CLEAN	w105:523	2	op reproduces eager alone	""	""	""
+log.out	CLEAN	w30:692	1	op reproduces eager alone	""	""	""
+log10.out	CLEAN	w44:384	0	op reproduces eager alone	""	""	""
+log1p.out	CLEAN	w102:95	1	op reproduces eager alone	""	""	""
+log2.out	CLEAN	w101:130	2	op reproduces eager alone	""	""	""
+logical_and	CLEAN	w106:566	0	op reproduces eager alone	""	""	""
+logical_and.out	CLEAN	w105:468	2	op reproduces eager alone	""	""	""
+logical_not	GENUINE	w10:420	1	out[0] dtype torch.bool vs torch.uint8	[0.0, 1.0, 1.0, 1.0, 1.0]	[1.0, 3.0, 2.0, 4.0, 0.0]	["torch.bool"]
+logical_not.out	GENUINE	w25:722	1	out[0] dtype torch.float32 vs torch.float16	[0.0, 0.0, 1.0, 1.0, 1.0]	[4.0, 1.0, 4.0, 1.0, 4.0]	["torch.float32"]
+logical_or	CLEAN	w100:601	0	op reproduces eager alone	""	""	""
+logical_or.out	CLEAN	w100:453	0	op reproduces eager alone	""	""	""
+logical_xor	CLEAN	w100:348	1	op reproduces eager alone	""	""	""
+logical_xor.out	CLEAN	w0:148	0	op reproduces eager alone	""	""	""
+logit	NONFINITE_OUT	w2:22	0	out[0] max|delta|=1.783e+00 (rtol=0.01 atol=0.001)	[NaN, NaN, NaN, 9.307, NaN]	[NaN, NaN, NaN, 11.08987, NaN]	["torch.float32"]
+logit.out	NONFINITE_OUT	w39:155	2	out[0] max|delta|=1.250e-01 (rtol=0.01 atol=0.001)	[NaN, -1.61426, NaN, 3.61328, -1.46191, 6.64844]	[NaN, -1.61426, NaN, 3.60742, -1.46191, 6.52344]	["torch.float32"]
+lt.Scalar_out	CLEAN	w109:746	0	op reproduces eager alone	""	""	""
+lt.Tensor_out	CLEAN	w0:402	1	op reproduces eager alone	""	""	""
+masked_fill.Scalar	CLEAN	w123:338	1	op reproduces eager alone	""	""	""
+masked_scatter	CLEAN	w0:186	0	op reproduces eager alone	""	""	""
+max	CLEAN	w101:192	0	op reproduces eager alone	""	""	""
+max.dim_max	CLEAN	w110:459	1	op reproduces eager alone	""	""	""
+max.unary_out	GENUINE	w106:642	1	out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)	[4.0]	[1.0]	["torch.uint8"]
+max_pool2d_with_indices.out	CLEAN	w117:491	1	op reproduces eager alone	""	""	""
+max_pool2d_with_indices_backward.grad_input	CLEAN	w100:534	1	op reproduces eager alone	""	""	""
+maximum.out	GENUINE	w104:398	3	out[0] max|delta|=6.000e+00 (rtol=0.01 atol=0.001)	[7.0]	[1.0]	["torch.uint8"]
+mean	CLEAN	w115:419	1	op reproduces eager alone	""	""	""
+mean.dtype_out	CLEAN	w104:673	2	op reproduces eager alone	""	""	""
+mean.out	CLEAN	w101:74	0	op reproduces eager alone	""	""	""
+min	CLEAN	w103:771	1	op reproduces eager alone	""	""	""
+min.dim_min	CLEAN	w111:92	0	op reproduces eager alone	""	""	""
+min.unary_out	CLEAN	w102:308	2	op reproduces eager alone	""	""	""
+minimum.out	GENUINE	w0:420	0	out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)	[4.0]	[1.0]	["torch.uint8"]
+mm.out	CLEAN	w109:780	0	op reproduces eager alone	""	""	""
+mul.Scalar	CLEAN	w102:311	2	op reproduces eager alone	""	""	""
+mul.out	CLEAN	w102:429	2	op reproduces eager alone	""	""	""
+narrow_copy	CLEAN	w113:650	2	op reproduces eager alone	""	""	""
+narrow_copy.out	CLEAN	w114:157	0	op reproduces eager alone	""	""	""
+native_group_norm	NONFINITE_OUT	w114:295	2	out[0] non-finite mismatch (nan/inf positions differ)	[NaN, NaN, NaN]	[NaN, 0.0, 0.0]	["torch.float32"]
+native_layer_norm	CLEAN	w105:51	1	op reproduces eager alone	""	""	""
+ne.Tensor_out	CLEAN	w106:637	1	op reproduces eager alone	""	""	""
+neg.out	GENUINE	w104:235	1	out[0] dtype torch.float32 vs torch.float16	[-0.0, -1.0]	[0.69336, 0.22314]	["torch.float32"]
+permute_copy	CLEAN	w0:344	2	op reproduces eager alone	""	""	""
+pixel_shuffle	CLEAN	w118:778	0	op reproduces eager alone	""	""	""
+pixel_unshuffle	CLEAN	w100:166	3	op reproduces eager alone	""	""	""
+pow.Scalar_out	GENUINE	w0:379	3	out[0] max|delta|=3.770e+09 (rtol=0.01 atol=0.001)	[5764801.0, 5764801.0, 5764801.0, 5764801.0, 5764801.0, 1622647808.0]	[5764801.0, 5764801.0, 5764801.0, 5764801.0, 5764801.0, -2147483648.0]	["torch.int32"]
+pow.Tensor_Scalar_out	GENUINE	w104:292	2	out[0] dtype torch.float32 vs torch.uint8	[0.77734, 0.24915, 9240.0, 2.86328]	[0.0, 0.0, 0.0, 0.0]	["torch.float16"]
+pow.Tensor_Tensor_out	GENUINE	w104:564	0	out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)	[1.0, 1.0]	[0.0, 0.0]	["torch.float32", "torch.float32"]
+prod	CLEAN	w106:0	2	op reproduces eager alone	""	""	""
+prod.int_out	GENUINE	w0:62	3	out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)	[0.0]	[-1.0]	["torch.float32"]
+reciprocal.out	CLEAN	w100:388	0	op reproduces eager alone	""	""	""
+reflection_pad1d.out	LOWERFAIL	w104:483	1	build=SKIP	""	""	""
+reflection_pad2d	LOWERFAIL	w8:441	1	build=SKIP	""	""	""
+relu	CLEAN	w10:346	2	op reproduces eager alone	""	""	""
+remainder.Scalar	GENUINE	w0:555	0	out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)	[-3.0, -3.0, -4.0, -4.0, -1.0]	[-3.0, -3.0, 4.0, 4.0, -1.0]	["torch.int64"]
+repeat	CLEAN	w100:14	3	op reproduces eager alone	""	""	""
+replication_pad1d.out	LOWERFAIL	w120:230	0	build=SKIP	""	""	""
+replication_pad2d.out	GENUINE	w100:197	2	out[0] max|delta|=7.310e-01 (rtol=0.01 atol=0.001)	[-0.73096, -0.73096, -0.73096, -0.73096, -0.73096]	[0.0, 0.0, 0.0, 0.0, 0.0]	["torch.float16"]
+replication_pad3d.out	LOWERFAIL	w108:438	2	build=SKIP	""	""	""
+roll	GENUINE	w100:217	2	out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)	[1.0]	[0.0]	["torch.uint8"]
+round.out	CLEAN	w106:141	0	op reproduces eager alone	""	""	""
+rsqrt.out	CLEAN	w13:360	0	op reproduces eager alone	""	""	""
+rsub.Scalar	GENUINE	w0:349	0	out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)	[-8.0, -8.0, -8.0, -8.0, -8.0]	[-7.0, -7.0, -7.0, -7.0, -7.0]	["torch.float16"]
+scatter.src_out	GENUINE	w115:404	1	out[0] max|delta|=5.000e-01 (rtol=0.01 atol=0.001)	[0.0, 0.5, 0.43823, 0.5, 0.5, 0.0]	[0.0, 0.5, 0.43823, 0.5, 0.5, 0.5]	["torch.float16", "torch.int32", "torch.float16"]
+scatter.value_out	CLEAN	w106:295	2	op reproduces eager alone	""	""	""
+scatter_add.out	CLEAN	w120:46	0	op reproduces eager alone	""	""	""
+select_copy.int	CLEAN	w116:502	3	op reproduces eager alone	""	""	""
+select_scatter	GENUINE	w0:215	0	out[0] dtype torch.uint8 vs torch.float16	[0.0, 0.0, 0.0, 0.0]	[0.0, 0.0, 0.0, 0.0]	["torch.uint8", "torch.float16"]
+sigmoid.out	CLEAN	w100:767	0	op reproduces eager alone	""	""	""
+sign.out	CLEAN	w0:248	0	op reproduces eager alone	""	""	""
+sin.out	GENUINE	w106:96	2	out[0] max|delta|=1.123e-01 (rtol=0.01 atol=0.001)	[0.81934]	[0.70703]	["torch.float16"]
+sinh.out	CLEAN	w0:466	0	op reproduces eager alone	""	""	""
+slice_copy.Tensor	CLEAN	w100:299	2	op reproduces eager alone	""	""	""
+slice_scatter	CLEAN	w0:279	1	op reproduces eager alone	""	""	""
+split_copy.Tensor	CLEAN	w100:400	1	op reproduces eager alone	""	""	""
+split_with_sizes_copy	GENUINE	w102:412	3	out[0] max|delta|=6.187e+00 (rtol=0.01 atol=0.001)	[-0.48242, -5.89062, -6.48438, -6.32422, -0.79297]	[-6.06641, -5.83594, -6.89844, -0.13684, -0.27881]	["torch.float16"]
+sqrt.out	CLEAN	w105:396	1	op reproduces eager alone	""	""	""
+squeeze_copy.dim	CLEAN	w101:606	0	op reproduces eager alone	""	""	""
+squeeze_copy.dims	CLEAN	w105:9	1	op reproduces eager alone	""	""	""
+sub.Scalar	CLEAN	w103:674	0	op reproduces eager alone	""	""	""
+sub.out	GENUINE	w0:283	1	out[0] max|delta|=4.109e+00 (rtol=0.01 atol=0.001)	[3.97656, 4.34766]	[-0.13208, 0.23828]	["torch.float16", "torch.float16"]
+sum.IntList_out	GENUINE	w101:751	4	out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)	[1.0]	[0.0]	["torch.float32"]
+t_copy	CLEAN	w0:375	0	op reproduces eager alone	""	""	""
+tan.out	CLEAN	w100:27	0	op reproduces eager alone	""	""	""
+tanh.out	CLEAN	w0:675	3	op reproduces eager alone	""	""	""
+topk.values	GENUINE	w112:127	2	out[0] max|delta|=1.417e+00 (rtol=0.01 atol=0.001)	[0.93408, -0.48242, 1.11035, 1.16406]	[-0.48242, 0.93408, 1.11035, 1.16406]	["torch.float16", "torch.int64"]
+transpose_copy.int	CLEAN	w101:124	3	op reproduces eager alone	""	""	""
+tril.out	LOWERFAIL	w105:675	1	build=SKIP	""	""	""
+trunc.out	CLEAN	w102:437	1	op reproduces eager alone	""	""	""
+unbind_copy.int	CLEAN	w103:248	1	op reproduces eager alone	""	""	""
+unfold_copy	CLEAN	w112:101	0	op reproduces eager alone	""	""	""
+unsqueeze_copy	CLEAN	w103:578	3	op reproduces eager alone	""	""	""
+var.correction	CLEAN	w108:743	1	op reproduces eager alone	""	""	""
+var.correction_out	NONFINITE_OUT	w106:64	3	out[0] non-finite mismatch (nan/inf positions differ)	[12632.0]	[Infinity]	["torch.float16"]
+var_mean.correction	CLEAN	w102:220	2	op reproduces eager alone	""	""	""
+view_copy	CLEAN	w104:46	2	op reproduces eager alone	""	""	""
+where.self	CLEAN	w101:449	0	op reproduces eager alone	""	""	""
+where.self_out	CLEAN	w101:370	1	op reproduces eager alone	""	""	""

@@ -57,7 +57,7 @@ index here — you'll get a CUDA build. Verify after install:
 |---------|---------|------|
 | `executorch` | `1.3.1` (`+cpu`) | lowering (`to_executorch`) + the runtime that runs `.pte`. Pulls `torch`, `torchao`, `coremltools`, `numpy`, `sympy`, `flatbuffers`, … |
 | `torch` | `2.12.0+cpu` | eager oracle + `torch.export`. Pinned to the CPU build. |
-| `z3-solver` | `4.16.0.0` | the constraint solver behind valid-input generation (`engine/`, `gen/opnode.py`) |
+| `z3-solver` | `4.16.0.0` | the constraint solver behind valid-input generation (`gen/z3engine/`, `gen/ops/opnode.py`) |
 | `pyzmq` | `27.1.0` | the broker/feed/client transport (`net/`). **Not** in the gold venv — added here because the networking side needs it. |
 
 ### Benign warnings on Linux

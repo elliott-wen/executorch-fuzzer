@@ -1,0 +1,121 @@
+=== MISMATCH attribution (op producing the diverging out[N]) ===
+  (2713 of the mismatches are non-finite-position diffs — usually propagation, filter first)
+    575  clamp.Tensor_out
+    462  select_scatter
+    262  pow.Tensor_Tensor_out
+    193  sum.IntList_out
+    181  any.dims_out
+    154  index_put
+    146  clamp.out
+    127  sign.out
+    124  remainder.Scalar
+    122  minimum.out
+    119  tanh.out
+    118  relu
+    116  any.all_out
+    114  mean.out
+    107  pow.Tensor_Scalar_out
+    106  floor_divide
+    100  remainder.Scalar_out
+     99  floor_divide.out
+     90  gather.out
+     89  _log_softmax.out
+     86  prod.int_out
+     84  remainder.Tensor_out
+     82  expand_copy
+     81  view_copy
+     77  topk.values
+     77  permute_copy
+     75  sub.out
+     74  div.out
+     72  unsqueeze_copy
+     72  clone
+     71  exp.out
+     71  _softmax.out
+     69  flip
+     68  sinh.out
+     66  squeeze_copy.dims
+     66  bitwise_left_shift.Tensor_out
+     66  slice_scatter
+     65  transpose_copy.int
+     65  bitwise_left_shift.Tensor_Scalar
+     64  add.Scalar
+
+=== SKIP coverage gaps (device rejection signature) ===
+   6436  executor ExecutorchInvalidArgumentException: [ExecuTorch Err
+   4575  executor ArrayIndexOutOfBoundsException: vector
+   4095  get_shader_info@ShaderRegistry.cpp:54
+   3353  add_native_layer_norm_node@NativeLayerNorm.cpp:95
+   2332  check_binary_op_args@BinaryOp.cpp:35
+   2041  executor CppException: Exception raised from extract_scalar 
+   1506  native_group_norm@GroupNorm.cpp:188
+   1271  amin@Reduce.cpp:357
+   1223  amax@Reduce.cpp:356
+   1202  arg_reduce_impl@ArgReduce.cpp:28
+   1032  add_native_batch_norm_node@BatchNorm.cpp:65
+    968  executor CppException: Exception raised from operator[] at /
+    836  encode@BlitNode.cpp:32
+    653  executor ExecutorchRuntimeException: [ExecuTorch Error 0x14]
+    562  executor CppException: Exception raised from make_ivec2 at /
+    369  executor CppException: Exception raised from toTensorRef at 
+    345  mean@Reduce.cpp:355
+    262  sum@Reduce.cpp:354
+    224  prepack_standard@Staging.cpp:217
+    167  maybe_cast_and_copy_from_staging@ComputeGraph.cpp:1024
+    122  maybe_cast_and_copy_into_staging@ComputeGraph.cpp:981
+     71  add_native_layer_norm_node@NativeLayerNorm.cpp:91
+     53  arg_reduce_impl@ArgReduce.cpp:37
+     45  check_and_prepack_arg@BatchNorm.cpp:44
+     44  executor IllegalArgumentException: unsupported input dtype c
+     30  conv1d_pw@Conv1dPW.cpp:221
+     22  executor CppException: Exception raised from get_uniform_dat
+     12  add_softmax_node@Softmax.cpp:114
+      3  executor CppException: Exception raised from cast_and_copy_f
+      1  executor CppException: Exception raised from copy_from at /d
+
+=== CRASH op co-occurrence (WEAK — over-blames; bisect to confirm) ===
+   1173  narrow_copy
+    972  to
+    845  unfold_copy
+    667  bcast
+    490  slice
+    418  lift_fresh_copy
+    412  clone
+    378  alias_copy
+    343  any.dims_out
+    323  clampr
+    297  transpose_copy.int
+    240  expand_copy
+    227  split_with_sizes_copy
+    176  isinf
+    175  clamp.Tensor_out
+    174  view_copy
+    172  logical_and.out
+    172  pad
+    169  logical_not
+    168  sum.IntList_out
+    168  flip
+    168  maximum.out
+    167  rshp
+    167  erf.out
+    166  max.unary_out
+
+=== representative MISMATCH jobs per top op (bisection targets) ===
+  clamp.Tensor_out             w0:278#out1, w0:379#out0, w0:547#out2
+  select_scatter               w0:147#out0, w0:215#out0, w0:259#out0
+  pow.Tensor_Tensor_out        w0:70#out0, w1:4#out1, w1:545#out0
+  sum.IntList_out              w0:451#out1, w0:680#out1, w10:650#out2
+  any.dims_out                 w1:447#out2, w10:39#out2, w101:389#out0
+  index_put                    w0:15#out3, w0:570#out1, w1:266#out2
+  clamp.out                    w1:173#out1, w1:61#out1, w102:123#out0
+  sign.out                     w0:235#out0, w0:91#out4, w101:933#out0
+  remainder.Scalar             w10:411#out0, w100:110#out0, w101:383#out2
+  minimum.out                  w1:412#out1, w102:20#out2, w102:57#out0
+  tanh.out                     w100:62#out3, w101:52#out2, w101:938#out0
+  relu                         w1:33#out1, w10:419#out0, w10:66#out1
+  any.all_out                  w0:282#out3, w0:781#out4, w1:607#out1
+  mean.out                     w0:649#out1, w1:377#out1, w1:539#out3
+  pow.Tensor_Scalar_out        w1:618#out2, w1:77#out2, w10:429#out2
+  floor_divide                 w0:758#out1, w1:159#out2, w1:217#out0
+  remainder.Scalar_out         w0:160#out0, w0:318#out4, w1:589#out4
+  floor_divide.out             w0:293#out2, w0:751#out1, w1:519#out3

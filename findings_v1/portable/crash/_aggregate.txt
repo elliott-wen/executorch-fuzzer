@@ -1,0 +1,48 @@
+# Crash localizer aggregate over 5996 CRASH jobs
+
+## Verdict (did the stored .pte reproduce the abort?)
+  SIGABRT        5787  96.5%
+  SIGFPE          205   3.4%
+  SIGSEGV           3   0.1%
+  TIMEOUT           1   0.0%
+
+## Firing kernel file (where the fatal assert lives)  [5995 reproduced aborts]
+    5784  tensor_impl.h
+     199  ?
+      10  reduce_util.cpp
+       1  dtype_util.h
+       1  op_copy.cpp
+
+## Normalized abort signatures (the deduplicated crash REASONS)
+    4030  [tensor_impl.h:#] In function size(), assert failed (dim < dim_ && dim >= #): Dimension out of range (expected to be in range of [#, #], but got -#
+    1739  [tensor_impl.h:#] In function size(), assert failed (dim < dim_ && dim >= #): Dimension out of range (expected to be in range of [#, -#], but got #
+     197  
+      10  [reduce_util.cpp:#] dtype is #
+       5  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Half, Long} | [tensor_impl.h:#] In function size(), 
+       3  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Float, Long} | [tensor_impl.h:#] In function size(),
+       2  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Bool, Long} | [tensor_impl.h:#] In function size(), 
+       2  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Half, Float} | [tensor_impl.h:#] In function size(),
+       1  [dtype_util.h:#] Unhandled dtype ComplexFloat for generic_elementwise_op
+       1  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Float, Long} | [tensor_impl.h:#] In function size(),
+       1  [tensor_impl.h:#] In function size(), assert failed (dim < dim_ && dim >= #): Dimension out of range (expected to be in range of [#, #], but got #
+       1  [tensor_util.h:#] Check failed (a.scalar_type() == b.scalar_type()): Tensors do not match: dtype={Bool, Half} | [tensor_impl.h:#] In function size(), 
+       1  double free or corruption (out)
+       1  [op_copy.cpp:#] Check failed (non_blocking == false): 
+       1  free(): invalid next size (fast)
+
+## Attribution of the tensor_impl.h size() aborts (5784)
+  by range sub-pattern:
+      4043  range[0,N] got -1 -> negative dim (narrow/select)
+      1740  range[0,-1] got 0  -> 0-D input (unfold/dim-on-scalar)
+         1  other size() assert
+  by highest-priority suspect op present in the graph:
+      4257  narrow_copy
+      1527  unfold_copy
+
+## Non-tensor_impl aborts (211) — other / potentially new crash reasons
+    197  [?] 
+     10  [reduce_util.cpp] [reduce_util.cpp:#] dtype is #
+      1  [dtype_util.h] [dtype_util.h:#] Unhandled dtype ComplexFloat for generic_elementwise_op
+      1  [?] double free or corruption (out)
+      1  [op_copy.cpp] [op_copy.cpp:#] Check failed (non_blocking == false): 
+      1  [?] free(): invalid next size (fast)

@@ -9,6 +9,13 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.Light">
+
+        <!-- QNN/HTP: the Hexagon fastRPC client is a vendor lib (libcdsprpc.so). Android 12+ blocks
+             apps from dlopen-ing non-public vendor native libs unless declared here; without it the
+             QNN HTP stub fails instantly with "Failed to create transport for device, error: 4000"
+             (no fastRPC logs — it never reaches the DSP). required=false: absent on non-Qualcomm SoCs. -->
+        <uses-native-library android:name="libcdsprpc.so" android:required="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

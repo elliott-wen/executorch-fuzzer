@@ -49,7 +49,7 @@ def main() -> int:
     pg = sub.add_parser("pregen", help="pre-generate a corpus of jobs to disk (offline)")
     pg.add_argument("--out", default="tmp/corpus", help="corpus directory to write")
     pg.add_argument("--count", type=int, default=10000, help="READY jobs to write")
-    pg.add_argument("--nodes", type=int, default=16, help="target real-op nodes per DAG")
+    pg.add_argument("--nodes", type=int, default=8, help="target real-op nodes per DAG")
     pg.add_argument("--leaf-prob", type=float, default=0.3)
     pg.add_argument("--out-alias-prob", type=float, default=0.1,
                     help="chance a grow node's out= buffer aliases a live producer "

@@ -1,0 +1,77 @@
+corpus jobs: 76801
+NEW  (tmp/vulkan_moto_g54_a14_skip.tsv): 46748 non-OK
+BASE (tmp/vulkan_moto_skip.tsv): 46742 non-OK
+
+== shared (same non-OK status both) ==
+  SKIP      33854
+  MISMATCH  9658
+  CRASH     3181
+  TOTAL shared non-OK: 46693
+
+== status CHANGED (non-OK both, differs) ==
+  MISMATCH->CRASH        5
+  SKIP->CRASH            2
+  CRASH->SKIP            1
+  TOTAL changed: 8
+
+== NEW-unique (OK on baseline, non-OK on Android14) ==
+  MISMATCH  44
+  CRASH     3
+  TOTAL new-unique: 47
+
+== BASELINE-unique (OK on Android14, non-OK on baseline) ==
+  MISMATCH  40
+  SKIP      1
+  TOTAL baseline-unique: 41
+
+-- sample NEW-unique (Android-14-only failures) --
+  MISMATCH  w3:637       out[2] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w102:558     out[4] max|delta|=8.000e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w17:747      out[5] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w99:563      out[2] max|delta|=1.280e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w67:622      out[2] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  MISMATCH  w2:74        out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w100:506     out[3] max|delta|=9.995e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w102:581     out[3] max|delta|=2.000e+00 (rtol=0.01 atol=0.001)
+  CRASH     w109:36      executor process died (native abort)
+  MISMATCH  w125:273     out[0] max|delta|=1.125e+09 (rtol=0.0 atol=0.0)
+  MISMATCH  w27:394      out[3] max|delta|=6.367e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w42:726      out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  MISMATCH  w69:251      out[0] max|delta|=7.571e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w88:348      out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w3:249       out[2] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w56:235      out[2] max|delta|=9.000e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w31:117      out[2] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  MISMATCH  w6:172       out[3] max|delta|=5.054e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w110:376     out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w102:557     out[2] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  MISMATCH  w0:207       out[0] max|delta|=1.119e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w45:507      out[3] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  CRASH     w18:137      executor process died (native abort)
+  MISMATCH  w126:58      out[3] max|delta|=1.101e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w52:494      out[1] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  CRASH     w86:238      executor process died (native abort)
+  MISMATCH  w108:58      out[1] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w43:135      out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w98:196      out[3] max|delta|=1.425e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w114:207     out[2] max|delta|=1.065e+09 (rtol=0.0 atol=0.0)
+  MISMATCH  w79:567      out[1] max|delta|=9.502e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w127:588     out[1] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w53:339      out[0] max|delta|=2.000e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w80:751      out[2] max|delta|=4.824e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w97:560      out[4] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w115:47      out[1] max|delta|=7.070e-01 (rtol=0.01 atol=0.001)
+  MISMATCH  w91:421      out[0] non-finite mismatch (nan/inf positions differ)
+  MISMATCH  w26:613      out[3] max|delta|=1.057e+09 (rtol=0.0 atol=0.0)
+  MISMATCH  w44:301      out[2] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  MISMATCH  w53:816      out[2] non-finite mismatch (nan/inf positions differ)
+
+-- sample status-CHANGED --
+  MISMATCH->CRASH     w48:531      executor process died (native abort)
+  CRASH->SKIP      w60:85       executor ExecutorchInvalidArgumentException: [ExecuTorch Error 0x12] Invalid argument: Exe
+  MISMATCH->CRASH     w112:469     executor process died (native abort)
+  MISMATCH->CRASH     w49:336      executor process died (native abort)
+  SKIP->CRASH     w2:471       executor process died (native abort)
+  MISMATCH->CRASH     w116:525     executor process died (native abort)
+  MISMATCH->CRASH     w102:349     executor process died (native abort)
+  SKIP->CRASH     w96:769      executor process died (native abort)

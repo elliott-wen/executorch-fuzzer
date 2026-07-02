@@ -36,7 +36,6 @@ import os
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")     # CPU-only; never touch CUDA
 
 import argparse
-import json
 import subprocess
 import sys
 import tempfile
@@ -58,34 +57,39 @@ FVP_RUNNER = HERE / "fvp_runner.sh"
 # every other client exactly.
 import torch  # noqa: E402
 
-_DTYPE_BY_NAME = {str(d).split(".")[-1]: d for d in (
-    torch.float32, torch.float16, torch.float64, torch.bfloat16,
-    torch.int8, torch.uint8, torch.int16, torch.int32, torch.int64, torch.bool,
-)}
 
-
-def _tensor_from_file(meta: dict, raw_path: Path):
-    """Rebuild a torch tensor from out_<i>.bin + its {dtype, shape} entry, reusing the
-    protocol's own decoder so the encoding is byte-identical to the other clients."""
-    dtype = _DTYPE_BY_NAME[meta["dtype"]]
-    blob = {"dtype": P.tensor_to_meta_blob(torch.empty(0, dtype=dtype))[0]["dtype"],
-            "dims": list(meta["shape"])}
-    return P.tensor_from_meta_blob(blob, raw_path.read_bytes())
+def _rebuild_outputs(work: Path, out_metas: list, user_pos: list | None) -> list:
+    """Rebuild the device's output tensors. The FVP runner wrote each .pte output as raw
+    little-endian bytes to out_<i>.bin. We can't introspect a cortex-m/ethos-u .pte on THIS
+    host (its device kernels aren't registered here), so the dtype/shape come from the job's
+    carried `out_metas` (the USER outputs, in user order) + `user_pos` (their .pte indices).
+    Returns the FULL .pte output list so the feeder's select(user_pos) picks the right ones;
+    non-user (mutated-input alias) slots get an empty placeholder — the feeder drops them."""
+    files = sorted(work.glob("out_*.bin"), key=lambda p: int(p.stem.split("_")[1]))
+    n = len(files)
+    pos = user_pos if user_pos is not None else list(range(len(out_metas)))
+    outs = [torch.empty(0)] * max(n, (max(pos) + 1 if pos else 0))
+    for k, p in enumerate(pos):
+        if k < len(out_metas):
+            outs[p] = P.tensor_from_meta_blob(out_metas[k], (work / f"out_{p}.bin").read_bytes())
+    return outs
 
 
 class FvpExecutor:
     """Runs one `.pte` on the FVP and returns its outputs. Always returns RESULT frames:
     RAN with outputs, or SKIP/CRASH/TIMEOUT with a detail string (no outputs)."""
 
-    def __init__(self, target: str, fvp_bin: str | None, runner_elf: str | None,
+    def __init__(self, backend: str, target: str, fvp_bin: str | None, runner_elf: str | None,
                  num_macs: int, selftest: bool = False):
+        self.backend = backend          # ethos-u | cortex-m — selects the runner build in fvp_runner.sh
         self.target = target
         self.fvp_bin = fvp_bin
         self.runner_elf = runner_elf
         self.num_macs = num_macs
         self.selftest = selftest
 
-    def run(self, job_id: str, pte: bytes, inputs: list, timeout: float) -> list:
+    def run(self, job_id: str, pte: bytes, inputs: list, timeout: float,
+            out_metas: list | None = None, user_pos: list | None = None) -> list:
         if self.selftest:
             # Plumbing test: echo inputs back as outputs so the broker/feeder path can be
             # exercised end-to-end without an installed FVP. (Will MISMATCH; that's fine.)
@@ -95,7 +99,8 @@ class FvpExecutor:
             work = Path(d)
             pte_path = work / "model.pte"
             pte_path.write_bytes(pte)
-            cmd = [str(FVP_RUNNER), "--pte", str(pte_path), "--out", str(work),
+            cmd = [str(FVP_RUNNER), "--backend", self.backend,
+                   "--pte", str(pte_path), "--out", str(work),
                    "--target", self.target, "--macs", str(self.num_macs)]
             for i, t in enumerate(inputs):
                 _, raw = P.tensor_to_meta_blob(t.contiguous())
@@ -118,12 +123,8 @@ class FvpExecutor:
                 status = "SKIP" if proc.returncode == 2 else "CRASH"
                 return P.encode_result(job_id, status, f"fvp_runner rc={proc.returncode}: {tail}", None)
 
-            meta_path = work / "outmeta.json"
-            if not meta_path.exists():
-                return P.encode_result(job_id, "SKIP", "fvp_runner produced no outmeta.json", None)
-            metas = json.loads(meta_path.read_text())
             try:
-                outs = [_tensor_from_file(m, work / f"out_{i}.bin") for i, m in enumerate(metas)]
+                outs = _rebuild_outputs(work, out_metas or [], user_pos)
             except Exception as e:
                 return P.encode_result(job_id, "SKIP", f"output decode {type(e).__name__}: {e}", None)
             return P.encode_result(job_id, "RAN", "", outs)
@@ -162,7 +163,8 @@ def run_client(host: str, client_port: int, ctrl_port: int, executor: FvpExecuto
             frames = req.recv_multipart()
             try:
                 job_id, pte, inputs = P.decode_job(frames)
-                result = executor.run(job_id, pte, inputs, job_timeout)
+                out_metas, user_pos = P.job_output_info(frames)
+                result = executor.run(job_id, pte, inputs, job_timeout, out_metas, user_pos)
             except Exception as e:
                 result = P.encode_result("?", "SKIP", f"client decode {type(e).__name__}: {e}", None)
             req.send_multipart([b"RESULT", *result])
@@ -185,15 +187,18 @@ def main() -> int:
     ap.add_argument("--label", default="fvp")
     ap.add_argument("--job-timeout", type=float, default=120.0,
                     help="per-job wall-clock budget (FVP runs are slow); TIMEOUT past this")
-    ap.add_argument("--target", default="ethos-u55-128", help="Ethos-U accelerator config")
-    ap.add_argument("--macs", type=int, default=128, help="FVP ethosu.num_macs")
+    ap.add_argument("--backend", default="ethos-u", choices=["ethos-u", "cortex-m"],
+                    help="which Arm backend's runner to build/run on the FVP")
+    ap.add_argument("--target", default="ethos-u55-128",
+                    help="accelerator/CPU config (e.g. ethos-u55-128, cortex-m55)")
+    ap.add_argument("--macs", type=int, default=128, help="FVP ethosu.num_macs (Ethos-U only)")
     ap.add_argument("--fvp", default=None, help="FVP binary (else fvp_runner.sh default)")
     ap.add_argument("--runner", default=None,
                     help="prebuilt semihosting runner ELF / build dir (else fvp_runner.sh builds)")
     ap.add_argument("--selftest", action="store_true",
                     help="echo inputs as outputs (exercise the broker path without an FVP)")
     a = ap.parse_args()
-    ex = FvpExecutor(a.target, a.fvp, a.runner, a.macs, selftest=a.selftest)
+    ex = FvpExecutor(a.backend, a.target, a.fvp, a.runner, a.macs, selftest=a.selftest)
     return run_client(a.host, a.client_port, a.ctrl_port, ex, a.label, a.job_timeout)
 
 

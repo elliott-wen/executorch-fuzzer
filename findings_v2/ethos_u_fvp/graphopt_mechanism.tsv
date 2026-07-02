@@ -1,0 +1,19 @@
+w14:133	3	n3	SCALE:-3.793	dev≈ref*-3.793 (requant scale)	gelu.out
+w59:999	3	n2	UNSTRUCTURED	dev[:3]=[1.0, 1.0, 1.0] ref[:3]=[0.0, 0.0, 0.0]	ge.Scalar_out
+w23:956	3	n5	SCALE:0.1081	dev≈ref*0.1081 (requant scale)	logit.default
+w61:77	0	n3	ZEROED	dev all~0, ref[:3]=[0.0, 0.0, 0.0]	view_copy.default
+w25:933	2	n7	ZEROED	dev all~0, ref[:3]=[-1.430842399597168, -0.5014063119888306, 1.271859884262085]	pixel_unshuffle.default
+w66:845	1	n1	NONFINITE	dev has nan/inf, ref finite=True	log1p.out
+w2:139	1	-	NO_BREAK	-	masked_scatter.default
+w78:202	4	n6	UNSTRUCTURED	dev[:3]=[-1.1619468927383423, -0.16088494658470154, 0.0] ref[:3]=[0.5, 0.5, 0.73	sigmoid.out
+w36:1	2	n7	SCALE:-1.537e+18	dev≈ref*-1.537e+18 (requant scale)	logit.default
+w7:1024	1	n5	UNSTRUCTURED	dev[:3]=[-2.0, 0.0, -1.0] ref[:3]=[-2.0, 0.0, 0.0]	floor.out
+w39:211	1	-	NO_BREAK	-	gt.Tensor_out
+w87:268	2	n7	UNSTRUCTURED	dev[:3]=[-1.1619468927383423, -0.16088494658470154, 0.0] ref[:3]=[-128.0, -128.0	logit.default
+w47:503	3	-	NO_BREAK	-	mul.out
+w92:217	0	-	NO_BREAK	-	bitwise_and.Tensor_out
+w55:492	0	-	NO_BREAK	-	cos.out
+w92:916	1	-	NO_BREAK	-	unsqueeze_copy.default
+w55:850	3	-	NO_BREAK	-	div.out_mode
+w95:209	0	-	NO_BREAK	-	minimum.out
+w57:1023	2	-	NO_BREAK	-	min.unary_out

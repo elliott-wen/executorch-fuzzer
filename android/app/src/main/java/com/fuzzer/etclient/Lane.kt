@@ -45,6 +45,7 @@ class Lane(
     @Volatile private var inFlight = false
     @Volatile private var token = 0
     @Volatile private var bound = false
+    @Volatile private var recycleReq = false               // executor asked to be respawned (fd cleanup)
     private var backoffMs = 0L                             // escalating restart delay after a CRASH
     // (status, packed-result-or-null). RAN/SKIP carry the executor's packed result; CRASH/TIMEOUT null.
     private val results = LinkedBlockingQueue<Pair<String, ByteArray?>>()
@@ -54,6 +55,7 @@ class Lane(
     private val reply = Messenger(object : Handler(ipcLooper) {
         override fun handleMessage(msg: Message) {
             if (msg.what == Ipc.MSG_DONE && msg.arg1 == token && inFlight) {
+                if (msg.data.getBoolean(Ipc.K_RECYCLE)) recycleReq = true
                 results.offer((msg.data.getString(Ipc.K_STATUS) ?: "SKIP") to msg.data.getByteArray(Ipc.K_RESULT))
             }
         }
@@ -161,6 +163,12 @@ class Lane(
         // The executor self-kills at jobTimeoutMs; the lane backstop is a bit longer.
         val v = results.poll(jobTimeoutMs + 10_000, TimeUnit.MILLISECONDS)
         inFlight = false
+        // Recycle BETWEEN jobs (inFlight now false, so the executor's exit can't be mis-read as a
+        // CRASH): the executor hit its job interval and asked to be respawned to free leaked QNN fds.
+        if (recycleReq && v != null && v.first != "CRASH") {
+            recycleReq = false
+            recycleExecutor()
+        }
         return when {
             v == null -> { executor = null
                 "TIMEOUT" to Protocol.encodeResult(jobId, "TIMEOUT", "no reply from executor (lane backstop)", null) }
@@ -172,6 +180,17 @@ class Lane(
                 "SKIP" to Protocol.encodeResult(jobId, "SKIP", "executor returned no result payload", null) }
             else -> { backoffMs = 0L; v.first to FrameFile.unpack(v.second!!) }   // RAN / SKIP — unpack & forward
         }
+    }
+
+    /** Cleanly retire the current executor process (frees leaked QNN/rpcmem fds) and drop the
+     *  binding so the next job's ensureExecutor() spawns a FRESH one. Called between jobs only. */
+    private fun recycleExecutor() {
+        try { executor?.send(Message.obtain(null, Ipc.MSG_DIE)) } catch (_: Throwable) {}
+        if (bound) { try { ctx.unbindService(conn) } catch (_: Throwable) {}; bound = false }
+        try { ctx.stopService(Intent(ctx, execClass)) } catch (_: Throwable) {}
+        executor = null
+        backoffMs = 0L                    // a planned recycle is not a crash — no backoff penalty
+        log("lane $index recycled executor (fd cleanup)")
     }
 
     private fun crash(jobId: String, detail: String): Pair<String, List<ByteArray>> =

@@ -1,0 +1,629 @@
+corpus_v1/qnn/w1/w1_1560.py	RESULT	delta	elu	n18	18
+corpus_v1/qnn/w1/w1_121.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w1/w1_42.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w10/w10_482.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w0/w0_1161.py	RESULT	delta	remainder	n0	0
+corpus_v1/qnn/w0/w0_1707.py	RESULT	delta	eq	n6	6
+corpus_v1/qnn/w1/w1_91.py	RESULT	dtype	select_scatter	n18	18
+corpus_v1/qnn/w10/w10_306.py	RESULT	nonfinite	bitwise_left_shift	n7	7
+corpus_v1/qnn/w0/w0_1305.py	RESULT	delta	rsub	n6	6
+corpus_v1/qnn/w1/w1_542.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w0/w0_1526.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w1/w1_2038.py	RESULT	delta	logical_and	n0	0
+corpus_v1/qnn/w1/w1_1433.py	RESULT	delta	tan	n3	3
+corpus_v1/qnn/w1/w1_1299.py	RESULT	delta	lift_fresh_copy	n0	0
+corpus_v1/qnn/w10/w10_21.py	RESULT	delta	fmod	n0	0
+corpus_v1/qnn/w1/w1_1790.py	RESULT	delta	logical_not	n5	5
+corpus_v1/qnn/w0/w0_1738.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w0/w0_1799.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w1/w1_1791.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w10/w10_2665.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w10/w10_514.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w1/w1_1965.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w1/w1_2195.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w11/w11_1108.py	RESULT	delta	var_mean	n0	0
+corpus_v1/qnn/w11/w11_1252.py	RESULT	delta	rsub	n2	2
+corpus_v1/qnn/w12/w12_2350.py	RESULT	delta	mean	n4	4
+corpus_v1/qnn/w11/w11_624.py	RESULT	nonfinite	logit	n14	14
+corpus_v1/qnn/w11/w11_391.py	RESULT	delta	mean	n1	1
+corpus_v1/qnn/w12/w12_326.py	RESULT	nonfinite	floor_divide	n17	17
+corpus_v1/qnn/w12/w12_2745.py	RESULT	nonfinite	asinh	n3	3
+corpus_v1/qnn/w11/w11_1090.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w12/w12_2342.py	RESULT	delta	fill	n9	9
+corpus_v1/qnn/w10/w10_98.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w13/w13_2497.py	RESULT	delta	sinh	n1	1
+corpus_v1/qnn/w13/w13_349.py	RESULT	delta	_to_copy	n6	6
+corpus_v1/qnn/w13/w13_2506.py	RESULT	delta	tril	n8	8
+corpus_v1/qnn/w11/w11_768.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w12/w12_2212.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w12/w12_1270.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w13/w13_437.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w13/w13_1511.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w11/w11_1737.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w12/w12_875.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w13/w13_1074.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w13/w13_1350.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w14/w14_1112.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w11/w11_94.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w14/w14_1793.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w14/w14_2050.py	RESULT	delta	_to_copy	n2	2
+corpus_v1/qnn/w14/w14_2202.py	RESULT	delta	ge	n1	1
+corpus_v1/qnn/w14/w14_2797.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w14/w14_1846.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w16/w16_1387.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w16/w16_139.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w14/w14_2100.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w14/w14_2177.py	RESULT	delta	remainder	n0	0
+corpus_v1/qnn/w16/w16_708.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w15/w15_895.py	RESULT	delta	_native_batch_norm_legit	n0	0
+corpus_v1/qnn/w14/w14_30.py	RESULT	delta	ne	n4	4
+corpus_v1/qnn/w16/w16_2037.py	RESULT	delta	permute_copy	n0	0
+corpus_v1/qnn/w14/w14_651.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w16/w16_340.py	RESULT	delta	_to_copy	n14	14
+corpus_v1/qnn/w16/w16_1869.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w15/w15_2042.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w15/w15_512.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w14/w14_960.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w15/w15_82.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w14/w14_96.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w16/w16_1224.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w16/w16_1289.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w15/w15_1053.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w16/w16_57.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w17/w17_2153.py	RESULT	delta	mul	n5	5
+corpus_v1/qnn/w17/w17_1164.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w17/w17_543.py	RESULT	delta	_to_copy	n6	6
+corpus_v1/qnn/w18/w18_1306.py	RESULT	delta	exp	n9	9
+corpus_v1/qnn/w18/w18_1506.py	RESULT	nonfinite	sigmoid	n7	7
+corpus_v1/qnn/w18/w18_2258.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w18/w18_2246.py	OK	no_divergence
+corpus_v1/qnn/w19/w19_1915.py	RESULT	shape	logical_xor	n0	0
+corpus_v1/qnn/w17/w17_1317.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w17/w17_2022.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w17/w17_924.py	RESULT	delta	logical_xor	n1	1
+corpus_v1/qnn/w19/w19_1146.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w19/w19_2107.py	RESULT	delta	div	n4	4
+corpus_v1/qnn/w19/w19_2454.py	RESULT	delta	mm	n3	3
+corpus_v1/qnn/w19/w19_273.py	RESULT	delta	expm1	n4	4
+corpus_v1/qnn/w17/w17_33.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w19/w19_1932.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w19/w19_2361.py	RESULT	delta	elu	n1	1
+corpus_v1/qnn/w17/w17_511.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w18/w18_2226.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w18/w18_797.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w18/w18_239.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w19/w19_844.py	RESULT	delta	_to_copy	n3	3
+corpus_v1/qnn/w19/w19_586.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w19/w19_957.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w20/w20_1911.py	OK	no_divergence
+corpus_v1/qnn/w20/w20_1934.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w20/w20_1262.py	RESULT	delta	sigmoid	n4	4
+corpus_v1/qnn/w2/w2_2684.py	RESULT	delta	unfold_copy	n0	0
+corpus_v1/qnn/w2/w2_527.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w2/w2_1956.py	RESULT	delta	_to_copy	n7	7
+corpus_v1/qnn/w20/w20_1417.py	RESULT	nonfinite	unsqueeze_copy	n1	1
+corpus_v1/qnn/w2/w2_1110.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w20/w20_1875.py	RESULT	delta	prod	n0	0
+corpus_v1/qnn/w2/w2_496.py	RESULT	nonfinite	div	n0	0
+corpus_v1/qnn/w2/w2_663.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w20/w20_2173.py	RESULT	delta	add	n0	0
+corpus_v1/qnn/w2/w2_2409.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w2/w2_2266.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w20/w20_1014.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w20/w20_1233.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w2/w2_2576.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w21/w21_1215.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w2/w2_1974.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w21/w21_1183.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w20/w20_597.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w21/w21_1049.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w21/w21_1521.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w21/w21_1546.py	RESULT	delta	ne	n7	7
+corpus_v1/qnn/w20/w20_1800.py	RESULT	nonfinite	copy	n7	7
+corpus_v1/qnn/w22/w22_1089.py	RESULT	delta	unsqueeze_copy	n7	7
+corpus_v1/qnn/w21/w21_2066.py	RESULT	delta	rsub	n0	0
+corpus_v1/qnn/w21/w21_344.py	RESULT	delta	select_scatter	n24	24
+corpus_v1/qnn/w22/w22_1421.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w22/w22_1927.py	RESULT	delta	ceil	n1	1
+corpus_v1/qnn/w22/w22_2012.py	RESULT	delta	squeeze_copy	n0	0
+corpus_v1/qnn/w21/w21_1666.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_193.py	RESULT	delta	copy	n2	2
+corpus_v1/qnn/w22/w22_1238.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_1710.py	RESULT	delta	logical_xor	n18	18
+corpus_v1/qnn/w21/w21_50.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w22/w22_981.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w22/w22_1765.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w22/w22_1490.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w22/w22_982.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w22/w22_1917.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_2345.py	RESULT	delta	index	n0	0
+corpus_v1/qnn/w22/w22_1797.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_1125.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_1586.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_2122.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_273.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w23/w23_560.py	RESULT	delta	broadcast_to	n3	3
+corpus_v1/qnn/w23/w23_521.py	RESULT	nonfinite	relu	n4	4
+corpus_v1/qnn/w24/w24_2048.py	RESULT	delta	_softmax	n0	0
+corpus_v1/qnn/w23/w23_493.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_1974.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w24/w24_1175.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w24/w24_2283.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w23/w23_868.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w25/w25_2386.py	RESULT	delta	bitwise_right_shift	n4	4
+corpus_v1/qnn/w24/w24_2136.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_1143.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w24/w24_193.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_2402.py	RESULT	nonfinite	atanh	n4	4
+corpus_v1/qnn/w23/w23_2041.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_36.py	RESULT	delta	mul	n2	2
+corpus_v1/qnn/w24/w24_730.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w24/w24_1871.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w24/w24_2432.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_2206.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_2546.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w24/w24_522.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w25/w25_2578.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w25/w25_438.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_507.py	RESULT	delta	sub	n4	4
+corpus_v1/qnn/w26/w26_1022.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w25/w25_898.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w25/w25_1703.py	RESULT	delta	logical_not	n1	1
+corpus_v1/qnn/w25/w25_2035.py	RESULT	shape	logical_xor	n0	0
+corpus_v1/qnn/w27/w27_1182.py	RESULT	delta	_to_copy	n2	2
+corpus_v1/qnn/w26/w26_251.py	RESULT	delta	mm	n0	0
+corpus_v1/qnn/w25/w25_867.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w27/w27_1075.py	RESULT	delta	copy	n0	0
+corpus_v1/qnn/w26/w26_1185.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w26/w26_1541.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w27/w27_722.py	RESULT	nonfinite	abs	n5	5
+corpus_v1/qnn/w26/w26_1576.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_1172.py	OK	no_divergence
+corpus_v1/qnn/w26/w26_1234.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w26/w26_574.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_1425.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w26/w26_173.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w26/w26_906.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w27/w27_368.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w27/w27_1645.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w27/w27_2340.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_1766.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_1744.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_2101.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_34.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w28/w28_718.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w29/w29_1364.py	RESULT	delta	sign	n0	0
+corpus_v1/qnn/w29/w29_1658.py	RESULT	nonfinite	logit	n1	1
+corpus_v1/qnn/w29/w29_496.py	OK	no_divergence
+corpus_v1/qnn/w29/w29_1515.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w29/w29_1741.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w29/w29_772.py	RESULT	nonfinite	div	n0	0
+corpus_v1/qnn/w29/w29_1846.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w29/w29_2098.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w29/w29_374.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_415.py	RESULT	delta	ne	n3	3
+corpus_v1/qnn/w29/w29_1151.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_485.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_105.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_993.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_101.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w30/w30_1751.py	RESULT	nonfinite	log	n0	0
+corpus_v1/qnn/w30/w30_1285.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_2252.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w30/w30_1017.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w3/w3_1582.py	RESULT	nonfinite	squeeze_copy	n2	2
+corpus_v1/qnn/w30/w30_1403.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w30/w30_2189.py	RESULT	delta	squeeze_copy	n2	2
+corpus_v1/qnn/w30/w30_2301.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w30/w30_2411.py	RESULT	delta	_to_copy	n12	12
+corpus_v1/qnn/w30/w30_2315.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w31/w31_1827.py	RESULT	delta	cumsum	n0	0
+corpus_v1/qnn/w31/w31_1350.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w31/w31_1853.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w31/w31_1530.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w31/w31_2064.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w32/w32_1799.py	RESULT	delta	ne	n0	0
+corpus_v1/qnn/w32/w32_1364.py	RESULT	delta	_to_copy	n8	8
+corpus_v1/qnn/w31/w31_991.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_2201.py	RESULT	delta	bitwise_left_shift	n1	1
+corpus_v1/qnn/w32/w32_1244.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w31/w31_1131.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_1236.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w32/w32_1358.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_219.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_1186.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_1551.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_2049.py	RESULT	delta	logical_and	n0	0
+corpus_v1/qnn/w32/w32_1836.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_807.py	RESULT	nonfinite	log	n1	1
+corpus_v1/qnn/w32/w32_2045.py	RESULT	delta	unfold_copy	n0	0
+corpus_v1/qnn/w32/w32_702.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_44.py	RESULT	delta	_to_copy	n2	2
+corpus_v1/qnn/w32/w32_879.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w32/w32_935.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w33/w33_2106.py	RESULT	delta	bitwise_or	n0	0
+corpus_v1/qnn/w33/w33_1048.py	RESULT	delta	cos	n1	1
+corpus_v1/qnn/w33/w33_1734.py	RESULT	delta	elu	n7	7
+corpus_v1/qnn/w33/w33_1712.py	RESULT	delta	ne	n3	3
+corpus_v1/qnn/w33/w33_169.py	OK	no_divergence
+corpus_v1/qnn/w34/w34_1104.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w33/w33_13.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w33/w33_2515.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_246.py	RESULT	delta	trunc	n2	2
+corpus_v1/qnn/w34/w34_318.py	RESULT	dtype	select_scatter	n3	3
+corpus_v1/qnn/w34/w34_1267.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_1646.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_931.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_277.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_1531.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_1420.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_1926.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_1991.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_689.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_682.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w35/w35_1088.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w35/w35_1915.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w35/w35_650.py	RESULT	delta	sqrt	n1	1
+corpus_v1/qnn/w35/w35_2332.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w35/w35_2193.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_1307.py	RESULT	delta	lt	n4	4
+corpus_v1/qnn/w35/w35_2146.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w34/w34_761.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_1961.py	RESULT	delta	div	n1	1
+corpus_v1/qnn/w35/w35_66.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_1745.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w36/w36_1931.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_1571.py	RESULT	delta	sub	n15	15
+corpus_v1/qnn/w36/w36_28.py	RESULT	dtype	select_scatter	n7	7
+corpus_v1/qnn/w37/w37_2491.py	RESULT	nonfinite	logit	n12	12
+corpus_v1/qnn/w36/w36_232.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_2296.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_234.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_2593.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_2388.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w36/w36_962.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_2011.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_540.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_427.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w38/w38_1653.py	RESULT	delta	div	n1	1
+corpus_v1/qnn/w38/w38_2413.py	RESULT	delta	tril	n18	18
+corpus_v1/qnn/w38/w38_1308.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w38/w38_1538.py	RESULT	nonfinite	div	n6	6
+corpus_v1/qnn/w38/w38_1751.py	RESULT	delta	slice_copy	n7	7
+corpus_v1/qnn/w38/w38_2191.py	RESULT	nonfinite	rsqrt	n1	1
+corpus_v1/qnn/w37/w37_573.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w38/w38_1427.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_785.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_1884.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w38/w38_2711.py	RESULT	delta	broadcast_to	n3	3
+corpus_v1/qnn/w38/w38_1922.py	RESULT	delta	gt	n3	3
+corpus_v1/qnn/w38/w38_2618.py	RESULT	delta	mul	n4	4
+corpus_v1/qnn/w39/w39_1070.py	OK	no_divergence
+corpus_v1/qnn/w39/w39_1354.py	RESULT	delta	permute_copy	n13	13
+corpus_v1/qnn/w38/w38_2513.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w38/w38_629.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w38/w38_567.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w39/w39_2395.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w39/w39_1396.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w39/w39_2480.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w39/w39_890.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w39/w39_312.py	RESULT	delta	mean	n3	3
+corpus_v1/qnn/w39/w39_2721.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w4/w4_1178.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w39/w39_983.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w4/w4_1082.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w4/w4_432.py	RESULT	delta	roll	n3	3
+corpus_v1/qnn/w4/w4_1821.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w4/w4_1662.py	ERROR	ValueError	cannot create std::vector larger than max_size()
+corpus_v1/qnn/w4/w4_1770.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w4/w4_485.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w4/w4_379.py	RESULT	shape	alias_copy	n0	0
+corpus_v1/qnn/w4/w4_688.py	RESULT	delta	sub	n20	20
+corpus_v1/qnn/w4/w4_853.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w40/w40_1521.py	RESULT	delta	gt	n0	0
+corpus_v1/qnn/w4/w4_716.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w4/w4_777.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_1713.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w40/w40_1575.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_1842.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_2111.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_2364.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_2341.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_585.py	RESULT	delta	index_select	n1	1
+corpus_v1/qnn/w41/w41_1619.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w40/w40_502.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_60.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_137.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_106.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_1264.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_1132.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w41/w41_1990.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w40/w40_999.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_2336.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_656.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_2362.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_751.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w41/w41_640.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w42/w42_135.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w42/w42_1607.py	RESULT	delta	isnan	n3	3
+corpus_v1/qnn/w42/w42_1109.py	RESULT	nonfinite	log	n11	11
+corpus_v1/qnn/w42/w42_1365.py	RESULT	nonfinite	exp	n1	1
+corpus_v1/qnn/w42/w42_2159.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w42/w42_328.py	RESULT	shape	where	n1	1
+corpus_v1/qnn/w43/w43_1568.py	RESULT	delta	_to_copy	n16	16
+corpus_v1/qnn/w43/w43_1730.py	RESULT	nonfinite	logit	n0	0
+corpus_v1/qnn/w42/w42_364.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w42/w42_424.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w43/w43_1261.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w43/w43_2294.py	RESULT	delta	split_with_sizes_copy	n2	2
+corpus_v1/qnn/w42/w42_827.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w43/w43_1077.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w43/w43_1904.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w42/w42_937.py	RESULT	delta	add	n0	0
+corpus_v1/qnn/w43/w43_391.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w43/w43_2258.py	RESULT	delta	sub	n0	0
+corpus_v1/qnn/w42/w42_794.py	RESULT	delta	logical_and	n0	0
+corpus_v1/qnn/w43/w43_490.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w43/w43_742.py	RESULT	delta	atan	n2	2
+corpus_v1/qnn/w43/w43_708.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w43/w43_822.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w44/w44_1029.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w44/w44_1191.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w44/w44_1258.py	RESULT	shape	div	n0	0
+corpus_v1/qnn/w44/w44_1486.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w44/w44_2051.py	RESULT	delta	select_scatter	n2	2
+corpus_v1/qnn/w44/w44_2233.py	RESULT	shape	logical_or	n0	0
+corpus_v1/qnn/w44/w44_319.py	RESULT	delta	bitwise_left_shift	n1	1
+corpus_v1/qnn/w44/w44_83.py	RESULT	nonfinite	log	n12	12
+corpus_v1/qnn/w44/w44_242.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w44/w44_2056.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w44/w44_517.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w44/w44_924.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w44/w44_949.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w44/w44_835.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w45/w45_1692.py	RESULT	delta	pixel_shuffle	n2	2
+corpus_v1/qnn/w45/w45_1179.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w45/w45_1672.py	OK	no_divergence
+corpus_v1/qnn/w45/w45_1902.py	RESULT	delta	rsub	n1	1
+corpus_v1/qnn/w45/w45_1525.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w45/w45_2365.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w46/w46_286.py	RESULT	delta	ge	n2	2
+corpus_v1/qnn/w46/w46_221.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w44/w44_2447.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w45/w45_373.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_1112.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w47/w47_1126.py	RESULT	delta	pixel_unshuffle	n2	2
+corpus_v1/qnn/w47/w47_1245.py	RESULT	delta	slice_copy	n14	14
+corpus_v1/qnn/w46/w46_2661.py	RESULT	delta	eq	n0	0
+corpus_v1/qnn/w47/w47_1390.py	RESULT	nonfinite	acos	n11	11
+corpus_v1/qnn/w47/w47_1381.py	RESULT	delta	gather	n4	4
+corpus_v1/qnn/w47/w47_1292.py	RESULT	delta	slice_copy	n4	4
+corpus_v1/qnn/w47/w47_1284.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_1454.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w46/w46_2005.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_2061.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w47/w47_487.py	RESULT	delta	squeeze_copy	n1	1
+corpus_v1/qnn/w47/w47_1532.py	RESULT	delta	fill	n2	2
+corpus_v1/qnn/w47/w47_580.py	RESULT	delta	neg	n0	0
+corpus_v1/qnn/w47/w47_688.py	RESULT	nonfinite	fmod	n17	17
+corpus_v1/qnn/w47/w47_2298.py	RESULT	delta	log1p	n5	5
+corpus_v1/qnn/w47/w47_2374.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_610.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w47/w47_993.py	RESULT	delta	masked_fill	n10	10
+corpus_v1/qnn/w47/w47_486.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w48/w48_2337.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w48/w48_1993.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w48/w48_2256.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w48/w48_2200.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_1094.py	RESULT	delta	tan	n10	10
+corpus_v1/qnn/w49/w49_1165.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_193.py	RESULT	delta	remainder	n4	4
+corpus_v1/qnn/w48/w48_532.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_1650.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w48/w48_746.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_1772.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_1936.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_597.py	RESULT	nonfinite	cumsum	n7	7
+corpus_v1/qnn/w5/w5_125.py	RESULT	delta	round	n0	0
+corpus_v1/qnn/w49/w49_963.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_471.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w5/w5_1350.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w49/w49_1790.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w48/w48_742.py	RESULT	delta	slice_copy	n7	7
+corpus_v1/qnn/w5/w5_1893.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w5/w5_1437.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w5/w5_870.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w5/w5_977.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_1191.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w50/w50_1105.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_1308.py	RESULT	delta	remainder	n2	2
+corpus_v1/qnn/w50/w50_1648.py	RESULT	delta	select_scatter	n5	5
+corpus_v1/qnn/w50/w50_176.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_2159.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_1272.py	ERROR	MemoryError	std::bad_alloc
+corpus_v1/qnn/w50/w50_1593.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w5/w5_2073.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_2240.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_1320.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w50/w50_694.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w51/w51_1418.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w52/w52_1106.py	RESULT	delta	_softmax	n0	0
+corpus_v1/qnn/w50/w50_888.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w51/w51_1961.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w51/w51_1727.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w52/w52_59.py	RESULT	delta	round	n0	0
+corpus_v1/qnn/w52/w52_2570.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w52/w52_584.py	RESULT	nonfinite	glu	n12	12
+corpus_v1/qnn/w51/w51_225.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w51/w51_978.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w52/w52_1863.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w52/w52_72.py	RESULT	delta	log2	n10	10
+corpus_v1/qnn/w52/w52_583.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w53/w53_1021.py	RESULT	delta	_to_copy	n6	6
+corpus_v1/qnn/w53/w53_1317.py	RESULT	delta	glu	n4	4
+corpus_v1/qnn/w53/w53_1368.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w52/w52_1677.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w53/w53_1769.py	RESULT	delta	_to_copy	n5	5
+corpus_v1/qnn/w53/w53_1496.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w52/w52_2415.py	RESULT	delta	repeat	n2	2
+corpus_v1/qnn/w53/w53_2205.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w53/w53_2175.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w54/w54_1895.py	RESULT	delta	select_scatter	n6	6
+corpus_v1/qnn/w53/w53_702.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w53/w53_50.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w54/w54_1481.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w53/w53_299.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w53/w53_449.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w54/w54_1508.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w54/w54_2218.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w54/w54_2363.py	RESULT	delta	cos	n0	0
+corpus_v1/qnn/w54/w54_23.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w54/w54_75.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w53/w53_57.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w55/w55_1192.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w55/w55_1019.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w55/w55_1682.py	RESULT	delta	gt	n2	2
+corpus_v1/qnn/w55/w55_1695.py	RESULT	delta	copy	n2	2
+corpus_v1/qnn/w55/w55_1621.py	RESULT	delta	pow	n1	1
+corpus_v1/qnn/w55/w55_171.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w55/w55_2082.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w55/w55_2038.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w55/w55_431.py	OK	no_divergence
+corpus_v1/qnn/w55/w55_1055.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w55/w55_2277.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_1480.py	RESULT	delta	log1p	n6	6
+corpus_v1/qnn/w56/w56_1312.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w55/w55_771.py	RESULT	nonfinite	logit	n3	3
+corpus_v1/qnn/w56/w56_1554.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w55/w55_588.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_1130.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w56/w56_1581.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_1360.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_1343.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_1911.py	RESULT	delta	select_scatter	n0	0
+corpus_v1/qnn/w56/w56_186.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_2202.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w57/w57_1151.py	RESULT	delta	remainder	n1	1
+corpus_v1/qnn/w56/w56_2446.py	RESULT	delta	select_scatter	n9	9
+corpus_v1/qnn/w56/w56_773.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w56/w56_728.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w57/w57_1726.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w57/w57_1972.py	RESULT	delta	_to_copy	n5	5
+corpus_v1/qnn/w57/w57_2300.py	RESULT	delta	minimum	n11	11
+corpus_v1/qnn/w57/w57_1996.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w57/w57_1819.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w58/w58_1370.py	RESULT	delta	_to_copy	n6	6
+corpus_v1/qnn/w57/w57_461.py	RESULT	nonfinite	min	n3	3
+corpus_v1/qnn/w57/w57_258.py	RESULT	delta	index_select	n2	2
+corpus_v1/qnn/w58/w58_1061.py	RESULT	nonfinite	select_scatter	n5	5
+corpus_v1/qnn/w58/w58_1122.py	RESULT	delta	rsqrt	n15	15
+corpus_v1/qnn/w57/w57_580.py	RESULT	nonfinite	logit	n2	2
+corpus_v1/qnn/w58/w58_1302.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w57/w57_56.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w58/w58_2348.py	RESULT	delta	logical_and	n1	1
+corpus_v1/qnn/w58/w58_2320.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w58/w58_2305.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w58/w58_2014.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_1086.py	RESULT	nonfinite	reciprocal	n2	2
+corpus_v1/qnn/w58/w58_528.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_1233.py	RESULT	delta	remainder	n4	4
+corpus_v1/qnn/w59/w59_131.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w59/w59_1120.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_1268.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_1330.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w58/w58_1505.py	RESULT	nonfinite	gt	n2	2
+corpus_v1/qnn/w59/w59_290.py	RESULT	delta	cosh	n2	2
+corpus_v1/qnn/w59/w59_2249.py	RESULT	dtype	select_scatter	n12	12
+corpus_v1/qnn/w59/w59_1426.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_2413.py	RESULT	delta	logical_or	n5	5
+corpus_v1/qnn/w59/w59_764.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w59/w59_2527.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_2277.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_418.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w6/w6_1397.py	RESULT	delta	fill	n12	12
+corpus_v1/qnn/w6/w6_1118.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w6/w6_1539.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w59/w59_1768.py	RESULT	delta	sinh	n1	1
+corpus_v1/qnn/w6/w6_2133.py	RESULT	delta	logical_or	n1	1
+corpus_v1/qnn/w6/w6_436.py	RESULT	delta	bitwise_left_shift	n0	0
+corpus_v1/qnn/w6/w6_1832.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w59/w59_766.py	RESULT	delta	prod	n2	2
+corpus_v1/qnn/w6/w6_2145.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w6/w6_742.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_1091.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_1236.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w6/w6_594.py	RESULT	nonfinite	mean	n3	3
+corpus_v1/qnn/w60/w60_127.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w60/w60_1384.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_2065.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_2105.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w6/w6_583.py	RESULT	delta	_to_copy	n1	1
+corpus_v1/qnn/w60/w60_817.py	RESULT	delta	fill	n1	1
+corpus_v1/qnn/w60/w60_336.py	RESULT	delta	roll	n4	4
+corpus_v1/qnn/w60/w60_1119.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w60/w60_720.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w61/w61_2035.py	RESULT	delta	fmod	n3	3
+corpus_v1/qnn/w61/w61_1447.py	RESULT	delta	maximum	n6	6
+corpus_v1/qnn/w61/w61_1769.py	RESULT	delta	view_copy	n7	7
+corpus_v1/qnn/w61/w61_202.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w61/w61_771.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w61/w61_1559.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w61/w61_2201.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w61/w61_2149.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w62/w62_1416.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w62/w62_177.py	RESULT	delta	fill	n6	6
+corpus_v1/qnn/w62/w62_2010.py	RESULT	delta	fmod	n2	2
+corpus_v1/qnn/w62/w62_223.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w63/w63_1838.py	RESULT	delta	abs	n1	1
+corpus_v1/qnn/w62/w62_2256.py	ERROR	ValueError	cannot create std::vector larger than max_size()
+corpus_v1/qnn/w62/w62_2033.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w62/w62_514.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w63/w63_1035.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w63/w63_198.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w63/w63_629.py	RESULT	delta	fill	n2	2
+corpus_v1/qnn/w63/w63_1801.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w63/w63_1897.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w63/w63_793.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w63/w63_1849.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w7/w7_1819.py	RESULT	delta	prod	n6	6
+corpus_v1/qnn/w7/w7_464.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w63/w63_2759.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w7/w7_610.py	RESULT	delta	reciprocal	n1	1
+corpus_v1/qnn/w63/w63_951.py	RESULT	delta	erf	n5	5
+corpus_v1/qnn/w7/w7_1418.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w7/w7_1082.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w7/w7_581.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w7/w7_312.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w8/w8_1984.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w8/w8_1973.py	RESULT	delta	ne	n5	5
+corpus_v1/qnn/w7/w7_1287.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w8/w8_2092.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w8/w8_1213.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w7/w7_1801.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w7/w7_1293.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w8/w8_2565.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w8/w8_2606.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w8/w8_527.py	ERROR	AssertionError	Failed to generate Qnn context binary.
+corpus_v1/qnn/w9/w9_1281.py	RESULT	delta	index	n1	1
+corpus_v1/qnn/w8/w8_986.py	RESULT	delta	transpose_copy	n0	0
+corpus_v1/qnn/w8/w8_297.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w8/w8_2348.py	RESULT	delta	pixel_unshuffle	n0	0
+corpus_v1/qnn/w8/w8_627.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w9/w9_1252.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w9/w9_1311.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w8/w8_1784.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w9/w9_1551.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w9/w9_1511.py	OK	no_divergence
+corpus_v1/qnn/w9/w9_1955.py	RESULT	delta	le	n1	1
+corpus_v1/qnn/w9/w9_591.py	RESULT	delta	rsub	n3	3
+corpus_v1/qnn/w9/w9_1705.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w9/w9_595.py	RESULT	nonfinite	permute_copy	n1	1
+corpus_v1/qnn/w9/w9_654.py	ERROR	RuntimeError	method->execute() failed with error 0x1
+corpus_v1/qnn/w9/w9_478.py	ERROR	RuntimeError	method->execute() failed with error 0x12
+corpus_v1/qnn/w9/w9_1959.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w9/w9_612.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w9/w9_93.py	RESULT	delta	slice_copy	n15	15
+corpus_v1/qnn/w9/w9_2369.py	RESULT	delta	permute_copy	n0	0
+corpus_v1/qnn/w36/w36_2290.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w37/w37_49.py	DIED	localizer_crash_or_timeout
+corpus_v1/qnn/w39/w39_2330.py	DIED	localizer_crash_or_timeout

@@ -63,10 +63,10 @@ mobile/
     et_runner.py           single-.pte runner
     compare.py             eager-vs-ET comparison
     pregen.py              single-worker corpus generator
-  engine/                VENDORED Z3 CONSTRAINT SOLVER
+  gen/z3engine/          VENDORED Z3 CONSTRAINT SOLVER (was top-level engine/)
     model.py               symbolic type model
-    test_valid_inputs.py   diverse model enumeration
-    opnode/op_lookup/verifier/schema_overrides
+    sampler.py             diverse valid-input sampler (was test_valid_inputs.py; library, no CLI)
+    op_lookup/solver/schema_overrides/entry_points_data
 ```
 
 > The canonical, code-level source of truth is each module's docstring. These docs
