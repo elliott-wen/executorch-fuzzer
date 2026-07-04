@@ -1663,3 +1663,27 @@
   [34005] CRASH    w46:705 fvp_runner rc=5: >> building runner (cache miss): backend=cortex-m target=cortex
   [34017] MISMATCH w47:46 out[0] max|delta|=2.043e+00 (rtol=0.01 atol=0.001)
   [34029] MISMATCH w47:476 out[0] max|delta|=1.280e+02 (rtol=0.01 atol=0.001)
+  [t=2149s] 34035/61735 (15.8/s)  ok=30406 mism=831 crash=141 timeout=207 skip=2450  |  inflight=63
+  [34058] MISMATCH w47:516 out[0] max|delta|=3.322e+00 (rtol=0.01 atol=0.001)
+  [34082] MISMATCH w47:60 out[0] max|delta|=9.882e-01 (rtol=0.01 atol=0.001)
+  [34106] MISMATCH w47:573 out[0] max|delta|=5.765e+17 (rtol=0.0 atol=0.0)
+  [t=2152s] 34118/61735 (15.9/s)  ok=30479 mism=834 crash=141 timeout=208 skip=2456  |  inflight=63
+  [34153] MISMATCH w47:652 out[0] max|delta|=2.306e+18 (rtol=0.0 atol=0.0)
+  [34155] MISMATCH w47:657 out[0] max|delta|=2.599e-01 (rtol=0.01 atol=0.001)
+  [t=2156s] 34169/61735 (15.8/s)  ok=30524 mism=836 crash=141 timeout=208 skip=2460  |  inflight=64
+  [34213] MISMATCH w47:744 out[0] max|delta|=1.945e+00 (rtol=0.01 atol=0.001)
+  [34231] MISMATCH w47:766 out[0] max|delta|=2.000e+00 (rtol=0.01 atol=0.001)
+  [t=2159s] 34243/61735 (15.9/s)  ok=30590 mism=838 crash=141 timeout=208 skip=2466  |  inflight=63
+  [34302] MISMATCH w48:169 out[0] max|delta|=4.800e+01 (rtol=0.01 atol=0.001)
+  [34303] MISMATCH w48:166 out[0] max|delta|=9.223e+18 (rtol=0.0 atol=0.0)
+  [34307] CRASH    w47:539 fvp_runner rc=5: >> building runner (cache miss): backend=cortex-m target=cortex
+  [t=2162s] 34310/61735 (15.9/s)  ok=30651 mism=840 crash=142 timeout=209 skip=2468  |  inflight=64
+  [34355] MISMATCH w48:231 out[0] max|delta|=2.300e+01 (rtol=0.0 atol=0.0)
+  [34364] MISMATCH w48:311 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  [t=2165s] 34366/61735 (15.9/s)  ok=30699 mism=842 crash=142 timeout=210 skip=2473  |  inflight=63
+  [34376] MISMATCH w48:261 out[0] max|delta|=2.847e+00 (rtol=0.01 atol=0.001)
+  [34388] MISMATCH w48:279 out[0] max|delta|=1.280e+02 (rtol=0.0 atol=0.0)
+  [t=2169s] 34454/61735 (15.9/s)  ok=30779 mism=844 crash=142 timeout=210 skip=2479  |  inflight=64
+  [t=2172s] 34504/61735 (15.9/s)  ok=30824 mism=844 crash=142 timeout=210 skip=2484  |  inflight=63
+  [34544] MISMATCH w48:497 out[0] max|delta|=1.548e-02 (rtol=0.01 atol=0.001)
+  [34548] MISMATCH w48:51 out[0] max|delta|=1.600e+01 (rtol=0.0 atol=0.0)
