@@ -26,7 +26,7 @@ from pathlib import Path
 
 from mobile.gen.graph import build_graph
 from mobile.gen.ops import load_runnable_opnodes
-from mobile.gen.export import build_job, available_backends
+from mobile.gen.export import build_job, get_backend, available_backends
 from mobile.net import protocol as P
 from mobile.net import corpus as C
 
@@ -34,7 +34,10 @@ from mobile.net import corpus as C
 def run_pregen(out: str, count: int, nodes: int, leaf_prob: float, seed: int,
                producer_id: str, backend: str = "portable", quantize: bool = False,
                out_alias_prob: float = 0.1) -> int:
-    if backend not in available_backends():
+    # Lazy probe of ONLY the target backend — never load the other twelve (cost, and it keeps
+    # a hostile SDK like QNN out of an openvino worker). available_backends() (full sweep) is
+    # paid only on the error path, to list the alternatives.
+    if get_backend(backend) is None:
         print(f"[pregen {producer_id}] unknown backend {backend!r}; "
               f"available here: {', '.join(available_backends())}", flush=True)
         return 1

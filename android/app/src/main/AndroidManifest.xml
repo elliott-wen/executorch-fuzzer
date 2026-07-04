@@ -16,6 +16,22 @@
              (no fastRPC logs — it never reaches the DSP). required=false: absent on non-Qualcomm SoCs. -->
         <uses-native-library android:name="libcdsprpc.so" android:required="false" />
 
+        <!-- Samsung Exynos ENN: the delegate dlopen()s the vendor runtime lib libenn_public_api_cpp.so
+             (present on Exynos 2500/2600 phones, provided by the device — NOT bundled). Android 12+
+             blocks apps from dlopen-ing non-public vendor libs unless declared here; without it the
+             ENN backend fails to load its API library. required=false: absent on non-Exynos SoCs. -->
+        <uses-native-library android:name="libenn_public_api_cpp.so" android:required="false" />
+
+        <!-- MediaTek Neuron/APU: our bundled libneuronusdk_adapter.mtk.so dlopen()s the on-device APU
+             driver stack (present on Dimensity 9300/9400 firmware, NOT bundled). Android 12+ needs each
+             non-public vendor lib declared to permit dlopen. required=false: absent on non-MediaTek SoCs. -->
+        <uses-native-library android:name="libcmdl_ndk.mtk.so" android:required="false" />
+        <uses-native-library android:name="libnir_neon_driver_ndk.mtk.so" android:required="false" />
+        <uses-native-library android:name="libarmnn_ndk.mtk.so" android:required="false" />
+        <uses-native-library android:name="libapuwareapusys_v2.mtk.so" android:required="false" />
+        <uses-native-library android:name="libapuwareutils_v2.mtk.so" android:required="false" />
+        <uses-native-library android:name="libapuwarexrp_v2.mtk.so" android:required="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

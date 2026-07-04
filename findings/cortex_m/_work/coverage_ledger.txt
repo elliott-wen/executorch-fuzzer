@@ -1,0 +1,45 @@
+SCHEDULED (EXECUTORCH_OPS): 231
+PRODUCED (in corpus):       203
+  of which cortex_m COMPUTE-capable (backend surface): 26
+  (all produced graphs also run cortex_m quantize/dequantize boundary kernels)
+NEVER PRODUCED (gap):       28
+PRODUCED-but-not-scheduled (decomp/alias names): 0
+
+ASSERT scheduled == produced_in_schedule + never : 203 + 28 = 231 vs 231
+
+== NEVER-PRODUCED ops (coverage gaps — scheduled but never lowered) ==
+  _conj_physical                           no job produced (seed-infeasible / partition/lowering attrition)
+  _fft_c2r                                 no job produced (seed-infeasible / partition/lowering attrition)
+  _fft_c2r.out                             no job produced (seed-infeasible / partition/lowering attrition)
+  _fft_r2c.out                             no job produced (seed-infeasible / partition/lowering attrition)
+  _native_batch_norm_legit                 gen-crash x2
+  _native_batch_norm_legit.no_stats_out    no job produced (seed-infeasible / partition/lowering attrition)
+  _native_batch_norm_legit.out             no job produced (seed-infeasible / partition/lowering attrition)
+  any.out                                  no job produced (seed-infeasible / partition/lowering attrition)
+  as_strided_copy                          no job produced (seed-infeasible / partition/lowering attrition)
+  cat.out                                  no job produced (seed-infeasible / partition/lowering attrition)
+  convolution_backward                     no job produced (seed-infeasible / partition/lowering attrition)
+  div.Scalar_mode                          no job produced (seed-infeasible / partition/lowering attrition)
+  fill.Tensor                              no job produced (seed-infeasible / partition/lowering attrition)
+  masked_select                            no job produced (seed-infeasible / partition/lowering attrition)
+  masked_select.out                        no job produced (seed-infeasible / partition/lowering attrition)
+  max_pool2d_with_indices.out              no job produced (seed-infeasible / partition/lowering attrition)
+  native_dropout                           no job produced (seed-infeasible / partition/lowering attrition)
+  nonzero                                  no job produced (seed-infeasible / partition/lowering attrition)
+  nonzero.out                              no job produced (seed-infeasible / partition/lowering attrition)
+  prod.out                                 no job produced (seed-infeasible / partition/lowering attrition)
+  rand.out                                 no job produced (seed-infeasible / partition/lowering attrition)
+  reflection_pad3d.out                     no job produced (seed-infeasible / partition/lowering attrition)
+  repeat_interleave.Tensor                 no job produced (seed-infeasible / partition/lowering attrition)
+  split_copy.Tensor_out                    no job produced (seed-infeasible / partition/lowering attrition)
+  split_with_sizes_copy.out                no job produced (seed-infeasible / partition/lowering attrition)
+  stack.out                                no job produced (seed-infeasible / partition/lowering attrition)
+  unbind_copy.int_out                      no job produced (seed-infeasible / partition/lowering attrition)
+  view_as_real_copy                        no job produced (seed-infeasible / partition/lowering attrition)
+
+== generation-time _crashes: 296 graphs over 2 ops ==
+  max_pool2d_with_indices_backward.grad_input x294   PRODUCED-elsewhere
+  _native_batch_norm_legit                 x2     NEVER-produced
+
+== cortex_m COMPUTE-capable produced ops (the backend compute surface) ==
+  (26 ops) _adaptive_avg_pool2d, _softmax.out, add.Scalar, addmm.out, avg_pool2d.out, bmm.out, clamp.Tensor_out, clamp.out, constant_pad_nd, convolution, hardtanh, hardtanh.out, linear, linear.out, maximum.out, mean, mean.dtype_out, mean.out, minimum.out, mm.out, mul.Scalar, mul.out, permute_copy, relu, t_copy, transpose_copy.int

@@ -1,0 +1,37 @@
+job_id      bucket         cm_compute                               #cm
+w0:729      NO-CM                                                     0
+w10:582     NO-CM                                                     0
+w100:286    NO-CM                                                     0
+w101:408    NO-CM                                                     0
+w103:572    NO-CM                                                     0
+w104:719    NO-CM                                                     0
+w0:441      CM-QUANT-ONLY                                             2
+w0:669      CM-QUANT-ONLY                                             2
+w1:27       CM-QUANT-ONLY                                             2
+w1:711      CM-QUANT-ONLY                                             2
+w10:294     CM-QUANT-ONLY                                             2
+w10:522     CM-QUANT-ONLY                                             2
+w0:191      CM-QUANT-ONLY                                             2
+w0:419      CM-QUANT-ONLY                                             2
+w1:5        CM-QUANT-ONLY                                             2
+w1:689      CM-QUANT-ONLY                                             2
+w10:272     CM-QUANT-ONLY                                             2
+w10:44      CM-QUANT-ONLY                                             2
+w0:386      CM-QUANT-ONLY                                             2
+w1:200      CM-QUANT-ONLY                                             2
+w10:11      CM-QUANT-ONLY                                             2
+w10:239     CM-QUANT-ONLY                                             2
+w100:171    CM-QUANT-ONLY                                             2
+w100:399    CM-QUANT-ONLY                                             2
+w0:196      NO-CM                                                     0
+w0:424      CM-QUANT-ONLY                                             2
+w0:652      CM-QUANT-ONLY                                             2
+w1:10       NO-CM                                                     0
+w1:238      NO-CM                                                     0
+w1:466      CM-QUANT-ONLY                                             2
+w0:173      CM-COMPUTE     pad.out                                    3
+w0:401      CM-COMPUTE     pad.out                                    3
+w0:629      CM-COMPUTE     pad.out                                    3
+w1:671      NO-CM                                                     0
+w10:254     CM-COMPUTE     pad.out                                    3
+w10:482     CM-COMPUTE     pad.out                                    3

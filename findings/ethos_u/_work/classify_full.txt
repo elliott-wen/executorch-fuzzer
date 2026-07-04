@@ -1,0 +1,421 @@
+DELEGATED non-OK rows classified: 1973
+buckets: {'INT-SHIFT-NEG': 794, 'FINITE-CLEAN': 380, 'NONFINITE-INPUT': 799}
+
+== per-op classification (delegated non-OK) ==
+operator                         FINITE-CLEAN  NONFINITE  SHIFT-NEG  other
+abs                                         0         28          0      0
+add.Scalar                                  0          1          0      0
+arange.out                                 43          0          0      0
+arange.start_out                           11          0          0      0
+bitwise_left_shift.Tensor_out               2          0        394      0
+bitwise_right_shift.Tensor_out              9          0        400      0
+clamp.Tensor_out                            3          0          0      0
+div.Scalar                                  0         33          0      0
+fill.Scalar                                96          0          0      0
+floor_divide                                9         56          0      0
+full.out                                   36          0          0      0
+hardtanh                                    0          4          0      0
+index_put                                   0        205          0      0
+mean                                        0         18          0      0
+mul.Scalar                                  0         31          0      0
+ones.out                                   48          0          0      0
+permute_copy                                0         33          0      0
+pixel_shuffle                               0          3          0      0
+pixel_unshuffle                             0         10          0      0
+relu                                        0         42          0      0
+remainder.Tensor_out                        1          0          0      0
+rsub.Scalar                                50         39          0      0
+select_copy.int                             0        124          0      0
+select_scatter                              0          1          0      0
+slice_copy.Tensor                           0          2          0      0
+slice_scatter                               0          7          0      0
+split_copy.Tensor                           0         58          0      0
+squeeze_copy.dim                            0          4          0      0
+stack                                      25          0          0      0
+sub.Scalar                                  0          2          0      0
+sub.out                                     1          0          0      0
+t_copy                                      0         12          0      0
+unsqueeze_copy                              0         86          0      0
+zeros.out                                  46          0          0      0
+
+== FINITE-CLEAN candidates (genuine ethos-u worklist): 380 ==
+  arange.out                   w100:93    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w101:443   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w102:105   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w104:754   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w106:758   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w107:536   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w108:139   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w108:367   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w112:130   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w113:660   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w116:629   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w11:183    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w126:544   SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w20:12     SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w22:556    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w27:97     SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w30:111    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w35:466    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w36:4      SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w38:673    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w39:223    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w40:146    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w40:374    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w41:664    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w46:653    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w49:438    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w51:75     SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w54:86     SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w56:474    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w57:476    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w69:108    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w75:282    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w79:303    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w7:41      SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w82:522    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w85:235    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w91:615    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w92:533    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w94:10     SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w94:238    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w97:580    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w98:459    SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.out                   w9:576     SKIP      n0*=arange.out(·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w109:238   SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w112:471   SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w115:156   SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w124:105   SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w127:479   SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w28:779    SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w30:680    SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w31:322    SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w4:388     SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w93:296    SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  arange.start_out             w97:9      SKIP      n0*=arange.start_out(·,·,·,·)         fvp_runner rc=2: >> building runner: backend=ethos
+  bitwise_left_shift.Tensor_out w100:714   SKIP      n0*=bitwise_left_shift.Tensor_out(L0  fvp_runner rc=2: >> building runner: backend=ethos
+  bitwise_left_shift.Tensor_out w84:298    SKIP      n0*=bitwise_left_shift.Tensor_out(L0  fvp_runner rc=2: >> building runner: backend=ethos
+  bitwise_right_shift.Tensor_out w106:301   SKIP      n0*=bitwise_right_shift.Tensor_out(L  fvp_runner rc=2: >> building runner: backend=ethos
+  bitwise_right_shift.Tensor_out w116:400   MISMATCH  n0*=bitwise_right_shift.Tensor_out(L  out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  bitwise_right_shift.Tensor_out w123:624   MISMATCH  n0*=bitwise_right_shift.Tensor_out(L  out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  bitwise_right_shift.Tensor_out w14:429    MISMATCH  n0*=bitwise_right_shift.Tensor_out(L  out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  bitwise_right_shift.Tensor_out w21:717    SKIP      n0*=bitwise_right_shift.Tensor_out(L  fvp_runner rc=2: >> building runner: backend=ethos
+  bitwise_right_shift.Tensor_out w40:373    SKIP      n0*=bitwise_right_shift.Tensor_out(L  fvp_runner rc=2: >> building runner: backend=ethos
+  bitwise_right_shift.Tensor_out w64:110    MISMATCH  n0*=bitwise_right_shift.Tensor_out(L  out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  bitwise_right_shift.Tensor_out w71:596    MISMATCH  n0*=bitwise_right_shift.Tensor_out(L  out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  bitwise_right_shift.Tensor_out w81:87     MISMATCH  n0*=bitwise_right_shift.Tensor_out(L  out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  clamp.Tensor_out             w118:580   MISMATCH  n0*=clamp.Tensor_out(L0,·,·,·)        out[0] max|delta|=1.300e+01 (rtol=0.0 atol=0.0)
+  clamp.Tensor_out             w2:292     MISMATCH  n0*=clamp.Tensor_out(L0,·,·,·)        out[0] max|delta|=1.500e+01 (rtol=0.0 atol=0.0)
+  clamp.Tensor_out             w94:714    MISMATCH  n0*=clamp.Tensor_out(L0,·,·,·)        out[0] max|delta|=1.500e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w0:337     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w102:362   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w102:590   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w104:327   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w106:103   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w107:337   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w107:565   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w109:610   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w10:418    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w110:183   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w112:615   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w113:689   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w114:226   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w115:756   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w117:776   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w119:139   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w11:668    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w122:512   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w122:56    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w123:198   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w124:21    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w127:395   MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w13:188    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w13:644    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.200e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w14:3      MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w14:687    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w15:637    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.200e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w1:151     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w1:379     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w20:497    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w26:236    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w26:464    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w26:692    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w29:225    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w2:529     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w2:73      MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w30:368    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w30:596    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w33:46     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w34:189    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w36:489    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w37:35     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w38:702    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w40:403    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w41:237    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w41:465    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w42:687    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w43:165    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w43:393    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w44:442    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w46:226    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w4:304     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w4:76      MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w51:560    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w52:202    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w58:124    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w58:352    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w5:478     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w62:125    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w65:262    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w68:179    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w68:635    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w69:593    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w6:600     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w74:257    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w74:713    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w75:311    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w75:539    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w76:301    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w76:73     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w77:327    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w77:99     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w7:526     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w7:70      MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w80:599    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w81:573    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w83:289    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w83:517    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w83:745    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w85:264    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w85:492    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w88:661    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w89:39     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w89:495    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w8:363     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w90:122    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=7.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w90:350    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w93:212    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=9.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w94:267    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w94:39     MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w95:433    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w95:661    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w97:153    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w97:381    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=6.000e+00 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w98:260    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=1.100e+01 (rtol=0.0 atol=0.0)
+  fill.Scalar                  w99:242    MISMATCH  n0*=fill.Scalar(L0,·)                 out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)
+  floor_divide                 w100:380   MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=9.956e-01 (rtol=0.01 atol=0.001)
+  floor_divide                 w111:639   MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=1.999e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w33:76     MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=1.003e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w37:521    MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=1.003e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w44:700    MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=2.999e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w55:279    MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=1.999e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w60:651    MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=2.007e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w68:437    MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
+  floor_divide                 w75:113    MISMATCH  n0*=floor_divide(L0,L1)               out[0] max|delta|=1.999e+00 (rtol=0.01 atol=0.001)
+  full.out                     w104:590   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w112:422   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w112:650   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w115:335   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w11:19     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w121:109   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w122:319   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w126:380   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w126:608   SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w13:223    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w13:679    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w15:216    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w2:336     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w31:273    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w33:309    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w3:186     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w45:491    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w45:719    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w49:46     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w54:606    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w57:540    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w57:768    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w66:707    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w67:621    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w68:442    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w73:41     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w75:346    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w82:358    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w86:129    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w88:240    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w89:758    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w8:398     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w91:679    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w92:141    SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w98:67     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  full.out                     w9:412     SKIP      n0*=full.out(·,·,·)                   fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w100:573   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w103:631   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w112:610   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w113:228   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w113:684   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w115:295   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w116:653   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w119:362   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w121:297   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w122:507   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w122:735   SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w14:682    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w16:534    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w17:36     SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w24:691    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w25:609    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w28:6      SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w2:752     SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w31:5      SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w36:28     SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w37:486    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w38:469    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w38:697    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w3:374     SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w40:170    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w42:226    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w45:223    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w46:677    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w4:71      SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w4:755     SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w54:110    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w54:338    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w55:700    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w62:576    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w64:591    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w71:165    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w76:524    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w83:740    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w86:317    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w87:119    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w88:200    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w89:490    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w89:718    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w91:639    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w92:101    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w95:428    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w97:148    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  ones.out                     w98:711    SKIP      n0*=ones.out(·,·)                     fvp_runner rc=2: >> building runner: backend=ethos
+  remainder.Tensor_out         w70:394    MISMATCH  n0*=remainder.Tensor_out(L0,L1,·)     out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w100:292   MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.255e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w107:507   MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=8.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w10:132    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=2.505e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w116:372   MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=7.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w121:16    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w123:140   MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w125:5     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.784e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w13:586    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w14:173    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w14:401    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=8.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w16:25     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.164e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w19:208    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=5.775e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w19:664    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=3.629e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w1:321     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w1:777     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=9.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w21:5      MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=5.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w21:689    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w28:409    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.076e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w28:637    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=5.512e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w29:167    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.164e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w2:15      MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w38:644    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.080e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w42:629    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=5.914e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w44:384    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=2.485e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w45:398    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w46:396    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w48:203    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w4:18      MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=7.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w51:46     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=9.759e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w53:162    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=9.042e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w54:513    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=7.517e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w59:20     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w63:141    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.270e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w64:310    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w65:432    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w66:158    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w67:300    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=6.032e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w69:763    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w72:530    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w77:269    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w77:41     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.912e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w82:37     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=8.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w84:104    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=9.042e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w84:560    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=8.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w85:662    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=9.527e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w86:264    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w8:533     MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=4.270e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w92:276    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  rsub.Scalar                  w94:209    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=8.252e+00 (rtol=0.01 atol=0.001)
+  rsub.Scalar                  w99:640    MISMATCH  n0*=rsub.Scalar(L0,·,·)               out[0] max|delta|=1.970e+09 (rtol=0.0 atol=0.0)
+  stack                        w0:37      SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w102:746   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w104:255   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w108:552   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w110:567   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w113:389   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w115:456   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w118:289   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w11:140    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w124:405   SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w14:615    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w15:337    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w16:695    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w22:57     SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w28:395    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w39:636    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w41:165    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w41:393    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w59:690    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w64:68     SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w70:368    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w75:239    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w82:23     SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w97:309    SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  stack                        w9:305     SKIP      n0*=stack(·,·)                        fvp_runner rc=2: >> building runner: backend=ethos
+  sub.out                      w72:408    MISMATCH  n0*=sub.out(L0,L1,·,·)                out[0] max|delta|=3.800e+01 (rtol=0.0 atol=0.0)
+  zeros.out                    w102:528   SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w102:72    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w104:37    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w106:269   SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w107:47    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w111:547   SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w111:91    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w113:171   SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w11:150    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w120:270   SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w126:511   SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w126:55    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w13:582    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w19:432    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w1:317     SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w20:663    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w26:402    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w26:630    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w31:176    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w32:478    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w33:668    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w34:583    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w42:625    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w51:726    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w53:158    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w54:509    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w55:415    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w60:103    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w61:669    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w62:63     SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w63:365    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w66:154    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w67:296    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w67:68     SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w67:752    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w68:573    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w71:564    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w74:195    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w7:236     SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w83:455    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w89:661    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w8:757     SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w90:516    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w94:433    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w95:371    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos
+  zeros.out                    w99:180    SKIP      n0*=zeros.out(·,·)                    fvp_runner rc=2: >> building runner: backend=ethos

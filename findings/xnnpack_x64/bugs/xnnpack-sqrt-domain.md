@@ -3,8 +3,9 @@
 - **Failure mode:** MISMATCH
 - **Root cause:** operator kernel (delegated to XNNPACK; `delegated.ops≥1`)
 - **Mechanism:** NONFINITE — missing `NaN` on the negative domain
-- **Occurrences:** 92 delegated mismatches in this run (every `sqrt.out` mismatch; all "non-finite
-  mismatch (nan/inf positions differ)")
+- **Occurrences:** 353 delegated mismatches in the injected 87,921-graph run (up from 92 pre-injection —
+  injection adds `inf`/`±0` inputs on top of the always-present negatives). Two sub-cases:
+  `sqrt(neg) → -0.0` (vs `NaN`) and `sqrt(inf) → NaN` (vs `inf`).
 - **Repro:** [repro_xnnpack-sqrt-domain.py](repro_xnnpack-sqrt-domain.py) (corpus job `w1:206`)
 
 ## What happens

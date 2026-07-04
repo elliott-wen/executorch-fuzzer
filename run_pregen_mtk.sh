@@ -22,9 +22,9 @@ REPO="$(dirname "$MOBILE")"
 VENV="$MOBILE/.venv-mtk"                                  # the Python 3.10 MediaTek venv
 BACKEND="mediatek"
 
-WORKERS="${1:-16}"
-TOTAL="${2:-100000}"
-OUT="${3:-$MOBILE/tmp/corpus_mediatek}"
+WORKERS=128
+TOTAL=100000
+OUT=corpus_v3/mtk
 NODES="${NODES:-8}"
 
 # Anchor a RELATIVE OUT to the invocation cwd NOW, before the `cd "$REPO"` below — otherwise a

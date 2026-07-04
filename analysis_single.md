@@ -147,9 +147,21 @@ give the mechanism device-verified evidence — not just "diverges":
   precision loss in the op (common for fp16).
 - **WRONG-SHAPE / WRONG-DTYPE** — output metadata wrong (after clearing the 3c artifact) → a
   meta/shape-inference bug in the op's lowering.
-- **CRASH** — the op aborts alone → record the crashing form (dtype/shape/args).
-- **SKIP** — the op is rejected at runtime → enumerate the rejected forms (which dtypes/ranks/args
-  SKIP vs run). The corpus job already *is* the one-op probe, so this is direct.
+- **CRASH** — the op aborts alone → **record the crash reason**: the crashing form
+  (dtype/shape/args) AND the runtime error string if any. A native abort usually has no catchable
+  message (only `executor died (native abort)`) — say so explicitly, and note the trigger you can
+  observe (e.g. non-finite input, negative/zero dim). The absence of a `Check failed` guard *is* the
+  bug: the kernel should reject the form with a catchable error, not abort.
+- **SKIP** — the op is rejected at runtime → **record the skip reason verbatim**: the runtime
+  `Check failed (...)` / `not implemented` / `Missing operator` / `xnn_status_*` clause the backend
+  raised, and enumerate the rejected forms (which dtypes/ranks/args SKIP vs run). The corpus job
+  already *is* the one-op probe, so this is direct. Group by distinct reason signature — one op often
+  SKIPs for several different reasons (e.g. an int64-index requirement vs a rank guard).
+
+**Always write the reason strings down, not just the counts.** A SKIP/CRASH finding with only a count
+is incomplete — the *reason* is the finding (which guard fired, or which guard is missing). Extract
+them from the skip-log's `reason` column: it holds the full runtime error for every non-OK graph
+(the kernel-level `[file.cpp:NN] Check failed (...)` clause is after the first `|`).
 
 **Use the decomposition when `ops` disagrees with the source op count.** If a single source op
 reports `ops=3` or `ops=5` delegated, it decomposed into several edge ops. Inspect the `.py` (and, if
@@ -190,10 +202,16 @@ unpinned as not pinned.
 One `bugs/<op>.md` + `bugs/repro_<op>.py` per confirmed operator bug. The repro builds the one-op
 `.pte`, runs it on the device via the broker, and prints eager vs device (for SKIP/CRASH, prints the
 device status). Label each with its **failure mode** (mismatch / crash / skip), its **mechanism**
-(WRONG-VALUE / SCALE / ZEROED / NONFINITE / WRONG-SHAPE / WRONG-DTYPE), and its **delegated-vs-portable**
-bucket. Record ops removed by the step-3 filters (portable-fallback divergences, dtype-only
-artifacts, reference confounds, 0/N flaky) under `ruled_out/` with the filter that ruled them out, so
-the report separates confirmed bugs from suspects.
+(WRONG-VALUE / SCALE / ZEROED / NONFINITE / WRONG-SHAPE / WRONG-DTYPE — or, for SKIP/CRASH, the
+**verbatim reason string**), and its **delegated-vs-portable** bucket. Record ops removed by the
+step-3 filters (portable-fallback divergences, dtype-only artifacts, reference confounds, 0/N flaky)
+under `ruled_out/` with the filter that ruled them out, so the report separates confirmed bugs from
+suspects.
+
+**SKIP and CRASH bugs must carry their reason, not just a count** (see step 4). Produce a
+`skips.md` — a per-operator table of `count | operator | runtime reason` for every SKIP, plus a
+CRASH table (`count | operator | crash trigger`, noting native aborts have no catchable message).
+This *is* the SKIP/CRASH finding; a bare count is not.
 
 ## Coverage note — sizing the corpus so every op is caught
 The seed schedule is exact round-robin over the ~228 usable ops, so each op is sampled
@@ -213,6 +231,8 @@ rather than a fixed attempt count.
     (attrition / coverage gaps) enumerated.
 - `bugs/` — each confirmed operator bug (md + runnable one-op repro), grouped by failure mode;
   `bugs/INDEX.md` lists them.
+- `skips.md` — **required**: per-operator SKIP reason table (runtime `Check failed`/error verbatim)
+  and CRASH reason table (crashing form + trigger). The reason is the finding for these modes.
 - `ruled_out/` — suspects removed by the step-3 filters, with the reason.
 
 ## Rigor reminders (write these into every run)
@@ -221,8 +241,19 @@ rather than a fixed attempt count.
   dtype divergence is usually an isolation artifact (3c). Filter reference-side int64/sentinel
   confounds before claiming a device bug (3d).
 - **Legitimate SKIPs are real coverage gaps, not bugs** — e.g. an op with no portable kernel fails
-  the load with "Missing operator". Enumerate these in the Skip section; don't chase them as
-  failures. In this corpus they are trivial to identify — the job is already the one-op probe.
+  the load with "Missing operator". Enumerate these in the Skip section **with the verbatim reason
+  string** (`skips.md`); don't chase them as failures, but don't drop the reason either — a count
+  without the reason is not a finding. In this corpus they are trivial to identify — the job is
+  already the one-op probe.
+- **Record CRASH reasons too** — a native abort has no catchable message, so record the crashing
+  operator + input trigger and say "native abort (no catchable error)". The missing guard is the bug.
+- **On a real device, separate `executor unavailable` from real crashes, and re-run — don't count
+  dropouts.** A flaky phone worker dropping under load logs its in-flight jobs as CRASH
+  `executor unavailable` — these are NOT crashes. Split them out (grep the CRASH detail), and **re-run
+  the whole CRASH set with lower in-flight concurrency** (drop `--window` from ~48 to ~6, raise
+  `--timeout`) — a brief blip then loses far fewer in-flight jobs and the set converges in one pass.
+  Merge the recovered verdicts (they hide real mismatches/skips). Counting dropouts as crashes once
+  overstated a device's crash rate ~40×.
 - **Long-lived helper processes** (broker, device/emulator clients) only survive when launched as a
   **bare single-line `exec <prog>`** via the harness background mechanism; a multi-line command
   (with `source …`/`set -x`, or a supervisor that `wait`s) gets torn down when the launching

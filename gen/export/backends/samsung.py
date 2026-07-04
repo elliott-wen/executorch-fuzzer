@@ -34,7 +34,7 @@ from .base import Backend, QuantMode
 # siblings at load time. With that in place the extension imports lazily with no
 # LD_LIBRARY_PATH and no preloading (force-preloading every SDK lib pulls in ones that
 # interpose on torch's C++ runtime and abort with std::bad_cast).
-CHIPSET = "E9955"
+CHIPSET = "E9965"
 
 
 class SamsungBackend(Backend):

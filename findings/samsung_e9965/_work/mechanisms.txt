@@ -1,0 +1,41 @@
+operator                     dtype    mechanism      example (eager -> device)
+_softmax.out                 float32  ZEROED         w1:628  [nan] -> [0.0]  device all-zero
+add.Scalar                   int32    WRONG-VALUE    w0:577  [-7.0, -7.0, -7.0] -> [1.0, 1.0, 1.0]  |Δ|max=8
+avg_pool2d.out               float16  WRONG-VALUE    w113:384  [-0.18042, -0.290283] -> [-0.218506, -1.079102]  |Δ|max=0.7888
+bitwise_left_shift.Tensor_out int64    WRONG-VALUE    w13:552  [0.0, -48.0] -> [-1610612736.0, -48.0]  |Δ|max=1.611e+09
+bmm.out                      float32  WRONG-VALUE    w84:333  [-0.566209, 1.303011, -0.780707] -> [-0.566406, 1.303711, -0.780762]  |Δ|max=0.8404
+clamp.out                    float16  WRONG-VALUE    w0:580  [inf, inf] -> [65504.0, 65504.0]  |Δ|max=0
+constant_pad_nd              int64    WRONG-VALUE    w16:603  [-3.0, -3.0, -3.0] -> [-3.0, -3.0, -3.0]  |Δ|max=4
+div.Scalar                   float32  NONFINITE      w0:297  [-0.482491, 1.110353, 0.934016] -> [-31600.0, inf, 61184.0]  eager finite -> device [inf, inf]
+embedding                    float32  ZEROED         w10:175  [1.163586, 0.513757, 0.674999] -> [0.0, 0.0, 0.0]  device all-zero
+expand_copy                  int32    WRONG-VALUE    w104:620  [-3.0, -3.0, -3.0] -> [-3.0, -3.0, -3.0]  |Δ|max=4
+gelu.out                     float16  WRONG-VALUE    w0:278  [nan, nan] -> [inf, inf]  |Δ|max=0
+glu.out                      float16  WRONG-VALUE    w1:485  [-0.53125, 0.948242, 0.097656] -> [-0.53125, -0.120544, 0.097595]  |Δ|max=1.089
+hardtanh                     float16  WRONG-VALUE    w0:704  [-3.0, -3.0, -3.0] -> [-0.482422, -3.0, -3.0]  |Δ|max=2.863
+linear                       float32  WRONG-VALUE    w77:719  [inf, nan, -inf] -> [inf, -2244.0, -inf]  |Δ|max=0
+linear.out                   float32  WRONG-VALUE    w111:632  [inf, nan, -inf] -> [inf, -2244.0, -inf]  |Δ|max=0
+logit                        float32  WRONG-VALUE    w102:302  [nan, nan, nan] -> [nan, nan, nan]  |Δ|max=0.004056
+maximum.out                  float32  WRONG-VALUE    w1:285  [-0.550045, -0.067586] -> [-0.549805, 0.0]  |Δ|max=0.06759
+mul.Scalar                   float16  ZEROED         w1:355  [-1.158203, -0.166016, 1.306641] -> [0.0, 0.0, 0.0]  device all-zero
+permute_copy                 int32    WRONG-VALUE    w0:659  [-3.0, -3.0, -3.0] -> [-131075.0, 327677.0, 327677.0]  |Δ|max=3.277e+05
+pixel_shuffle                float32  WRONG-VALUE    w104:613  [-1.15794, -0.166029, 1.306189] -> [-1.158203, -0.166016, 1.306641]  |Δ|max=2.034
+pixel_unshuffle              float32  ZEROED         w112:9  [-1.15794, 1.306189, -0.166029] -> [0.0, 0.0, 0.0]  device all-zero
+prod.int_out                 uint8    WRONG-VALUE    w113:333  [0.0, 0.0, 0.0] -> [255.0, 0.0, 0.0]  |Δ|max=255
+relu                         float16  WRONG-VALUE    w91:731  [nan, nan, nan] -> [inf, inf, inf]  |Δ|max=0
+remainder.Tensor_out         float32  SCALE:-0.5     w100:76  [-2.0, 0.0, -2.0] -> [1.0, 0.0, 1.0]  
+roll                         int32    WRONG-VALUE    w92:229  [-3.0, -3.0, -3.0] -> [-131075.0, -196611.0, 327677.0]  |Δ|max=3.277e+05
+rsqrt.out                    float16  WRONG-VALUE    w104:332  [nan, 0.949219, 1.035156] -> [1.439453, 0.949219, 1.035156]  |Δ|max=0
+rsub.Scalar                  float32  WRONG-VALUE    w0:279  [3.894948, -5.662121, -4.604094] -> [1.482422, -0.110352, 0.065918]  |Δ|max=5.552
+select_copy.int              int64    SCALE:-2.184e+04 w0:651  [-3.0] -> [65535.0]  
+select_scatter               int32    WRONG-VALUE    w10:368  [-3.0, -3.0, -3.0] -> [-3.0, -3.0, -3.0]  |Δ|max=4
+sqrt.out                     float32  WRONG-VALUE    w100:177  [nan, 1.053733, 0.966445] -> [0.694336, 1.053711, 0.966309]  |Δ|max=0.000405
+squeeze_copy.dim             int32    WRONG-VALUE    w103:113  [-3.0, -3.0, -3.0] -> [-3.0, -3.0, -3.0]  |Δ|max=4
+squeeze_copy.dims            int32    WRONG-VALUE    w107:219  [-3.0, -3.0, -3.0] -> [-3.0, -3.0, -3.0]  |Δ|max=4
+sub.Scalar                   uint8    ZEROED         w0:200  [8.0, 7.0, 5.0] -> [0.0, 0.0, 0.0]  device all-zero
+sub.out                      int64    WRONG-VALUE    w10:238  [-27.0, 15.0, 3.0] -> [-7.0, 0.0, -2.0]  |Δ|max=20
+sum.IntList_out              uint8    WRONG-VALUE    w1:749  [0.0] -> [255.0]  |Δ|max=255
+t_copy                       int64    WRONG-VALUE    w18:507  [-3.0, -3.0, -3.0] -> [-131075.0, -3.0, -1.0]  |Δ|max=3.277e+05
+transpose_copy.int           float32  WRONG-VALUE    w0:388  [-1.15794, -0.166029, 1.306189] -> [-1.158203, 0.973633, 2.527344]  |Δ|max=2.489
+unsqueeze_copy               float32  WRONG-VALUE    w88:392  [-0.482491, 1.110353, 0.934016] -> [-0.482422, 1.164062, 0.1026]  |Δ|max=0.8315
+var.correction_out           float16  WRONG-VALUE    w0:475  [nan] -> [inf]  |Δ|max=0
+view_copy                    float16  WRONG-VALUE    w71:68  [-1.158203, -0.166016, 1.306641] -> [-1.158203, 0.973633, 2.527344]  |Δ|max=2.333

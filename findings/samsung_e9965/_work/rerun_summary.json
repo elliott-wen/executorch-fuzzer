@@ -1,0 +1,1806 @@
+{
+ "w67:623": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w89:76": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w94:532": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=2.723e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w100:615": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w48:754": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w123:447": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.496e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w126:366": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=3.497e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w17:746": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w1:400": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w1:628": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:121": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.201e+01 (rtol=0.01 atol=0.001)"
+ },
+ "w0:577": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w1:163": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.401e+01 (rtol=0.01 atol=0.001)"
+ },
+ "w101:484": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w102:146": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w113:384": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=7.888e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w126:496": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.570e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w22:736": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.874e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w44:22": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w50:498": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w13:552": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.611e+09 (rtol=0.0 atol=0.0)"
+ },
+ "w67:38": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.147e+09 (rtol=0.0 atol=0.0)"
+ },
+ "w114:362": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w12:458": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w28:174": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=7.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w57:212": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=5.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w53:355": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w54:250": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w57:412": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=7.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w52:145": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.655e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w84:333": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=8.404e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w126:60": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w14:630": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:352": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w110:426": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w121:317": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=5.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w0:580": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w1:166": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w16:603": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w100:538": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:297": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w1:339": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w35:4": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=5.926e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w49:204": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=1.392e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w92:299": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w104:64": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w121:495": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "OK",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w10:175": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.164e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w10:711": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.311e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w102:655": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w104:620": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w125:688": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=9.624e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w50:631": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w79:501": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=9.622e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w0:278": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:50": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w1:485": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.089e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w10:68": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=8.462e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w102:696": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.562e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w43:271": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w6:478": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=9.228e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w0:248": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.518e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w0:704": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.863e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w1:746": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.518e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w10:87": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w102:259": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w118:486": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=4.825e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w13:429": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.377e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w17:282": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=1.930e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w29:238": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=1.164e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w1:620": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w100:591": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w77:719": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w101:39": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w111:632": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w10:130": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.252e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w102:302": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.252e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w104:495": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.252e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w0:277": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w1:775": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w101:387": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w127:310": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w1:285": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.759e-02 (rtol=0.01 atol=0.001)"
+ },
+ "w10:552": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.759e-02 (rtol=0.01 atol=0.001)"
+ },
+ "w10:780": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.759e-02 (rtol=0.01 atol=0.001)"
+ },
+ "w37:147": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=1.164e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w9:261": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w1:355": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.527e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w1:583": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.527e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w100:326": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.516e+01 (rtol=0.01 atol=0.001)"
+ },
+ "w0:313": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:769": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w16:435": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=7.014e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w1:731": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w100:702": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:659": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w100:216": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.554e+04 (rtol=0.0 atol=0.0)"
+ },
+ "w101:338": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w98:582": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=5.654e+04 (rtol=0.01 atol=0.001)"
+ },
+ "w104:613": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.034e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w105:675": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.774e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w107:395": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=7.760e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w122:34": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w102:138": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.527e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w111:231": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w112:9": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.570e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w10:518": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)"
+ },
+ "w101:572": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)"
+ },
+ "w113:333": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)"
+ },
+ "w102:221": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.527e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w11:299": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.582e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w20:584": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=1.164e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w2:160": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w91:731": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w100:76": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w102:88": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w107:747": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w92:229": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w104:332": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w104:560": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:279": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=5.662e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w0:507": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.000e+01 (rtol=0.0 atol=0.0)"
+ },
+ "w0:51": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=5.447e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w102:760": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w103:350": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:651": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.554e+04 (rtol=0.0 atol=0.0)"
+ },
+ "w1:693": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.553e+04 (rtol=0.0 atol=0.0)"
+ },
+ "w101:330": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=6.554e+04 (rtol=0.0 atol=0.0)"
+ },
+ "w10:368": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w100:300": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w100:72": {
+  "verdict": "FLAKY",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "OK"
+  ],
+  "detail": ""
+ },
+ "w0:620": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w100:177": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w103:113": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w114:159": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w20:658": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w107:219": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w113:115": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w15:747": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w0:200": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)"
+ },
+ "w0:428": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.600e+01 (rtol=0.0 atol=0.0)"
+ },
+ "w0:656": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=4.916e+01 (rtol=0.01 atol=0.001)"
+ },
+ "w1:14": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w1:470": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w0:385": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.700e+01 (rtol=0.0 atol=0.0)"
+ },
+ "w1:427": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.445e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w10:238": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.000e+01 (rtol=0.0 atol=0.0)"
+ },
+ "w10:10": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "OK",
+   "OK",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w102:410": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "OK",
+   "OK",
+   "MISMATCH",
+   "OK",
+   "OK"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w1:749": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)"
+ },
+ "w105:155": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)"
+ },
+ "w108:310": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.550e+02 (rtol=0.0 atol=0.0)"
+ },
+ "w102:141": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w122:291": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w18:507": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w0:388": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.489e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w100:629": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w105:520": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.277e+05 (rtol=0.0 atol=0.0)"
+ },
+ "w88:392": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=8.315e-01 (rtol=0.01 atol=0.001)"
+ },
+ "w0:475": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w106:13": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)"
+ },
+ "w22:27": {
+  "verdict": "INTERMITTENT",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "OK"
+  ],
+  "detail": "out[0] max|delta|=1.582e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w71:68": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.333e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w82:449": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=2.333e+00 (rtol=0.01 atol=0.001)"
+ }
+}

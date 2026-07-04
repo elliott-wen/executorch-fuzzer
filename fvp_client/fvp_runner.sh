@@ -126,39 +126,66 @@ else
   ETHOSU_TOOLS_DIR="${ETHOSU_TOOLS_DIR:-/data/jwen929/mobile/tmp/ethos_sdk_template_tools}"
   [[ -d "$ETHOSU_TOOLS_DIR/ethos-u/core_platform" && -d "$ETHOSU_TOOLS_DIR/ethos-u/core_software" ]] \
       || { echo "shared Ethos-U SDK incomplete at $ETHOSU_TOOLS_DIR/ethos-u" >&2; exit 3; }
-  # Build OUTPUT workspace on the LOCAL big disk (/data, 4.4T), NOT system /tmp (only ~9G).
-  FVP_BUILD_ROOT="${FVP_BUILD_ROOT:-/data/jwen929/mobile/tmp/fvp_builds}"
-  mkdir -p "$FVP_BUILD_ROOT"
-  JOBTMP="$(mktemp -d "$FVP_BUILD_ROOT/b.XXXXXX")"
-  trap 'rm -rf "$JOBTMP"' EXIT
-  BUILD_DIR="$JOBTMP/build"
-  echo ">> building runner: backend=$BACKEND target=$TARGET ops=$(printf '%s' "$SELECT_OPS"|sha1sum|cut -c1-8) (shared SDK, no fetch) ..." >&2
-  # Fast-RAM linker fix on the shared LDS — guarded to write ONCE (only while still DTCM), so
-  # concurrent builds don't race on sed -i (the first build already moved it to SRAM; idempotent).
-  case "$TARGET" in
-    *u85*|cortex-m85) LDS="$ET_ROOT/examples/arm/executor_runner/Corstone-320.ld" ;;
-    *)                LDS="$ET_ROOT/examples/arm/executor_runner/Corstone-300.ld" ;;
-  esac
-  [[ -f "$LDS" ]] && grep -q 'DTCM AT >DDR' "$LDS" \
-    && sed -i '/__rodata_start__/,/} >/ s/> *DTCM AT >DDR/> SRAM AT >DDR/' "$LDS"
-  # Cap per-build compiler parallelism so N concurrent client builds don't oversubscribe (each
-  # build otherwise uses nproc=240). With a ~32-client fleet, 8 each ≈ nproc at the cold-start
-  # storm (all build at once) and frees cores for FVP sims at steady state. Override via env.
-  : "${ETHOS_BUILD_JOBS:=8}"
-  # ccache makes per-build cost near-zero: executorch_core + the runtime are byte-identical across
-  # every .pte build; only the tiny per-graph SELECT_OPS portable-kernel lib differs. Without it,
-  # each build recompiles all of executorch_core from scratch (~minutes at -j8). Shared warm cache
-  # on /data (60G, ~86% hit). CMAKE_*_COMPILER_LAUNCHER routes both host + arm-none-eabi compiles.
-  export CCACHE_DIR="${CCACHE_DIR:-/data/jwen929/mobile/tmp/ccache}"
-  ARM_SKIP_PATCH=1 ETHOS_BUILD_JOBS="$ETHOS_BUILD_JOBS" "$ET_ROOT/backends/arm/scripts/build_executor_runner.sh" \
-      --pte=semihosting --etdump --target="$TARGET" --output="$BUILD_DIR" \
-      --ethosu_tools_dir="$ETHOSU_TOOLS_DIR" \
-      --select_ops_list="$SELECT_OPS" \
-      --extra_build_flags="-DET_DUMP_OUTPUTS=ON -DFETCH_ETHOS_U_CONTENT=OFF -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache" \
-      >"$JOBTMP/build.log" 2>&1 \
-    || { echo "$BACKEND runner build failed (see $OUTDIR/build.fail.log)" >&2
-         cp "$JOBTMP/build.log" "$OUTDIR/build.fail.log" 2>/dev/null; exit 5; }
-  RUNNER_ELF="$(find "$BUILD_DIR" -name arm_executor_runner -type f 2>/dev/null | head -1)"
+
+  # ---- PERSISTENT op-set runner cache -----------------------------------------------------
+  # The runner ELF is a pure function of (backend, target, SELECT_OPS): the semihosting runner
+  # bakes in nothing else (model.pte + inputs load at runtime). So cache the finished ELF keyed
+  # by a hash of the exact op-set and REUSE it across every job with the same ops. This is the
+  # decisive win for cortex-m: unlike ethos-u (whose NPU-delegated graphs all probe to the same
+  # near-empty op-set), cortex-m runs each compute op as a portable quantized kernel, so op-sets
+  # are diverse — without this cache every one of 60k jobs pays a fresh cmake-configure+link.
+  # With it, each DISTINCT op-set builds exactly once (serialized by a per-hash flock), then all
+  # later jobs with that op-set skip straight to the FVP. Only the ~few-MB ELF is kept per slot;
+  # the ~330MB build tree is deleted after extracting it. Env override: FVP_RUNNER_CACHE.
+  SHA="$(printf '%s' "$SELECT_OPS" | sha1sum | cut -c1-16)"
+  CACHE_ROOT="${FVP_RUNNER_CACHE:-/data/jwen929/mobile/tmp/fvp_runner_cache}"
+  SLOT="$CACHE_ROOT/${BACKEND}__${TARGET}__${SHA}"
+  mkdir -p "$CACHE_ROOT"
+  if [[ -x "$SLOT/arm_executor_runner" ]]; then
+    RUNNER_ELF="$SLOT/arm_executor_runner"                       # cache hit — no build at all
+  else
+    # Serialize duplicate builds of the SAME op-set; distinct op-sets still build in parallel.
+    exec 9>"$CACHE_ROOT/.lock.$SHA"
+    flock 9
+    if [[ -x "$SLOT/arm_executor_runner" ]]; then
+      RUNNER_ELF="$SLOT/arm_executor_runner"                     # another client built it while we waited
+    else
+      FVP_BUILD_ROOT="${FVP_BUILD_ROOT:-/data/jwen929/mobile/tmp/fvp_builds}"
+      mkdir -p "$FVP_BUILD_ROOT"
+      JOBTMP="$(mktemp -d "$FVP_BUILD_ROOT/b.XXXXXX")"
+      trap 'rm -rf "$JOBTMP"' EXIT
+      BUILD_DIR="$JOBTMP/build"
+      echo ">> building runner (cache miss): backend=$BACKEND target=$TARGET ops=${SHA:0:8} (shared SDK, no fetch) ..." >&2
+      # Fast-RAM linker fix on the shared LDS — guarded to write ONCE (only while still DTCM), so
+      # concurrent builds don't race on sed -i (the first build already moved it to SRAM; idempotent).
+      case "$TARGET" in
+        *u85*|cortex-m85) LDS="$ET_ROOT/examples/arm/executor_runner/Corstone-320.ld" ;;
+        *)                LDS="$ET_ROOT/examples/arm/executor_runner/Corstone-300.ld" ;;
+      esac
+      [[ -f "$LDS" ]] && grep -q 'DTCM AT >DDR' "$LDS" \
+        && sed -i '/__rodata_start__/,/} >/ s/> *DTCM AT >DDR/> SRAM AT >DDR/' "$LDS"
+      # Cap per-build compiler parallelism so N concurrent (distinct-op-set) client builds don't
+      # oversubscribe. Override via env.
+      : "${ETHOS_BUILD_JOBS:=8}"
+      export CCACHE_DIR="${CCACHE_DIR:-/data/jwen929/mobile/tmp/ccache}"
+      ARM_SKIP_PATCH=1 ETHOS_BUILD_JOBS="$ETHOS_BUILD_JOBS" "$ET_ROOT/backends/arm/scripts/build_executor_runner.sh" \
+          --pte=semihosting --etdump --target="$TARGET" --output="$BUILD_DIR" \
+          --ethosu_tools_dir="$ETHOSU_TOOLS_DIR" \
+          --select_ops_list="$SELECT_OPS" \
+          --extra_build_flags="-DET_DUMP_OUTPUTS=ON -DFETCH_ETHOS_U_CONTENT=OFF -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache" \
+          >"$JOBTMP/build.log" 2>&1 \
+        || { echo "$BACKEND runner build failed (see $OUTDIR/build.fail.log)" >&2
+             cp "$JOBTMP/build.log" "$OUTDIR/build.fail.log" 2>/dev/null; exit 5; }
+      BUILT_ELF="$(find "$BUILD_DIR" -name arm_executor_runner -type f 2>/dev/null | head -1)"
+      [[ -x "$BUILT_ELF" ]] || { echo "runner elf not found" >&2; exit 5; }
+      # Publish atomically: copy the ELF into the slot, then drop the heavy build tree.
+      mkdir -p "$SLOT"
+      cp "$BUILT_ELF" "$SLOT/.arm_executor_runner.tmp" && mv "$SLOT/.arm_executor_runner.tmp" "$SLOT/arm_executor_runner"
+      rm -rf "$JOBTMP"; trap - EXIT
+      RUNNER_ELF="$SLOT/arm_executor_runner"
+    fi
+    flock -u 9
+  fi
   [[ -x "$RUNNER_ELF" ]] || { echo "runner elf not found" >&2; exit 5; }
 fi
 

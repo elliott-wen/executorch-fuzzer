@@ -1,0 +1,12 @@
+  fvp_client[cm12] → broker tcp://127.0.0.1:15665 (target=cortex-m55)
+  fvp_client[cm12] ran 50 jobs
+  fvp_client[cm12] ran 100 jobs
+  fvp_client[cm12] ran 150 jobs
+  fvp_client[cm12] ran 200 jobs
+  fvp_client[cm12] ran 250 jobs
+  fvp_client[cm12] ran 300 jobs
+  fvp_client[cm12] ran 350 jobs
+  fvp_client[cm12] ran 400 jobs
+  fvp_client[cm12] ran 450 jobs
+  fvp_client[cm12] ran 500 jobs
+  fvp_client[cm12] ran 550 jobs

@@ -1,0 +1,22 @@
+Execution command :: /data/jwen929/mobile/.venv/lib64/python3.12/site-packages/eiq_nsys/nsys_rel/nsys /data/jwen929/mobile/.venv/lib64/python3.12/site-packages/eiq_neutron_sdk/target/imxrt700/cmodel/NeutronFirmware.elf -nc --mem-shared-path -mic=0 -dc -fep -sce
+Neutron2 System Model Simulator
+Neutron-C Subsystem......
+neutron_ver = 2
+Neutron2 Information:
+Accelarator Start address  :  0xc0000
+Number of Accelarators     :  4
+Number of MACS             :  8
+Number of pipelines        :  8
+Has Result Writer          :  true
+Warning:  ELF output file format not supported.  Using DAT instead.
+
+Opening output filename:  NeutronFirmware.out.dat (dat)
+ElfReader: setting program counter for zenv to the entry addr: 0x80000084
+Opening input filename:  /data/jwen929/mobile/.venv/lib64/python3.12/site-packages/eiq_neutron_sdk/target/imxrt700/cmodel/NeutronFirmware.elf (elf32)
+
+Finished initialization.
+
+Exit code is 2
+
+Finished simulation.
+-- delete top..

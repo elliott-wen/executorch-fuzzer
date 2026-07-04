@@ -1,0 +1,13 @@
+# non-OK rows: 5471   distinct ops: 59
+
+== overall non-OK == {'MISMATCH': 3289, 'CRASH': 2182, 'SKIP': 0}
+
+== 3a: delegated(ENN) vs portable(CPU fallback) among MISMATCH+CRASH ==
+{'port': 5433, 'deleg': 38}
+
+== per-op: ENN-DELEGATED failures (ops>=1), ranked ==
+operator                         MIS-fin MIS-nf CRASH SKIP  deleg/port
+relu                                  38      0     0    0  38/0
+
+== SKIP reasons (delegated), grouped ==
+{}

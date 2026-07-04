@@ -58,7 +58,10 @@ Each is device-verified with a runnable repro in [bugs/](bugs/) — full table i
 None filed. See [ruled_out/](ruled_out/).
 
 ## SKIP — coverage gaps (portable rejects at runtime)
-Not bugs; enumerated as gaps. Top: `native_group_norm` (738), `arange.start_out` (427),
+Full per-operator reason table in [skips.md](skips.md) (also has the CRASH reasons). Not bugs;
+enumerated as gaps. Recurring classes: int64-index requirement (`scatter*`/`gather`), scalar-extract
+guards (`arange`/`sub.Scalar`), rank/shape guards (`convolution` 5-D, `_pdist` rank≠2), unimplemented
+forms (`copy` non_blocking, `expand_copy` implicit). Top: `native_group_norm` (738), `arange.start_out` (427),
 `_fft_r2c` (350), `_pdist_forward` (347), `copy` (219), `expand_copy` (207, `implicit==true` not
 implemented), `_log_softmax` (191), `scatter*` (~160), plus `linear`, `convolution`, `add.Scalar`,
 `sub.Scalar`, `stack`. These are ops/forms with no portable kernel or a runtime guard that rejects the

@@ -1,0 +1,64 @@
+SCHEDULED (EXECUTORCH_OPS): 228
+PRODUCED (in corpus):       199  [delegated-capable 63, always-portable 136]
+NEVER PRODUCED (gap):       29
+PRODUCED-but-not-scheduled (decomp/alias names): 0
+
+ASSERT scheduled == produced_in_schedule + never : 199 + 29 = 228 vs 228
+
+== NEVER-PRODUCED ops (coverage gaps — scheduled but never lowered) ==
+  _conj_physical                           no job produced (seed-infeasible / partition/lowering attrition)
+  _fft_c2r                                 no job produced (seed-infeasible / partition/lowering attrition)
+  _fft_c2r.out                             no job produced (seed-infeasible / partition/lowering attrition)
+  _fft_r2c.out                             no job produced (seed-infeasible / partition/lowering attrition)
+  _native_batch_norm_legit                 no job produced (seed-infeasible / partition/lowering attrition)
+  _native_batch_norm_legit.no_stats_out    no job produced (seed-infeasible / partition/lowering attrition)
+  _native_batch_norm_legit.out             no job produced (seed-infeasible / partition/lowering attrition)
+  any.out                                  no job produced (seed-infeasible / partition/lowering attrition)
+  as_strided_copy                          no job produced (seed-infeasible / partition/lowering attrition)
+  cat.out                                  no job produced (seed-infeasible / partition/lowering attrition)
+  convolution_backward                     no job produced (seed-infeasible / partition/lowering attrition)
+  masked_select                            no job produced (seed-infeasible / partition/lowering attrition)
+  masked_select.out                        no job produced (seed-infeasible / partition/lowering attrition)
+  max.dim_max                              no job produced (seed-infeasible / partition/lowering attrition)
+  max_pool2d_with_indices.out              no job produced (seed-infeasible / partition/lowering attrition)
+  max_pool2d_with_indices_backward.grad_input gen-crash x332
+  min.dim_min                              no job produced (seed-infeasible / partition/lowering attrition)
+  native_dropout                           no job produced (seed-infeasible / partition/lowering attrition)
+  nonzero                                  no job produced (seed-infeasible / partition/lowering attrition)
+  nonzero.out                              no job produced (seed-infeasible / partition/lowering attrition)
+  rand.out                                 no job produced (seed-infeasible / partition/lowering attrition)
+  reflection_pad3d.out                     no job produced (seed-infeasible / partition/lowering attrition)
+  repeat_interleave.Tensor                 no job produced (seed-infeasible / partition/lowering attrition)
+  split_copy.Tensor_out                    no job produced (seed-infeasible / partition/lowering attrition)
+  split_with_sizes_copy.out                no job produced (seed-infeasible / partition/lowering attrition)
+  stack.out                                no job produced (seed-infeasible / partition/lowering attrition)
+  topk.values                              no job produced (seed-infeasible / partition/lowering attrition)
+  unbind_copy.int_out                      no job produced (seed-infeasible / partition/lowering attrition)
+  view_as_real_copy                        no job produced (seed-infeasible / partition/lowering attrition)
+
+== generation-time _crashes: 723 graphs over 19 ops ==
+  max_pool2d_with_indices_backward.grad_input x332   NEVER-produced
+  repeat                                   x282   PRODUCED-elsewhere
+  arange.start_out                         x41    PRODUCED-elsewhere
+  arange.out                               x20    PRODUCED-elsewhere
+  stack                                    x12    PRODUCED-elsewhere
+  linear.out                               x9     PRODUCED-elsewhere
+  logit                                    x5     PRODUCED-elsewhere
+  bitwise_right_shift.Tensor_out           x4     PRODUCED-elsewhere
+  fill.Scalar                              x3     PRODUCED-elsewhere
+  rsub.Scalar                              x3     PRODUCED-elsewhere
+  abs                                      x2     PRODUCED-elsewhere
+  div.Scalar                               x2     PRODUCED-elsewhere
+  bitwise_left_shift.Tensor_out            x2     PRODUCED-elsewhere
+  relu                                     x1     PRODUCED-elsewhere
+  unsqueeze_copy                           x1     PRODUCED-elsewhere
+  pixel_shuffle                            x1     PRODUCED-elsewhere
+  zeros.out                                x1     PRODUCED-elsewhere
+  amin.out                                 x1     PRODUCED-elsewhere
+  transpose_copy.int                       x1     PRODUCED-elsewhere
+
+== ALWAYS-PORTABLE produced ops (ethos-u never delegated them; 0 delegated jobs) ==
+  (136 ops) _adaptive_avg_pool2d, _cdist_forward, _fft_r2c, _log_softmax.out, _native_batch_norm_legit.no_stats, _native_batch_norm_legit_no_training, _pdist_forward, _softmax.out, _upsample_bilinear2d_aa.out, acos.out, acosh.out, addmm.out, alias_copy, any.all_out, any.dims_out, argmax.out, argmin.out, asin.out, asinh.out, atan.out, atan2.out, atanh.out, avg_pool2d.out, bitwise_and.Scalar_out, bitwise_left_shift.Tensor_Scalar, bitwise_left_shift.Tensor_Scalar_out, bitwise_not.out, bitwise_or.Scalar_out, bitwise_right_shift.Tensor_Scalar, bitwise_right_shift.Tensor_Scalar_out, bitwise_xor.Scalar_out, bmm.out, ceil.out, clone, convolution, copy, cos.out, cosh.out, cumsum.out, detach_copy, diagonal_copy, div.out, elu.out, embedding, eq.Scalar_out, eq.Tensor_out, erf.out, exp.out, expm1.out, flip, floor.out, fmod.Scalar, fmod.Scalar_out, fmod.Tensor_out, gather.out, ge.Scalar_out, ge.Tensor_out, gelu.out, glu.out, grid_sampler_2d, gt.Scalar_out, gt.Tensor_out, index_select, index_select.out, isinf, isnan, le.Scalar_out, le.Tensor_out, leaky_relu.out, lift_fresh_copy, log.out, log10.out, log1p.out, log2.out, logical_and, logical_and.out, logical_not, logical_not.out, logical_or, logical_or.out, logical_xor, logical_xor.out, logit.out, lt.Scalar_out, lt.Tensor_out, masked_scatter, max, max.unary_out, mean.dtype_out, mean.out, min, min.unary_out, mm.out, narrow_copy, narrow_copy.out, native_group_norm, native_layer_norm, ne.Scalar_out, ne.Tensor_out, pow.Scalar_out, pow.Tensor_Scalar_out, pow.Tensor_Tensor_out, prod, prod.int_out, reciprocal.out, reflection_pad1d.out, reflection_pad2d, reflection_pad2d.out, remainder.Scalar_out, repeat, replication_pad1d.out, replication_pad2d.out, replication_pad3d.out, roll, round.out, rsqrt.out, scatter.src_out, scatter.value_out, scatter_add.out, sigmoid.out, sign.out, sin.out, sinh.out, sqrt.out, squeeze_copy.dims, sum.IntList_out, tan.out, tanh.out, trunc.out, unbind_copy.int, unfold_copy, var.correction_out, var_mean.correction, view_copy, where.self, where.self_out
+
+== DELEGATED-CAPABLE ops (>=1 delegated job — the ethos-u backend surface) ==
+  (63 ops) abs, abs.out, add.Scalar, amax.out, amin.out, arange.out, arange.start_out, bitwise_and.Scalar, bitwise_and.Tensor_out, bitwise_left_shift.Tensor_out, bitwise_or.Scalar, bitwise_or.Tensor_out, bitwise_right_shift.Tensor_out, bitwise_xor.Scalar, bitwise_xor.Tensor_out, clamp.Tensor_out, clamp.out, constant_pad_nd, div.Scalar, div.out_mode, expand_copy, fill.Scalar, floor_divide, floor_divide.out, full.out, hardtanh, hardtanh.out, index.Tensor_out, index_put, linear, linear.out, logit, masked_fill.Scalar, maximum.out, mean, minimum.out, mul.Scalar, mul.out, neg.out, ones.out, permute_copy, pixel_shuffle, pixel_unshuffle, relu, remainder.Scalar, remainder.Tensor_out, rsub.Scalar, select_copy.int, select_scatter, slice_copy.Tensor, slice_scatter, split_copy.Tensor, split_with_sizes_copy, squeeze_copy.dim, stack, sub.Scalar, sub.out, t_copy, transpose_copy.int, tril.out, unsqueeze_copy, var.correction, zeros.out

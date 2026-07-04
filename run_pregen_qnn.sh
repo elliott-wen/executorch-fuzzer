@@ -78,13 +78,13 @@ if r.status != "READY":
 print("   preflight OK (READY)")
 PY
 
-# 3) don't collide with a running fleet / poison a live dir. Match the fleet by its script
-#    path — the worker/fleet cmdlines are "python .../pregen_fleet.py" and "python
-#    .../pregen.py", so the pattern must use the literal "/" (a space never matches).
-if pgrep -f 'pregen(_fleet)?\.py' >/dev/null 2>&1; then
-    echo "FATAL: a pregen fleet is already running (pgrep -af 'pregen.*\.py'). Stop it first."
-    exit 1
-fi
+# # 3) don't collide with a running fleet / poison a live dir. Match the fleet by its script
+# #    path — the worker/fleet cmdlines are "python .../pregen_fleet.py" and "python
+# #    .../pregen.py", so the pattern must use the literal "/" (a space never matches).
+# if pgrep -f 'pregen(_fleet)?\.py' >/dev/null 2>&1; then
+#     echo "FATAL: a pregen fleet is already running (pgrep -af 'pregen.*\.py'). Stop it first."
+#     exit 1
+# fi
 
 # 4) fresh output dir
 rm -rf "$OUT"

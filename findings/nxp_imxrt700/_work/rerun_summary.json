@@ -1,0 +1,420 @@
+{
+ "w0:424": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w1:466": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w102:677": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w107:424": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w109:241": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w109:469": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w110:270": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w111:12": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w113:776": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w118:448": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w123:513": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w125:150": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w126:660": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w127:26": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w16:398": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w18:359": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w20:584": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w21:606": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w24:555": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w26:323": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w28:98": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w31:97": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w34:732": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w35:126": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w38:105": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w40:718": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w41:96": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w44:73": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w44:757": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w61:362": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w67:445": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w70:71": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w81:204": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w85:579": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w87:439": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w90:209": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ },
+ "w95:520": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=3.772e+00 (rtol=0.01 atol=0.001)"
+ },
+ "w97:240": {
+  "verdict": "CONFIRMED",
+  "statuses": [
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH",
+   "MISMATCH"
+  ],
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.01 atol=0.001)"
+ }
+}

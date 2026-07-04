@@ -1,0 +1,74 @@
+[feed] 6 jobs → broker 127.0.0.1:15664 (window=4, timeout=600s)
+  [t=   3s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=   6s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=   9s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  12s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  15s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  18s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  21s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  24s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  27s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  30s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  33s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  36s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  39s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  42s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  45s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  48s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  51s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  54s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  57s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  60s] 0/6 ( 0.0/s)  ok=0 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  63s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  66s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  69s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  72s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  75s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  78s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  81s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  84s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  87s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  90s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  93s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  96s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t=  99s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 102s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 105s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 108s] 1/6 ( 0.0/s)  ok=1 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 112s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 115s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 118s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 121s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 124s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 127s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 130s] 2/6 ( 0.0/s)  ok=2 mism=0 crash=0 timeout=0 skip=0  |  inflight=4
+  [t= 133s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 136s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 139s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 142s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 145s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 148s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 151s] 3/6 ( 0.0/s)  ok=3 mism=0 crash=0 timeout=0 skip=0  |  inflight=3
+  [t= 155s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 158s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 161s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 164s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 167s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 170s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 173s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 176s] 4/6 ( 0.0/s)  ok=4 mism=0 crash=0 timeout=0 skip=0  |  inflight=2
+  [t= 179s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+  [t= 182s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+  [t= 185s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+  [t= 188s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+  [t= 191s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+  [t= 194s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+  [t= 197s] 5/6 ( 0.0/s)  ok=5 mism=0 crash=0 timeout=0 skip=0  |  inflight=1
+
+── Done — 6 graphs ──────────────────────────────
+  OK       : 6
+  MISMATCH : 0
+  CRASH    : 0
+  TIMEOUT  : 0
+  SKIP     : 0
+  skip-log: /data/jwen929/mobile/findings/cortex_m/_work/smoke.tsv  (replay one with `mobile feed <job_id>`)

@@ -1,0 +1,62 @@
+# non-OK rows: 11152   distinct ops: 98
+
+== overall non-OK == {'MISMATCH': 4854, 'CRASH': 85, 'SKIP': 6213}
+
+== 3a: delegated(ENN) vs portable(CPU fallback) among MISMATCH+CRASH ==
+{'deleg': 3640, 'port': 1299}
+
+== per-op: ENN-DELEGATED failures (ops>=1), ranked ==
+operator                         MIS-fin MIS-nf CRASH SKIP  deleg/port
+rsub.Scalar                          358     36     0    5  399/0
+gelu.out                               4    373     0    0  377/0
+sub.Scalar                           229    125     0    1  355/0
+add.Scalar                           208    120     0    2  330/0
+_softmax.out                           6    281     0    0  287/0
+div.Scalar                             1    283     0    0  284/0
+mul.Scalar                            94     99     0    0  193/0
+sub.out                              158     23     0   46  227/0
+clamp.out                             21    108     0  165  294/0
+select_scatter                       107      0     0    0  107/0
+hardtanh                             104      0     0  125  229/0
+logit                                 23     79     0    0  102/0
+select_copy.int                       91      0     0    4  95/0
+maximum.out                           85      0     0    0  85/0
+pixel_shuffle                         82      1     0  327  410/0
+permute_copy                          54      1     0    2  57/0
+leaky_relu.out                         6     37     0    0  43/0
+sqrt.out                               0     43     0   64  107/0
+mul.out                                1     39     0    0  40/0
+rsqrt.out                              0     39     0    2  41/0
+pixel_unshuffle                       34      0     0  147  181/0
+glu.out                               28      2     0    1  31/0
+bmm.out                                2     23     0    0  25/0
+sum.IntList_out                       23      0     0   14  37/0
+transpose_copy.int                    20      0     0    0  20/0
+hardtanh.out                          19      0     0  237  256/0
+remainder.Tensor_out                  18      0     0   37  55/62
+expand_copy                           17      0     0    0  17/0
+prod.int_out                          17      0     0   48  65/0
+squeeze_copy.dims                     14      0     0    0  14/0
+logit.out                              0     13     0   97  110/0
+bitwise_left_shift.Tensor_out          2      9     0   47  58/137
+avg_pool2d.out                         9      0     0    0  9/0
+relu                                   7      2     0   79  88/0
+squeeze_copy.dim                       9      0     0    0  9/0
+_log_softmax.out                       3      4     0    0  7/0
+t_copy                                 7      0     0    0  7/0
+div.out                                3      3     0   20  26/0
+linear.out                             0      6     0    0  6/0
+var.correction_out                     0      6     0    0  6/0
+view_copy                              6      0     0    0  6/0
+bitwise_xor.Scalar_out                 4      0     0   97  101/0
+bitwise_and.Scalar_out                 2      0     0   91  93/0
+bitwise_or.Scalar_out                  2      0     0  105  107/0
+minimum.out                            2      0     0   76  78/0
+constant_pad_nd                        1      0     0    0  1/0
+embedding                              1      0     0    5  6/0
+linear                                 0      1     0    0  1/0
+roll                                   1      0     0    0  1/0
+unsqueeze_copy                         1      0     0    1  2/0
+
+== SKIP reasons (delegated), grouped ==
+{'SKIP:exec-failed': 3761}
