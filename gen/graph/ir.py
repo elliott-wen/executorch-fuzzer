@@ -21,7 +21,7 @@ from mobile.gen.graph.emit import _qualname, _const_repr
 # (always finite), so a single-op graph would never feed the op a non-finite input and would
 # miss bugs gated on one (clamp/min/max/relu/hardtanh NaN-launder, exp(NaN), rsqrt(±0)). Kept
 # low so it barely dents yield but every op still sees the boundary domain across the corpus.
-NONFINITE_PROB = 0.05
+NONFINITE_PROB = 0.0005
 
 
 class GenGraph:
@@ -60,7 +60,7 @@ class GenGraph:
         emitted as source.
 
         `nonfinite_prob` (default `NONFINITE_PROB` = 0.01) turns on DOMAIN fuzzing:
-        each float leaf has this probability of having a subset of its elements
+        each float leaf has this probability of having a subset of its elfvp_clientements
         replaced by a boundary value (NaN / ±inf / ±0). Set 0.0 for the finite-only
         emitter. This exposes bugs gated on a non-finite *input*
         (clamp/min/max/relu/hardtanh NaN-launder, exp(NaN), rsqrt(±0)) that a

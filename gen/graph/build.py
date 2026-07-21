@@ -61,8 +61,15 @@ def _split_by_schema(op, args: list) -> tuple[list, dict]:
 
 
 def _to_meta(x):
-    """Convert a real tensor to a meta tensor (shape/dtype only, no data)."""
-    return x.to("meta") if isinstance(x, torch.Tensor) else x
+    """Convert a real tensor to a meta tensor (shape/dtype only, no data). Recurses into
+    list/tuple args so a `Tensor[]` port (e.g. cat/stack's `tensors`, or a `Tensor[] out=`)
+    moves to meta ELEMENT-WISE — otherwise a list of CPU tensors stays on CPU while a
+    synthesized meta out= triggers a cross-device meta<->cpu copy and the probe wrongly fails."""
+    if isinstance(x, torch.Tensor):
+        return x.to("meta")
+    if isinstance(x, (list, tuple)):
+        return type(x)(_to_meta(e) for e in x)
+    return x
 
 
 def _first_tensor(r):
@@ -76,6 +83,27 @@ def _first_tensor(r):
     return None
 
 
+def _functional_sibling(overload):
+    """The functional overload sibling of a structured `.out` overload: same op packet,
+    NO `out` argument, and a non-empty return. Structured `.out` variants like
+    `split_copy.Tensor_out` return `()` and write into a `Tensor[] out=`, so probing them
+    directly yields no tensor to read a shape from — the functional sibling
+    (`split_copy.Tensor`) returns the outputs, which is all the probe needs. None if the
+    packet has no such sibling."""
+    try:
+        packet = overload.overloadpacket
+    except AttributeError:
+        return None
+    for nm in dir(packet):
+        cand = getattr(packet, nm, None)
+        sch = getattr(cand, "_schema", None)
+        if sch is None or cand is overload:
+            continue
+        if sch.returns and not any(a.name == "out" for a in sch.arguments):
+            return cand
+    return None
+
+
 def _meta_probe(op, args: list):
     """Run an op on meta versions of its args; return the meta output (first
     tensor) or None. Used to validate a node and get its output spec for pinning."""
@@ -86,7 +114,19 @@ def _meta_probe(op, args: list):
             # _split_by_schema synthesizes a real CPU `out=`; move it to meta so
             # the op runs all-meta instead of erroring on device mismatch.
             kw = {k: _to_meta(v) for k, v in kw.items()}
-            return _first_tensor(op.op(*pos, **kw))
+            out = _first_tensor(op.op(*pos, **kw))
+            if out is not None:
+                return out
+            # Void / `Tensor[] out=` op (split/unbind/...): the `.out` overload returns
+            # nothing, so there's no tensor to size the node from. Probe the functional
+            # sibling (which returns the outputs) purely for shape inference — the graph
+            # still emits and lowers the real `.out` overload downstream.
+            sib = _functional_sibling(op.op)
+            if sib is not None:
+                pos2, kw2 = _split_by_schema(op.op, [_to_meta(a) for a in args])
+                kw2.pop("out", None)
+                return _first_tensor(sib(*pos2, **kw2))
+            return None
     except Exception:
         return None
 

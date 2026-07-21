@@ -21,11 +21,14 @@ Available only where the OpenVINO partitioner AND the openvino runtime import
 
 from __future__ import annotations
 
+import os
+
 from .base import Backend, lower_with_partitioner
 
 # Target device the OpenVINO graph compiles for: "CPU" | "GPU" | "NPU". CPU is the only one
-# that runs on a generic x86 host; GPU/NPU require Intel hardware + drivers.
-OPENVINO_DEVICE = "CPU"
+# that runs on a generic x86 host; GPU/NPU require Intel hardware + drivers. Override at
+# lower time with OPENVINO_DEVICE=GPU (baked into the .pte, so corpora are device-specific).
+OPENVINO_DEVICE = os.environ.get("OPENVINO_DEVICE", "CPU").upper()
 
 
 class OpenVINOBackend(Backend):

@@ -26,7 +26,7 @@ from __future__ import annotations
 import importlib
 import os
 
-from .base import Backend
+from .base import Backend, LowerStageError
 
 # name -> (module, class). Nothing here is imported until get_backend() asks for it.
 _BACKENDS: dict[str, tuple[str, str]] = {
@@ -35,6 +35,7 @@ _BACKENDS: dict[str, tuple[str, str]] = {
     "vulkan":   ("vulkan",   "VulkanBackend"),
     "ethos-u":  ("ethosu",   "EthosUBackend"),
     "cortex-m": ("cortex_m", "CortexMBackend"),
+    "vgf":      ("vgf",      "VgfBackend"),
     "qualcomm": ("qualcomm", "QualcommBackend"),
     "coreml":   ("coreml",   "CoreMLBackend"),
     "mps":      ("mps",      "MpsBackend"),
@@ -43,6 +44,7 @@ _BACKENDS: dict[str, tuple[str, str]] = {
     "samsung":  ("samsung",  "SamsungBackend"),
     "nxp":      ("nxp",      "NxpBackend"),
     "cadence":  ("cadence",  "CadenceBackend"),
+    "cuda":     ("cuda",     "CudaBackend"),
 }
 
 # MOBILE_BACKENDS: optional comma-separated allowlist (e.g. "openvino"). When set, every other

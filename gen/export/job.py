@@ -34,6 +34,7 @@ from .backends import (  # noqa: E402,F401  (re-exported API)
     get_backend,
     backend_supports_quantization,
     quantizable_backends,
+    LowerStageError,
 )
 
 
@@ -41,6 +42,9 @@ from .backends import (  # noqa: E402,F401  (re-exported API)
 class ExportResult:
     status: str                 # "READY" | "SKIP"
     detail: str = ""
+    stage: str = "ready"        # pipeline stage this result belongs to — one of:
+                                # config|emit|eager|export|transformation|lower|quant_ref|ready.
+                                # For SKIP it names WHERE the graph fell out; pregen buckets on it.
     pte: bytes | None = None
     inputs: list | None = None  # the concrete leaf tensors (host-materialized)
     eager: list | None = None   # eager reference outputs (tuple flattened to list)
@@ -115,13 +119,13 @@ def build_job(src: str, backend: str = "portable", quantize: bool = False) -> Ex
     backend_obj = get_backend(backend)
     if backend_obj is None:
         return ExportResult("SKIP", f"unknown backend {backend!r} "
-                                    f"(have: {', '.join(available_backends())})")
+                                    f"(have: {', '.join(available_backends())})", stage="config")
     if quantize and not backend_obj.supports_quantization:
-        return ExportResult("SKIP", f"quantize unsupported by backend {backend!r}")
+        return ExportResult("SKIP", f"quantize unsupported by backend {backend!r}", stage="config")
     try:
         g, leaves = load_functional_source(src)
     except Exception as e:
-        return ExportResult("SKIP", f"emit/exec {type(e).__name__}: {e}")
+        return ExportResult("SKIP", f"emit/exec {type(e).__name__}: {e}", stage="emit")
 
     # Eager reference — the oracle. A clean raise here means the graph is an
     # invalid-input graph (out-of-bounds index, etc.) → SKIP, not a bug.
@@ -129,13 +133,13 @@ def build_job(src: str, backend: str = "portable", quantize: bool = False) -> Ex
         with torch.no_grad():
             eager = _flatten_outputs(g(*[t.clone() for t in leaves]))
     except Exception as e:
-        return ExportResult("SKIP", f"eager {type(e).__name__}: {e}")
+        return ExportResult("SKIP", f"eager {type(e).__name__}: {e}", stage="eager")
 
     # Lower to ExecuTorch.
     try:
         ep = export(_GraphModule(g).eval(), tuple(t.clone() for t in leaves))
     except Exception as e:
-        return ExportResult("SKIP", f"export {type(e).__name__}: {str(e)[:160]}")
+        return ExportResult("SKIP", f"export {type(e).__name__}: {str(e)[:160]}", stage="export")
     try:
         exe = backend_obj.lower(ep, tuple(t.clone() for t in leaves), quantize=quantize)
         pte = exe.buffer
@@ -146,8 +150,11 @@ def build_job(src: str, backend: str = "portable", quantize: bool = False) -> Ex
         specs = exe.exported_program().graph_signature.output_specs
         user_pos = [i for i, s in enumerate(specs) if s.kind == OutputKind.USER_OUTPUT]
         deleg_ops, nondeleg_ops, deleg_calls = _delegation_counts(exe)
+    except LowerStageError as e:
+        # Split lowering: "transformation" (to_edge) vs "lower" (to_executorch/delegate).
+        return ExportResult("SKIP", f"{e.stage} {e}", stage=e.stage)
     except Exception as e:
-        return ExportResult("SKIP", f"to_executorch {type(e).__name__}: {str(e)[:160]}")
+        return ExportResult("SKIP", f"to_executorch {type(e).__name__}: {str(e)[:160]}", stage="lower")
 
     # For a QUANTIZED job, the fp32 eager oracle is the wrong reference — an int8 backend
     # diverges from it by quantization error alone. Replace it with the quantized reference
@@ -157,7 +164,7 @@ def build_job(src: str, backend: str = "portable", quantize: bool = False) -> Ex
         try:
             eager = backend_obj.quantized_reference(ep, tuple(t.clone() for t in leaves))
         except Exception as e:
-            return ExportResult("SKIP", f"quant-ref {type(e).__name__}: {str(e)[:160]}")
+            return ExportResult("SKIP", f"quant-ref {type(e).__name__}: {str(e)[:160]}", stage="quant_ref")
 
     return ExportResult("READY", "", pte=bytes(pte), inputs=leaves, eager=eager,
                         user_pos=user_pos, delegated_ops=deleg_ops,

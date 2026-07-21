@@ -123,13 +123,38 @@ def _quantize_pt2e(ep, example_inputs, quantizer):
     return export(_convert_pt2e_module(ep, example_inputs, quantizer), example_inputs)
 
 
+class LowerStageError(Exception):
+    """A failure inside lowering, tagged with WHICH sub-stage raised it so pregen can
+    bucket it: "transformation" (to_edge — ATen→Edge dialect + edge passes) vs "lower"
+    (to_executorch — memory planning + backend delegation + .pte serialization). `orig`
+    is the underlying exception; `str(self)` carries a trimmed, greppable detail."""
+
+    def __init__(self, stage: str, orig: BaseException):
+        self.stage = stage
+        self.orig = orig
+        super().__init__(f"{type(orig).__name__}: {str(orig)[:160]}")
+
+
 def lower_portable(ep):
-    """No delegation — pure portable CPU kernels."""
-    return to_edge(ep, compile_config=EDGE_CFG).to_executorch()
+    """No delegation — pure portable CPU kernels. to_edge (transformation) and
+    to_executorch (lower) are run separately so a failure is attributed to its stage."""
+    try:
+        edge = to_edge(ep, compile_config=EDGE_CFG)
+    except Exception as e:
+        raise LowerStageError("transformation", e)
+    try:
+        return edge.to_executorch()
+    except Exception as e:
+        raise LowerStageError("lower", e)
 
 
 def lower_with_partitioner(ep, partitioner):
-    """Delegate the partitioner's subgraph; the rest stays portable."""
-    return to_edge_transform_and_lower(
-        ep, partitioner=[partitioner], compile_config=EDGE_CFG
-    ).to_executorch()
+    """Delegate the partitioner's subgraph; the rest stays portable. to_edge_transform_and_lower
+    fuses the Edge transformation and the delegating lower into one call, so a raise there is
+    tagged "lower" (the transform and the partitioner/serialize aren't separable at this API)."""
+    try:
+        return to_edge_transform_and_lower(
+            ep, partitioner=[partitioner], compile_config=EDGE_CFG
+        ).to_executorch()
+    except Exception as e:
+        raise LowerStageError("lower", e)

@@ -172,6 +172,17 @@ class OpNode:
         self.named_vars = named_vars
         self.bad = bad
         self.axioms = axioms
+        # Fixed-size int[] arities from the REAL JIT schema (`int[N]`, e.g. reflection_pad3d's
+        # `SymInt[6] padding`). The baked model type collapses `int[N]` → `int[]`, losing N, so
+        # the length would otherwise be free in [0, MAX_INT_ARRAY_LEN] and Z3 rarely picks
+        # exactly N → the op is starved to gen_fail. Argument.N carries the arity; None ⇒ dynamic.
+        self._fixed_arr_len: dict[str, int] = {}
+        schema = getattr(self.op, "_schema", None)
+        if schema is not None:
+            for a in schema.arguments:
+                n = getattr(a, "N", None)
+                if n is not None:
+                    self._fixed_arr_len[a.name] = int(n)
         # Tensor consumer ports = positional Tensor params, excluding any `out`.
         self.tensor_ports = [
             n for n, t in self.named_params if t == "Tensor" and n != "out"
@@ -205,10 +216,19 @@ class OpNode:
             elif isinstance(var, OptVar) and isinstance(var.value, TensorVar):
                 _bound_tv(var.value)
             elif isinstance(var, IntArrayVar):
+                # Pin the length of a FIXED-size int[] (`int[N]`) to exactly N, so an op like
+                # reflection_pad3d (SymInt[6] padding) is fed a length-6 list instead of the
+                # free [0, MAX_INT_ARRAY_LEN] the solver would otherwise pick from (which almost
+                # never lands on N → gen_fail). Only pin when N fits our element budget; a larger
+                # N stays unpinned so we don't request more elements than we bound below.
+                n_fixed = self._fixed_arr_len.get(var.name)
+                pinned = n_fixed is not None and n_fixed <= MAX_INT_ARRAY_LEN
+                if pinned:
+                    solver.add(var.length == n_fixed)
                 # CRITICAL: bound int[] elements — an unbounded `size`/`shape`
                 # arg (factory ops, reshape, empty_permuted) would otherwise let
                 # the concretizer allocate a giant tensor and OOM/abort the worker.
-                for i in range(MAX_INT_ARRAY_LEN):
+                for i in range(n_fixed if pinned else MAX_INT_ARRAY_LEN):
                     cell = Select(var.data, IntVal(i))
                     solver.add(cell >= -MAX_DIM, cell <= _MAX_SIZE)
 
