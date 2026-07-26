@@ -22,10 +22,11 @@ REPO="$(dirname "$MOBILE")"
 VENV="$MOBILE/.venv-mtk"                                  # the Python 3.10 MediaTek venv
 BACKEND="mediatek"
 
-WORKERS=128
-TOTAL=100000
-OUT=corpus_v3/mtk
+WORKERS="${1:-128}"
+TOTAL="${2:-100000}"
+OUT="${3:-corpus_v5/mtk}"
 NODES="${NODES:-8}"
+CONCURRENCY="${CONCURRENCY:-8}"                          # workers compiling at once
 
 # Anchor a RELATIVE OUT to the invocation cwd NOW, before the `cd "$REPO"` below — otherwise a
 # relative path resolves against $REPO (the parent of mobile/), not where you ran the command.
@@ -64,14 +65,14 @@ if r.status != "READY":
 print("   preflight OK (READY)")
 PY
 
-# don't collide with a running fleet
-if pgrep -f 'pregen(_fleet)?\.py' >/dev/null 2>&1; then
-    echo "FATAL: a pregen fleet is already running (pgrep -af 'pregen.*\.py'). Stop it first."
-    exit 1
-fi
+# # don't collide with a running fleet
+# if pgrep -f 'pregen(_fleet)?\.py' >/dev/null 2>&1; then
+#     echo "FATAL: a pregen fleet is already running (pgrep -af 'pregen.*\.py'). Stop it first."
+#     exit 1
+# fi
 
 rm -rf "$OUT"
 mkdir -p "$OUT"
 echo ">> launching fleet (Ctrl-C to stop) ...  count jobs:  find $OUT -name '*.job' | wc -l"
 exec "$VENV/bin/python" mobile/pregen_fleet.py \
-    --workers "$WORKERS" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"
+   --workers "$WORKERS" --concurrency "$CONCURRENCY" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"

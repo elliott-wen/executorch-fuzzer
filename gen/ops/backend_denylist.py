@@ -337,9 +337,10 @@ def backend_denied(backend: str | None, op_name: str) -> bool:
     A falsy/unknown backend (including the `portable` reference oracle, which passes no
     backend) never denies — the reference must generate the full op set.
     """
-    if not backend:
-        return False
-    classes = BACKEND_DENY.get(backend)
-    if not classes:
-        return False
-    return any(op_name in classes.get(cls, frozenset()) for cls in _active_classes())
+    # if not backend:
+    #     return False
+    # classes = BACKEND_DENY.get(backend)
+    # if not classes:
+    #     return False
+    # return any(op_name in classes.get(cls, frozenset()) for cls in _active_classes())
+    return False

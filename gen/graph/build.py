@@ -145,6 +145,7 @@ def _seed(rng, opnodes, graph, produced, seed_op=None):
     out = _meta_probe(op, list(c.args))
     if out is None:
         return None
+    ranges = getattr(c, "ranges", {}) or {}
     slots = []
     for (nm, ty), val in zip(op.named_params, c.args):
         if nm == "out" and isinstance(val, torch.Tensor):
@@ -152,7 +153,9 @@ def _seed(rng, opnodes, graph, produced, seed_op=None):
             # doesn't reject a resize ("Shape mismatch with out= tensor variant").
             slots.append(("const", out))
         elif ty == "Tensor" and isinstance(val, torch.Tensor):
-            slots.append(("leaf", val))
+            # Value-constrained ports (index/target/probability) bake their solved
+            # clamped values so emit doesn't re-roll out-of-range garbage via _make.
+            slots.append(("baked_leaf" if nm in ranges else "leaf", val))
         else:
             slots.append(("const", val))
     nid = graph.add(op, slots)
@@ -282,7 +285,12 @@ def _grow(rng, opnodes, graph, produced, leaf_prob, out_alias_prob=0.01,
                                          range_bounds=ranges.get(nm))
                 if slot is not None and slot[1] in producer_set:
                     input_refs.add(slot[1])  # direct producer reuse (adapters → fresh storage)
-                slots.append(slot if slot is not None else ("leaf", val))
+                if slot is not None:
+                    slots.append(slot)
+                else:
+                    # Fresh leaf: bake solved clamped values for value-constrained ports
+                    # (a wired producer instead goes through _clamp_into above).
+                    slots.append(("baked_leaf" if nm in ranges else "leaf", val))
             else:
                 slots.append(("const", val))
         # out= aliasing: with prob out_alias_prob, write into an existing producer of

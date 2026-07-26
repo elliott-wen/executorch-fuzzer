@@ -13,12 +13,12 @@
 # SKIPs consume an attempt, so the corpus ends up smaller than TOTAL (qualcomm ≈ half).
 #
 # Usage:
-#   mobile/run_pregen_qnn.sh [BACKEND] [WORKERS] [TOTAL] [OUT]
+#   mobile/run_pregen_qnn.sh [WORKERS] [TOTAL] [OUT]
 # Examples:
-#   mobile/run_pregen_qnn.sh                      # qualcomm, 16 workers, 100000 attempts
-#   mobile/run_pregen_qnn.sh qualcomm 24 100000
-#   mobile/run_pregen_qnn.sh xnnpack 32 50000
-#   NODES=4 mobile/run_pregen_qnn.sh qualcomm 16 100000
+#   mobile/run_pregen_qnn.sh                      # 16 workers, 100000 attempts
+#   mobile/run_pregen_qnn.sh 24 100000
+#   mobile/run_pregen_qnn.sh 32 50000 corpus_v5/qnn
+#   NODES=4 mobile/run_pregen_qnn.sh 16 100000
 set -euo pipefail
 
 # Derive everything from this script's location so it survives being moved.
@@ -27,10 +27,10 @@ REPO="$(dirname "$MOBILE")"                               # parent — makes `mo
 VENV="$MOBILE/.venv"                                      # co-located virtualenv
 ENV_SH="$MOBILE/android-dev/android-env.sh"               # device toolchain env (QNN/Vulkan/Android)
 
-BACKEND="${1:-qualcomm}"
-WORKERS="${2:-16}"
-TOTAL="${3:-100000}"
-OUT="${4:-$MOBILE/tmp/corpus_${BACKEND}}"
+BACKEND="qualcomm"                                       # this launcher is QNN-only, not a CLI arg
+WORKERS="${1:-16}"
+TOTAL="${2:-100000}"
+OUT="${3:-$MOBILE/tmp/corpus_${BACKEND}}"
 NODES="${NODES:-8}"
 
 # Anchor a RELATIVE OUT to the invocation cwd NOW, before the `cd "$REPO"` below. Otherwise
@@ -94,4 +94,4 @@ mkdir -p "$OUT"
 #    Jobs land in $OUT/w<i>/w<i>_<idx>.job — count with:  find $OUT -name '*.job' | wc -l
 echo ">> launching fleet (Ctrl-C to stop) ..."
 exec "$VENV/bin/python" mobile/pregen_fleet.py \
-    --workers "$WORKERS" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"
+    --concurrency=16 --workers "$WORKERS" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"

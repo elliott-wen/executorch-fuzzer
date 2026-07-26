@@ -69,13 +69,13 @@ print("   preflight OK (READY)")
 PY
 
 # don't collide with a running fleet
-if pgrep -f 'pregen(_fleet)?\.py' >/dev/null 2>&1; then
-    echo "FATAL: a pregen fleet is already running (pgrep -af 'pregen.*\.py'). Stop it first."
-    exit 1
-fi
+# if pgrep -f 'pregen(_fleet)?\.py' >/dev/null 2>&1; then
+#     echo "FATAL: a pregen fleet is already running (pgrep -af 'pregen.*\.py'). Stop it first."
+#     exit 1
+# fi
 
 rm -rf "$OUT"
 mkdir -p "$OUT"
 echo ">> launching fleet (Ctrl-C to stop) ...  count jobs:  find $OUT -name '*.job' | wc -l"
 exec "$VENV/bin/python" mobile/pregen_fleet.py \
-    --workers "$WORKERS" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"
+   --concurrency 16 --workers "$WORKERS" --total "$TOTAL" --out "$OUT" --backend "$BACKEND" --nodes "$NODES"

@@ -18,7 +18,7 @@ from .base import Backend, QuantMode, EDGE_CFG
 # HTP context binary is compiled for a specific Snapdragon SoC / HTP arch — must match the
 # phone the corpus runs on. SM8450 = Snapdragon 8 Gen 1 (HTP v69). Override with $QNN_SOC
 # (e.g. SM8475 = ROG Phone 6 / Snapdragon 8+ Gen 1, same v69 arch). Change default here to retarget.
-QNN_SOC = os.environ.get("QNN_SOC", "SM8450")
+QNN_SOC = os.environ.get("QNN_SOC", "SM8750")
 
 # Float fuzzer → fp16 HTP. The quantized path (supports_quantization) uses QnnQuantizer instead.
 USE_FP16 = True
