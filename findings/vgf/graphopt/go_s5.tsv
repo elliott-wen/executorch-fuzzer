@@ -1,0 +1,63 @@
+job	out	verdict	tgt_op	trigger_ops	ab	n_div	n_rep	mechanism
+w100:263	1	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w101:520	1	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w103:492	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w106:425	0	COMPOSITIONAL	masked_fill	sum	AB_OK	3	3	VALUE
+w108:681	1	COMPOSITIONAL	round	_to_copy	AB_OK	3	3	VALUE
+w110:173	2	COMPOSITIONAL	logical_and	floor_divide;log1p	AB_OK	3	3	VALUE
+w113:301	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w115:275	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w117:20	0	COMPOSITIONAL	mul	_to_copy;slice_copy;remainder	AB_OK	3	3	SCALE:-0.333
+w11:531	1	COMPOSITIONAL	le	bitwise_left_shift	AB_OK	3	3	VALUE
+w121:553	2	SIBLING_DEPENDENT	expand_copy	remainder	AB_OK	3	3	NONFINITE
+w124:321	3	COMPOSITIONAL	div	bitwise_left_shift	AB_OK	3	3	VALUE
+w126:527	1	SIBLING_DEPENDENT	squeeze_copy	squeeze_copy	AB_OK	3	3	NONFINITE
+w12:424	0	COMPOSITIONAL	slice_scatter	_to_copy;mean;broadcast_to;floor_divide	AB_OK	3	3	ZEROED
+w14:609	3	SIBLING_DEPENDENT	flip	clone	AB_OK	3	3	NONFINITE
+w17:541	0	COMPOSITIONAL	cosh	pow	AB_OK	3	3	VALUE
+w19:324	1	COMPOSITIONAL	maximum	broadcast_to;_to_copy;sum	AB_OK	3	3	SCALE:0.943
+w1:476	0	SIBLING_DEPENDENT	elu	log10	AB_OK	3	3	ZEROED
+w22:623	0	SIBLING_DEPENDENT	slice_copy	permute_copy	AB_OK	3	3	ZEROED
+w24:642	2	SIBLING_DEPENDENT	sign	view_copy	AB_OK	3	3	NONFINITE
+w27:176	0	COMPOSITIONAL	round	bitwise_left_shift	AB_OK	3	3	VALUE
+w28:427	1	COMPOSITIONAL	log	div;remainder	AB_OK	3	3	VALUE
+w30:150	0	COMPOSITIONAL	atan	pow;bitwise_right_shift	AB_OK	3	3	VALUE
+w32:411	0	COMPOSITIONAL	diagonal_copy	ceil;remainder;sub	AB_OK	3	3	VALUE
+w35:295	3	COMPOSITIONAL	split_copy	prod	AB_OK	3	3	VALUE
+w37:33	0	COMPOSITIONAL	neg	trunc;_native_batch_norm_legit	AB_OK	3	3	ZEROED
+w39:122	1	SIBLING_DEPENDENT	cos	_softmax	AB_OK	3	3	NONFINITE
+w3:619	1	SIBLING_DEPENDENT	max_pool2d_with_indices_backward	reflection_pad2d	AB_OK	3	3	VALUE
+w42:462	0	COMPOSITIONAL	amax	bitwise_not;sum	AB_OK	3	3	VALUE
+w44:280	2	SIBLING_DEPENDENT	erf	pow	AB_OK	3	3	ZEROED
+w46:683	1	SIBLING_DEPENDENT	prod	mul	AB_OK	3	3	ZEROED
+w48:634	0	COMPOSITIONAL	t_copy	asinh	AB_OK	3	3	VALUE
+w4:474	0	COMPOSITIONAL	fmod	minimum	B_NOREPRO	0	3	?
+w51:206	0	COMPOSITIONAL	expand_copy	bitwise_left_shift;remainder;mul	AB_OK	3	3	VALUE
+w52:559	1	SIBLING_DEPENDENT	flip	view_copy	AB_OK	3	3	ZEROED
+w54:378	1	SIBLING_DEPENDENT	sign	prod	AB_OK	3	3	NONFINITE
+w56:739	2	COMPOSITIONAL	ne	bitwise_left_shift	AB_OK	3	3	VALUE
+w58:774	1	SIBLING_DEPENDENT	prod	clone	AB_OK	3	3	ZEROED
+w5:342	0	COMPOSITIONAL	pixel_unshuffle	bitwise_left_shift	AB_OK	3	3	VALUE
+w61:13	0	SIBLING_DEPENDENT	view_copy	alias_copy	AB_OK	3	3	NONFINITE
+w61:723	2	SIBLING_DEPENDENT	pow	copy	AB_OK	3	3	NONFINITE
+w64:211	0	COMPOSITIONAL	logit	bitwise_left_shift	AB_OK	3	3	VALUE
+w65:686	1	COMPOSITIONAL	maximum	broadcast_to;_to_copy;native_group_norm	AB_OK	3	3	VALUE
+w67:428	1	COMPOSITIONAL	ne	slice_scatter;le	AB_OK	3	3	ZEROED
+w69:654	0	SIBLING_DEPENDENT	add	unbind_copy	AB_OK	3	3	VALUE
+w6:469	1	SIBLING_DEPENDENT	slice_scatter	fmod	AB_OK	3	3	VALUE
+w71:109	0	COMPOSITIONAL	expm1	bitwise_left_shift	AB_OK	3	3	NONFINITE
+w72:8	1	SIBLING_DEPENDENT	log10	constant_pad_nd	AB_OK	3	3	VALUE
+w75:714	3	COMPOSITIONAL	remainder	remainder;squeeze_copy	AB_OK	3	3	VALUE
+w77:95	0	SIBLING_DEPENDENT	tanh	atan2	AB_OK	3	3	NONFINITE
+w79:720	2	COMPOSITIONAL	elu	floor_divide	AB_OK	3	3	VALUE
+w81:429	1	SIBLING_DEPENDENT	log2	t_copy	AB_OK	3	3	VALUE
+w84:104	0	COMPOSITIONAL	index_select	clamp;lift_fresh_copy;slice_copy;gt;_to_copy	AB_OK	3	3	ZEROED
+w85:709	1	COMPOSITIONAL	glu	remainder	AB_OK	3	3	NONFINITE
+w87:603	3	SIBLING_DEPENDENT	min	gt	AB_OK	3	3	VALUE
+w89:380	2	SIBLING_DEPENDENT	rsqrt	roll	AB_OK	3	3	NONFINITE
+w90:725	1	SIBLING_DEPENDENT	select_scatter	neg;replication_pad1d	AB_OK	3	3	VALUE
+w93:40	0	SIBLING_DEPENDENT	tanh	mul	AB_OK	3	3	ZEROED
+w95:261	0	COMPOSITIONAL	ne	bitwise_left_shift;permute_copy	AB_OK	3	3	VALUE
+w97:48	0	COMPOSITIONAL	gt	native_group_norm	AB_OK	3	3	ZEROED
+w99:261	0	SIBLING_DEPENDENT	bitwise_xor	index	AB_OK	3	3	VALUE
+w9:474	1	SIBLING_DEPENDENT	prod	squeeze_copy	AB_OK	3	3	ZEROED

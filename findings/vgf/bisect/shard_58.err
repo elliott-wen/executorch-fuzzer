@@ -1,0 +1,4 @@
+[W705 19:58:41.170254224 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+[W705 19:58:42.799869405 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+[W705 19:58:44.621897847 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+[W705 19:58:45.638345405 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)

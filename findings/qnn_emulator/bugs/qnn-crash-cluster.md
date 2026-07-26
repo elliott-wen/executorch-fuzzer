@@ -14,6 +14,6 @@ signal — it **Aborts** or **Segfaults** on certain ops. Top crashing ops:
 | 33 | `reflection_pad2d` | |
 | 32 | `copy` | |
 | 25 | `split_with_sizes_copy` / `reflection_pad2d.out` | |
-
+[text](../../qnn_samsung_sm8750)
 `stack` dominates. The pad and copy/view ops crash similarly to other backends' copy clusters. These
 are HTP-runner crashes (segfault = memory bug in the delegate/runner), not catchable errors.

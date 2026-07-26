@@ -1,0 +1,62 @@
+job	out	verdict	tgt_op	trigger_ops	ab	n_div	n_rep	mechanism
+w100:98	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w102:658	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w105:276	3	COMPOSITIONAL	slice_copy	bitwise_left_shift;split_with_sizes_copy	AB_OK	3	3	NONFINITE
+w107:598	3	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w10:275	1	COMPOSITIONAL	div	slice_copy;slice_copy;slice_copy;broadcast_to	B_NOREPRO	0	3	?
+w111:657	1	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w114:256	0	COMPOSITIONAL	min	slice_copy;remainder;_to_copy	AB_OK	3	3	SHAPE
+w116:365	1	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w119:696	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w120:736	0	COMPOSITIONAL	floor_divide	slice_copy;_to_copy;elu	B_NOREPRO	0	3	?
+w123:22	1	SIBLING_DEPENDENT	div	expand_copy	AB_OK	3	3	ZEROED
+w125:628	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w127:582	0	SIBLING_DEPENDENT	logical_xor	expand_copy	AB_OK	3	3	VALUE
+w13:721	2	COMPOSITIONAL	div	select_scatter	AB_OK	3	3	NONFINITE
+w16:360	2	COMPOSITIONAL	fmod	convolution	B_NOREPRO	0	3	?
+w18:435	1	COMPOSITIONAL	sign	bitwise_left_shift	AB_OK	3	3	ALIAS:n0
+w19:81	0	COMPOSITIONAL	clamp	fill	AB_OK	3	3	ZEROED
+w21:141	0	COMPOSITIONAL	min	log1p	AB_OK	3	3	VALUE
+w24:150	3	SIBLING_DEPENDENT	argmax	prod	AB_OK	3	3	ZEROED
+w26:536	2	COMPOSITIONAL	log2	leaky_relu;asinh;expand_copy	AB_OK	3	3	VALUE
+w27:689	0	COMPOSITIONAL	gelu	slice_copy;maximum;slice_copy;_to_copy;prod;slice_copy;slice_copy	AB_OK	3	3	VALUE
+w2:240	1	COMPOSITIONAL	logit	bitwise_left_shift	AB_OK	3	3	VALUE
+w31:177	0	COMPOSITIONAL	mul	bitwise_left_shift	AB_OK	3	3	VALUE
+w34:155	0	SIBLING_DEPENDENT	prod	div	AB_OK	3	3	ZEROED
+w36:581	4	COMPOSITIONAL	pow	remainder	AB_OK	3	3	VALUE
+w38:488	3	COMPOSITIONAL	min	_native_batch_norm_legit	AB_OK	3	3	NONFINITE
+w3:401	0	SIBLING_DEPENDENT	trunc	expand_copy	AB_OK	3	3	ZEROED
+w42:163	2	COMPOSITIONAL	sqrt	bitwise_left_shift	AB_OK	3	3	NONFINITE
+w43:420	2	SIBLING_DEPENDENT	argmax	trunc	AB_OK	3	3	ZEROED
+w45:70	1	COMPOSITIONAL	glu	squeeze_copy;gelu;masked_scatter;select_scatter;detach_copy	B_NOREPRO	0	3	?
+w48:140	0	SIBLING_DEPENDENT	maximum	logical_and	AB_OK	3	3	VALUE
+w49:772	0	SIBLING_DEPENDENT	max	squeeze_copy	AB_OK	3	3	ZEROED
+w50:310	3	COMPOSITIONAL	sum	amin	AB_OK	3	3	VALUE
+w51:739	0	COMPOSITIONAL	mul	bitwise_left_shift	AB_OK	3	3	NONFINITE
+w53:684	0	SIBLING_DEPENDENT	fmod	logical_or	AB_OK	3	3	ZEROED
+w55:767	0	COMPOSITIONAL	slice_copy	split_copy;bitwise_left_shift	AB_OK	3	3	VALUE
+w57:87	2	SIBLING_DEPENDENT	prod	permute_copy	AB_OK	3	3	ZEROED
+w5:141	3	SIBLING_DEPENDENT	argmax	lift_fresh_copy	AB_OK	3	3	ZEROED
+w60:39	1	COMPOSITIONAL	squeeze_copy	prod;unsqueeze_copy	AB_OK	3	3	VALUE
+w61:512	0	SIBLING_DEPENDENT	logical_and	split_with_sizes_copy	AB_OK	3	3	ZEROED
+w63:310	2	SIBLING_DEPENDENT	_softmax	max	AB_OK	3	3	VALUE
+w65:269	1	SIBLING_DEPENDENT	detach_copy	lift_fresh_copy	AB_OK	3	3	ZEROED
+w66:735	1	SIBLING_DEPENDENT	prod	view_copy	AB_OK	3	3	ZEROED
+w68:60	1	COMPOSITIONAL	mul	prod;fill	AB_OK	3	3	ZEROED
+w6:268	1	COMPOSITIONAL	slice_copy	_native_batch_norm_legit	AB_OK	3	3	NONFINITE
+w70:615	2	COMPOSITIONAL	eq	min;view_copy;bitwise_left_shift	AB_OK	3	3	ALIAS:n1
+w72:121	3	COMPOSITIONAL	floor_divide	_to_copy;slice_copy	AB_OK	3	3	NONFINITE
+w74:560	2	COMPOSITIONAL	div	broadcast_to;_to_copy	AB_OK	3	3	SCALE:0.750
+w77:382	1	SIBLING_DEPENDENT	logical_or	squeeze_copy	AB_OK	3	3	ZEROED
+w79:184	0	COMPOSITIONAL	div	bitwise_left_shift;cumsum;clone	AB_OK	3	3	VALUE
+w80:596	0	COMPOSITIONAL	div	_to_copy;native_group_norm	B_NOREPRO	0	3	?
+w83:181	0	COMPOSITIONAL	floor_divide	log1p	AB_OK	3	3	VALUE
+w85:219	3	SIBLING_DEPENDENT	log10	lift_fresh_copy	AB_OK	3	3	VALUE
+w87:250	1	COMPOSITIONAL	roll	view_copy;fill;sigmoid	AB_OK	3	3	ZEROED
+w89:190	1	SIBLING_DEPENDENT	maximum	transpose_copy	AB_OK	3	3	VALUE
+w8:376	1	COMPOSITIONAL	floor_divide	native_group_norm	AB_OK	3	3	VALUE
+w92:717	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w94:71	0	SIBLING_DEPENDENT	flip	div	AB_OK	3	3	NONFINITE
+w96:387	0	SIBLING_DEPENDENT	mul	eq;max	AB_OK	3	3	ZEROED
+w98:671	0	COMPOSITIONAL	native_group_norm	native_group_norm	AB_OK	3	3	VALUE
+w9:18	2	SIBLING_DEPENDENT	replication_pad1d	split_with_sizes_copy	AB_OK	3	3	ZEROED

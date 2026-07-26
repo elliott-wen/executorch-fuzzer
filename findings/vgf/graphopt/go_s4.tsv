@@ -1,0 +1,63 @@
+job	out	verdict	tgt_op	trigger_ops	ab	n_div	n_rep	mechanism
+w100:259	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w101:45	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w103:473	2	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w106:327	1	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w108:539	0	COMPOSITIONAL	pow	pixel_unshuffle;bitwise_left_shift	AB_OK	3	3	NONFINITE
+w110:126	2	COMPOSITIONAL	prod	bitwise_left_shift	AB_OK	3	3	VALUE
+w113:165	0	COMPOSITIONAL	alias_copy	sum	AB_OK	3	3	ALIAS:n2
+w115:242	1	COMPOSITIONAL	constant_pad_nd	bitwise_left_shift;_to_copy	AB_OK	3	3	NONFINITE
+w117:156	1	SIBLING_DEPENDENT	max	alias_copy	AB_OK	3	3	ZEROED
+w11:349	2	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w121:500	0	COMPOSITIONAL	exp	native_group_norm	AB_OK	3	3	NONFINITE
+w124:164	2	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w126:392	0	SIBLING_DEPENDENT	sqrt	repeat	AB_OK	3	3	NONFINITE
+w12:244	0	COMPOSITIONAL	lt	native_group_norm	AB_OK	3	3	VALUE
+w14:533	1	SIBLING_DEPENDENT	max	narrow_copy	AB_OK	3	3	ZEROED
+w17:487	0	COMPOSITIONAL	bitwise_and	prod	AB_OK	3	3	VALUE
+w19:198	0	SIBLING_DEPENDENT	log1p	acosh	AB_OK	3	3	ZEROED
+w1:294	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w21:490	1	SIBLING_DEPENDENT	prod	narrow_copy	AB_OK	3	3	ZEROED
+w24:604	0	SIBLING_DEPENDENT	div	index	AB_OK	3	3	ZEROED
+w27:15	0	COMPOSITIONAL	log	mean;_native_batch_norm_legit	AB_OK	3	3	VALUE
+w28:40	2	SIBLING_DEPENDENT	flip	ceil	AB_OK	3	3	ZEROED
+w2:750	0	SIBLING_DEPENDENT	squeeze_copy	lift_fresh_copy	AB_OK	3	3	ZEROED
+w31:694	1	COMPOSITIONAL	unsqueeze_copy	bitwise_left_shift	AB_OK	3	3	VALUE
+w35:212	3	COMPOSITIONAL	t_copy	sum	AB_OK	3	3	VALUE
+w37:260	0	SIBLING_DEPENDENT	fmod	constant_pad_nd	AB_OK	3	3	NONFINITE
+w39:106	1	COMPOSITIONAL	min	_native_batch_norm_legit;div	AB_OK	3	3	VALUE
+w3:570	0	SIBLING_DEPENDENT	copy	constant_pad_nd	AB_OK	3	3	ZEROED
+w42:452	1	COMPOSITIONAL	exp	remainder	AB_OK	3	3	VALUE
+w43:753	0	COMPOSITIONAL	_pdist_forward	native_group_norm	AB_OK	3	3	VALUE
+w46:531	1	COMPOSITIONAL	argmax	bitwise_left_shift;relu	B_NOREPRO	0	3	?
+w48:439	0	SIBLING_DEPENDENT	div	fmod	AB_OK	3	3	ZEROED
+w4:420	1	COMPOSITIONAL	bitwise_xor	prod	AB_OK	3	3	VALUE
+w51:17	1	COMPOSITIONAL	slice_copy	_native_batch_norm_legit	AB_OK	3	3	NONFINITE
+w52:442	0	SIBLING_DEPENDENT	pow	var_mean	AB_OK	3	3	ZEROED
+w54:294	3	SIBLING_DEPENDENT	fmod	clone	AB_OK	3	3	ZEROED
+w56:670	2	SIBLING_DEPENDENT	trunc	transpose_copy	AB_OK	3	3	NONFINITE
+w58:69	0	COMPOSITIONAL	permute_copy	erf;remainder	AB_OK	3	3	VALUE
+w5:340	1	COMPOSITIONAL	div	select_scatter	AB_OK	3	3	NONFINITE
+w61:101	0	COMPOSITIONAL	masked_scatter	broadcast_to;_to_copy;var_mean	AB_OK	3	3	VALUE
+w61:683	0	SIBLING_DEPENDENT	logical_and	alias_copy	AB_OK	3	3	ZEROED
+w63:747	0	COMPOSITIONAL	rsub	detach_copy;clamp;view_copy;atan2	AB_OK	3	3	VALUE
+w65:644	1	SIBLING_DEPENDENT	logical_not	unsqueeze_copy	AB_OK	3	3	VALUE
+w67:269	0	COMPOSITIONAL	pixel_shuffle	_native_batch_norm_legit;broadcast_to	AB_OK	3	3	VALUE
+w69:603	3	SIBLING_DEPENDENT	t_copy	transpose_copy	AB_OK	3	3	ZEROED
+w6:461	2	SIBLING_DEPENDENT	max	clone	AB_OK	3	3	NONFINITE
+w70:779	0	COMPOSITIONAL	pow	native_layer_norm;fmod	AB_OK	3	3	VALUE
+w72:736	1	SIBLING_DEPENDENT	fmod	clone	AB_OK	3	3	ZEROED
+w75:625	0	COMPOSITIONAL	native_layer_norm	exp;remainder	AB_OK	3	3	SCALE:-1.000
+w77:654	1	COMPOSITIONAL	bitwise_or	bitwise_left_shift;logical_or	AB_OK	3	3	ALIAS:L0
+w79:70	3	COMPOSITIONAL	rsqrt	addmm	AB_OK	3	3	VALUE
+w81:334	1	SIBLING_DEPENDENT	fmod	squeeze_copy	AB_OK	3	3	ZEROED
+w83:736	1	COMPOSITIONAL	floor_divide	native_group_norm	AB_OK	3	3	VALUE
+w85:444	3	COMPOSITIONAL	bitwise_and	prod	AB_OK	3	3	VALUE
+w87:573	0	SIBLING_DEPENDENT	max_pool2d_with_indices_backward	log2;masked_fill	AB_OK	3	3	VALUE
+w89:35	0	COMPOSITIONAL	t_copy	bitwise_left_shift	AB_OK	3	3	VALUE
+w90:492	0	COMPOSITIONAL	squeeze_copy	pow	AB_OK	3	3	VALUE
+w93:305	3	SIBLING_DEPENDENT	minimum	clamp	AB_OK	3	3	VALUE
+w95:174	2	SIBLING_DEPENDENT	narrow_copy	constant_pad_nd	AB_OK	3	3	NONFINITE
+w97:415	1	COMPOSITIONAL	log	remainder;var	AB_OK	3	3	VALUE
+w99:218	1	COMPOSITIONAL	alias_copy	native_group_norm;native_group_norm	AB_OK	3	3	NONFINITE
+w9:394	0	SIBLING_DEPENDENT	fmod	transpose_copy	AB_OK	3	3	ZEROED

@@ -1,0 +1,134 @@
+{
+ "tally": {
+  "CRASH_INFRA": 253,
+  "SKIP": 4450,
+  "TIMEOUT": 419
+ },
+ "skip_ops": {
+  "pixel_shuffle": {
+   "fvp_runner rc=N:": 389
+  },
+  "pixel_unshuffle": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 2,
+   "fvp_runner rc=N:": 366
+  },
+  "ones.out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... no out-*.bin produced (see /tmp/\u2026": 1,
+   "fvp_runner rc=N: no out-*.bin produced (see /tmp/\u2026": 338
+  },
+  "full.out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... no out-*.bin produced (see /tmp/\u2026": 1,
+   "fvp_runner rc=N: no out-*.bin produced (see /tmp/\u2026": 332
+  },
+  "where.self": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 1,
+   "fvp_runner rc=N:": 151
+  },
+  "copy": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 1,
+   "fvp_runner rc=N:": 172
+  },
+  "stack": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... no out-*.bin produced (see /tmp/\u2026": 5,
+   "fvp_runner rc=N: no out-*.bin produced (see /tmp/\u2026": 425
+  },
+  "transpose_copy.int": {
+   "fvp_runner rc=N:": 25
+  },
+  "max.dim_max": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 1,
+   "fvp_runner rc=N:": 44
+  },
+  "zeros.out": {
+   "fvp_runner rc=N: no out-*.bin produced (see /tmp/\u2026": 345
+  },
+  "topk.values": {
+   "fvp_runner rc=N:": 97
+  },
+  "arange.start_out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... no out-*.bin produced (see /tmp/\u2026": 2,
+   "fvp_runner rc=N: no out-*.bin produced (see /tmp/\u2026": 320
+  },
+  "scatter.src_out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 2,
+   "fvp_runner rc=N:": 83
+  },
+  "_pdist_forward": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 2,
+   "fvp_runner rc=N:": 280
+  },
+  "scatter_add.out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 2,
+   "fvp_runner rc=N:": 113
+  },
+  "arange.out": {
+   "fvp_runner rc=N: no out-*.bin produced (see /tmp/\u2026": 304
+  },
+  "expand_copy": {
+   "fvp_runner rc=N:": 155
+  },
+  "native_group_norm": {
+   "fvp_runner rc=N:": 235,
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 1
+  },
+  "mul.Scalar": {
+   "fvp_runner rc=N:": 9,
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 1
+  },
+  "min.dim_min": {
+   "fvp_runner rc=N:": 68
+  },
+  "permute_copy": {
+   "fvp_runner rc=N:": 61
+  },
+  "convolution": {
+   "fvp_runner rc=N:": 30
+  },
+  "scatter.value_out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 2,
+   "fvp_runner rc=N:": 28
+  },
+  "minimum.out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 1,
+   "fvp_runner rc=N:": 33
+  },
+  "unfold_copy": {
+   "fvp_runner rc=N:": 3
+  },
+  "narrow_copy": {
+   "fvp_runner rc=N:": 6
+  },
+  "gather.out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ...": 2,
+   "fvp_runner rc=N:": 5
+  },
+  "cumsum.out": {
+   "fvp_runner rc=N:": 2
+  },
+  "mm.out": {
+   "fvp_runner rc=N:": 1
+  },
+  "_adaptive_avg_pool2d": {
+   "fvp_runner rc=N:": 2
+  },
+  "max_pool2d_with_indices_backward.grad_input": {
+   "fvp_runner rc=N:": 1
+  }
+ },
+ "crash_device_ops": {
+  "_fft_r2c": {
+   "TIMEOUT FVP exceeded job-timeout": 419
+  }
+ },
+ "crash_infra_ops": {
+  "_fft_r2c": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... cortex-m runner build failed (see /tmp/\u2026": 23
+  },
+  "linear.out": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... cortex-m runner build failed (see /tmp/\u2026": 116
+  },
+  "linear": {
+   "fvp_runner rc=N: >> building runner (cache miss): backend=cortex-m target=cortex-m55 ops=\u2026 (shared SDK, no fetch) ... cortex-m runner build failed (see /tmp/\u2026": 114
+  }
+ }
+}

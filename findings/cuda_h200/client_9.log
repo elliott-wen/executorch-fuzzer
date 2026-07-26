@@ -1,0 +1,163 @@
+  cuda_client[cuda] → broker tcp://127.0.0.1:15555 (warm executor child, CUDA_VISIBLE_DEVICES=2)
+W0706 07:45:42.693000 401317 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 100 jobs
+  cuda_client[cuda] ran 200 jobs
+  cuda_client[cuda] ran 300 jobs
+W0706 07:47:10.375000 407664 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 400 jobs
+W0706 07:48:49.403000 412793 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 500 jobs
+  cuda_client[cuda] ran 600 jobs
+W0706 07:50:19.680000 421939 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 07:51:55.102000 426355 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 700 jobs
+W0706 07:53:22.791000 437668 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 800 jobs
+  cuda_client[cuda] ran 900 jobs
+W0706 07:54:47.953000 448460 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 1000 jobs
+  cuda_client[cuda] ran 1100 jobs
+  cuda_client[cuda] ran 1200 jobs
+  cuda_client[cuda] ran 1300 jobs
+  cuda_client[cuda] ran 1400 jobs
+W0706 07:56:27.937000 458530 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 07:57:10.469000 459718 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 1500 jobs
+W0706 07:58:41.130000 467689 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 08:00:09.721000 475635 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 1600 jobs
+  cuda_client[cuda] ran 1700 jobs
+  cuda_client[cuda] ran 1800 jobs
+  cuda_client[cuda] ran 1900 jobs
+  cuda_client[cuda] ran 2000 jobs
+W0706 08:01:57.870000 480437 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 2100 jobs
+  cuda_client[cuda] ran 2200 jobs
+  cuda_client[cuda] ran 2300 jobs
+  cuda_client[cuda] ran 2400 jobs
+  cuda_client[cuda] ran 2500 jobs
+W0706 08:04:56.915000 488531 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 2600 jobs
+  cuda_client[cuda] ran 2700 jobs
+W0706 08:06:37.899000 491329 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 2800 jobs
+  cuda_client[cuda] ran 2900 jobs
+W0706 08:08:08.641000 495511 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3000 jobs
+W0706 08:09:52.968000 501341 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 08:11:10.113000 504300 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3100 jobs
+W0706 08:12:53.978000 507536 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3200 jobs
+  cuda_client[cuda] ran 3300 jobs
+  cuda_client[cuda] ran 3400 jobs
+W0706 08:13:37.406000 510276 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3500 jobs
+W0706 08:16:07.186000 517116 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3600 jobs
+W0706 08:17:46.795000 521634 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3700 jobs
+  cuda_client[cuda] ran 3800 jobs
+W0706 08:19:09.353000 524305 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 3900 jobs
+  cuda_client[cuda] ran 4000 jobs
+W0706 08:20:34.784000 529646 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 08:21:21.081000 532377 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4100 jobs
+W0706 08:22:26.010000 534409 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 08:23:41.215000 536624 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4200 jobs
+W0706 08:25:04.317000 538814 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+W0706 08:25:39.374000 543975 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4300 jobs
+W0706 08:27:00.504000 547206 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4400 jobs
+  cuda_client[cuda] ran 4500 jobs
+W0706 08:29:10.839000 550812 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4600 jobs
+  cuda_client[cuda] ran 4700 jobs
+W0706 08:30:35.796000 556015 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4800 jobs
+W0706 08:31:57.955000 559684 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 4900 jobs
+  cuda_client[cuda] ran 5000 jobs
+  cuda_client[cuda] ran 5100 jobs
+W0706 08:33:41.274000 564503 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+  cuda_client[cuda] ran 5200 jobs
+  cuda_client[cuda] ran 5300 jobs
+  cuda_client[cuda] ran 5400 jobs
+  cuda_client[cuda] ran 5500 jobs
+  cuda_client[cuda] ran 5600 jobs
+  cuda_client[cuda] ran 5700 jobs
+  cuda_client[cuda] ran 5800 jobs
+  cuda_client[cuda] ran 5900 jobs
+W0706 08:37:18.100000 574245 mobile/.venv-cuda/lib/python3.12/site-packages/torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+PassManager is deprecated. Please use ExportedProgramPassManager instead.
+findings/cuda_h200/feed_cuda.sh: line 28: 401291 Killed                  "$MOBILE/.venv-cuda/bin/python" cuda_client.py --host 127.0.0.1 --gpu "$((g % NGPU))" --job-timeout 120

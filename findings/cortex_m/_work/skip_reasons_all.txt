@@ -1,0 +1,141 @@
+
+=== w0:167  [SKIP] rc=2  n0*=pixel_shuffle(L0,·)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:113  [SKIP] rc=2  n0*=pixel_unshuffle(L0,·)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:104  [SKIP] rc=2  n0*=ones.out(·,·)
+  (no catchable device message) stderr tail: no out-*.bin produced (see /tmp/cmrepro_w0_104_bip0g2rz/uart.log) | 
+
+=== w0:144  [SKIP] rc=2  n0*=full.out(·,·,·)
+  (no catchable device message) stderr tail: no out-*.bin produced (see /tmp/cmrepro_w0_144_yxzpe8eh/uart.log) | 
+
+=== w0:228  [SKIP] rc=2  n0*=where.self(L0,L1,L2)
+  uart device error(s):
+    F [executorch:op_dequantize_per_tensor.cpp:44 check_dequantize_args()] In function check_dequantize_args(), assert failed (input.scalar_type() == dtype): input.
+
+=== w0:264  [SKIP] rc=2  n0*=copy(L0,L1,·)
+  uart device error(s):
+    E [executorch:op_copy.cpp:33 copy_out()] Check failed (non_blocking == false):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:265  [SKIP] rc=2  n0*=stack(·,·)
+  (no catchable device message) stderr tail: no out-*.bin produced (see /tmp/cmrepro_w0_265_dx4p082e/uart.log) | 
+
+=== w0:388  [SKIP] rc=2  n0*=transpose_copy.int(L0,·,·)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:293  [SKIP] rc=2  n0*=max.dim_max(L0,·,·,L1,L2)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:809 runner_init()] In function runner_init(), assert failed (status == Error::Ok): Failed to prepare inputs 0x12
+
+=== w0:47  [SKIP] rc=2  n0*=zeros.out(·,·)
+  (no catchable device message) stderr tail: no out-*.bin produced (see /tmp/cmrepro_w0_47_h6kl_um7/uart.log) | 
+
+=== w0:490  [SKIP] rc=2  n0*=topk.values(L0,·,·,·,·,L1,L2)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:809 runner_init()] In function runner_init(), assert failed (status == Error::Ok): Failed to prepare inputs 0x12
+
+=== w0:421  [SKIP] rc=2  n0*=arange.start_out(·,·,·,·)
+  (no catchable device message) stderr tail: no out-*.bin produced (see /tmp/cmrepro_w0_421_jlrzga1q/uart.log) | 
+
+=== w0:485  [SKIP] rc=2  n0*=scatter.src_out(L0,·,L1,L2,·)
+  uart device error(s):
+    E [executorch:index_util.cpp:156 check_scatter_add_args()] Check failed (index.scalar_type() == ScalarType::Long): Expected dtype int64 for index; index.scalar_
+    E [executorch:op_scatter.cpp:113 scatter_src_out()] Check failed (check_scatter_src_args(in, dim, index, src, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:531  [SKIP] rc=2  n0*=_pdist_forward(L0,·)
+  uart device error(s):
+    E [executorch:tensor_util.h:617 tensor_is_rank()] Check failed (static_cast<size_t>(t.dim()) == rank): Expected tensor.dim() to be 2, but got 1
+    E [executorch:distance_util.cpp:16 check_pdist_args()] Check failed (tensor_is_rank(in, 2)):
+    E [executorch:op_pdist_forward.cpp:25 _pdist_forward_out()] Check failed (check_pdist_args(in, p, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:624  [SKIP] rc=2  n0*=scatter_add.out(L0,·,L1,L2,·)
+  uart device error(s):
+    E [executorch:index_util.cpp:156 check_scatter_add_args()] Check failed (index.scalar_type() == ScalarType::Long): Expected dtype int64 for index; index.scalar_
+    E [executorch:op_scatter_add.cpp:61 scatter_add_out()] Check failed (check_scatter_add_args(self, dim, index, src, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:80  [SKIP] rc=2  n0*=arange.out(·,·)
+  (no catchable device message) stderr tail: no out-*.bin produced (see /tmp/cmrepro_w0_80_thg20ocd/uart.log) | 
+
+=== w1:216  [SKIP] rc=2  n0*=expand_copy(L0,·,·)
+  uart device error(s):
+    E [executorch:copy_ops_util.cpp:165 check_expand_copy_args()] Check failed (implicit == false): This operator is not implemented for when implicit == true.
+    E [executorch:op_expand_copy.cpp:63 expand_copy_out()] Check failed (check_expand_copy_args(self, expand_sizes, implicit, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:756  [SKIP] rc=2  n0*=native_group_norm(L0,·,·,·,·,·,·,·)
+  uart device error(s):
+    E [executorch:normalization_ops_util.cpp:160 check_group_norm_args()] Check failed (in.size(0) == N):
+    E [executorch:op_native_group_norm.cpp:139 native_group_norm_out()] Check failed (check_group_norm_args( input, weight, bias, N, C, HxW, group, out, mean_out, r
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w0:85  [SKIP] rc=2  n0*=mul.Scalar(L0,·)
+  uart device error(s):
+    F [executorch:cortex_m_ops_common.h:53 validate_cmsis_nn_tensor_requirements()] In function validate_cmsis_nn_tensor_requirements(), assert failed (input2.scala
+
+=== w1:90  [SKIP] rc=2  n0*=min.dim_min(L0,·,·,L1,L2)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:809 runner_init()] In function runner_init(), assert failed (status == Error::Ok): Failed to prepare inputs 0x12
+
+=== w10:512  [SKIP] rc=2  n0*=permute_copy(L0,·)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w10:522  [SKIP] rc=2  n0*=convolution(L0,L1,·,·,·,·,·,·,·)
+  uart device error(s):
+    E [executorch:kernel_ops_util.cpp:389 check_convolution_args()] Check failed (in.dim() == 3 || in.dim() == 4): Expect input tensor to be 3-D or 4-D, but got, 5.
+    E [executorch:op_convolution.cpp:363 convolution_out()] Check failed (check_convolution_args( in, weight, bias, stride, padding, dilation, transposed, output_pa
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w10:736  [SKIP] rc=2  n0*=scatter.value_out(L0,·,L1,·,·)
+  uart device error(s):
+    E [executorch:index_util.cpp:24 check_gather_args()] Check failed (index.scalar_type() == ScalarType::Long): Expected dtype int64 for index; index.scalar_type()
+    E [executorch:op_scatter.cpp:140 scatter_value_out()] Check failed (check_scatter_value_args(in, dim, index, value, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w10:758  [SKIP] rc=2  n0*=minimum.out(L0,L1,·)
+  uart device error(s):
+    F [executorch:cortex_m_ops_common.h:48 validate_cmsis_nn_tensor_requirements()] In function validate_cmsis_nn_tensor_requirements(), assert failed (input1.scala
+
+=== w101:513  [SKIP] rc=2  n0*=unfold_copy(L0,·,·,·)
+  uart device error(s):
+    F [executorch:tensor_impl.h:136 size()] In function size(), assert failed (dim < dim_ && dim >= 0): Dimension out of range (expected to be in range of [0, -1], 
+
+=== w104:389  [SKIP] rc=2  n0*=narrow_copy(L0,·,·,·)
+  uart device error(s):
+    F [executorch:tensor_impl.h:136 size()] In function size(), assert failed (dim < dim_ && dim >= 0): Dimension out of range (expected to be in range of [0, 0], b
+
+=== w106:188  [SKIP] rc=2  n0*=gather.out(L0,·,L1,·,·)
+  uart device error(s):
+    E [executorch:index_util.cpp:24 check_gather_args()] Check failed (index.scalar_type() == ScalarType::Long): Expected dtype int64 for index; index.scalar_type()
+    E [executorch:op_gather.cpp:72 gather_out()] Check failed (check_gather_args(in, dim, index, sparse_grad, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w117:535  [SKIP] rc=2  n0*=cumsum.out(L0,·,·,·)
+  uart device error(s):
+    E [executorch:tensor_util.h:411 dim_is_valid()] Check failed (dim >= -upper_bound && dim < upper_bound): Dimension 0 is out of range. Dimension should be betwee
+    E [executorch:kernel_ops_util.cpp:512 check_cumsum_args()] Check failed (dim_is_valid(dim, in.dim())):
+    E [executorch:op_cumsum.cpp:97 cumsum_out()] Check failed (check_cumsum_args(self, dim, enforced_dtype, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w122:545  [SKIP] rc=2  n0*=mm.out(L0,L1,·)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w124:559  [SKIP] rc=2  n0*=_adaptive_avg_pool2d(L0,·)
+  uart device error(s):
+    E [executorch:kernel_ops_util.cpp:285 check_adaptive_avg_pool2d_args()] Check failed (output_size[0] > 0 && output_size[1] > 0): output_size must be positive, b
+    E [executorch:op__adaptive_avg_pool2d.cpp:43 _adaptive_avg_pool2d_out()] Check failed (check_adaptive_avg_pool2d_args(in, output_size, out)):
+    F [executorch:arm_executor_runner.cpp:1240 run_model()] In function run_model(), assert failed (status == Error::Ok): Execution of method forward failed with st
+
+=== w78:568  [SKIP] rc=2  n0*=max_pool2d_with_indices_backward.grad_input(L0,L1,·,·,·,·,·,L2,L3)
+  uart device error(s):
+    F [executorch:arm_executor_runner.cpp:809 runner_init()] In function runner_init(), assert failed (status == Error::Ok): Failed to prepare inputs 0x12

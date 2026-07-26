@@ -1,0 +1,867 @@
+{
+ "full.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1,
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 432
+  }
+ },
+ "argmin.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1,
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 387
+  }
+ },
+ "reflection_pad2d": {
+  "MISMATCH": {
+   "value": 352
+  }
+ },
+ "mean.dtype_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 430
+  }
+ },
+ "max": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 391
+  }
+ },
+ "native_group_norm": {
+  "MISMATCH": {
+   "nonfinite": 388,
+   "value": 184
+  }
+ },
+ "_pdist_forward": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x12 | [tensor_util.h:6": 296,
+   "client RuntimeError: method->execute() failed with error 0x12 | [op_pdist_forwar": 53
+  }
+ },
+ "clone": {
+  "MISMATCH": {
+   "value": 432
+  }
+ },
+ "reflection_pad1d.out": {
+  "MISMATCH": {
+   "value": 385
+  }
+ },
+ "reflection_pad2d.out": {
+  "MISMATCH": {
+   "value": 332
+  },
+  "CRASH": {
+   "executor died (native abort)": 1
+  }
+ },
+ "any.dims_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 22
+  }
+ },
+ "_fft_r2c": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x12 | [op_fft_r2c.cpp:": 130,
+   "client RuntimeError: method->execute() failed with error 0x12 | [tensor_util_por": 237
+  }
+ },
+ "prod.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 421
+  }
+ },
+ "t_copy": {
+  "MISMATCH": {
+   "value": 348
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "var.correction": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 216
+  },
+  "MISMATCH": {
+   "value": 176,
+   "nonfinite": 15
+  }
+ },
+ "argmax.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 383
+  }
+ },
+ "var_mean.correction": {
+  "MISMATCH": {
+   "value": 176,
+   "nonfinite": 5
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 230
+  }
+ },
+ "min.dim_min": {
+  "MISMATCH": {
+   "shape": 56
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 12
+  }
+ },
+ "any.all_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 431,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 2
+  }
+ },
+ "max.unary_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 374
+  }
+ },
+ "prod": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 436,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  }
+ },
+ "bitwise_left_shift.Tensor_out": {
+  "MISMATCH": {
+   "value": 258,
+   "nonfinite": 77
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "addmm.out": {
+  "MISMATCH": {
+   "value": 82
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "unfold_copy": {
+  "MISMATCH": {
+   "value": 133
+  },
+  "CRASH": {
+   "executor died (native abort)": 1
+  }
+ },
+ "min.unary_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 384
+  }
+ },
+ "prod.int_out": {
+  "MISMATCH": {
+   "value": 13
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 71
+  }
+ },
+ "bitwise_left_shift.Tensor_Scalar": {
+  "MISMATCH": {
+   "value": 199
+  }
+ },
+ "lift_fresh_copy": {
+  "MISMATCH": {
+   "value": 426
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "select_copy.int": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 337
+  }
+ },
+ "masked_fill.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1,
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 384
+  }
+ },
+ "min": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 380
+  }
+ },
+ "amax.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 171,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  }
+ },
+ "alias_copy": {
+  "MISMATCH": {
+   "value": 419
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 7
+  }
+ },
+ "squeeze_copy.dims": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 245,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  }
+ },
+ "zeros.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 434
+  }
+ },
+ "ones.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 431
+  }
+ },
+ "var.correction_out": {
+  "MISMATCH": {
+   "nonfinite": 123,
+   "value": 51
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 252
+  }
+ },
+ "index_put": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 430,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  }
+ },
+ "sum.IntList_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 188
+  }
+ },
+ "mean": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 431,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 2
+  }
+ },
+ "transpose_copy.int": {
+  "MISMATCH": {
+   "value": 322
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "arange.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 141
+  }
+ },
+ "linear": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 393,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  },
+  "MISMATCH": {
+   "value": 2
+  }
+ },
+ "diagonal_copy": {
+  "MISMATCH": {
+   "value": 327
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "div.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 137
+  }
+ },
+ "linear.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 89
+  },
+  "MISMATCH": {
+   "value": 2
+  }
+ },
+ "pixel_unshuffle": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 380
+  }
+ },
+ "topk.values": {
+  "MISMATCH": {
+   "shape": 88,
+   "value": 16
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 24
+  }
+ },
+ "amin.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 147,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  }
+ },
+ "bitwise_left_shift.Tensor_Scalar_out": {
+  "MISMATCH": {
+   "value": 176,
+   "nonfinite": 15
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "scatter_add.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x12 | [index_util.cpp:": 130
+  }
+ },
+ "_native_batch_norm_legit.no_stats": {
+  "MISMATCH": {
+   "value": 32,
+   "nonfinite": 17
+  }
+ },
+ "rsub.Scalar": {
+  "MISMATCH": {
+   "value": 5
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "remainder.Scalar_out": {
+  "MISMATCH": {
+   "value": 24
+  }
+ },
+ "where.self_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 9
+  }
+ },
+ "erf.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 94,
+   "client RuntimeError: method->execute() failed with error 0x1 | [OpenvinoBackend.": 1
+  }
+ },
+ "remainder.Tensor_out": {
+  "MISMATCH": {
+   "value": 102
+  }
+ },
+ "sub.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x12 | [op_sub.cpp:144]": 19
+  }
+ },
+ "max_pool2d_with_indices_backward.grad_input": {
+  "CRASH": {
+   "executor died (native abort)": 55
+  },
+  "MISMATCH": {
+   "value": 14
+  }
+ },
+ "pow.Tensor_Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "convolution": {
+  "MISMATCH": {
+   "value": 39
+  },
+  "CRASH": {
+   "executor died (native abort)": 1
+  }
+ },
+ "unsqueeze_copy": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "max.dim_max": {
+  "MISMATCH": {
+   "shape": 36
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 9
+  }
+ },
+ "logical_not": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "sin.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "reciprocal.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "fmod.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 7
+  }
+ },
+ "narrow_copy": {
+  "CRASH": {
+   "executor died (native abort)": 9
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x12 | [slice_util.cpp:": 1
+  }
+ },
+ "pow.Tensor_Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "scatter.value_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 26
+  }
+ },
+ "sinh.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "view_copy": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 26
+  }
+ },
+ "minimum.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "eq.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "cumsum.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 17
+  }
+ },
+ "lt.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "bmm.out": {
+  "MISMATCH": {
+   "value": 64
+  }
+ },
+ "stack": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 22,
+   "client RuntimeError: method->execute() failed with error 0x10 | [OpenvinoBackend": 7
+  }
+ },
+ "gt.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 7
+  }
+ },
+ "bitwise_right_shift.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "ge.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "index_select.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 9
+  }
+ },
+ "remainder.Scalar": {
+  "MISMATCH": {
+   "value": 82
+  }
+ },
+ "_adaptive_avg_pool2d": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "abs.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "maximum.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "add.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "hardtanh": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "asin.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "select_scatter": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "bitwise_and.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 9
+  }
+ },
+ "eq.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "abs": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "isinf": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "pow.Scalar_out": {
+  "MISMATCH": {
+   "value": 7
+  },
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "div.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "mul.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 7
+  }
+ },
+ "fill.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "glu.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "fmod.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "asinh.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "acos.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "sub.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "squeeze_copy.dim": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 5
+  }
+ },
+ "clamp.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "arange.start_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 7
+  }
+ },
+ "le.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "tril.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "bitwise_or.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "bitwise_not.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "_softmax.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 6
+  }
+ },
+ "gt.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "flip": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "floor_divide": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "isnan": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "copy": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "repeat": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 7
+  }
+ },
+ "sqrt.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "bitwise_and.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "relu": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "narrow_copy.out": {
+  "CRASH": {
+   "executor died (native abort)": 2
+  }
+ },
+ "ge.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "bitwise_right_shift.Tensor_Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "rsqrt.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "div.out_mode": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "bitwise_xor.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "mul.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "roll": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 4
+  }
+ },
+ "log2.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "bitwise_xor.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "cosh.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "native_layer_norm": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "clamp.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "constant_pad_nd": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "bitwise_and.Scalar": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "ne.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "permute_copy": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "log1p.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "logit": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "ne.Tensor_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "_log_softmax.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "sigmoid.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "tan.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "logit.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "floor.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "leaky_relu.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "floor_divide.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "logical_xor.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "gelu.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "hardtanh.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "fmod.Scalar_out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 3
+  }
+ },
+ "log10.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 1
+  }
+ },
+ "cos.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ },
+ "exp.out": {
+  "SKIP": {
+   "client RuntimeError: method->execute() failed with error 0x1 | [method.cpp:1525]": 2
+  }
+ }
+}

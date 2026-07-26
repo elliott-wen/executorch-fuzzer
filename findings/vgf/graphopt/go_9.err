@@ -1,0 +1,3 @@
+[W705 21:04:01.041846381 ReduceOps.cpp:1879] Warning: var_mean(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+[W705 21:04:01.043528508 ReduceOps.cpp:1879] Warning: var_mean(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+shard 9 done pass 1

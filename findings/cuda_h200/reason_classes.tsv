@@ -1,0 +1,11 @@
+count	signature	n_ops	example_job_ids
+728	MISMATCH: wrong-value (max|delta|)	15	w0:172,w0:196,w0:226,w0:237,w0:457,w0:6,w0:658,w0:713
+472	MISMATCH: non-finite (nan/inf positions differ)	13	w0:117,w0:321,w0:348,w0:552,w0:90,w1:189,w1:216,w1:335
+469	CRASH: native abort (no catchable msg)	33	w1:498,w1:724,w0:168,w0:399,w0:625,w10:102,w1:262,w1:493
+389	SKIP: storage_offset!=0 (sliced/viewed input)	1	w0:33,w0:495,w0:726,w1:132,w1:594,w10:198,w10:429,w10:660
+304	MISMATCH: shape/rank divergence	4	w0:115,w0:527,w0:758,w1:164,w1:395,w1:626,w10:66,w10:692
+213	SKIP: dtype mismatch (11!=0)	2	w0:400,w0:631,w0:669,w1:75,w10:103,w100:668,w100:706,w101:379
+192	SKIP: non-contiguous input	2	w0:11,w1:110,w1:341,w10:407,w10:638,w100:48,w100:510,w100:741
+99	SKIP(load): undefined symbol AOTInductorModelContainerCreateWithDevice	71	w100:105,w11:328,w11:329,w11:330,w11:340,w11:347,w11:352,w119:400
+40	SKIP(load): CudaBackend init failed	25	w100:104,w100:436,w103:176,w108:246,w11:325,w110:472,w115:662,w119:4
+38	SKIP: device-assert index-OOB	1	w10:97,w100:431,w103:162,w108:234,w11:239,w110:462,w115:657,w119:391

@@ -1,0 +1,43 @@
+job	out	backend	verdict	deleg	detail
+w108:171	0	portable	OK	deleg=0	dev=['-0.482', '-0.482']	ref=['-0.482', '-0.482']
+w108:171	0	xnnpack	OK	deleg=3	dev=['-0.482', '-0.482']	ref=['-0.482', '-0.482']
+w108:171	0	openvino	OK	deleg=15	dev=['-0.482', '-0.482']	ref=['-0.482', '-0.482']
+w108:171	0	cadence	BUILD:SKIP	-	-	to_executorch Exception: An error occurred when ru
+w108:171	0	nxp	BUILD:SKIP	-	-	to_executorch NotImplementedError: "histogram_cpu"
+w108:171	0	vgf	ZEROED	deleg=12	dev=['0.000', '0.000']	ref=['-0.482', '-0.482']
+w111:578	0	portable	OK	deleg=0	dev=['-0.024']	ref=['-0.024']
+w111:578	0	xnnpack	OK	deleg=1	dev=['-0.024']	ref=['-0.024']
+w111:578	0	openvino	RUNERR	deleg=8	-	method->execute() failed with error 0x1
+w111:578	0	cadence	RUN:rc=2	deleg=0	-	-
+w111:578	0	nxp	BUILD:SKIP	-	-	to_executorch SpecViolationError: Parameter output
+w111:578	0	vgf	ZEROED	deleg=7	dev=['0.000']	ref=['-0.024']
+w11:274	2	portable	OK	deleg=0	dev=['1.000', '1.000']	ref=['1.000', '1.000']
+w11:274	2	xnnpack	OK	deleg=3	dev=['1.000', '1.000']	ref=['1.000', '1.000']
+w11:274	2	openvino	BUILD:SKIP	-	-	to_executorch GeneralFailure: Check 'is_number(nam
+w11:274	2	cadence	RUN:rc=2	deleg=0	-	-
+w11:274	2	nxp	BUILD:SKIP	-	-	to_executorch SpecViolationError: Parameter output
+w11:274	2	vgf	ZEROED	deleg=12	dev=['0.000', '0.000']	ref=['1.000', '1.000']
+w10:13	1	portable	OK	deleg=0	dev=['-0.482', '0.628']	ref=['-0.482', '0.628']
+w10:13	1	xnnpack	OK	deleg=6	dev=['-0.482', '0.628']	ref=['-0.482', '0.628']
+w10:13	1	openvino	OK	deleg=14	dev=['-0.482', '0.628']	ref=['-0.482', '0.628']
+w10:13	1	cadence	RUN:rc=2	deleg=0	-	-
+w10:13	1	nxp	BUILD:SKIP	-	-	to_executorch SpecViolationError: Parameter output
+w10:13	1	vgf	ZEROED	deleg=13	dev=['0.000', '0.000']	ref=['-0.482', '0.628']
+w59:476	4	portable	RUNERR	deleg=0	-	method->execute() failed with error 0x12
+w59:476	4	xnnpack	RUNERR	deleg=3	-	method->execute() failed with error 0x12
+w59:476	4	openvino	RUNERR	deleg=7	-	method->execute() failed with error 0x1
+w59:476	4	cadence	RUN:rc=2	deleg=0	-	-
+w59:476	4	nxp	BUILD:SKIP	-	-	to_executorch SpecViolationError: Parameter output
+w59:476	4	vgf	ZEROED	deleg=6	dev=['0.000']	ref=['53.598']
+w102:563	0	portable	OK	deleg=0	dev=['nan', '0.484']	ref=['nan', '0.484']
+w102:563	0	xnnpack	WRONG	deleg=5	dev=['-1.000', '0.484']	ref=['nan', '0.484']
+w102:563	0	openvino	WRONG	deleg=9	dev=['-1.000', '0.484']	ref=['nan', '0.484']
+w102:563	0	cadence	RUN:rc=2	deleg=0	-	-
+w102:563	0	nxp	BUILD:SKIP	-	-	to_executorch RuntimeError: torch.histc: range of 
+w102:563	0	vgf	WRONG	deleg=8	dev=['0.000', '0.000']	ref=['nan', '0.484']
+w29:594	2	portable	OK	deleg=0	dev=['-2.000', '-2.000', '-2.000']	ref=['-2.000', '-2.000', '-2.000']
+w29:594	2	xnnpack	OK	deleg=1	dev=['-2.000', '-2.000', '-2.000']	ref=['-2.000', '-2.000', '-2.000']
+w29:594	2	openvino	RUNERR	deleg=11	-	method->execute() failed with error 0x1
+w29:594	2	cadence	RUN:rc=2	deleg=0	-	-
+w29:594	2	nxp	BUILD:SKIP	-	-	to_executorch NotImplementedError: "histogram_cpu"
+w29:594	2	vgf	WRONG	deleg=6	dev=['-1.000', '-1.000', '-1.000']	ref=['-2.000', '-2.000', '-2.000']

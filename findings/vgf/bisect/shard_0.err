@@ -1,0 +1,5 @@
+corrupted size vs. prev_size
+corrupted size vs. prev_size
+[W705 19:52:40.570421003 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+[W705 19:52:42.108453956 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+[W705 19:52:43.799468558 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)

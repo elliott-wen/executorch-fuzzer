@@ -1,0 +1,63 @@
+job	out	verdict	tgt_op	trigger_ops	ab	n_div	n_rep	mechanism
+w100:33	3	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w101:605	0	COMPOSITIONAL	max	view_copy;remainder	AB_OK	3	3	VALUE
+w103:600	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w106:512	1	COMPOSITIONAL	tril	remainder	AB_OK	3	3	VALUE
+w109:130	0	SIBLING_DEPENDENT	constant_pad_nd	detach_copy	AB_OK	3	3	ZEROED
+w110:208	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w113:38	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w115:354	0	SIBLING_DEPENDENT	clamp	abs	AB_OK	3	3	ZEROED
+w117:560	0	COMPOSITIONAL	any	bitwise_left_shift	AB_OK	3	3	ALIAS:L3
+w11:655	0	COMPOSITIONAL	div	_to_copy	AB_OK	1	3	SHAPE
+w121:583	1	COMPOSITIONAL	asinh	bitwise_left_shift;sigmoid	AB_OK	3	3	ZEROED
+w124:329	0	COMPOSITIONAL	pow	fmod;elu	AB_OK	3	3	VALUE
+w126:715	5	COMPOSITIONAL	bitwise_xor	select_scatter	AB_OK	3	3	ALIAS:L4
+w12:624	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w15:155	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w17:556	1	SIBLING_DEPENDENT	masked_scatter	transpose_copy	A_ALSO_DIVERGES	3	3	ZEROED
+w19:347	0	COMPOSITIONAL	split_copy	fill	AB_OK	3	3	ZEROED
+w1:489	1	SIBLING_DEPENDENT	trunc	lift_fresh_copy	AB_OK	3	3	ZEROED
+w22:81	1	COMPOSITIONAL	view_copy	native_group_norm;tanh	AB_OK	3	3	SHAPE
+w24:656	0	COMPOSITIONAL	mul	bitwise_left_shift	AB_OK	3	3	NONFINITE
+w27:178	3	COMPOSITIONAL	atan	remainder	AB_OK	3	3	VALUE
+w29:122	2	COMPOSITIONAL	copy	_to_copy;slice_copy;_to_copy;slice_copy;asinh;pow	AB_OK	3	3	ALIAS:n6
+w30:233	0	COMPOSITIONAL	pow	select_scatter	AB_OK	3	3	VALUE
+w32:577	1	SIBLING_DEPENDENT	permute_copy	sinh	AB_OK	3	3	ZEROED
+w35:582	0	SIBLING_DEPENDENT	cosh	cosh	AB_OK	3	3	ZEROED
+w37:375	2	COMPOSITIONAL	sin	native_group_norm	AB_OK	3	3	VALUE
+w39:187	4	COMPOSITIONAL	bitwise_or	remainder	AB_OK	3	3	VALUE
+w3:781	1	COMPOSITIONAL	floor_divide	native_layer_norm;cumsum	AB_OK	3	3	VALUE
+w42:524	0	SIBLING_DEPENDENT	sinh	log2	AB_OK	3	3	NONFINITE
+w44:373	1	COMPOSITIONAL	max	mul	B_NOREPRO	0	3	?
+w46:69	0	COMPOSITIONAL	pow	bitwise_left_shift;var_mean	AB_OK	3	3	VALUE
+w49:123	2	COMPOSITIONAL	flip	floor_divide	AB_OK	3	3	VALUE
+w4:5	0	COMPOSITIONAL	div	broadcast_to;_to_copy	AB_OK	3	3	SCALE:1.500
+w51:208	1	COMPOSITIONAL	div	bitwise_left_shift;replication_pad3d	AB_OK	3	3	VALUE
+w52:695	2	COMPOSITIONAL	split_with_sizes_copy	bitwise_left_shift	AB_OK	3	3	VALUE
+w54:567	0	SIBLING_DEPENDENT	index	index	AB_OK	3	3	NONFINITE
+w57:135	0	SIBLING_DEPENDENT	asin	sin;rsqrt	AB_OK	3	3	NONFINITE
+w58:87	1	COMPOSITIONAL	view_copy	view_copy;_to_copy	AB_OK	3	3	VALUE
+w5:396	0	COMPOSITIONAL	sigmoid	remainder;logical_not;bitwise_right_shift;index_put	AB_OK	3	3	VALUE
+w61:311	2	SIBLING_DEPENDENT	sinh	pow	AB_OK	3	3	ZEROED
+w61:753	0	SIBLING_DEPENDENT	fmod	argmin	AB_OK	3	3	ZEROED
+w64:223	3	SIBLING_DEPENDENT	clamp	alias_copy	AB_OK	3	3	ZEROED
+w65:70	1	COMPOSITIONAL	clamp	bitwise_left_shift	AB_OK	3	3	VALUE
+w67:486	0	COMPOSITIONAL	log1p	bitwise_left_shift	AB_OK	3	3	NONFINITE
+w69:672	2	COMPOSITIONAL	minimum	remainder	AB_OK	3	3	ALIAS:n0
+w6:504	1	SIBLING_DEPENDENT	trunc	copy	AB_OK	3	3	NONFINITE
+w71:149	3	COMPOSITIONAL	floor_divide	_native_batch_norm_legit	AB_OK	3	3	VALUE
+w73:102	3	COMPOSITIONAL	sin	floor_divide	AB_OK	3	3	ALIAS:n3
+w75:81	2	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w78:130	1	SIBLING_DEPENDENT	scatter	max	AB_OK	3	3	NONFINITE
+w7:307	0	SIBLING_DEPENDENT	clone	detach_copy	AB_OK	3	3	ZEROED
+w81:764	0	COMPOSITIONAL	unbind_copy	bitwise_and;bitwise_left_shift	AB_OK	3	3	NONFINITE
+w84:144	0	SIBLING_DEPENDENT	log	squeeze_copy	AB_OK	3	3	NONFINITE
+w85:89	0	SIBLING_DEPENDENT	max	expand_copy	AB_OK	3	3	ZEROED
+w87:615	0	COMPOSITIONAL	min	bitwise_left_shift	AB_OK	3	3	VALUE
+w89:431	2	SIBLING_DEPENDENT	div	split_with_sizes_copy	AB_OK	3	3	ZEROED
+w90:95	2	SIBLING_DEPENDENT	prod	squeeze_copy	AB_OK	3	3	ZEROED
+w93:430	0	COMPOSITIONAL	sum	bitwise_left_shift	AB_OK	3	3	VALUE
+w95:30	0	COMPOSITIONAL	sqrt	bitwise_left_shift;view_copy	AB_OK	3	3	NONFINITE
+w97:760	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w99:297	0	SIBLING_DEPENDENT	pow	t_copy	AB_OK	3	3	ZEROED
+w9:478	1	COMPOSITIONAL	pixel_shuffle	remainder	AB_OK	3	3	VALUE

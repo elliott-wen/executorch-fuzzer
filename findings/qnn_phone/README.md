@@ -80,4 +80,5 @@ intermediates. Closing that needs a corpus "shared-leaf / correlated-input" inje
 python -m mobile feed --corpus corpus_v3/qualcomm --skip-log <fresh.tsv> \
     --host 127.0.0.1 --job-port 15554 --ctrl-port 15556 --window 8 --timeout 150
 ```
-Working data: [_work/skip.tsv](_work/skip.tsv). Emulator comparison: [../qnn_emulator](../qnn_emulator/).
+Working data: [_work/skip.tsv](_work/skip.tsv). Emulator [text](../../corpus_v3)comparison: [../qnn_emulator](../qnn_emulator/).
+m,

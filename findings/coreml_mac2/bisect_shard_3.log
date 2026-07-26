@@ -1,0 +1,150 @@
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/1 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/1 [00:00<?, ? ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 11722.48 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 12620.24 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 27383.92 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/9 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  89%|████████▉ | 8/9 [00:00<00:00, 3235.10 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 6958.04 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 3953.63 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 6166.58 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/7 [00:00<?, ? ops/s]ERROR:coremltools:
+
+ERROR - converting 'max' op (located at: 'aten_max_default'):
+
+Converting PyTorch Frontend ==> MIL Ops:  43%|████▎     | 3/7 [00:00<00:00, 2197.12 ops/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/8 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  88%|████████▊ | 7/8 [00:00<00:00, 2379.84 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 7500.54 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5643.09 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8783.88 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 1843.25 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 15263.11 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 12034.76 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 17592.33 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2179.99 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 20661.60 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 8868.24 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22815.80 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2336.66 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 11360.52 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5018.75 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 6913.69 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2360.33 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 12416.53 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 7082.83 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 14165.96 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2314.10 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 19099.74 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 9042.53 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 23162.29 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2439.02 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 11416.18 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 4994.16 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 6924.15 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/5 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  80%|████████  | 4/5 [00:00<00:00, 2460.36 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 10048.64 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 4512.71 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 9058.97 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2420.95 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 20480.00 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 8929.25 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22992.99 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2165.92 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14706.54 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6323.84 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8622.86 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2065.14 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 17360.53 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 7939.80 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22017.34 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2111.94 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14493.10 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6353.18 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8611.06 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/5 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  80%|████████  | 4/5 [00:00<00:00, 2027.21 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 9094.33 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 4383.87 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8727.53 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2424.45 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 12527.79 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5561.34 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 11834.39 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2339.92 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 20242.78 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 9047.04 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22753.91 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2154.24 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14573.68 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6290.89 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8713.93 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/5 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  80%|████████  | 4/5 [00:00<00:00, 2647.50 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 10145.87 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5384.43 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 9939.11 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2291.97 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 20560.31 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 9007.98 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22898.84 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2383.13 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 11113.68 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5030.41 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 6891.91 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/5 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  80%|████████  | 4/5 [00:00<00:00, 2234.28 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 9948.54 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 4410.22 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8938.31 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2330.17 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 20600.71 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 9056.30 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22723.09 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2063.62 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14543.36 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6308.32 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8648.05 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2420.26 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 12178.58 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5463.28 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 11626.62 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2265.35 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 20223.26 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 9080.86 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22379.57 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2082.06 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14563.56 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6304.13 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8549.63 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 2245.34 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 19562.99 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 9020.83 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 22764.20 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/3 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  67%|██████▋   | 2/3 [00:00<00:00, 1965.47 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14513.16 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6227.96 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8662.93 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2409.60 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 13140.05 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 5540.46 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 11867.87 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/11 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  91%|█████████ | 10/11 [00:00<00:00, 3213.78 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 4666.56 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 2853.17 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 3878.83 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/4 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  75%|███████▌  | 3/4 [00:00<00:00, 2301.61 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 11510.16 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 6011.57 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 8304.18 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/11 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  91%|█████████ | 10/11 [00:00<00:00, 2718.28 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 3781.38 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 2125.53 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 3654.37 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/6 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  83%|████████▎ | 5/6 [00:00<00:00, 2035.67 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 5817.34 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 3614.93 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 6952.85 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/6 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  83%|████████▎ | 5/6 [00:00<00:00, 2058.05 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 5786.84 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 3620.05 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 6896.64 passes/s]
+Converting PyTorch Frontend ==> MIL Ops:   0%|          | 0/2 [00:00<?, ? ops/s]Converting PyTorch Frontend ==> MIL Ops:  50%|█████     | 1/2 [00:00<00:00, 1117.29 ops/s]
+Running MIL frontend_pytorch pipeline:   0%|          | 0/5 [00:00<?, ? passes/s]Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 14046.56 passes/s]
+Running MIL default pipeline:   0%|          | 0/95 [00:00<?, ? passes/s]Running MIL default pipeline: 100%|██████████| 95/95 [00:00<00:00, 8304.86 passes/s]
+Running MIL backend_mlprogram pipeline:   0%|          | 0/12 [00:00<?, ? passes/s]Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 9958.77 passes/s]
+[shard 3] DONE 248 jobs

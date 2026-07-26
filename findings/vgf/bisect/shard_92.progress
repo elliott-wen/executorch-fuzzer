@@ -1,0 +1,23 @@
+[s92 1/22] w102:196 out0 -> COMPOSITIONAL
+[s92 4/22] w119:234 out0 -> COMPOSITIONAL
+[s92 11/22] w4:516 out1 -> COMPOSITIONAL
+[s92 13/22] w5:530 out0 -> OPERATOR
+[s92 14/22] w54:378 out1 -> SIBLING_DEPENDENT
+[s92 15/22] w6:341 out0 -> SIBLING_DEPENDENT
+[s92 16/22] w64:211 out0 -> COMPOSITIONAL
+[s92 18/22] w73:739 out0 -> SIBLING_DEPENDENT
+[s92 19/22] w8:52 out0 -> SIBLING_DEPENDENT
+[s92 21/22] w90:392 out0 -> OPERATOR
+[s92 22/22] w95:548 out0 -> OPERATOR
+SHARD_COMPLETE shard=92 mine=22 remaining=5
+[s92 5/5] w19:555 out0 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=92 mine=22 remaining=3
+[s92 2/3] w113:135 out3 -> OPERATOR
+SHARD_COMPLETE shard=92 mine=22 remaining=2
+SHARD_COMPLETE shard=92 mine=22 remaining=2
+SHARD_COMPLETE shard=92 mine=22 remaining=2
+SHARD_COMPLETE shard=92 mine=22 remaining=2
+[s92 1/2] w107:168 out1 -> POISON
+[s92 2/2] w124:331 out0 -> POISON
+SHARD_COMPLETE shard=92 mine=22 remaining=0
+shard 92 DONE after 7 passes

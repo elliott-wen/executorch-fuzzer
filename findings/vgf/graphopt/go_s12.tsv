@@ -1,0 +1,62 @@
+job	out	verdict	tgt_op	trigger_ops	ab	n_div	n_rep	mechanism
+w100:602	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w102:554	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w104:569	0	COMPOSITIONAL	ERR		DEV:TIMEOUT	0	3	
+w107:200	0	COMPOSITIONAL	cumsum	mul;slice_copy;_to_copy;squeeze_copy;leaky_relu	AB_OK	3	3	SHAPE
+w109:539	0	SIBLING_DEPENDENT	argmax	permute_copy	AB_OK	3	3	ZEROED
+w111:159	1	COMPOSITIONAL	scatter_add	fill;detach_copy	AB_OK	3	3	SHAPE
+w113:650	0	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w115:652	0	COMPOSITIONAL	amin	native_group_norm	AB_OK	3	3	VALUE
+w119:234	0	COMPOSITIONAL	acos	detach_copy;bitwise_left_shift	AB_OK	3	3	NONFINITE
+w120:300	2	COMPOSITIONAL	squeeze_copy	_native_batch_norm_legit;remainder;argmin	AB_OK	3	3	SHAPE
+w122:703	1	COMPOSITIONAL	remainder	broadcast_to;bitwise_left_shift;_to_copy;clone	AB_OK	3	3	NONFINITE
+w125:527	0	SIBLING_DEPENDENT	logical_and	detach_copy	AB_OK	3	3	ZEROED
+w127:304	0	COMPOSITIONAL	logical_and	_to_copy;le;remainder;broadcast_to	AB_OK	3	3	VALUE
+w13:404	0	SIBLING_DEPENDENT	sinh	floor_divide	AB_OK	3	3	ZEROED
+w16:115	2	COMPOSITIONAL	asin	div;fmod	AB_OK	3	3	VALUE
+w18:185	0	SIBLING_DEPENDENT	prod	lift_fresh_copy	AB_OK	3	3	ZEROED
+w19:708	4	SIBLING_DEPENDENT	trunc	permute_copy	AB_OK	3	3	ZEROED
+w20:350	1	SIBLING_DEPENDENT	transpose_copy	transpose_copy	AB_OK	3	3	ZEROED
+w23:771	1	SIBLING_DEPENDENT	select_copy	select_copy	AB_OK	3	3	NONFINITE
+w26:379	3	COMPOSITIONAL	cos	index;squeeze_copy;elu	AB_OK	3	3	SCALE:3.078
+w27:493	1	SIBLING_DEPENDENT	logical_and	trunc	AB_OK	3	3	ZEROED
+w2:119	1	COMPOSITIONAL	bitwise_or	max;slice_scatter	AB_OK	3	3	ZEROED
+w30:616	1	COMPOSITIONAL	bitwise_xor	bitwise_left_shift	AB_OK	3	3	VALUE
+w33:738	2	SIBLING_DEPENDENT	detach_copy	alias_copy	AB_OK	3	3	ZEROED
+w36:147	0	COMPOSITIONAL	max	fill;mul	AB_OK	3	3	ZEROED
+w38:399	0	COMPOSITIONAL	log	var;native_group_norm;cosh	AB_OK	3	3	NONFINITE
+w3:174	0	COMPOSITIONAL	expm1	copy	AB_OK	3	3	ZEROED
+w41:425	2	COMPOSITIONAL	split_with_sizes_copy	bitwise_left_shift	AB_OK	3	3	VALUE
+w43:395	1	SIBLING_DEPENDENT	log	min	AB_OK	3	3	NONFINITE
+w45:323	2	COMPOSITIONAL	rsub	bitwise_left_shift	AB_OK	3	3	VALUE
+w47:757	3	SIBLING_DEPENDENT	div	lift_fresh_copy	AB_OK	3	3	ZEROED
+w49:677	3	SIBLING_DEPENDENT	sin	var_mean	AB_OK	3	3	ZEROED
+w4:693	2	COMPOSITIONAL	pow	bitwise_left_shift	AB_OK	3	3	NONFINITE
+w51:447	0	SIBLING_DEPENDENT	min	copy	AB_OK	3	3	ZEROED
+w53:528	2	COMPOSITIONAL	cos	pow	AB_OK	3	3	VALUE
+w55:549	0	COMPOSITIONAL	ge	remainder	AB_OK	3	3	VALUE
+w57:59	1	SIBLING_DEPENDENT	log2	mean	AB_OK	3	3	VALUE
+w59:736	0	SIBLING_DEPENDENT	log	log10	AB_OK	3	3	NONFINITE
+w60:212	0	COMPOSITIONAL	asinh	remainder;fmod	AB_OK	3	3	VALUE
+w61:48	1	COMPOSITIONAL	remainder	mul;remainder	AB_OK	3	3	VALUE
+w62:643	0	COMPOSITIONAL	sigmoid	bitwise_left_shift	AB_OK	3	3	ZEROED
+w64:737	0	COMPOSITIONAL	trunc	fill	AB_OK	3	3	ZEROED
+w66:412	1	COMPOSITIONAL	_adaptive_avg_pool2d	native_group_norm	AB_OK	3	3	VALUE
+w68:192	2	SIBLING_DEPENDENT	log2	where	AB_OK	3	3	NONFINITE
+w6:159	0	COMPOSITIONAL	var	native_group_norm;elu	AB_OK	3	3	VALUE
+w70:398	2	SIBLING_DEPENDENT	log10	squeeze_copy	AB_OK	3	3	ALIAS:n2
+w71:511	0	SIBLING_DEPENDENT	lt	hardtanh	AB_OK	3	3	VALUE
+w73:739	0	SIBLING_DEPENDENT	hardtanh	abs	AB_OK	3	3	ZEROED
+w76:777	1	COMPOSITIONAL	minimum	view_copy;unbind_copy;ne	AB_OK	3	3	ZEROED
+w78:645	2	SIBLING_DEPENDENT	maximum	maximum	AB_OK	3	3	ZEROED
+w80:271	3	COMPOSITIONAL	prod	atanh;squeeze_copy;var;log1p	AB_OK	3	3	VALUE
+w82:66	2	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w84:669	1	SIBLING_DEPENDENT	acos	alias_copy	AB_OK	3	3	NONFINITE
+w87:107	1	SIBLING_DEPENDENT	abs	var_mean;sub	AB_OK	3	3	ZEROED
+w88:86	2	COMPOSITIONAL	acosh	native_layer_norm	AB_OK	3	3	NONFINITE
+w89:66	1	SIBLING_DEPENDENT	ERR		DEV:TIMEOUT	0	3	
+w92:360	2	COMPOSITIONAL	transpose_copy	mul;bitwise_left_shift	AB_OK	3	3	VALUE
+w94:231	0	COMPOSITIONAL	pow	split_with_sizes_copy;reciprocal;native_group_norm;lift_fresh_copy	AB_OK	3	3	VALUE
+w96:163	3	SIBLING_DEPENDENT	transpose_copy	split_with_sizes_copy	AB_OK	3	3	ZEROED
+w98:507	0	SIBLING_DEPENDENT	t_copy	amax	AB_OK	3	3	ZEROED
+w99:613	2	SIBLING_DEPENDENT	remainder	unbind_copy	AB_OK	3	3	ZEROED

@@ -1,0 +1,15 @@
+[s29 4/23] w114:737 out0 -> OPERATOR
+[s29 7/23] w16:224 out1 -> OPERATOR
+[s29 8/23] w20:330 out2 -> OPERATOR
+[s29 10/23] w30:343 out2 -> OPERATOR
+[s29 15/23] w56:398 out0 -> OPERATOR
+[s29 16/23] w60:618 out0 -> OPERATOR
+[s29 17/23] w65:651 out0 -> COMPOSITIONAL
+[s29 20/23] w81:444 out4 -> OPERATOR
+[s29 23/23] w97:734 out2 -> OPERATOR
+SHARD_COMPLETE shard=29 mine=23 remaining=4
+[s29 1/4] w1:560 out0 -> OPERATOR
+[s29 3/4] w109:130 out0 -> SIBLING_DEPENDENT
+[s29 4/4] w70:25 out3 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=29 mine=23 remaining=0
+shard 29 DONE after 2 passes

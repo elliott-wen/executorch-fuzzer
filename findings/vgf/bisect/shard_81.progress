@@ -1,0 +1,21 @@
+[s81 8/22] w23:621 out2 -> OPERATOR
+[s81 11/22] w4:230 out2 -> SIBLING_DEPENDENT
+[s81 12/22] w44:280 out2 -> SIBLING_DEPENDENT
+[s81 13/22] w5:205 out0 -> COMPOSITIONAL
+[s81 15/22] w59:99 out0 -> COMPOSITIONAL
+[s81 16/22] w63:424 out1 -> SIBLING_DEPENDENT
+[s81 17/22] w68:192 out2 -> SIBLING_DEPENDENT
+[s81 18/22] w72:91 out2 -> OPERATOR
+[s81 19/22] w8:27 out0 -> OPERATOR
+[s81 20/22] w85:219 out3 -> SIBLING_DEPENDENT
+[s81 22/22] w95:158 out2 -> COMPOSITIONAL
+SHARD_COMPLETE shard=81 mine=22 remaining=4
+[s81 1/4] w101:39 out1 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=81 mine=22 remaining=1
+SHARD_COMPLETE shard=81 mine=22 remaining=1
+SHARD_COMPLETE shard=81 mine=22 remaining=1
+SHARD_COMPLETE shard=81 mine=22 remaining=1
+SHARD_COMPLETE shard=81 mine=22 remaining=1
+[s81 1/1] w13:449 out1 -> POISON
+SHARD_COMPLETE shard=81 mine=22 remaining=0
+shard 81 DONE after 7 passes

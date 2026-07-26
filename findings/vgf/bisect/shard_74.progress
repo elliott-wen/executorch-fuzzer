@@ -1,0 +1,25 @@
+[s74 3/23] w111:159 out1 -> COMPOSITIONAL
+[s74 4/23] w117:405 out1 -> OPERATOR
+[s74 5/23] w122:763 out0 -> COMPOSITIONAL
+[s74 7/23] w18:636 out2 -> OPERATOR
+[s74 8/23] w23:235 out0 -> COMPOSITIONAL
+[s74 10/23] w33:703 out4 -> OPERATOR
+[s74 12/23] w44:196 out4 -> OPERATOR
+[s74 13/23] w49:781 out0 -> OPERATOR
+[s74 14/23] w53:531 out0 -> COMPOSITIONAL
+[s74 16/23] w62:694 out0 -> OPERATOR
+[s74 18/23] w72:671 out3 -> OPERATOR
+[s74 19/23] w79:547 out2 -> SIBLING_DEPENDENT
+[s74 21/23] w9:183 out1 -> OPERATOR
+[s74 23/23] w99:613 out2 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=74 mine=23 remaining=3
+[s74 1/3] w100:560 out1 -> COMPOSITIONAL
+[s74 2/3] w105:98 out4 -> OPERATOR
+SHARD_COMPLETE shard=74 mine=23 remaining=1
+SHARD_COMPLETE shard=74 mine=23 remaining=1
+SHARD_COMPLETE shard=74 mine=23 remaining=1
+SHARD_COMPLETE shard=74 mine=23 remaining=1
+SHARD_COMPLETE shard=74 mine=23 remaining=1
+[s74 1/1] w13:337 out1 -> POISON
+SHARD_COMPLETE shard=74 mine=23 remaining=0
+shard 74 DONE after 7 passes

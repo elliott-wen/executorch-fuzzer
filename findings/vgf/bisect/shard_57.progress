@@ -1,0 +1,23 @@
+[s57 4/23] w116:353 out0 -> OPERATOR
+[s57 5/23] w121:479 out1 -> OPERATOR
+[s57 9/23] w27:460 out0 -> SIBLING_DEPENDENT
+[s57 12/23] w43:395 out1 -> SIBLING_DEPENDENT
+[s57 13/23] w48:735 out0 -> OPERATOR
+[s57 15/23] w58:331 out0 -> SIBLING_DEPENDENT
+[s57 17/23] w67:196 out1 -> SIBLING_DEPENDENT
+[s57 18/23] w71:511 out0 -> SIBLING_DEPENDENT
+[s57 20/23] w83:586 out0 -> SIBLING_DEPENDENT
+[s57 21/23] w89:380 out2 -> SIBLING_DEPENDENT
+[s57 23/23] w99:145 out0 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=57 mine=23 remaining=4
+[s57 2/4] w104:9 out4 -> OPERATOR
+[s57 3/4] w110:144 out4 -> OPERATOR
+SHARD_COMPLETE shard=57 mine=23 remaining=2
+SHARD_COMPLETE shard=57 mine=23 remaining=2
+SHARD_COMPLETE shard=57 mine=23 remaining=2
+SHARD_COMPLETE shard=57 mine=23 remaining=2
+SHARD_COMPLETE shard=57 mine=23 remaining=2
+[s57 1/2] w100:246 out3 -> POISON
+[s57 2/2] w17:575 out0 -> POISON
+SHARD_COMPLETE shard=57 mine=23 remaining=0
+shard 57 DONE after 7 passes

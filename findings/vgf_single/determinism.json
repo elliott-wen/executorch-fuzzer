@@ -1,0 +1,1478 @@
+[
+ {
+  "job": "w0:565",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.01 atol=0.001)",
+  "op": "fill.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:664",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=3.000e+00 (rtol=0.01 atol=0.001)",
+  "op": "fill.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:103",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=6.000e+00 (rtol=0.01 atol=0.001)",
+  "op": "fill.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:433",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=8.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "fill.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:202",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "fill.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:191",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "leaky_relu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:37",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=2.000e+00 (rtol=0.01 atol=0.001)",
+  "op": "fill.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:422",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "leaky_relu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:653",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "leaky_relu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:290",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "leaky_relu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:521",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "leaky_relu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:59",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "leaky_relu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:321",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "bitwise_left_shift.Tensor_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:117",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "gelu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:216",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "gelu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:447",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "gelu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:348",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "gelu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:513",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "gelu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:282",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "gelu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:490",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=2.147e+09 (rtol=0.0 atol=0.0)",
+  "op": "bitwise_left_shift.Tensor_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w103:436",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:74",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:243",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:358",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "clamp.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:589",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "clamp.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:400",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:230",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "clamp.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:172",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "clamp.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:461",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "clamp.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:634",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "clamp.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w107:0",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.611e+09 (rtol=0.0 atol=0.0)",
+  "op": "bitwise_left_shift.Tensor_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:621",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "elu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:199",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "elu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w109:771",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "elu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w108:758",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "elu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w112:641",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "elu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w119:463",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:647",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w104:455",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "bitwise_left_shift.Tensor_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w106:192",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "bitwise_left_shift.Tensor_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:668",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:658",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=2.147e+09 (rtol=0.0 atol=0.0)",
+  "op": "bitwise_left_shift.Tensor_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:185",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w120:53",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w2:175",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w16:539",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w28:620",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:238",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.699e+00 (rtol=0.01 atol=0.001)",
+  "op": "native_group_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:661",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "elu.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:370",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "native_group_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:601",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.754e+00 (rtol=0.01 atol=0.001)",
+  "op": "native_group_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w1:469",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.699e+00 (rtol=0.01 atol=0.001)",
+  "op": "native_group_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:61",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "native_group_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w0:139",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "native_group_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:216",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "slice_scatter",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:158",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "slice_scatter",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:620",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.110e+00 (rtol=0.01 atol=0.001)",
+  "op": "slice_scatter",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w105:233",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.174e+00 (rtol=0.01 atol=0.001)",
+  "op": "slice_scatter",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w106:149",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.164e+00 (rtol=0.01 atol=0.001)",
+  "op": "slice_scatter",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w108:19",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.110e+00 (rtol=0.01 atol=0.001)",
+  "op": "slice_scatter",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:280",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "relu",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:222",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "relu",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:453",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "relu",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:217",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "relu",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w105:759",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "relu",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w107:252",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "relu",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:767",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=3.277e+04 (rtol=0.0 atol=0.0)",
+  "op": "sum.IntList_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w110:163",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.0 atol=0.0)",
+  "op": "sum.IntList_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w107:104",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=3.277e+04 (rtol=0.0 atol=0.0)",
+  "op": "sum.IntList_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w104:690",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "prod.int_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w11:71",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.0 atol=0.0)",
+  "op": "prod.int_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:465",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w104:430",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:633",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:402",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w20:556",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "pow.Tensor_Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:271",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "pow.Tensor_Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w110:71",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "pow.Tensor_Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w25:376",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "pow.Tensor_Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w26:157",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "pow.Tensor_Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w126:501",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=2.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "prod.int_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w102:69",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=3.277e+04 (rtol=0.0 atol=0.0)",
+  "op": "sum.IntList_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w37:16",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "pow.Tensor_Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w109:179",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.0 atol=0.0)",
+  "op": "sum.IntList_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w114:145",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "mul.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w4:634",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "mul.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w39:237",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "mul.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w20:779",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "prod.int_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w82:533",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "mul.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w10:718",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=5.119e-03 (rtol=0.01 atol=0.001)",
+  "op": "native_layer_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:234",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w30:143",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.270e+02 (rtol=0.0 atol=0.0)",
+  "op": "prod.int_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w18:434",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.025e-02 (rtol=0.01 atol=0.001)",
+  "op": "native_layer_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w11:483",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.025e-02 (rtol=0.01 atol=0.001)",
+  "op": "native_layer_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w101:638",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "floor_divide.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w23:327",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.025e-02 (rtol=0.01 atol=0.001)",
+  "op": "native_layer_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w119:550",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.025e-02 (rtol=0.01 atol=0.001)",
+  "op": "native_layer_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w46:316",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=3.277e+04 (rtol=0.0 atol=0.0)",
+  "op": "prod.int_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w118:703",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w14:675",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w27:678",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w25:173",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w27:447",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w31:691",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "remainder.Scalar_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w122:172",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "mean",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w18:230",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "rsub.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w124:453",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "rsub.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w28:503",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "rsub.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w31:85",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "rsub.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w100:213",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.025e-02 (rtol=0.01 atol=0.001)",
+  "op": "native_layer_norm",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w27:430",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "sub.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w110:1",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.131e+09 (rtol=0.0 atol=0.0)",
+  "op": "cumsum.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w98:177",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "sub.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w36:676",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "where.self_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w45:40",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "where.self_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w30:35",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=7.812e-03 (rtol=0.01 atol=0.001)",
+  "op": "rsub.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w39:204",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=1.562e-02 (rtol=0.01 atol=0.001)",
+  "op": "rsub.Scalar",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w3:167",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "where.self_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w30:318",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=5.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "where.self_out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w37:604",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "where.self",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w8:359",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=4.000e+00 (rtol=0.0 atol=0.0)",
+  "op": "where.self",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w4:89",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] non-finite mismatch (nan/inf positions differ)",
+  "op": "amin.out",
+  "bucket": "mismatch_delegated"
+ },
+ {
+  "job": "w106:527",
+  "class": "REPRO",
+  "n": 5,
+  "fail": 5,
+  "kinds": {
+   "MISMATCH": 5
+  },
+  "detail": "out[0] max|delta|=2.147e+09 (rtol=0.0 atol=0.0)",
+  "op": "sum.IntList_out",
+  "bucket": "mismatch_delegated"
+ }
+]

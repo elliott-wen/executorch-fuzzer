@@ -1,0 +1,1030 @@
+Broker up — feeders tcp://*:15554  workers tcp://*:15555  ctrl tcp://*:15556
+  feed  :  python -m mobile feed   --host <broker-ip> --job-port 15554 --ctrl-port 15556 --corpus tmp/corpus
+  client:  python xnnpack_client/xnnpack_client.py --host <broker-ip> --client-port 15555 --ctrl-port 15556
+  [t=   3s] routed=0  workers=0 free  inflight=0
+  [t=   6s] routed=0  workers=14 free  inflight=0
+  [t=   9s] routed=0  workers=14 free  inflight=0
+  [t=  12s] routed=0  workers=14 free  inflight=0
+  [t=  15s] routed=0  workers=14 free  inflight=0
+  [t=  18s] routed=0  workers=0 free  inflight=14
+  [t=  21s] routed=0  workers=0 free  inflight=14
+  [t=  24s] routed=0  workers=0 free  inflight=14
+  [t=  27s] routed=0  workers=0 free  inflight=14
+  [t=  30s] routed=0  workers=0 free  inflight=14
+  [t=  33s] routed=0  workers=0 free  inflight=14
+  [t=  36s] routed=0  workers=0 free  inflight=14
+  [t=  39s] routed=0  workers=0 free  inflight=14
+  [t=  42s] routed=0  workers=0 free  inflight=14
+  [t=  45s] routed=0  workers=0 free  inflight=14
+  [t=  48s] routed=0  workers=0 free  inflight=14
+  [t=  51s] routed=0  workers=0 free  inflight=14
+  [t=  54s] routed=0  workers=0 free  inflight=14
+  [t=  57s] routed=0  workers=0 free  inflight=14
+  [t=  60s] routed=0  workers=0 free  inflight=14
+  [t=  63s] routed=0  workers=0 free  inflight=14
+  [t=  66s] routed=0  workers=0 free  inflight=14
+  [t=  70s] routed=0  workers=0 free  inflight=14
+  [t=  73s] routed=0  workers=0 free  inflight=14
+  [t=  76s] routed=0  workers=0 free  inflight=14
+  [t=  79s] routed=0  workers=0 free  inflight=14
+  [t=  82s] routed=0  workers=0 free  inflight=14
+  [t=  85s] routed=0  workers=0 free  inflight=14
+  [t=  88s] routed=0  workers=0 free  inflight=14
+  [t=  91s] routed=19  workers=1 free  inflight=13
+  [t=  94s] routed=2280  workers=1 free  inflight=13
+  [t=  97s] routed=2427  workers=0 free  inflight=14
+  [t= 100s] routed=2429  workers=0 free  inflight=14
+  [t= 103s] routed=2429  workers=0 free  inflight=14
+  [t= 106s] routed=2430  workers=0 free  inflight=14
+  [t= 109s] routed=2431  workers=0 free  inflight=14
+  [t= 112s] routed=2431  workers=0 free  inflight=14
+  [t= 115s] routed=2431  workers=0 free  inflight=14
+  [t= 118s] routed=2431  workers=0 free  inflight=14
+  [t= 121s] routed=2431  workers=0 free  inflight=14
+  [t= 124s] routed=2431  workers=0 free  inflight=14
+  [t= 127s] routed=2431  workers=0 free  inflight=14
+  [t= 130s] routed=2431  workers=0 free  inflight=14
+  [t= 133s] routed=2431  workers=0 free  inflight=14
+  [t= 136s] routed=2431  workers=0 free  inflight=14
+  [t= 139s] routed=2431  workers=0 free  inflight=14
+  [t= 143s] routed=2434  workers=0 free  inflight=14
+  [t= 146s] routed=2434  workers=0 free  inflight=14
+  [t= 149s] routed=2434  workers=0 free  inflight=14
+  [t= 152s] routed=2435  workers=0 free  inflight=14
+  [t= 155s] routed=2436  workers=0 free  inflight=14
+  [t= 158s] routed=2436  workers=0 free  inflight=14
+  [t= 162s] routed=2438  workers=0 free  inflight=14
+  [t= 165s] routed=2490  workers=1 free  inflight=13
+  [t= 168s] routed=2490  workers=0 free  inflight=14
+  [t= 171s] routed=2495  workers=0 free  inflight=14
+  [t= 174s] routed=2498  workers=1 free  inflight=13
+  [t= 177s] routed=2509  workers=0 free  inflight=14
+  [t= 180s] routed=2509  workers=0 free  inflight=14
+  [t= 183s] routed=2770  workers=0 free  inflight=14
+  [t= 186s] routed=2770  workers=0 free  inflight=14
+  [t= 190s] routed=4500  workers=0 free  inflight=14
+  [t= 193s] routed=4500  workers=0 free  inflight=14
+  [t= 196s] routed=4509  workers=0 free  inflight=14
+  [t= 199s] routed=4644  workers=1 free  inflight=13
+  [t= 202s] routed=4814  workers=0 free  inflight=14
+  [t= 206s] routed=4818  workers=0 free  inflight=14
+  [t= 209s] routed=4821  workers=0 free  inflight=14
+  [t= 212s] routed=4821  workers=0 free  inflight=14
+  [t= 215s] routed=4823  workers=0 free  inflight=14
+  [t= 219s] routed=4826  workers=0 free  inflight=14
+  [t= 222s] routed=4827  workers=0 free  inflight=14
+  [t= 225s] routed=4827  workers=0 free  inflight=14
+  [t= 228s] routed=4832  workers=0 free  inflight=14
+  [t= 231s] routed=4835  workers=0 free  inflight=14
+  [t= 235s] routed=4838  workers=0 free  inflight=14
+  [t= 238s] routed=4838  workers=0 free  inflight=14
+  [t= 241s] routed=4841  workers=0 free  inflight=14
+  [t= 244s] routed=4842  workers=0 free  inflight=14
+  [t= 247s] routed=4843  workers=0 free  inflight=14
+  [t= 250s] routed=4843  workers=0 free  inflight=14
+  [t= 254s] routed=4846  workers=0 free  inflight=14
+  [t= 257s] routed=4893  workers=0 free  inflight=14
+  [t= 260s] routed=4893  workers=0 free  inflight=14
+  [t= 263s] routed=4897  workers=0 free  inflight=14
+  [t= 267s] routed=4902  workers=0 free  inflight=14
+  [t= 270s] routed=4909  workers=0 free  inflight=14
+  [t= 273s] routed=4909  workers=0 free  inflight=14
+  [t= 277s] routed=4938  workers=0 free  inflight=14
+  [t= 280s] routed=4938  workers=0 free  inflight=14
+  [t= 283s] routed=5285  workers=0 free  inflight=14
+  [t= 286s] routed=5285  workers=0 free  inflight=14
+  [t= 289s] routed=7306  workers=0 free  inflight=14
+  [t= 292s] routed=7306  workers=0 free  inflight=14
+  [t= 296s] routed=7321  workers=0 free  inflight=14
+  [t= 299s] routed=7464  workers=1 free  inflight=13
+  [t= 302s] routed=7528  workers=0 free  inflight=14
+  [t= 305s] routed=7529  workers=0 free  inflight=14
+  [t= 309s] routed=7530  workers=0 free  inflight=14
+  [t= 312s] routed=7530  workers=0 free  inflight=14
+  [t= 315s] routed=7530  workers=0 free  inflight=14
+  [t= 318s] routed=7531  workers=0 free  inflight=14
+  [t= 321s] routed=7531  workers=0 free  inflight=14
+  [t= 324s] routed=7531  workers=0 free  inflight=14
+  [t= 327s] routed=7532  workers=0 free  inflight=14
+  [t= 330s] routed=7532  workers=0 free  inflight=14
+  [t= 333s] routed=7532  workers=0 free  inflight=14
+  [t= 336s] routed=7532  workers=0 free  inflight=14
+  [t= 339s] routed=7532  workers=0 free  inflight=14
+  [t= 342s] routed=7532  workers=0 free  inflight=14
+  [t= 345s] routed=7532  workers=0 free  inflight=14
+  [t= 348s] routed=7532  workers=0 free  inflight=14
+  [t= 351s] routed=7532  workers=0 free  inflight=14
+  [t= 354s] routed=7532  workers=0 free  inflight=14
+  [t= 357s] routed=7562  workers=0 free  inflight=14
+  [t= 360s] routed=7562  workers=0 free  inflight=14
+  [t= 363s] routed=7564  workers=0 free  inflight=14
+  [t= 367s] routed=7566  workers=0 free  inflight=14
+  [t= 370s] routed=7578  workers=0 free  inflight=14
+  [t= 373s] routed=7578  workers=0 free  inflight=14
+  [t= 376s] routed=7595  workers=0 free  inflight=14
+  [t= 379s] routed=7595  workers=0 free  inflight=14
+  [t= 382s] routed=7942  workers=0 free  inflight=14
+  [t= 385s] routed=7942  workers=0 free  inflight=14
+  [t= 388s] routed=9759  workers=0 free  inflight=14
+  [t= 391s] routed=9759  workers=0 free  inflight=14
+  [t= 395s] routed=9762  workers=0 free  inflight=14
+  [t= 398s] routed=9777  workers=1 free  inflight=13
+  [t= 401s] routed=9854  workers=0 free  inflight=14
+  [t= 404s] routed=9856  workers=0 free  inflight=14
+  [t= 407s] routed=9858  workers=0 free  inflight=14
+  [t= 410s] routed=9858  workers=0 free  inflight=14
+  [t= 414s] routed=9861  workers=0 free  inflight=14
+  [t= 417s] routed=9863  workers=0 free  inflight=14
+  [t= 420s] routed=9865  workers=0 free  inflight=14
+  [t= 423s] routed=9865  workers=0 free  inflight=14
+  [t= 426s] routed=9867  workers=0 free  inflight=14
+  [t= 430s] routed=9868  workers=0 free  inflight=14
+  [t= 433s] routed=9870  workers=0 free  inflight=14
+  [t= 436s] routed=9870  workers=0 free  inflight=14
+  [t= 439s] routed=9872  workers=0 free  inflight=14
+  [t= 442s] routed=9874  workers=0 free  inflight=14
+  [t= 446s] routed=9876  workers=0 free  inflight=14
+  [t= 449s] routed=9876  workers=0 free  inflight=14
+  [t= 452s] routed=9882  workers=0 free  inflight=14
+  [t= 455s] routed=9988  workers=0 free  inflight=14
+  [t= 458s] routed=9988  workers=0 free  inflight=14
+  [t= 461s] routed=10051  workers=0 free  inflight=14
+  [t= 464s] routed=12290  workers=1 free  inflight=13
+  [t= 468s] routed=13442  workers=0 free  inflight=14
+  [t= 471s] routed=13449  workers=0 free  inflight=14
+  [t= 474s] routed=13449  workers=0 free  inflight=14
+  [t= 477s] routed=13449  workers=0 free  inflight=14
+  [t= 480s] routed=13450  workers=0 free  inflight=14
+  [t= 483s] routed=13450  workers=0 free  inflight=14
+  [t= 487s] routed=13453  workers=0 free  inflight=14
+  [t= 490s] routed=13454  workers=0 free  inflight=14
+  [t= 493s] routed=13464  workers=1 free  inflight=13
+  [t= 496s] routed=13464  workers=0 free  inflight=14
+  [t= 499s] routed=13464  workers=0 free  inflight=14
+  [t= 502s] routed=13464  workers=0 free  inflight=14
+  [t= 505s] routed=13464  workers=0 free  inflight=14
+  [t= 508s] routed=13464  workers=0 free  inflight=14
+  [t= 511s] routed=13464  workers=0 free  inflight=14
+  [t= 514s] routed=13464  workers=0 free  inflight=14
+  [t= 517s] routed=13476  workers=0 free  inflight=14
+  [t= 520s] routed=13476  workers=0 free  inflight=14
+  [t= 523s] routed=13476  workers=0 free  inflight=14
+  [t= 526s] routed=13476  workers=0 free  inflight=14
+  [t= 529s] routed=13476  workers=0 free  inflight=14
+  [t= 532s] routed=13476  workers=0 free  inflight=14
+  [t= 535s] routed=13476  workers=0 free  inflight=14
+  [t= 539s] routed=13478  workers=1 free  inflight=13
+  [t= 542s] routed=13478  workers=0 free  inflight=14
+  [t= 545s] routed=13489  workers=0 free  inflight=14
+  [t= 548s] routed=13493  workers=1 free  inflight=13
+  [t= 551s] routed=13857  workers=0 free  inflight=14
+  [t= 554s] routed=14443  workers=0 free  inflight=14
+  [t= 558s] routed=15595  workers=0 free  inflight=14
+  [t= 561s] routed=15599  workers=0 free  inflight=14
+  [t= 564s] routed=15599  workers=0 free  inflight=14
+  [t= 567s] routed=15599  workers=0 free  inflight=14
+  [t= 570s] routed=15600  workers=0 free  inflight=14
+  [t= 573s] routed=15608  workers=1 free  inflight=13
+  [t= 576s] routed=15647  workers=0 free  inflight=14
+  [t= 579s] routed=15649  workers=0 free  inflight=14
+  [t= 582s] routed=15649  workers=0 free  inflight=14
+  [t= 586s] routed=15651  workers=0 free  inflight=14
+  [t= 589s] routed=15651  workers=0 free  inflight=14
+  [t= 592s] routed=15651  workers=0 free  inflight=14
+  [t= 595s] routed=15653  workers=0 free  inflight=14
+  [t= 598s] routed=15655  workers=0 free  inflight=14
+  [t= 601s] routed=15655  workers=0 free  inflight=14
+  [t= 604s] routed=15655  workers=0 free  inflight=14
+  [t= 607s] routed=15657  workers=0 free  inflight=14
+  [t= 610s] routed=15657  workers=0 free  inflight=14
+  [t= 613s] routed=15657  workers=0 free  inflight=14
+  [t= 616s] routed=15662  workers=0 free  inflight=14
+  [t= 620s] routed=15664  workers=0 free  inflight=14
+  [t= 623s] routed=15723  workers=1 free  inflight=13
+  [t= 626s] routed=15833  workers=0 free  inflight=14
+  [t= 629s] routed=15856  workers=0 free  inflight=14
+  [t= 632s] routed=15882  workers=1 free  inflight=13
+  [t= 635s] routed=15959  workers=0 free  inflight=14
+  [t= 638s] routed=16182  workers=1 free  inflight=13
+  [t= 642s] routed=16373  workers=0 free  inflight=14
+  [t= 645s] routed=16405  workers=0 free  inflight=14
+  [t= 648s] routed=16428  workers=0 free  inflight=14
+  [t= 651s] routed=16428  workers=0 free  inflight=14
+  [t= 654s] routed=18412  workers=1 free  inflight=13
+  [t= 657s] routed=18989  workers=0 free  inflight=14
+  [t= 660s] routed=18989  workers=0 free  inflight=14
+  [t= 663s] routed=18990  workers=0 free  inflight=14
+  [t= 666s] routed=18991  workers=0 free  inflight=14
+  [t= 669s] routed=18991  workers=0 free  inflight=14
+  [t= 672s] routed=18991  workers=0 free  inflight=14
+  [t= 676s] routed=18991  workers=0 free  inflight=14
+  [t= 679s] routed=18992  workers=0 free  inflight=14
+  [t= 682s] routed=18992  workers=0 free  inflight=14
+  [t= 685s] routed=18992  workers=0 free  inflight=14
+  [t= 688s] routed=18994  workers=0 free  inflight=14
+  [t= 691s] routed=18994  workers=0 free  inflight=14
+  [t= 694s] routed=18994  workers=0 free  inflight=14
+  [t= 697s] routed=18994  workers=0 free  inflight=14
+  [t= 700s] routed=19000  workers=1 free  inflight=13
+  [t= 704s] routed=19002  workers=0 free  inflight=14
+  [t= 707s] routed=19002  workers=0 free  inflight=14
+  [t= 710s] routed=19002  workers=0 free  inflight=14
+  [t= 713s] routed=19002  workers=0 free  inflight=14
+  [t= 716s] routed=19002  workers=0 free  inflight=14
+  [t= 719s] routed=19002  workers=0 free  inflight=14
+  [t= 722s] routed=19002  workers=0 free  inflight=14
+  [t= 725s] routed=19002  workers=0 free  inflight=14
+  [t= 728s] routed=19002  workers=0 free  inflight=14
+  [t= 731s] routed=19002  workers=0 free  inflight=14
+  [t= 734s] routed=19004  workers=0 free  inflight=14
+  [t= 737s] routed=19004  workers=0 free  inflight=14
+  [t= 740s] routed=19327  workers=0 free  inflight=14
+  [t= 743s] routed=19327  workers=0 free  inflight=14
+  [t= 746s] routed=19659  workers=0 free  inflight=14
+  [t= 750s] routed=19684  workers=0 free  inflight=14
+  [t= 753s] routed=19684  workers=0 free  inflight=14
+  [t= 756s] routed=19700  workers=0 free  inflight=14
+  [t= 759s] routed=19708  workers=0 free  inflight=14
+  [t= 762s] routed=19717  workers=0 free  inflight=14
+  [t= 765s] routed=19717  workers=0 free  inflight=14
+  [t= 769s] routed=19726  workers=0 free  inflight=14
+  [t= 772s] routed=19745  workers=0 free  inflight=14
+  [t= 775s] routed=20103  workers=1 free  inflight=13
+  [t= 778s] routed=21898  workers=1 free  inflight=13
+  [t= 781s] routed=22076  workers=0 free  inflight=14
+  [t= 784s] routed=22081  workers=0 free  inflight=14
+  [t= 788s] routed=22082  workers=0 free  inflight=14
+  [t= 791s] routed=22082  workers=0 free  inflight=14
+  [t= 794s] routed=22083  workers=0 free  inflight=14
+  [t= 797s] routed=22091  workers=0 free  inflight=14
+  [t= 800s] routed=22091  workers=0 free  inflight=14
+  [t= 803s] routed=22091  workers=0 free  inflight=14
+  [t= 807s] routed=22097  workers=0 free  inflight=14
+  [t= 810s] routed=22097  workers=0 free  inflight=14
+  [t= 813s] routed=22099  workers=0 free  inflight=14
+  [t= 816s] routed=22099  workers=0 free  inflight=14
+  [t= 819s] routed=22099  workers=0 free  inflight=14
+  [t= 822s] routed=22099  workers=0 free  inflight=14
+  [t= 825s] routed=22099  workers=0 free  inflight=14
+  [t= 828s] routed=22099  workers=0 free  inflight=14
+  [t= 831s] routed=22099  workers=0 free  inflight=14
+  [t= 834s] routed=22102  workers=0 free  inflight=14
+  [t= 837s] routed=22102  workers=0 free  inflight=14
+  [t= 840s] routed=22104  workers=0 free  inflight=14
+  [t= 843s] routed=22178  workers=1 free  inflight=13
+  [t= 846s] routed=22382  workers=0 free  inflight=14
+  [t= 850s] routed=22410  workers=0 free  inflight=14
+  [t= 853s] routed=22411  workers=0 free  inflight=14
+  [t= 856s] routed=22411  workers=0 free  inflight=14
+  [t= 859s] routed=22411  workers=0 free  inflight=14
+  [t= 862s] routed=22693  workers=0 free  inflight=14
+  [t= 865s] routed=22693  workers=0 free  inflight=14
+  [t= 868s] routed=22714  workers=0 free  inflight=14
+  [t= 872s] routed=22717  workers=0 free  inflight=14
+  [t= 875s] routed=22717  workers=0 free  inflight=14
+  [t= 878s] routed=22730  workers=0 free  inflight=14
+  [t= 881s] routed=22730  workers=0 free  inflight=14
+  [t= 884s] routed=22730  workers=0 free  inflight=14
+  [t= 887s] routed=22730  workers=0 free  inflight=14
+  [t= 890s] routed=23734  workers=1 free  inflight=13
+  [t= 893s] routed=25505  workers=1 free  inflight=13
+  [t= 896s] routed=25558  workers=0 free  inflight=14
+  [t= 899s] routed=25558  workers=0 free  inflight=14
+  [t= 902s] routed=25558  workers=0 free  inflight=14
+  [t= 905s] routed=25558  workers=0 free  inflight=14
+  [t= 908s] routed=25558  workers=0 free  inflight=14
+  [t= 911s] routed=25558  workers=0 free  inflight=14
+  [t= 914s] routed=25558  workers=0 free  inflight=14
+  [t= 918s] routed=25559  workers=0 free  inflight=14
+  [t= 921s] routed=25559  workers=0 free  inflight=14
+  [t= 924s] routed=25559  workers=0 free  inflight=14
+  [t= 927s] routed=25565  workers=0 free  inflight=14
+  [t= 930s] routed=25565  workers=0 free  inflight=14
+  [t= 933s] routed=25565  workers=0 free  inflight=14
+  [t= 936s] routed=25565  workers=0 free  inflight=14
+  [t= 939s] routed=25565  workers=0 free  inflight=14
+  [t= 942s] routed=25565  workers=0 free  inflight=14
+  [t= 945s] routed=25565  workers=0 free  inflight=14
+  [t= 948s] routed=25565  workers=0 free  inflight=14
+  [t= 951s] routed=25565  workers=0 free  inflight=14
+  [t= 954s] routed=25565  workers=0 free  inflight=14
+  [t= 957s] routed=25565  workers=0 free  inflight=14
+  [t= 960s] routed=25565  workers=0 free  inflight=14
+  [t= 963s] routed=25567  workers=0 free  inflight=14
+  [t= 966s] routed=25567  workers=0 free  inflight=14
+  [t= 969s] routed=25567  workers=0 free  inflight=14
+  [t= 972s] routed=25567  workers=0 free  inflight=14
+  [t= 975s] routed=25569  workers=1 free  inflight=13
+  [t= 978s] routed=25611  workers=0 free  inflight=14
+  [t= 982s] routed=26046  workers=0 free  inflight=14
+  [t= 985s] routed=26046  workers=0 free  inflight=14
+  [t= 988s] routed=27608  workers=0 free  inflight=14
+  [t= 991s] routed=27608  workers=0 free  inflight=14
+  [t= 994s] routed=27611  workers=0 free  inflight=14
+  [t= 997s] routed=27679  workers=1 free  inflight=13
+  [t=1001s] routed=27785  workers=0 free  inflight=14
+  [t=1004s] routed=27788  workers=0 free  inflight=14
+  [t=1007s] routed=27789  workers=0 free  inflight=14
+  [t=1010s] routed=27789  workers=0 free  inflight=14
+  [t=1014s] routed=27792  workers=0 free  inflight=14
+  [t=1017s] routed=27795  workers=0 free  inflight=14
+  [t=1020s] routed=27797  workers=0 free  inflight=14
+  [t=1023s] routed=27797  workers=0 free  inflight=14
+  [t=1026s] routed=27800  workers=0 free  inflight=14
+  [t=1030s] routed=27803  workers=0 free  inflight=14
+  [t=1033s] routed=27806  workers=0 free  inflight=14
+  [t=1036s] routed=27806  workers=0 free  inflight=14
+  [t=1039s] routed=27806  workers=0 free  inflight=14
+  [t=1042s] routed=27810  workers=0 free  inflight=14
+  [t=1045s] routed=27813  workers=0 free  inflight=14
+  [t=1048s] routed=27813  workers=0 free  inflight=14
+  [t=1052s] routed=27941  workers=0 free  inflight=14
+  [t=1055s] routed=27956  workers=1 free  inflight=13
+  [t=1058s] routed=28026  workers=1 free  inflight=13
+  [t=1061s] routed=28559  workers=0 free  inflight=14
+  [t=1064s] routed=30321  workers=1 free  inflight=13
+  [t=1067s] routed=31112  workers=0 free  inflight=14
+  [t=1070s] routed=31112  workers=0 free  inflight=14
+  [t=1073s] routed=31114  workers=0 free  inflight=14
+  [t=1076s] routed=31114  workers=0 free  inflight=14
+  [t=1079s] routed=31114  workers=0 free  inflight=14
+  [t=1082s] routed=31115  workers=0 free  inflight=14
+  [t=1085s] routed=31115  workers=0 free  inflight=14
+  [t=1088s] routed=31116  workers=0 free  inflight=14
+  [t=1091s] routed=31116  workers=0 free  inflight=14
+  [t=1094s] routed=31116  workers=0 free  inflight=14
+  [t=1097s] routed=31116  workers=0 free  inflight=14
+  [t=1100s] routed=31116  workers=0 free  inflight=14
+  [t=1103s] routed=31116  workers=0 free  inflight=14
+  [t=1106s] routed=31123  workers=1 free  inflight=13
+  [t=1110s] routed=31124  workers=0 free  inflight=14
+  [t=1113s] routed=31124  workers=0 free  inflight=14
+  [t=1116s] routed=31124  workers=0 free  inflight=14
+  [t=1119s] routed=31124  workers=0 free  inflight=14
+  [t=1122s] routed=31124  workers=0 free  inflight=14
+  [t=1125s] routed=31124  workers=0 free  inflight=14
+  [t=1128s] routed=31124  workers=0 free  inflight=14
+  [t=1131s] routed=31124  workers=0 free  inflight=14
+  [t=1134s] routed=31124  workers=0 free  inflight=14
+  [t=1137s] routed=31124  workers=0 free  inflight=14
+  [t=1140s] routed=31125  workers=0 free  inflight=14
+  [t=1143s] routed=31125  workers=0 free  inflight=14
+  [t=1146s] routed=31127  workers=0 free  inflight=14
+  [t=1149s] routed=31351  workers=1 free  inflight=13
+  [t=1152s] routed=31398  workers=0 free  inflight=14
+  [t=1155s] routed=32935  workers=1 free  inflight=13
+  [t=1159s] routed=33111  workers=0 free  inflight=14
+  [t=1162s] routed=33115  workers=0 free  inflight=14
+  [t=1166s] routed=33116  workers=0 free  inflight=14
+  [t=1169s] routed=33116  workers=0 free  inflight=14
+  [t=1172s] routed=33257  workers=0 free  inflight=14
+  [t=1175s] routed=33257  workers=0 free  inflight=14
+  [t=1178s] routed=33260  workers=0 free  inflight=14
+  [t=1182s] routed=33262  workers=0 free  inflight=14
+  [t=1185s] routed=33262  workers=0 free  inflight=14
+  [t=1188s] routed=33262  workers=0 free  inflight=14
+  [t=1191s] routed=33266  workers=0 free  inflight=14
+  [t=1194s] routed=33266  workers=0 free  inflight=14
+  [t=1197s] routed=33268  workers=0 free  inflight=14
+  [t=1200s] routed=33268  workers=0 free  inflight=14
+  [t=1203s] routed=33268  workers=0 free  inflight=14
+  [t=1206s] routed=33268  workers=0 free  inflight=14
+  [t=1209s] routed=33268  workers=0 free  inflight=14
+  [t=1212s] routed=33268  workers=0 free  inflight=14
+  [t=1215s] routed=33268  workers=0 free  inflight=14
+  [t=1218s] routed=33268  workers=0 free  inflight=14
+  [t=1221s] routed=33268  workers=0 free  inflight=14
+  [t=1224s] routed=33268  workers=0 free  inflight=14
+  [t=1227s] routed=33316  workers=1 free  inflight=13
+  [t=1230s] routed=33334  workers=0 free  inflight=14
+  [t=1234s] routed=33340  workers=0 free  inflight=14
+  [t=1237s] routed=33347  workers=0 free  inflight=14
+  [t=1240s] routed=33347  workers=0 free  inflight=14
+  [t=1243s] routed=33375  workers=1 free  inflight=13
+  [t=1247s] routed=33384  workers=0 free  inflight=14
+  [t=1250s] routed=33683  workers=0 free  inflight=14
+  [t=1253s] routed=33683  workers=0 free  inflight=14
+  [t=1256s] routed=33720  workers=0 free  inflight=14
+  [t=1259s] routed=34731  workers=1 free  inflight=13
+  [t=1262s] routed=34979  workers=0 free  inflight=14
+  [t=1265s] routed=35014  workers=1 free  inflight=13
+  [t=1269s] routed=35125  workers=0 free  inflight=14
+  [t=1272s] routed=35127  workers=0 free  inflight=14
+  [t=1275s] routed=35127  workers=0 free  inflight=14
+  [t=1278s] routed=35127  workers=0 free  inflight=14
+  [t=1281s] routed=35128  workers=0 free  inflight=14
+  [t=1284s] routed=35128  workers=0 free  inflight=14
+  [t=1287s] routed=35128  workers=0 free  inflight=14
+  [t=1290s] routed=35129  workers=0 free  inflight=14
+  [t=1293s] routed=35130  workers=0 free  inflight=14
+  [t=1296s] routed=35132  workers=1 free  inflight=13
+  [t=1299s] routed=35132  workers=0 free  inflight=14
+  [t=1303s] routed=35133  workers=0 free  inflight=14
+  [t=1306s] routed=35134  workers=0 free  inflight=14
+  [t=1309s] routed=35135  workers=0 free  inflight=14
+  [t=1312s] routed=35135  workers=0 free  inflight=14
+  [t=1316s] routed=35137  workers=0 free  inflight=14
+  [t=1319s] routed=35139  workers=0 free  inflight=14
+  [t=1322s] routed=35139  workers=0 free  inflight=14
+  [t=1325s] routed=35139  workers=0 free  inflight=14
+  [t=1328s] routed=35140  workers=0 free  inflight=14
+  [t=1331s] routed=35169  workers=1 free  inflight=13
+  [t=1334s] routed=35180  workers=0 free  inflight=14
+  [t=1338s] routed=35188  workers=0 free  inflight=14
+  [t=1341s] routed=35188  workers=0 free  inflight=14
+  [t=1344s] routed=35197  workers=0 free  inflight=14
+  [t=1347s] routed=35197  workers=0 free  inflight=14
+  [t=1350s] routed=35466  workers=0 free  inflight=14
+  [t=1353s] routed=35466  workers=0 free  inflight=14
+  [t=1356s] routed=37041  workers=0 free  inflight=14
+  [t=1359s] routed=37041  workers=0 free  inflight=14
+  [t=1362s] routed=37048  workers=0 free  inflight=14
+  [t=1366s] routed=37049  workers=0 free  inflight=14
+  [t=1369s] routed=37052  workers=1 free  inflight=13
+  [t=1372s] routed=37182  workers=0 free  inflight=14
+  [t=1375s] routed=37187  workers=0 free  inflight=14
+  [t=1378s] routed=37187  workers=0 free  inflight=14
+  [t=1382s] routed=37190  workers=0 free  inflight=14
+  [t=1385s] routed=37193  workers=0 free  inflight=14
+  [t=1388s] routed=37197  workers=0 free  inflight=14
+  [t=1391s] routed=37197  workers=0 free  inflight=14
+  [t=1394s] routed=37200  workers=0 free  inflight=14
+  [t=1397s] routed=37200  workers=0 free  inflight=14
+  [t=1400s] routed=37200  workers=0 free  inflight=14
+  [t=1403s] routed=37203  workers=0 free  inflight=14
+  [t=1407s] routed=37205  workers=0 free  inflight=14
+  [t=1410s] routed=37215  workers=0 free  inflight=14
+  [t=1413s] routed=37215  workers=0 free  inflight=14
+  [t=1416s] routed=37345  workers=0 free  inflight=14
+  [t=1419s] routed=37384  workers=1 free  inflight=13
+  [t=1422s] routed=37398  workers=0 free  inflight=14
+  [t=1425s] routed=37398  workers=0 free  inflight=14
+  [t=1428s] routed=37398  workers=0 free  inflight=14
+  [t=1431s] routed=37398  workers=0 free  inflight=14
+  [t=1435s] routed=37477  workers=1 free  inflight=13
+  [t=1438s] routed=37536  workers=0 free  inflight=14
+  [t=1441s] routed=38061  workers=0 free  inflight=14
+  [t=1444s] routed=38061  workers=0 free  inflight=14
+  [t=1447s] routed=38089  workers=0 free  inflight=14
+  [t=1451s] routed=38428  workers=0 free  inflight=14
+  [t=1454s] routed=38450  workers=0 free  inflight=14
+  [t=1457s] routed=38450  workers=0 free  inflight=14
+  [t=1460s] routed=38455  workers=0 free  inflight=14
+  [t=1463s] routed=38954  workers=1 free  inflight=13
+  [t=1467s] routed=39461  workers=0 free  inflight=14
+  [t=1470s] routed=39474  workers=0 free  inflight=14
+  [t=1473s] routed=39488  workers=1 free  inflight=13
+  [t=1476s] routed=39759  workers=0 free  inflight=14
+  [t=1479s] routed=39759  workers=0 free  inflight=14
+  [t=1482s] routed=39759  workers=0 free  inflight=14
+  [t=1485s] routed=39759  workers=0 free  inflight=14
+  [t=1488s] routed=39759  workers=0 free  inflight=14
+  [t=1491s] routed=39759  workers=0 free  inflight=14
+  [t=1494s] routed=39759  workers=0 free  inflight=14
+  [t=1497s] routed=39759  workers=0 free  inflight=14
+  [t=1500s] routed=39759  workers=0 free  inflight=14
+  [t=1503s] routed=39759  workers=0 free  inflight=14
+  [t=1506s] routed=39759  workers=0 free  inflight=14
+  [t=1509s] routed=39759  workers=0 free  inflight=14
+  [t=1512s] routed=39759  workers=0 free  inflight=14
+  [t=1516s] routed=39806  workers=0 free  inflight=14
+  [t=1519s] routed=39808  workers=0 free  inflight=14
+  [t=1522s] routed=39808  workers=0 free  inflight=14
+  [t=1525s] routed=39810  workers=0 free  inflight=14
+  [t=1528s] routed=39812  workers=0 free  inflight=14
+  [t=1532s] routed=39814  workers=0 free  inflight=14
+  [t=1535s] routed=39814  workers=0 free  inflight=14
+  [t=1538s] routed=39830  workers=1 free  inflight=13
+  [t=1541s] routed=41390  workers=1 free  inflight=13
+  [t=1544s] routed=41694  workers=0 free  inflight=14
+  [t=1548s] routed=41696  workers=0 free  inflight=14
+  [t=1551s] routed=41696  workers=0 free  inflight=14
+  [t=1554s] routed=41696  workers=0 free  inflight=14
+  [t=1557s] routed=41696  workers=0 free  inflight=14
+  [t=1560s] routed=41696  workers=0 free  inflight=14
+  [t=1563s] routed=41702  workers=0 free  inflight=14
+  [t=1566s] routed=41702  workers=0 free  inflight=14
+  [t=1569s] routed=41702  workers=0 free  inflight=14
+  [t=1572s] routed=41702  workers=0 free  inflight=14
+  [t=1575s] routed=41702  workers=0 free  inflight=14
+  [t=1578s] routed=41702  workers=0 free  inflight=14
+  [t=1581s] routed=41702  workers=0 free  inflight=14
+  [t=1584s] routed=41702  workers=0 free  inflight=14
+  [t=1587s] routed=41704  workers=0 free  inflight=14
+  [t=1590s] routed=41704  workers=0 free  inflight=14
+  [t=1593s] routed=41704  workers=0 free  inflight=14
+  [t=1596s] routed=41704  workers=0 free  inflight=14
+  [t=1599s] routed=41704  workers=0 free  inflight=14
+  [t=1602s] routed=41704  workers=0 free  inflight=14
+  [t=1605s] routed=41704  workers=0 free  inflight=14
+  [t=1608s] routed=41704  workers=0 free  inflight=14
+  [t=1611s] routed=41704  workers=0 free  inflight=14
+  [t=1614s] routed=41704  workers=0 free  inflight=14
+  [t=1618s] routed=41707  workers=0 free  inflight=14
+  [t=1621s] routed=41707  workers=0 free  inflight=14
+  [t=1624s] routed=41707  workers=0 free  inflight=14
+  [t=1627s] routed=41707  workers=0 free  inflight=14
+  [t=1630s] routed=41707  workers=0 free  inflight=14
+  [t=1633s] routed=41707  workers=0 free  inflight=14
+  [t=1636s] routed=43642  workers=1 free  inflight=13
+  [t=1639s] routed=45093  workers=0 free  inflight=14
+  [t=1642s] routed=45093  workers=0 free  inflight=14
+  [t=1645s] routed=45097  workers=0 free  inflight=14
+  [t=1648s] routed=45097  workers=0 free  inflight=14
+  [t=1651s] routed=45102  workers=1 free  inflight=13
+  [t=1655s] routed=45152  workers=0 free  inflight=14
+  [t=1658s] routed=45152  workers=0 free  inflight=14
+  [t=1661s] routed=45152  workers=0 free  inflight=14
+  [t=1664s] routed=45152  workers=0 free  inflight=14
+  [t=1667s] routed=45152  workers=0 free  inflight=14
+  [t=1670s] routed=45152  workers=0 free  inflight=14
+  [t=1673s] routed=45152  workers=0 free  inflight=14
+  [t=1676s] routed=45152  workers=0 free  inflight=14
+  [t=1679s] routed=45152  workers=0 free  inflight=14
+  [t=1682s] routed=45152  workers=0 free  inflight=14
+  [t=1685s] routed=45152  workers=0 free  inflight=14
+  [t=1688s] routed=45152  workers=0 free  inflight=14
+  [t=1691s] routed=45152  workers=0 free  inflight=14
+  [t=1694s] routed=45152  workers=0 free  inflight=14
+  [t=1697s] routed=45152  workers=0 free  inflight=14
+  [t=1700s] routed=45152  workers=0 free  inflight=14
+  [t=1703s] routed=45152  workers=0 free  inflight=14
+  [t=1706s] routed=45180  workers=0 free  inflight=14
+  [t=1709s] routed=45180  workers=0 free  inflight=14
+  [t=1712s] routed=45182  workers=0 free  inflight=14
+  [t=1715s] routed=45183  workers=0 free  inflight=14
+  [t=1718s] routed=45183  workers=0 free  inflight=14
+  [t=1721s] routed=45201  workers=0 free  inflight=14
+  [t=1724s] routed=45201  workers=0 free  inflight=14
+  [t=1728s] routed=45204  workers=0 free  inflight=14
+  [t=1731s] routed=45205  workers=0 free  inflight=14
+  [t=1734s] routed=45213  workers=1 free  inflight=13
+  [t=1737s] routed=45594  workers=0 free  inflight=14
+  [t=1740s] routed=46316  workers=1 free  inflight=13
+  [t=1743s] routed=47417  workers=0 free  inflight=14
+  [t=1746s] routed=47418  workers=0 free  inflight=14
+  [t=1749s] routed=47418  workers=0 free  inflight=14
+  [t=1752s] routed=47418  workers=0 free  inflight=14
+  [t=1755s] routed=47418  workers=0 free  inflight=14
+  [t=1758s] routed=47418  workers=0 free  inflight=14
+  [t=1762s] routed=47420  workers=1 free  inflight=13
+  [t=1765s] routed=47428  workers=0 free  inflight=14
+  [t=1768s] routed=47428  workers=0 free  inflight=14
+  [t=1771s] routed=47428  workers=0 free  inflight=14
+  [t=1774s] routed=47428  workers=0 free  inflight=14
+  [t=1777s] routed=47428  workers=0 free  inflight=14
+  [t=1780s] routed=47428  workers=0 free  inflight=14
+  [t=1783s] routed=47428  workers=0 free  inflight=14
+  [t=1786s] routed=47428  workers=0 free  inflight=14
+  [t=1789s] routed=47428  workers=0 free  inflight=14
+  [t=1792s] routed=47428  workers=0 free  inflight=14
+  [t=1795s] routed=47428  workers=0 free  inflight=14
+  [t=1798s] routed=47428  workers=0 free  inflight=14
+  [t=1801s] routed=47428  workers=0 free  inflight=14
+  [t=1804s] routed=47428  workers=0 free  inflight=14
+  [t=1807s] routed=47428  workers=0 free  inflight=14
+  [t=1810s] routed=47428  workers=0 free  inflight=14
+  [t=1813s] routed=47428  workers=0 free  inflight=14
+  [t=1817s] routed=47464  workers=0 free  inflight=14
+  [t=1820s] routed=47497  workers=1 free  inflight=13
+  [t=1823s] routed=47549  workers=0 free  inflight=14
+  [t=1826s] routed=47560  workers=1 free  inflight=13
+  [t=1829s] routed=47593  workers=0 free  inflight=14
+  [t=1832s] routed=47984  workers=0 free  inflight=14
+  [t=1835s] routed=47984  workers=0 free  inflight=14
+  [t=1839s] routed=49735  workers=0 free  inflight=14
+  [t=1842s] routed=49735  workers=0 free  inflight=14
+  [t=1845s] routed=49882  workers=0 free  inflight=14
+  [t=1848s] routed=49882  workers=0 free  inflight=14
+  [t=1851s] routed=49883  workers=0 free  inflight=14
+  [t=1855s] routed=49884  workers=0 free  inflight=14
+  [t=1858s] routed=49885  workers=0 free  inflight=14
+  [t=1861s] routed=49885  workers=0 free  inflight=14
+  [t=1864s] routed=49886  workers=0 free  inflight=14
+  [t=1867s] routed=49886  workers=0 free  inflight=14
+  [t=1870s] routed=49886  workers=0 free  inflight=14
+  [t=1873s] routed=49888  workers=0 free  inflight=14
+  [t=1877s] routed=49889  workers=0 free  inflight=14
+  [t=1880s] routed=49890  workers=0 free  inflight=14
+  [t=1883s] routed=49890  workers=0 free  inflight=14
+  [t=1886s] routed=49891  workers=0 free  inflight=14
+  [t=1889s] routed=49893  workers=0 free  inflight=14
+  [t=1893s] routed=49894  workers=0 free  inflight=14
+  [t=1896s] routed=49894  workers=0 free  inflight=14
+  [t=1899s] routed=49898  workers=0 free  inflight=14
+  [t=1902s] routed=49972  workers=0 free  inflight=14
+  [t=1905s] routed=49972  workers=0 free  inflight=14
+  [t=1909s] routed=49994  workers=0 free  inflight=14
+  [t=1912s] routed=49994  workers=0 free  inflight=14
+  [t=1915s] routed=50011  workers=0 free  inflight=14
+  [t=1918s] routed=50072  workers=1 free  inflight=13
+  [t=1921s] routed=50394  workers=0 free  inflight=14
+  [t=1925s] routed=50705  workers=0 free  inflight=14
+  [t=1928s] routed=50733  workers=0 free  inflight=14
+  [t=1931s] routed=50733  workers=0 free  inflight=14
+  [t=1934s] routed=50737  workers=0 free  inflight=14
+  [t=1937s] routed=51456  workers=1 free  inflight=13
+  [t=1941s] routed=51881  workers=0 free  inflight=14
+  [t=1944s] routed=51895  workers=0 free  inflight=14
+  [t=1947s] routed=51897  workers=0 free  inflight=14
+  [t=1950s] routed=51897  workers=0 free  inflight=14
+  [t=1953s] routed=52150  workers=0 free  inflight=14
+  [t=1956s] routed=52150  workers=0 free  inflight=14
+  [t=1960s] routed=52151  workers=0 free  inflight=14
+  [t=1963s] routed=52152  workers=0 free  inflight=14
+  [t=1966s] routed=52153  workers=0 free  inflight=14
+  [t=1969s] routed=52153  workers=0 free  inflight=14
+  [t=1972s] routed=52153  workers=0 free  inflight=14
+  [t=1975s] routed=52154  workers=0 free  inflight=14
+  [t=1978s] routed=52154  workers=0 free  inflight=14
+  [t=1981s] routed=52154  workers=0 free  inflight=14
+  [t=1984s] routed=52154  workers=0 free  inflight=14
+  [t=1987s] routed=52154  workers=0 free  inflight=14
+  [t=1990s] routed=52154  workers=0 free  inflight=14
+  [t=1994s] routed=52168  workers=0 free  inflight=14
+  [t=1997s] routed=52168  workers=0 free  inflight=14
+  [t=2000s] routed=52171  workers=0 free  inflight=14
+  [t=2003s] routed=52172  workers=0 free  inflight=14
+  [t=2006s] routed=52172  workers=0 free  inflight=14
+  [t=2009s] routed=52172  workers=0 free  inflight=14
+  [t=2012s] routed=52424  workers=1 free  inflight=13
+  [t=2015s] routed=54416  workers=1 free  inflight=13
+  [t=2019s] routed=54551  workers=0 free  inflight=14
+  [t=2022s] routed=54551  workers=0 free  inflight=14
+  [t=2025s] routed=54551  workers=0 free  inflight=14
+  [t=2028s] routed=54551  workers=0 free  inflight=14
+  [t=2031s] routed=54551  workers=0 free  inflight=14
+  [t=2034s] routed=54551  workers=0 free  inflight=14
+  [t=2037s] routed=54551  workers=0 free  inflight=14
+  [t=2040s] routed=54553  workers=0 free  inflight=14
+  [t=2043s] routed=54553  workers=0 free  inflight=14
+  [t=2046s] routed=54553  workers=0 free  inflight=14
+  [t=2049s] routed=54553  workers=0 free  inflight=14
+  [t=2052s] routed=54553  workers=0 free  inflight=14
+  [t=2055s] routed=54560  workers=0 free  inflight=14
+  [t=2058s] routed=54560  workers=0 free  inflight=14
+  [t=2061s] routed=54560  workers=0 free  inflight=14
+  [t=2064s] routed=54560  workers=0 free  inflight=14
+  [t=2067s] routed=54560  workers=0 free  inflight=14
+  [t=2070s] routed=54560  workers=0 free  inflight=14
+  [t=2073s] routed=54560  workers=0 free  inflight=14
+  [t=2076s] routed=54560  workers=0 free  inflight=14
+  [t=2079s] routed=54560  workers=0 free  inflight=14
+  [t=2082s] routed=54560  workers=0 free  inflight=14
+  [t=2085s] routed=54560  workers=0 free  inflight=14
+  [t=2088s] routed=54560  workers=0 free  inflight=14
+  [t=2091s] routed=54560  workers=0 free  inflight=14
+  [t=2094s] routed=54560  workers=0 free  inflight=14
+  [t=2097s] routed=54560  workers=0 free  inflight=14
+  [t=2100s] routed=54560  workers=0 free  inflight=14
+  [t=2103s] routed=54560  workers=0 free  inflight=14
+  [t=2107s] routed=54570  workers=0 free  inflight=14
+  [t=2110s] routed=55084  workers=1 free  inflight=13
+  [t=2113s] routed=56610  workers=1 free  inflight=13
+  [t=2116s] routed=56611  workers=0 free  inflight=14
+  [t=2119s] routed=56611  workers=0 free  inflight=14
+  [t=2122s] routed=56611  workers=0 free  inflight=14
+  [t=2125s] routed=56611  workers=0 free  inflight=14
+  [t=2128s] routed=56611  workers=0 free  inflight=14
+  [t=2131s] routed=56611  workers=0 free  inflight=14
+  [t=2134s] routed=56611  workers=0 free  inflight=14
+  [t=2137s] routed=56619  workers=0 free  inflight=14
+  [t=2140s] routed=56619  workers=0 free  inflight=14
+  [t=2143s] routed=56619  workers=0 free  inflight=14
+  [t=2146s] routed=56619  workers=0 free  inflight=14
+  [t=2149s] routed=56619  workers=0 free  inflight=14
+  [t=2152s] routed=56619  workers=0 free  inflight=14
+  [t=2155s] routed=56619  workers=0 free  inflight=14
+  [t=2158s] routed=56619  workers=0 free  inflight=14
+  [t=2161s] routed=56619  workers=0 free  inflight=14
+  [t=2164s] routed=56619  workers=0 free  inflight=14
+  [t=2167s] routed=56619  workers=0 free  inflight=14
+  [t=2170s] routed=56619  workers=0 free  inflight=14
+  [t=2173s] routed=56619  workers=0 free  inflight=14
+  [t=2176s] routed=56619  workers=0 free  inflight=14
+  [t=2179s] routed=56619  workers=0 free  inflight=14
+  [t=2182s] routed=56620  workers=0 free  inflight=14
+  [t=2185s] routed=56620  workers=0 free  inflight=14
+  [t=2188s] routed=56620  workers=0 free  inflight=14
+  [t=2192s] routed=56624  workers=0 free  inflight=14
+  [t=2195s] routed=56640  workers=0 free  inflight=14
+  [t=2198s] routed=56685  workers=0 free  inflight=14
+  [t=2201s] routed=56785  workers=1 free  inflight=13
+  [t=2204s] routed=57047  workers=0 free  inflight=14
+  [t=2207s] routed=58170  workers=1 free  inflight=13
+  [t=2210s] routed=58524  workers=0 free  inflight=14
+  [t=2213s] routed=58526  workers=0 free  inflight=14
+  [t=2217s] routed=58527  workers=0 free  inflight=14
+  [t=2220s] routed=58527  workers=0 free  inflight=14
+  [t=2223s] routed=58528  workers=0 free  inflight=14
+  [t=2226s] routed=58549  workers=1 free  inflight=13
+  [t=2230s] routed=58593  workers=0 free  inflight=14
+  [t=2233s] routed=58597  workers=0 free  inflight=14
+  [t=2236s] routed=58600  workers=0 free  inflight=14
+  [t=2239s] routed=58600  workers=0 free  inflight=14
+  [t=2242s] routed=58605  workers=0 free  inflight=14
+  [t=2245s] routed=58607  workers=0 free  inflight=14
+  [t=2249s] routed=58610  workers=0 free  inflight=14
+  [t=2252s] routed=58610  workers=0 free  inflight=14
+  [t=2255s] routed=58610  workers=0 free  inflight=14
+  [t=2258s] routed=58614  workers=0 free  inflight=14
+  [t=2261s] routed=58614  workers=0 free  inflight=14
+  [t=2264s] routed=58627  workers=0 free  inflight=14
+  [t=2267s] routed=58795  workers=0 free  inflight=14
+  [t=2270s] routed=58795  workers=0 free  inflight=14
+  [t=2274s] routed=58808  workers=0 free  inflight=14
+  [t=2277s] routed=58912  workers=1 free  inflight=13
+  [t=2280s] routed=58913  workers=0 free  inflight=14
+  [t=2283s] routed=58932  workers=0 free  inflight=14
+  [t=2286s] routed=59047  workers=1 free  inflight=13
+  [t=2289s] routed=59288  workers=0 free  inflight=14
+  [t=2293s] routed=59593  workers=0 free  inflight=14
+  [t=2296s] routed=59629  workers=1 free  inflight=13
+  [t=2299s] routed=61278  workers=0 free  inflight=14
+  [t=2302s] routed=61285  workers=0 free  inflight=14
+  [t=2305s] routed=61285  workers=0 free  inflight=14
+  [t=2309s] routed=61288  workers=0 free  inflight=14
+  [t=2312s] routed=61289  workers=0 free  inflight=14
+  [t=2315s] routed=61302  workers=1 free  inflight=13
+  [t=2318s] routed=61530  workers=0 free  inflight=14
+  [t=2321s] routed=61532  workers=0 free  inflight=14
+  [t=2324s] routed=61532  workers=0 free  inflight=14
+  [t=2327s] routed=61532  workers=0 free  inflight=14
+  [t=2331s] routed=61533  workers=0 free  inflight=14
+  [t=2334s] routed=61533  workers=0 free  inflight=14
+  [t=2337s] routed=61533  workers=0 free  inflight=14
+  [t=2340s] routed=61534  workers=0 free  inflight=14
+  [t=2343s] routed=61534  workers=0 free  inflight=14
+  [t=2346s] routed=61534  workers=0 free  inflight=14
+  [t=2349s] routed=61535  workers=0 free  inflight=14
+  [t=2352s] routed=61546  workers=1 free  inflight=13
+  [t=2355s] routed=61563  workers=0 free  inflight=14
+  [t=2358s] routed=61568  workers=0 free  inflight=14
+  [t=2362s] routed=61572  workers=0 free  inflight=14
+  [t=2365s] routed=61572  workers=0 free  inflight=14
+  [t=2368s] routed=61735  workers=1 free  inflight=13
+  [t=2371s] routed=63991  workers=1 free  inflight=13
+  [t=2374s] routed=64098  workers=0 free  inflight=14
+  [t=2377s] routed=64099  workers=0 free  inflight=14
+  [t=2380s] routed=64100  workers=0 free  inflight=14
+  [t=2383s] routed=64100  workers=0 free  inflight=14
+  [t=2386s] routed=64193  workers=0 free  inflight=14
+  [t=2389s] routed=64193  workers=0 free  inflight=14
+  [t=2392s] routed=64193  workers=0 free  inflight=14
+  [t=2396s] routed=64195  workers=0 free  inflight=14
+  [t=2399s] routed=64195  workers=0 free  inflight=14
+  [t=2402s] routed=64196  workers=0 free  inflight=14
+  [t=2405s] routed=64197  workers=0 free  inflight=14
+  [t=2408s] routed=64197  workers=0 free  inflight=14
+  [t=2411s] routed=64197  workers=0 free  inflight=14
+  [t=2414s] routed=64198  workers=0 free  inflight=14
+  [t=2417s] routed=64198  workers=0 free  inflight=14
+  [t=2420s] routed=64198  workers=0 free  inflight=14
+  [t=2423s] routed=64199  workers=0 free  inflight=14
+  [t=2426s] routed=64200  workers=0 free  inflight=14
+  [t=2430s] routed=64201  workers=0 free  inflight=14
+  [t=2433s] routed=64201  workers=0 free  inflight=14
+  [t=2436s] routed=64205  workers=0 free  inflight=14
+  [t=2439s] routed=64306  workers=0 free  inflight=14
+  [t=2442s] routed=64306  workers=0 free  inflight=14
+  [t=2446s] routed=64319  workers=0 free  inflight=14
+  [t=2449s] routed=64343  workers=0 free  inflight=14
+  [t=2452s] routed=64376  workers=0 free  inflight=14
+  [t=2456s] routed=64386  workers=0 free  inflight=14
+  [t=2459s] routed=64410  workers=1 free  inflight=13
+  [t=2462s] routed=64681  workers=0 free  inflight=14
+  [t=2465s] routed=65000  workers=1 free  inflight=13
+  [t=2468s] routed=65998  workers=0 free  inflight=14
+  [t=2471s] routed=66001  workers=0 free  inflight=14
+  [t=2474s] routed=66001  workers=0 free  inflight=14
+  [t=2477s] routed=66004  workers=0 free  inflight=14
+  [t=2480s] routed=66005  workers=0 free  inflight=14
+  [t=2483s] routed=66016  workers=1 free  inflight=13
+  [t=2487s] routed=66249  workers=0 free  inflight=14
+  [t=2490s] routed=66254  workers=0 free  inflight=14
+  [t=2493s] routed=66254  workers=0 free  inflight=14
+  [t=2497s] routed=66259  workers=0 free  inflight=14
+  [t=2500s] routed=66263  workers=0 free  inflight=14
+  [t=2503s] routed=66266  workers=0 free  inflight=14
+  [t=2506s] routed=66266  workers=0 free  inflight=14
+  [t=2509s] routed=66268  workers=0 free  inflight=14
+  [t=2513s] routed=66270  workers=0 free  inflight=14
+  [t=2516s] routed=66283  workers=1 free  inflight=13
+  [t=2519s] routed=66283  workers=0 free  inflight=14
+  [t=2522s] routed=66285  workers=0 free  inflight=14
+  [t=2525s] routed=66295  workers=0 free  inflight=14
+  [t=2528s] routed=66295  workers=0 free  inflight=14
+  [t=2531s] routed=66302  workers=0 free  inflight=14
+  [t=2535s] routed=66493  workers=0 free  inflight=14
+  [t=2538s] routed=66527  workers=1 free  inflight=13
+  [t=2541s] routed=66528  workers=0 free  inflight=14
+  [t=2544s] routed=66697  workers=0 free  inflight=14
+  [t=2547s] routed=66697  workers=0 free  inflight=14
+  [t=2551s] routed=67021  workers=0 free  inflight=14
+  [t=2554s] routed=67115  workers=1 free  inflight=13
+  [t=2557s] routed=68673  workers=0 free  inflight=14
+  [t=2560s] routed=68674  workers=0 free  inflight=14
+  [t=2563s] routed=68674  workers=0 free  inflight=14
+  [t=2566s] routed=68868  workers=0 free  inflight=14
+  [t=2569s] routed=68868  workers=0 free  inflight=14
+  [t=2573s] routed=68870  workers=0 free  inflight=14
+  [t=2576s] routed=68871  workers=0 free  inflight=14
+  [t=2579s] routed=68872  workers=0 free  inflight=14
+  [t=2582s] routed=68872  workers=0 free  inflight=14
+  [t=2585s] routed=68874  workers=0 free  inflight=14
+  [t=2589s] routed=68876  workers=0 free  inflight=14
+  [t=2592s] routed=68877  workers=0 free  inflight=14
+  [t=2595s] routed=68877  workers=0 free  inflight=14
+  [t=2598s] routed=68878  workers=0 free  inflight=14
+  [t=2602s] routed=68879  workers=0 free  inflight=14
+  [t=2605s] routed=68882  workers=0 free  inflight=14
+  [t=2608s] routed=68882  workers=0 free  inflight=14
+  [t=2611s] routed=68891  workers=0 free  inflight=14
+  [t=2614s] routed=69003  workers=1 free  inflight=13
+  [t=2618s] routed=69014  workers=0 free  inflight=14
+  [t=2621s] routed=69039  workers=1 free  inflight=13
+  [t=2624s] routed=69219  workers=0 free  inflight=14
+  [t=2627s] routed=69715  workers=1 free  inflight=13
+  [t=2630s] routed=70015  workers=0 free  inflight=14
+  [t=2633s] routed=70183  workers=0 free  inflight=14
+  [t=2636s] routed=70183  workers=0 free  inflight=14
+  [t=2639s] routed=70196  workers=0 free  inflight=14
+  [t=2642s] routed=70203  workers=0 free  inflight=14
+  [t=2645s] routed=70203  workers=0 free  inflight=14
+  [t=2648s] routed=70203  workers=0 free  inflight=14
+  [t=2651s] routed=70210  workers=0 free  inflight=14
+  [t=2655s] routed=70217  workers=0 free  inflight=14
+  [t=2658s] routed=70217  workers=0 free  inflight=14
+  [t=2661s] routed=70217  workers=0 free  inflight=14
+  [t=2664s] routed=70500  workers=0 free  inflight=14
+  [t=2667s] routed=70500  workers=0 free  inflight=14
+  [t=2670s] routed=70517  workers=0 free  inflight=14
+  [t=2673s] routed=70631  workers=0 free  inflight=14
+  [t=2676s] routed=70631  workers=0 free  inflight=14
+  [t=2680s] routed=70646  workers=0 free  inflight=14
+  [t=2683s] routed=70674  workers=0 free  inflight=14
+  [t=2687s] routed=70684  workers=0 free  inflight=14
+  [t=2690s] routed=70684  workers=0 free  inflight=14
+  [t=2693s] routed=70988  workers=0 free  inflight=14
+  [t=2696s] routed=71125  workers=1 free  inflight=13
+  [t=2699s] routed=73059  workers=1 free  inflight=13
+  [t=2702s] routed=73063  workers=0 free  inflight=14
+  [t=2705s] routed=73063  workers=0 free  inflight=14
+  [t=2708s] routed=73063  workers=0 free  inflight=14
+  [t=2711s] routed=73063  workers=0 free  inflight=14
+  [t=2714s] routed=73063  workers=0 free  inflight=14
+  [t=2717s] routed=73063  workers=0 free  inflight=14
+  [t=2720s] routed=73063  workers=0 free  inflight=14
+  [t=2723s] routed=73063  workers=0 free  inflight=14
+  [t=2726s] routed=73063  workers=0 free  inflight=14
+  [t=2729s] routed=73063  workers=0 free  inflight=14
+  [t=2732s] routed=73068  workers=0 free  inflight=14
+  [t=2735s] routed=73068  workers=0 free  inflight=14
+  [t=2738s] routed=73068  workers=0 free  inflight=14
+  [t=2741s] routed=73068  workers=0 free  inflight=14
+  [t=2744s] routed=73068  workers=0 free  inflight=14
+  [t=2747s] routed=73068  workers=0 free  inflight=14
+  [t=2750s] routed=73068  workers=0 free  inflight=14
+  [t=2753s] routed=73068  workers=0 free  inflight=14
+  [t=2756s] routed=73068  workers=0 free  inflight=14
+  [t=2759s] routed=73068  workers=0 free  inflight=14
+  [t=2762s] routed=73068  workers=0 free  inflight=14
+  [t=2766s] routed=73070  workers=0 free  inflight=14
+  [t=2769s] routed=73070  workers=0 free  inflight=14
+  [t=2772s] routed=73070  workers=0 free  inflight=14
+  [t=2775s] routed=73070  workers=0 free  inflight=14
+  [t=2778s] routed=73070  workers=0 free  inflight=14
+  [t=2781s] routed=73070  workers=0 free  inflight=14
+  [t=2784s] routed=73070  workers=0 free  inflight=14
+  [t=2787s] routed=73073  workers=1 free  inflight=13
+  [t=2790s] routed=73484  workers=0 free  inflight=14
+  [t=2793s] routed=74871  workers=1 free  inflight=13
+  [t=2796s] routed=75247  workers=0 free  inflight=14
+  [t=2800s] routed=75250  workers=0 free  inflight=14
+  [t=2803s] routed=75254  workers=1 free  inflight=13
+  [t=2806s] routed=75348  workers=0 free  inflight=14
+  [t=2809s] routed=75349  workers=0 free  inflight=14
+  [t=2812s] routed=75349  workers=0 free  inflight=14
+  [t=2815s] routed=75350  workers=0 free  inflight=14
+  [t=2819s] routed=75351  workers=0 free  inflight=14
+  [t=2822s] routed=75352  workers=0 free  inflight=14
+  [t=2825s] routed=75352  workers=0 free  inflight=14
+  [t=2828s] routed=75353  workers=0 free  inflight=14
+  [t=2831s] routed=75354  workers=0 free  inflight=14
+  [t=2834s] routed=75354  workers=0 free  inflight=14
+  [t=2837s] routed=75354  workers=0 free  inflight=14
+  [t=2841s] routed=75355  workers=0 free  inflight=14
+  [t=2844s] routed=75355  workers=0 free  inflight=14
+  [t=2847s] routed=75355  workers=0 free  inflight=14
+  [t=2850s] routed=75356  workers=0 free  inflight=14
+  [t=2853s] routed=75358  workers=0 free  inflight=14
+  [t=2856s] routed=75365  workers=1 free  inflight=13
+  [t=2859s] routed=75416  workers=0 free  inflight=14
+  [t=2862s] routed=75465  workers=0 free  inflight=14
+  [t=2865s] routed=76546  workers=1 free  inflight=13
+  [t=2868s] routed=76979  workers=0 free  inflight=14
+  [t=2872s] routed=76985  workers=0 free  inflight=14
+  [t=2875s] routed=76985  workers=0 free  inflight=14
+  [t=2878s] routed=77008  workers=0 free  inflight=14
+  [t=2881s] routed=77008  workers=0 free  inflight=14
+  [t=2884s] routed=77008  workers=0 free  inflight=14
+  [t=2887s] routed=77008  workers=0 free  inflight=14
+  [t=2890s] routed=77008  workers=0 free  inflight=14
+  [t=2893s] routed=77008  workers=0 free  inflight=14
+  [t=2896s] routed=77008  workers=0 free  inflight=14
+  [t=2899s] routed=77008  workers=0 free  inflight=14
+  [t=2902s] routed=77008  workers=0 free  inflight=14
+  [t=2905s] routed=77008  workers=0 free  inflight=14
+  [t=2908s] routed=77008  workers=0 free  inflight=14
+  [t=2911s] routed=77008  workers=0 free  inflight=14
+  [t=2914s] routed=77008  workers=0 free  inflight=14
+  [t=2918s] routed=77053  workers=0 free  inflight=14
+  [t=2921s] routed=77053  workers=0 free  inflight=14
+  [t=2924s] routed=77054  workers=0 free  inflight=14
+  [t=2927s] routed=77054  workers=0 free  inflight=14
+  [t=2930s] routed=77054  workers=0 free  inflight=14
+  [t=2933s] routed=77054  workers=0 free  inflight=14
+  [t=2936s] routed=77054  workers=0 free  inflight=14
+  [t=2939s] routed=77055  workers=0 free  inflight=14
+  [t=2942s] routed=77067  workers=0 free  inflight=14
+  [t=2945s] routed=77086  workers=0 free  inflight=14
+  [t=2948s] routed=77086  workers=0 free  inflight=14
+  [t=2951s] routed=78631  workers=1 free  inflight=13
+  [t=2954s] routed=78744  workers=0 free  inflight=14
+  [t=2957s] routed=78744  workers=0 free  inflight=14
+  [t=2960s] routed=78744  workers=0 free  inflight=14
+  [t=2963s] routed=78744  workers=0 free  inflight=14
+  [t=2966s] routed=78747  workers=1 free  inflight=13
+  [t=2970s] routed=78774  workers=0 free  inflight=14
+  [t=2973s] routed=78775  workers=0 free  inflight=14
+  [t=2976s] routed=78775  workers=0 free  inflight=14
+  [t=2979s] routed=78775  workers=0 free  inflight=14
+  [t=2982s] routed=78776  workers=0 free  inflight=14
+  [t=2985s] routed=78777  workers=0 free  inflight=14
+  [t=2988s] routed=78777  workers=0 free  inflight=14
+  [t=2992s] routed=78778  workers=0 free  inflight=14
+  [t=2995s] routed=78779  workers=0 free  inflight=14
+  [t=2998s] routed=78780  workers=0 free  inflight=14
+  [t=3001s] routed=78780  workers=0 free  inflight=14
+  [t=3004s] routed=78780  workers=0 free  inflight=14
+  [t=3007s] routed=78781  workers=0 free  inflight=14
+  [t=3010s] routed=78781  workers=0 free  inflight=14
+  [t=3013s] routed=78781  workers=0 free  inflight=14
+  [t=3016s] routed=78782  workers=0 free  inflight=14
+  [t=3020s] routed=78785  workers=0 free  inflight=14
+  [t=3023s] routed=78785  workers=0 free  inflight=14
+  [t=3026s] routed=78880  workers=0 free  inflight=14
+  [t=3029s] routed=78881  workers=0 free  inflight=14
+  [t=3032s] routed=78881  workers=0 free  inflight=14
+  [t=3035s] routed=78938  workers=1 free  inflight=13
+  [t=3038s] routed=78950  workers=0 free  inflight=14
+  [t=3042s] routed=79277  workers=0 free  inflight=14
+  [t=3045s] routed=79277  workers=0 free  inflight=14
+  [t=3048s] routed=80755  workers=0 free  inflight=14
+  [t=3051s] routed=80755  workers=0 free  inflight=14
+  [t=3054s] routed=80763  workers=0 free  inflight=14
+  [t=3058s] routed=80765  workers=0 free  inflight=14
+  [t=3061s] routed=80780  workers=1 free  inflight=13
+  [t=3064s] routed=80848  workers=0 free  inflight=14
+  [t=3067s] routed=80850  workers=0 free  inflight=14
+  [t=3070s] routed=80850  workers=0 free  inflight=14
+  [t=3073s] routed=80850  workers=0 free  inflight=14
+  [t=3076s] routed=80851  workers=0 free  inflight=14
+  [t=3079s] routed=80851  workers=0 free  inflight=14
+  [t=3082s] routed=80851  workers=0 free  inflight=14
+  [t=3085s] routed=80853  workers=0 free  inflight=14
+  [t=3089s] routed=80854  workers=0 free  inflight=14
+  [t=3092s] routed=80854  workers=0 free  inflight=14
+  [t=3095s] routed=80855  workers=0 free  inflight=14
+  [t=3098s] routed=80858  workers=0 free  inflight=14
+  [t=3101s] routed=80860  workers=0 free  inflight=14
+  [t=3104s] routed=80860  workers=0 free  inflight=14
+  [t=3108s] routed=80860  workers=0 free  inflight=14
+  [t=3111s] routed=80866  workers=0 free  inflight=14
+  [t=3114s] routed=80877  workers=1 free  inflight=13
+  [t=3117s] routed=80957  workers=0 free  inflight=14
+  [t=3120s] routed=80985  workers=0 free  inflight=14
+  [t=3123s] routed=80985  workers=0 free  inflight=14
+  [t=3126s] routed=81079  workers=0 free  inflight=14
+  [t=3129s] routed=81094  workers=1 free  inflight=13
+  [t=3133s] routed=81417  workers=0 free  inflight=14
+  [t=3136s] routed=81454  workers=0 free  inflight=14
+  [t=3139s] routed=81454  workers=0 free  inflight=14
+  [t=3142s] routed=81473  workers=0 free  inflight=14
+  [t=3145s] routed=82674  workers=1 free  inflight=13
+  [t=3148s] routed=83197  workers=0 free  inflight=14
+  [t=3152s] routed=83209  workers=0 free  inflight=14
+  [t=3155s] routed=83237  workers=1 free  inflight=13
+  [t=3158s] routed=83527  workers=7 free  inflight=7
+  [t=3161s] routed=83527  workers=7 free  inflight=7
+  [t=3164s] routed=83527  workers=7 free  inflight=7
+  [t=3167s] routed=83527  workers=7 free  inflight=7
+  [t=3170s] routed=83527  workers=7 free  inflight=7
+  [t=3173s] routed=83527  workers=7 free  inflight=7
+  [t=3176s] routed=83527  workers=7 free  inflight=7
+  [t=3179s] routed=83527  workers=7 free  inflight=7
+  [t=3182s] routed=83527  workers=7 free  inflight=7
+  [t=3185s] routed=83528  workers=8 free  inflight=6
+  [t=3188s] routed=83528  workers=8 free  inflight=6
+  [t=3191s] routed=83528  workers=8 free  inflight=6
+findings/cuda_h200/feed_cuda.sh: line 20: 401217 Killed                  PYTHONPATH="$REPO" "$MOBILE/.venv/bin/python" -m mobile broker

@@ -1,0 +1,26 @@
+[s71 2/23] w105:674 out3 -> OPERATOR
+[s71 6/23] w13:381 out4 -> OPERATOR
+[s71 8/23] w22:81 out1 -> COMPOSITIONAL
+[s71 9/23] w27:595 out1 -> OPERATOR
+[s71 10/23] w33:505 out4 -> OPERATOR
+[s71 11/23] w39:383 out2 -> OPERATOR
+[s71 12/23] w43:73 out0 -> OPERATOR
+[s71 13/23] w49:72 out0 -> SIBLING_DEPENDENT
+[s71 16/23] w62:5 out2 -> SIBLING_DEPENDENT
+[s71 17/23] w68:148 out4 -> OPERATOR
+[s71 18/23] w72:343 out2 -> SIBLING_DEPENDENT
+[s71 20/23] w84:447 out4 -> COMPOSITIONAL
+[s71 22/23] w94:681 out0 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=71 mine=23 remaining=6
+[s71 1/6] w100:659 out2 -> SIBLING_DEPENDENT
+[s71 4/6] w18:516 out0 -> COMPOSITIONAL
+[s71 5/6] w53:416 out3 -> SIBLING_DEPENDENT
+SHARD_COMPLETE shard=71 mine=23 remaining=2
+SHARD_COMPLETE shard=71 mine=23 remaining=2
+SHARD_COMPLETE shard=71 mine=23 remaining=2
+SHARD_COMPLETE shard=71 mine=23 remaining=2
+SHARD_COMPLETE shard=71 mine=23 remaining=2
+[s71 1/2] w122:74 out0 -> POISON
+[s71 2/2] w89:696 out0 -> POISON
+SHARD_COMPLETE shard=71 mine=23 remaining=0
+shard 71 DONE after 7 passes

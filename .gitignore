@@ -4,6 +4,7 @@ __pycache__/
 
 # Local virtual environment (recreate from requirements.txt — see docs/environment-setup.md)
 .venv/
+.venv-cuda/
 
 # Generation output + scratch: corpus dirs, crash samples, logs, broker samples,
 # skip-reason TSVs, measurement TSVs/logs. The fuzzer writes all transient data here.

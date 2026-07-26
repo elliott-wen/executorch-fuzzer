@@ -1,0 +1,22 @@
+[s12 5/23] w12:244 out0 -> COMPOSITIONAL
+[s12 7/23] w15:206 out3 -> SIBLING_DEPENDENT
+[s12 10/23] w3:423 out0 -> COMPOSITIONAL
+[s12 11/23] w35:654 out0 -> COMPOSITIONAL
+[s12 13/23] w46:224 out0 -> COMPOSITIONAL
+[s12 14/23] w50:26 out2 -> OPERATOR
+[s12 16/23] w6:724 out0 -> COMPOSITIONAL
+[s12 17/23] w64:745 out0 -> SIBLING_DEPENDENT
+[s12 18/23] w7:326 out0 -> SIBLING_DEPENDENT
+[s12 19/23] w75:625 out0 -> COMPOSITIONAL
+[s12 20/23] w80:543 out3 -> COMPOSITIONAL
+[s12 23/23] w96:739 out1 -> OPERATOR
+SHARD_COMPLETE shard=12 mine=23 remaining=2
+[s12 1/2] w102:489 out0 -> OPERATOR
+SHARD_COMPLETE shard=12 mine=23 remaining=1
+SHARD_COMPLETE shard=12 mine=23 remaining=1
+SHARD_COMPLETE shard=12 mine=23 remaining=1
+SHARD_COMPLETE shard=12 mine=23 remaining=1
+SHARD_COMPLETE shard=12 mine=23 remaining=1
+[s12 1/1] w125:285 out0 -> POISON
+SHARD_COMPLETE shard=12 mine=23 remaining=0
+shard 12 DONE after 7 passes

@@ -1,0 +1,147 @@
+
+### VGF-DELEGATE OPERATOR BUGS — finite VALUE divergence (real per-op kernel bugs)  (n=216, 27 ops)
+    42  sum
+    35  prod
+    23  native_group_norm
+    21  remainder
+    21  bitwise_left_shift
+    20  log1p
+    16  floor_divide
+     8  pow
+     5  cumsum
+     4  fmod
+     2  native_layer_norm
+     2  sin
+     2  acos
+     2  abs
+     1  _native_batch_norm_legit
+     1  _upsample_bilinear2d_aa
+     1  tan
+     1  _softmax
+     1  addmm
+     1  cos
+     1  select_scatter
+     1  bitwise_xor
+     1  div
+     1  mean
+     1  fill
+     1  asinh
+     1  round
+
+### VGF-DELEGATE OPERATOR 'bugs' — NON-FINITE (saturation/propagation suspects)  (n=129, 13 ops)
+    36  log1p
+    35  native_group_norm
+    20  remainder
+    14  pow
+     9  _native_batch_norm_legit
+     4  asinh
+     3  _log_softmax
+     2  native_layer_norm
+     2  logit
+     1  var_mean
+     1  sinh
+     1  prod
+     1  var
+
+### PORTABLE-FALLBACK operator confounds (deleg_tgt==0, RULED OUT — not VGF)  (n=142, 9 ops)
+    71  bitwise_left_shift
+    46  remainder
+     7  pow
+     5  fmod
+     4  bitwise_right_shift
+     4  _native_batch_norm_legit
+     2  prod
+     2  _upsample_bilinear2d_aa
+     1  maximum
+
+### GRAPH-OPT · COMPOSITIONAL (VGF-involved) — target op (needs upstream live)  (n=516, 122 ops)
+    34  div
+    19  fmod
+    15  remainder
+    15  floor_divide
+    14  pow
+    12  mul
+    11  min
+    10  abs
+     8  prod
+     8  unfold_copy
+     8  max
+     8  tan
+     8  log
+     8  maximum
+     7  slice_copy
+     7  bitwise_or
+     7  sin
+     6  squeeze_copy
+     6  bitwise_xor
+     6  log2
+     6  clamp
+     6  logit
+     6  logical_and
+     6  gt
+     6  rsqrt
+     6  ne
+     5  pixel_shuffle
+     5  view_copy
+     5  t_copy
+     5  neg
+     5  mean
+     5  sign
+     5  atan2
+     5  exp
+     5  asinh
+     5  sqrt
+     5  asin
+     5  slice_scatter
+     5  atanh
+     5  unsqueeze_copy
+
+### GRAPH-OPT · SIBLING_DEPENDENT (VGF-involved) — target op (needs co-returned sibling)  (n=468, 113 ops)
+    27  prod
+    22  fmod
+    20  div
+    19  min
+    18  max
+    13  flip
+    11  log10
+    10  squeeze_copy
+     9  trunc
+     9  log2
+     9  abs
+     9  pow
+     8  constant_pad_nd
+     8  mul
+     8  clamp
+     8  acos
+     7  slice_copy
+     7  permute_copy
+     7  remainder
+     7  transpose_copy
+     6  logical_xor
+     6  argmax
+     5  view_copy
+     5  gelu
+     5  logical_and
+     5  masked_scatter
+     5  narrow_copy
+     5  log
+     5  sign
+     5  maximum
+     4  max_pool2d_with_indices_backward
+     4  tanh
+     4  erf
+     4  expm1
+     4  lift_fresh_copy
+     4  floor_divide
+     4  split_copy
+     4  sinh
+     4  detach_copy
+     4  index
+
+### CANT_ISOLATE — target output won't lower alone  (n=540, 1 ops)
+   540  ?
+
+### POISON — native-crashed >=6x during localization (crash-cluster suspects)  (n=70, 1 ops)
+    70  ?
+
+=== op counts saved to findings/vgf/per_op tables (stdout) ===

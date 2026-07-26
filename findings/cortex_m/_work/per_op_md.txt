@@ -1,0 +1,34 @@
+| operator | k | OK | MISM | CRASH | SKIP | TO |
+|----------|--:|---:|----:|-----:|----:|---:|
+| `_fft_r2c` | 442 | 0 | 0 | 23 | 0 | 419 |
+| `stack` | 430 | 0 | 0 | 0 | 430 | 0 |
+| `pixel_shuffle` | 760 | 371 | 0 | 0 | 389 | 0 |
+| `pixel_unshuffle` | 741 | 373 | 0 | 0 | 368 | 0 |
+| `zeros.out` | 345 | 0 | 0 | 0 | 345 | 0 |
+| `ones.out` | 339 | 0 | 0 | 0 | 339 | 0 |
+| `full.out` | 333 | 0 | 0 | 0 | 333 | 0 |
+| `arange.start_out` | 322 | 0 | 0 | 0 | 322 | 0 |
+| `arange.out` | 304 | 0 | 0 | 0 | 304 | 0 |
+| `_pdist_forward` | 342 | 60 | 0 | 0 | 282 | 0 |
+| `native_group_norm` | 278 | 42 | 0 | 0 | 236 | 0 |
+| `index_put` | 435 | 218 | 217 | 0 | 0 | 0 |
+| `fill.Scalar` | 348 | 164 | 184 | 0 | 0 | 0 |
+| `where.self` | 367 | 185 | 30 | 0 | 152 | 0 |
+| `copy` | 341 | 168 | 0 | 0 | 173 | 0 |
+| `bitwise_left_shift.Tensor_out` | 390 | 219 | 171 | 0 | 0 | 0 |
+| `expand_copy` | 340 | 185 | 0 | 0 | 155 | 0 |
+| `bitwise_right_shift.Tensor_Scalar` | 442 | 288 | 154 | 0 | 0 | 0 |
+| `max_pool2d_with_indices_backward.grad_input` | 129 | 11 | 117 | 0 | 1 | 0 |
+| `linear.out` | 116 | 0 | 0 | 116 | 0 | 0 |
+| `scatter_add.out` | 120 | 5 | 0 | 0 | 115 | 0 |
+| `linear` | 114 | 0 | 0 | 114 | 0 | 0 |
+| `topk.values` | 391 | 294 | 0 | 0 | 97 | 0 |
+| `remainder.Tensor_out` | 227 | 136 | 91 | 0 | 0 | 0 |
+| `scatter.src_out` | 85 | 0 | 0 | 0 | 85 | 0 |
+| `remainder.Scalar` | 227 | 143 | 84 | 0 | 0 | 0 |
+| `bitwise_left_shift.Tensor_Scalar` | 440 | 369 | 71 | 0 | 0 | 0 |
+| `permute_copy` | 338 | 269 | 8 | 0 | 61 | 0 |
+| `min.dim_min` | 407 | 339 | 0 | 0 | 68 | 0 |
+| `bitwise_right_shift.Tensor_out` | 393 | 335 | 58 | 0 | 0 | 0 |
+
+non-OK operators: 71  | total MISM 1485 CRASH 253 SKIP 4450 TO 419
