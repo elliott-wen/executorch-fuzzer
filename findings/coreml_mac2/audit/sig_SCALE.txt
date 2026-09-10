@@ -1,0 +1,58 @@
+w100:723	1	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_1	deleg=lowered_module_0	node=getitem_1
+w100:76	0	NEITHER	outname=aten_unsqueeze_copy_default	deleg=lowered_module_1	node=getitem_2
+w101:263	3	NEITHER	outname=aten_view_copy_default_1	deleg=lowered_module_0	node=getitem_3
+w101:701	2	NEITHER	outname=aten_sum_dim_int_list	deleg=lowered_module_0	node=getitem_2
+w102:576	3	NOT-DELEGATED	outname=None	deleg=None	node=aten_asinh_default
+w103:383	0	NEITHER	outname=aten_max_default	deleg=lowered_module_1	node=getitem_2
+w104:187	2	NEITHER	outname=mul_0	deleg=lowered_module_0	node=getitem_3
+w105:8	0	NEITHER	outname=aten_remainder_scalar	deleg=lowered_module_0	node=getitem
+w107:194	1	NEITHER	outname=aten_unsqueeze_copy_default	deleg=lowered_module_0	node=getitem_1
+w107:656	0	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_1	node=getitem_1
+w107:89	1	PASSTHRU	outname=aten_alias_copy_default	deleg=lowered_module_1	node=getitem_4
+w108:526	0	NEITHER	outname=aten_logical_xor_default	deleg=lowered_module_2	node=getitem_2
+w10:761	3	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem
+w112:479	1	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_2	deleg=lowered_module_0	node=getitem_2
+w117:292	4	NEITHER	outname=aten_mul_tensor	deleg=lowered_module_0	node=getitem_4
+w11:442	1	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_1	deleg=lowered_module_0	node=getitem_2
+w12:316	2	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_2	deleg=lowered_module_1	node=getitem_4
+w16:40	1	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_1	deleg=lowered_module_1	node=getitem_3
+w23:306	1	NEITHER	outname=aten_unsqueeze_copy_default	deleg=lowered_module_0	node=getitem_1
+w24:604	0	NOT-DELEGATED	outname=None	deleg=None	node=aten_div_scalar_mode
+w27:300	1	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_tensor
+w29:492	0	PASSTHRU	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_1	node=getitem_2
+w33:123	0	NEITHER	outname=aten_remainder_scalar	deleg=lowered_module_1	node=getitem_1
+w35:175	1	NEITHER	outname=aten_split_with_sizes_copy_default	deleg=lowered_module_0	node=getitem_1
+w35:295	2	NEITHER	outname=aten_mul_tensor	deleg=lowered_module_0	node=getitem_3
+w37:113	2	NOT-DELEGATED	outname=None	deleg=None	node=aten_div_scalar_mode
+w37:316	0	NOT-DELEGATED	outname=None	deleg=None	node=aten_div_scalar_mode
+w38:323	1	NEITHER	outname=aten_max_default	deleg=lowered_module_0	node=getitem_1
+w40:761	1	DUP	outname=aten_max_default	deleg=lowered_module_0	node=getitem_1
+w43:303	0	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem
+w44:585	1	DUP	outname=aten_div_tensor_mode	deleg=lowered_module_0	node=getitem_3
+w47:340	1	NEITHER	outname=aten_max_default	deleg=lowered_module_0	node=getitem_1
+w47:599	1	NEITHER	outname=aten_abs_default	deleg=lowered_module_1	node=getitem_3
+w49:253	0	NEITHER	outname=aten_sign_default_1	deleg=lowered_module_0	node=getitem
+w52:443	0	NEITHER	outname=aten_unsqueeze_copy_default	deleg=lowered_module_0	node=getitem
+w54:221	0	PASSTHRU	outname=aten_unfold_copy_default	deleg=lowered_module_2	node=getitem_4
+w56:240	0	NEITHER	outname=aten_tan_default	deleg=lowered_module_0	node=getitem_1
+w56:665	1	NOT-DELEGATED	outname=None	deleg=None	node=aten_bitwise_xor_tensor
+w63:511	1	NEITHER	outname=aten_copy_default_1	deleg=lowered_module_1	node=getitem_7
+w65:579	2	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem_2
+w68:199	1	NEITHER	outname=reduce_mean_1	deleg=lowered_module_0	node=getitem_1
+w69:148	0	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_scalar
+w69:58	0	NOT-DELEGATED	outname=None	deleg=None	node=aten_sub_tensor
+w73:362	2	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_3	deleg=lowered_module_1	node=getitem_3
+w79:529	3	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_3	deleg=lowered_module_1	node=getitem_6
+w83:300	2	NEITHER	outname=aten_amax_default	deleg=lowered_module_0	node=getitem_2
+w89:472	0	NEITHER	outname=aten_select_copy_int	deleg=lowered_module_0	node=getitem
+w92:548	3	NEITHER	outname=aten_squeeze_copy_dim	deleg=lowered_module_0	node=getitem_3
+w97:738	0	NEITHER	outname=aten_div_scalar	deleg=lowered_module_0	node=getitem
+w98:233	1	NEITHER	outname=aten_abs_default	deleg=lowered_module_0	node=getitem_2
+w99:96	0	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem
+w9:196	0	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_scalar
+
+=== SUMMARY mech=SCALE n=52 ===
+    38  NEITHER
+     9  NOT-DELEGATED
+     3  PASSTHRU
+     2  DUP

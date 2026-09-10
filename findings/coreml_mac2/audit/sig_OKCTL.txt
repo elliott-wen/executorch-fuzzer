@@ -1,0 +1,9 @@
+total corpus py: 10518 OK-eligible: 5321 sampled: 150
+
+=== OK-CONTROL: per-OUTPUT tags over 150 device-OK jobs ===
+    491  NEITHER
+     85  NOT-DELEGATED
+      8  PASSTHRU
+=== per-JOB: does the job have ANY DUP/PASSTHRU output? ===
+    142  none
+      8  PASSTHRU

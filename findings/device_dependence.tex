@@ -1,0 +1,161 @@
+% Requires: \usepackage{booktabs,multirow}
+% Table 1 -- cross-device shares
+\begin{table*}[t]
+\centering
+\small
+\caption{The same backend behaves differently across devices. \emph{Ops/graph} is the mean number of
+operators per corpus graph: the executed share is comparable only between rows with the same corpus,
+because in a multi-operator graph a single refused operator refuses the whole graph. \emph{Deployed}
+is the number of graphs lowered for that device and submitted to it; \emph{executed} the share of
+those that ran to completion and produced an output (the remainder were refused at load or execute
+time, crashed, or timed out); \emph{matched} the share of the executed graphs whose output agreed
+with the eager PyTorch reference. \emph{Device-only} counts divergences observed on this device and
+on no other device running the same corpus. The ASUS phone appears twice, once per corpus, as the
+bridge between the two Vulkan blocks.}
+\label{tab:device-dependence}
+\begin{tabular}{lllrrrrrl}
+\toprule
+Backend & Device & Compute unit & Ops/graph & Deployed & Executed & Matched & Device-only & Source of device difference \\
+\midrule
+\multirow{5}{*}{Vulkan}
+ & Galaxy S26 Ultra & Adreno     & 1 & 86{,}924 & 93.3\% & 95.5\% & 0 & --- \\
+ & ASUS phone       & Adreno     & 1 & 86{,}924 & 93.1\% & 95.4\% & \phantom{0,}\phantom{0}70 & \texttt{sqrt}/\texttt{rsqrt} non-finite \\
+ & Moto G54 5G      & Mali-G57   & 1 & 86{,}924 & 93.3\% & \textbf{92.8\%} & \textbf{2{,}589} & copy/view corruption; \texttt{logit} non-finite \\
+\cmidrule(l){2-9}
+ & ASUS phone       & Adreno     & 19.4 & 100{,}032 & 21.5\% & 58.7\% & $\sim$\phantom{0,0}6 & (same device, multi-operator reference) \\
+ & Galaxy Tab S4    & Adreno 630 & 19.4 & 100{,}032 & \textbf{\phantom{0}2.7\%} & 55.5\% & $\sim$\phantom{0,0}14 & no \verb|VK_KHR_8bit_storage| \\
+\midrule
+\multirow{2}{*}{XNNPACK}
+ & x86 host        & SSE/AVX     & 1 & 87{,}823 & 96.5\% & 97.2\% & \texttt{sqrt} 353 & \multirow{2}{*}{per-architecture SIMD kernels} \\
+ & Android phone   & NEON        & 1 & 87{,}823 & 96.7\% & 97.2\% & \texttt{log} 180, \texttt{logit} 187 & \\
+\midrule
+\multirow{3}{*}{QNN}
+ & x86 emulator      & HTP simulator & 1 & 61{,}441$^{\S}$ & \textbf{91.0\%} & 86.2\% & 1 op & emulator crashes/skips mask bugs \\
+ & Snapdragon SM8450 & Hexagon HTP   & 1 & 68{,}522 & 96.6\% & 86.6\% & 1 op & \multirow{2}{*}{non-finite handling in the HTP stack} \\
+ & Snapdragon SM8750 & Hexagon HTP   & 1 & 77{,}524$^{\dagger}$ & 97.0\% & \textbf{94.6\%} & 0 ops & \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+$^{\dagger}$ The SM8750 run covered 123 of the 128 corpus shards; its deployed count is the number of
+graphs in those shards. Restricting instead to the 23 shards of the smaller, fully-verified SM8750 log
+gives 95.8\% executed and 91.1\% matched --- the same conclusion.
+
+$^{\S}$ The emulator targets the SM8450, so it is not an independent device: it and the SM8450 phone
+agree on 100 of the 104 operators either one flags (96.2\%) and on 7{,}638 of the emulator's 7{,}699
+diverging graphs (99.2\%). Taken together as one platform, they diverge on \textbf{48} operators that
+the SM8750 gets right, and on none that it gets wrong. The emulator's value as a \emph{numeric}
+predictor is high (86.2\% vs 86.6\% matched) but as an \emph{availability} predictor it is poor
+(91.0\% vs 96.6\% executed: 609 crashes vs 154, 4{,}915 refusals vs 2{,}169), and those extra
+crashes hide real bugs the phone surfaces.
+
+The two Vulkan blocks isolate the two axes of device dependence. Within the single-operator corpus the
+three phones refuse an \emph{identical} 5{,}301 graphs (no device-only refusal), so the op surface is
+device-independent and the device effect is purely numeric (92.8--95.5\% matched). The capability axis
+appears only across \emph{generations}: on the multi-operator corpus the Adreno 630 executes 2.7\%
+against 21.5\% for the same-corpus ASUS baseline, because 26{,}681 graphs are refused for a missing
+\verb|VK_KHR_8bit_storage| (20{,}389 of them refused on no other device). The drop from 93.1\% to
+21.5\% for the \emph{same} ASUS phone is corpus shape, not a device effect: at 19.4 operators per
+graph one refused operator refuses the graph, and $0.933^{19.4} \approx 0.26$.
+
+% Table 2 -- XNNPACK x86 vs Arm operator split (single column)
+\begin{table}[t]
+\centering
+\small
+\caption{XNNPACK: neither architecture is uniformly closer to PyTorch. Counts are diverging graphs.}
+\label{tab:xnnpack-arch}
+\begin{tabular}{llll}
+\toprule
+Input & PyTorch & x86 (SSE/AVX) & Arm (NEON) \\
+\midrule
+\texttt{sqrt($x<0$)}   & \texttt{NaN} & \textbf{$-0.0$} (353) & \texttt{NaN} \\
+\texttt{sqrt(inf)}     & \texttt{inf} & \textbf{\texttt{NaN}} & \texttt{inf} \\
+\texttt{log(inf)}      & \texttt{inf} & \texttt{inf}          & \textbf{88.38} (180) \\
+\texttt{logit(+inf)}   & \texttt{inf} & \texttt{inf}          & \textbf{88.38} (187) \\
+\texttt{gelu(inf)}     & \texttt{NaN} & \textbf{\texttt{inf}} (92) & \textbf{\texttt{inf}} (92) \\
+\texttt{relu(NaN)}     & \texttt{NaN} & \textbf{clamp bound} (4) & \texttt{NaN} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 3 -- QNN SM8450 vs SM8750 (single column)
+\begin{table}[t]
+\centering
+\small
+\caption{QNN across two Snapdragon generations, same single-operator corpus generation
+($\sim$29.4k delegated graphs each).}
+\label{tab:qnn-gen}
+\begin{tabular}{lrr}
+\toprule
+ & SM8450 & SM8750 \\
+\midrule
+Delegated operators with $\ge 1$ divergence      & 103 & 56 \\
+\quad diverges here, clean on the other device   & \textbf{47} & \textbf{0} \\
+\quad\quad of which exercised on the other device & 46 & --- \\
+Diverging graphs on the 47-operator set          & 2{,}133 & 0 \\
+\quad non-finite handling                        & 2{,}092 (98\%) & --- \\
+\quad finite value error                         & 41 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 4 -- third-party SDK versions (full width)
+\begin{table*}[t]
+\centering
+\small
+\caption{Vendor SDK and toolchain versions used for every backend that depends on one. Versions are
+read from the installed toolchains. The Vulkan and XNNPACK delegates are in-tree and depend on no
+vendor SDK; their device behaviour is set by the GPU driver and the per-architecture SIMD kernels
+respectively. All lanes share ExecuTorch \texttt{1.4.0} (git \texttt{2759ef1}) and PyTorch
+\texttt{2.12.0}, except the MediaTek lane, which is pinned to ExecuTorch \texttt{1.3.1} / PyTorch
+\texttt{2.12.1} on Python~3.10 by its SDK wheel.}
+\label{tab:sdk-versions}
+\begin{tabular}{llll}
+\toprule
+Backend & Vendor & SDK / toolchain & Version \\
+\midrule
+QNN (Hexagon HTP) & Qualcomm & AI Engine Direct (QAIRT) & 2.37.0.250724 \\
+\midrule
+\multirow{3}{*}{MediaTek} & \multirow{3}{*}{MediaTek} & NeuroPilot Express SDK & 8.0.8 (build 20250925) \\
+ & & \texttt{mtk\_converter} & 8.13.0 \\
+ & & \texttt{mtk\_neuron} & 8.2.23 \\
+\midrule
+Samsung ENN (Exynos) & Samsung & Exynos AI LiteCore & v1.2.0 \\
+\midrule
+\multirow{4}{*}{Ethos-U} & \multirow{4}{*}{Arm} & Vela compiler & 5.0.0 \\
+ & & Ethos-U \texttt{core\_software} & 26.02 \\
+ & & Ethos-U \texttt{core\_platform} & 26.02 \\
+ & & Corstone-300 FVP (Fast Models) & 11.27.42 \\
+\midrule
+\multirow{2}{*}{Cortex-M} & \multirow{2}{*}{Arm} & CMSIS-NN & \texttt{a3f311a} (Ethos-U 26.02) \\
+ & & Arm GNU toolchain & 15.2.rel1 (arm-none-eabi) \\
+\midrule
+\multirow{4}{*}{VGF (TOSA $\rightarrow$ Vulkan)} & \multirow{4}{*}{Arm} & ML SDK model converter & 0.9.0 \\
+ & & ML SDK VGF library & 0.9.0 \\
+ & & Vulkan ML emulation layer & 0.9.0 \\
+ & & TOSA tools & 2026.2.1 \\
+\midrule
+\multirow{2}{*}{NXP (eIQ Neutron)} & \multirow{2}{*}{NXP} & eIQ Neutron SDK & 3.1.3 \\
+ & & eIQ NSYS simulator & 3.7 \\
+\midrule
+\multirow{2}{*}{Cadence (Xtensa HiFi)} & \multirow{2}{*}{Cadence} & Xtensa Xplorer & 11.1.5 \\
+ & & Xtensa toolchain (HiFi4, RT600) & RJ-2025.5 \\
+\midrule
+Core ML & Apple & \texttt{coremltools} & 9.0 \\
+\midrule
+\multirow{2}{*}{OpenVINO} & \multirow{2}{*}{Intel} & OpenVINO runtime & 2025.4.1 \\
+ & & NNCF & 3.1.0 \\
+\midrule
+CUDA (AOTI) & NVIDIA & CUDA toolkit & 13.0 \\
+\midrule
+Vulkan & --- & in-tree delegate; GPU driver only & --- \\
+XNNPACK & --- & in-tree delegate (vendored) & --- \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\raggedright\footnotesize
+On-device lanes (QNN, MediaTek, Samsung, Vulkan, XNNPACK-arm64) share Android NDK r28
+(\texttt{28.0.13004108}); the VGF host lane runs on Mesa lavapipe 25.2.7 as the base Vulkan driver.
+\end{table*}

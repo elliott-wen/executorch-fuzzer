@@ -1,0 +1,23 @@
+w101:483	3	NEITHER	outname=aten_round_default	deleg=lowered_module_1	node=getitem_4
+w103:272	2	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_scalar
+w105:249	1	NEITHER	outname=aten_relu_default	deleg=lowered_module_0	node=getitem_2
+w116:476	4	NOT-DELEGATED	outname=None	deleg=None	node=aten_sub_tensor
+w116:65	1	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_scalar
+w24:584	2	NEITHER	outname=aten_pow_tensor_scalar	deleg=lowered_module_1	node=getitem_3
+w26:405	0	NEITHER	outname=aten_relu_default	deleg=lowered_module_1	node=getitem_2
+w36:732	2	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_1	node=getitem_4
+w41:738	0	NEITHER	outname=aten__softmax_default	deleg=lowered_module_1	node=getitem_2
+w48:51	1	NEITHER	outname=dim_order_ops__to_dim_order_copy_default_1	deleg=lowered_module_1	node=getitem_3
+w49:342	0	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem
+w69:126	0	NEITHER	outname=aten_sinh_default	deleg=lowered_module_0	node=getitem
+w77:698	3	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_scalar
+w81:275	0	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem
+w83:311	2	NEITHER	outname=dim_order_ops__to_dim_order_copy_default	deleg=lowered_module_0	node=getitem_2
+w86:156	0	NOT-DELEGATED	outname=None	deleg=None	node=aten_fmod_scalar
+w94:385	0	NEITHER	outname=aten_floor_divide_default	deleg=lowered_module_0	node=getitem
+w99:697	4	NEITHER	outname=aten_remainder_scalar	deleg=lowered_module_0	node=getitem_4
+w9:194	1	NOT-DELEGATED	outname=None	deleg=None	node=aten_prod_dim_int
+
+=== SUMMARY mech=NEAR-TOL (gate N>=5) n=19 ===
+    13  NEITHER
+     6  NOT-DELEGATED

@@ -1,0 +1,48 @@
+"""coreml (Apple) — delegates to the Neural Engine / GPU / CPU via CoreML.
+
+Available only where coremltools imports (macOS), where it also runs. Supports PT2E
+quantization via CoreMLQuantizer. On Linux the backend reports itself unavailable.
+"""
+
+from __future__ import annotations
+
+from mobile.generator.lower.backends.base import Backend, QuantMode, lower_with_partitioner
+
+
+class CoreMLBackend(Backend):
+    name = "coreml"
+    runs_on_host = True               # CoreML executes on the Mac host
+    quant = QuantMode.OPTIONAL        # float, or int8 with --quantize
+
+    def is_available(self) -> bool:
+        try:
+            import coremltools  # noqa: F401
+            from executorch.backends.apple.coreml.partition.coreml_partitioner import (  # noqa: F401
+                CoreMLPartitioner,
+            )
+            return True
+        except Exception:
+            return False
+
+    def quantizer(self):
+        from coremltools.optimize.torch.quantization import (
+            LinearQuantizerConfig,
+            QuantizationScheme,
+        )
+        from executorch.backends.apple.coreml.quantizer import CoreMLQuantizer
+
+        config = LinearQuantizerConfig.from_dict({
+            "global_config": {
+                "quantization_scheme": QuantizationScheme.symmetric,
+                "milestones": [0, 0, 10, 10],
+                "activation_dtype": "qint8",
+                "weight_dtype": "qint8",
+            }
+        })
+        return CoreMLQuantizer(config)
+
+    def _lower(self, ep, example_inputs):
+        from executorch.backends.apple.coreml.partition.coreml_partitioner import (
+            CoreMLPartitioner,
+        )
+        return lower_with_partitioner(ep, CoreMLPartitioner())

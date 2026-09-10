@@ -3,9 +3,11 @@
 Generation is PRE-GENERATED to disk (reproducible, every graph inspectable), then a
 broker streams that corpus over ZeroMQ to executor clients (local now, phones later):
 
-  # PREGEN (offline, once): generate + export graphs to a corpus dir.
-  python -m mobile pregen --out tmp/corpus --count 10000 [--id p0]
-      (parallelize with mobile/pregen_fleet.py)
+  # PREGEN (offline): a graph is a pure function of (seed, index) — generate the shared,
+  # backend-agnostic oracle once, then export it for as many backends as you want.
+  python -m mobile pregen --mode oracle --out tmp/oracle --count 10000
+  python -m mobile pregen --mode export --oracle tmp/oracle --out tmp/corpus --backend portable
+      (parallelize either with mobile/pregen_fleet.py)
 
   # BROKER (one): routes jobs to executors, tallies, saves repros.
   python -m mobile broker [--job-port 15554] [--client-port 15555] [--ctrl-port 15556]
@@ -16,7 +18,7 @@ broker streams that corpus over ZeroMQ to executor clients (local now, phones la
   # CLIENT (one or more / per device): pull jobs, run .pte. Each backend has its OWN
   # self-contained executor folder (the host analog of the Android/FVP/QNN clients);
   # the in-process ExecuTorch runtime runs both xnnpack- and portable-lowered programs:
-  #   python xnnpack_client/xnnpack_client.py --host <broker-ip> [--job-timeout 30]
+  #   python local_executor/xnnpack_client/xnnpack_client.py --host <broker-ip> [--job-timeout 30]
 
 Start the broker first, then feed + any number of clients (locally or on more
 machines/phones). mobile/local_fleet.py manages the feeder + client fleet with respawn.
@@ -47,18 +49,29 @@ def main() -> int:
     br.add_argument("-v", "--verbose", action="store_true")
 
     pg = sub.add_parser("pregen", help="pre-generate a corpus of jobs to disk (offline)")
+    pg.add_argument("--mode", default="full", choices=("oracle", "export", "full"),
+                    help="oracle: graph gen+eager only (shared, backend-agnostic). "
+                         "export: torch.export+lower an existing oracle for one backend. "
+                         "full: oracle+export in one process (default)")
     pg.add_argument("--out", default="tmp/corpus", help="corpus directory to write")
-    pg.add_argument("--count", type=int, default=10000, help="READY jobs to write")
-    pg.add_argument("--nodes", type=int, default=8, help="target real-op nodes per DAG")
+    pg.add_argument("--oracle", default="", help="oracle directory to read (--mode export)")
+    pg.add_argument("--count", type=int, default=10000, help="how many indices to attempt, "
+                    "starting at --start")
+    pg.add_argument("--nodes", type=int, default=8, help="target real-op nodes per DAG "
+                    "(--mode oracle/full)")
     pg.add_argument("--leaf-prob", type=float, default=0.3)
     pg.add_argument("--out-alias-prob", type=float, default=0.1,
                     help="chance a grow node's out= buffer aliases a live producer "
                          "(exercises compiler memory-planning) vs. a fresh allocation")
     pg.add_argument("--seed", type=int, default=0xC0FFEE)
-    pg.add_argument("--id", default="p0", help="producer id (distinct per parallel pregen)")
+    pg.add_argument("--slot", default="p0",
+                    help="operational tag for stats/crash-marker filenames — not part of "
+                         "any graph's identity, a graph is a pure function of (seed, index)")
+    pg.add_argument("--start", type=int, default=0, help="first index to attempt")
     pg.add_argument("--backend", default="portable",
                     help="lowering target: portable (CPU kernels) | xnnpack | vulkan | ... "
-                         "(only backends installed in this env; portable always works)")
+                         "(only backends installed in this env; portable always works) "
+                         "— --mode export/full")
     pg.add_argument("--quantize", action="store_true",
                     help="PT2E-quantize before lowering (backends that support it)")
 
@@ -90,10 +103,12 @@ def main() -> int:
         return run_broker(opts.job_port, opts.client_port, opts.ctrl_port,
                           opts.heartbeat, opts.verbose)
     if opts.cmd == "pregen":
-        from mobile.net.pregen import run_pregen
-        return run_pregen(opts.out, opts.count, opts.nodes, opts.leaf_prob,
-                          opts.seed, opts.id, opts.backend, opts.quantize,
-                          opts.out_alias_prob)
+        if opts.mode == "export" and not opts.oracle:
+            ap.error("--mode export requires --oracle <dir>")
+        from mobile.net.pregen import run
+        return run(opts.mode, opts.out, opts.oracle, opts.seed, opts.nodes, opts.leaf_prob,
+                  opts.out_alias_prob, opts.backend, opts.quantize, opts.slot,
+                  opts.start, opts.count, use_stdin=False)
     if opts.cmd == "feed":
         from mobile.net.feed import run_feeder
         return run_feeder(opts.host, opts.job_port, opts.ctrl_port, opts.corpus,

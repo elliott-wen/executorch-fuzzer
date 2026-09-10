@@ -1,0 +1,46 @@
+{"job": "w101:421", "out": "3", "target": "n7", "needed": ["n3"], "anc": {"n3": ["bad,bad,bad", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w121:583", "out": "1", "target": "n5", "needed": ["n0", "n1"], "anc": {"n0": ["bad,bad,bad", 0], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w19:548", "out": "0", "target": "n5", "needed": ["n1", "n2"], "anc": {"n1": ["ZERO,ZERO,ZERO", 2], "n2": ["ZERO,ZERO,ZERO", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w37:33", "out": "0", "target": "n3", "needed": ["n1", "n0"], "anc": {"n1": ["ZERO,ZERO,ZERO", 0], "n0": ["bad,bad,bad", 0]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 1}
+{"job": "w54:229", "out": "1", "target": "n3", "needed": ["n0", "n1"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 1}
+{"job": "w62:643", "out": "0", "target": "n1", "needed": ["n0"], "anc": {"n0": ["bad,bad,bad", 0]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w76:777", "out": "1", "target": "n5", "needed": ["n1", "n2", "n0"], "anc": {"n1": ["ok,ok,ok", 3], "n2": ["ok,ok,ok", 3], "n0": ["ok,ok,ok", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 5}
+{"job": "w88:13", "out": "0", "target": "n4", "needed": ["n1", "n2", "n0"], "anc": {"n1": ["ok,ok,ok", 1], "n2": ["ok,ok,ok", 1], "n0": ["bad,bad,bad", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 4}
+{"job": "w102:77", "out": "0", "target": "n2", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 6}
+{"job": "w12:424", "out": "0", "target": "n8", "needed": ["n6", "n5", "n7", "n1"], "anc": {"n6": ["ZERO,ZERO,ZERO", 2], "n5": ["bad,bad,bad", 2], "n7": ["ZERO,ZERO,ZERO", 2], "n1": ["bad,bad,bad", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w19:81", "out": "0", "target": "n3", "needed": ["n2"], "anc": {"n2": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w37:604", "out": "0", "target": "n4", "needed": ["n2", "n1", "n0"], "anc": {"n2": ["ZERO,ZERO,ZERO", 2], "n1": ["bad,bad,bad", 1], "n0": ["bad,bad,bad", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w56:121", "out": "2", "target": "n12", "needed": ["n10", "n11", "n5", "n6"], "anc": {"n10": ["bad,bad,bad", 3], "n11": ["bad,bad,bad", 4], "n5": ["bad,bad,bad", 1], "n6": ["bad,bad,bad", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 4}
+{"job": "w64:737", "out": "0", "target": "n2", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 1}
+{"job": "w78:168", "out": "1", "target": "n4", "needed": ["n2", "n1"], "anc": {"n2": ["ZERO,ZERO,ZERO", 3], "n1": ["ZERO,ZERO,ZERO", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 4}
+{"job": "w93:501", "out": "0", "target": "n3", "needed": ["n1"], "anc": {"n1": ["bad,bad,bad", 0]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 0}
+{"job": "w110:633", "out": "1", "target": "n4", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w14:27", "out": "1", "target": "n4", "needed": ["n3"], "anc": {"n3": ["ZERO,ZERO,ZERO", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w2:119", "out": "1", "target": "n5", "needed": ["n1", "n0"], "anc": {"n1": ["ZERO,ZERO,ZERO", 1], "n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w40:2", "out": "0", "target": "n9", "needed": ["n3", "n0", "n7", "n1", "n8"], "anc": {"n3": ["ok,ok,ok", 3], "n0": ["ok,ok,ok", 1], "n7": ["ok,ok,ok", 4], "n1": ["ok,ok,ok", 3], "n8": ["ZERO,ZERO,ZERO", 6]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 6}
+{"job": "w57:613", "out": "0", "target": "n3", "needed": ["n2", "n0", "n1"], "anc": {"n2": ["ZERO,ZERO,ZERO", 1], "n0": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 1}
+{"job": "w65:767", "out": "0", "target": "n3", "needed": ["n2", "n1"], "anc": {"n2": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w84:104", "out": "0", "target": "n5", "needed": ["n4", "n1", "n3", "n0", "n2"], "anc": {"n4": ["ok,ok,ok", 3], "n1": ["ok,ok,ok", 3], "n3": ["ok,ok,ok", 3], "n0": ["ok,ok,ok", 2], "n2": ["ok,ok,ok", 3]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w9:354", "out": "2", "target": "n7", "needed": ["n0", "n1"], "anc": {"n0": ["ok,ok,ok", 0], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w11:260", "out": "0", "target": "n7", "needed": ["n5", "n1", "n2", "n6", "n4"], "anc": {"n5": ["bad,bad,bad", 4], "n1": ["bad,bad,bad", 1], "n2": ["bad,bad,bad", 2], "n6": ["ZERO,ZERO,ZERO", 5], "n4": ["bad,bad,bad", 3]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 6}
+{"job": "w15:430", "out": "3", "target": "n8", "needed": ["n7"], "anc": {"n7": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w3:174", "out": "0", "target": "n3", "needed": ["n0"], "anc": {"n0": ["RUN:rc=2,RUN:rc=2,RUN:rc=2", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w42:33", "out": "0", "target": "n2", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w60:389", "out": "1", "target": "n5", "needed": ["n4", "n1", "n3", "n0"], "anc": {"n4": ["ZERO,ZERO,ZERO", 0], "n1": ["bad,bad,bad", 0], "n3": ["ZERO,ZERO,ZERO", 0], "n0": ["bad,bad,bad", 0]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 0}
+{"job": "w67:428", "out": "1", "target": "n8", "needed": ["n0", "n1"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 3]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w84:353", "out": "0", "target": "n5", "needed": ["n0", "n1"], "anc": {"n0": ["bad,bad,bad", 0], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w97:48", "out": "0", "target": "n1", "needed": ["n0"], "anc": {"n0": ["bad,bad,bad", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w118:68", "out": "2", "target": "n6", "needed": ["n4", "n1"], "anc": {"n4": ["ZERO,ZERO,ZERO", 3], "n1": ["ZERO,ZERO,ZERO", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 4}
+{"job": "w18:752", "out": "2", "target": "n7", "needed": ["n3"], "anc": {"n3": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w33:310", "out": "1", "target": "n10", "needed": ["n6", "n1", "n8", "n7", "n0", "n9"], "anc": {"n6": ["ok,ok,ok", 5], "n1": ["ok,ok,ok", 5], "n8": ["ok,ok,ok", 5], "n7": ["ok,ok,ok", 5], "n0": ["ok,ok,ok", 1], "n9": ["ok,ok,ok", 5]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 5}
+{"job": "w43:562", "out": "1", "target": "n3", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 1}
+{"job": "w61:468", "out": "1", "target": "n9", "needed": ["n4", "n3", "n5", "n6", "n0", "n1"], "anc": {"n4": ["ok,ok,ok", 3], "n3": ["ok,ok,ok", 3], "n5": ["ok,ok,ok", 3], "n6": ["ZERO,ZERO,ZERO", 3], "n0": ["ok,ok,ok", 1], "n1": ["ok,ok,ok", 3]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w68:60", "out": "1", "target": "n6", "needed": ["n2", "n1"], "anc": {"n2": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w86:679", "out": "0", "target": "n2", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w120:152", "out": "0", "target": "n2", "needed": ["n0", "n1"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w19:347", "out": "0", "target": "n2", "needed": ["n0"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w36:147", "out": "0", "target": "n3", "needed": ["n0", "n1"], "anc": {"n0": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 2}
+{"job": "w49:644", "out": "0", "target": "n3", "needed": ["n0", "n1", "n2"], "anc": {"n0": ["bad,bad,bad", 0], "n1": ["bad,bad,bad", 0], "n2": ["ZERO,ZERO,ZERO", 0]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 0}
+{"job": "w61:595", "out": "0", "target": "n9", "needed": ["n6", "n7", "n8", "n5", "n3"], "anc": {"n6": ["ok,ok,ok", 3], "n7": ["ok,ok,ok", 3], "n8": ["ok,ok,ok", 3], "n5": ["ok,ok,ok", 3], "n3": ["ok,ok,ok", 1]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 3}
+{"job": "w74:450", "out": "3", "target": "n7", "needed": ["n3"], "anc": {"n3": ["ZERO,ZERO,ZERO", 0]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 0}
+{"job": "w87:250", "out": "1", "target": "n4", "needed": ["n2", "n0", "n1"], "anc": {"n2": ["ZERO,ZERO,ZERO", 3], "n0": ["ZERO,ZERO,ZERO", 1], "n1": ["ZERO,ZERO,ZERO", 2]}, "B": "ZERO,ZERO,ZERO", "Bdeleg": 4}

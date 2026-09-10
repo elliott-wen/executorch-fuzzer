@@ -64,7 +64,7 @@ fi
 #     libneuronusdk_adapter.mtk.so (both aarch64). The adapter dlopen()s the device APU driver libs
 #     (lib*.mtk.so, declared <uses-native-library> in the manifest). Runs on Dimensity 9300/9400 only.
 WITH_MTK=${WITH_MTK:-ON}
-NEURON_SDK_ROOT=${NEURON_SDK_ROOT:-$MOBILE/neuropilot_sdk/neuropilot-express-sdk-8.0.8-build20250925}
+NEURON_SDK_ROOT=${NEURON_SDK_ROOT:-$MOBILE/third_party/neuropilot_sdk/neuropilot-express-sdk-8.0.8-build20250925}
 if [ "$WITH_MTK" = ON ] && [ -d "$NEURON_SDK_ROOT" ]; then
   echo ">>> MTK: ENABLED (NEURON_SDK_ROOT=$NEURON_SDK_ROOT, arm64-v8a only)"
   # The Neuron backend #include "api/NeuronAdapter.h", which ships in the NeuroPilot SDK (only the

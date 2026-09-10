@@ -1,18 +1,34 @@
 """pregen.py — pre-generate a corpus of jobs to disk (generate + export + serialize).
 
-Each READY graph is lowered to ExecuTorch and written to a corpus directory; pre-gen
-makes a run reproducible and every graph inspectable on disk (corpus/<job_id>.py).
+A graph is a pure function of (seed, index) — index is a plain non-negative integer, no
+producer/worker identity is baked into it. This means:
+  - however many processes you run to generate a range of indices is a pure scheduling
+    decision (see pregen_fleet.py's shared-counter dispatch) — it has no effect on what
+    graph index `i` is;
+  - two backends exporting the SAME oracle index get the exact same graph, joinable by
+    job_id, for free.
 
-`build_job` runs the eager reference, then lowers (torch.export → to_executorch). Either
-step can *hard-crash* on some graphs (the eager kernel or the ExecuTorch compiler) — a
-bug worth keeping. We don't try to survive it: the in-flight graph is written to
-corpus/_crashes/<id>.py BEFORE the risky call and removed on clean exit, so if the worker
-dies that file is left behind. The fleet then RESPAWNS the worker after recording the
-crashing index in corpus/_crashes/<id>.skip; on restart the worker SKIPS those indices
-(and resumes past already-written jobs) so it goes past the crash instead of re-hitting it.
+Three modes share one per-index processing loop (run_worker):
+  oracle  (step_oracle) — graph gen + emit + eager reference. Backend-agnostic, run once.
+  export  (step_export) — reads one oracle record + torch.export + backend lower. Run once
+                          per backend against a (possibly still-growing) oracle corpus.
+  full    (step_full)   — oracle then export inline, one process, no separate oracle corpus
+                          (convenient for a quick single-backend smoke test).
 
-Run several pregen processes with distinct --id into the SAME --out for parallel, disjoint
-generation (different ids ⇒ different filenames + disjoint graph space).
+Dispatch: a worker reads batches ("<start> <count>", one per line) from stdin and prints
+"__READY__" after finishing each one so the fleet coordinator (pregen_fleet.py) sends more —
+or, run directly (no fleet), a worker just processes one fixed [start, start+count) range.
+Before doing any work for index `i`, a worker checks whether its output file already exists
+and skips instantly if so — this one check is what makes both "restart later" and "redo a
+crashed worker's whole in-flight batch" safe and cheap, with no persisted counter or
+per-worker skip-list needed.
+
+Either the eager run or the lowering can *hard-crash* on some graphs — a bug worth keeping.
+We don't try to survive it: a marker file for the CURRENT index is written BEFORE the risky
+call (build_oracle/build_export/build_job) and left behind if the process dies, purely as a
+debugging artifact (mobile/gen/export/job.py) — nothing in the fleet's control flow parses it
+any more; a crashed/hung worker is just killed and its in-flight batch re-dispatched to a
+fresh one (see pregen_fleet.py), safe because of the resume check above.
 """
 from __future__ import annotations
 
@@ -22,41 +38,66 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 import json
 import random
 import signal
-import time
-import zlib
+import sys
 from collections import Counter
 from pathlib import Path
 
 from mobile.gen.graph import build_graph
 from mobile.gen.ops import load_runnable_opnodes
-from mobile.gen.export import build_job, get_backend, available_backends
+from mobile.gen.export import build_oracle, build_export, get_backend, available_backends
 from mobile.net import protocol as P
 from mobile.net import corpus as C
 
 
-def replay_index(producer_id: str, cur: int, nodes: int = 8, leaf_prob: float = 0.3,
-                 seed: int = 0xC0FFEE, out_alias_prob: float = 0.1):
-    """Regenerate the EXACT graph a given (producer_id, cur) produced, returning
-    (graph, src). Generation is a pure function of (producer_id, cur) + these params,
-    so a failure captured in _fails/<producer_id>_<cur>.py can be re-derived and
-    inspected without re-running the whole fleet (the filename's cur is all you need).
-    `src` is None if the graph was un-emittable (an 'emit'-stage failure). Mirrors
-    run_pregen's inner loop."""
-    from mobile.gen.graph import build_graph
-    from mobile.gen.ops import load_runnable_opnodes
-    ops = load_runnable_opnodes()
-    sched_order = list(range(len(ops)))
-    random.Random(0xC0FFEE).shuffle(sched_order)
-    base = zlib.crc32(producer_id.encode()) & 0xFFFFFFFF
-    sched_offset = (base + seed) % len(ops)
-    rng = random.Random(seed * 1_000_003 + (base ^ cur) * 2_654_435_761 + 1)
-    seed_op = ops[sched_order[(sched_offset + cur) % len(ops)]]
+# ── graph derivation: a pure function of (seed, index) ──────────────────────────────
+
+def _sched_order(ops) -> list[int]:
+    """A fixed shuffle of op indices, shared by every index/process (seeded independent of
+    `seed` on purpose — the SHAPE of the schedule doesn't change with the run's seed, only
+    where in it a given index falls, via `seed`'s offset below)."""
+    order = list(range(len(ops)))
+    random.Random(0xC0FFEE).shuffle(order)
+    return order
+
+
+def seed_op_for(ops, sched_order: list[int], seed: int, index: int):
+    """The op `index` is scheduled to seed its graph with. Every op occupies its guaranteed
+    seed slot an equal number of times across the whole index space (round-robin over the
+    fixed global shuffle) instead of uniform-then-feasibility-filtered picks (which
+    structurally starve constraint-heavy ops) — a pure function of (seed, index)."""
+    offset = seed % len(ops)
+    return ops[sched_order[(offset + index) % len(ops)]]
+
+
+def rng_for(seed: int, index: int) -> random.Random:
+    return random.Random(seed * 1_000_003 + index * 2_654_435_761 + 1)
+
+
+def build_graph_for(ops, sched_order: list[int], seed: int, index: int, nodes: int,
+                    leaf_prob: float, out_alias_prob: float):
+    """(seed, index) -> (graph, seed_op), retried up to 8x (generate() is stochastic; the
+    seed_op is fixed across retries so the coverage intent holds). `graph` is None if no
+    valid DAG came out after all retries."""
+    seed_op = seed_op_for(ops, sched_order, seed, index)
+    rng = rng_for(seed, index)
     graph = None
     for _ in range(8):
         graph = build_graph(rng, ops, nodes, leaf_prob, seed_op=seed_op,
                             out_alias_prob=out_alias_prob)
         if graph is not None:
             break
+    return graph, seed_op
+
+
+def replay_index(seed: int, index: int, nodes: int = 8, leaf_prob: float = 0.3,
+                 out_alias_prob: float = 0.1):
+    """Regenerate the EXACT graph a given (seed, index) produced, returning (graph, src).
+    Generation is a pure function of (seed, index) + these params, so a failure captured in
+    _fails/<index>.py can be re-derived and inspected without re-running the whole fleet.
+    `src` is None if the graph was un-emittable (an 'emit'-stage failure)."""
+    ops = load_runnable_opnodes()
+    sched_order = _sched_order(ops)
+    graph, _ = build_graph_for(ops, sched_order, seed, index, nodes, leaf_prob, out_alias_prob)
     if graph is None:
         return None, None
     try:
@@ -66,132 +107,184 @@ def replay_index(producer_id: str, cur: int, nodes: int = 8, leaf_prob: float = 
     return graph, src
 
 
-def run_pregen(out: str, count: int, nodes: int, leaf_prob: float, seed: int,
-               producer_id: str, backend: str = "portable", quantize: bool = False,
-               out_alias_prob: float = 0.1) -> int:
-    # Lazy probe of ONLY the target backend — never load the other twelve (cost, and it keeps
-    # a hostile SDK like QNN out of an openvino worker). available_backends() (full sweep) is
-    # paid only on the error path, to list the alternatives.
-    if get_backend(backend) is None:
-        print(f"[pregen {producer_id}] unknown backend {backend!r}; "
-              f"available here: {', '.join(available_backends())}", flush=True)
-        return 1
-    print(f"[pregen {producer_id}] loading op set (backend={backend}) ...", flush=True)
-    ops = load_runnable_opnodes()
-    # crc32(id) — stable across processes/runs so a job_id reproduces its exact graph.
-    base = zlib.crc32(producer_id.encode()) & 0xFFFFFFFF
+# ── diagnostics: one file per failed graph, keyed on index (never gates control flow) ──
 
-    # Deterministic round-robin seed schedule: instead of uniform-then-feasibility-
-    # filtered seed picks (which structurally starve constraint-heavy ops), every op
-    # occupies the guaranteed seed slot an equal number of times. The op *order* is a
-    # fixed shuffle shared by all workers (so the global schedule is well-defined and
-    # reproducible); each worker is phase-shifted by its own offset so the fleet covers
-    # different ops at the same instant. Pure function of `cur` ⇒ resume/skip-safe.
-    sched_order = list(range(len(ops)))
-    random.Random(0xC0FFEE).shuffle(sched_order)
-    sched_offset = (base + seed) % len(ops)
-
-    crash_dir = Path(out) / "_crashes"
-    crash_dir.mkdir(parents=True, exist_ok=True)
-    marker = crash_dir / f"{producer_id}.py"        # the graph currently being lowered
-
-    # Indices the fleet recorded as crashing this worker — skip them on respawn.
-    skip_file = crash_dir / f"{producer_id}.skip"
-    skipped = set()
-    if skip_file.exists():
-        skipped = {int(x) for x in skip_file.read_text().split() if x.strip().lstrip('-').isdigit()}
-    # Resume: indices already written (don't redo the slice after a respawn).
-    done_idx = set()
-    for p in Path(out, producer_id).glob(f"{producer_id}_*.job"):   # this worker's shard
-        try:
-            done_idx.add(int(p.stem.rsplit("_", 1)[1]))
-        except (ValueError, IndexError):
-            pass
-    written = len(done_idx)
-    if skipped or done_idx:
-        print(f"[pregen {producer_id}] resume: {len(done_idx)} already written, "
-              f"skipping {len(skipped)} crashed", flush=True)
-
-    # ---- run stats (for the fleet's end-of-run report) --------------------------------
-    # Per-INDEX outcome map: cur -> the pipeline stage that index ended at
-    # (ready | gen_fail | emit | eager | export | transformation | lower | quant_ref |
-    # build_raise). Keyed by index, NOT a running counter, because a respawn re-processes
-    # every not-yet-written, non-crashed index — a running counter + reload would
-    # TRIPLE-count those failures on each respawn (that is why the report once showed
-    # gen_fail ≈ 20% and READY far below the real job count). Overwriting outcomes[cur] is
-    # idempotent (the outcome is a deterministic function of cur), so counts derived from
-    # this map are respawn-proof. Crashes are owned by the FLEET (it can't be recorded here
-    # — the process dies mid-build_job), so `skipped` indices are intentionally absent.
-    stats_dir = Path(out) / "_stats"
-    stats_dir.mkdir(parents=True, exist_ok=True)
-    stats_file = stats_dir / f"{producer_id}.json"
-    outcomes: dict[str, str] = {}
-    build_time_sum = 0.0      # seconds spent inside build_job (eager+export+lower)
-    build_count = 0           # number of build_job calls timed
-    gen_time_sum = 0.0        # seconds spent in graph build + emit
-    gen_count = 0
-    if stats_file.exists():
-        try:
-            prev = json.loads(stats_file.read_text())
-            outcomes = dict(prev.get("outcomes", {}))
-            build_time_sum = float(prev.get("build_time_sum", 0.0))
-            build_count = int(prev.get("build_count", 0))
-            gen_time_sum = float(prev.get("gen_time_sum", 0.0))
-            gen_count = int(prev.get("gen_count", 0))
-        except (ValueError, OSError):
-            pass  # corrupt/partial file → start this worker's tally fresh
-    # Already-written jobs (this shard's .job files on disk) are READY by definition. Seed
-    # them so a resume counts them even though the loop `continue`s straight past them.
-    for _c in done_idx:
-        outcomes[str(_c)] = "ready"
-
-    # ---- failure DETAIL log (so a non-ready stage is diagnosable without replaying) ---
-    # stage_counts records only HOW MANY attempts fell out at each stage; the *reason*
-    # (the ExportResult.detail string, the emit exception) was discarded, so diagnosing
-    # e.g. the emit bucket meant regenerating the whole corpus. Instead write ONE FILE PER
-    # FAILED GRAPH — _fails/<producer_id>_<cur>.py — mirroring the corpus's own per-job .py
-    # and the _crashes/<id>_<n>.py convention: a reason header (stage / job_id / seed_op /
-    # detail) followed by the emitted source (or the graph description when the graph was
-    # un-emittable). Written the instant the failure happens, so a later hard-crash can't
-    # lose it; the filename keys on cur, so a resume re-attempting an index just overwrites.
+def _record_fail(out: str, index: int, seed_op: str, stage: str, detail: str,
+                 graph=None, src: str | None = None) -> None:
     fails_dir = Path(out) / "_fails"
     fails_dir.mkdir(parents=True, exist_ok=True)
+    header = (f"# stage:   {stage}\n"
+              f"# job_id:  {index}\n"
+              f"# seed_op: {seed_op}\n"
+              f"# reason:  {detail}\n")
+    if src is not None:
+        body = src
+    elif graph is not None:
+        body = f"# (un-emittable — graph description only)\n# {graph.describe()}\n"
+    else:
+        body = ""
+    try:
+        (fails_dir / f"{index}.py").write_text(header + body)
+    except OSError:
+        pass                                             # a failed diag write never sinks a run
 
-    def _record_fail(stage: str, cur: int, seed_op: str, detail: str,
-                     graph=None, src: str | None = None) -> None:
-        header = (f"# stage:   {stage}\n"
-                  f"# job_id:  {producer_id}:{cur}\n"
-                  f"# seed_op: {seed_op}\n"
-                  f"# reason:  {detail}\n")
-        if src is not None:
-            body = src                                       # the emitted, runnable source
-        elif graph is not None:
-            body = f"# (un-emittable — graph description only)\n# {graph.describe()}\n"
-        else:
-            body = ""
+
+def _crash_marker(out: str, slot: str) -> Path:
+    d = Path(out) / "_crashes"
+    d.mkdir(parents=True, exist_ok=True)
+    return d / f"{slot}.py"
+
+
+def _already_written(out: str, ext: str, index: int) -> bool:
+    return C.job_file(out, str(index), ext=ext).exists()
+
+
+# ── per-index steps ──────────────────────────────────────────────────────────────────
+
+def step_oracle(out: str, ops, sched_order: list[int], seed: int, index: int, nodes: int,
+                leaf_prob: float, out_alias_prob: float, marker: Path) -> str:
+    """One oracle-stage attempt at global index `index`: graph gen + emit + eager. Returns
+    the outcome stage ("ready"|"gen_fail"|"emit"|"eager"|"build_raise"). Writes
+    <out>/<bucket>/<index>.{oracle,py} on success."""
+    job_id = str(index)
+    graph, seed_op = build_graph_for(ops, sched_order, seed, index, nodes, leaf_prob, out_alias_prob)
+    if graph is None:
+        return "gen_fail"                                # generator couldn't build a valid DAG
+    try:
+        src = graph.emit(seed=seed)
+    except Exception as e:
+        _record_fail(out, index, seed_op.op_name, "emit",
+                     f"emit raised {type(e).__name__}: {e}", graph=graph)
+        return "emit"
+    if src is None:
+        _record_fail(out, index, seed_op.op_name, "emit",
+                     "emit returned None (un-emittable arg / no schema)", graph=graph)
+        return "emit"
+    marker.write_text(f"# crashed in build_oracle (eager run) — job_id {job_id}\n{src}")
+    try:
+        result = build_oracle(src)                       # eager run; may HARD-CRASH
+    except Exception as e:
+        _record_fail(out, index, seed_op.op_name, "build_raise",
+                     f"{type(e).__name__}: {e}", src=src)
+        return "build_raise"
+    if result.status != "READY":
+        _record_fail(out, index, seed_op.op_name, result.stage, result.detail, src=src)
+        return result.stage
+    frames = P.encode_oracle(job_id, result.inputs, result.eager, desc=graph.describe())
+    C.write_job(out, job_id, frames, src=src, ext="oracle")
+    return "ready"
+
+
+def step_export(oracle_dir: str, out: str, backend: str, quantize: bool, index: int,
+                marker: Path) -> str:
+    """One export-stage attempt at global index `index`: read that index's oracle record (if
+    it exists yet — an oracle still being generated just means some indices aren't there,
+    a plain "no_oracle" skip, not an error) and lower it for `backend`. Returns the outcome
+    stage. Writes <out>/<bucket>/<index>.{job,py} on success — same on-disk shape as
+    build_job's, so broker/feed/et_runner/compare need no changes."""
+    job_id = str(index)
+    opath = C.job_file(oracle_dir, job_id, ext="oracle")
+    if not opath.exists():
+        return "no_oracle"
+    _job_id, desc, inputs, eager = P.decode_oracle(C.read_job(opath))
+    src = C.job_file(oracle_dir, job_id, ext="py").read_text()
+    marker.write_text(f"# crashed in build_export (export/lower) — job_id {job_id}\n{src}")
+    try:
+        result = build_export(src, inputs, eager, backend, quantize)  # may HARD-CRASH
+    except Exception as e:
+        _record_fail(out, index, "", "build_raise", f"{type(e).__name__}: {e}", src=src)
+        return "build_raise"
+    if result.status != "READY":
+        _record_fail(out, index, "", result.stage, result.detail, src=src)
+        return result.stage
+    _write_export_result(out, job_id, desc, backend, result, src)
+    return "ready"
+
+
+def step_full(out: str, ops, sched_order: list[int], seed: int, index: int, nodes: int,
+             leaf_prob: float, out_alias_prob: float, backend: str, quantize: bool,
+             marker: Path) -> str:
+    """One full-pipeline attempt at global index `index`: graph gen + emit + eager + export +
+    lower, all in this process (no separate oracle corpus). Returns the outcome stage."""
+    job_id = str(index)
+    graph, seed_op = build_graph_for(ops, sched_order, seed, index, nodes, leaf_prob, out_alias_prob)
+    if graph is None:
+        return "gen_fail"
+    try:
+        src = graph.emit(seed=seed)
+    except Exception as e:
+        _record_fail(out, index, seed_op.op_name, "emit",
+                     f"emit raised {type(e).__name__}: {e}", graph=graph)
+        return "emit"
+    if src is None:
+        _record_fail(out, index, seed_op.op_name, "emit",
+                     "emit returned None (un-emittable arg / no schema)", graph=graph)
+        return "emit"
+    marker.write_text(f"# crashed in build_job (eager run or lowering) — job_id {job_id}\n{src}")
+    try:
+        oracle = build_oracle(src)
+        result = oracle if oracle.status != "READY" else build_export(
+            src, oracle.inputs, oracle.eager, backend, quantize)
+    except Exception as e:
+        _record_fail(out, index, seed_op.op_name, "build_raise",
+                     f"{type(e).__name__}: {e}", src=src)
+        return "build_raise"
+    if result.status != "READY":
+        _record_fail(out, index, seed_op.op_name, result.stage, result.detail, src=src)
+        return result.stage
+    _write_export_result(out, job_id, graph.describe(), backend, result, src)
+    return "ready"
+
+
+def _write_export_result(out: str, job_id: str, desc: str, backend: str, result, src: str) -> None:
+    """Shared tail of step_export/step_full: annotate + write a READY ExportResult in the
+    pushjob format (unchanged from build_job's on-disk shape)."""
+    delegated = {"ops": result.delegated_ops, "non": result.non_delegated_ops,
+                "calls": result.delegate_calls}
+    frames = P.encode_pushjob(job_id, result.pte, result.inputs, result.eager, desc=desc,
+                              user_pos=result.user_pos, delegated=delegated)
+    src_annotated = (f"# delegated: backend={backend} ops={result.delegated_ops} "
+                     f"non_delegated={result.non_delegated_ops} "
+                     f"delegate_calls={result.delegate_calls}\n{src}")
+    C.write_job(out, job_id, frames, src=src_annotated, ext="job")
+
+
+# ── shared batch-dispatch loop ───────────────────────────────────────────────────────
+
+def _stdin_batches():
+    """Yield (start, count) batches read from stdin, one per line — see pregen_fleet.py's
+    coordinator. Only asks for MORE after the caller has finished processing the current
+    batch (the `yield` suspends here until the consuming `for` loop comes back for the next
+    one), so "__READY__" always means "I'm done with what you last gave me"."""
+    for line in sys.stdin:
+        line = line.strip()
+        if not line or line == "STOP":
+            return
+        start, count = (int(x) for x in line.split())
+        yield start, count
+        print("__READY__", flush=True)
+
+
+def run_worker(out: str, out_ext: str, slot: str, marker: Path, step_fn, batches) -> int:
+    """Shared driver for all three modes: resume-skip, per-index heartbeat, stats
+    accumulation/flush, graceful shutdown. `step_fn(index) -> stage` and `batches` (an
+    iterable of (start, count)) carry everything mode-specific."""
+    stats_dir = Path(out) / "_stats"
+    stats_dir.mkdir(parents=True, exist_ok=True)
+    stats_file = stats_dir / f"{slot}.json"
+    outcomes: dict[str, str] = {}
+    if stats_file.exists():
         try:
-            (fails_dir / f"{producer_id}_{cur}.py").write_text(header + body)
-        except OSError:
-            pass                                             # a failed diag write never sinks a run
+            outcomes = dict(json.loads(stats_file.read_text()).get("outcomes", {}))
+        except (ValueError, OSError):
+            pass                                         # corrupt/partial file → fresh tally
 
     def _flush_stats() -> None:
-        # `stages` is derived from the per-index map, so it is the same no matter how many
-        # respawns produced `outcomes`. `outcomes` is persisted so the next respawn resumes
-        # the map (not a lossy count).
         tmp = stats_file.with_suffix(".json.tmp")
-        tmp.write_text(json.dumps({
-            "producer_id": producer_id,
-            "stages": dict(Counter(outcomes.values())),
-            "outcomes": outcomes,
-            "build_time_sum": build_time_sum,
-            "build_count": build_count,
-            "gen_time_sum": gen_time_sum,
-            "gen_count": gen_count,
-        }))
-        tmp.replace(stats_file)  # atomic — the fleet may read this concurrently
+        tmp.write_text(json.dumps({"slot": slot, "stages": dict(Counter(outcomes.values())),
+                                   "outcomes": outcomes}))
+        tmp.replace(stats_file)                          # atomic — the fleet may read concurrently
 
-    # A graceful stop (Ctrl-C / fleet shutdown) is NOT a crash — persist stats, clear the
-    # marker, and go. Flushing here means an interrupted run still reports what it did.
     def _graceful(*_):
         try:
             _flush_stats()
@@ -202,85 +295,55 @@ def run_pregen(out: str, count: int, nodes: int, leaf_prob: float, seed: int,
     signal.signal(signal.SIGTERM, _graceful)
     signal.signal(signal.SIGINT, _graceful)
 
-    idx = 0
-    while idx < count:                              # count = number of graph ATTEMPTS, not
-        cur = idx                                   # successes — crashes/fails consume a slot
-        idx += 1                                    # and we move on. lower-rate = jobs / count.
-        if cur in skipped or cur in done_idx:
-            continue                                # known crash / already written → skip
-        rng = random.Random(seed * 1_000_003 + (base ^ cur) * 2_654_435_761 + 1)
-        # This index's scheduled seed op (kept fixed across the 8 retries so the
-        # coverage intent holds; generate() is stochastic, so retries can still
-        # succeed for a seed-finicky op).
-        seed_op = ops[sched_order[(sched_offset + cur) % len(ops)]]
-        graph = None
-        gen_t0 = time.perf_counter()
-        for _ in range(8):
-            graph = build_graph(rng, ops, nodes, leaf_prob, seed_op=seed_op,
-                                out_alias_prob=out_alias_prob)
-            if graph is not None:
-                break
-        if graph is None:
-            outcomes[str(cur)] = "gen_fail"         # generator couldn't build a valid DAG
-            continue
-        job_id = f"{producer_id}:{cur}"
-        try:
-            src = graph.emit(seed=seed)
-        except Exception as e:
-            outcomes[str(cur)] = "emit"
-            _record_fail("emit", cur, seed_op.op_name,
-                         f"emit raised {type(e).__name__}: {e}", graph=graph)
-            continue
-        if src is None:
-            outcomes[str(cur)] = "emit"             # un-emittable → skip
-            _record_fail("emit", cur, seed_op.op_name,
-                         "emit returned None (un-emittable arg / no schema)", graph=graph)
-            continue
-        gen_dt = time.perf_counter() - gen_t0
+    written = 0
+    for start, count in batches:
+        for index in range(start, start + count):
+            if _already_written(out, out_ext, index):
+                continue                                 # resume / crash-requeue: idempotent skip
+            print(f"__HB__ {index}", flush=True)
+            outcomes[str(index)] = step_fn(index)
+            if outcomes[str(index)] == "ready":
+                written += 1
+        _flush_stats()                                   # checkpoint after every batch
 
-        # Heartbeat for the fleet's hang-watchdog: a worker stuck inside build_job emits
-        # no further line, so the fleet (reading our stdout) detects the stall. The index
-        # rides along so the fleet knows what to skip.
-        print(f"__HB__ {cur}", flush=True)
-        marker.write_text(f"# crashed in build_job (eager run or lowering) — job_id {job_id}\n{src}")
-        build_t0 = time.perf_counter()
-        try:
-            job = build_job(src, backend, quantize)  # eager run + lowering; may HARD-CRASH
-        except Exception as e:
-            outcomes[str(cur)] = "build_raise"      # catchable error → SKIP (marker reused)
-            _record_fail("build_raise", cur, seed_op.op_name,
-                         f"{type(e).__name__}: {e}", src=src)
-            continue
-        build_dt = time.perf_counter() - build_t0
-        outcomes[str(cur)] = job.stage              # bucket by where it ended (ready = success)
-        if job.status != "READY":
-            _record_fail(job.stage, cur, seed_op.op_name, job.detail, src=src)
-            continue                                # eager-raise / export/lower-fail → skip
-        # Successful build only: record timing so the average reflects real job cost, not
-        # cheap early failures (per user's request).
-        gen_time_sum += gen_dt
-        gen_count += 1
-        build_time_sum += build_dt
-        build_count += 1
-        delegated = {"ops": job.delegated_ops, "non": job.non_delegated_ops,
-                     "calls": job.delegate_calls}
-        frames = P.encode_pushjob(job_id, job.pte, job.inputs, job.eager,
-                                  desc=graph.describe(), user_pos=job.user_pos,
-                                  delegated=delegated)
-        # Annotate the inspectable source with the delegation breakdown (backend=how many
-        # ops the partitioner absorbed vs left on portable) so single-op corpus is greppable.
-        src_annotated = (f"# delegated: backend={backend} ops={job.delegated_ops} "
-                         f"non_delegated={job.non_delegated_ops} "
-                         f"delegate_calls={job.delegate_calls}\n{src}")
-        C.write_job(out, job_id, frames, src=src_annotated)
-        written += 1
-        if written % 100 == 0:
-            print(f"[pregen {producer_id}] {written}/{count} → {out}", flush=True)
-            _flush_stats()                          # periodic checkpoint (survives a crash)
-
-    marker.unlink(missing_ok=True)                  # finished cleanly → no crash
-    _flush_stats()
-    avg_ms = (build_time_sum / build_count * 1e3) if build_count else 0.0
-    print(f"[pregen {producer_id}] done: {written} jobs in {out}/  "
-          f"(avg build {avg_ms:.0f} ms over {build_count} READY)", flush=True)
+    marker.unlink(missing_ok=True)                        # finished cleanly → no crash
+    ready = sum(1 for v in outcomes.values() if v == "ready")
+    print(f"[pregen {slot}] done: {written} written this run ({ready} ready total) → {out}/",
+          flush=True)
     return 0
+
+
+# ── CLI entry (see pregen.py / mobile/__main__.py) ───────────────────────────────────
+
+def run(mode: str, out: str, oracle: str, seed: int, nodes: int, leaf_prob: float,
+       out_alias_prob: float, backend: str, quantize: bool, slot: str,
+       start: int, count: int, use_stdin: bool) -> int:
+    if mode in ("export", "full") and get_backend(backend) is None:
+        print(f"[pregen {slot}] unknown backend {backend!r}; "
+              f"available here: {', '.join(available_backends())}", flush=True)
+        return 1
+
+    ops = sched_order = None
+    if mode in ("oracle", "full"):
+        print(f"[pregen {slot}] loading op set ...", flush=True)
+        ops = load_runnable_opnodes()
+        sched_order = _sched_order(ops)
+
+    marker = _crash_marker(out, slot)
+    if mode == "oracle":
+        out_ext = "oracle"
+        step_fn = lambda index: step_oracle(out, ops, sched_order, seed, index, nodes,
+                                            leaf_prob, out_alias_prob, marker)
+    elif mode == "export":
+        out_ext = "job"
+        step_fn = lambda index: step_export(oracle, out, backend, quantize, index, marker)
+    elif mode == "full":
+        out_ext = "job"
+        step_fn = lambda index: step_full(out, ops, sched_order, seed, index, nodes,
+                                          leaf_prob, out_alias_prob, backend, quantize, marker)
+    else:
+        print(f"[pregen {slot}] unknown mode {mode!r} (have: oracle, export, full)", flush=True)
+        return 1
+
+    batches = _stdin_batches() if use_stdin else [(start, count)]
+    return run_worker(out, out_ext, slot, marker, step_fn, batches)

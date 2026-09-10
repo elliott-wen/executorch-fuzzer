@@ -1,0 +1,47 @@
+op	annotated	n_qdq	lowered	deleg_ops	note
+_adaptive_avg_pool2d	YES	2	READY	2	
+_cdist_forward	YES	4	READY	4	
+_fft_r2c	YES	2	READY	2	
+_log_softmax.out	YES	2	READY	3	
+_native_batch_norm_legit.no_stats	YES	2	READY	2	
+_native_batch_norm_legit_no_training	ERR	0	-	-	Exception: Expected input_edge to have type Tuple[Node, Node], but got: (None, _native_batc
+_pdist_forward	no	0	-	-	
+_softmax.out	YES	2	READY	3	
+_upsample_bilinear2d_aa.out	YES	2	READY	2	
+abs	YES	2	READY	2	
+abs.out	YES	2	READY	2	
+acos.out	no	0	-	-	
+acosh.out	no	0	-	-	
+add.Scalar	no	0	-	-	
+addmm.out	YES	6	SKIP	-	to_executorch RuntimeError: aten.addmm.default is not supported in ENN
+alias_copy	YES	2	READY	2	
+amax.out	no	0	-	-	
+amin.out	YES	2	READY	2	
+any.all_out	no	0	-	-	
+any.dims_out	no	0	-	-	
+arange.out	no	0	-	-	
+arange.start_out	no	0	-	-	
+argmax.out	YES	2	READY	2	
+argmin.out	no	0	-	-	
+asin.out	YES	2	READY	2	
+asinh.out	no	0	-	-	
+atan.out	YES	2	READY	2	
+atan2.out	no	0	-	-	
+atanh.out	YES	2	READY	2	
+avg_pool2d.out	no	0	-	-	
+bitwise_and.Scalar	no	0	-	-	
+bitwise_and.Scalar_out	no	0	-	-	
+bitwise_and.Tensor_out	no	0	-	-	
+bitwise_left_shift.Tensor_Scalar	no	0	-	-	
+bitwise_left_shift.Tensor_Scalar_out	no	0	-	-	
+bitwise_left_shift.Tensor_out	no	0	-	-	
+bitwise_not.out	no	0	-	-	
+bitwise_or.Scalar	no	0	-	-	
+bitwise_or.Scalar_out	no	0	-	-	
+bitwise_or.Tensor_out	no	0	-	-	
+bitwise_right_shift.Tensor_Scalar	no	0	-	-	
+bitwise_right_shift.Tensor_Scalar_out	no	0	-	-	
+bitwise_right_shift.Tensor_out	no	0	-	-	
+bitwise_xor.Scalar	no	0	-	-	
+bitwise_xor.Scalar_out	no	0	-	-	
+bitwise_xor.Tensor_out	no	0	-	-	

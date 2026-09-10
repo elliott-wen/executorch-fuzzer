@@ -1,0 +1,36 @@
+I tokenizers:regex.cpp:27] Registering override fallback regex
+  [openvino] 25/209
+  [openvino] 50/209
+  [openvino] 75/209
+  [openvino] 100/209
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943] failed while attempting to run meta for quantized_decomposed.quantize_per_tensor.default
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943] Traceback (most recent call last):
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]   File "/data/jwen929/mobile/.venv/lib64/python3.12/site-packages/torch/_subclasses/fake_tensor.py", line 2939, in _dispatch_impl
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]     r = func(*args, **kwargs)
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]         ^^^^^^^^^^^^^^^^^^^^^
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]   File "/data/jwen929/mobile/.venv/lib64/python3.12/site-packages/torch/_ops.py", line 871, in __call__
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]     return self._op(*args, **kwargs)
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]   File "/data/jwen929/mobile/.venv/lib64/python3.12/site-packages/torch/ao/quantization/fx/_decomposed.py", line 100, in quantize_per_tensor_meta
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]     raise AssertionError(
+E0908 08:49:08.864000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943] AssertionError: Expecting input to have dtype torch.float32, but got dtype: torch.float8_e4m3fn
+  [openvino] 125/209
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943] failed while attempting to run meta for quantized_decomposed.quantize_per_tensor.default
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943] Traceback (most recent call last):
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]   File "/data/jwen929/mobile/.venv/lib64/python3.12/site-packages/torch/_subclasses/fake_tensor.py", line 2939, in _dispatch_impl
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]     r = func(*args, **kwargs)
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]         ^^^^^^^^^^^^^^^^^^^^^
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]   File "/data/jwen929/mobile/.venv/lib64/python3.12/site-packages/torch/_ops.py", line 871, in __call__
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]     return self._op(*args, **kwargs)
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]   File "/data/jwen929/mobile/.venv/lib64/python3.12/site-packages/torch/ao/quantization/fx/_decomposed.py", line 100, in quantize_per_tensor_meta
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943]     raise AssertionError(
+E0908 08:49:17.954000 1107958 mobile/.venv/lib/python3.12/site-packages/torch/_subclasses/fake_tensor.py:2943] AssertionError: Expecting input to have dtype torch.float32, but got dtype: torch.uint8
+  [openvino] 150/209
+  [openvino] 175/209
+  [openvino] 200/209
+[W908 08:49:28.633097550 ReduceOps.cpp:1879] Warning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (function warn_invalid_degrees_of_freedom)
+Op not supported:  torch.ops.aten.round.default
+
+== openvino: ops=209  ANNOTATED=17  not=180  ERR=12
+   of ANNOTATED: LOWERED READY=13  DELEGATED(ops>=1)=13

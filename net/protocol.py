@@ -31,7 +31,7 @@ _DT2CODE = None
 def _dtype_maps():
     global _CODE2DT, _DT2CODE
     if _CODE2DT is None:
-        from mobile.gen.concretize import _torch_dtypes  # int code -> torch.dtype
+        from mobile.generator.concretize import _torch_dtypes  # int code -> torch.dtype
         _CODE2DT = _torch_dtypes()
         _DT2CODE = {v: k for k, v in _CODE2DT.items()}
     return _CODE2DT, _DT2CODE
@@ -48,6 +48,20 @@ def tensor_to_meta_blob(t) -> tuple[dict, bytes]:
         raise ValueError(f"no ScalarType code for dtype {buf.dtype}")
     raw = bytes(buf.untyped_storage())[: buf.numel() * buf.element_size()]
     return {"dtype": code, "dims": list(buf.shape)}, raw
+
+
+def meta_nbytes(meta: dict) -> int:
+    """How many raw bytes a tensor described by `meta` must occupy. Lets a file-I/O client
+    (fvp/nxp/cadence runners, which get back only raw bytes) VALIDATE a runner's output against
+    the carried meta instead of reinterpreting a wrong-sized buffer through it — a size
+    mismatch means the lowered program's output dtype diverged from the eager reference."""
+    import torch
+
+    code2dt, _ = _dtype_maps()
+    numel = 1
+    for d in meta["dims"]:
+        numel *= d
+    return numel * torch.empty(0, dtype=code2dt[meta["dtype"]]).element_size()
 
 
 def tensor_from_meta_blob(meta: dict, raw: bytes):
@@ -133,6 +147,31 @@ def encode_pushjob(job_id: str, pte: bytes, inputs: list, eager: list,
     if delegated is not None:
         header["delegated"] = delegated   # {"ops": n, "non": m, "calls": k} — delegation breakdown
     return _pack(header, payload)
+
+
+# ── oracle (pregen's shared, backend-agnostic stage) ──────────────────────────
+
+def encode_oracle(job_id: str, inputs: list, eager: list, desc: str = "") -> list[bytes]:
+    """The oracle record (written by the ORACLE pregen stage, read by the EXPORT stage):
+    inputs + eager, no pte, no backend involved yet. Mirrors encode_pushjob minus the pte
+    frame — an export stage re-execs the graph SOURCE (kept alongside, corpus/<job_id>.py)
+    for the callable, and reuses these tensors instead of recomputing them."""
+    in_metas, in_raws = _metas_raws(inputs)
+    eg_metas, eg_raws = _metas_raws(eager)
+    payload = [gzip.compress(b) for b in (*in_raws, *eg_raws)]
+    header = {"job_id": job_id, "inputs": in_metas, "eager": eg_metas, "desc": desc or ""}
+    return _pack(header, payload)
+
+
+def decode_oracle(frames: list[bytes]) -> tuple[str, str, list, list]:
+    """→ (job_id, desc, inputs, eager)."""
+    header = json.loads(frames[0].decode("utf-8"))
+    n_in = len(header["inputs"])
+    raws = [gzip.decompress(b) for b in frames[1:]]
+    in_raws, eg_raws = raws[:n_in], raws[n_in:]
+    inputs = [tensor_from_meta_blob(m, b) for m, b in zip(header["inputs"], in_raws)]
+    eager = [tensor_from_meta_blob(m, b) for m, b in zip(header["eager"], eg_raws)]
+    return header["job_id"], header.get("desc", ""), inputs, eager
 
 
 def peek_jobinfo(frames: list[bytes]) -> tuple[str, str]:

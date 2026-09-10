@@ -1,0 +1,12 @@
+{"tried": 25, "ready": 25, "notready": 0, "exc": 0, "deleg": 50, "mismatch_blobs": 3, "mismatch_jobs": 3, "dup_outid_blobs": 0}
+{"tried": 50, "ready": 50, "notready": 0, "exc": 0, "deleg": 95, "mismatch_blobs": 6, "mismatch_jobs": 6, "dup_outid_blobs": 0}
+{"tried": 75, "ready": 75, "notready": 0, "exc": 0, "deleg": 147, "mismatch_blobs": 6, "mismatch_jobs": 6, "dup_outid_blobs": 0}
+{"tried": 100, "ready": 100, "notready": 0, "exc": 0, "deleg": 203, "mismatch_blobs": 7, "mismatch_jobs": 7, "dup_outid_blobs": 0}
+{"tried": 125, "ready": 125, "notready": 0, "exc": 0, "deleg": 258, "mismatch_blobs": 9, "mismatch_jobs": 9, "dup_outid_blobs": 0}
+{"tried": 150, "ready": 150, "notready": 0, "exc": 0, "deleg": 317, "mismatch_blobs": 12, "mismatch_jobs": 12, "dup_outid_blobs": 0}
+{"tried": 175, "ready": 175, "notready": 0, "exc": 0, "deleg": 368, "mismatch_blobs": 12, "mismatch_jobs": 12, "dup_outid_blobs": 0}
+{"tried": 200, "ready": 200, "notready": 0, "exc": 0, "deleg": 418, "mismatch_blobs": 14, "mismatch_jobs": 14, "dup_outid_blobs": 0}
+{"tried": 225, "ready": 225, "notready": 0, "exc": 0, "deleg": 468, "mismatch_blobs": 15, "mismatch_jobs": 15, "dup_outid_blobs": 0}
+{"tried": 250, "ready": 250, "notready": 0, "exc": 0, "deleg": 525, "mismatch_blobs": 17, "mismatch_jobs": 17, "dup_outid_blobs": 0}
+{"tried": 275, "ready": 275, "notready": 0, "exc": 0, "deleg": 569, "mismatch_blobs": 18, "mismatch_jobs": 18, "dup_outid_blobs": 0}
+{"tried": 300, "ready": 300, "notready": 0, "exc": 0, "deleg": 620, "mismatch_blobs": 21, "mismatch_jobs": 21, "dup_outid_blobs": 0}
