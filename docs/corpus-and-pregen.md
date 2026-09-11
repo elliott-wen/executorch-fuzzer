@@ -2,8 +2,8 @@
 
 Generation is **offline and pre-generated to disk**: graphs are built and lowered
 once, into a corpus, then replayed by the online fleet. This makes runs reproducible
-and every graph inspectable. Code: `net/pregen.py` (one worker), `pregen_fleet.py`
-(the parallel supervisor), `net/corpus.py` (the on-disk store), `run_pregen.sh`
+and every graph inspectable. Code: `executor/pregen.py` (one worker), `pregen_fleet.py`
+(the parallel supervisor), `executor/corpus.py` (the on-disk store), `run_pregen.sh`
 (turnkey launcher).
 
 ## What a corpus looks like
@@ -22,7 +22,7 @@ A broker row `MISMATCH p0:12` ⇒ open `corpus/<out>/p0_12.py`.
 
 ## One worker: `run_pregen`
 
-For each index `cur` in its slice (`net/pregen.py`):
+For each index `cur` in its slice (`executor/pregen.py`):
 
 1. seed the graph with this index's **scheduled** op (round-robin — see
    [graph-generation.md](graph-generation.md)),

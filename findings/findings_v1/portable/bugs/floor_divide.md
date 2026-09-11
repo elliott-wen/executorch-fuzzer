@@ -85,7 +85,7 @@ both error out (consistent behavior, surfaces as CRASH not MISMATCH).
 
 ## Reproduction
 Minimal exported graph (`torch.floor_divide`) run through the portable runtime
-(`mobile.net.et_runner.run_pte`), inputs identical to eager:
+(`mobile.executor.et_runner.run_pte`), inputs identical to eager:
 
 FLOAT32, `a=[0,1,-1,5] b=[0,0,0,2]`:
 ```

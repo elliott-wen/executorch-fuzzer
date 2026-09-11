@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 sys.path.insert(0, "/data/jwen929")
 import torch, zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 
 SRC = 'import torch\ndef _first(r):\n    if isinstance(r, torch.Tensor): return r\n    if isinstance(r, (tuple, list)):\n        for x in r:\n            if isinstance(x, torch.Tensor): return x\n    return r\nB0 = torch.tensor([0, 0, 0, 0, 0, 0], dtype=torch.int64).reshape([2, 3])\nLEAVES = [B0]\ndef g(B0):\n    T = _first(_first(torch.ops.aten.any.dims_out(B0, None, True, out=torch.empty((1, 1), dtype=torch.uint8))))\n    return (T,)\n'
 

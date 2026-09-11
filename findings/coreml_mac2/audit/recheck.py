@@ -2,8 +2,8 @@ import os,sys,warnings,logging
 os.environ.setdefault("CUDA_VISIBLE_DEVICES","")
 sys.path.insert(0,"/data/jwen929"); warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 from mobile.gen.export import build_job
-from mobile.net.et_runner import run_pte
-from mobile.net import compare as cmp, corpus as C
+from mobile.executor.et_runner import run_pte
+from mobile.executor import compare as cmp, corpus as C
 BK=os.environ["BK"]
 CASES=[("w101:421",3),("w124:557",2),("w65:544",1)]
 for jid,oi in CASES:

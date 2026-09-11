@@ -10,7 +10,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 sys.path.insert(0, "/data/jwen929")
 import warnings, logging
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 from mobile.gen.export import build_job
 from mobile.gen.diff.cone_predicate import cone_localizer
 from executorch.exir._serialize._program import deserialize_pte_binary

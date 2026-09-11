@@ -55,7 +55,7 @@
   [46] MISMATCH w0:553 out[1] max|delta|=2.560e+02 (rtol=0.01 atol=0.001)
   [47] MISMATCH w0:582 out[2] max|delta|=1.000e+00 (rtol=0.01 atol=0.001)
   [50] MISMATCH w0:599 out[1] max|delta|=2.560e+02 (rtol=0.01 atol=0.001)
-/data/jwen929/mobile/net/compare.py:52: UserWarning: Casting complex values to real discards the imaginary part (Triggered internally at /pytorch/aten/src/ATen/native/Copy.cpp:308.)
+/data/jwen929/mobile/executor/compare.py:52: UserWarning: Casting complex values to real discards the imaginary part (Triggered internally at /pytorch/aten/src/ATen/native/Copy.cpp:308.)
   af, bf = a.float(), b.float()
   [71] MISMATCH w1:102 out[1] max|delta|=1.331e+00 (rtol=0.01 atol=0.001)
   [t= 136s] 79/10518 ( 0.6/s)  ok=43 mism=12 crash=1 timeout=1 skip=22  |  inflight=23

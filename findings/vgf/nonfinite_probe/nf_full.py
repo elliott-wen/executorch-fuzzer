@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from nf_common import load_rows, srcs_for, leaf_tensors, nf_signature, classify
 from mobile.gen.export import build_job
-from mobile.net import compare as cmp
+from mobile.executor import compare as cmp
 
 
 def _work(q, src, pos, backend):
@@ -23,7 +23,7 @@ def _work(q, src, pos, backend):
         if j.status != "READY":
             q.put(dict(res=f"BUILD:{j.status}")); return
         d = dict(d=j.delegated_ops, nd=j.non_delegated_ops, calls=j.delegate_calls)
-        from mobile.net.et_runner import run_pte
+        from mobile.executor.et_runner import run_pte
         raw = run_pte(j.pte, j.inputs)
         et = cmp.select(list(raw), j.user_pos)
         if len(et) > len(j.eager):

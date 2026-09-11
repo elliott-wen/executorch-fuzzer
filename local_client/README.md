@@ -3,7 +3,7 @@
 Every worker in here executes a lowered `.pte` **on this machine** (host CPU, host GPU, or a
 host-side simulator/emulator), as opposed to the on-device workers that run on a phone over the
 broker. They all pull jobs from the broker exactly like a device worker, so the feeder cannot
-tell the difference — see `net/broker.py` and `net/feed.py`.
+tell the difference — see `executor/broker.py` and `executor/feed.py`.
 
 | client | how it executes | needs |
 |---|---|---|

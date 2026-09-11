@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 sys.path.insert(0, "/data/jwen929")
 import torch, zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 
 SRC = 'import torch\ndef _first(r):\n    if isinstance(r, torch.Tensor): return r\n    if isinstance(r, (tuple, list)):\n        for x in r:\n            if isinstance(x, torch.Tensor): return x\n    return r\nB0 = torch.tensor([0.6749985218048096, 0.6749985218048096, 0.6749985218048096, 0.6749985218048096, 0.6749985218048096, 0.6749985218048096, 0.6749985218048096, 0.6749985218048096, 0.789498507976532, 0.789498507976532, 0.789498507976532, 0.789498507976532, 0.789498507976532, 0.789498507976532, 0.789498507976532, 0.789498507976532], dtype=torch.float32).reshape([2, 2, 4, 1])\nB1 = torch.tensor([0.20759232342243195, 0.20759232342243195, 0.20759232342243195, 0.20759232342243195, 0.20759232342243195, 0.20759232342243195, 0.20759232342243195, 0.20759232342243195, 0.3885127305984497, 0.3885127305984497, 0.3885127305984497, 0.3885127305984497, 0.3885127305984497, 0.3885127305984497, 0.3885127305984497, 0.3885127305984497], dtype=torch.float32).reshape([2, 2, 4, 1])\nLEAVES = [B0, B1]\ndef g(B0, B1):\n    T = _first(_first(torch.ops.aten.pow.Tensor_Scalar_out(B0, 4, out=B1)))\n    return (T,)\n'
 

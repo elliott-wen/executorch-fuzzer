@@ -39,7 +39,7 @@ def main():
     print("lower:", j.status, j.detail[:120])
     if j.status != "READY":
         return
-    from mobile.net.et_runner import run_pte
+    from mobile.executor.et_runner import run_pte
     try:
         out = run_pte(j.pte, j.inputs)
     except Exception as e:

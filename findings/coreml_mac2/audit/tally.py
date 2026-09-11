@@ -1,6 +1,6 @@
 import re,sys,collections,os
 sys.path.insert(0,"/data/jwen929")
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 CORPUS="/data/jwen929/mobile/corpus_v4/coreml"
 D="/data/jwen929/mobile/findings/coreml_mac2"
 rows=[l.split("\t") for l in open(f"{D}/graphopt_mechanisms.tsv").read().splitlines()[1:] if l.strip()]

@@ -59,7 +59,7 @@ warnings.filterwarnings("ignore")
 import torch
 from torch.export import export
 from executorch.exir import to_edge
-from mobile.net import et_runner
+from mobile.executor import et_runner
 
 KERNEL=[2,2]; STRIDE=[1,1]; PADDING=[0,0]; DILATION=[1,1]; CEIL=False
 

@@ -11,8 +11,8 @@ sys.path.insert(0,"/data/jwen929")
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from mobile.gen.export import build_job
-from mobile.net.et_runner import run_pte
-from mobile.net import compare as cmp
+from mobile.executor.et_runner import run_pte
+from mobile.executor import compare as cmp
 
 HDR = '''import torch
 torch.manual_seed(12648430)

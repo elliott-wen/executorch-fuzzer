@@ -95,7 +95,7 @@ OK 963 · MISMATCH 4 · CRASH 1 · SKIP 32        (was: 72.5% SKIP)
 ## Files
 | file | role |
 |------|------|
-| `cadence_client.py` | broker client loop + `CadenceExecutor`; reuses `mobile.net.protocol`. Mirrors `nxp_client.py`. |
+| `cadence_client.py` | broker client loop + `CadenceExecutor`; reuses `mobile.executor.protocol`. Mirrors `nxp_client.py`. |
 | `cadence_runner.sh` | device seam: run one `.pte` on `cadence_runner_io`, emit `out_<i>.bin`. |
 | `cadence_runner_io.cpp` | file-I/O runner: load `.pte`, read raw inputs, execute on generic kernels, write raw outputs. |
 | `gen_custom_ops_yaml.py` | splits `aot/functions.yaml` into its `cadence::`-only half (see above). |

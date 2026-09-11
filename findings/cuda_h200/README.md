@@ -3,7 +3,7 @@
 ExecuTorch CUDA backend (`EXECUTORCH_BUILD_CUDA=ON`, torch 2.12.0+cu130, from-source
 executorch 1.4.0a0), run on 7× NVIDIA H200. Corpus: `corpus_v3/cuda`, **83,534 single-operator
 graphs** (`--nodes 1`), 200 of 225 scheduled ops produced. Every job is diffed against the CPU
-eager fp32 oracle by `net/compare.py`.
+eager fp32 oracle by `executor/compare.py`.
 
 **Whole-graph delegation ⇒ no portable-fallback confound.** The AOTI partitioner takes the whole
 graph, so **all 83,534 jobs are delegated (`ops≥1`)** — step 3a is a no-op: every non-OK outcome

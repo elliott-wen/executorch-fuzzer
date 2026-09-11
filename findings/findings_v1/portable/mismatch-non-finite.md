@@ -223,6 +223,6 @@ harness checks NaN/Inf positions exactly, so any NaN-laundering difference
 
 Reproductions were produced with
 `/data/jwen929/mobile/tmp/run_portable/cmp_nonfinite.py` (portable via
-`mobile.net.et_runner.run_pte` on stored job inputs, eager via the module's
+`mobile.executor.et_runner.run_pte` on stored job inputs, eager via the module's
 `g(*inputs)`), against
 `/data/jwen929/mobile/corpus/portable/w0/w0_{116,1490,313,752,126,455,143,1792,1515}.py`.

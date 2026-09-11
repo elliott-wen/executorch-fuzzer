@@ -56,7 +56,7 @@ backend, quantize = sys.argv[1], sys.argv[2] == "1"
 # LAZY-load ONLY the samsung backend. Do NOT call available_backends() here: it does a full
 # backend sweep that imports QNN (and other SDKs) into this process, and co-loading QNN
 # destabilizes the Exynos ENN LiteCore compiler → it aborts with `std::bad_cast` mid-lowering.
-# get_backend() imports samsung alone (the worker in net/pregen.py loads the same way).
+# get_backend() imports samsung alone (the worker in executor/pregen.py loads the same way).
 from mobile.gen.export import build_job, get_backend, available_backends
 if get_backend(backend) is None:
     sys.exit(f"backend {backend!r} not available; have {available_backends()} "

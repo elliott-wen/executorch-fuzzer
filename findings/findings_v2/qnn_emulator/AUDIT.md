@@ -375,7 +375,7 @@ delegated ones (`deleg_ops=3`/`4`) return unmatched `[nan, 0.0]`. **[I]**
 Caveat: this project's own memory (`delegation-metric-plumbing-inflation`) records that
 `delegated_ops` over-counts, so treat the 40/60 split as a proxy. **[I]**
 
-### (d) `net/compare.py::select` silent fallback — **checked, NOT implicated [V] (negative result)**
+### (d) `executor/compare.py::select` silent fallback — **checked, NOT implicated [V] (negative result)**
 
 `select` does silently return *all* outputs when `user_pos` is out of range, and this hazard did
 break the VGF SHAPE category. It does **not** apply here:

@@ -62,7 +62,7 @@ r = ref.flatten().float(); d = dev.flatten().float()
 if r.numel() != d.numel(): return "SHAPE"
 ```
 
-and `net/compare.py:select()` **silently falls back to returning every output** when `user_pos`
+and `executor/compare.py:select()` **silently falls back to returning every output** when `user_pos`
 does not index into the tensor list it was handed:
 
 ```python
@@ -78,7 +78,7 @@ and the device produces the right number of bytes (check 3). It is a sufficient 
 label, though the original run's client path could not be replayed exactly to confirm it fired.
 
 ## Recommended fixes
-- `net/compare.py::select` — raise on an out-of-range `user_pos` instead of falling back; a silent
+- `executor/compare.py::select` — raise on an out-of-range `user_pos` instead of falling back; a silent
   substitution of the wrong output is worse than an error.
 - `mech()` — separate "output shapes differ" from "compared the wrong output"; assert
   `len(ref) == len(dev)` before indexing.

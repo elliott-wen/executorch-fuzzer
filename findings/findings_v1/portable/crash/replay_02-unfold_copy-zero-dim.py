@@ -19,7 +19,7 @@ CHILD = r"""
 import os, sys
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 sys.path.insert(0, "/data/jwen929")
-from mobile.net import corpus, protocol, et_runner
+from mobile.executor import corpus, protocol, et_runner
 frames = corpus.read_job(sys.argv[1])
 job_id, pte, inputs = protocol.decode_job(protocol.job_frames_from_pushjob(frames))
 et_runner.run_pte(pte, inputs)     # native abort here = the CRASH

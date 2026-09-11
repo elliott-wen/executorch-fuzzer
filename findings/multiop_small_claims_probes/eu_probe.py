@@ -11,7 +11,7 @@ sys.path.insert(0,"/data/jwen929")
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from mobile.gen.export import build_job
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 from executorch.exir._serialize._program import deserialize_pte_binary
 CO="/data/jwen929/mobile/corpus_v2/ethos-u"
 

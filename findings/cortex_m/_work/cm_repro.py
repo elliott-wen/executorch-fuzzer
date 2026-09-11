@@ -16,9 +16,9 @@ from pathlib import Path
 
 sys.path.insert(0, "/data/jwen929")
 import torch
-from mobile.net import protocol as P
-from mobile.net import corpus as C
-from mobile.net import compare as CMP
+from mobile.executor import protocol as P
+from mobile.executor import corpus as C
+from mobile.executor import compare as CMP
 
 MOBILE = Path("/data/jwen929/mobile")
 FVP_RUNNER = MOBILE / "fvp_client" / "fvp_runner.sh"

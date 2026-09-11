@@ -7,8 +7,8 @@ job on the live fleet to get the device output. Usage:
 import sys, json, subprocess
 sys.path.insert(0, "/data/jwen929")
 from pathlib import Path
-from mobile.net import corpus as C
-from mobile.net import protocol as P
+from mobile.executor import corpus as C
+from mobile.executor import protocol as P
 import torch
 
 ROOT = Path("/data/jwen929/mobile")

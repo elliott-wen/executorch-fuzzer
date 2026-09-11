@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore")
 import torch
 from torch.export import export
 from executorch.exir import to_edge
-from mobile.net import et_runner
+from mobile.executor import et_runner
 
 
 class M(torch.nn.Module):

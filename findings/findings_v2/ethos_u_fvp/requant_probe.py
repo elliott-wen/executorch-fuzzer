@@ -10,7 +10,7 @@ sys.path.insert(0, "/data/jwen929")
 import warnings, logging
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 from mobile.gen.export import build_job
 from mobile.gen.diff.cone_predicate import output_set_localizer
 

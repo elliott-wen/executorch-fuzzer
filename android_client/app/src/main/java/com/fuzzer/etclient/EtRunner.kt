@@ -6,7 +6,7 @@ import java.io.File
 
 /**
  * Loads a .pte into the ExecuTorch runtime and runs forward(inputs). Mirrors
- * mobile/net/runtime_run.py — the work a phone client does natively.
+ * mobile/executor/runtime_run.py — the work a phone client does natively.
  *
  * A hard kernel failure is a NATIVE abort that takes the whole process down; the crash
  * breadcrumb in FuzzClient then reports the killed job as CRASH — the fuzzing signal we want.

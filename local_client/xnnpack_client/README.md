@@ -20,12 +20,12 @@ the *same* in-process runtime — no separate client is needed for them). A hard
 failure is a **native abort** that takes the process down, so each job runs in a
 disposable **warm fork**: a native abort →
 CRASH + respawn, a hung kernel → TIMEOUT + respawn. The worker ALWAYS returns a verdict
-(RAN/SKIP/CRASH/TIMEOUT). The broker, feeder, and `net/compare.py` are unchanged.
+(RAN/SKIP/CRASH/TIMEOUT). The broker, feeder, and `executor/compare.py` are unchanged.
 
 ## Files
 | file | role |
 |------|------|
-| `xnnpack_client.py` | broker client loop (REQ work-pull) + warm-fork `Executor`; reuses `mobile.net.protocol` + `mobile.net.et_runner` |
+| `xnnpack_client.py` | broker client loop (REQ work-pull) + warm-fork `Executor`; reuses `mobile.executor.protocol` + `mobile.executor.et_runner` |
 | `README.md` | this file |
 
 ## Run

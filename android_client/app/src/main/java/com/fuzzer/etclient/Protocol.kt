@@ -11,7 +11,7 @@ import java.util.zip.GZIPInputStream
 import java.util.zip.GZIPOutputStream
 
 /**
- * Kotlin port of mobile/net/protocol.py (the parts the client needs).
+ * Kotlin port of mobile/executor/protocol.py (the parts the client needs).
  *
  * INVERTED diff: the broker keeps the eager reference and does the comparison, so the phone
  * only ever sees the lean JOB and returns its RAW outputs — it never decodes eager and never

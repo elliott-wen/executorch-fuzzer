@@ -311,7 +311,7 @@ Two independent host tests, both in-process (deterministic, no broker, no job-id
 **(a) Targeted aliasing probe** (`alias_probe.py`) — 10 hand-built multi-output graphs of exactly
 the aliasing shape (a computed tensor co-returned with `clone`/`alias_copy`/`expand_copy`/
 `view_copy` of a shared value, the same node returned twice, an input co-returned, a 4-output
-version, and the Vulkan `Bug` shape), each run through `mobile.net.et_runner.run_pte`:
+version, and the Vulkan `Bug` shape), each run through `mobile.executor.et_runner.run_pte`:
 
 ```
 xnnpack : 8 buildable cases, 8/8 ALL OUTPUTS OK.  2 cases refuse to lower (see below).

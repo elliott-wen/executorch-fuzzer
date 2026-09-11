@@ -7,7 +7,7 @@ from torch.export import export
 from torch.export.graph_signature import OutputKind
 from mobile.gen.export.job import _GraphModule, load_functional_source
 from mobile.gen.export.backends import get_backend
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 CORPUS="/data/jwen929/mobile/corpus_v4/coreml"
 BE=get_backend("coreml")
 

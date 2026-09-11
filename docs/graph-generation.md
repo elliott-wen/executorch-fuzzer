@@ -136,7 +136,7 @@ Uniform op selection is *uniform-then-feasibility-filtered*: easy ops sail throu
 generate→export→lower gauntlet, hard ops fail somewhere and get silently re-rolled, so
 they're under-represented or absent.
 
-The fix lives in `net/pregen.py`: a fixed shuffle of the op list, shared by all workers
+The fix lives in `executor/pregen.py`: a fixed shuffle of the op list, shared by all workers
 (so the global schedule is well-defined and reproducible), with each worker
 phase-shifted by its own offset. For index `cur`:
 

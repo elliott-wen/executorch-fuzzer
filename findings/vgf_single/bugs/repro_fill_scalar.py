@@ -16,7 +16,7 @@ import subprocess, tempfile, sys
 from pathlib import Path
 sys.path.insert(0, "/data/jwen929")
 import torch
-from mobile.net import corpus as C, protocol as P, compare as cmp
+from mobile.executor import corpus as C, protocol as P, compare as cmp
 
 ROOT = Path("/data/jwen929/mobile"); RUNNER = ROOT / "vgf_client/vgf_runner.sh"
 # corpus jobs: fill.Scalar(L0, c) for various c — see findings/vgf_single/skiplog.tsv

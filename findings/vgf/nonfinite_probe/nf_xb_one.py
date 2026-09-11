@@ -18,14 +18,14 @@ out = dict(job=rec["job"], out=rec["out"], backend=backend)
 try:
     import torch
     from mobile.gen.export import build_job
-    from mobile.net import compare as cmp
+    from mobile.executor import compare as cmp
     from nf_common import nf_signature, classify
     j = build_job(src, backend, False)
     out["status"] = j.status
     out["deleg"] = json.dumps(getattr(j, "delegated", None) or {})
     if j.status != "READY":
         print(json.dumps(out)); sys.exit(0)
-    from mobile.net.et_runner import run_pte
+    from mobile.executor.et_runner import run_pte
     raw = run_pte(j.pte, j.inputs)
     et = cmp.select(list(raw), j.user_pos)
     if len(et) > len(j.eager):

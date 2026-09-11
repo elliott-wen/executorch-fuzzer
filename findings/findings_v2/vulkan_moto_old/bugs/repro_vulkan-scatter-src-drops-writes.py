@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.INFO)
 sys.path.insert(0, "/data/jwen929")
 import zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 
 SRC = """import torch
 x = torch.tensor([1., 2., 3., 4.])

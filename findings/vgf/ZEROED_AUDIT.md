@@ -103,7 +103,7 @@ for i in $(seq 0 11); do ZA_TMP=$PWD/fd$i python diag.py \
   they are confirmed ZEROED by `audit.py` above.)
 * **226/239** SIBLING cases: the target is the **only** wrong output — every co-returned sibling is
   `OK`. 13 have a second wrong output too. Clean, isolated data loss.
-* Confound 4c (output misalignment / the `net/compare.py::select` silent fallback) **does not fire**:
+* Confound 4c (output misalignment / the `executor/compare.py::select` silent fallback) **does not fire**:
   283/285 have `n_eager == n_plan_out == n_out_files` and `user_pos == [0..n-1]`. The 2 exceptions
   (`w47:758/1`, `w49:772/0`) have a non-identity but fully **in-range** `user_pos`
   (`[1,2]`, `[2,3]`), so `select` takes the intended branch — no fallback.
@@ -254,7 +254,7 @@ two localizer axes is the single most important methodological finding of this a
 
 ### 4e. VGF-specificity of the surviving set — **holds, and on far more than 4 cases**
 The report's cross-backend control (§3.2b) uses 4 cases. Extended to 60 (`xcheck.py`,
-in-process `mobile.net.et_runner.run_pte`):
+in-process `mobile.executor.et_runner.run_pte`):
 ```bash
 MOBILE_BACKENDS=portable,xnnpack python xcheck.py --cases x60.txt --shard $i --nshards 6
 ```
@@ -337,7 +337,7 @@ populates only one of the corresponding output IOs; `VGFBackend.cpp::execute()` 
 * No case was flaky. No case failed to build or run. No case diverged on the A side. (Contrast:
   4 of 12 SHAPE cases were flaky.)
 * No case had a small-but-non-zero device value masquerading as zero.
-* No case was mis-selected by `net/compare.py::select` — the silent-fallback hazard that produced
+* No case was mis-selected by `executor/compare.py::select` — the silent-fallback hazard that produced
   the SHAPE artifact **did not fire** for ZEROED.
 * No case had its output buffer overlapping a simultaneously-live buffer — the hypothesis §3.2
   builds its root cause on is 0/285.
@@ -370,5 +370,5 @@ populates only one of the corresponding output IOs; `VGFBackend.cpp::execute()` 
    Without it the COMP axis silently relabels ancestor operator bugs as graph-opt bugs. This
    probably affects the other COMP buckets in `GRAPHOPT_REPORT.md` §4 (275 VALUE, 86 NONFINITE,
    20 ALIAS, 18 SCALE) — **not audited here, but the same hole applies.**
-7. **Fix `net/compare.py::select`** to raise on an out-of-range `user_pos` (per the SHAPE report).
+7. **Fix `executor/compare.py::select`** to raise on an out-of-range `user_pos` (per the SHAPE report).
    It did not cause this artifact, but it remains a live hazard.

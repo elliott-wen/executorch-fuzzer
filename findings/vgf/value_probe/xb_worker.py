@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """xb_worker.py DUMP.pt BACKEND  — lower the reconstructed B graph to BACKEND and run it
-IN-PROCESS via mobile.net.et_runner.run_pte (one backend per subprocess: a kernel failure is a
+IN-PROCESS via mobile.executor.et_runner.run_pte (one backend per subprocess: a kernel failure is a
 native abort). Prints a single JSON line."""
 import os, sys, json
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
@@ -10,7 +10,7 @@ import warnings, logging
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from mobile.gen.export import build_job
-from mobile.net import compare as cmp, et_runner
+from mobile.executor import compare as cmp, et_runner
 
 f, backend = sys.argv[1], sys.argv[2]
 D = torch.load(f, weights_only=False)

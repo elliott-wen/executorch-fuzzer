@@ -19,7 +19,7 @@ import sys
 import tempfile
 from concurrent.futures import ProcessPoolExecutor
 
-from mobile.net import protocol as P, corpus as C
+from mobile.executor import protocol as P, corpus as C
 
 MOBILE = "/data/jwen929/mobile"
 RUNNER_SH = f"{MOBILE}/qnn_client/qnn_runner.sh"

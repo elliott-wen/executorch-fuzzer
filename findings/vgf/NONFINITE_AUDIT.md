@@ -158,7 +158,7 @@ if d.abs().max() < 1e-6 and r.abs().max() > 1e-3: return "ZEROED"
 ...
 ```
 
-whereas the *detector*, `net/compare.py::_cmp`, tests `isnan()` / `== inf` / `== -inf`
+whereas the *detector*, `executor/compare.py::_cmp`, tests `isnan()` / `== inf` / `== -inf`
 position-for-position. So the information exists at detection time and is **thrown away at
 labelling time**. Measured (unit matrix, `mech()` copied verbatim):
 

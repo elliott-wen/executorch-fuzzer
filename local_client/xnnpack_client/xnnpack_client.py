@@ -46,7 +46,7 @@ HERE = Path(__file__).resolve().parent
 IMPORT_ROOT = HERE.parent.parent.parent                      # dir on sys.path so `import mobile` resolves
 sys.path.insert(0, str(IMPORT_ROOT))
 
-from mobile.net import protocol as P                  # noqa: E402
+from mobile.executor import protocol as P                  # noqa: E402
 
 BACKEND = "xnnpack"
 
@@ -71,7 +71,7 @@ def _executor_main(job_q, res_q):
     native abort takes it down (→ the coordinator respawns a fresh one) or it gets the None stop
     sentinel. Puts RESULT frames on `res_q` — RAN with raw outputs, or SKIP with the native error."""
     os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
-    from mobile.net.et_runner import run_pte
+    from mobile.executor.et_runner import run_pte
     try:
         from executorch.runtime import Runtime
         Runtime.get()                                  # warm the kernel registry (incl. XNNPACK) once

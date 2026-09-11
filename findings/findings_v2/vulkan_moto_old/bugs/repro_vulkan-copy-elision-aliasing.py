@@ -15,8 +15,8 @@ import torch, zmq
 from torch.export.graph_signature import OutputKind
 from executorch.exir import to_edge_transform_and_lower, EdgeCompileConfig
 from executorch.backends.vulkan.partitioner.vulkan_partitioner import VulkanPartitioner
-from mobile.net import protocol as P
-from mobile.net import compare as cmp
+from mobile.executor import protocol as P
+from mobile.executor import compare as cmp
 
 class Bug(torch.nn.Module):
     def forward(self, x):

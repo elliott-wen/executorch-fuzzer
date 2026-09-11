@@ -35,7 +35,7 @@ HERE = Path(__file__).resolve().parent
 IMPORT_ROOT = HERE.parent.parent.parent                      # dir on sys.path so `import mobile` resolves
 sys.path.insert(0, str(IMPORT_ROOT))
 
-from mobile.net import protocol as P                  # noqa: E402
+from mobile.executor import protocol as P                  # noqa: E402
 import torch  # noqa: E402
 
 VGF_RUNNER = HERE / "vgf_runner.sh"

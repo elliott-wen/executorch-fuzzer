@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 sys.path.insert(0, "/data/jwen929")
 import zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp, corpus as C
+from mobile.executor import protocol as P, compare as cmp, corpus as C
 from mobile.gen.diff.bisect import bisect_output_set, bisect_cone, CONE_LOCAL
 from mobile.gen.diff.cone_predicate import cone_localizer, output_set_localizer
 

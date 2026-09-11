@@ -26,7 +26,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 sys.path.insert(0, "/data/jwen929")  # so `import mobile` resolves
 
 import torch
-from mobile.net import corpus, protocol, et_runner
+from mobile.executor import corpus, protocol, et_runner
 
 REPO = "/data/jwen929/mobile"
 JOB = "corpus/portable/w1/w1_155.py"

@@ -18,9 +18,9 @@ from pathlib import Path
 
 ROOT = Path("/data/jwen929/mobile")
 sys.path.insert(0, "/data/jwen929")
-from mobile.net import corpus as C           # noqa: E402
-from mobile.net import protocol as P         # noqa: E402
-from mobile.net import compare as cmp        # noqa: E402
+from mobile.executor import corpus as C           # noqa: E402
+from mobile.executor import protocol as P         # noqa: E402
+from mobile.executor import compare as cmp        # noqa: E402
 import torch                                 # noqa: E402
 
 OUT = ROOT / "findings/vgf_single"

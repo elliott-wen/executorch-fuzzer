@@ -16,7 +16,7 @@ feeder ──pushjob──► broker ──JOB(pte+inputs)──► nxp_client.p
 feeder ◄──diff vs quantized ref──◄ broker ◄──RESULT(raw outputs)── nxp_client.py
 ```
 
-The broker, feeder, and `net/compare.py` are unchanged — the simulator is "just another
+The broker, feeder, and `executor/compare.py` are unchanged — the simulator is "just another
 client" returning bytes, exactly as the protocol was designed for. **Verified end-to-end**: a
 delegated add+relu `.pte` runs on NSYS and the output is **bit-exact** (`max|diff|=0`) vs the
 stored quantized reference (`backends/nxp.quantized_reference`). A nonzero diff = a genuine
@@ -25,7 +25,7 @@ Neutron/compiler bug — what the fuzzer hunts.
 ## Files
 | file | role |
 |------|------|
-| `nxp_client.py` | broker client loop (REQ work-pull) + `NxpExecutor`; reuses `mobile.net.protocol`. Mirrors `fvp_client.py`. |
+| `nxp_client.py` | broker client loop (REQ work-pull) + `NxpExecutor`; reuses `mobile.executor.protocol`. Mirrors `fvp_client.py`. |
 | `nxp_runner.sh` | the device seam: run one `.pte` on the NSYS sim via `nxp_executor_runner`, emit `out_<i>.bin`. |
 | `build_runner.sh` | build `nxp_executor_runner` ONCE (host x86, cmodel driver). |
 | `README.md` | this file |

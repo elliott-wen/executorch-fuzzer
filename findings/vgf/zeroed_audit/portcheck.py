@@ -1,7 +1,7 @@
 import os,sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
-from mobile.net import et_runner
+from mobile.executor import et_runner
 BR={}
 with open("/data/jwen929/mobile/findings/vgf/bisect_results.tsv") as f:
     hdr=f.readline().rstrip("\n").split("\t"); ix={c:i for i,c in enumerate(hdr)}

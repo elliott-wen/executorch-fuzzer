@@ -12,9 +12,9 @@ import os, sys, time
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 sys.path.insert(0, "/data/jwen929")
 import zmq
-from mobile.net import corpus as C
-from mobile.net import protocol as P
-from mobile.net import compare as cmp
+from mobile.executor import corpus as C
+from mobile.executor import protocol as P
+from mobile.executor import compare as cmp
 
 CORPUS = "/data/jwen929/mobile/corpus_v3/mtk"
 HOST = os.environ.get("BROKER_HOST", "127.0.0.1")

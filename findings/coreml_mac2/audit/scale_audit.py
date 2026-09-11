@@ -3,7 +3,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES","")
 sys.path.insert(0,"/data/jwen929"); warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from mobile.gen.export.job import load_functional_source,_flatten_outputs
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 CORPUS="/data/jwen929/mobile/corpus_v4/coreml"; D="/data/jwen929/mobile/findings/coreml_mac2"
 rows=[l.split("\t") for l in open(f"{D}/graphopt_mechanisms.tsv").read().splitlines()[1:] if l.strip()]
 sc=[r for r in rows if r[4].startswith("SCALE")]

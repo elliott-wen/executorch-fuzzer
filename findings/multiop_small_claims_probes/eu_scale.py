@@ -3,7 +3,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES","");os.environ.setdefault("MOBILE_B
 sys.path.insert(0,"/data/jwen929"); warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from mobile.gen.export import build_job
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 CO="/data/jwen929/mobile/corpus_v2/ethos-u"
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from eu_probe import parse, cone, mksrc

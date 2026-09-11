@@ -51,8 +51,8 @@ Three roles, one broker:
 
 | role | socket | does |
 |------|--------|------|
-| **broker** (`net/broker.py`) | two ROUTERs + a PUB | pure switch: routes job frames feeder→worker and result frames worker→feeder; never decompresses a payload |
-| **feed** (`net/feed.py`) | DEALER ↔ broker frontend | reads corpus, sends lean jobs, receives raw results, **does the diff** vs its kept eager, tallies, writes skip-log + samples |
+| **broker** (`executor/broker.py`) | two ROUTERs + a PUB | pure switch: routes job frames feeder→worker and result frames worker→feeder; never decompresses a payload |
+| **feed** (`executor/feed.py`) | DEALER ↔ broker frontend | reads corpus, sends lean jobs, receives raw results, **does the diff** vs its kept eager, tallies, writes skip-log + samples |
 | **client** (`net/client.py`) | REQ ↔ broker backend | LRU work-pull: `READY → JOB → run .pte → RESULT`; runs the program, returns raw outputs |
 
 Key property: **the broker never touches a tensor.** It routes by peeking the
@@ -73,7 +73,7 @@ the comparison there means:
 - the **worker** stays thin — it runs a `.pte` and returns bytes, nothing else. That
   is exactly what a phone can do, in any language, with no z3/export/torch-Python.
 
-The worker speaks a **language-neutral binary protocol** (`net/protocol.py`): every
+The worker speaks a **language-neutral binary protocol** (`executor/protocol.py`): every
 message is a list of byte frames — a small JSON header plus raw little-endian tensor
 buffers and the `.pte`. No pickle, no numpy — a native C++/Kotlin phone client can
 speak it directly.

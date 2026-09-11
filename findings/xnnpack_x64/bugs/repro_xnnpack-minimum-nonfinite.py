@@ -9,7 +9,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES","");warnings.filterwarnings("ignore
 sys.path.insert(0,"/data/jwen929")
 import torch,zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 SRC="import torch\ndef _f(r):\n return r[0] if isinstance(r,(tuple,list)) else r\nL0=torch.tensor([float('nan'),2.0]);L1=torch.tensor([5.0,5.0])\ndef g(L0,L1):\n return (_f(torch.ops.aten.minimum.default(L0,L1)),)\nLEAVES=[L0,L1]\n"
 PORT=int(os.environ.get("BROKER_JOB_PORT","15564"))
 job=build_job(SRC,"xnnpack",False)

@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 sys.path.insert(0, "/data/jwen929")
 import torch, zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 
 SRC = 'import torch\ndef _first(r):\n    if isinstance(r, torch.Tensor): return r\n    if isinstance(r, (tuple, list)):\n        for x in r:\n            if isinstance(x, torch.Tensor): return x\n    return r\nB0 = torch.tensor([-1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, -1.9489504098892212, 1.5214043855667114, nan, 1.5214043855667114], dtype=torch.float32).reshape([4, 1, 2, 3, 2])\nLEAVES = [B0]\ndef g(B0):\n    T = _first(_first(torch.ops.aten.expand_copy.default(B0, [4, 4, 2, 3, 2], implicit=True)))\n    return (T,)\n'
 

@@ -2,7 +2,7 @@
 import sys, subprocess, tempfile, os
 sys.path.insert(0, "/data/jwen929")
 from pathlib import Path
-from mobile.net import corpus as C, protocol as P
+from mobile.executor import corpus as C, protocol as P
 import torch
 
 CORPUS = "/data/jwen929/mobile/corpus_v5/cadence"

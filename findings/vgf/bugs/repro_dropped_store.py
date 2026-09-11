@@ -25,7 +25,7 @@ import os, sys, time
 sys.path.insert(0, "/data/jwen929")
 import torch, zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp, corpus as C
+from mobile.executor import protocol as P, compare as cmp, corpus as C
 from mobile.gen.diff.cone_predicate import output_set_localizer
 
 CO = "/data/jwen929/mobile/corpus_v4/vgf"

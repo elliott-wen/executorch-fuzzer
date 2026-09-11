@@ -92,7 +92,7 @@ Vulkan copy-elision bug (`bugs/vulkan-copy-elision-aliasing.md`), here in the VG
 
 ### 3.2b Cross-backend: the bug is **VGF-specific**, not the shared memory planner
 Each identical reconstructed graph was lowered to **8 backends** and run on its local runtime
-(portable/xnnpack/openvino in-process via `mobile.net.et_runner.run_pte`; vgf/cadence/nxp/ethos-u/qnn
+(portable/xnnpack/openvino in-process via `mobile.executor.et_runner.run_pte`; vgf/cadence/nxp/ethos-u/qnn
 via their host runner scripts). One backend per subprocess (`MOBILE_BACKENDS` allowlist) for crash
 isolation. Harness: `tmp/vgf_xbackend.py` + `tmp/vgf_xbackend_run.sh`; raw table `xbackend.tsv`.
 

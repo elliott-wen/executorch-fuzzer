@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 sys.path.insert(0, "/data/jwen929")
 import torch, zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 
 JOB = 'w108:189'
 PORT = int(os.environ.get("BROKER_JOB_PORT", "15564"))

@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore"); os.environ.setdefault("CUDA_VISIBLE_DEVICES",
 sys.path.insert(0, "/data/jwen929")
 import zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp
+from mobile.executor import protocol as P, compare as cmp
 
 def make_src(N, corr):
     return (f"import torch\ntorch.manual_seed(1)\nL0=torch.randn({N})\n"
@@ -24,7 +24,7 @@ def run(src, backend):
     j = build_job(src, backend)
     if j.status != "READY": return None, None, f"BUILD:{j.status}"
     if backend != "coreml":
-        from mobile.net.et_runner import run_pte
+        from mobile.executor.et_runner import run_pte
         return j.eager[-1].flatten()[0].item(), run_pte(j.pte, j.inputs)[-1].flatten()[0].item(), "RAN"
     ctx = zmq.Context.instance(); D = ctx.socket(zmq.DEALER); D.connect(f"tcp://127.0.0.1:{os.environ.get('BROKER_PORT','15554')}")
     POL = zmq.Poller(); POL.register(D, zmq.POLLIN)

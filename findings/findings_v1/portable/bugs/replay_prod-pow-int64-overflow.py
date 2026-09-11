@@ -12,7 +12,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 sys.path.insert(0, "/data/jwen929")  # so `import mobile` resolves
 
 import torch
-from mobile.net import corpus, protocol, et_runner
+from mobile.executor import corpus, protocol, et_runner
 
 REPO = "/data/jwen929/mobile"
 JOB = "corpus/portable/w0/w0_1492.py"   # prod.int_out(n12, 0, …, out int64) — int64 overflow

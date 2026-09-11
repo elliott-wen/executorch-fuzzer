@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore"); os.environ.setdefault("CUDA_VISIBLE_DEVICES",
 sys.path.insert(0, "/data/jwen929")
 import zmq
 from mobile.gen.export import build_job
-from mobile.net import protocol as P, compare as cmp, corpus as C
+from mobile.executor import protocol as P, compare as cmp, corpus as C
 from mobile.gen.diff.cone_predicate import output_set_localizer
 
 PORT = int(os.environ.get("BROKER_PORT", "15554"))

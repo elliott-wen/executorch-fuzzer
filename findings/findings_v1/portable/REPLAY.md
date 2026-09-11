@@ -6,7 +6,7 @@ replay script** (`replay_<slug>.py`) that triggers it. Each script:
 - runs straight from the repo root with no `-m` / `PYTHONPATH` (it inserts `/data/jwen929` on
   `sys.path` and sets `CUDA_VISIBLE_DEVICES=""` itself);
 - loads either a stored corpus `.job` (decoded + run on the in-process portable ExecuTorch
-  runtime via `mobile.net.et_runner.run_pte`) **or** builds a minimal exported program for the
+  runtime via `mobile.executor.et_runner.run_pte`) **or** builds a minimal exported program for the
   born-here kernel bugs;
 - diffs portable vs eager PyTorch (value / non-finite / dtype / shape) or, for crashes, runs the
   job in a **child subprocess** and inspects the fatal signal;

@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore")
 import torch
 from torch.export import export
 from executorch.exir import to_edge
-from mobile.net import corpus, protocol, et_runner
+from mobile.executor import corpus, protocol, et_runner
 
 REPO = "/data/jwen929/mobile"
 JOB = "corpus/portable/w0/w0_1160.py"   # n8 = select_scatter(int64, float32 src)

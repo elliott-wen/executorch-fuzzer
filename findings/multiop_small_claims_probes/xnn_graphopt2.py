@@ -13,8 +13,8 @@ warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 import torch
 from pathlib import Path
 from mobile.gen.export import build_job
-from mobile.net.et_runner import run_pte
-from mobile.net import compare as cmp
+from mobile.executor.et_runner import run_pte
+from mobile.executor import compare as cmp
 from mobile.gen.diff.cone_predicate import output_set_localizer
 
 def run_src(src, reps=1):

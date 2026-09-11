@@ -5,7 +5,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES",""); os.environ.setdefault("OMP_NUM
 sys.path.insert(0,"/data/jwen929")
 sys.path.insert(0,"/tmp/claude-2496112/-data-jwen929-mobile/e07c5b38-7e6e-4875-af54-f33813aae47b/scratchpad/audit")
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 D="/data/jwen929/mobile/findings/coreml_mac2"
 nonok={l.split("\t")[1] for l in open(f"{D}/skiplog.tsv").read().splitlines()[1:] if l.strip()}
 allj=[]

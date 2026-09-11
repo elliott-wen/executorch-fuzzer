@@ -48,7 +48,7 @@ HERE = Path(__file__).resolve().parent
 IMPORT_ROOT = HERE.parent.parent.parent                      # dir on sys.path so `import mobile` resolves
 sys.path.insert(0, str(IMPORT_ROOT))
 
-from mobile.net import protocol as P                  # noqa: E402
+from mobile.executor import protocol as P                  # noqa: E402
 
 FVP_RUNNER = HERE / "fvp_runner.sh"
 

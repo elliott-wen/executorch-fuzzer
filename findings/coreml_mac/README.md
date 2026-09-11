@@ -4,7 +4,7 @@ ExecuTorch Core ML delegate, exercised with a **single-operator** corpus (`corpu
 generated with `--nodes 1`: each graph is exactly one aten op wired to leaf inputs). Every non-OK
 outcome is therefore already a minimal repro attributed to one operator. Fed to a real
 **Apple-Silicon Mac** Core ML worker over the ZeroMQ broker; the feeder holds the eager CPU
-reference and diffs each device output ([net/compare.py](../../net/compare.py)).
+reference and diffs each device output ([executor/compare.py](../../executor/compare.py)).
 
 **Core rule followed: every claim below is device-verified.** Suspects were re-run on the device and
 cleared through the step-3 confound filters before being called a bug.

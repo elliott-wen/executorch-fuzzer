@@ -31,9 +31,9 @@ from pathlib import Path
 
 import zmq
 
-from mobile.net import corpus as C
-from mobile.net import compare as cmp
-from mobile.net import protocol as P
+from mobile.executor import corpus as C
+from mobile.executor import compare as cmp
+from mobile.executor import protocol as P
 
 _TALLY_KEYS = ("OK", "MISMATCH", "CRASH", "TIMEOUT", "SKIP")
 

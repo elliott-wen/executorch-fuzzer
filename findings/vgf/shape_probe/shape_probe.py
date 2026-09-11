@@ -9,7 +9,7 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
 sys.path.insert(0, "/data/jwen929")
 import warnings, logging
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 from mobile.gen.export import build_job
 
 CO = "/data/jwen929/mobile/corpus_v4/vgf"

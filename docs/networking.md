@@ -8,8 +8,8 @@ worker just runs. This is what lets executors live on other machines and (later)
 
 | role | code | socket | responsibility |
 |------|------|--------|----------------|
-| **broker** | `net/broker.py` | 2× ROUTER + PUB | route job/result frames; never touch a tensor |
-| **feed** | `net/feed.py` | DEALER ↔ frontend | read corpus, send lean jobs, **diff** results vs eager, tally, log |
+| **broker** | `executor/broker.py` | 2× ROUTER + PUB | route job/result frames; never touch a tensor |
+| **feed** | `executor/feed.py` | DEALER ↔ frontend | read corpus, send lean jobs, **diff** results vs eager, tally, log |
 | **client** | `net/client.py` | REQ ↔ backend | LRU work-pull; run the `.pte`, return raw outputs |
 
 ```
@@ -21,7 +21,7 @@ feed ◄──results────────  broker, routed back by job_id
                           ctrl PUB ──STOP──► clients (clean shutdown)
 ```
 
-## The protocol (`net/protocol.py`)
+## The protocol (`executor/protocol.py`)
 
 Language-neutral, pickle-free, binary — so a native phone client can speak it. Every
 message is a list of byte frames: frame 0 is a small JSON header, the rest are raw
@@ -48,7 +48,7 @@ for STOP. State is minimal and routing-only: an LRU queue of free workers and a
 itself, the broker only has to get each worker's result back to the feeder that sent
 the job. Scale feeders and workers freely; the broker stays trivial.
 
-## The feeder owns the diff (`net/feed.py`)
+## The feeder owns the diff (`executor/feed.py`)
 
 The feeder is the single entry point for both bulk fuzzing and single-graph debugging:
 
@@ -61,7 +61,7 @@ mobile feed --from-tsv tmp/skip.tsv --status MISMATCH --limit 20   # replay fail
 
 It reads the corpus (so it holds the eager reference), sends each lean job (pte +
 inputs), receives the worker's raw outputs, diffs them against its kept eager
-(`net/compare.py`), tallies, and writes the skip-log. A bounded in-flight **window**
+(`executor/compare.py`), tallies, and writes the skip-log. A bounded in-flight **window**
 gives end-to-end backpressure; a job with no result inside the timeout is recorded
 **TIMEOUT**.
 

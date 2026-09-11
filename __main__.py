@@ -99,18 +99,18 @@ def main() -> int:
     opts = ap.parse_args()
 
     if opts.cmd == "broker":
-        from mobile.net.broker import run_broker
+        from mobile.executor.broker import run_broker
         return run_broker(opts.job_port, opts.client_port, opts.ctrl_port,
                           opts.heartbeat, opts.verbose)
     if opts.cmd == "pregen":
         if opts.mode == "export" and not opts.oracle:
             ap.error("--mode export requires --oracle <dir>")
-        from mobile.net.pregen import run
+        from mobile.executor.pregen import run
         return run(opts.mode, opts.out, opts.oracle, opts.seed, opts.nodes, opts.leaf_prob,
                   opts.out_alias_prob, opts.backend, opts.quantize, opts.slot,
                   opts.start, opts.count, use_stdin=False)
     if opts.cmd == "feed":
-        from mobile.net.feed import run_feeder
+        from mobile.executor.feed import run_feeder
         return run_feeder(opts.host, opts.job_port, opts.ctrl_port, opts.corpus,
                           opts.jobs, opts.from_tsv, opts.status, opts.graphs,
                           opts.timeout, opts.skip_log, opts.window,

@@ -16,7 +16,7 @@ sys.path.insert(0, "/data/jwen929")
 
 def trigger(graph_path, job_id, desc=""):
     from mobile.gen.export import build_job
-    from mobile.net import protocol as P, corpus as C
+    from mobile.executor import protocol as P, corpus as C
 
     src = open(graph_path).read()
     r = build_job(src, "xnnpack")                       # eager run + XNNPACK lowering → .pte

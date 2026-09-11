@@ -27,13 +27,13 @@ feeder ──pushjob──► broker ──JOB(pte+inputs)──► fvp_client.p
 feeder ◄──diff vs eager──◄ broker ◄──RESULT(raw outputs)── fvp_client.py
 ```
 
-The broker, feeder, and `net/compare.py` are unchanged — the FVP is "just another
+The broker, feeder, and `executor/compare.py` are unchanged — the FVP is "just another
 client" returning bytes, exactly as the protocol was designed for.
 
 ## Files
 | file | role |
 |------|------|
-| `fvp_client.py` | broker client loop (REQ work-pull) + `FvpExecutor`; reuses `mobile.net.protocol` |
+| `fvp_client.py` | broker client loop (REQ work-pull) + `FvpExecutor`; reuses `mobile.executor.protocol` |
 | `fvp_runner.sh` | the device seam: build the semihosting runner once, run one `.pte` on the FVP, emit `out_<i>.bin` + `outmeta.json` |
 | `README.md` | this file |
 
@@ -86,7 +86,7 @@ Short answer: **you don't compare int8 against fp32 directly — and you don't h
    graph ever returned a genuine int output, you'd dequantize it with that output's
    `(scale, zero_point)` before comparing.)
 
-2. **But fp32-from-int8 carries quantization error.** `net/compare.py`'s float tolerance
+2. **But fp32-from-int8 carries quantization error.** `executor/compare.py`'s float tolerance
    (`rtol=1e-2, atol=1e-3`) is tuned for fp16/fp32 rounding, **not** int8 quantization
    error — comparing Ethos-U output against the *fp32 eager* oracle would MISMATCH on
    nearly every graph and bury real bugs.

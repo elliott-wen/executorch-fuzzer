@@ -9,7 +9,7 @@ Each pre-generated job is stored as two files in the corpus dir:
   <job_id>.py   — the standalone graph source (uncompressed, for direct inspection).
 
 job_id is a plain non-negative integer (a graph is a pure function of (seed, index) — see
-net/pregen.py), so jobs are BUCKETED into a subdir by index // BUCKET_SIZE — corpus/<bucket>/
+executor/pregen.py), so jobs are BUCKETED into a subdir by index // BUCKET_SIZE — corpus/<bucket>/
 <job_id>.{job,py} — so a huge corpus doesn't pile millions of files into one directory
 (filesystem / ls / glob limits). job_id "4032" → corpus/4/4032.{job,py} (BUCKET_SIZE=1000).
 The oracle stage's files use ext="oracle" instead of "job" (see gen/export/job.py) so the

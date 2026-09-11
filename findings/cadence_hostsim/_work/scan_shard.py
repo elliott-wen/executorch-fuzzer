@@ -3,7 +3,7 @@ out: <job_id>\t<CADENCE|portable>\t<comma-separated cadence ops>"""
 import sys, re
 sys.path.insert(0, "/data/jwen929")
 from pathlib import Path
-from mobile.net import corpus as C, protocol as P
+from mobile.executor import corpus as C, protocol as P
 
 NAME = re.compile(rb"cadence::[a-z_0-9]+(?:\.[a-zA-Z_0-9]+)?")
 shard = Path(sys.argv[1])

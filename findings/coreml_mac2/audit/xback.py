@@ -6,8 +6,8 @@ os.environ.setdefault("CUDA_VISIBLE_DEVICES",""); os.environ.setdefault("OMP_NUM
 sys.path.insert(0,"/data/jwen929")
 warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 from mobile.gen.export import build_job
-from mobile.net.et_runner import run_pte
-from mobile.net import compare as cmp, corpus as C
+from mobile.executor.et_runner import run_pte
+from mobile.executor import compare as cmp, corpus as C
 CORPUS="/data/jwen929/mobile/corpus_v4/coreml"
 D="/data/jwen929/mobile/findings/coreml_mac2"
 ap=argparse.ArgumentParser(); ap.add_argument("--mech",default="ZEROED"); ap.add_argument("--bk",default="portable")

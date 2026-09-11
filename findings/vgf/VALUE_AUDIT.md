@@ -45,7 +45,7 @@ Per case, exactly the A/B contrast `vgf_go_deep.py` claims to make:
 
 each lowered with `build_job(src,"vgf",False)` and run on the real runtime with
 `mobile/vgf_client/vgf_runner.sh --pte … --input … --out DIR`, outputs read back from
-`DIR/out_<i>.bin` and diffed with `mobile.net.compare._cmp`. **A × 2 reps, B × 3 reps.**
+`DIR/out_<i>.bin` and diffed with `mobile.executor.compare._cmp`. **A × 2 reps, B × 3 reps.**
 The whole 93-case sweep was then **run twice, end to end, in independent sessions**
 (6 shards each) — see §2.
 
@@ -239,7 +239,7 @@ quoted from this artifact must be `max|Δ| / max|ref|` or it is meaningless.
 ## 7. Is any of it VGF-specific? — half is not
 
 Each reconstructed **B** graph was re-lowered to `portable` and to `xnnpack` and run in-process
-via `mobile.net.et_runner.run_pte`, one backend per subprocess.
+via `mobile.executor.et_runner.run_pte`, one backend per subprocess.
 
 | | count of 93 |
 |---|---|
@@ -307,7 +307,7 @@ VGF-specific.** Delete the "fp16 number-format divergence" claim from §4 or rep
    `B.delegated_ops == 0` — 24.7% of these rows never touch the backend under test.
 5. Run every candidate against `portable`/`xnnpack` before calling it a backend finding; half
    of this sample fails that check.
-6. `net/compare.py::select` should raise on an out-of-range `user_pos` instead of silently
+6. `executor/compare.py::select` should raise on an out-of-range `user_pos` instead of silently
    returning all outputs (not implicated here, but it was in the SHAPE bucket).
 
 ---

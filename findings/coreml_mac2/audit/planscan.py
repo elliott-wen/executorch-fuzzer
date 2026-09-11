@@ -6,7 +6,7 @@ import os,sys,warnings,logging,collections
 os.environ.setdefault("CUDA_VISIBLE_DEVICES",""); os.environ.setdefault("OMP_NUM_THREADS","2")
 sys.path.insert(0,"/data/jwen929"); warnings.filterwarnings("ignore"); logging.disable(logging.WARNING)
 from mobile.gen.export import build_job
-from mobile.net import corpus as C
+from mobile.executor import corpus as C
 from executorch.exir._serialize._program import deserialize_pte_binary
 D="/data/jwen929/mobile/findings/coreml_mac2"
 SZ={0:1,1:1,2:2,3:4,4:8,5:2,6:4,7:8,11:1,15:2,16:4,17:8}

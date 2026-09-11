@@ -45,8 +45,8 @@ from pathlib import Path
 from mobile.gen.graph import build_graph
 from mobile.gen.ops import load_runnable_opnodes
 from mobile.gen.export import build_oracle, build_export, get_backend, available_backends
-from mobile.net import protocol as P
-from mobile.net import corpus as C
+from mobile.executor import protocol as P
+from mobile.executor import corpus as C
 
 
 # ── graph derivation: a pure function of (seed, index) ──────────────────────────────
