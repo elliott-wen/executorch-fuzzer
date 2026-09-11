@@ -1,4 +1,4 @@
-# local_executor — host-side execution clients
+# local_client — host-side execution clients
 
 Every worker in here executes a lowered `.pte` **on this machine** (host CPU, host GPU, or a
 host-side simulator/emulator), as opposed to the on-device workers that run on a phone over the

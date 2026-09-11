@@ -56,7 +56,7 @@ def run_broker(job_port: int, client_port: int, ctrl_port: int,
     print(f"Broker up — feeders tcp://*:{job_port}  workers tcp://*:{client_port}  "
           f"ctrl tcp://*:{ctrl_port}", flush=True)
     print(f"  feed  :  python -m mobile feed   --host <broker-ip> --job-port {job_port} --ctrl-port {ctrl_port} --corpus tmp/corpus", flush=True)
-    print(f"  client:  python local_executor/xnnpack_client/xnnpack_client.py --host <broker-ip> --client-port {client_port} --ctrl-port {ctrl_port}", flush=True)
+    print(f"  client:  python local_client/xnnpack_client/xnnpack_client.py --host <broker-ip> --client-port {client_port} --ctrl-port {ctrl_port}", flush=True)
 
     t0 = time.monotonic()
     last_beat = t0

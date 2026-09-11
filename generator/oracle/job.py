@@ -85,9 +85,9 @@ def step(root, ops, token: str, params: Params,
     down rather than raise, and when it does that announcement is the only trace of where it
     was — see mobile.generator.supervisor.protocol.
 
-    The record is written atomically and only after everything risky has already succeeded,
-    so a token that never got that far simply has no record — which is what makes the corpus
-    exactly the set of graphs that worked.
+    The source is written before the eager run and the oracle after it, so a graph that fails
+    or crashes leaves its `.py` behind as the only surviving copy of itself (store.iter_failed
+    finds them). A complete record is exactly one that has both.
     """
     enter("generate")
     graph = derive(ops, token, params)
@@ -102,11 +102,14 @@ def step(root, ops, token: str, params: Params,
         return "emit", f"{type(e).__name__}: {e}"
     if src is None:
         return "emit", "un-emittable argument or missing schema"
+    # Down before the eager run, not after: that call can abort the process outright, and
+    # this is the only copy of the graph that will ever exist.
+    store.write_source(root, token, src)
     enter("eager")
     try:
         inputs, eager = run_eager(src)           # the oracle — and the step that can crash
     except Exception as e:                       # noqa: BLE001 — PyTorch rejecting the graph
         return "eager", f"{type(e).__name__}: {e}"
     enter("write")
-    store.write_record(root, token, src, graph.describe(), inputs, eager)
+    store.write_oracle(root, token, graph.describe(), inputs, eager)
     return "ready", ""

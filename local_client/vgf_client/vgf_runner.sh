@@ -31,7 +31,7 @@ done
 [[ -n "$PTE" && -n "$OUTDIR" ]] || { echo "need --pte and --out" >&2; exit 4; }
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_executor/
+MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_client/
 VENV="$MOBILE/.venv"
 
 if [[ -z "$RUNNER" ]]; then

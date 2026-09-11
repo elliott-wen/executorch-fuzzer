@@ -10,7 +10,7 @@
 # a CUDA corpus MUST be generated on the GPU box (you cannot pregen it on a CPU-only worker).
 #
 # The .pte runs on the GPU here (runs_on_host=True), so the corpus is directly diffable locally
-# with local_executor/cuda_client/cuda_client.py (host runtime, no simulator), like xnnpack/openvino.
+# with local_client/cuda_client/cuda_client.py (host runtime, no simulator), like xnnpack/openvino.
 #
 # TOTAL is graph ATTEMPTS (split across workers), not READY jobs. The CUDA partitioner is
 # whole-graph AOTI (all-or-nothing): a graph with one op AOTInductor can't handle tends to fail

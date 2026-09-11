@@ -7,10 +7,10 @@
 #   - EXTENSION_LLM / LLM_RUNNER / ASR / TRAINING / LLAMA_JNI  (not used by the fuzzer)
 #   - KERNELS_OPTIMIZED  (pulls Eigen/kleidiai; the JNI falls back to portable kernels)
 #   - KERNELS_LLM        (requires KERNELS_OPTIMIZED)
-# Result → mobile/android/app/libs/executorch.aar  (point the app at it; see notes at the bottom).
+# Result → mobile/android_client/app/libs/executorch.aar  (point the app at it; see notes at the bottom).
 set -ex
 
-# Repo-relative paths (this script lives at <mobile>/android/). Survives the tree moving;
+# Repo-relative paths (this script lives at <mobile>/android_client/). Survives the tree moving;
 # every value stays overridable via the environment. Sourcing android-env.sh sets the
 # toolchain (NDK/JDK/SDK/QNN/glslc) from mobile/android-dev/.
 MOBILE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -23,7 +23,7 @@ export JAVA_HOME=${JAVA_HOME:-$MOBILE/android-dev/jdk17}
 export PATH="$JAVA_HOME/bin:$PATH"
 export PYTHON_EXECUTABLE=${PYTHON_EXECUTABLE:-/data/jwen929/pytorch/venv/bin/python}
 ABIS=${ANDROID_ABIS:-arm64-v8a x86_64}          # phone (arm64-v8a) + emulator (x86_64)
-OUT_AAR=${OUT_AAR:-$MOBILE/android/app/libs/executorch.aar}
+OUT_AAR=${OUT_AAR:-$MOBILE/android_client/app/libs/executorch.aar}
 
 # Backends: XNNPACK + VULKAN + QNN + ENN are ALL ON by default (each still individually
 # toggleable / gated on its SDK being present, so a machine missing one degrades gracefully):
@@ -132,13 +132,13 @@ for ABI in $ABIS; do
     -DCMAKE_BUILD_TYPE=Release -B"$OUT"
   cmake --build "$OUT" -j"$(nproc)" --target install --config Release
   mkdir -p "cmake-out-android-so/$ABI"
-  cp "$OUT"/extension/android/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
+  cp "$OUT"/extension/android_client/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
   # QNN: stage the delegate + the Qualcomm runtime libs into the AAR's jniLibs (arm64, SDK present).
   # Includes the arm64 host libs AND the Hexagon DSP "skel" libs (loaded by the NPU via
   # ADSP_LIBRARY_PATH = the app's native lib dir) for every HTP arch, so it runs on any Snapdragon.
   if [ "$ABI" = "arm64-v8a" ] && [ -n "${QNN_SDK_ROOT:-}" ]; then
     cp "$OUT"/lib/executorch/backends/qualcomm/libqnn_executorch_backend.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
-    cp "$QNN_SDK_ROOT"/lib/aarch64-android/libQnn*.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
+    cp "$QNN_SDK_ROOT"/lib/aarch64-android_client/libQnn*.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
     cp "$QNN_SDK_ROOT"/lib/hexagon-v*/unsigned/libQnnHtpV*Skel.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
   fi
   # ENN: nothing to stage — enn_backend is whole-archive-linked into libexecutorch.so above, and its
@@ -161,7 +161,7 @@ mkdir -p "$(dirname "$OUT_AAR")"
 cp executorch_android/build/outputs/aar/executorch_android-debug.aar "$OUT_AAR"
 echo "=== DONE → $OUT_AAR ==="
 
-# To use it, in mobile/android/app/build.gradle replace:
+# To use it, in mobile/android_client/app/build.gradle replace:
 #     implementation 'org.pytorch:executorch-android:1.3.1'
 # with:
 #     implementation files('libs/executorch.aar')

@@ -126,7 +126,10 @@ def step(oracle_root, out_root, backend: Backend, token: str, quantize: bool,
     if backend.quantizes(quantize):
         enter("quant_ref")
         try:
-            reference = backend.quantized_reference(program, inputs)
+            # A TUPLE, not the record's list: a backend may re-export here (nxp re-exports
+            # strict, because its quantizer's conv/linear patterns only match that graph
+            # shape), and torch.export rejects a list of example inputs outright.
+            reference = backend.quantized_reference(program, tuple(t.clone() for t in inputs))
         except Exception as e:                      # noqa: BLE001
             return "quant_ref", f"{type(e).__name__}: {str(e)[:160]}"
 

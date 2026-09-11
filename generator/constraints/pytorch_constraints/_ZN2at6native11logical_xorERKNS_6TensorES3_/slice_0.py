@@ -35,7 +35,18 @@ def get_constraints() -> list:
 
 
 def get_axioms() -> list:
-    return []
+    # HAND-ADDED (not from combine_constraints.py — keep across re-vendoring).
+    # This op's CPU kernel raises NotImplementedError for every float8 dtype, e.g.
+    #   NotImplementedError: "logical_xor" not implemented for 'Float8_e5m2'
+    # so a float8 call is invalid however well-shaped it is. Stated as an axiom because
+    # axioms are asserted directly, while get_constraints() describes ERROR paths and is
+    # negated by the harness. Verified by probing every core op with float8 vs float32
+    # inputs: 75 of 221 accept float32 and reject float8.
+    _FLOAT8 = (23, 24, 25, 26, 44)   # model.FLOAT8_DTYPES
+    return [
+            Not(Or(*(Int('self.dtype') == IntVal(c) for c in _FLOAT8))),
+            Not(Or(*(Int('other.dtype') == IntVal(c) for c in _FLOAT8))),
+    ]
 
 
 def get_vars() -> dict:

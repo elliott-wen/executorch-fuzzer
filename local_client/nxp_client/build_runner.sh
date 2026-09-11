@@ -10,7 +10,7 @@
 # Output: mobile/tmp/nxp_runner_build/nxp_executor_runner
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_executor/
+MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_client/
 VENV="$MOBILE/.venv"
 ETX="${ET_ROOT:-$MOBILE/pytorch_ref/executorch}"
 BUILD="${NXP_RUNNER_BUILD:-$MOBILE/tmp/nxp_runner_build}"

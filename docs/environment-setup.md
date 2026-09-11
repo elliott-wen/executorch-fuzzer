@@ -91,7 +91,7 @@ a separate prebuilt toolchain at **`android-dev/`** (in the repo root,
 | path | for |
 |------|-----|
 | `android-env.sh` | source to set up the cross-build environment |
-| `sdk/`, `jdk17/`, `gradle-8.11.1-bin.zip` | the **Android app** build (`android/`) |
+| `sdk/`, `jdk17/`, `gradle-8.11.1-bin.zip` | the **Android app** build (`android_client/`) |
 | `shaderc-src/` | **Vulkan** backend (shader compilation) |
 | `qairt/`, `qnn-hostlibs/` | **Qualcomm** (QNN / Hexagon) backend |
 

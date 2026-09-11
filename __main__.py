@@ -18,7 +18,7 @@ broker streams that corpus over ZeroMQ to executor clients (local now, phones la
   # CLIENT (one or more / per device): pull jobs, run .pte. Each backend has its OWN
   # self-contained executor folder (the host analog of the Android/FVP/QNN clients);
   # the in-process ExecuTorch runtime runs both xnnpack- and portable-lowered programs:
-  #   python local_executor/xnnpack_client/xnnpack_client.py --host <broker-ip> [--job-timeout 30]
+  #   python local_client/xnnpack_client/xnnpack_client.py --host <broker-ip> [--job-timeout 30]
 
 Start the broker first, then feed + any number of clients (locally or on more
 machines/phones). mobile/local_fleet.py manages the feeder + client fleet with respawn.

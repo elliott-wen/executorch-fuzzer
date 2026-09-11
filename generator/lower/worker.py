@@ -36,12 +36,16 @@ def main(argv=None) -> int:
     parser.add_argument("--out", required=True, help="where to write .pte records")
     parser.add_argument("--backend", required=True)
     parser.add_argument("--quantize", action="store_true")
+    parser.add_argument("--check", action="store_true",
+                        help="probe the backend and exit; used by the fleet to fail fast")
     args = parser.parse_args(argv)
 
     backend = backends.get(args.backend)
     if backend is None:
         print(f"backend {args.backend!r} is not available in this install", file=sys.stderr)
         return 2
+    if args.check:
+        return 0
 
     def handle(job: str, enter) -> tuple[str, str]:
         if store.exists(args.out, job):

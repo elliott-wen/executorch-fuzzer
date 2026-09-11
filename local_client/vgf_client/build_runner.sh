@@ -20,7 +20,7 @@
 # toolchain the full Vulkan backend would require.
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_executor/
+MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_client/
 VENV="$MOBILE/.venv"
 ETX="${ET_ROOT:-$MOBILE/pytorch_ref/executorch}"
 BUILD="${VGF_RUNNER_BUILD:-$MOBILE/tmp/vgf_runner_build}"

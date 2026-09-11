@@ -42,7 +42,7 @@ done
   echo "--target must be generic or hifi, got '$TARGET'" >&2; exit 4; }
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_executor/
+MOBILE="$(dirname "$(dirname "$HERE")")"   # ../.. : client dirs live under mobile/local_client/
 
 if [[ -z "$RUNNER" ]]; then
   if [[ "$TARGET" == "hifi" ]]; then

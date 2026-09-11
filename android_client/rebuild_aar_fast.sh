@@ -4,7 +4,7 @@
 # Run build_et_aar.sh once first (it does the configure + submodules); use THIS for iterations.
 set -ex
 
-# Repo-relative paths (this script lives at <mobile>/android/). Survives the tree moving;
+# Repo-relative paths (this script lives at <mobile>/android_client/). Survives the tree moving;
 # all overridable via env. android-env.sh sets the toolchain from mobile/android-dev/.
 MOBILE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 [ -f "$MOBILE/android-dev/android-env.sh" ] && source "$MOBILE/android-dev/android-env.sh"
@@ -15,7 +15,7 @@ export ANDROID_HOME=${ANDROID_HOME:-$MOBILE/android-dev/sdk}
 export JAVA_HOME=${JAVA_HOME:-$MOBILE/android-dev/jdk17}
 export PATH="$JAVA_HOME/bin:$PATH"
 ABIS=${ANDROID_ABIS:-arm64-v8a x86_64}
-OUT_AAR=${OUT_AAR:-$MOBILE/android/app/libs/executorch.aar}
+OUT_AAR=${OUT_AAR:-$MOBILE/android_client/app/libs/executorch.aar}
 
 cd "$ET"
 for ABI in $ABIS; do
@@ -23,7 +23,7 @@ for ABI in $ABIS; do
   [ -d "$OUT" ] || { echo "no $OUT — run build_et_aar.sh first"; exit 1; }
   cmake --build "$OUT" -j"$(nproc)" --target install --config Release    # incremental: only changed files
   mkdir -p "cmake-out-android-so/$ABI"
-  cp "$OUT"/extension/android/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
+  cp "$OUT"/extension/android_client/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
 done
 
 find cmake-out-android-so -name "*.so" -exec \

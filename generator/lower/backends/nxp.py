@@ -23,6 +23,8 @@ from mobile.generator.lower.backends.base import EDGE_CONFIG, Backend, QuantMode
 #: currently supports.
 NXP_TARGET = "imxrt700"
 
+_QUANTIZED_OUT_VARIANTS_LOADED = False
+
 
 class NxpBackend(Backend):
     name = "nxp"
@@ -88,7 +90,38 @@ class NxpBackend(Backend):
         # non-strict numerics and diverge from the device by construction.
         return super().quantized_reference(self._strict(ep, example_inputs), example_inputs)
 
+    @staticmethod
+    def _register_quantized_out_variants() -> None:
+        """Load the AOT quantized kernels, so non-delegated Q/DQ pairs have out-variants.
+
+        A partition boundary leaves `quantized_decomposed::{quantize,dequantize}_per_tensor`
+        in the graph, and to_executorch needs their `.out` variants to serialize. Those live
+        in executorch/kernels/quantized/libquantized_ops_aot_lib.so, which nothing in the AOT
+        import graph loads: `kernels/quantized/__init__.py` tries, but the .so links
+        _portable_lib/libtorch so the load raises OSError and its bare `except` swallows it.
+        Importing portable_lib FIRST makes the symbols resolve.
+
+        Measured previously at 23.9% of all NXP lowering losses. Idempotent.
+        """
+        global _QUANTIZED_OUT_VARIANTS_LOADED
+        if _QUANTIZED_OUT_VARIANTS_LOADED:
+            return
+        try:
+            import ctypes
+            from pathlib import Path
+
+            import executorch.extension.pybindings.portable_lib  # noqa: F401 — must precede
+            import executorch.kernels.quantized as quantized_kernels
+
+            so = Path(quantized_kernels.__file__).parent / "libquantized_ops_aot_lib.so"
+            if so.exists():
+                ctypes.CDLL(str(so), mode=ctypes.RTLD_GLOBAL)
+        except Exception:
+            pass            # absent kernels just mean those graphs still fail to serialize
+        _QUANTIZED_OUT_VARIANTS_LOADED = True
+
     def _lower(self, ep, example_inputs):
+        self._register_quantized_out_variants()
         from executorch.backends.nxp.edge_passes.neutron_edge_pass_manager import (
             NeutronEdgePassManager,
         )

@@ -17,7 +17,7 @@ delegate). CRASH = the on-device executor process died from a native abort.
 
 A native abort kills the phone executor process outright. The host broker only **INFERS**
 CRASH from the dropped binding — see
-`android/app/src/main/java/com/fuzzer/etclient/ExecutorService.kt:68-69`. There is **no
+`android_client/app/src/main/java/com/fuzzer/etclient/ExecutorService.kt:68-69`. There is **no
 abort message, no stack, no errno** captured over the wire, and there is **no adb path** to
 the remote phone. Every CRASH row carries the identical placeholder reason
 `executor process died (native abort)` (verified: 6,214/6,214 in

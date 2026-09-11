@@ -53,6 +53,10 @@ def generate(out, params: Params | None = None, count: int = 10_000,
     """
     params = params or Params()
     workers = workers or (os.cpu_count() or 1)
+    # Absolute, because workers run with cwd set to the repo's parent so `import mobile`
+    # resolves. A relative --out would land beside the repo instead of where the caller
+    # meant, splitting the records away from the outcomes log written here.
+    out = Path(out).resolve()
     argv = [sys.executable, "-m", "mobile.generator.oracle.worker",
             "--out", str(out), *params.to_argv()]
     log = journal.Journal(out, count, verbose, label="oracle")

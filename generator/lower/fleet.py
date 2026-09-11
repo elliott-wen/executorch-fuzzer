@@ -56,6 +56,26 @@ def worker_env() -> dict:
     return env
 
 
+def _require_backend(argv, backend: str) -> None:
+    """Probe the backend in one throwaway process before opening the pool.
+
+    Without this an unavailable backend is discovered the hard way: every worker exits
+    immediately, the supervisor's barren-spawn guard retires each slot after a few tries,
+    and the run ends with hundreds of anonymous `crash` outcomes and no .pte — saying only
+    that something died, never that the SDK simply is not installed. One probe costs a
+    couple of seconds and turns that into a sentence. It also keeps the parent free of torch
+    and of the backend's SDK, which is the whole point of doing it in a subprocess.
+    """
+    import subprocess
+
+    probe = subprocess.run(argv + ["--check"], capture_output=True, text=True,
+                           env=worker_env(), cwd=_REPO_PARENT, timeout=300)
+    if probe.returncode != 0:
+        detail = (probe.stderr or "").strip().splitlines()
+        raise RuntimeError(f"backend {backend!r} is not usable in this install"
+                           + (f" — {detail[-1]}" if detail else ""))
+
+
 def lower(oracle_root, out, backend: str = "portable", count: int | None = None,
           workers: int = 0, quantize: bool = False,
           python: str | None = None, verbose: bool = True) -> int:
@@ -68,12 +88,16 @@ def lower(oracle_root, out, backend: str = "portable", count: int | None = None,
     from mobile.generator.oracle import store as oracle_store
 
     workers = workers or (os.cpu_count() or 1)
+    # Absolute for both: workers run with cwd set to the repo's parent (so `import mobile`
+    # resolves), and a relative path would resolve there rather than where the caller meant.
+    oracle_root, out = Path(oracle_root).resolve(), Path(out).resolve()
     tokens = oracle_store.iter_tokens(oracle_root)
     if count is None:
         count = sum(1 for _ in oracle_store.iter_tokens(oracle_root))
     else:
         tokens = itertools.islice(tokens, count)
     argv = worker_argv(oracle_root, out, backend, quantize, python)
+    _require_backend(argv, backend)
     log = journal.Journal(out, count, verbose, label="lower")
 
     if verbose:

@@ -15,11 +15,11 @@ corpus*/
 *.pte
 
 # Android build artifacts (the AAR is built from source; rebuild rather than commit)
-android/.gradle/
-android/**/build/
-android/app/libs/*.aar
-android/local.properties
-android/captures/
+android_client/.gradle/
+android_client/**/build/
+android_client/app/libs/*.aar
+android_client/local.properties
+android_client/captures/
 *.apk
 
 # NOT ignored (tracked on purpose): generator/constraints/pytorch_constraints/ (vendored
@@ -32,7 +32,7 @@ third_party/samsung_sdk/
 .venv-mtk/
 
 # FVP bare-metal runner build cache (rebuilt on demand)
-local_executor/fvp_client/.runner-build/
+local_client/fvp_client/.runner-build/
 
 # Samsung Exynos AI LiteCore SDK (gated download) + the ENN backend build cache.
 # Install via gen/export/backends/setup_samsung_sdk.sh; rebuild rather than commit.

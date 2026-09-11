@@ -70,7 +70,7 @@ claim. The localizer also cannot attribute **memory-planning** bugs to a node (s
 ## CRASH — op enrichment (no device signature available)
 
 A native abort kills the phone executor outright; the broker only **infers** CRASH from the dropped
-binding ([ExecutorService.kt:68-69](../../android/app/src/main/java/com/fuzzer/etclient/ExecutorService.kt#L68-L69)).
+binding ([ExecutorService.kt:68-69](../../../android_client/app/src/main/java/com/fuzzer/etclient/ExecutorService.kt#L68-L69)).
 No abort message is captured over the wire and there is no adb path to the remote phone — so crashes
 are characterized by **op-presence enrichment vs the full-corpus baseline**, not per-crash signatures:
 

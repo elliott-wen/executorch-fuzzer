@@ -42,10 +42,14 @@ def main(argv=None) -> int:
         from mobile.generator.oracle import store   # pulls in torch; only this path needs it
 
         record = store.read_record(a.out, a.show)
-        if record is None:
-            print(f"# {a.show} is not in this corpus — see outcomes.tsv for why")
+        if record is not None:
+            print(f"# {record['desc']}\n{record['src']}")
+            return 0
+        source = store.read_source(a.out, a.show)   # a graph the eager run never survived
+        if source is None:
+            print(f"# {a.show} is not in this corpus")
             return 1
-        print(f"# {record['desc']}\n{record['src']}")
+        print(f"# no oracle — this graph failed or crashed the eager run\n{source}")
         return 0
 
     generate(a.out, params=params, count=a.count, workers=a.workers)
