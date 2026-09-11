@@ -75,6 +75,18 @@ def write_record(root: str | Path, token: str, pte: bytes, meta: dict,
     _atomic_write(directory / f"{token[SHARD:]}.json", json.dumps(meta, sort_keys=True).encode())
 
 
+def iter_tokens(root: str | Path):
+    """Every token with a complete lowered record, ascending within each shard.
+
+    What the feeder walks: these are exactly the graphs that produced a .pte, so a run can
+    be dispatched without asking the oracle corpus what it holds or re-deriving anything.
+    """
+    base = Path(root)
+    for directory in sorted(p for p in base.glob("[0-9a-f]" * SHARD) if p.is_dir()):
+        for meta in sorted(directory.glob("*.json")):
+            yield directory.name + meta.stem
+
+
 def read_record(root: str | Path, token: str) -> dict[str, Any] | None:
     """{'pte', 'reference', **meta} for a token, or None if it isn't lowered."""
     meta = meta_path(root, token)
