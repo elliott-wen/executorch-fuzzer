@@ -142,6 +142,9 @@ def step(oracle_root, out_root, backend: Backend, token: str, quantize: bool,
         return "lower", f"{type(e).__name__}: {str(e)[:160]}"
 
     enter("write")
+    # The oracle record comes across too, so the lowering corpus is self-contained and the
+    # executor needs one path rather than a join across two.
+    store.copy_oracle(oracle_root, out_root, token)
     store.write_record(out_root, token, lowered.buffer, {
         "backend": backend.name,
         "quantized": backend.quantizes(quantize),

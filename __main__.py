@@ -12,7 +12,7 @@ streams that work over ZeroMQ to executor clients (local runtimes, simulators, p
   python -m mobile broker [--job-port 15554] [--client-port 15555] [--ctrl-port 15556]
 
   # FEED (one): join the two corpora by token, stream jobs, diff the results.
-  python -m mobile feed --pte tmp/pte --oracle tmp/oracle
+  python -m mobile feed --corpus tmp/pte
 
   # CLIENT (one or more / per device): pull jobs, run .pte. Each backend has its OWN
   # self-contained executor folder (the host analog of the Android/FVP/QNN clients);
@@ -53,8 +53,8 @@ def main() -> int:
     fd.add_argument("--host", default="127.0.0.1", help="broker host")
     fd.add_argument("--job-port", type=int, default=15554)
     fd.add_argument("--ctrl-port", type=int, default=15556)
-    fd.add_argument("--pte", default="tmp/pte", help="lowering corpus: the .pte to run")
-    fd.add_argument("--oracle", default="tmp/oracle", help="oracle corpus: inputs + reference")
+    fd.add_argument("--corpus", default="tmp/pte",
+                    help="lowering corpus: .pte plus the oracle record copied beside it")
     fd.add_argument("--from-tsv", default=None, help="also take job_ids from a results TSV (col 2)")
     fd.add_argument("--status", default=None, help="with --from-tsv: keep only rows of this status")
     fd.add_argument("-n", "--graphs", type=int, default=0,
@@ -64,7 +64,7 @@ def main() -> int:
     fd.add_argument("--window", type=int, default=64,
                     help="max in-flight jobs (end-to-end backpressure)")
     fd.add_argument("--skip-log", default="tmp/skip_reasons_mobile.tsv",
-                    help="failing rows: status + token + reason + op-chain (the graph is in the oracle corpus)")
+                    help="failing rows: status + token + reason + op-chain (the graph is in the corpus)")
     fd.add_argument("--heartbeat", type=float, default=3.0,
                     help="seconds between feed status lines")
     fd.add_argument("-v", "--verbose", action="store_true")
@@ -77,7 +77,7 @@ def main() -> int:
                           opts.heartbeat, opts.verbose)
     if opts.cmd == "feed":
         from mobile.executor.feed import run_feeder
-        return run_feeder(opts.host, opts.job_port, opts.ctrl_port, opts.pte, opts.oracle,
+        return run_feeder(opts.host, opts.job_port, opts.ctrl_port, opts.corpus,
                           opts.jobs, opts.from_tsv, opts.status, opts.graphs,
                           opts.timeout, opts.skip_log, opts.window,
                           opts.heartbeat, opts.verbose)

@@ -1,11 +1,22 @@
 """store.py — where a lowered program lives on disk.
 
-One graph, up to three files, named and sharded by the same token as the oracle record, so
-the two directories line up entry for entry:
+One graph, named and sharded by the same token as the oracle record, in the same layout:
 
-    <root>/<token[:3]>/<token[3:]>.pte   the ExecuTorch program, raw bytes
-    <root>/<token[:3]>/<token[3:]>.json  what came out of lowering (see job.step)
-    <root>/<token[:3]>/<token[3:]>.ref   a quantized reference, only for quantized backends
+    <root>/<token[:3]>/<token[3:]>.pte     the ExecuTorch program, raw bytes
+    <root>/<token[:3]>/<token[3:]>.json    what came out of lowering (see job.step)
+    <root>/<token[:3]>/<token[3:]>.ref     a quantized reference, quantized backends only
+    <root>/<token[:3]>/<token[3:]>.oracle  the inputs and eager outputs, COPIED
+    <root>/<token[:3]>/<token[3:]>.py      the graph source, COPIED
+
+The last two are copies of the oracle record, so a lowering corpus stands alone: one
+directory holds the program to run, the inputs to run it on, what PyTorch said it should
+produce, and the source to read when it does not. The executor needs one path, not two, and
+a corpus can be handed to a device fleet whole.
+
+Copying is the cheap half of the split. Sharing the ORACLE STAGE across backends was always
+about not re-running the eager reference — the expensive, unrepeatable part — not about not
+storing its answer twice. At roughly 3.7 KiB per graph a second backend costs a few hundred
+megabytes and saves hours.
 
 Raw `.pte` bytes rather than a container: it is what the runtime loads, what ExecuTorch's own
 tooling inspects, and what the device is handed. Nothing is gained by wrapping it.
@@ -23,6 +34,7 @@ import gzip
 import io
 import json
 import os
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -59,6 +71,20 @@ def _atomic_write(path: Path, data: bytes) -> None:
     tmp = path.with_name(path.name + ".tmp")
     tmp.write_bytes(data)
     os.replace(tmp, path)          # a reader never sees a half-written record
+
+
+def copy_oracle(oracle_root: str | Path, root: str | Path, token: str) -> None:
+    """Bring the oracle record alongside the .pte, so this corpus is self-contained.
+
+    A byte copy rather than a re-serialization: the record is already exactly what a reader
+    wants, and re-encoding it would only risk the two differing.
+    """
+    directory = Path(root) / token[:SHARD]
+    directory.mkdir(parents=True, exist_ok=True)
+    for suffix in (".oracle", ".py"):
+        source = Path(oracle_root) / token[:SHARD] / f"{token[SHARD:]}{suffix}"
+        if source.exists():
+            shutil.copyfile(source, directory / f"{token[SHARD:]}{suffix}")
 
 
 def write_record(root: str | Path, token: str, pte: bytes, meta: dict,

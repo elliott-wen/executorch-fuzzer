@@ -1,16 +1,16 @@
 """feed.py — stream jobs to the broker AND own the diff + tally. The one entry point for both
 bulk fuzzing and single-graph debugging.
 
-The feeder joins the two generation stores by token — the .pte from the lowering corpus, the
-inputs and eager outputs from the oracle corpus — so it already holds the reference, sends each LEAN job
+The feeder reads one corpus — the lowering stage puts the .pte and the oracle record side by
+side — so it already holds the reference, sends each LEAN job
 (pte + inputs) to the broker, and the broker routes the worker's RAW-output RESULT back HERE.
 The feeder then diffs outputs vs its kept eager ([compare.py]), tallies, and writes the skip-log.
 Comparison lives with the data that needs it (the feeder); the broker stays a pure router; the
 worker (a local `client`, or the phone) just runs + returns. Run more feeders to parallelise.
 
 Two ways to point it at work — same pipeline, same compare:
-    mobile feed --pte tmp/pte --oracle tmp/oracle          # everything that lowered → TSV + tally
-    mobile feed <token> --pte tmp/pte --oracle tmp/oracle  # one graph → rich JSON observation
+    mobile feed --corpus tmp/pte            # everything that lowered → TSV + tally
+    mobile feed <token> --corpus tmp/pte    # one graph → rich JSON observation
     mobile feed --from-tsv tmp/skip.tsv --status MISMATCH --limit 20   # replay failing rows
 
 Single-graph / --from-tsv runs print one JSON object per job (job_id, status, detail, op_chain,
@@ -76,21 +76,19 @@ def _worklist(pte_dir, jobs, from_tsv, status_filter, limit):
     return tokens, False
 
 
-def _load_job(pte_dir, oracle_dir, token):
+def _load_job(pte_dir, token):
     """One token → the pushjob frames to ship, plus what the feeder keeps to diff against.
 
-    The two halves live in two stores and are joined here, by token: the .pte and its
-    delegation/user-output metadata come from the lowering corpus, the inputs the eager
-    reference actually ran on and its outputs come from the oracle corpus. Joining at send
-    time rather than baking one file per job is what lets a second backend be fed from the
-    same oracle records without copying them.
+    Everything comes from the one corpus: the lowering stage copies the oracle record in
+    beside the .pte, and the two stores share a layout, so the oracle reader works on this
+    directory unchanged. The executor is handed one path and a corpus travels whole.
     """
     lowered = pte_store.read_record(pte_dir, token)
     if lowered is None:
         raise FileNotFoundError(f"no .pte for {token} in {pte_dir}")
-    record = oracle_store.read_record(oracle_dir, token)
+    record = oracle_store.read_record(pte_dir, token)
     if record is None:
-        raise FileNotFoundError(f"no oracle record for {token} in {oracle_dir}")
+        raise FileNotFoundError(f"no oracle record beside the .pte for {token} in {pte_dir}")
     delegation = lowered.get("delegation")
     return P.encode_pushjob(
         token, lowered["pte"], record["inputs"], record["eager"],
@@ -102,13 +100,13 @@ def _load_job(pte_dir, oracle_dir, token):
 
 # ── main loop ────────────────────────────────────────────────────────────────────
 
-def run_feeder(host, job_port, ctrl_port, pte_dir, oracle_dir, jobs=None, from_tsv=None,
+def run_feeder(host, job_port, ctrl_port, pte_dir, jobs=None, from_tsv=None,
                status_filter=None, limit=0, timeout=30.0,
                skip_log="tmp/skip_reasons_mobile.tsv", window=64,
                heartbeat=3.0, verbose=False) -> int:
     work, debug = _worklist(pte_dir, jobs, from_tsv, status_filter, limit)
     if not work:
-        print(f"[feed] nothing to do — give a token, --from-tsv, or a populated --pte {pte_dir}",
+        print(f"[feed] nothing to do — give a token, --from-tsv, or a populated --corpus {pte_dir}",
               flush=True)
         return 1
     if debug:
@@ -182,7 +180,7 @@ def run_feeder(host, job_port, ctrl_port, pte_dir, oracle_dir, jobs=None, from_t
                 token = work[wi]
                 wi += 1
                 try:
-                    frames = _load_job(pte_dir, oracle_dir, token)
+                    frames = _load_job(pte_dir, token)
                     job_id, desc = P.peek_jobinfo(frames)
                     eager, user_pos = P.eager_from_pushjob(frames)
                 except FileNotFoundError as e:
