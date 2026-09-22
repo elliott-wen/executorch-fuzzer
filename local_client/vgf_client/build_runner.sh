@@ -26,6 +26,21 @@ ETX="${ET_ROOT:-$MOBILE/pytorch_ref/executorch}"
 BUILD="${VGF_RUNNER_BUILD:-$MOBILE/tmp/vgf_runner_build}"
 INSTALL="${VGF_ET_INSTALL:-$ETX/cmake-out-vgf}"
 JOBS="${JOBS:-24}"
+# The VGF runtime headers/lib (vgf/decoder.hpp, libvgf.a) ship in the ai_ml_sdk_vgf_library
+# PIP package, laid out as <site-packages>/vgf_lib/binaries/{include,lib} — exactly the shape
+# EXECUTORCH_VGF_ROOT wants. Pass it EXPLICITLY: backends/arm/CMakeLists.txt can autodetect it,
+# but only via find_package(Python3), which resolves to the SYSTEM python here because this
+# script runs cmake without activating the venv (Python3_FIND_VIRTUALENV needs VIRTUAL_ENV set).
+# The system python has no vgf_lib, so autodetection silently picks a path that does not exist
+# and the build dies deep in stage 1 with "fatal error: vgf/decoder.hpp: No such file or
+# directory". Discovered when rebuilding against the v1.5.0 source tree.
+VGF_ROOT="${VGF_ROOT:-$(
+  "$VENV/bin/python" -c 'import sysconfig,os; print(os.path.join(sysconfig.get_paths()["purelib"], "vgf_lib", "binaries"))'
+)}"
+[[ -f "$VGF_ROOT/include/vgf/decoder.hpp" ]] || {
+  echo "FATAL: no VGF headers at $VGF_ROOT (pip install ai_ml_sdk_vgf_library, or set VGF_ROOT)" >&2
+  exit 1
+}
 export CCACHE_DIR="${CCACHE_DIR:-$MOBILE/tmp/ccache}"
 
 [[ -x "$VENV/bin/python" ]] || { echo "FATAL: missing $VENV" >&2; exit 1; }
@@ -42,6 +57,7 @@ if [[ ! -f "$INSTALL/$LIBDIR/cmake/ExecuTorch/executorch-config.cmake" ]]; then
     CXXFLAGS="-fno-exceptions -fno-rtti" cmake -DCMAKE_INSTALL_PREFIX="$INSTALL" \
       -DCMAKE_BUILD_TYPE=Release \
       -DEXECUTORCH_BUILD_VGF=ON \
+      -DEXECUTORCH_VGF_ROOT="$VGF_ROOT" \
       -DEXECUTORCH_BUILD_VULKAN=OFF \
       -DEXECUTORCH_BUILD_KERNELS_QUANTIZED=ON \
       -DEXECUTORCH_BUILD_EXTENSION_DATA_LOADER=ON \

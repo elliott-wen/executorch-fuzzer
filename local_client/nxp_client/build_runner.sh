@@ -24,8 +24,16 @@ JOBS="${JOBS:-32}"
 export CCACHE_DIR="${CCACHE_DIR:-$MOBILE/tmp/ccache}"
 mkdir -p "$BUILD"
 echo ">> configuring nxp_executor_runner (target=$TARGET) ..."
+# BOTH spellings are required. CMake variable names are CASE-SENSITIVE: find_package(Python)
+# sets Python_EXECUTABLE, but executorch's tools/cmake/Codegen.cmake reads ${PYTHON_EXECUTABLE}.
+# Pass only the mixed-case one and Codegen.cmake sees an EMPTY interpreter, its
+# `import torchgen` execute_process fails, its RESULT_VARIABLE is never checked, and the
+# following file(GLOB_RECURSE _torchgen_srcs "${torchgen-out}/*.py") degrades to "/*.py" —
+# globbing the WHOLE FILESYSTEM into the codegen DEPENDS list. That is what produced a 1.65 GB
+# build.make for cadence (10.8M lines, 3.8M of them mobile's own corpus .py files).
 cmake -S "$ETX/examples/nxp/executor_runner" -B "$BUILD" -G Ninja \
   -DPython_EXECUTABLE="$VENV/bin/python" \
+  -DPYTHON_EXECUTABLE="$VENV/bin/python" \
   -DCMAKE_BUILD_TYPE=Release \
   -DEIQ_NEUTRON_TARGET="$TARGET" \
   -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \

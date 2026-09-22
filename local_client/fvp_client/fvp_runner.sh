@@ -133,14 +133,24 @@ else
   trap 'rm -rf "$JOBTMP"' EXIT
   BUILD_DIR="$JOBTMP/build"
   echo ">> building runner: backend=$BACKEND target=$TARGET ops=$(printf '%s' "$SELECT_OPS"|sha1sum|cut -c1-8) (shared SDK, no fetch) ..." >&2
-  # Fast-RAM linker fix on the shared LDS — guarded to write ONCE (only while still DTCM), so
-  # concurrent builds don't race on sed -i (the first build already moved it to SRAM; idempotent).
+  # Fast-RAM linker fix — DO NOT RE-ENABLE ON executorch >= 1.5.0.
+  # On the 1.4.0a0 tree the linker scripts lived at examples/arm/executor_runner/Corstone-3*.ld
+  # and .rodata had to be moved DTCM -> SRAM to link. In 1.5.0 BOTH facts changed: the scripts
+  # moved to backends/arm/cmake/linker_scripts/, and the stock (unpatched) script links fine.
+  # Worse, re-applying the old edit BREAKS 1.5.0 — it leaves .rodata's VMA in SRAM while the
+  # section is still assigned to the rom_dram PT_LOAD phdr alongside .ddr, so the segment would
+  # span non-contiguous memory and ld fails with
+  #     section `.rodata' can't be allocated in segment 2
+  # Verified on v1.5.0: stock script -> arm_executor_runner links; patched -> link error.
+  # The old paths no longer exist, so the guard below is already a no-op; it is kept (disabled)
+  # only to record why, for anyone tempted to "fix" it by pointing at the new location.
   case "$TARGET" in
     *u85*|cortex-m85) LDS="$ET_ROOT/examples/arm/executor_runner/Corstone-320.ld" ;;
     *)                LDS="$ET_ROOT/examples/arm/executor_runner/Corstone-300.ld" ;;
   esac
-  [[ -f "$LDS" ]] && grep -q 'DTCM AT >DDR' "$LDS" \
-    && sed -i '/__rodata_start__/,/} >/ s/> *DTCM AT >DDR/> SRAM AT >DDR/' "$LDS"
+  if [[ "${FVP_LEGACY_LDS_PATCH:-0}" == 1 && -f "$LDS" ]] && grep -q 'DTCM AT >DDR' "$LDS"; then
+    sed -i '/__rodata_start__/,/} >/ s/> *DTCM AT >DDR/> SRAM AT >DDR/' "$LDS"
+  fi
   # Cap per-build compiler parallelism so N concurrent client builds don't oversubscribe (each
   # build otherwise uses nproc=240). With a ~32-client fleet, 8 each ≈ nproc at the cold-start
   # storm (all build at once) and frees cores for FVP sims at steady state. Override via env.

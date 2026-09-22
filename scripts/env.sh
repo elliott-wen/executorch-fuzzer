@@ -48,7 +48,7 @@ backend_env() {
     cuda)
       # Two environment traps, both fatal and neither obvious:
       #  1. AOTInductor compiles a CUDA kernel per graph, so it needs nvcc. Five toolkits are
-      #     installed here; torch is 2.12.0+cu130, so cuda-13.0 is the matching one.
+      #     installed here; torch is 2.14.0+cu130, so cuda-13.0 is the matching one.
       #  2. /tmp is mounted NOEXEC. Triton compiles a helper .so into its cache and dlopens
       #     it, which fails there with "failed to map segment from shared object". Point both
       #     caches at /data, which allows exec.
@@ -75,9 +75,19 @@ backend_env() {
     openvino) CLIENT="$M/local_client/openvino_client/openvino_client.py" ;;
     ethos-u)  CLIENT="$M/local_client/fvp_client/fvp_client.py" ;;
 
+    webgpu)
+      # Partitioning is VulkanPartitioner's, verbatim — only the blob writer differs, which
+      # makes vulkan/webgpu a same-partition differential pair. No client yet: executing a
+      # WebGPU .pte needs a runner built against wgpu-native (backends/webgpu/scripts/
+      # setup-wgpu-native.sh), which on Linux sits on Vulkan — so lavapipe can drive it
+      # headless the way vulkan and vgf already are. Lowering measures normally without it.
+      ;;
+
     # No host client: coreml needs a Mac, samsung an Exynos device, cortex-m a Cortex-M
-    # board or the Corstone FVP. Lowering still measures normally for all three.
-    coreml|samsung|cortex-m) ;;
+    # board or the Corstone FVP, mlx an Apple-Silicon Mac (no Linux MLX runtime exists, and
+    # mlx additionally needs scripts/setup_mlx.sh run once per venv — the wheel ships the
+    # schema but not the bindings generated from it). Lowering still measures normally.
+    coreml|samsung|cortex-m|mlx) ;;
 
     *) echo "env.sh: unknown backend '$bk'" >&2; return 1 ;;
   esac

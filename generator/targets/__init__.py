@@ -72,6 +72,8 @@ _TARGETS: dict[str, str] = {
     "cuda": "cuda",
     "cortex-m": "cortexm",
     "ethos-u": "ethosu",
+    "webgpu": "webgpu",
+    "mlx": "mlx",
     "eager": "eager",           # adds nothing — the baseline the others are measured against
 }
 

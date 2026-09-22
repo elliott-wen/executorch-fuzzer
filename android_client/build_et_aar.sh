@@ -21,7 +21,11 @@ export ANDROID_NDK=${ANDROID_NDK:-$MOBILE/android-dev/sdk/ndk/28.0.13004108}
 export ANDROID_HOME=${ANDROID_HOME:-$MOBILE/android-dev/sdk}
 export JAVA_HOME=${JAVA_HOME:-$MOBILE/android-dev/jdk17}
 export PATH="$JAVA_HOME/bin:$PATH"
-export PYTHON_EXECUTABLE=${PYTHON_EXECUTABLE:-/data/jwen929/pytorch/venv/bin/python}
+# Codegen interpreter. MUST be kept in step with the $ET source tree: it was the old gold
+# venv at /data/jwen929/pytorch/venv, which is stuck on torch 2.12 / executorch 1.3.1 and is
+# now two releases behind the 1.5.0 source this builds from. Use the repo venv (torch 2.14 /
+# executorch 1.5.1) so codegen and source agree.
+export PYTHON_EXECUTABLE=${PYTHON_EXECUTABLE:-$MOBILE/.venv/bin/python}
 ABIS=${ANDROID_ABIS:-arm64-v8a x86_64}          # phone (arm64-v8a) + emulator (x86_64)
 OUT_AAR=${OUT_AAR:-$MOBILE/android_client/app/libs/executorch.aar}
 
@@ -162,7 +166,7 @@ cp executorch_android/build/outputs/aar/executorch_android-debug.aar "$OUT_AAR"
 echo "=== DONE → $OUT_AAR ==="
 
 # To use it, in mobile/android_client/app/build.gradle replace:
-#     implementation 'org.pytorch:executorch-android:1.3.1'
+#     implementation 'org.pytorch:executorch-android:<version>'   (was 1.3.1)
 # with:
 #     implementation files('libs/executorch.aar')
 # (the JeroMQ dependency stays). Then rebuild the app.

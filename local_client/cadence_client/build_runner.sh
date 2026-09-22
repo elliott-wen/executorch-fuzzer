@@ -103,9 +103,22 @@ else
   BUILD="${CADENCE_RUNNER_BUILD:-$MOBILE/tmp/cadence_runner_build}"
   if [[ ! -f "$ETX/cmake-out/$LIBDIR/cmake/ExecuTorch/executorch-config.cmake" ]]; then
     echo ">> stage 1: building + installing host ExecuTorch core (this is the long pole) ..."
+      # PYTHON_EXECUTABLE IS NOT OPTIONAL HERE. Without it, tools/cmake/Codegen.cmake runs
+      #   execute_process(COMMAND "${PYTHON_EXECUTABLE}" -c "import torchgen; print(dirname(...))"
+      #                   OUTPUT_VARIABLE torchgen-out RESULT_VARIABLE torchgen-result)
+      # with an EMPTY interpreter, the command fails, and torchgen-result is captured but NEVER
+      # CHECKED — so torchgen-out is silently empty. The next line is
+      #   file(GLOB_RECURSE _torchgen_srcs "${torchgen-out}/*.py")
+      # which then globs "/*.py" — THE WHOLE FILESYSTEM — into the codegen DEPENDS list.
+      # Measured: portable_ops_lib's build.make came out at 1.65 GB / 10.8M lines, 3.8M of them
+      # dependencies on mobile's own corpus (/data/jwen929/corpus has 10.2M .py files) plus
+      # things like /etc/asciidoc/*.py. gmake then burns ~1000 s of SINGLE-CORE time just
+      # parsing it, with 240 cores idle — looks like a hung build, is not. -j cannot help.
     ( cd "$ETX"
       CXXFLAGS="-fno-exceptions -fno-rtti" cmake -DCMAKE_INSTALL_PREFIX=cmake-out \
         -DCMAKE_BUILD_TYPE=Release -DEXECUTORCH_BUILD_DEVTOOLS=ON \
+        -DPython_EXECUTABLE="$VENV/bin/python" \
+        -DPYTHON_EXECUTABLE="$VENV/bin/python" \
         -DEXECUTORCH_ENABLE_EVENT_TRACER=ON -DEXECUTORCH_ENABLE_LOGGING=ON \
         -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
         -Bcmake-out . >cmake-out-configure.log 2>&1

@@ -35,6 +35,7 @@ third_party/neuropilot_sdk/
 third_party/cadence_sdk/
 third_party/samsung_sdk/
 .venv-mtk/
+.venv*/
 
 # FVP bare-metal runner build cache (rebuilt on demand)
 local_client/fvp_client/.runner-build/

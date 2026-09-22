@@ -38,6 +38,8 @@ _BACKENDS: dict[str, tuple[str, str]] = {
     "nxp":      ("nxp",      "NxpBackend"),
     "cadence":  ("cadence",  "CadenceBackend"),
     "cuda":     ("cuda",     "CudaBackend"),
+    "webgpu":   ("webgpu",   "WebGPUBackend"),
+    "mlx":      ("mlx",      "MlxBackend"),
 }
 
 _allow = os.environ.get("MOBILE_BACKENDS", "").strip()

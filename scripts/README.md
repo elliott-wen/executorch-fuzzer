@@ -56,5 +56,26 @@ any backend.
 local_client/<name>_client/build_runner.sh
 ```
 
-The Vulkan delegate in particular is in NO published executorch wheel — verified on both
-1.4.0.dev20260625 and 1.4.1 — so it has to be compiled from `pytorch_ref/executorch`.
+The Vulkan delegate in particular is in NO published executorch wheel — verified on
+1.4.0.dev20260625, 1.4.1 and 1.5.1 (the 1.5.1 CPU wheel registers only XnnpackBackend,
+QnnBackend, OpenvinoBackend and VgfBackend) — so it has to be compiled from
+`pytorch_ref/executorch`.
+
+The source tree is now **v1.5.0** (branch `et-1.5.0`), close enough to the 1.5.1 wheel that the
+runners and the serialized .pte agree again. There is no v1.5.1 source tag upstream — tags stop
+at v1.5.0, so that is the right tree to build from.
+
+**BUILD THE RUNNERS ONE AT A TIME.** Not a performance note — a correctness one. ExecuTorch
+builds flatcc **in-source**, into `pytorch_ref/executorch/third-party/flatcc/lib/`, and EVERY
+build against this tree shares that one directory:
+
+* Two concurrent host builds race on it. Observed: the vgf install failed looking for
+  `libflatccrt.a` at 08:30:43 while the cadence build was rewriting that exact file at 08:31:20.
+* Worse, `android_client/build_et_aar.sh` installs flatcc to the SAME path (`-- lib install dir
+  .../third-party/flatcc/lib`). A host x86_64 build and an arm64 cross build therefore overwrite
+  each other's static lib. The android build also runs `git submodule update` on the shared tree
+  mid-flight.
+
+The box has 240 cores and these builds peak around load 7, so the temptation to parallelise is
+strong and wrong. Serialise them, or give each build its own copy of the source tree (the CUDA
+lane already does this — see the rsync-to-a-clean-parent note in its build script).

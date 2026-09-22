@@ -68,11 +68,18 @@ not the script breaking.
 
 ### Useful knobs
 
+Optional settings are flags, not environment variables. Every script takes `--help`.
+
 ```bash
-QUANTIZE=1 scripts/lower.sh openvino corpus/oracle_ov corpus/pte_ov   # int8 path
-COUNT=200  scripts/lower.sh cuda corpus/oracle_cu corpus/pte_cu       # lower a probe batch only
+scripts/lower.sh openvino corpus/oracle_ov corpus/pte_ov --quantize  # int8 path
+scripts/lower.sh cuda corpus/oracle_cu corpus/pte_cu --count 200     # lower a probe batch only
 scripts/execute.sh xnnpack corpus/pte_xnn tmp/r.tsv 32               # 32 parallel clients
+scripts/execute.sh vulkan corpus/pte_vk tmp/vk.tsv --window 8        # smaller in-flight window
+scripts/run.sh openvino q1 --quantize                                # or quantize end-to-end
 ```
+
+Flags may appear before or after the positional arguments, and `--flag=value` works as well
+as `--flag value`.
 
 ## Backends
 
@@ -197,6 +204,29 @@ Add `--stats` to either generator command to report on a corpus without adding t
 
 Clients don't have to be local — another machine, or a phone running `android_client/`,
 can pull from the same broker.
+
+## TODO
+
+Known gaps. None make a finding wrong; they narrow what a clean run covers.
+
+* **Constraints are a torch behind.** `generator/constraints/pytorch_constraints/` and the
+  `generator/ops/table_data.py` op table are a **torch 2.12** snapshot; we now pin **2.14**.
+  Ops added since have no constraint folder and are never emitted — silently, no skip-log
+  row. Regenerate both, and record the torch version they came from.
+* **One quantization scheme per backend.** `--quantize` takes each backend's default config
+  (xnnpack/vulkan/vgf/ethos-u: bare `get_symmetric_quantization_config()` — per-tensor,
+  static, 8-bit, PTQ). Per-channel, dynamic, QAT, QNN 16a8w and vulkan `weight_bits=4` are
+  untested. Make the scheme a lowering knob.
+* **The target chip is hardcoded.** `ETHOSU_TARGET=ethos-u55-128`, `NXP_TARGET=imxrt700`,
+  `CHIPSET=E9965`, `PLATFORM_CONFIG=mt6989`, `CORTEX_M_CPU=M55`,
+  `MINIMUM_DEPLOYMENT_TARGET=iOS17`, `VGF_TOSA_SPEC=TOSA-1.0+FP+INT+int4+int16`. Only
+  qualcomm and openvino read the env (`QNN_SOC`, `OPENVINO_DEVICE`). The part selects op
+  support and compiler path, so a clean U55 run says nothing about U85.
+* **No other config is adjustable.** We pass a fraction of each compile spec: coreml only
+  `minimum_deployment_target` (not `compute_unit`, so ANE/GPU/CPU is Core ML's choice, not
+  ours), qualcomm `soc_model`+`use_fp16`, vulkan and xnnpack *nothing* (no `VkStorageType`,
+  no `per_op_mode`), ethos-u only `target` (not `memory_mode`). Several of these pick which
+  code runs, not just how fast. Needs a per-backend config surface, recorded with the corpus.
 
 ## More
 

@@ -24,15 +24,15 @@ dependency.
 | | | `mtk_neuron` | 8.2.23 | `.venv-mtk` |
 | | | ExecuTorch / PyTorch (pinned lane) | 1.3.1+cpu / 2.12.1+cpu | `.venv-mtk` |
 | **Samsung ENN** (Exynos) | Samsung | Exynos AI LiteCore | **v1.2.0** (ubuntu2404) | `third_party/samsung_sdk/`, extracted to `~/.cache/executorch/exynos/` |
-| **Ethos-U** (U55/U85 NPU) | Arm | `ethos-u-vela` (compiler) | **5.0.0** | `.venv` |
-| | | Ethos-U `core_software` | 26.02-2-ga1830be | `tmp/ethos_sdk_template_tools/ethos-u` |
-| | | Ethos-U `core_platform` | 26.02-3-g7f8625e | ” |
+| **Ethos-U** (U55/U85 NPU) | Arm | `ethos-u-vela` (compiler) | **5.1.0** | `.venv` |
+| | | Ethos-U `core_software` | **26.05-2-gfeeb356** | `tmp/ethos_sdk_template_tools/ethos-u` |
+| | | Ethos-U `core_platform` | **26.02-3-g414afd6** | ” |
 | | | Corstone-300 FVP (Fast Models) | **11.27.42** (2024-12-09) | `examples/arm/arm-scratch/FVP-corstone300` |
 | | | Corstone-320 FVP (Fast Models) | 11.27.25 (2024-09-24) | `…/FVP-corstone320` |
 | **cortex-m** | Arm | CMSIS-NN | git `a3f311a` (via Ethos-U `core_software`) | ” |
 | | | Arm GNU toolchain | **15.2.rel1** (arm-none-eabi) | `examples/arm/arm-scratch/` |
 | | | Corstone-300 FVP | 11.27.42 | shared with Ethos-U |
-| **VGF** (TOSA → Vulkan) | Arm | `ai_ml_sdk_model_converter` | **0.9.0** | `.venv` |
+| **VGF** (TOSA → Vulkan) | Arm | `ai_ml_sdk_model_converter` | **0.9.0** (held: 0.10.0 needs glibc 2.38, host has 2.34) | `.venv` |
 | | | `ai_ml_sdk_vgf_library` | 0.9.0 | `.venv` |
 | | | `ai_ml_emulation_layer_for_vulkan` | 0.9.0 | `.venv` |
 | | | `tosa-tools` | 2026.2.1 | `.venv` |
@@ -57,3 +57,23 @@ Android host toolchain shared by all on-device lanes (QNN, MediaTek, Samsung, Vu
 The Apple-Silicon Mac that executed the CoreML corpus is a remote worker over the broker; its macOS
 and Xcode versions were not captured in the run logs, and the worker is not currently connected. If
 the paper needs them, they must be read off that machine — do not infer them from `coremltools 9.0`.
+
+## Ethos-U SDK — how to restore it
+
+`tmp/ethos_sdk_template_tools/` is a *derived* shared copy, not a checked-in SDK, so it does not
+survive a `tmp/` clean. The FVP and the arm-none-eabi toolchain live under
+`pytorch_ref/executorch/examples/arm/arm-scratch/` (gitignored, ~1.6 GB, and they DID survive the
+v1.5.0 migration) — only the Ethos-U core content needs re-fetching:
+
+```bash
+# clones git.gitlab.arm.com/.../ethos-u.git @ 26.05.1, syncs the manifest, applies executorch's
+# patches, and leaves core_platform + core_software under <tools>/ethos-u  (~277 MB)
+backends/arm/scripts/build_executor_runner.sh --pte=semihosting --etdump \
+  --target=ethos-u55-128 --output=<tmpdir> \
+  --ethosu_tools_dir=/data/jwen929/mobile/tmp/ethos_sdk_template_tools \
+  --extra_build_flags="-DFETCH_ETHOS_U_CONTENT=ON"
+```
+
+`fvp_runner.sh` then runs with `FETCH_ETHOS_U_CONTENT=OFF` against that shared copy. Without it
+every ethos-u job fails `fvp_runner rc=3: shared Ethos-U SDK incomplete` — recorded as CRASH, so
+it looks like 100% breakage rather than a missing prerequisite.

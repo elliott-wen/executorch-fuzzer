@@ -79,7 +79,17 @@ class SamsungBackend(Backend):
         )
 
     def _lower(self, ep, example_inputs):
-        from executorch.backends.samsung._passes.fuse_conv_act import FuseConvActPass
+        # executorch 1.5.0 renamed this pass: _passes/fuse_conv_act.FuseConvActPass became
+        # _passes/fuse_activation.FuseActivationPass. Same pass, wider remit (it fuses
+        # activations beyond conv). Try the new name first and fall back, so this adapter
+        # works on either wheel — on 1.5.1 the old import raised ModuleNotFoundError inside
+        # _lower and took EVERY samsung graph with it (0/300 lowered, no other symptom).
+        try:
+            from executorch.backends.samsung._passes.fuse_activation import (
+                FuseActivationPass as FuseConvActPass,
+            )
+        except ModuleNotFoundError:
+            from executorch.backends.samsung._passes.fuse_conv_act import FuseConvActPass
         from executorch.backends.samsung._passes.remove_useless_ops import RemoveUselessOpPass
         from executorch.backends.samsung.partition.enn_partitioner import EnnPartitioner
         from executorch.backends.samsung.serialization.compile_options import (
