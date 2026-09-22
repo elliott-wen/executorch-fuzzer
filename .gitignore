@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+# Claude Code settings — a personal, machine-specific permission allowlist, not shared
+# project config. Kept on disk, never committed.
+.claude/
+
 # Local virtual environment (recreate from requirements.txt — see docs/environment-setup.md)
 .venv/
 .venv-cuda/
