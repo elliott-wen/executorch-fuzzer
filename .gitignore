@@ -2,9 +2,10 @@
 __pycache__/
 *.py[cod]
 
-# Claude Code settings — a personal, machine-specific permission allowlist, not shared
-# project config. Kept on disk, never committed.
+# Editor / assistant state — personal and machine-specific (absolute paths, per-user
+# permission allowlists), not shared project config. Kept on disk, never committed.
 .claude/
+.vscode/
 
 # Local virtual environment (recreate from requirements.txt — see docs/environment-setup.md)
 .venv/
