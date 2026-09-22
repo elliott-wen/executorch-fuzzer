@@ -33,9 +33,10 @@ OPENVINO_DEVICE = os.environ.get("OPENVINO_DEVICE", "CPU").upper()
 class OpenVINOBackend(Backend):
     name = "openvino"
     runs_on_host = True
-    # OPTIONAL, not a bare `supports_quantization = True`: that shadowed the base class's
-    # property while leaving `quant` at NEVER, so the pipeline believed the backend could
-    # quantize and then base.lower refused the job outright.
+    # Declared as a QuantMode, never as a separate boolean. This class once carried a bare
+    # `supports_quantization = True` alongside `quant = NEVER`: the pipeline read the boolean
+    # and believed the backend could quantize, then base.lower refused every job outright.
+    # QuantMode is the single source of truth, and base.quantizes() is how to ask.
     quant = QuantMode.OPTIONAL
 
     def is_available(self) -> bool:

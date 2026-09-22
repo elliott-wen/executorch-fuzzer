@@ -30,6 +30,17 @@ GRAPH_TIMEOUT = 900.0
 #: building does.
 MAX_GRAPHS_PER_WORKER = 32
 
+#: Backends that leak fast enough to need retiring sooner than that. MEASURED, per backend —
+#: a number here is a workaround for a leak somewhere in that backend's AoT stack, so it
+#: belongs with a note saying what was seen rather than being tuned by feel.
+#:
+#: cadence: a worker holds ~400 MB flat for its first ~10 graphs, then climbs steeply —
+#: 445 MB at job 10, 501 at 11, 694 at 12, 1,462 at 14. Object COUNT grows only linearly
+#: (~3.5k/job, mostly FrameSummary/StackSummary), so it is retained tracebacks holding whole
+#: graph modules alive rather than a runaway container. At 32 jobs x 96 workers that reached
+#: ~14 GB within 100 s and stalled the machine; 8 keeps a worker under ~450 MB.
+RECYCLE_AFTER = {"cadence": 8}
+
 RECORD_GLOB = "[0-9a-f][0-9a-f][0-9a-f]/*.json"
 
 _REPO_PARENT = str(Path(__file__).resolve().parents[3])
@@ -107,7 +118,7 @@ def lower(oracle_root, out, backend: str = "portable", count: int | None = None,
     try:
         pool.run(argv, tokens,
                  workers=workers, on_result=log, timeout=GRAPH_TIMEOUT,
-                 max_jobs_per_child=MAX_GRAPHS_PER_WORKER,
+                 max_jobs_per_child=RECYCLE_AFTER.get(backend, MAX_GRAPHS_PER_WORKER),
                  env=worker_env(), cwd=_REPO_PARENT, stderr=log.stderr)
         if verbose:
             print(log.progress(), flush=True)

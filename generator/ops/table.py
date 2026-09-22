@@ -1,8 +1,8 @@
 """table.py — queries over the resolved operator table.
 
-`ops.py` holds the data: for every symbol with constraints, which torch overload it is and
+`table_data.py` holds the data: for every symbol with constraints, which torch overload it is and
 what ExecuTorch can do with it. This module is just the handful of questions the generator
-asks of it. See ops.py for how the table was produced and why it is a snapshot rather than
+asks of it. See table_data.py for how the table was produced and why it is a snapshot rather than
 a specification.
 
 Tiers:
@@ -15,7 +15,7 @@ Tiers:
 
 from __future__ import annotations
 
-from mobile.generator.graph.catalog.ops import OPS
+from mobile.generator.ops.table_data import OPS
 
 #: tiers whose ops actually produce a .pte, in widening order
 LOWERABLE_TIERS = ("core", "composable")

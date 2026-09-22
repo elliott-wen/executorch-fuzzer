@@ -9,12 +9,14 @@ re-execs the stored source purely to recover the callable, and takes the inputs 
 record rather than re-deriving them. That is what lets a second backend be lowered later, or
 a failed lowering be retried after a fix, without disturbing the corpus.
 
-Both risky calls are announced, because they fail for unrelated reasons and both can take
-the process down rather than raise:
+Every risky call is announced, because they fail for unrelated reasons and any of them can
+take the process down rather than raise. Sub-stages are named after the call that refused,
+so that "lower" only ever means this whole stage:
 
     export          torch.export — tracing the graph
-    transformation  to_edge — ATen to Edge dialect, plus the edge passes
-    lower           to_executorch — memory planning, delegation, serialization
+    to_edge         to_edge — ATen to Edge dialect, edge passes, and (on a delegate
+                    backend) partitioning, which that API fuses with the transform
+    to_executorch   to_executorch — memory planning, delegate serialization, .pte emit
 """
 
 from __future__ import annotations
@@ -102,11 +104,11 @@ def step(oracle_root, out_root, backend: Backend, token: str, quantize: bool,
         no_record       the oracle corpus has no such token (only if it was deleted or the
                         directory changed under us — the jobs come from a listing of it)
         export          torch.export refused the graph
-        transformation  to_edge refused it
-        lower           to_executorch refused it
+        to_edge         to_edge refused it (or, on a delegate backend, the partitioner did)
+        to_executorch   to_executorch refused it
         quant_ref       the quantized reference could not be produced
 
-    A lowering failure is a finding, not just a skip: `transformation` and `lower` are the
+    A compiler refusal is a finding, not just a skip: `to_edge` and `to_executorch` are the
     compiler declining a graph the runtime would happily run.
     """
     enter("read")
@@ -133,13 +135,13 @@ def step(oracle_root, out_root, backend: Backend, token: str, quantize: bool,
         except Exception as e:                      # noqa: BLE001
             return "quant_ref", f"{type(e).__name__}: {str(e)[:160]}"
 
-    enter("lower")
+    enter("compile")
     try:
         lowered = backend.lower(program, tuple(t.clone() for t in inputs), quantize=quantize)
     except LowerStageError as e:
-        return e.stage, str(e)                      # "transformation" or "lower"
-    except Exception as e:                          # noqa: BLE001
-        return "lower", f"{type(e).__name__}: {str(e)[:160]}"
+        return e.stage, str(e)                      # "to_edge" or "to_executorch"
+    except Exception as e:                          # noqa: BLE001 — a backend raising its own
+        return "to_executorch", f"{type(e).__name__}: {str(e)[:160]}"
 
     enter("write")
     # The oracle record comes across too, so the lowering corpus is self-contained and the

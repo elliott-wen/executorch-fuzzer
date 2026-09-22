@@ -1,7 +1,7 @@
 """lookup.py — an op name → the torch callable.
 
 Deciding WHICH overload a mangled C++ symbol denotes does not happen here; that is resolved
-offline and recorded in ops.tsv (see table.py). All that is left is turning the name the
+offline and recorded in table_data.py (see table.py). All that is left is turning the name the
 table already settled on into something callable.
 """
 

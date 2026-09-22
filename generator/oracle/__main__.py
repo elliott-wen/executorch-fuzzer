@@ -1,13 +1,13 @@
-"""CLI: python -m mobile.generator.oracle <dir> [--count N] [--workers N]
+"""CLI: python -m generator.oracle <dir> [--count N] [--workers N]
 
     # a million graphs across every core, resumable — re-run the same line to continue
-    python -m mobile.generator.oracle tmp/oracle --count 1000000 --workers 48
+    python -m generator.oracle tmp/oracle --count 1000000 --workers 48
 
     # what came out
-    python -m mobile.generator.oracle tmp/oracle --stats
+    python -m generator.oracle tmp/oracle --stats
 
     # one graph, as source
-    python -m mobile.generator.oracle tmp/oracle --show 4032
+    python -m generator.oracle tmp/oracle --show 060fbd4325434e6086723491628ef7bc
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from mobile.generator.oracle.params import Params
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(prog="python -m mobile.generator.oracle",
+    ap = argparse.ArgumentParser(prog="python -m generator.oracle",
                                  description="generate graphs + PyTorch oracle in parallel")
     ap.add_argument("out", help="corpus directory (created if absent, added to if present)")
     ap.add_argument("--count", type=int, default=10_000, help="how many graphs (default 10000)")

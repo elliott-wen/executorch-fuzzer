@@ -28,7 +28,7 @@ warnings.filterwarnings("ignore")
 
 from mobile.generator.oracle.job import step  # noqa: E402
 from mobile.generator.oracle.params import Params  # noqa: E402
-from mobile.generator.graph import load_ops  # noqa: E402
+from mobile.generator.ops import load_ops  # noqa: E402
 from mobile.generator.supervisor import serve  # noqa: E402
 
 
@@ -41,7 +41,7 @@ def main(argv=None) -> int:
 
     # ~3.8s, paid once for the many indices this process will handle — which is the whole
     # reason the supervisor keeps workers alive rather than spawning one per graph.
-    ops = load_ops(composable=params.composable, verbose=False)
+    ops = load_ops(composable=params.composable, verbose=False, target=params.target)
 
     def handle(job: str, enter) -> tuple[str, str]:
         # The job IS the token: a fresh uuid4 from the parent, so it cannot collide with a

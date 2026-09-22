@@ -17,7 +17,7 @@ from z3 import IntVal, Select, is_const
 from mobile.generator.concretize import build_call_args, dtype_code_for
 from mobile.generator.constraints import OpConstraints
 from mobile.generator.constraints.model import TensorVar
-from mobile.generator.graph import solver as _solver
+from mobile.generator.ops import solver as _solver
 
 
 def _referenced_names(expressions) -> set[str]:

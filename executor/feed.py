@@ -9,9 +9,9 @@ Comparison lives with the data that needs it (the feeder); the broker stays a pu
 worker (a local `client`, or the phone) just runs + returns. Run more feeders to parallelise.
 
 Two ways to point it at work — same pipeline, same compare:
-    mobile feed --corpus tmp/pte            # everything that lowered → TSV + tally
-    mobile feed <token> --corpus tmp/pte    # one graph → rich JSON observation
-    mobile feed --from-tsv tmp/skip.tsv --status MISMATCH --limit 20   # replay failing rows
+    python -m executor.feed --corpus tmp/pte          # everything that lowered → TSV + tally
+    python -m executor.feed <token> --corpus tmp/pte  # one graph → rich JSON observation
+    python -m executor.feed --from-tsv tmp/skip.tsv --status MISMATCH -n 20  # replay failures
 
 Single-graph / --from-tsv runs print one JSON object per job (job_id, status, detail, op_chain,
 per-output {dtype, shape, max_abs_delta, eager, et}) — the debug observation. Where it RAN is just
@@ -234,5 +234,43 @@ def run_feeder(host, job_port, ctrl_port, pte_dir, jobs=None, from_tsv=None,
         print(f"\n── Done — {state['executed']} graphs {'─' * 30}")
         for k in _TALLY_KEYS:
             print(f"  {k:9s}: {tally[k]}")
-        print(f"  skip-log: {skip_log}  (replay one with `mobile feed <job_id>`)")
+        print(f"  skip-log: {skip_log}  (replay one with `python -m executor.feed <job_id>`)")
     return 1 if (tally["MISMATCH"] or tally["CRASH"]) else 0
+
+
+def main(argv=None) -> int:
+    import argparse
+    ap = argparse.ArgumentParser(prog="python -m executor.feed",
+                                 description="stream jobs to the broker, diff results, tally "
+                                             "(a whole corpus OR one graph)")
+    ap.add_argument("jobs", nargs="*", help="specific job_id(s) or .job path(s) to replay "
+                                            "(→ rich JSON); omit to feed everything that lowered "
+                                            "(→ TSV)")
+    ap.add_argument("--host", default="127.0.0.1", help="broker host")
+    ap.add_argument("--job-port", type=int, default=15554)
+    ap.add_argument("--ctrl-port", type=int, default=15556)
+    ap.add_argument("--corpus", default="tmp/pte",
+                    help="lowering corpus: .pte plus the oracle record copied beside it")
+    ap.add_argument("--from-tsv", default=None, help="also take job_ids from a results TSV (col 2)")
+    ap.add_argument("--status", default=None, help="with --from-tsv: keep only rows of this status")
+    ap.add_argument("-n", "--graphs", type=int, default=0,
+                    help="max jobs to feed; 0 = everything (also caps --from-tsv)")
+    ap.add_argument("--timeout", type=float, default=30.0,
+                    help="per-job timeout (a worker that never answers → TIMEOUT)")
+    ap.add_argument("--window", type=int, default=64,
+                    help="max in-flight jobs (end-to-end backpressure)")
+    ap.add_argument("--skip-log", default="tmp/skip_reasons_mobile.tsv",
+                    help="failing rows: status + token + reason + op-chain "
+                         "(the graph is in the corpus)")
+    ap.add_argument("--heartbeat", type=float, default=3.0,
+                    help="seconds between feed status lines")
+    ap.add_argument("-v", "--verbose", action="store_true")
+    a = ap.parse_args(argv)
+    return run_feeder(a.host, a.job_port, a.ctrl_port, a.corpus, a.jobs, a.from_tsv,
+                      a.status, a.graphs, a.timeout, a.skip_log, a.window,
+                      a.heartbeat, a.verbose)
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main())

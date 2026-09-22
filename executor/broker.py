@@ -1,6 +1,10 @@
 """broker.py — a pure load-balancing ROUTER↔ROUTER broker. It shuffles envelopes; it NEVER
 touches a tensor, compares, or tallies.
 
+    python -m executor.broker [--job-port 15554] [--client-port 15555] [--ctrl-port 15556]
+
+One broker per fleet; start it before the feeder and the clients.
+
 Two bound ROUTER sockets + a PUB:
   frontend (jobs port)    ↔ FEEDERS (DEALER)  — send lean jobs, receive results back
   backend  (clients port) ↔ WORKERS (REQ)     — LRU work-pull (READY → job → RESULT)
@@ -55,7 +59,7 @@ def run_broker(job_port: int, client_port: int, ctrl_port: int,
 
     print(f"Broker up — feeders tcp://*:{job_port}  workers tcp://*:{client_port}  "
           f"ctrl tcp://*:{ctrl_port}", flush=True)
-    print(f"  feed  :  python -m mobile feed   --host <broker-ip> --job-port {job_port} --ctrl-port {ctrl_port} --corpus tmp/corpus", flush=True)
+    print(f"  feed  :  python -m executor.feed   --host <broker-ip> --job-port {job_port} --ctrl-port {ctrl_port} --corpus tmp/corpus", flush=True)
     print(f"  client:  python local_client/xnnpack_client/xnnpack_client.py --host <broker-ip> --client-port {client_port} --ctrl-port {ctrl_port}", flush=True)
 
     t0 = time.monotonic()
@@ -130,3 +134,22 @@ def run_broker(job_port: int, client_port: int, ctrl_port: int,
 
     print(f"\n── Broker done — routed {routed} results ──", flush=True)
     return 0
+
+
+def main(argv=None) -> int:
+    import argparse
+    ap = argparse.ArgumentParser(prog="python -m executor.broker",
+                                 description="pure load-balancing router (feeders <-> workers)")
+    ap.add_argument("--job-port", type=int, default=15554, help="frontend: feeders connect here")
+    ap.add_argument("--client-port", type=int, default=15555, help="backend: workers connect here")
+    ap.add_argument("--ctrl-port", type=int, default=15556)
+    ap.add_argument("--heartbeat", type=float, default=3.0,
+                    help="seconds between broker status lines")
+    ap.add_argument("-v", "--verbose", action="store_true")
+    a = ap.parse_args(argv)
+    return run_broker(a.job_port, a.client_port, a.ctrl_port, a.heartbeat, a.verbose)
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main())

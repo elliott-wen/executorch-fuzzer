@@ -1,11 +1,11 @@
-"""CLI: python -m mobile.generator.lower <oracle-dir> <out-dir> [--backend portable]
+"""CLI: python -m generator.lower <oracle-dir> <out-dir> [--backend portable]
 
     # lower a whole oracle corpus for one backend
-    python -m mobile.generator.lower corpus/oracle_100k corpus/pte_portable \
+    python -m generator.lower corpus/oracle_100k corpus/pte_portable \
         --backend portable --workers 64
 
     # what came out
-    python -m mobile.generator.lower corpus/oracle_100k corpus/pte_portable --stats
+    python -m generator.lower corpus/oracle_100k corpus/pte_portable --stats
 """
 
 from __future__ import annotations
@@ -17,7 +17,7 @@ from mobile.generator.lower.fleet import lower, summarize
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(prog="python -m mobile.generator.lower",
+    ap = argparse.ArgumentParser(prog="python -m generator.lower",
                                  description="lower an oracle corpus to .pte, in parallel")
     ap.add_argument("oracle", help="oracle corpus to read")
     ap.add_argument("out", help="directory for .pte records (one per backend)")

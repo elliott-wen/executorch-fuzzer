@@ -8,6 +8,11 @@ Sampling then pulls a *varied* witness out of that solver. Left alone, Z3 return
 minimal model every time — all-zero shapes, the lowest dtype code — so the corpus would be
 thousands of copies of one degenerate call. `diverse_model` biases it with random pins, and
 drops them a tier at a time when they conflict with the op's real constraints.
+
+Everything here is per-OP: `build_solver` takes one OpConstraints and `diverse_model` one
+op's variables. There is no graph-level solve — the builder grows a DAG by solving each
+node alone, pinned against the CONCRETE tensor a producer already returned, so no two
+nodes are ever in the same Z3 problem.
 """
 
 from __future__ import annotations
@@ -144,6 +149,11 @@ def build_solver(constraints, fixed_array_len: dict[str, int] | None = None,
     `constraints.bad` holds, per slice, the conditions under which the op RAISES; a valid
     call is the negation of each. `pins` are extra constraints from the caller — a port
     tied to a producer's shape/dtype, or the sampler's diversity bias.
+
+    A target runtime's extra requirements arrive already merged into `constraints.axioms`
+    (see targets.load_for), so they are asserted like any other axiom rather
+    than offered as a relaxable pin — they are not a diversity preference the ladder may
+    trade away, but the difference between a .pte that runs and one the runtime refuses.
     """
     solver = Solver()
     solver.set("timeout", TIMEOUT_MS)

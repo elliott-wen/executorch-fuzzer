@@ -37,11 +37,11 @@ export EXECUTORCH_CMAKE_BUILD_TYPE=Release
 # belt-and-suspenders even on r28 (older NDK needs it explicitly):
 export CMAKE_SHARED_LINKER_FLAGS="-Wl,-z,max-page-size=16384,-z,common-page-size=16384"
 scripts/build_android_library.sh
-# -> extension/android_client/executorch_android/build/outputs/aar/executorch_android-debug.aar
+# -> extension/android/executorch_android/build/outputs/aar/executorch_android-debug.aar
 
 # 3. Vendor the AAR and depend on it instead of Maven.
 mkdir -p /data/jwen929/new-gen-fuzzer/mobile/android_client/app/libs
-cp extension/android_client/executorch_android/build/outputs/aar/executorch_android-debug.aar \
+cp extension/android/executorch_android/build/outputs/aar/executorch_android-debug.aar \
    /data/jwen929/new-gen-fuzzer/mobile/android_client/app/libs/executorch.aar
 # In mobile/android_client/app/build.gradle, replace
 #   implementation 'org.pytorch:executorch-android:0.6.0'

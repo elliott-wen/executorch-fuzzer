@@ -23,7 +23,7 @@ for ABI in $ABIS; do
   [ -d "$OUT" ] || { echo "no $OUT — run build_et_aar.sh first"; exit 1; }
   cmake --build "$OUT" -j"$(nproc)" --target install --config Release    # incremental: only changed files
   mkdir -p "cmake-out-android-so/$ABI"
-  cp "$OUT"/extension/android_client/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
+  cp "$OUT"/extension/android/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
 done
 
 find cmake-out-android-so -name "*.so" -exec \

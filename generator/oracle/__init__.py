@@ -12,8 +12,8 @@ and every backend's export stage reads it.
 
 or from the command line:
 
-    python -m mobile.generator.oracle tmp/oracle --count 1000000 --workers 48
-    python -m mobile.generator.oracle tmp/oracle --stats
+    python -m generator.oracle tmp/oracle --count 1000000 --workers 48
+    python -m generator.oracle tmp/oracle --stats
 
 A graph's identity is one random token, minted by the parent. It is the job the supervisor
 dispatches, the only randomness the graph gets, and the name the record is filed under —

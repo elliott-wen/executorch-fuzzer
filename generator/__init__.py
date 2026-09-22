@@ -6,20 +6,27 @@ Bottom up:
                pytorch_constraints/. What a valid call looks like.
 - concretize:  a satisfying Z3 model → concrete PyTorch call arguments. A faithful
                translator; it adds no policy of its own.
-- graph:       the operator catalog and the graph builder. Picks ops, solves them,
-               wires them into a DAG, and emits it as a standalone script.
+- targets:     what a RUNTIME demands on top of eager, per backend — extra constraints
+               and its own op delta. Opt-in; eager accepts what these refuse.
+- ops:         which operators we can emit, and how to get one valid call out of one.
+               Composes the three above into Ops that generate themselves.
+- graph:       given a set of ops, grow a DAG and emit it as a standalone script. Torch
+               and nothing else — no constraints, no solver, no target.
 - supervisor:  run work in disposable child processes and survive losing them. Generic:
                it knows nothing about graphs, only about jobs, acks and crashes.
 - oracle:      graphs and their PyTorch reference, in bulk — `graph` under `supervisor`.
 
-    from mobile.generator.graph import build_graph, load_ops
+    from mobile.generator.ops import load_ops
+    from mobile.generator.graph import build_graph
 
-    ops = load_ops()
+    ops = load_ops(target="portable")
     graph = build_graph(rng, ops, n_nodes=8)
     source = graph.emit(seed=1234)     # defines g(*LEAVES); run it anywhere
 
-Nothing here narrows generation to what a target handles well. An op is only ever tested
-on the dtypes and shapes we generate for it, so a restriction applied at this layer
-quietly decides that whole classes of input are correct by never asking about them.
-Unsupported combinations are reported cleanly by the runtime instead.
+Narrowing generation to what a runtime handles well is OPT-IN, and off unless a target
+is named. An op is only ever tested on the dtypes and shapes we generate for it, so every
+restriction trades a class of input away for a higher run rate — and one applied by
+default would quietly decide that class is correct by never asking about it. Naming a
+target is that trade made deliberately, per backend, in one readable place; the untargeted
+default keeps asking, and lets the runtime refuse cleanly at run time.
 """

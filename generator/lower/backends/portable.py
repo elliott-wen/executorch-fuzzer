@@ -8,7 +8,9 @@ a differential comparison with nothing else in the way.
 
 from __future__ import annotations
 
-from mobile.generator.lower.backends.base import Backend, QuantMode, lower_portable
+from executorch.exir import to_edge
+
+from mobile.generator.lower.backends.base import EDGE_CONFIG, Backend, QuantMode, tagged
 
 
 class PortableBackend(Backend):
@@ -17,4 +19,13 @@ class PortableBackend(Backend):
     quant = QuantMode.NEVER
 
     def _lower(self, ep, example_inputs):
-        return lower_portable(ep)
+        """No delegation — straight to edge, then to .pte.
+
+        The two calls are made separately so a failure is attributed to whichever refused:
+        to_edge is ATen -> Edge dialect plus the edge passes, to_executorch is memory
+        planning and serialization, and they fail for unrelated reasons.
+        """
+        with tagged("to_edge"):
+            edge = to_edge(ep, compile_config=EDGE_CONFIG)
+        with tagged("to_executorch"):
+            return edge.to_executorch()

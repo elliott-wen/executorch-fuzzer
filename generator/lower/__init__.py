@@ -12,10 +12,11 @@ compiler bug, costs only the lowering.
 
 or from the command line:
 
-    python -m mobile.generator.lower tmp/oracle tmp/pte/portable --count 100000 --workers 64
+    python -m generator.lower tmp/oracle tmp/pte/portable --count 100000 --workers 64
 
-A lowering failure is a finding, not merely a skip: `transformation` and `lower` outcomes are
-the compiler refusing a graph the runtime would have run.
+A compiler refusal is a finding, not merely a skip: `to_edge` and `to_executorch` outcomes
+are the compiler declining a graph the runtime would have run. Sub-stages are named after
+the API call that refused, so `lower` only ever names this stage.
 
   backends/  the lowering targets, probed lazily one at a time
   job        one token: read the record, export, lower, write the .pte

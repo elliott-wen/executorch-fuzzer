@@ -132,13 +132,13 @@ for ABI in $ABIS; do
     -DCMAKE_BUILD_TYPE=Release -B"$OUT"
   cmake --build "$OUT" -j"$(nproc)" --target install --config Release
   mkdir -p "cmake-out-android-so/$ABI"
-  cp "$OUT"/extension/android_client/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
+  cp "$OUT"/extension/android/*.so "cmake-out-android-so/$ABI/libexecutorch.so"
   # QNN: stage the delegate + the Qualcomm runtime libs into the AAR's jniLibs (arm64, SDK present).
   # Includes the arm64 host libs AND the Hexagon DSP "skel" libs (loaded by the NPU via
   # ADSP_LIBRARY_PATH = the app's native lib dir) for every HTP arch, so it runs on any Snapdragon.
   if [ "$ABI" = "arm64-v8a" ] && [ -n "${QNN_SDK_ROOT:-}" ]; then
     cp "$OUT"/lib/executorch/backends/qualcomm/libqnn_executorch_backend.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
-    cp "$QNN_SDK_ROOT"/lib/aarch64-android_client/libQnn*.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
+    cp "$QNN_SDK_ROOT"/lib/aarch64-android/libQnn*.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
     cp "$QNN_SDK_ROOT"/lib/hexagon-v*/unsigned/libQnnHtpV*Skel.so "cmake-out-android-so/$ABI/" 2>/dev/null || true
   fi
   # ENN: nothing to stage — enn_backend is whole-archive-linked into libexecutorch.so above, and its

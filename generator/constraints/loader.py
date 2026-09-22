@@ -9,7 +9,7 @@ Loading is lazy and per-symbol, because a run only ever uses a fraction of what 
 disk: 1346 symbol folders, 47.5 MB of generated source, against a few hundred ops a run
 actually wants. `available()` answers "what is there?" from directory entries alone —
 exec'ing nothing — so a caller narrows first and pays only for what it keeps. Which
-symbols are worth loading is decided by graph/catalog/ops.tsv, not here. (The loader this replaces exec'd all 1346 up front and filtered
+symbols are worth loading is decided by ops/table_data.py, not here. (The loader this replaces exec'd all 1346 up front and filtered
 after, which is where most of the ~75s worker startup went.) Deciding which ops matter
 — blocklists, backend allowlists, overload choice — is deliberately not this module's
 business; its whole contract is "given a symbol, give me its constraints".
@@ -53,7 +53,6 @@ def set_root(path) -> None:
     """Point the loader at a different constraints tree (fixtures in tests)."""
     global _ROOT
     _ROOT = Path(path)
-    _CACHE.clear()
 
 
 def available() -> list[str]:
@@ -89,22 +88,18 @@ def _flatten(constraints: list) -> list:
     return out
 
 
-_CACHE: dict[str, OpConstraints | None] = {}
-
-
 def load(symbol: str) -> OpConstraints | None:
-    """One op's constraints, or None if the folder holds no slices. Memoized.
+    """One op's constraints, or None if the folder holds no slices.
+
+    Not memoised. A catalog build asks for each symbol exactly once, so a cache here only
+    ever serves a caller that builds the catalog twice in one process — which the fuzzer
+    never does. It is not free to keep: a module-global that `set_root` then has to
+    invalidate, holding Z3 terms alive for every op a run has touched.
 
     A malformed slice raises rather than being swallowed: a constraint that silently
     fails to load is an op that silently vanishes from the corpus, which is much harder
     to notice than a traceback.
     """
-    if symbol not in _CACHE:
-        _CACHE[symbol] = _load_uncached(symbol)
-    return _CACHE[symbol]
-
-
-def _load_uncached(symbol: str) -> OpConstraints | None:
     slices = sorted((_ROOT / symbol).glob("slice_*.py"))
     if not slices:
         return None

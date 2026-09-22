@@ -4,12 +4,14 @@ Given an op's params, its model variables, and a model from the solver, this mat
 the actual tensors/scalars/lists to call the op with, in signature order.
 
 It is a faithful translator: it reports what the solver decided and adds no policy of its
-own. In particular it does NOT restrict dtypes — rewriting a solved dtype here can
-contradict a relation the solver had just satisfied (canCast, promote_types, same-as
-between two arguments), leaving the op with inputs that violate its own precondition.
+own. In particular it does NOT rewrite dtypes — changing a solved dtype here contradicts a
+relation the solver had just satisfied (canCast, promote_types, same-as between two
+arguments), leaving the op with inputs that violate its own precondition. A runtime that
+needs narrower dtypes says so in generator/targets, where the solver satisfies it along
+with everything else.
 
 Package layout:
-  dtypes   — model ScalarType code → torch.dtype maps (_torch_dtypes)
+  dtypes   — model ScalarType code → torch.dtype maps
   evals    — Z3 model → Python scalar evaluators (_eval_*)
   enums    — string-enum argument tables (_build_string_enum)
   builders — per-type value builders (_build_tensor/_build_scalar/_build_value/...)

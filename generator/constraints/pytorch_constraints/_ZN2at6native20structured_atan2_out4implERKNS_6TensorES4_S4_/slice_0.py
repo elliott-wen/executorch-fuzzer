@@ -40,12 +40,21 @@ def get_constraints() -> list:
 
 def get_axioms() -> list:
     # HAND-ADDED (not from combine_constraints.py — keep across re-vendoring).
-    # This op's CPU kernel raises NotImplementedError for every float8 dtype, e.g.
-    #   NotImplementedError: "atan2.out" not implemented for 'Float8_e5m2'
-    # so a float8 call is invalid however well-shaped it is. Stated as an axiom because
+    #
+    # atan2's CPU kernel raises for every float8 dtype:
+    #   NotImplementedError: "atan2_cpu" not implemented for 'Float8_e5m2'
+    # and the extracted constraints do not capture it, because the failure comes from
+    # runtime ET_SWITCH dispatch rather than an explicit check the extractor can see. So a
+    # float8 call solves happily and then raises in eager. Stated as an axiom because
     # axioms are asserted directly, while get_constraints() describes ERROR paths and is
-    # negated by the harness. Verified by probing every core op with float8 vs float32
-    # inputs: 75 of 221 accept float32 and reject float8.
+    # negated by the harness.
+    #
+    # This is the ONLY op that needs it. An earlier pass added the same axiom to 75 ops on
+    # the strength of a probe that called each with all-float8 arguments; re-checked one
+    # port at a time, 68 of those were redundant (their own constraints already make float8
+    # unsat) and 6 were wrong (eager accepts float8 for mean/prod/tril/var_mean/_pdist).
+    # atan2 alone accounted for 770 of the 974 float8 eager failures measured on a 100k
+    # corpus. Do not re-add the others without re-measuring per port.
     _FLOAT8 = (23, 24, 25, 26, 44)   # model.FLOAT8_DTYPES
     return [
             Not(Or(*(Int('self.dtype') == IntVal(c) for c in _FLOAT8))),
