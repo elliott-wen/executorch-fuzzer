@@ -32,7 +32,6 @@ _BACKENDS: dict[str, tuple[str, str]] = {
     "vgf":      ("vgf",      "VgfBackend"),
     "qualcomm": ("qualcomm", "QualcommBackend"),
     "coreml":   ("coreml",   "CoreMLBackend"),
-    "mps":      ("mps",      "MpsBackend"),
     "openvino": ("openvino", "OpenVINOBackend"),
     "mediatek": ("mediatek", "MediatekBackend"),
     "samsung":  ("samsung",  "SamsungBackend"),

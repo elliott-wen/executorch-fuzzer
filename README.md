@@ -78,7 +78,7 @@ scripts/execute.sh xnnpack corpus/pte_xnn tmp/r.tsv 32               # 32 parall
 
 ```
 portable  xnnpack  vulkan  vgf  openvino  cadence  nxp  qualcomm
-ethos-u   cortex-m  cuda    coreml  mps    mediatek  samsung
+ethos-u   cortex-m  cuda    coreml  mediatek  samsung
 ```
 
 Stages 1 and 2 work for all of them. Stage 3 needs something that can actually run the
@@ -90,8 +90,8 @@ program, and that is where the backends differ:
 * **Needs a physical device** — vulkan and qualcomm on a real phone (the host paths
   above are emulation, and they do not always agree), plus samsung (an Exynos phone)
   and mediatek (a MediaTek one), which have no host path at all.
-* **Needs other hardware we don't have here** — coreml and mps (a Mac), cortex-m (a
-  Cortex-M board).
+* **Needs other hardware we don't have here** — coreml (a Mac), cortex-m (a Cortex-M
+  board).
 
 For anything in the last two groups, `execute.sh` stops with an explanation instead of
 failing oddly, so `run.sh` is safe to point at any backend — you still get stages 1 and

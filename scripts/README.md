@@ -27,7 +27,7 @@ Lowering works for all of them. Execution needs a client:
 
 | runs locally | needs hardware |
 |---|---|
-| portable, xnnpack, vulkan, vgf, openvino, cadence, nxp, qualcomm, ethos-u, cuda | coreml (a Mac), samsung (Exynos), cortex-m, mps |
+| portable, xnnpack, vulkan, vgf, openvino, cadence, nxp, qualcomm, ethos-u, cuda | coreml (a Mac), samsung (Exynos), cortex-m |
 
 `execute.sh` exits 3 with an explanation for the second group, so `run.sh` is safe to point at
 any backend.
