@@ -123,11 +123,11 @@ else
   # full gitlab manifest RE-SYNC on every build. -DFETCH_ETHOS_U_CONTENT=OFF disables that re-sync
   # (the SDK is already complete), turning a ~2min fetch+build into an ~8s build. Bounded disk =
   # only in-flight build OUTPUT dirs (~330MB each), cleaned per job. Adaptive per-pte op linking kept.
-  ETHOSU_TOOLS_DIR="${ETHOSU_TOOLS_DIR:-/data/jwen929/mobile/tmp/ethos_sdk_template_tools}"
+  ETHOSU_TOOLS_DIR="${ETHOSU_TOOLS_DIR:-$MOBILE/tmp/ethos_sdk_template_tools}"
   [[ -d "$ETHOSU_TOOLS_DIR/ethos-u/core_platform" && -d "$ETHOSU_TOOLS_DIR/ethos-u/core_software" ]] \
       || { echo "shared Ethos-U SDK incomplete at $ETHOSU_TOOLS_DIR/ethos-u" >&2; exit 3; }
   # Build OUTPUT workspace on the LOCAL big disk (/data, 4.4T), NOT system /tmp (only ~9G).
-  FVP_BUILD_ROOT="${FVP_BUILD_ROOT:-/data/jwen929/mobile/tmp/fvp_builds}"
+  FVP_BUILD_ROOT="${FVP_BUILD_ROOT:-$MOBILE/tmp/fvp_builds}"
   mkdir -p "$FVP_BUILD_ROOT"
   JOBTMP="$(mktemp -d "$FVP_BUILD_ROOT/b.XXXXXX")"
   trap 'rm -rf "$JOBTMP"' EXIT
@@ -159,7 +159,7 @@ else
   # every .pte build; only the tiny per-graph SELECT_OPS portable-kernel lib differs. Without it,
   # each build recompiles all of executorch_core from scratch (~minutes at -j8). Shared warm cache
   # on /data (60G, ~86% hit). CMAKE_*_COMPILER_LAUNCHER routes both host + arm-none-eabi compiles.
-  export CCACHE_DIR="${CCACHE_DIR:-/data/jwen929/mobile/tmp/ccache}"
+  export CCACHE_DIR="${CCACHE_DIR:-$MOBILE/tmp/ccache}"
   ARM_SKIP_PATCH=1 ETHOS_BUILD_JOBS="$ETHOS_BUILD_JOBS" "$ET_ROOT/backends/arm/scripts/build_executor_runner.sh" \
       --pte=semihosting --etdump --target="$TARGET" --output="$BUILD_DIR" \
       --ethosu_tools_dir="$ETHOSU_TOOLS_DIR" \

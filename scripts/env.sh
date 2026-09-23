@@ -8,10 +8,13 @@
 # has to rediscover it. The general rule is that MOBILE_BACKENDS is always pinned to the one
 # backend in play: QNN and OpenVINO corrupt each other's heap when co-loaded, and a full sweep
 # without the pin aborts mid-run.
-M=/data/jwen929/mobile
-# Both roots: /data/jwen929 resolves the package's own `mobile.*` imports, $M lets the
-# commands be spelled `-m generator.oracle` / `-m executor.feed` from any cwd.
-export PYTHONPATH=/data/jwen929:$M
+# Repo root, derived from this file's own location (scripts/env.sh -> ..), so the checkout can
+# live anywhere and be renamed. Overridable for the odd out-of-tree case.
+M="${MOBILE_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+# Both roots: the repo's PARENT resolves the package's own `mobile.*` imports (the checkout must
+# therefore be named `mobile`), $M lets the commands be spelled `-m generator.oracle` /
+# `-m executor.feed` from any cwd.
+export PYTHONPATH="$(dirname "$M"):$M"
 
 backend_env() {
   local bk="$1"
@@ -54,8 +57,8 @@ backend_env() {
       #     caches at /data, which allows exec.
       export CUDA_HOME=/usr/local/cuda-13.0
       export PATH="$CUDA_HOME/bin:$PATH"
-      export TRITON_CACHE_DIR=/data/jwen929/triton_cache
-      export TORCHINDUCTOR_CACHE_DIR=/data/jwen929/inductor_cache
+      export TRITON_CACHE_DIR="${TRITON_CACHE_DIR:-$(dirname "$M")/triton_cache}"
+      export TORCHINDUCTOR_CACHE_DIR="${TORCHINDUCTOR_CACHE_DIR:-$(dirname "$M")/inductor_cache}"
       mkdir -p "$TRITON_CACHE_DIR" "$TORCHINDUCTOR_CACHE_DIR"
       # The oracle/lower workers do os.environ.setdefault("CUDA_VISIBLE_DEVICES", "") —
       # the harness is CPU-only by default. setdefault means an explicit value wins, so this

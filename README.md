@@ -17,12 +17,23 @@ execute it for as many backends as you like. It is generated *with* one backend 
 (the generator solves that backend's extra constraints too, so fewer graphs get rejected
 later), but nothing stops you pointing another backend at it.
 
-Every command below is run **from inside this folder**:
+## Getting set up
+
+Clone the repo into a directory named `mobile` — the package imports itself as `mobile.*`, so
+the directory name is load-bearing — and create the environment:
 
 ```bash
-cd /data/jwen929/mobile
-export PYTHONPATH=/data/jwen929      # the scripts set this themselves
+git clone <repo-url> mobile && cd mobile
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 ```
+
+Every command below is run **from inside that folder**. The scripts work out the repo root from
+their own location, so the checkout can live anywhere; nothing needs editing, and you do not
+need to set `PYTHONPATH` yourself.
+
+Some backends need a vendor SDK on top of that — see `third_party/README.md` for which, and
+`scripts/env.sh` for how each one is found.
 
 ## The short version
 
@@ -97,8 +108,7 @@ program, and that is where the backends differ:
 * **Needs a physical device** — vulkan and qualcomm on a real phone (the host paths
   above are emulation, and they do not always agree), plus samsung (an Exynos phone)
   and mediatek (a MediaTek one), which have no host path at all.
-* **Needs other hardware we don't have here** — coreml (a Mac), cortex-m (a Cortex-M
-  board).
+* **Needs other hardware** — coreml (a Mac), cortex-m (a Cortex-M board or the Corstone FVP).
 
 For anything in the last two groups, `execute.sh` stops with an explanation instead of
 failing oddly, so `run.sh` is safe to point at any backend — you still get stages 1 and
@@ -190,7 +200,7 @@ The scripts are wrappers over two generator commands and the executor. If you'd 
 drive them directly:
 
 ```bash
-export MOBILE_BACKENDS=xnnpack       # plus PYTHONPATH, above
+export MOBILE_BACKENDS=xnnpack       # and PYTHONPATH=<parent-of-repo>:<repo>
 
 python -m generator.oracle corpus/oracle_xnn --count 10000 --nodes 1 --target xnnpack
 python -m generator.lower  corpus/oracle_xnn corpus/pte_xnn --backend xnnpack

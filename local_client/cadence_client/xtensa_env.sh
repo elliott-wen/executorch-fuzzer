@@ -11,7 +11,11 @@
 # (no seat cap -> one xt-run per core is fine). It does NOT grant TurboXim, so `xt-run --turbo`
 # fails with "( TurboXim ) *ERROR* Unable to get license" -- cycle-accurate is the only mode,
 # ~1.5 MIPS. Never pass --turbo.
-XTENSA_SDK="${XTENSA_SDK:-/data/jwen929/mobile/third_party/cadence_sdk}"
+# Repo root from this file's location (local_client/cadence_client/ -> ../..), so the
+# checkout can live anywhere; XTENSA_SDK still wins if set.
+_XT_HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_XT_MOBILE="$(dirname "$(dirname "$_XT_HERE")")"
+XTENSA_SDK="${XTENSA_SDK:-$_XT_MOBILE/third_party/cadence_sdk}"
 
 export XTENSA_TOOLCHAIN="$XTENSA_SDK/xtensa/XtDevTools/install/tools"
 export TOOLCHAIN_VER="RJ-2025.5-linux"

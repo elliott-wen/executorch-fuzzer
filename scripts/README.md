@@ -67,15 +67,14 @@ at v1.5.0, so that is the right tree to build from.
 
 **BUILD THE RUNNERS ONE AT A TIME.** Not a performance note — a correctness one. ExecuTorch
 builds flatcc **in-source**, into `pytorch_ref/executorch/third-party/flatcc/lib/`, and EVERY
-build against this tree shares that one directory:
+build against that tree shares the one directory:
 
-* Two concurrent host builds race on it. Observed: the vgf install failed looking for
-  `libflatccrt.a` at 08:30:43 while the cadence build was rewriting that exact file at 08:31:20.
-* Worse, `android_client/build_et_aar.sh` installs flatcc to the SAME path (`-- lib install dir
-  .../third-party/flatcc/lib`). A host x86_64 build and an arm64 cross build therefore overwrite
-  each other's static lib. The android build also runs `git submodule update` on the shared tree
-  mid-flight.
+* Two concurrent host builds race on it — one build's install step looks for `libflatccrt.a`
+  in the window where the other has just removed and not yet rewritten it, and fails.
+* Worse, `android_client/build_et_aar.sh` installs flatcc to the SAME path. A host x86_64 build
+  and an arm64 cross build therefore overwrite each other's static lib. The android build also
+  runs `git submodule update` on the shared tree mid-flight.
 
-The box has 240 cores and these builds peak around load 7, so the temptation to parallelise is
-strong and wrong. Serialise them, or give each build its own copy of the source tree (the CUDA
-lane already does this — see the rsync-to-a-clean-parent note in its build script).
+These builds use only a handful of cores each, so on a big machine parallelising looks free.
+It is not. Serialise them, or give each build its own copy of the source tree (the CUDA lane
+already does this — see the rsync-to-a-clean-parent note in its build script).

@@ -10,7 +10,7 @@
 # --quantize is forwarded to stage 2; --workers sizes stage 2 and --clients stage 3.
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-M=/data/jwen929/mobile
+M="${MOBILE_ROOT:-$(cd "$HERE/.." && pwd)}"
 
 USAGE='usage: run.sh <backend> [tag] [count] [nodes] [--quantize] [--skip-log PATH] [--workers N] [--clients N]'
 QUANTIZE=0

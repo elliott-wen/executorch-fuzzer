@@ -66,11 +66,12 @@ survive a `tmp/` clean. The FVP and the arm-none-eabi toolchain live under
 v1.5.0 migration) — only the Ethos-U core content needs re-fetching:
 
 ```bash
+REPO=$(git rev-parse --show-toplevel)   # this checkout
 # clones git.gitlab.arm.com/.../ethos-u.git @ 26.05.1, syncs the manifest, applies executorch's
 # patches, and leaves core_platform + core_software under <tools>/ethos-u  (~277 MB)
 backends/arm/scripts/build_executor_runner.sh --pte=semihosting --etdump \
   --target=ethos-u55-128 --output=<tmpdir> \
-  --ethosu_tools_dir=/data/jwen929/mobile/tmp/ethos_sdk_template_tools \
+  --ethosu_tools_dir="$REPO/tmp/ethos_sdk_template_tools" \
   --extra_build_flags="-DFETCH_ETHOS_U_CONTENT=ON"
 ```
 
