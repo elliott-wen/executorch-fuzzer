@@ -1,4 +1,4 @@
-"""mac_client.py — CoreML (Apple) EXECUTOR worker (a host-runtime client like xnnpack_client).
+"""coreml_client.py — CoreML (Apple) EXECUTOR worker (a host-runtime client like xnnpack_client).
 
 Same role as the on-device Android client, the FVP/QNN clients, and the portable/xnnpack/
 openvino clients: pull `.pte` jobs from the broker, run them, and return the RAW output
@@ -58,7 +58,7 @@ already differs by ~3e-3). Choosing the right reference/tolerance is a feeder/ex
 not this client's — this client just returns what CoreML produced.
 
 Usage:
-python local_client/mac_client/mac_client.py --host <broker-ip> [--job-timeout 120] [--recycle-every 100]
+python local_client/coreml_client/coreml_client.py --host <broker-ip> [--job-timeout 120] [--recycle-every 100]
 """
 
 from __future__ import annotations

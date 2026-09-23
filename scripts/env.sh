@@ -79,12 +79,13 @@ backend_env() {
     ethos-u)  CLIENT="$M/local_client/fvp_client/fvp_client.py" ;;
 
     webgpu)
-      # Partitioning is VulkanPartitioner's, verbatim — only the blob writer differs, which
-      # makes vulkan/webgpu a same-partition differential pair. No client yet: executing a
-      # WebGPU .pte needs a runner built against wgpu-native (backends/webgpu/scripts/
-      # setup-wgpu-native.sh), which on Linux sits on Vulkan — so lavapipe can drive it
-      # headless the way vulkan and vgf already are. Lowering measures normally without it.
-      ;;
+      # Partitioning is VulkanPartitioner's, verbatim, and the .pte is BYTE-IDENTICAL to the
+      # vulkan one (both carry delegate id "VulkanBackend"). The runtime is a LINK-TIME choice,
+      # so webgpu gets its own runner/client rather than a flag: build it once with
+      # local_client/webgpu_client/build_runner.sh (downloads Google's pinned Dawn prebuilt and
+      # links against gcc-toolset for its libstdc++ floor). Because the corpora are identical
+      # you can point this client at an EXISTING vulkan pte dir — same blob, two GPU runtimes.
+      CLIENT="$M/local_client/webgpu_client/webgpu_client.py" ;;
 
     # No host client: coreml needs a Mac, samsung an Exynos device, cortex-m a Cortex-M
     # board or the Corstone FVP, mlx an Apple-Silicon Mac (no Linux MLX runtime exists, and
